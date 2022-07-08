@@ -501,7 +501,7 @@ class SetupMainWindow:
             scroll_bar_btn_color = self.themes["app_color"]["dark_four"],
             context_color = self.themes["app_color"]["context_color"]
         )
-        self.table_widget.setColumnCount(4)
+        self.table_widget.setColumnCount(3)
         self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         self.table_widget.setSelectionMode(QAbstractItemView.ExtendedSelection)
         self.table_widget.setSelectionBehavior(QAbstractItemView.SelectRows)
@@ -509,37 +509,34 @@ class SetupMainWindow:
         # Columns / Header
         self.column_1 = QTableWidgetItem()
         self.column_1.setTextAlignment(Qt.AlignCenter)
-        self.column_1.setText("NAME")
+        self.column_1.setText("Ad")
 
         self.column_2 = QTableWidgetItem()
         self.column_2.setTextAlignment(Qt.AlignCenter)
-        self.column_2.setText("NICK")
+        self.column_2.setText("Soyad")
 
         self.column_3 = QTableWidgetItem()
         self.column_3.setTextAlignment(Qt.AlignCenter)
-        self.column_3.setText("PASS")
+        self.column_3.setText("Kilo")
 
-        self.column_4 = QTableWidgetItem()
-        self.column_4.setTextAlignment(Qt.AlignCenter)
-        self.column_4.setText("BOK")
+        self.table_header_hash = {"Ad":0, "Soyad":1, "Kilo":2}
 
         # Set column
         self.table_widget.setHorizontalHeaderItem(0, self.column_1)
         self.table_widget.setHorizontalHeaderItem(1, self.column_2)
         self.table_widget.setHorizontalHeaderItem(2, self.column_3)
-        self.table_widget.setHorizontalHeaderItem(3, self.column_4)
 
-        for x in range(10):
-            row_number = self.table_widget.rowCount()
-            self.table_widget.insertRow(row_number) # Insert row
-            self.table_widget.setItem(row_number, 0, QTableWidgetItem(str("Wanderson"))) # Add name
-            self.table_widget.setItem(row_number, 1, QTableWidgetItem(str("vfx_on_fire_" + str(x)))) # Add nick
-            self.pass_text = QTableWidgetItem()
-            self.pass_text.setTextAlignment(Qt.AlignCenter)
-            self.pass_text.setText("12345" + str(x))
-            self.table_widget.setItem(row_number, 2, self.pass_text) # Add pass
-            self.table_widget.setItem(row_number, 3, QTableWidgetItem(str("Bok"))) # Add pass
-            self.table_widget.setRowHeight(row_number, 22)
+
+        # for x in range(10):
+        #     row_number = self.table_widget.rowCount()
+        #     self.table_widget.insertRow(row_number) # Insert row
+        #     self.table_widget.setItem(row_number, 0, QTableWidgetItem(str("Wanderson"))) # Add name
+        #     self.table_widget.setItem(row_number, 1, QTableWidgetItem(str("vfx_on_fire_" + str(x)))) # Add nick
+        #     self.pass_text = QTableWidgetItem()
+        #     self.pass_text.setTextAlignment(Qt.AlignCenter)
+        #     self.pass_text.setText("12345" + str(x))
+        #     self.table_widget.setItem(row_number, 2, self.pass_text) # Add pass
+        #     self.table_widget.setRowHeight(row_number, 22)
 
 
 
@@ -597,6 +594,17 @@ class SetupMainWindow:
             for keyName in keysList:
                 dataTemp = dict(dataTemp[keyName])
             print(dataTemp["options"])
+
+            # for row in range(0,self.table_widget.rowCount()):
+            #     self.table_widget.removeRow(row)
+            self.table_widget.setRowCount(0)
+            for property_list_index in range(len(dataTemp["options"])):
+                row_number = self.table_widget.rowCount()
+                self.table_widget.insertRow(row_number)
+                for header, value in dataTemp["options"][property_list_index].items():                                       
+
+                    column_number = self.table_header_hash[header]
+                    self.table_widget.setItem(row_number, column_number, QTableWidgetItem(str(value)))  
 
         
         self.treeWidgetTrial.itemClicked.connect(update_properties_table)
