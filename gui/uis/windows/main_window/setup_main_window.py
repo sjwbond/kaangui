@@ -16,6 +16,7 @@
 
 # IMPORT PACKAGES AND MODULES
 # ///////////////////////////////////////////////////////////////
+
 from gui.widgets.py_table_widget.py_table_widget import PyTableWidget
 from . functions_main_window import *
 import sys
@@ -50,9 +51,13 @@ from . functions_main_window import *
 from gui.core.functions import *
 import json
 from gui.widgets.py_customTree_widget import *
-
+from functools import reduce 
+import operator
+from main import AnotherWindow
 # PY WINDOW
 # ///////////////////////////////////////////////////////////////
+
+
 class SetupMainWindow:
     def __init__(self):
         super().__init__()
@@ -402,68 +407,97 @@ class SetupMainWindow:
             bg_color_pressed = self.themes["app_color"]["pink"]
         )
 
-        # ICON BUTTON 2
-        self.icon_button_2 = PyIconButton(
-            icon_path = Functions.set_svg_icon("icon_add_user.svg"),
-            parent = self,
-            app_parent = self.ui.central_widget,
-            tooltip_text = "BTN with tooltip",
-            width = 40,
-            height = 40,
-            radius = 8,
-            dark_one = self.themes["app_color"]["dark_one"],
-            icon_color = self.themes["app_color"]["icon_color"],
-            icon_color_hover = self.themes["app_color"]["icon_hover"],
-            icon_color_pressed = self.themes["app_color"]["white"],
-            icon_color_active = self.themes["app_color"]["icon_active"],
-            bg_color = self.themes["app_color"]["dark_one"],
-            bg_color_hover = self.themes["app_color"]["dark_three"],
-            bg_color_pressed = self.themes["app_color"]["green"],
-        )
 
-        # ICON BUTTON 3
-        self.icon_button_3 = PyIconButton(
-            icon_path = Functions.set_svg_icon("icon_add_user.svg"),
-            parent = self,
-            app_parent = self.ui.central_widget,
-            tooltip_text = "BTN actived! (is_actived = True)",
-            width = 40,
-            height = 40,
-            radius = 8,
-            dark_one = self.themes["app_color"]["dark_one"],
-            icon_color = self.themes["app_color"]["icon_color"],
-            icon_color_hover = self.themes["app_color"]["icon_hover"],
-            icon_color_pressed = self.themes["app_color"]["white"],
-            icon_color_active = self.themes["app_color"]["icon_active"],
-            bg_color = self.themes["app_color"]["dark_one"],
-            bg_color_hover = self.themes["app_color"]["dark_three"],
-            bg_color_pressed = self.themes["app_color"]["context_color"],
-            is_active = True
+        self.save_table_button = PyPushButton(
+            
+            text="Save Table",
+            radius=8,
+            color=self.themes["app_color"]["text_foreground"],
+            bg_color=self.themes["app_color"]["dark_one"],
+            bg_color_hover=self.themes["app_color"]["dark_three"],
+            bg_color_pressed=self.themes["app_color"]["dark_four"]
         )
+        self.icon = QIcon(Functions.set_svg_icon("table-row-remove-svgrepo-com.svg"))
+        self.save_table_button.setIcon(self.icon)
+        self.save_table_button.setMaximumHeight(40)
 
-        # PUSH BUTTON 1
-        self.push_button_1 = PyPushButton(
-            text = "Button Without Icon",
-            radius  =8,
-            color = self.themes["app_color"]["text_foreground"],
-            bg_color = self.themes["app_color"]["dark_one"],
-            bg_color_hover = self.themes["app_color"]["dark_three"],
-            bg_color_pressed = self.themes["app_color"]["dark_four"]
+        self.delete_table_row_button = PyPushButton(
+            
+            text="Delete Selected Rows",
+            radius=8,
+            color=self.themes["app_color"]["text_foreground"],
+            bg_color=self.themes["app_color"]["dark_one"],
+            bg_color_hover=self.themes["app_color"]["dark_three"],
+            bg_color_pressed=self.themes["app_color"]["dark_four"]
         )
-        self.push_button_1.setMinimumHeight(40)
+        self.icon = QIcon(Functions.set_svg_icon("icon_save.svg"))
+        self.delete_table_row_button.setIcon(self.icon)
+        self.delete_table_row_button.setMaximumHeight(40)
 
-        # PUSH BUTTON 2
-        self.push_button_2 = PyPushButton(
-            text = "Button With Icon",
-            radius = 8,
-            color = self.themes["app_color"]["text_foreground"],
-            bg_color = self.themes["app_color"]["dark_one"],
-            bg_color_hover = self.themes["app_color"]["dark_three"],
-            bg_color_pressed = self.themes["app_color"]["dark_four"]
+        self.add_table_row_button = PyPushButton(
+            
+            text="Add New Row",
+            radius=8,
+            color=self.themes["app_color"]["text_foreground"],
+            bg_color=self.themes["app_color"]["dark_one"],
+            bg_color_hover=self.themes["app_color"]["dark_three"],
+            bg_color_pressed=self.themes["app_color"]["dark_four"]
         )
-        self.icon_2 = QIcon(Functions.set_svg_icon("icon_settings.svg"))
-        self.push_button_2.setMinimumHeight(40)
-        self.push_button_2.setIcon(self.icon_2)
+        self.icon = QIcon(Functions.set_svg_icon("new-line-svgrepo-com.svg"))
+        self.add_table_row_button.setIcon(self.icon)
+        self.add_table_row_button.setMaximumHeight(40)
+
+        self.create_new_model_button = PyPushButton(
+            
+            text="Create New Model",
+            radius=8,
+            color=self.themes["app_color"]["text_foreground"],
+            bg_color=self.themes["app_color"]["dark_one"],
+            bg_color_hover=self.themes["app_color"]["dark_three"],
+            bg_color_pressed=self.themes["app_color"]["dark_four"]
+        )
+        self.icon = QIcon(Functions.set_svg_icon("icon_file.svg"))
+        self.create_new_model_button.setIcon(self.icon)
+        self.create_new_model_button.setMaximumHeight(40)
+
+        self.open_existing_model_button = PyPushButton(
+            
+            text="Open Existing Model",
+            radius=8,
+            color=self.themes["app_color"]["text_foreground"],
+            bg_color=self.themes["app_color"]["dark_one"],
+            bg_color_hover=self.themes["app_color"]["dark_three"],
+            bg_color_pressed=self.themes["app_color"]["dark_four"]
+        )
+        self.icon = QIcon(Functions.set_svg_icon("icon_restore.svg"))
+        self.open_existing_model_button.setIcon(self.icon)
+        self.open_existing_model_button.setMaximumHeight(40)
+
+
+
+        # # PUSH BUTTON 1
+        # self.push_button_1 = PyPushButton(
+        #     text = "Button Without Icon",
+        #     radius  =8,
+        #     color = self.themes["app_color"]["text_foreground"],
+        #     bg_color = self.themes["app_color"]["dark_one"],
+        #     bg_color_hover = self.themes["app_color"]["dark_three"],
+        #     bg_color_pressed = self.themes["app_color"]["dark_four"]
+        # )
+        # self.push_button_1.setMinimumHeight(40)
+
+        # # PUSH BUTTON 2
+        # self.push_button_2 = PyPushButton(
+        #     text = "Button With Icon",
+        #     radius = 8,
+        #     color = self.themes["app_color"]["text_foreground"],
+        #     bg_color = self.themes["app_color"]["dark_one"],
+        #     bg_color_hover = self.themes["app_color"]["dark_three"],
+        #     bg_color_pressed = self.themes["app_color"]["dark_four"]
+        #)
+        # self.icon_2 = QIcon(Functions.set_svg_icon("icon_settings.svg"))
+        # self.push_button_2.setMinimumHeight(40)
+        # self.push_button_2.setIcon(self.icon_2)
 
         # PY LINE EDIT
         self.line_edit = PyLineEdit(
@@ -580,6 +614,7 @@ class SetupMainWindow:
         self.treeWidgetTrial = QTreeWidget()
         fill_widget(self.treeWidgetTrial, data)
 
+        self.currentlySelectedModelObject =[] #To keep curretly selected object branch
 
         def update_properties_table():
             keysList = []
@@ -590,6 +625,7 @@ class SetupMainWindow:
                         keysList.append(getSelected[0].parent().text(0))
                         getSelected[0] = getSelected[0].parent()
             keysList.reverse()
+            self.currentlySelectedModelObject = keysList.copy()
             dataTemp = data
             for keyName in keysList:
                 dataTemp = dict(dataTemp[keyName])
@@ -606,69 +642,50 @@ class SetupMainWindow:
                     column_number = self.table_header_hash[header]
                     self.table_widget.setItem(row_number, column_number, QTableWidgetItem(str(value)))  
 
-        
+        def getFromDict(dataDict, mapList):
+            return reduce(operator.getitem, mapList, dataDict)
+
+        def setInDict(dataDict, mapList, value):
+            getFromDict(dataDict, mapList[:-1])[mapList[-1]] = value
+
+        def save_properties_table():
+
+            setInDict(data,self.currentlySelectedModelObject+["options"],[])
+
+            listofPropertiesToAppend = []
+            for row in range(self.table_widget.rowCount()):
+                tempDict = {}
+                for column in range(self.table_widget.columnCount()):
+                    tempDict[self.table_widget.horizontalHeaderItem(column).text()]=self.table_widget.item(row, column).text()
+                listofPropertiesToAppend.append(tempDict)    
+            setInDict(data,self.currentlySelectedModelObject+["options"],listofPropertiesToAppend)
+
+
         self.treeWidgetTrial.itemClicked.connect(update_properties_table)
+        self.save_table_button.clicked.connect(save_properties_table)
 
-        # def make_child(item, values):
-        #     if isinstance(values, dict):
-        #         for k, v in values.items():
-        #             if not isinstance(v, (dict, list)):
-        #                 parent = QTreeWidgetItem(item)
-        #                 child_item = CustomTreeItem(item, [str(k), str(v)])
-        #                 child_item.setFlags(parent.flags() | Qt.ItemIsEditable)
-        #                 item.addChild(child_item)
+        def delete_seleted_rows():
+            indexes = self.table_widget.selectionModel().selectedRows()
+            for index in sorted(indexes):
+                self.table_widget.removeRow(index.row()) 
 
-        #             elif isinstance(v, dict):
-        #                 child_item = CustomTreeItem(item, k)
-        #                 parent = QTreeWidgetItem(item)
-        #                 child_item.setFlags(parent.flags() | Qt.ItemIsEditable)
-        #                 item.addChild(child_item)
-        #                 make_child(child_item, v)
+        self.delete_table_row_button.clicked.connect(delete_seleted_rows)
 
-        #     if isinstance(values, list):
-        #         for v in values:
-
-        #             if isinstance(v, dict):
-        #                 for k_, v_ in v.items():
-        #                     if not isinstance(v_, (dict, list)):
-        #                         parent = QTreeWidgetItem(item)
-
-        #                         child_item = QTreeWidgetItem([str(k_), str(v_)])
-        #                         child_item.setFlags(parent.flags() | Qt.ItemIsEditable)
-
-        #                         item.addChild(child_item)
-
-        #                     elif isinstance(v_, dict):
-        #                         child_item = CustomTreeItem(item, str(k_))
-        #                         parent = QTreeWidgetItem(item)
-
-        #                         child_item.setFlags(
-        #                             parent.flags() | Qt.ItemIsTristate | Qt.ItemIsEditable
-        #                         )
-
-        #                         item.addChild(child_item)
-        #                         make_child(child_item, v_)
-
-        #                     elif isinstance(v_, list) and k_ == "Properties":
-        #                         child_item = CustomTreeItem(item, str(k_))
-
-        #                         dict_main = {k__: [x[k__] for x in v_] for k__ in v_[0]}
-        #                         df = pd.DataFrame.from_dict(dict_main)
-
-        #                         CustomTreeItem(child_item, name="", col=True, table=df)
+        def add_new_rows():
+            rowPosition = self.table_widget.rowCount()
+            self.table_widget.insertRow(rowPosition)         
 
 
+        self.add_table_row_button.clicked.connect(add_new_rows)
 
-        # for key, values in data.items():
-        #     # item = CustomTreeItem(self.treeWidget, name)
-        #     item = CustomTreeItem(self.treeWidgetTrial, key)
+        def create_new_model():
+            bok= AnotherWindow()
+            
+            bok.show()
 
-        #     if isinstance(values, (dict, list)):
-        #         make_child(item, values)
+        self.create_new_model_button.clicked.connect(create_new_model)
 
-        # ## Set Columns Width to match content:
-        # for column in range(self.treeWidgetTrial.columnCount()):
-        #     self.treeWidgetTrial.resizeColumnToContents(column)
+            
 
         # ADD WIDGETS
         # self.ui.load_pages.row_1_layout.addWidget(self.circular_progress_1)
@@ -679,15 +696,16 @@ class SetupMainWindow:
         # self.ui.load_pages.row_2_layout.addWidget(self.vertical_slider_3)
         # self.ui.load_pages.row_2_layout.addWidget(self.vertical_slider_4)
         self.ui.load_pages.row_3_layout.addWidget(self.icon_button_1)
-        self.ui.load_pages.row_3_layout.addWidget(self.icon_button_2)
-        self.ui.load_pages.row_3_layout.addWidget(self.icon_button_3)
-        self.ui.load_pages.row_3_layout.addWidget(self.push_button_1)
-        self.ui.load_pages.row_3_layout.addWidget(self.push_button_2)
+        self.ui.load_pages.table_button_layout.addWidget(self.add_table_row_button)
+        self.ui.load_pages.table_button_layout.addWidget(self.delete_table_row_button)
+        self.ui.load_pages.table_button_layout.addWidget(self.save_table_button)
+        self.ui.load_pages.row_3_layout.addWidget(self.create_new_model_button)
+        self.ui.load_pages.row_3_layout.addWidget(self.open_existing_model_button)
         self.ui.load_pages.row_3_layout.addWidget(self.toggle_button)
         self.ui.load_pages.row_4_layout.addWidget(self.line_edit)
         self.ui.load_pages.row_5_layout.addWidget(self.treeWidgetTrial)
-        self.ui.load_pages.row_6_layout.addWidget(self.table_widget)
-
+        self.ui.load_pages.table_layout.addWidget(self.table_widget)
+ 
         # RIGHT COLUMN
         # ///////////////////////////////////////////////////////////////
 

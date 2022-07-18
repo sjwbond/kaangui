@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_pagesGVYONO.ui'
+## Form generated from reading UI file 'main_pagesuBSlRl.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -15,7 +15,7 @@ class Ui_MainPages(object):
     def setupUi(self, MainPages):
         if not MainPages.objectName():
             MainPages.setObjectName(u"MainPages")
-        MainPages.resize(925, 662)
+        MainPages.resize(860, 600)
         self.main_pages_layout = QVBoxLayout(MainPages)
         self.main_pages_layout.setSpacing(0)
         self.main_pages_layout.setObjectName(u"main_pages_layout")
@@ -77,7 +77,7 @@ class Ui_MainPages(object):
         self.scroll_area.setWidgetResizable(True)
         self.contents = QWidget()
         self.contents.setObjectName(u"contents")
-        self.contents.setGeometry(QRect(0, 0, 905, 642))
+        self.contents.setGeometry(QRect(0, 0, 840, 580))
         self.contents.setStyleSheet(u"background: transparent;")
         self.verticalLayout = QVBoxLayout(self.contents)
         self.verticalLayout.setSpacing(15)
@@ -126,8 +126,18 @@ class Ui_MainPages(object):
 
         self.verticalLayout.addLayout(self.row_5_layout)
 
-        self.row_6_layout = QVBoxLayout()
+        self.row_6_layout = QHBoxLayout()
         self.row_6_layout.setObjectName(u"row_6_layout")
+        self.table_button_layout = QVBoxLayout()
+        self.table_button_layout.setObjectName(u"table_button_layout")
+
+        self.row_6_layout.addLayout(self.table_button_layout)
+
+        self.table_layout = QVBoxLayout()
+        self.table_layout.setObjectName(u"table_layout")
+
+        self.row_6_layout.addLayout(self.table_layout)
+
 
         self.verticalLayout.addLayout(self.row_6_layout)
 
@@ -166,9 +176,9 @@ class Ui_MainPages(object):
     def retranslateUi(self, MainPages):
         MainPages.setWindowTitle(QCoreApplication.translate("MainPages", u"Form", None))
         self.label.setText(QCoreApplication.translate("MainPages", u"Welcome To PyOneDark GUI", None))
-        self.title_label.setText(QCoreApplication.translate("MainPages", u"Custom Widgets Page", None))
-        self.description_label.setText(QCoreApplication.translate("MainPages", u"Here will be all the custom widgets, they will be added over time on this page.\n"
-"I will try to always record a new tutorial when adding a new Widget and updating the project on Patreon before launching on GitHub and GitHub after the public release.", None))
+        self.title_label.setText(QCoreApplication.translate("MainPages", u"Model Objects", None))
+        self.description_label.setText(QCoreApplication.translate("MainPages", u"Here a new  or a previously saved model can be loaded and modified\n"
+"The top tree view displays all the objects of the model. The below table object displays selected object properties in detail", None))
         self.empty_page_label.setText(QCoreApplication.translate("MainPages", u"Empty Page", None))
     # retranslateUi
 

@@ -206,9 +206,24 @@ class MainWindow(QMainWindow):
         # SET DRAG POS WINDOW
         self.dragPos = event.globalPos()
 
+
+
+
 # SETTINGS WHEN TO START
 # Set the initial class and also additional parameters of the "QApplication" class
 # ///////////////////////////////////////////////////////////////
+
+
+class AnotherWindow(QMainWindow):
+    """
+    This "window" is a QWidget. If it has no parent, it
+    will appear as a free-floating window as we want.
+    """
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("Window22222")
+
+
 if __name__ == "__main__":
     # APPLICATION
     # ///////////////////////////////////////////////////////////////
