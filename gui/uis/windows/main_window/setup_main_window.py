@@ -55,6 +55,7 @@ from functools import reduce
 import operator
 from main import AnotherWindow
 from main import ListViewOpenExistingModel
+from functools import partial
 # PY WINDOW
 # ///////////////////////////////////////////////////////////////
 
@@ -772,6 +773,77 @@ class SetupMainWindow:
             print(self.rowsToCopy)
 
         self.copy_table_row_button.clicked.connect(copy_seleted_rows)
+
+
+        def openMenu(position):
+            treewidgetatfocus = QApplication.focusWidget()
+            selectedType = ""
+            items = self.treeWidgetTrial.selectedItems()
+    
+            for i in range(items[0].childCount()):
+                if items[0].child(i).text(0) == "Properties":
+                    selectedType = "Model Object"
+                    break
+                else:
+                    selectedType = "Folder"
+
+
+            menu = QMenu()
+
+            if selectedType == "Folder":
+                qmenunewfolder = QAction("New Folder")
+                menu.addAction(qmenunewfolder)
+                qmenudeletefolder = QAction("Delete Folder and its content", self)
+                menu.addAction(qmenudeletefolder)
+                qmenurenamefolder = QAction("Rename Folder", self)
+                menu.addAction(qmenurenamefolder)
+                qmenucopyfolder = QAction("Copy Folder and its content", self)
+                menu.addAction(qmenucopyfolder)
+                qmenupastefolder = QAction("Paste Folder and its content", self)
+                menu.addAction(qmenupastefolder)
+
+                if qmenunewfolder:
+                    qmenunewfolder.triggered.connect(partial(createNewFolder))
+                if qmenudeletefolder:
+                    qmenudeletefolder.triggered.connect(partial(deleteFolder))                
+                if qmenurenamefolder:
+                    qmenurenamefolder.triggered.connect(partial(renameFolder))
+                if qmenucopyfolder:
+                    qmenucopyfolder.triggered.connect(partial(copyFolder))
+                if qmenupastefolder:
+                    qmenupastefolder.triggered.connect(partial(pasteFolder))
+
+            menu.exec_(treewidgetatfocus.viewport().mapToGlobal(position))
+
+        def createNewFolder():
+            keysList = []
+            getSelected = self.treeWidgetTrial.selectedItems()
+            if getSelected:
+                while not getSelected[0].parent() == None:
+                    keysList.append(getSelected[0].parent().text(0))
+                    getSelected[0] = getSelected[0].parent()
+            keysList.reverse()
+
+            text, okPressed = QInputDialog.getText(self, "New folder name","New folder name:", text="New Folder")
+            if okPressed and text != '':
+
+                setInDict(data,keysList+[text] , "")
+                fill_widget(self.treeWidgetTrial, data)
+
+        def deleteFolder():
+            print("delete folder")
+        def renameFolder():
+            items = self.treeWidgetTrial.selectedItems()
+            text, okPressed = QInputDialog.getText(self, "New name","New name:", text=items[0].text(0))
+            if okPressed and text != '':
+                items[0].setText(0, text)
+        def copyFolder():
+            print("copy folder")
+        def pasteFolder():
+            print("paste folder")
+
+        self.treeWidgetTrial.setContextMenuPolicy(Qt.CustomContextMenu)
+        self.treeWidgetTrial.customContextMenuRequested.connect(openMenu)
 
 
 
