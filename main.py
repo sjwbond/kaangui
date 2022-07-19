@@ -42,6 +42,10 @@ from gui.widgets import *
 os.environ["QT_FONT_DPI"] = "96"
 # IF IS 4K MONITOR ENABLE 'os.environ["QT_SCALE_FACTOR"] = "2"'
 
+# IMPORT KAAN OPEN EXISTING MODEL DIALOG BOX
+# ///////////////////////////////////////////////////////////////
+from gui.uis.windows.open_existing_model.openexistingmodel2 import *
+
 # MAIN WINDOW
 # ///////////////////////////////////////////////////////////////
 class MainWindow(QMainWindow):
@@ -213,8 +217,14 @@ class MainWindow(QMainWindow):
 # Set the initial class and also additional parameters of the "QApplication" class
 # ///////////////////////////////////////////////////////////////
 
+class ListViewOpenExistingModel(QDialog, Ui_Dialog_Open_Existing_Model):
+    def __init__(self, parent=None):
+        QDialog.__init__(self,parent)
+        self.setupUi(self)
 
-class AnotherWindow(QMainWindow):
+
+
+class AnotherWindow(QWidget):
     """
     This "window" is a QWidget. If it has no parent, it
     will appear as a free-floating window as we want.
@@ -222,6 +232,15 @@ class AnotherWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Window22222")
+        settings = Settings()
+        self.settings = settings.items
+        themes = Themes()
+        self.themes = themes.items
+        self.setStyleSheet(f'''
+            font: {self.settings["font"]["text_size"]}pt "{self.settings["font"]["family"]}";
+            color: {self.themes["app_color"]["text_foreground"]};
+        ''')
+        
 
 
 if __name__ == "__main__":

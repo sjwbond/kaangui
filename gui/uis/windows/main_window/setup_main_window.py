@@ -54,6 +54,7 @@ from gui.widgets.py_customTree_widget import *
 from functools import reduce 
 import operator
 from main import AnotherWindow
+from main import ListViewOpenExistingModel
 # PY WINDOW
 # ///////////////////////////////////////////////////////////////
 
@@ -447,6 +448,33 @@ class SetupMainWindow:
         self.add_table_row_button.setIcon(self.icon)
         self.add_table_row_button.setMaximumHeight(40)
 
+        self.copy_table_row_button = PyPushButton(
+            
+            text="Copy Selected Rows",
+            radius=8,
+            color=self.themes["app_color"]["text_foreground"],
+            bg_color=self.themes["app_color"]["dark_one"],
+            bg_color_hover=self.themes["app_color"]["dark_three"],
+            bg_color_pressed=self.themes["app_color"]["dark_four"]
+        )
+        self.icon = QIcon(Functions.set_svg_icon("new-line-svgrepo-com.svg"))
+        self.add_table_row_button.setIcon(self.icon)
+        self.add_table_row_button.setMaximumHeight(40)
+
+        self.paste_table_row_button = PyPushButton(
+            
+            text="Paste Copied Rows",
+            radius=8,
+            color=self.themes["app_color"]["text_foreground"],
+            bg_color=self.themes["app_color"]["dark_one"],
+            bg_color_hover=self.themes["app_color"]["dark_three"],
+            bg_color_pressed=self.themes["app_color"]["dark_four"]
+        )
+        self.icon = QIcon(Functions.set_svg_icon("new-line-svgrepo-com.svg"))
+        self.add_table_row_button.setIcon(self.icon)
+        self.add_table_row_button.setMaximumHeight(40)
+
+
         self.create_new_model_button = PyPushButton(
             
             text="Create New Model",
@@ -535,7 +563,7 @@ class SetupMainWindow:
             scroll_bar_btn_color = self.themes["app_color"]["dark_four"],
             context_color = self.themes["app_color"]["context_color"]
         )
-        self.table_widget.setColumnCount(3)
+        self.table_widget.setColumnCount(13)
         self.table_widget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         self.table_widget.setSelectionMode(QAbstractItemView.ExtendedSelection)
         self.table_widget.setSelectionBehavior(QAbstractItemView.SelectRows)
@@ -543,23 +571,73 @@ class SetupMainWindow:
         # Columns / Header
         self.column_1 = QTableWidgetItem()
         self.column_1.setTextAlignment(Qt.AlignCenter)
-        self.column_1.setText("Ad")
+        self.column_1.setText("Parent Object")
 
         self.column_2 = QTableWidgetItem()
         self.column_2.setTextAlignment(Qt.AlignCenter)
-        self.column_2.setText("Soyad")
+        self.column_2.setText("Target Object")
 
         self.column_3 = QTableWidgetItem()
         self.column_3.setTextAlignment(Qt.AlignCenter)
-        self.column_3.setText("Kilo")
+        self.column_3.setText("Property")
 
-        self.table_header_hash = {"Ad":0, "Soyad":1, "Kilo":2}
+        self.column_4 = QTableWidgetItem()
+        self.column_4.setTextAlignment(Qt.AlignCenter)
+        self.column_4.setText("Date_From")
+
+        self.column_5 = QTableWidgetItem()
+        self.column_5.setTextAlignment(Qt.AlignCenter)
+        self.column_5.setText("Date_To")
+
+        self.column_6 = QTableWidgetItem()
+        self.column_6.setTextAlignment(Qt.AlignCenter)
+        self.column_6.setText("Value")
+
+        self.column_7 = QTableWidgetItem()
+        self.column_7.setTextAlignment(Qt.AlignCenter)
+        self.column_7.setText("Variable")
+
+        self.column_8 = QTableWidgetItem()
+        self.column_8.setTextAlignment(Qt.AlignCenter)
+        self.column_8.setText("Variable_Effect")
+
+        self.column_9 = QTableWidgetItem()
+        self.column_9.setTextAlignment(Qt.AlignCenter)
+        self.column_9.setText("Timeslice")
+
+        self.column_10 = QTableWidgetItem()
+        self.column_10.setTextAlignment(Qt.AlignCenter)
+        self.column_10.setText("Timeslice_Index")
+
+        self.column_11 = QTableWidgetItem()
+        self.column_11.setTextAlignment(Qt.AlignCenter)
+        self.column_11.setText("Group_id")
+
+        self.column_12 = QTableWidgetItem()
+        self.column_12.setTextAlignment(Qt.AlignCenter)
+        self.column_12.setText("Priority")
+
+        self.column_13 = QTableWidgetItem()
+        self.column_13.setTextAlignment(Qt.AlignCenter)
+        self.column_13.setText("Scenario")
+
+        self.table_header_hash = {'Parent Object':0, "Target Object":1, "Property":2, "Date_From":3,	"Date_To":4,	"Value":5,	"Variable":6,	"Variable_Effect":7,	"Timeslice":8,	"Timeslice_Index":9,	"Group_id":10,	"Priority":11,	"Scenario":12}
+
 
         # Set column
         self.table_widget.setHorizontalHeaderItem(0, self.column_1)
         self.table_widget.setHorizontalHeaderItem(1, self.column_2)
         self.table_widget.setHorizontalHeaderItem(2, self.column_3)
-
+        self.table_widget.setHorizontalHeaderItem(3, self.column_4)
+        self.table_widget.setHorizontalHeaderItem(4, self.column_5)
+        self.table_widget.setHorizontalHeaderItem(5, self.column_6)
+        self.table_widget.setHorizontalHeaderItem(6, self.column_7)
+        self.table_widget.setHorizontalHeaderItem(7, self.column_8)
+        self.table_widget.setHorizontalHeaderItem(8, self.column_9)
+        self.table_widget.setHorizontalHeaderItem(9, self.column_10)
+        self.table_widget.setHorizontalHeaderItem(10, self.column_11)
+        self.table_widget.setHorizontalHeaderItem(11, self.column_12)
+        self.table_widget.setHorizontalHeaderItem(12, self.column_13)
 
         # for x in range(10):
         #     row_number = self.table_widget.rowCount()
@@ -574,11 +652,11 @@ class SetupMainWindow:
 
 
 
-        f = open(r"C:\Users\ui921788\Desktop\example_2.json")
+        f = open(r"C:\Users\ui921788\Desktop\Git Folder\NewGui\datasmall.json")
         data = json.load(f)
 
         def fill_item(item, value):
-            item.setExpanded(True)
+            item.setExpanded(False)
             if type(value) is dict:
                 for key, val in sorted(value.items()):
                     child = QTreeWidgetItem()
@@ -620,7 +698,7 @@ class SetupMainWindow:
             keysList = []
             getSelected = self.treeWidgetTrial.selectedItems()
             if getSelected:
-                if getSelected[0].text(0) == "options":
+                if getSelected[0].text(0) == "Properties":
                     while not getSelected[0].parent() == None:
                         keysList.append(getSelected[0].parent().text(0))
                         getSelected[0] = getSelected[0].parent()
@@ -629,15 +707,15 @@ class SetupMainWindow:
             dataTemp = data
             for keyName in keysList:
                 dataTemp = dict(dataTemp[keyName])
-            print(dataTemp["options"])
+            #print(dataTemp["Properties"])
 
             # for row in range(0,self.table_widget.rowCount()):
             #     self.table_widget.removeRow(row)
             self.table_widget.setRowCount(0)
-            for property_list_index in range(len(dataTemp["options"])):
+            for property_list_index in range(len(dataTemp["Properties"])):
                 row_number = self.table_widget.rowCount()
                 self.table_widget.insertRow(row_number)
-                for header, value in dataTemp["options"][property_list_index].items():                                       
+                for header, value in dataTemp["Properties"][property_list_index].items():                                       
 
                     column_number = self.table_header_hash[header]
                     self.table_widget.setItem(row_number, column_number, QTableWidgetItem(str(value)))  
@@ -650,15 +728,18 @@ class SetupMainWindow:
 
         def save_properties_table():
 
-            setInDict(data,self.currentlySelectedModelObject+["options"],[])
+            setInDict(data,self.currentlySelectedModelObject+["Properties"],[])
 
             listofPropertiesToAppend = []
             for row in range(self.table_widget.rowCount()):
                 tempDict = {}
                 for column in range(self.table_widget.columnCount()):
-                    tempDict[self.table_widget.horizontalHeaderItem(column).text()]=self.table_widget.item(row, column).text()
+                    try:
+                        tempDict[self.table_widget.horizontalHeaderItem(column).text()]=self.table_widget.item(row, column).text()
+                    except AttributeError:
+                        tempDict[self.table_widget.horizontalHeaderItem(column).text()]=""
                 listofPropertiesToAppend.append(tempDict)    
-            setInDict(data,self.currentlySelectedModelObject+["options"],listofPropertiesToAppend)
+            setInDict(data,self.currentlySelectedModelObject+["Properties"],listofPropertiesToAppend)
 
 
         self.treeWidgetTrial.itemClicked.connect(update_properties_table)
@@ -673,19 +754,78 @@ class SetupMainWindow:
 
         def add_new_rows():
             rowPosition = self.table_widget.rowCount()
-            self.table_widget.insertRow(rowPosition)         
-
+            self.table_widget.insertRow(rowPosition)
+            for column in range(self.table_widget.columnCount()):        
+                self.table_widget.setItem(rowPosition, column, QTableWidgetItem(""))  
 
         self.add_table_row_button.clicked.connect(add_new_rows)
 
-        def create_new_model():
-            bok= AnotherWindow()
-            
-            bok.show()
+        self.rowsToCopy = []
+        def copy_seleted_rows():
+            self.rowsToCopy = []
+            indexes = self.table_widget.selectionModel().selectedRows()
+            for index in sorted(indexes):
+                rowToCopyDict = {}
+                for column in range(self.table_widget.columnCount()):
+                    rowToCopyDict[self.table_widget.horizontalHeaderItem(column).text()] = self.table_widget.item(index.row(), column).text()
+                self.rowsToCopy.append(rowToCopyDict.copy())
+            print(self.rowsToCopy)
 
-        self.create_new_model_button.clicked.connect(create_new_model)
+        self.copy_table_row_button.clicked.connect(copy_seleted_rows)
 
+
+
+        def paste_copied_rows():
+            rowPosition = self.table_widget.rowCount()
+            for i in range(len(self.rowsToCopy)):
+                self.table_widget.insertRow(rowPosition)
+                
+                rowToPasteDict = self.rowsToCopy[i]
+                for column in range(self.table_widget.columnCount()):
+                    self.table_widget.setItem(rowPosition, column, QTableWidgetItem(rowToPasteDict[self.table_widget.horizontalHeaderItem(column).text()]))  
+                rowPosition = self.table_widget.rowCount()
             
+
+        self.paste_table_row_button.clicked.connect(paste_copied_rows)
+
+
+
+
+        def pop():
+            self.bok.show()
+            
+          
+        self.bok = ListViewOpenExistingModel()
+        self.create_new_model_button.clicked.connect(pop)
+
+        def openexistingmodel(self):
+    
+            self.ListViewOpenExistingModelobject = ListViewOpenExistingModel()
+
+            db = globalvars.client['deneme']
+            items=[]
+            for collections in db[self.collectionname].find({},{"_id":0,"Model Name":1}):
+                item = collections["Model Name"]
+                if item not in items:
+                    items.append(item)
+                    item = QListWidgetItem(item)
+                    self.ListViewOpenExistingModelobject.listWidget.addItem(item)
+
+            self.ListViewOpenExistingModelobject.show()
+            self.ListViewOpenExistingModelobject.listWidget.itemClicked.connect(lambda: self.modeltimestamplistupdate(self.ListViewOpenExistingModelobject.listWidget.selectedItems()[0].text()))
+            self.ListViewOpenExistingModelobject.listWidget_2.itemClicked.connect(lambda: self.modelderivedfromlabelupdate(self.ListViewOpenExistingModelobject.listWidget.selectedItems()[0].text(),self.ListViewOpenExistingModelobject.listWidget_2.selectedItems()[0].text()))
+
+            if self.ListViewOpenExistingModelobject.exec_():
+                self.treeWidget_system.clear()
+                self.treeWidget_simulation.clear()
+                globalvars.currentModelName = self.ListViewOpenExistingModelobject.listWidget.selectedItems()[0].text()
+                globalvars.currentModelTimeStamp = self.ListViewOpenExistingModelobject.listWidget_2.selectedItems()[0].text()
+                self.derivedmodelname = self.ListViewOpenExistingModelobject.listWidget.selectedItems()[0].text()
+                self.derivedmodelTimeStamp = self.ListViewOpenExistingModelobject.listWidget_2.selectedItems()[0].text()
+                self.readfromDB(globalvars.currentModelName, globalvars.currentModelTimeStamp)
+                self.addItems2(self.treeWidget_system.invisibleRootItem())
+                self.addItems1(self.treeWidget_simulation.invisibleRootItem())
+            globalvars.client.close()
 
         # ADD WIDGETS
         # self.ui.load_pages.row_1_layout.addWidget(self.circular_progress_1)
@@ -699,6 +839,8 @@ class SetupMainWindow:
         self.ui.load_pages.table_button_layout.addWidget(self.add_table_row_button)
         self.ui.load_pages.table_button_layout.addWidget(self.delete_table_row_button)
         self.ui.load_pages.table_button_layout.addWidget(self.save_table_button)
+        self.ui.load_pages.table_button_layout.addWidget(self.copy_table_row_button)
+        self.ui.load_pages.table_button_layout.addWidget(self.paste_table_row_button)
         self.ui.load_pages.row_3_layout.addWidget(self.create_new_model_button)
         self.ui.load_pages.row_3_layout.addWidget(self.open_existing_model_button)
         self.ui.load_pages.row_3_layout.addWidget(self.toggle_button)
