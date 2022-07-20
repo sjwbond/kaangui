@@ -815,32 +815,60 @@ class SetupMainWindow:
 
             menu.exec_(treewidgetatfocus.viewport().mapToGlobal(position))
 
-        def createNewFolder():
+        def getNodeParentList(getSelected):
             keysList = []
-            getSelected = self.treeWidgetTrial.selectedItems()
             if getSelected:
                 while not getSelected[0].parent() == None:
                     keysList.append(getSelected[0].parent().text(0))
                     getSelected[0] = getSelected[0].parent()
             keysList.reverse()
+            return keysList
+
+        def createNewFolder():
 
             text, okPressed = QInputDialog.getText(self, "New folder name","New folder name:", text="New Folder")
             if okPressed and text != '':
-
+                getSelected = self.treeWidgetTrial.selectedItems()
+                keysList=getNodeParentList(getSelected)
                 setInDict(data,keysList+[text] , "")
                 fill_widget(self.treeWidgetTrial, data)
 
         def deleteFolder():
-            print("delete folder")
+            qm = QMessageBox
+            ret = qm.question(self,'', "Are you sure to delete folder and its content?", qm.Yes | qm.No)
+            if ret ==  qm.Yes:
+                getSelected = self.treeWidgetTrial.selectedItems()
+                deletedFolderName = getSelected[0].text(0)
+                keysList=getNodeParentList(getSelected)
+
+                getFromDict(data,keysList).pop(deletedFolderName, None)
+
+                fill_widget(self.treeWidgetTrial, data)
+            else:
+                pass
+
         def renameFolder():
             items = self.treeWidgetTrial.selectedItems()
             text, okPressed = QInputDialog.getText(self, "New name","New name:", text=items[0].text(0))
             if okPressed and text != '':
                 items[0].setText(0, text)
+        
+        self.dictFolderToCopy = {}
+        self.copiedFolderName = ""
         def copyFolder():
-            print("copy folder")
+            getSelected = self.treeWidgetTrial.selectedItems()
+            self.copiedFolderName = getSelected[0].text(0)
+            keysList=getNodeParentList(getSelected) + [self.copiedFolderName]
+            self.dictFolderToCopy = getFromDict(data,keysList).copy()
+            print(self.dictFolderToCopy)
+
         def pasteFolder():
-            print("paste folder")
+            getSelected = self.treeWidgetTrial.selectedItems()
+            pasteUnderFolderName = getSelected[0].text(0)
+            self.copiedFolderName = "copy of " + self.copiedFolderName
+            keysList=getNodeParentList(getSelected) + [pasteUnderFolderName] + [self.copiedFolderName]
+            setInDict(data, keysList, self.dictFolderToCopy)
+            fill_widget(self.treeWidgetTrial, data)
 
         self.treeWidgetTrial.setContextMenuPolicy(Qt.CustomContextMenu)
         self.treeWidgetTrial.customContextMenuRequested.connect(openMenu)
