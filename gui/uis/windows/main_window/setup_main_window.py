@@ -56,6 +56,7 @@ import operator
 from main import AnotherWindow
 from main import ListViewOpenExistingModel
 from functools import partial
+import copy
 # PY WINDOW
 # ///////////////////////////////////////////////////////////////
 
@@ -704,7 +705,7 @@ class SetupMainWindow:
                         keysList.append(getSelected[0].parent().text(0))
                         getSelected[0] = getSelected[0].parent()
             keysList.reverse()
-            self.currentlySelectedModelObject = keysList.copy()
+            self.currentlySelectedModelObject = copy.deepcopy(keysList)
             dataTemp = data
             for keyName in keysList:
                 dataTemp = dict(dataTemp[keyName])
@@ -722,7 +723,10 @@ class SetupMainWindow:
                     self.table_widget.setItem(row_number, column_number, QTableWidgetItem(str(value)))  
 
         def getFromDict(dataDict, mapList):
-            return reduce(operator.getitem, mapList, dataDict)
+            try:
+                return reduce(operator.getitem, mapList, dataDict)
+            except KeyError:
+                return False
 
         def setInDict(dataDict, mapList, value):
             getFromDict(dataDict, mapList[:-1])[mapList[-1]] = value
@@ -741,7 +745,7 @@ class SetupMainWindow:
                         tempDict[self.table_widget.horizontalHeaderItem(column).text()]=""
                 listofPropertiesToAppend.append(tempDict)    
             setInDict(data,self.currentlySelectedModelObject+["Properties"],listofPropertiesToAppend)
-
+            fill_widget(self.treeWidgetTrial, data)
 
         self.treeWidgetTrial.itemClicked.connect(update_properties_table)
         self.save_table_button.clicked.connect(save_properties_table)
@@ -769,8 +773,8 @@ class SetupMainWindow:
                 rowToCopyDict = {}
                 for column in range(self.table_widget.columnCount()):
                     rowToCopyDict[self.table_widget.horizontalHeaderItem(column).text()] = self.table_widget.item(index.row(), column).text()
-                self.rowsToCopy.append(rowToCopyDict.copy())
-            print(self.rowsToCopy)
+                self.rowsToCopy.append(copy.deepcopy(rowToCopyDict))
+            
 
         self.copy_table_row_button.clicked.connect(copy_seleted_rows)
 
@@ -859,16 +863,22 @@ class SetupMainWindow:
             getSelected = self.treeWidgetTrial.selectedItems()
             self.copiedFolderName = getSelected[0].text(0)
             keysList=getNodeParentList(getSelected) + [self.copiedFolderName]
-            self.dictFolderToCopy = getFromDict(data,keysList).copy()
-            print(self.dictFolderToCopy)
+            a = getFromDict(data,keysList)
+            self.dictFolderToCopy = copy.deepcopy(a)
+
 
         def pasteFolder():
             getSelected = self.treeWidgetTrial.selectedItems()
             pasteUnderFolderName = getSelected[0].text(0)
-            self.copiedFolderName = "copy of " + self.copiedFolderName
-            keysList=getNodeParentList(getSelected) + [pasteUnderFolderName] + [self.copiedFolderName]
-            setInDict(data, keysList, self.dictFolderToCopy)
+            copiedFolderName = "copy of " + self.copiedFolderName
+            keysList=getNodeParentList(getSelected) + [pasteUnderFolderName] + [copiedFolderName]
+            if getFromDict(data,keysList) == False:
+                pass
+            else:
+                keysList[-1] = keysList[-1] + "var"
+            setInDict(data, keysList, copy.deepcopy(self.dictFolderToCopy))
             fill_widget(self.treeWidgetTrial, data)
+
 
         self.treeWidgetTrial.setContextMenuPolicy(Qt.CustomContextMenu)
         self.treeWidgetTrial.customContextMenuRequested.connect(openMenu)
