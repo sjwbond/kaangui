@@ -726,7 +726,7 @@ class SetupMainWindow:
             try:
                 return reduce(operator.getitem, mapList, dataDict)
             except KeyError:
-                return False
+                return None
 
         def setInDict(dataDict, mapList, value):
             getFromDict(dataDict, mapList[:-1])[mapList[-1]] = value
@@ -872,10 +872,17 @@ class SetupMainWindow:
             pasteUnderFolderName = getSelected[0].text(0)
             copiedFolderName = "copy of " + self.copiedFolderName
             keysList=getNodeParentList(getSelected) + [pasteUnderFolderName] + [copiedFolderName]
-            if getFromDict(data,keysList) == False:
-                pass
-            else:
-                keysList[-1] = keysList[-1] + "var"
+            # if getFromDict(data,keysList) == False:
+            #     pass
+            # else:
+            #     keysList[-1] = keysList[-1] + "var"
+            counter = 0
+            keysListCopy = keysList.copy()
+            while getFromDict(data,keysList) is not None:
+                counter+=1
+                
+                keysList[-1] = keysListCopy[-1] + " (" + str(counter) + ")"
+
             setInDict(data, keysList, copy.deepcopy(self.dictFolderToCopy))
             fill_widget(self.treeWidgetTrial, data)
 
