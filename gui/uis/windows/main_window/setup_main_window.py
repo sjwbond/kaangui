@@ -7,6 +7,7 @@
 ###
 
 from gui.widgets.py_table_widget.py_table_widget import PyTableWidget
+from gui.widgets.py_tree_view.py_tree_view import PyTreeView
 from . functions_main_window import *
 import sys
 import os
@@ -631,8 +632,8 @@ class SetupMainWindow:
         self.table_widget.setHorizontalHeaderItem(12, self.column_13)
 
 
-
-
+        self.expandedSet = set()
+        
 
         
         def add_node_to_tree(self, model_node, tree_node):
@@ -647,14 +648,17 @@ class SetupMainWindow:
                         node.setIcon(QIcon(Functions.set_svg_icon("icon_folder.svg")))
                         node.setData("folder", Qt.UserRole)                     
                         tree_node.appendRow(node)
+
                     if not model_node[node_key]: #this is to check if the folder is newly created and hence empty
                         node.setIcon(QIcon(Functions.set_svg_icon("icon_folder.svg")))
                         node.setData("folder", Qt.UserRole)              
-                        tree_node.appendRow(node)                        
+                        tree_node.appendRow(node)
+                     
                 else:
                     node.setIcon(QIcon(Functions.set_svg_icon("icon_file.svg")))
                     node.setData(model_node[node_key], Qt.UserRole) 
                     tree_node.appendRow(node)
+                
 
 
         @Slot(str)
@@ -667,6 +671,7 @@ class SetupMainWindow:
 
 
         self.tree = QTreeView()
+
         self.tree.setSortingEnabled(True)
         self.tree.sortByColumn(0, Qt.AscendingOrder)
         self.filterEdit = QLineEdit(self)
@@ -687,7 +692,7 @@ class SetupMainWindow:
             self.system_inputs = self.data["SystemInputs"]
 
             add_node_to_tree(self, self.system_inputs, root_node)
-
+                
 
         self.currentlySelectedModelObject =[] #To keep curretly selected object branch
 
@@ -959,7 +964,12 @@ class SetupMainWindow:
             keysList=getNodeParentList(getSelected) + [self.copiedObjectName]
             a = getFromDict(self.system_inputs,keysList)
             self.dictObjectToCopy = copy.deepcopy(a)
-            print(self.dictObjectToCopy)
+            print(self.proxyModel.persistentIndexList())
+
+        
+        self.tree.short_copy_object = QShortcut(QKeySequence("Ctrl+C"),self)
+        self.tree.short_copy_object.activated.connect(copyObject)
+
 
         def pasteObject():
             copiedObjectName = "copy of " + self.copiedObjectName
@@ -982,8 +992,80 @@ class SetupMainWindow:
                 keysList[-1] = keysListCopy[-1] + " (" + str(counter) + ")"
 
             addInDict(self.system_inputs, keysList[:-1], keysList[-1], copy.deepcopy(self.dictObjectToCopy))
-            print(self.system_inputs)
+        
+            iterate_tree_items_via_model_depth_first(self.tree)
             reset_tree()
+            expand_iterate_tree_items_via_model_depth_first(self.tree)
+
+        self.tree.short_copy_object = QShortcut(QKeySequence("Ctrl+V"),self)
+        self.tree.short_copy_object.activated.connect(pasteObject)
+
+
+
+        
+
+        def iterate_tree_items_via_model_depth_first(tree_obj):
+            model = tree_obj.model()
+            absolute_row = [-1]
+            for row in range(model.rowCount()):
+                for column in range(model.columnCount()):
+                    item = model.index(row, column)
+                    if column == 0:
+                        absolute_row[0] += 1
+                if self.tree.isExpanded(item):
+                    self.expandedSet.add(item.data(0))    
+                    
+                _iterate_items_via_model_depth_first(model.index(row, 0), model, absolute_row)
+
+
+        def _iterate_items_via_model_depth_first(parent_item, model, absolute_row):
+            for row in range(model.rowCount(parent_item)):
+                for column in range(model.columnCount(parent_item)):
+                    item = model.index(row, column, parent_item)
+                    if column == 0:
+                        absolute_row[0] += 1
+                if self.tree.isExpanded(item):
+                    self.expandedSet.add(item.data(0))  
+
+                item_0 = model.index(row, column, parent_item)
+                if model.hasChildren(item_0):
+                    _iterate_items_via_model_depth_first(item_0, model, absolute_row)
+
+
+
+        def expand_iterate_tree_items_via_model_depth_first(tree_obj):
+            model = tree_obj.model()
+            absolute_row = [-1]
+            for row in range(model.rowCount()):
+                for column in range(model.columnCount()):
+                    item = model.index(row, column)
+                    if column == 0:
+                        absolute_row[0] += 1
+                if item.data(0) in self.expandedSet:
+                    self.tree.expand(item)    
+                    
+                _expand_iterate_items_via_model_depth_first(model.index(row, 0), model, absolute_row)
+
+
+        def _expand_iterate_items_via_model_depth_first(parent_item, model, absolute_row):
+            for row in range(model.rowCount(parent_item)):
+                for column in range(model.columnCount(parent_item)):
+                    item = model.index(row, column, parent_item)
+                    if column == 0:
+                        absolute_row[0] += 1
+                if item.data(0) in self.expandedSet:
+                    self.tree.expand(item)  
+
+                item_0 = model.index(row, column, parent_item)
+                if model.hasChildren(item_0):
+                    _expand_iterate_items_via_model_depth_first(item_0, model, absolute_row)
+
+
+
+
+
+
+
 
 # Functions for folder manipulation
 # ///////////////////////////////////////////////////////////////
