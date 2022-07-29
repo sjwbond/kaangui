@@ -1,0 +1,153 @@
+{
+"SystemInputs": {
+        "Currency": {
+			"Level 1": {
+				"Trial Folder" : {},
+				
+				"EUR": {
+					"Model Id": "Model 1",
+					"Object_Name": "EUR",
+					"Object_Type": "Currency",
+					"Parent Object": [],
+					"Properties": [
+						{
+							"Date_From": "2000-01-01",
+							"Date_To": "2100-01-01",
+							"Group_id": "",
+							"Parent Object": "EUR",
+							"Priority": "",
+							"Property": "fx_rate",
+							"Scenario": "\n",
+							"Target Object": "USD",
+							"Timeslice": "",
+							"Timeslice_Index": "",
+							"Value": "0.769230769",
+							"Variable": "",
+							"Variable_Effect": ""
+						},
+						
+						{
+							"Date_From": "2000-01-01",
+							"Date_To": "2100-01-01",
+							"Group_id": "",
+							"Parent Object": "EUR",
+							"Priority": "",
+							"Property": "fx_rate",
+							"Scenario": "\n",
+							"Target Object": "USD",
+							"Timeslice": "",
+							"Timeslice_Index": "",
+							"Value": "0.769230769",
+							"Variable": "",
+							"Variable_Effect": ""
+						}
+					]
+				},
+			
+				"TRY": {
+					"Model Id": "Model 1",
+					"Object_Name": "TRY",
+					"Object_Type": "Currency",
+					"Parent Object": [],
+					"Properties": [
+						{
+							"Date_From": "2000-01-01",
+							"Date_To": "2100-01-01",
+							"Group_id": "",
+							"Parent Object": "TRY",
+							"Priority": "",
+							"Property": "fx_rate",
+							"Scenario": "\n",
+							"Target Object": "USD",
+							"Timeslice": "",
+							"Timeslice_Index": "",
+							"Value": "0.769230769",
+							"Variable": "",
+							"Variable_Effect": ""
+						},
+						{
+							"Date_From": "2000-01-01",
+							"Date_To": "2100-01-01",
+							"Group_id": "",
+							"Parent Object": "TRY",
+							"Priority": "",
+							"Property": "fx_rate",
+							"Scenario": "\n",
+							"Target Object": "EUR",
+							"Timeslice": "",
+							"Timeslice_Index": "",
+							"Value": "0.85",
+							"Variable": "",
+							"Variable_Effect": ""
+						}
+					]
+				},
+			
+			
+				"Level 2": {
+					
+					"JPY": {
+						"Model Id": "Model 1",
+						"Object_Name": "JPY",
+						"Object_Type": "Currency",
+						"Parent Object": [],
+						"Properties": [
+							{
+								"Date_From": "2000-01-01",
+								"Date_To": "2100-01-01",
+								"Group_id": "",
+								"Parent Object": "JPY",
+								"Priority": "",
+								"Property": "fx_rate",
+								"Scenario": "\n",
+								"Target Object": "USD",
+								"Timeslice": "",
+								"Timeslice_Index": "",
+								"Value": "0.769230769",
+								"Variable": "",
+								"Variable_Effect": ""
+							}
+					]
+				}
+					
+					
+				}
+			
+			
+			
+			}
+			
+			,
+            "GBP": {
+                "Model Id": "Model 1",
+                "Object_Name": "GBP",
+                "Object_Type": "Currency",
+                "Parent Object": [],
+                "Properties": []
+            },
+            "USD": {
+                "Model Id": "Model 1",
+                "Object_Name": "USD",
+                "Object_Type": "Currency",
+                "Parent Object": [],
+                "Properties": [
+                    {
+                        "Date_From": "2000-01-01",
+                        "Date_To": "2100-01-01",
+                        "Group_id": "",
+                        "Parent Object": "USD",
+                        "Priority": "",
+                        "Property": "fx_rate",
+                        "Scenario": "\n",
+                        "Target Object": "EUR",
+                        "Timeslice": "",
+                        "Timeslice_Index": "",
+                        "Value": "1.3",
+                        "Variable": "",
+                        "Variable_Effect": ""
+                    }
+                ]
+            }
+        }
+	}
+}

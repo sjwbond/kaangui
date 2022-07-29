@@ -1,21 +1,10 @@
 # ///////////////////////////////////////////////////////////////
-#
-# BY: WANDERSON M.PIMENTA
-# PROJECT MADE WITH: Qt Designer and PySide6
-# V: 1.0.0
-#
-# This project can be used freely for all uses, as long as they maintain the
-# respective credits only in the Python scripts, any information in the visual
-# interface (GUI) can be modified without any implication.
-#
-# There are limitations on Qt licenses if you want to use your products
-# commercially, I recommend reading them on the official website:
-# https://doc.qt.io/qtforpython/licenses.html
-#
-# ///////////////////////////////////////////////////////////////
-
-# IMPORT PACKAGES AND MODULES
-# ///////////////////////////////////////////////////////////////
+###
+#TO DO LIST
+# Alphabetical & Typewise Sorting of tree view
+# deleteObject Function => If the last object in a folder is deleted, the folder is deleted as well. The folder should remain
+# add_node_to_tree Function => When a new folder is created, it is an empty dict. It is detected in an if statement. Maybe not the best practice?
+###
 
 from gui.widgets.py_table_widget.py_table_widget import PyTableWidget
 from . functions_main_window import *
@@ -641,107 +630,85 @@ class SetupMainWindow:
         self.table_widget.setHorizontalHeaderItem(11, self.column_12)
         self.table_widget.setHorizontalHeaderItem(12, self.column_13)
 
-        # for x in range(10):
-        #     row_number = self.table_widget.rowCount()
-        #     self.table_widget.insertRow(row_number) # Insert row
-        #     self.table_widget.setItem(row_number, 0, QTableWidgetItem(str("Wanderson"))) # Add name
-        #     self.table_widget.setItem(row_number, 1, QTableWidgetItem(str("vfx_on_fire_" + str(x)))) # Add nick
-        #     self.pass_text = QTableWidgetItem()
-        #     self.pass_text.setTextAlignment(Qt.AlignCenter)
-        #     self.pass_text.setText("12345" + str(x))
-        #     self.table_widget.setItem(row_number, 2, self.pass_text) # Add pass
-        #     self.table_widget.setRowHeight(row_number, 22)
 
 
 
-        f = open(r"C:\Users\ui921788\Desktop\Git Folder\NewGui\datasmall.json")
-        data = json.load(f)
 
-        # def fill_item(item, value):
-        #     item.setExpanded(False)
-        #     if type(value) is dict:
-        #         for key, val in sorted(value.items()):
-        #             child = QTreeWidgetItem()
-        #             child.setText(0, (key))
-        #             item.addChild(child)
-        #             fill_item(child, val)
-        #     elif type(value) is list:
-        #         pass
-        #         # for dict_properties in value:
-        #         #     for key, val in dict_properties.items():
-
-        #         # for val in value:
-        #         #     child = QTreeWidgetItem()
-        #         #     item.addChild(child)
-        #         #     if type(val) is dict:      
-        #         #         child.setText(0, '[dict]')
-        #         #         fill_item(child, val)
-        #         #     elif type(val) is list:
-        #         #         child.setText(0, '[list]')
-        #         #         fill_item(child, val)
-        #         #     else:
-        #         #         child.setText(0, (val))              
-        #         #     child.setExpanded(True)
-        #     else:
-        #         child = QTreeWidgetItem()
-        #         child.setText(0, (value))
-        #         item.addChild(child)
-
-        # def fill_widget(widget, value):
-        #     widget.clear()
-        #     fill_item(widget.invisibleRootItem(), value)
-
-        #self.treeWidgetTrial = QTreeWidget()
         
-        def fill_model_from_json(parent, d):
-            if isinstance(d, dict):
-                for key, value in d.items():
-                    it = QStandardItem(str(key))
-                    if isinstance(value, dict):
-                        parent.appendRow(it)
-                        fill_model_from_json(it, value)
-                    else:
-                        it2 = QStandardItem(str(value))
-                        parent.appendRow([it, it2])
+        def add_node_to_tree(self, model_node, tree_node):
+        
+            for node_key in model_node:
+                node = QStandardItem(node_key)
+                node.setEditable(False)
+
+                if not "Properties" in model_node[node_key]:
+                    add_node_to_tree(self, model_node[node_key], node)
+                    if node.hasChildren():
+                        node.setIcon(QIcon(Functions.set_svg_icon("icon_folder.svg")))
+                        node.setData("folder", Qt.UserRole)                     
+                        tree_node.appendRow(node)
+                    if not model_node[node_key]: #this is to check if the folder is newly created and hence empty
+                        node.setIcon(QIcon(Functions.set_svg_icon("icon_folder.svg")))
+                        node.setData("folder", Qt.UserRole)              
+                        tree_node.appendRow(node)                        
+                else:
+                    node.setIcon(QIcon(Functions.set_svg_icon("icon_file.svg")))
+                    node.setData(model_node[node_key], Qt.UserRole) 
+                    tree_node.appendRow(node)
 
 
-        self.treeWidgetTrial = QTreeView()
-        self.model = QStandardItemModel()
-        fill_model_from_json(self.model, data)
-        self.treeWidgetTrial.setModel(self.model)
+        @Slot(str)
+        def onTextChanged(self, text):
+            self.proxyModel.setFilterRegularExpression(text)
         
 
+        
+        model = {}
 
 
-        #fill_widget(self.treeWidgetTrial, data)
+        self.tree = QTreeView()
+        self.tree.setSortingEnabled(True)
+        self.tree.sortByColumn(0, Qt.AscendingOrder)
+        self.filterEdit = QLineEdit(self)
+        self.filterEdit.textChanged.connect(lambda text: onTextChanged(self,self.filterEdit.text()))
+        self.root_model = QStandardItemModel()
+        self.proxyModel = QSortFilterProxyModel(
+            self, recursiveFilteringEnabled=True
+        )
+        self.proxyModel.setFilterCaseSensitivity(Qt.CaseInsensitive)
+        self.proxyModel.setSourceModel(self.root_model)
+        self.tree.setModel(self.proxyModel)
+        root_node = self.root_model.invisibleRootItem()
+
+        with open("C:/Users/ui921788/Desktop/New Gui on Simon Repo/datasmall.json", 'r') as f:
+            self.data = json.load(f)
+            
+        if "SystemInputs" in self.data:
+            self.system_inputs = self.data["SystemInputs"]
+
+            add_node_to_tree(self, self.system_inputs, root_node)
+
 
         self.currentlySelectedModelObject =[] #To keep curretly selected object branch
 
+
+
+
         def update_properties_table():
-            keysList = []
-            getSelected = self.treeWidgetTrial.selectedItems()
-            if getSelected:
-                if getSelected[0].text(0) == "Properties":
-                    while not getSelected[0].parent() == None:
-                        keysList.append(getSelected[0].parent().text(0))
-                        getSelected[0] = getSelected[0].parent()
-            keysList.reverse()
-            self.currentlySelectedModelObject = copy.deepcopy(keysList)
-            dataTemp = data
-            for keyName in keysList:
-                dataTemp = dict(dataTemp[keyName])
-            #print(dataTemp["Properties"])
+            # First determine all parent names for the selected object
+            # ///////////////////////////////////////////////////////////////   
+            
+            tabledata = self.tree.selectedIndexes()[0].data(Qt.UserRole)
+            
+            if tabledata is not None:
+                self.table_widget.setRowCount(len(tabledata["Properties"]))
+                for i, item in enumerate(tabledata["Properties"]):
+                    for key, value in self.table_header_hash.items():
+                        self.table_widget.setItem(i, value, QTableWidgetItem(item[key]))
 
-            # for row in range(0,self.table_widget.rowCount()):
-            #     self.table_widget.removeRow(row)
-            self.table_widget.setRowCount(0)
-            for property_list_index in range(len(dataTemp["Properties"])):
-                row_number = self.table_widget.rowCount()
-                self.table_widget.insertRow(row_number)
-                for header, value in dataTemp["Properties"][property_list_index].items():                                       
-
-                    column_number = self.table_header_hash[header]
-                    self.table_widget.setItem(row_number, column_number, QTableWidgetItem(str(value)))  
+            else:
+                self.table_widget.setRowCount(0)
+            
 
         def getFromDict(dataDict, mapList):
             try:
@@ -752,9 +719,17 @@ class SetupMainWindow:
         def setInDict(dataDict, mapList, value):
             getFromDict(dataDict, mapList[:-1])[mapList[-1]] = value
 
-        def save_properties_table():
+        def addInDict(dataDict, mapList, key, value):
+            getFromDict(dataDict, mapList)[key] = value
 
-            setInDict(data,self.currentlySelectedModelObject+["Properties"],[])
+        def save_properties_table():
+            
+            getSelected = self.tree.selectedIndexes()
+            keysList = getNodeNameAndParentList(getSelected)
+
+            self.currentlySelectedModelObject = copy.deepcopy(keysList)
+
+            setInDict(self.system_inputs,self.currentlySelectedModelObject+["Properties"],[])
 
             listofPropertiesToAppend = []
             for row in range(self.table_widget.rowCount()):
@@ -764,12 +739,17 @@ class SetupMainWindow:
                         tempDict[self.table_widget.horizontalHeaderItem(column).text()]=self.table_widget.item(row, column).text()
                     except AttributeError:
                         tempDict[self.table_widget.horizontalHeaderItem(column).text()]=""
-                listofPropertiesToAppend.append(tempDict)    
-            setInDict(data,self.currentlySelectedModelObject+["Properties"],listofPropertiesToAppend)
-            fill_widget(self.treeWidgetTrial, data)
+                listofPropertiesToAppend.append(tempDict)
+              
+            setInDict(self.system_inputs,self.currentlySelectedModelObject+["Properties"],listofPropertiesToAppend)
+            reset_tree()
 
-        #self.treeWidgetTrial.itemClicked.connect(update_properties_table)
-        self.treeWidgetTrial.clicked.connect(update_properties_table)
+        def reset_tree():
+            self.root_model.clear()
+            root_node = self.root_model.invisibleRootItem()
+            add_node_to_tree(self, self.system_inputs, root_node)
+
+        self.tree.clicked.connect(update_properties_table)
         self.save_table_button.clicked.connect(save_properties_table)
         
         def delete_seleted_rows():
@@ -801,218 +781,6 @@ class SetupMainWindow:
         self.copy_table_row_button.clicked.connect(copy_seleted_rows)
 
 
-# Right click menu for Tree Widget
-# ///////////////////////////////////////////////////////////////
-
-
-        def openMenu(position):
-            treewidgetatfocus = QApplication.focusWidget()
-            selectedType = ""
-            items = self.treeWidgetTrial.selectedItems()
-    
-            for i in range(items[0].childCount()):
-                if items[0].child(i).text(0) == "Properties":
-                    selectedType = "Model Object"
-                    break
-                else:
-                    selectedType = "Folder"
-            if len(range(items[0].childCount())) == 0:
-                selectedType = "Folder"
-
-            menu = QMenu()
-
-            if selectedType == "Model Object":
-
-                qmenunewobject = QAction("New Object")
-                menu.addAction(qmenunewobject)
-                qmenudeleteobject = QAction("Delete Object and its content", self)
-                menu.addAction(qmenudeleteobject)
-                qmenurenameobject = QAction("Rename Object", self)
-                menu.addAction(qmenurenameobject)
-                qmenucopyobject = QAction("Copy Object and its content", self)
-                menu.addAction(qmenucopyobject)
-                qmenupasteobject = QAction("Paste Object and its content", self)
-                menu.addAction(qmenupasteobject)
-                
-                if qmenunewobject:
-                    qmenunewobject.triggered.connect(partial(createNewObject,"from object"))
-                if qmenudeleteobject:
-                    qmenudeleteobject.triggered.connect(partial(deleteObject))                
-                if qmenurenameobject:
-                    qmenurenameobject.triggered.connect(partial(renameObject))
-                if qmenucopyobject:
-                    qmenucopyobject.triggered.connect(partial(copyObject))
-                if qmenupasteobject:
-                    qmenupasteobject.triggered.connect(partial(pasteObject))
-
-
-
-            elif selectedType == "Folder":
-                qmenunewobject = QAction("New Object")
-                menu.addAction(qmenunewobject)
-                qmenunewfolder = QAction("New Folder")
-                menu.addAction(qmenunewfolder)
-                qmenudeletefolder = QAction("Delete Folder and its content", self)
-                menu.addAction(qmenudeletefolder)
-                qmenurenamefolder = QAction("Rename Folder", self)
-                menu.addAction(qmenurenamefolder)
-                qmenucopyfolder = QAction("Copy Folder and its content", self)
-                menu.addAction(qmenucopyfolder)
-                qmenupastefolder = QAction("Paste Folder and its content", self)
-                menu.addAction(qmenupastefolder)
-
-                if qmenunewobject:
-                    qmenunewobject.triggered.connect(partial(createNewObject,"from folder"))
-                if qmenunewfolder:
-                    qmenunewfolder.triggered.connect(partial(createNewFolder))
-                if qmenudeletefolder:
-                    qmenudeletefolder.triggered.connect(partial(deleteFolder))                
-                if qmenurenamefolder:
-                    qmenurenamefolder.triggered.connect(partial(renameFolder))
-                if qmenucopyfolder:
-                    qmenucopyfolder.triggered.connect(partial(copyFolder))
-                if qmenupastefolder:
-                    qmenupastefolder.triggered.connect(partial(pasteFolder))
-
-            menu.exec_(treewidgetatfocus.viewport().mapToGlobal(position))
-
-# Helping function for gettin selected nodes parents
-# ///////////////////////////////////////////////////////////////
-
-        def getNodeParentList(getSelected):
-            keysList = []
-            if getSelected:
-                while not getSelected[0].parent() == None:
-                    keysList.append(getSelected[0].parent().text(0))
-                    getSelected[0] = getSelected[0].parent()
-            keysList.reverse()
-            return keysList
-
-        def getNodeNameAndParentList(getSelected):
-            keysList = [getSelected[0].text(0)]
-            if getSelected:
-                while not getSelected[0].parent() == None:
-                    keysList.append(getSelected[0].parent().text(0))
-                    getSelected[0] = getSelected[0].parent()
-            keysList.reverse()
-            return keysList
-
-# Functions for model object manipulation
-# ///////////////////////////////////////////////////////////////
-
-        def createNewObject(newObjectType):
-    
-            text, okPressed = QInputDialog.getText(self, "New object name","New object name:", text="New Object")
-            if okPressed and text != '':
-                getSelected = self.treeWidgetTrial.selectedItems()
-                
-                if newObjectType == "from folder":
-                    keysList = getNodeNameAndParentList(getSelected)
-                    
-                else:
-                    keysList=getNodeParentList(getSelected)
-
-                newObjectDict = {"Model Id": "yarrak",
-					"Object_Name": text,
-					"Object_Type": keysList[1],
-					"Parent Object": [],
-					"Properties": []
-                    }
-                setInDict(data,keysList , {text:newObjectDict})
-                fill_widget(self.treeWidgetTrial, data)
-
-        def deleteObject():
-            qm = QMessageBox
-            ret = qm.question(self,'', "Are you sure to delete object?", qm.Yes | qm.No)
-            if ret ==  qm.Yes:
-                getSelected = self.treeWidgetTrial.selectedItems()
-                deletedFolderName = getSelected[0].text(0)
-                keysList=getNodeParentList(getSelected)
-
-                getFromDict(data,keysList).pop(deletedFolderName, None)
-                
-                if not getFromDict(data,keysList):
-                    setInDict(data,keysList , "")
-
-                fill_widget(self.treeWidgetTrial, data)
-            else:
-                pass
-        
-        def renameObject():
-            print("rename object")
-
-        def copyObject():
-            print("copy object")
-
-        def pasteObject():
-            print("paste object")
-# Functions for folder manipulation
-# ///////////////////////////////////////////////////////////////
-
-        def createNewFolder():
-
-            text, okPressed = QInputDialog.getText(self, "New folder name","New folder name:", text="New Folder")
-            if okPressed and text != '':
-                getSelected = self.treeWidgetTrial.selectedItems()
-                keysList=getNodeNameAndParentList(getSelected)
-                setInDict(data,keysList + [text] , {})
-                fill_widget(self.treeWidgetTrial, data)
-
-        def deleteFolder():
-            qm = QMessageBox
-            ret = qm.question(self,'', "Are you sure to delete folder and its content?", qm.Yes | qm.No)
-            if ret ==  qm.Yes:
-                getSelected = self.treeWidgetTrial.selectedItems()
-                deletedFolderName = getSelected[0].text(0)
-                keysList=getNodeParentList(getSelected)
-
-                getFromDict(data,keysList).pop(deletedFolderName, None)
-
-                fill_widget(self.treeWidgetTrial, data)
-            else:
-                pass
-
-        def renameFolder():
-            items = self.treeWidgetTrial.selectedItems()
-            text, okPressed = QInputDialog.getText(self, "New name","New name:", text=items[0].text(0))
-            if okPressed and text != '':
-                items[0].setText(0, text)
-        
-        self.dictFolderToCopy = {}
-        self.copiedFolderName = ""
-        def copyFolder():
-            getSelected = self.treeWidgetTrial.selectedItems()
-            self.copiedFolderName = getSelected[0].text(0)
-            keysList=getNodeParentList(getSelected) + [self.copiedFolderName]
-            a = getFromDict(data,keysList)
-            self.dictFolderToCopy = copy.deepcopy(a)
-
-
-        def pasteFolder():
-            getSelected = self.treeWidgetTrial.selectedItems()
-            pasteUnderFolderName = getSelected[0].text(0)
-            copiedFolderName = "copy of " + self.copiedFolderName
-            keysList=getNodeParentList(getSelected) + [pasteUnderFolderName] + [copiedFolderName]
-            # if getFromDict(data,keysList) == False:
-            #     pass
-            # else:
-            #     keysList[-1] = keysList[-1] + "var"
-            counter = 0
-            keysListCopy = keysList.copy()
-            while getFromDict(data,keysList) is not None:
-                counter+=1
-                
-                keysList[-1] = keysListCopy[-1] + " (" + str(counter) + ")"
-
-            setInDict(data, keysList, copy.deepcopy(self.dictFolderToCopy))
-            fill_widget(self.treeWidgetTrial, data)
-
-
-        self.treeWidgetTrial.setContextMenuPolicy(Qt.CustomContextMenu)
-        self.treeWidgetTrial.customContextMenuRequested.connect(openMenu)
-
-
-
         def paste_copied_rows():
             rowPosition = self.table_widget.rowCount()
             for i in range(len(self.rowsToCopy)):
@@ -1025,6 +793,271 @@ class SetupMainWindow:
             
 
         self.paste_table_row_button.clicked.connect(paste_copied_rows)
+
+# Right click menu for Tree Widget
+# ///////////////////////////////////////////////////////////////
+
+
+        def openMenu(position):
+            treewidgetatfocus = QApplication.focusWidget()
+            selectedType = ""
+            selectedItem = self.tree.selectedIndexes()[0].data(Qt.UserRole)
+            
+            if selectedItem == "folder":
+                selectedType = "Folder"
+            else:
+                selectedType = "Model Object"
+
+            menu = QMenu()
+
+            if selectedType == "Model Object":
+
+                qmenurenameobject = QAction("Rename Object", self)
+                menu.addAction(qmenurenameobject)
+                qmenucopyobject = QAction("Copy Object and its content", self)
+                menu.addAction(qmenucopyobject)
+                qmenupasteobject = QAction("Paste Object and its content", self)
+                menu.addAction(qmenupasteobject)
+                qmenudeleteobject = QAction("Delete Object and its content", self)
+                menu.addAction(qmenudeleteobject)               
+
+               
+                if qmenurenameobject:
+                    qmenurenameobject.triggered.connect(partial(renameObject))
+                if qmenucopyobject:
+                    qmenucopyobject.triggered.connect(partial(copyObject))
+                if qmenupasteobject:
+                    qmenupasteobject.triggered.connect(partial(pasteObject))
+                if qmenudeleteobject:
+                    qmenudeleteobject.triggered.connect(partial(deleteObject)) 
+
+
+            elif selectedType == "Folder":
+
+                qmenunewobject = QAction("Create a New Object under " + self.tree.selectedIndexes()[0].data(0))
+                menu.addAction(qmenunewobject)
+                qmenunewfolder = QAction("Create a New Folder under " + self.tree.selectedIndexes()[0].data(0))
+                menu.addAction(qmenunewfolder)
+                qmenurenamefolder = QAction("Rename Folder", self)
+                menu.addAction(qmenurenamefolder)
+                qmenucopyfolder = QAction("Copy Folder and its content", self)
+                menu.addAction(qmenucopyfolder)
+                
+                qmenupastefolder = QAction("Paste Folder and its content", self)
+                if not self.dictFolderToCopy:
+                    qmenupastefolder.setEnabled(False)
+                menu.addAction(qmenupastefolder)
+
+                qmenupasteobject = QAction("Paste Folder and its content", self)
+                if not self.dictObjectToCopy:
+                    qmenupasteobject.setEnabled(False)
+                menu.addAction(qmenupasteobject)
+
+                qmenudeletefolder = QAction("Delete Folder and its content", self)
+                menu.addAction(qmenudeletefolder)
+
+                if qmenunewobject:
+                    qmenunewobject.triggered.connect(partial(createNewObject,"from folder"))
+                if qmenunewfolder:
+                    qmenunewfolder.triggered.connect(partial(createNewFolder))
+                if qmenudeletefolder:
+                    qmenurenamefolder.triggered.connect(partial(renameFolder))
+                if qmenucopyfolder:
+                    qmenucopyfolder.triggered.connect(partial(copyFolder))
+                if qmenupastefolder:
+                    qmenupastefolder.triggered.connect(partial(pasteFolder))
+                if qmenupasteobject:
+                    qmenupasteobject.triggered.connect(partial(pasteObject))               
+                if qmenurenamefolder:
+                    qmenudeletefolder.triggered.connect(partial(deleteFolder))
+
+            menu.exec_(treewidgetatfocus.viewport().mapToGlobal(position))
+
+# Helping function for gettin selected nodes parents
+# ///////////////////////////////////////////////////////////////
+
+        def getNodeParentList(getSelected):
+            parents = []
+            for index in getSelected:
+                while index.parent().isValid():
+                    index = index.parent()
+                    parents.append(index.sibling(index.row(), 0))
+            parentObjects = [index.data() for index in parents]
+            parentObjects.reverse()
+            return parentObjects 
+
+        def getNodeNameAndParentList(getSelected):
+            parents = []
+            for index in getSelected:
+                while index.parent().isValid():
+                    index = index.parent()
+                    parents.append(index.sibling(index.row(), 0))
+            parentObjects = [index.data() for index in parents]
+            parentObjects.reverse()
+            return parentObjects + [getSelected[0].data(0)]
+
+# Functions for model object manipulation
+# ///////////////////////////////////////////////////////////////
+
+        def createNewObject(newObjectType):     #This works 28.07.2022 22:52
+    
+            text, okPressed = QInputDialog.getText(self, "New object name","New object name:", text="New Object")
+            if okPressed and text != '':
+                
+                getSelected = self.tree.selectedIndexes()
+                keysList = getNodeNameAndParentList(getSelected)
+
+                newObjectDict = {"Model Id": "yarrak",
+					"Object_Name": text,
+					"Object_Type": keysList[0],
+					"Parent Object": [],
+					"Properties": []
+                    }
+
+                addInDict(self.system_inputs, keysList , text, newObjectDict)
+
+                reset_tree()
+
+        def deleteObject():     #This works 28.07.2022 22:52
+            
+            ### TODO !!! If the last object in a folder is deleted, the folder is deleted as well. The folder should remain
+
+            qm = QMessageBox
+            ret = qm.question(self,'', "Are you sure to delete object?", qm.Yes | qm.No)
+            
+            if ret ==  qm.Yes:
+                
+                getSelected = self.tree.selectedIndexes()
+                deletedObjectName = getSelected[0].data(0)
+                keysList=getNodeParentList(getSelected)
+
+                getFromDict(self.system_inputs,keysList).pop(deletedObjectName, None)
+                
+                if not getFromDict(self.system_inputs,keysList):
+                    setInDict(self.system_inputs,keysList , "")
+
+                reset_tree()
+            else:
+                pass
+        
+        def renameObject():     #This works 28.07.2022 23:52
+            getSelected = self.tree.selectedIndexes()
+            keysList=getNodeParentList(getSelected)
+            renamedObjectName = getSelected[0].data(0)
+
+            text, okPressed = QInputDialog.getText(self, "New name","New name:", text=getSelected[0].data(0))
+            if okPressed and text != '':
+                getFromDict(self.system_inputs,keysList)[text] = getFromDict(self.system_inputs,keysList).pop(renamedObjectName)
+
+            reset_tree()
+
+
+        self.dictObjectToCopy = {}
+        def copyObject():        #This works 28.07.2022 23:52
+            getSelected = self.tree.selectedIndexes()
+            self.copiedObjectName = getSelected[0].data(0)
+            keysList=getNodeParentList(getSelected) + [self.copiedObjectName]
+            a = getFromDict(self.system_inputs,keysList)
+            self.dictObjectToCopy = copy.deepcopy(a)
+            print(self.dictObjectToCopy)
+
+        def pasteObject():
+            copiedObjectName = "copy of " + self.copiedObjectName
+            getSelected = self.tree.selectedIndexes()
+            if getSelected[0].data(Qt.UserRole) == "folder":
+                pasteUnderFolderName = getSelected[0].data(0)
+                keysList=getNodeNameAndParentList(getSelected) + [copiedObjectName]
+            else:
+                pasteUnderFolderName = getNodeParentList(getSelected)[-1]
+                keysList=getNodeParentList(getSelected) + [copiedObjectName]
+                
+            
+            #keysList=getNodeParentList(getSelected) + [pasteUnderFolderName] + [copiedObjectName]
+            
+            counter = 0
+            keysListCopy = keysList.copy()
+            while getFromDict(self.system_inputs,keysList) is not None:
+                counter+=1
+                
+                keysList[-1] = keysListCopy[-1] + " (" + str(counter) + ")"
+
+            addInDict(self.system_inputs, keysList[:-1], keysList[-1], copy.deepcopy(self.dictObjectToCopy))
+            print(self.system_inputs)
+            reset_tree()
+
+# Functions for folder manipulation
+# ///////////////////////////////////////////////////////////////
+
+        def createNewFolder():  #This works 28.07.2022 22:52
+
+            text, okPressed = QInputDialog.getText(self, "New folder name","New folder name:", text="New Folder")
+            if okPressed and text != '':
+                getSelected = self.tree.selectedIndexes()
+                keysList=getNodeNameAndParentList(getSelected)
+                addInDict(self.system_inputs, keysList , text , {"":""})
+                reset_tree()
+
+        def deleteFolder():     #This works 28.07.2022 22:52
+            qm = QMessageBox
+            ret = qm.question(self,'', "Are you sure to delete folder and its content?", qm.Yes | qm.No)
+            if ret ==  qm.Yes:
+                getSelected = self.tree.selectedIndexes()
+                deletedFolderName = getSelected[0].data(0)
+                keysList=getNodeParentList(getSelected)
+
+                getFromDict(self.system_inputs,keysList).pop(deletedFolderName, None)
+
+                reset_tree()
+            else:
+                pass
+
+        def renameFolder():     #This works 28.07.2022 22:52
+            getSelected = self.tree.selectedIndexes()
+            keysList=getNodeParentList(getSelected)
+            renamedFolderName = getSelected[0].data(0)
+
+            text, okPressed = QInputDialog.getText(self, "New name","New name:", text=getSelected[0].data(0))
+            if okPressed and text != '':
+                getFromDict(self.system_inputs,keysList)[text] = getFromDict(self.system_inputs,keysList).pop(renamedFolderName)
+
+            reset_tree()
+
+
+        self.dictFolderToCopy = {}
+        self.copiedFolderName = ""
+
+        def copyFolder():       #This works 28.07.2022 22:52
+            getSelected = self.tree.selectedIndexes()
+            self.copiedFolderName = getSelected[0].data(0)
+            keysList=getNodeParentList(getSelected) + [self.copiedFolderName]
+            a = getFromDict(self.system_inputs,keysList)
+            self.dictFolderToCopy = copy.deepcopy(a)
+            
+
+
+        def pasteFolder():      #This works 28.07.2022 22:52
+            getSelected = self.tree.selectedIndexes()
+            pasteUnderFolderName = getSelected[0].data(0)
+            copiedFolderName = "copy of " + self.copiedFolderName
+            keysList=getNodeParentList(getSelected) + [pasteUnderFolderName] + [copiedFolderName]
+            counter = 0
+            keysListCopy = keysList.copy()
+            while getFromDict(self.system_inputs,keysList) is not None:
+                counter+=1
+                
+                keysList[-1] = keysListCopy[-1] + " (" + str(counter) + ")"
+
+            setInDict(self.system_inputs, keysList, copy.deepcopy(self.dictFolderToCopy))
+            
+            reset_tree()
+
+
+        self.tree.setContextMenuPolicy(Qt.CustomContextMenu)
+        self.tree.customContextMenuRequested.connect(openMenu)
+
+
+
+
 
 
 
@@ -1083,7 +1116,9 @@ class SetupMainWindow:
         self.ui.load_pages.row_3_layout.addWidget(self.open_existing_model_button)
         self.ui.load_pages.row_3_layout.addWidget(self.toggle_button)
         self.ui.load_pages.row_4_layout.addWidget(self.line_edit)
-        self.ui.load_pages.row_5_layout.addWidget(self.treeWidgetTrial)
+        self.ui.load_pages.row_5_layout.addWidget(self.filterEdit)
+        self.ui.load_pages.row_5_layout.addWidget(self.tree)
+
         self.ui.load_pages.table_layout.addWidget(self.table_widget)
  
         # RIGHT COLUMN
