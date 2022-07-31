@@ -4,6 +4,9 @@
 # Alphabetical & Typewise Sorting of tree view
 # deleteObject Function => If the last object in a folder is deleted, the folder is deleted as well. The folder should remain
 # add_node_to_tree Function => When a new folder is created, it is an empty dict. It is detected in an if statement. Maybe not the best practice?
+# cutObject Function => Make object text less bold
+# Pasting of cut objects => Naming should be fixed (when moved it should not be "copy of xxx") and if the same object name exist in the new folder, it should be asked to replace or skip or renamed etc..
+
 ###
 
 from gui.widgets.py_table_widget.py_table_widget import PyTableWidget
@@ -493,7 +496,18 @@ class SetupMainWindow:
         self.open_existing_model_button.setIcon(self.icon)
         self.open_existing_model_button.setMaximumHeight(40)
 
-
+        self.save_model_button = PyPushButton(
+            
+            text="Save Model",
+            radius=8,
+            color=self.themes["app_color"]["text_foreground"],
+            bg_color=self.themes["app_color"]["dark_one"],
+            bg_color_hover=self.themes["app_color"]["dark_three"],
+            bg_color_pressed=self.themes["app_color"]["dark_four"]
+        )
+        self.icon = QIcon(Functions.set_svg_icon("icon_save.svg"))
+        self.save_model_button.setIcon(self.icon)
+        self.save_model_button.setMaximumHeight(40)
 
         # # PUSH BUTTON 1
         # self.push_button_1 = PyPushButton(
@@ -685,7 +699,7 @@ class SetupMainWindow:
         self.tree.setModel(self.proxyModel)
         root_node = self.root_model.invisibleRootItem()
 
-        with open("C:/Users/ui921788/Desktop/New Gui on Simon Repo/datasmall.json", 'r') as f:
+        with open("C:/Users/ui921788/Desktop/New Gui on Simon Repo/deneme1.json", 'r') as f:
             self.data = json.load(f)
             
         if "SystemInputs" in self.data:
@@ -750,10 +764,12 @@ class SetupMainWindow:
             reset_tree()
 
         def reset_tree():
+            iterate_tree_items_via_model_depth_first(self.tree)    
             self.root_model.clear()
             root_node = self.root_model.invisibleRootItem()
             add_node_to_tree(self, self.system_inputs, root_node)
-
+            expand_iterate_tree_items_via_model_depth_first(self.tree)
+        
         self.tree.clicked.connect(update_properties_table)
         self.save_table_button.clicked.connect(save_properties_table)
         
@@ -819,11 +835,13 @@ class SetupMainWindow:
 
                 qmenurenameobject = QAction("Rename Object", self)
                 menu.addAction(qmenurenameobject)
-                qmenucopyobject = QAction("Copy Object and its content", self)
+                qmenucopyobject = QAction("Copy Object", self)
                 menu.addAction(qmenucopyobject)
-                qmenupasteobject = QAction("Paste Object and its content", self)
+                qmenucutobject = QAction("Cut Object", self)
+                menu.addAction(qmenucutobject)
+                qmenupasteobject = QAction("Paste Object", self)
                 menu.addAction(qmenupasteobject)
-                qmenudeleteobject = QAction("Delete Object and its content", self)
+                qmenudeleteobject = QAction("Delete Object", self)
                 menu.addAction(qmenudeleteobject)               
 
                
@@ -831,6 +849,8 @@ class SetupMainWindow:
                     qmenurenameobject.triggered.connect(partial(renameObject))
                 if qmenucopyobject:
                     qmenucopyobject.triggered.connect(partial(copyObject))
+                if qmenucutobject:
+                    qmenucutobject.triggered.connect(partial(cutObject))
                 if qmenupasteobject:
                     qmenupasteobject.triggered.connect(partial(pasteObject))
                 if qmenudeleteobject:
@@ -853,7 +873,7 @@ class SetupMainWindow:
                     qmenupastefolder.setEnabled(False)
                 menu.addAction(qmenupastefolder)
 
-                qmenupasteobject = QAction("Paste Folder and its content", self)
+                qmenupasteobject = QAction("Paste " + self.copiedObjectName + " under " + self.tree.selectedIndexes()[0].data(0), self)
                 if not self.dictObjectToCopy:
                     qmenupasteobject.setEnabled(False)
                 menu.addAction(qmenupasteobject)
@@ -903,6 +923,30 @@ class SetupMainWindow:
 
 # Functions for model object manipulation
 # ///////////////////////////////////////////////////////////////
+
+
+        self.dictFolderToCopy = {}
+        self.copiedFolderName = ""
+        self.isFolderCopied = False
+        self.isFolderCut = False
+        self.dictObjectToCopy = {}
+        self.copiedObjectName = ""
+        self.isObjectCopied = False
+        self.isObjectCut = False
+
+        def resetClipboard(copiedType):
+            if copiedType == "Folder":
+                self.isFolderCopied = True
+                self.dictObjectToCopy = {}
+                self.copiedObjectName = ""
+                self.isObjectCopied = False
+            if copiedType == "Object":
+                self.isObjectCopied = True
+                self.dictFolderToCopy = {}
+                self.copiedFolderName = ""
+                self.isFolderCopied = False
+
+
 
         def createNewObject(newObjectType):     #This works 28.07.2022 22:52
     
@@ -957,18 +1001,36 @@ class SetupMainWindow:
             reset_tree()
 
 
-        self.dictObjectToCopy = {}
+        
         def copyObject():        #This works 28.07.2022 23:52
             getSelected = self.tree.selectedIndexes()
             self.copiedObjectName = getSelected[0].data(0)
             keysList=getNodeParentList(getSelected) + [self.copiedObjectName]
             a = getFromDict(self.system_inputs,keysList)
             self.dictObjectToCopy = copy.deepcopy(a)
-            print(self.proxyModel.persistentIndexList())
+            resetClipboard("Object")
 
+        def cutObject():
+            getSelected = self.tree.selectedIndexes()
+            self.copiedObjectName = getSelected[0].data(0)
+            keysList=getNodeParentList(getSelected) + [self.copiedObjectName]
+            a = getFromDict(self.system_inputs,keysList)
+            self.dictObjectToCopy = copy.deepcopy(a)
+            keysList=getNodeParentList(getSelected)
+            getFromDict(self.system_inputs,keysList).pop(self.copiedObjectName, None)
+
+            resetClipboard("Object")
+
+
+        def copyShortcut():
+            getSelected = self.tree.selectedIndexes()
+            if getSelected[0].data(Qt.UserRole) == "folder":
+                copyFolder()
+            else:
+                copyObject()
         
         self.tree.short_copy_object = QShortcut(QKeySequence("Ctrl+C"),self)
-        self.tree.short_copy_object.activated.connect(copyObject)
+        self.tree.short_copy_object.activated.connect(copyShortcut)
 
 
         def pasteObject():
@@ -981,9 +1043,7 @@ class SetupMainWindow:
                 pasteUnderFolderName = getNodeParentList(getSelected)[-1]
                 keysList=getNodeParentList(getSelected) + [copiedObjectName]
                 
-            
-            #keysList=getNodeParentList(getSelected) + [pasteUnderFolderName] + [copiedObjectName]
-            
+
             counter = 0
             keysListCopy = keysList.copy()
             while getFromDict(self.system_inputs,keysList) is not None:
@@ -993,15 +1053,100 @@ class SetupMainWindow:
 
             addInDict(self.system_inputs, keysList[:-1], keysList[-1], copy.deepcopy(self.dictObjectToCopy))
         
-            iterate_tree_items_via_model_depth_first(self.tree)
             reset_tree()
-            expand_iterate_tree_items_via_model_depth_first(self.tree)
+
+        def pasteShortcut():
+            if self.isFolderCopied == True:
+                pasteFolder()
+            elif self.isObjectCopied == True:
+                pasteObject()
+            else:
+                pass
 
         self.tree.short_copy_object = QShortcut(QKeySequence("Ctrl+V"),self)
-        self.tree.short_copy_object.activated.connect(pasteObject)
+        self.tree.short_copy_object.activated.connect(pasteShortcut)
 
 
 
+
+# Functions for folder manipulation
+# ///////////////////////////////////////////////////////////////
+
+        def createNewFolder():  #This works 28.07.2022 22:52
+
+            text, okPressed = QInputDialog.getText(self, "New folder name","New folder name:", text="New Folder")
+            if okPressed and text != '':
+                getSelected = self.tree.selectedIndexes()
+                keysList=getNodeNameAndParentList(getSelected)
+                addInDict(self.system_inputs, keysList , text , {"":""})
+                reset_tree()
+
+        def deleteFolder():     #This works 28.07.2022 22:52
+            qm = QMessageBox
+            ret = qm.question(self,'', "Are you sure to delete folder and its content?", qm.Yes | qm.No)
+            if ret ==  qm.Yes:
+                getSelected = self.tree.selectedIndexes()
+                deletedFolderName = getSelected[0].data(0)
+                keysList=getNodeParentList(getSelected)
+
+                getFromDict(self.system_inputs,keysList).pop(deletedFolderName, None)
+
+                reset_tree()
+            else:
+                pass
+
+        def renameFolder():     #This works 28.07.2022 22:52
+            getSelected = self.tree.selectedIndexes()
+            keysList=getNodeParentList(getSelected)
+            renamedFolderName = getSelected[0].data(0)
+
+            text, okPressed = QInputDialog.getText(self, "New name","New name:", text=getSelected[0].data(0))
+            if okPressed and text != '':
+                getFromDict(self.system_inputs,keysList)[text] = getFromDict(self.system_inputs,keysList).pop(renamedFolderName)
+
+            reset_tree()
+
+
+
+
+        def copyFolder():       #This works 28.07.2022 22:52
+            getSelected = self.tree.selectedIndexes()
+            self.copiedFolderName = getSelected[0].data(0)
+            keysList=getNodeParentList(getSelected) + [self.copiedFolderName]
+            a = getFromDict(self.system_inputs,keysList)
+            self.dictFolderToCopy = copy.deepcopy(a)
+            resetClipboard("Folder")
+
+
+        def pasteFolder():      #This works 28.07.2022 22:52
+
+            copiedFolderName = "copy of " + self.copiedFolderName
+            getSelected = self.tree.selectedIndexes()
+            if getSelected[0].data(Qt.UserRole) == "folder":
+                pasteUnderFolderName = getSelected[0].data(0)
+                keysList=getNodeNameAndParentList(getSelected) + [copiedFolderName]
+            else:
+                pasteUnderFolderName = getNodeParentList(getSelected)[-1]
+                keysList=getNodeParentList(getSelected) + [copiedFolderName]
+
+            counter = 0
+            keysListCopy = keysList.copy()
+            while getFromDict(self.system_inputs,keysList) is not None:
+                counter+=1
+                
+                keysList[-1] = keysListCopy[-1] + " (" + str(counter) + ")"
+
+            setInDict(self.system_inputs, keysList, copy.deepcopy(self.dictFolderToCopy))
+            
+            reset_tree()
+
+
+        self.tree.setContextMenuPolicy(Qt.CustomContextMenu)
+        self.tree.customContextMenuRequested.connect(openMenu)
+
+
+        #//////////////////
+        # Following first 2 functions are keeping track of and the second 2 are re-establishing the current expansion status of the treeview
         
 
         def iterate_tree_items_via_model_depth_first(tree_obj):
@@ -1064,85 +1209,11 @@ class SetupMainWindow:
 
 
 
-
-
-
-# Functions for folder manipulation
-# ///////////////////////////////////////////////////////////////
-
-        def createNewFolder():  #This works 28.07.2022 22:52
-
-            text, okPressed = QInputDialog.getText(self, "New folder name","New folder name:", text="New Folder")
-            if okPressed and text != '':
-                getSelected = self.tree.selectedIndexes()
-                keysList=getNodeNameAndParentList(getSelected)
-                addInDict(self.system_inputs, keysList , text , {"":""})
-                reset_tree()
-
-        def deleteFolder():     #This works 28.07.2022 22:52
-            qm = QMessageBox
-            ret = qm.question(self,'', "Are you sure to delete folder and its content?", qm.Yes | qm.No)
-            if ret ==  qm.Yes:
-                getSelected = self.tree.selectedIndexes()
-                deletedFolderName = getSelected[0].data(0)
-                keysList=getNodeParentList(getSelected)
-
-                getFromDict(self.system_inputs,keysList).pop(deletedFolderName, None)
-
-                reset_tree()
-            else:
-                pass
-
-        def renameFolder():     #This works 28.07.2022 22:52
-            getSelected = self.tree.selectedIndexes()
-            keysList=getNodeParentList(getSelected)
-            renamedFolderName = getSelected[0].data(0)
-
-            text, okPressed = QInputDialog.getText(self, "New name","New name:", text=getSelected[0].data(0))
-            if okPressed and text != '':
-                getFromDict(self.system_inputs,keysList)[text] = getFromDict(self.system_inputs,keysList).pop(renamedFolderName)
-
-            reset_tree()
-
-
-        self.dictFolderToCopy = {}
-        self.copiedFolderName = ""
-
-        def copyFolder():       #This works 28.07.2022 22:52
-            getSelected = self.tree.selectedIndexes()
-            self.copiedFolderName = getSelected[0].data(0)
-            keysList=getNodeParentList(getSelected) + [self.copiedFolderName]
-            a = getFromDict(self.system_inputs,keysList)
-            self.dictFolderToCopy = copy.deepcopy(a)
-            
-
-
-        def pasteFolder():      #This works 28.07.2022 22:52
-            getSelected = self.tree.selectedIndexes()
-            pasteUnderFolderName = getSelected[0].data(0)
-            copiedFolderName = "copy of " + self.copiedFolderName
-            keysList=getNodeParentList(getSelected) + [pasteUnderFolderName] + [copiedFolderName]
-            counter = 0
-            keysListCopy = keysList.copy()
-            while getFromDict(self.system_inputs,keysList) is not None:
-                counter+=1
-                
-                keysList[-1] = keysListCopy[-1] + " (" + str(counter) + ")"
-
-            setInDict(self.system_inputs, keysList, copy.deepcopy(self.dictFolderToCopy))
-            
-            reset_tree()
-
-
-        self.tree.setContextMenuPolicy(Qt.CustomContextMenu)
-        self.tree.customContextMenuRequested.connect(openMenu)
-
-
-
-
-
-
-
+        def file_save():
+            name = QFileDialog.getSaveFileName(self, 'Save File')
+            with open(name[0]+'.json', 'w') as fp:
+                json.dump(self.data, fp)
+        self.save_model_button.clicked.connect(file_save)
 
         def pop():
             self.bok.show()
@@ -1196,6 +1267,7 @@ class SetupMainWindow:
         self.ui.load_pages.table_button_layout.addWidget(self.paste_table_row_button)
         self.ui.load_pages.row_3_layout.addWidget(self.create_new_model_button)
         self.ui.load_pages.row_3_layout.addWidget(self.open_existing_model_button)
+        self.ui.load_pages.row_3_layout.addWidget(self.save_model_button)
         self.ui.load_pages.row_3_layout.addWidget(self.toggle_button)
         self.ui.load_pages.row_4_layout.addWidget(self.line_edit)
         self.ui.load_pages.row_5_layout.addWidget(self.filterEdit)
