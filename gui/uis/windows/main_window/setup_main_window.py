@@ -778,20 +778,31 @@ class SetupMainWindow:
             tabledata = self.tree.selectedIndexes()[0].data(Qt.UserRole)
             
             if tabledata is not None:
-                self.table_widget.setRowCount(len(tabledata["Properties"]))
-                for i, item in enumerate(tabledata["Properties"]):
-                    for key, value in self.table_header_hash.items():
-                        # if key == "Property":
-                        #     combo = QComboBox()
-                        #     props = self.properties_table_object_properties_dict[self.tree.selectedIndexes()[0].data(Qt.UserRole)["Object_Type"]]
-                        #     for t in props:
-                        #         combo.addItem(t)
-                        #     self.table_widget.setCellWidget(i,value,combo)
-                        #     combo.setCurrentIndex(props.index(item[key]))
-   
-                        # else:
-                        #     self.table_widget.setItem(i, value, QTableWidgetItem(item[key]))
-                        self.table_widget.setItem(i, value, QTableWidgetItem(item[key]))
+                try:
+                    self.table_widget.setRowCount(len(tabledata["Properties"]))
+                    for i, item in enumerate(tabledata["Properties"]):
+                        for key, value in self.table_header_hash.items():
+                            # if key == "Property":
+                            #     combo = QComboBox()
+                            #     props = self.properties_table_object_properties_dict[self.tree.selectedIndexes()[0].data(Qt.UserRole)["Object_Type"]]
+                            #     for t in props:
+                            #         combo.addItem(t)
+                            #     self.table_widget.setCellWidget(i,value,combo)
+                            #     combo.setCurrentIndex(props.index(item[key]))
+
+                            # else:
+                            #     self.table_widget.setItem(i, value, QTableWidgetItem(item[key]))
+                            self.table_widget.setItem(i, value, QTableWidgetItem(item[key]))
+
+                except TypeError as e:
+                    if str(e) == 'string indices must be integers':
+                        pass
+                    else:
+                        raise
+
+                except Exception as e:
+                    raise
+
             else:
                 self.table_widget.setRowCount(0)
             
@@ -901,83 +912,92 @@ class SetupMainWindow:
 
 
         def openMenu(position):
-            treewidgetatfocus = QApplication.focusWidget()
-            selectedType = ""
-            selectedItem = self.tree.selectedIndexes()[0].data(Qt.UserRole)
-            
-            if selectedItem == "folder":
-                selectedType = "Folder"
-            else:
-                selectedType = "Model Object"
 
-            menu = QMenu()
+            try:
+                treewidgetatfocus = QApplication.focusWidget()
+                selectedType = ""
+                if self.tree.selectedIndexes():
+                    selectedItem = self.tree.selectedIndexes()[0].data(Qt.UserRole)
 
-            if selectedType == "Model Object":
+                    if selectedItem == "folder":
+                        selectedType = "Folder"
+                    else:
+                        selectedType = "Model Object"
 
-                qmenurenameobject = QAction("Rename Object", self)
-                menu.addAction(qmenurenameobject)
-                qmenucopyobject = QAction("Copy Object", self)
-                menu.addAction(qmenucopyobject)
-                qmenucutobject = QAction("Cut Object", self)
-                menu.addAction(qmenucutobject)
-                qmenupasteobject = QAction("Paste Object", self)
-                menu.addAction(qmenupasteobject)
-                qmenudeleteobject = QAction("Delete Object", self)
-                menu.addAction(qmenudeleteobject)               
-              
-              
-                if qmenurenameobject:
-                    qmenurenameobject.triggered.connect(partial(renameObjectByModel))
-                if qmenucopyobject:
-                    qmenucopyobject.triggered.connect(partial(copyObjectByModel))
-                if qmenucutobject:
-                    qmenucutobject.triggered.connect(partial(cutObjectByModel))
-                if qmenupasteobject:
-                    qmenupasteobject.triggered.connect(partial(pasteObjectByModel))
-                if qmenudeleteobject:
-                    qmenudeleteobject.triggered.connect(partial(deleteObjectByModel)) 
+                    menu = QMenu()
+
+                    if selectedType == "Model Object":
+
+                        qmenurenameobject = QAction("Rename Object", self)
+                        menu.addAction(qmenurenameobject)
+                        qmenucopyobject = QAction("Copy Object", self)
+                        menu.addAction(qmenucopyobject)
+                        qmenucutobject = QAction("Cut Object", self)
+                        menu.addAction(qmenucutobject)
+                        qmenupasteobject = QAction("Paste Object", self)
+                        menu.addAction(qmenupasteobject)
+                        qmenudeleteobject = QAction("Delete Object", self)
+                        menu.addAction(qmenudeleteobject)
 
 
-            elif selectedType == "Folder":
+                        if qmenurenameobject:
+                            qmenurenameobject.triggered.connect(partial(renameObjectByModel))
+                        if qmenucopyobject:
+                            qmenucopyobject.triggered.connect(partial(copyObjectByModel))
+                        if qmenucutobject:
+                            qmenucutobject.triggered.connect(partial(cutObjectByModel))
+                        if qmenupasteobject:
+                            qmenupasteobject.triggered.connect(partial(pasteObjectByModel))
+                        if qmenudeleteobject:
+                            qmenudeleteobject.triggered.connect(partial(deleteObjectByModel))
 
-                qmenunewobject = QAction("Create a New Object under " + self.tree.selectedIndexes()[0].data(0))
-                menu.addAction(qmenunewobject)
-                qmenunewfolder = QAction("Create a New Folder under " + self.tree.selectedIndexes()[0].data(0))
-                menu.addAction(qmenunewfolder)
-                qmenurenamefolder = QAction("Rename Folder", self)
-                menu.addAction(qmenurenamefolder)
-                qmenucopyfolder = QAction("Copy Folder and its content", self)
-                menu.addAction(qmenucopyfolder)
-                
-                qmenupastefolder = QAction("Paste " + self.copiedFolderName + " under " + self.tree.selectedIndexes()[0].data(0), self)
-                if not self.dictFolderToCopy:
-                    qmenupastefolder.setEnabled(False)
-                menu.addAction(qmenupastefolder)
 
-                qmenupasteobject = QAction("Paste " + self.copiedObjectName + " under " + self.tree.selectedIndexes()[0].data(0), self)
-                if not self.dictObjectToCopy:
-                    qmenupasteobject.setEnabled(False)
-                menu.addAction(qmenupasteobject)
+                    elif selectedType == "Folder":
 
-                qmenudeletefolder = QAction("Delete Folder and its content", self)
-                menu.addAction(qmenudeletefolder)
+                        qmenunewobject = QAction("Create a New Object under " + self.tree.selectedIndexes()[0].data(0))
+                        menu.addAction(qmenunewobject)
+                        qmenunewfolder = QAction("Create a New Folder under " + self.tree.selectedIndexes()[0].data(0))
+                        menu.addAction(qmenunewfolder)
+                        qmenurenamefolder = QAction("Rename Folder", self)
+                        menu.addAction(qmenurenamefolder)
+                        qmenucopyfolder = QAction("Copy Folder and its content", self)
+                        menu.addAction(qmenucopyfolder)
 
-                if qmenunewobject:
-                    qmenunewobject.triggered.connect(partial(createNewObjectByModel))
-                if qmenunewfolder:
-                    qmenunewfolder.triggered.connect(partial(createNewFolderByModel))
-                if qmenudeletefolder:
-                    qmenurenamefolder.triggered.connect(partial(renameFolderByModel))
-                if qmenucopyfolder:
-                    qmenucopyfolder.triggered.connect(partial(copyFolderByModel))
-                if qmenupastefolder:
-                    qmenupastefolder.triggered.connect(partial(pasteFolderByModel))
-                if qmenupasteobject:
-                    qmenupasteobject.triggered.connect(partial(pasteObjectByModel))               
-                if qmenurenamefolder:
-                    qmenudeletefolder.triggered.connect(partial(deleteFolderByModel))
+                        qmenupastefolder = QAction("Paste " + self.copiedFolderName + " under " + self.tree.selectedIndexes()[0].data(0), self)
+                        if not self.dictFolderToCopy:
+                            qmenupastefolder.setEnabled(False)
+                        menu.addAction(qmenupastefolder)
 
-            menu.exec_(treewidgetatfocus.viewport().mapToGlobal(position))
+                        qmenupasteobject = QAction("Paste " + self.copiedObjectName + " under " + self.tree.selectedIndexes()[0].data(0), self)
+                        if not self.dictObjectToCopy:
+                            qmenupasteobject.setEnabled(False)
+                        menu.addAction(qmenupasteobject)
+
+                        qmenudeletefolder = QAction("Delete Folder and its content", self)
+                        menu.addAction(qmenudeletefolder)
+
+                        if qmenunewobject:
+                            qmenunewobject.triggered.connect(partial(createNewObjectByModel))
+                        if qmenunewfolder:
+                            qmenunewfolder.triggered.connect(partial(createNewFolderByModel))
+                        if qmenudeletefolder:
+                            qmenurenamefolder.triggered.connect(partial(renameFolderByModel))
+                        if qmenucopyfolder:
+                            qmenucopyfolder.triggered.connect(partial(copyFolderByModel))
+                        if qmenupastefolder:
+                            qmenupastefolder.triggered.connect(partial(pasteFolderByModel))
+                        if qmenupasteobject:
+                            qmenupasteobject.triggered.connect(partial(pasteObjectByModel))
+                        if qmenurenamefolder:
+                            qmenudeletefolder.triggered.connect(partial(deleteFolderByModel))
+
+                    menu.exec_(treewidgetatfocus.viewport().mapToGlobal(position))
+
+            except IndexError as e:
+                raise
+            except Exception as e:
+                raise
+
 
 # Helping function for gettin selected nodes parents
 # ///////////////////////////////////////////////////////////////
@@ -1028,19 +1048,22 @@ class SetupMainWindow:
                 self.isFolderCopied = False
 
         def createNewObjectByModel():
-            text, okPressed = QInputDialog.getText(self, "New object name","New object name:", text="New Object")
-            if okPressed and text != '':
-                getSelected = self.tree.selectedIndexes()
-                keysList = getNodeNameAndParentList(getSelected)
-                newObjectDict = {text : {"Model Id": "yarrak",
-                "Object_Name": text,
-                "Object_Type": keysList[0],
-                "Parent Object": [],
-                "Properties": []
-                }}       
+            try:
+                text, okPressed = QInputDialog.getText(self, "New object name","New object name:", text="New Object")
+                if okPressed and text != '':
+                    getSelected = self.tree.selectedIndexes()
+                    keysList = getNodeNameAndParentList(getSelected)
+                    newObjectDict = {text : {"Model Id": "yarrak",
+                    "Object_Name": text,
+                    "Object_Type": keysList[0],
+                    "Parent Object": [],
+                    "Properties": []
+                    }}
 
-            add_node_to_tree(self, newObjectDict, self.root_model.itemFromIndex(self.proxyModel.mapToSource(getSelected[0])))
+                add_node_to_tree(self, newObjectDict, self.root_model.itemFromIndex(self.proxyModel.mapToSource(getSelected[0])))
 
+            except Exception as e:
+                raise
 
 
 
@@ -1486,14 +1509,19 @@ class SetupMainWindow:
 
 
         def file_save():
-            name = QFileDialog.getSaveFileName(self, 'Save File')
-            
-            self.data["SystemInputs"] = model_to_dict(self.root_model)
-            
-            with open(name[0]+'.json', 'w') as fp:
-                json.dump(self.data, fp)
-        self.save_model_button.clicked.connect(file_save)
 
+            try:
+                name = QFileDialog.getSaveFileName(self, 'Save File')
+
+                self.data["SystemInputs"] = model_to_dict(self.root_model)
+
+                with open(name[0]+'.mdl', 'w') as fp:
+                    json.dump(self.data, fp)
+
+            except Exception as e:
+                raise
+
+        self.save_model_button.clicked.connect(file_save)
 
 
         def fill_dict_from_model(parent_index, d, model):
@@ -1520,10 +1548,12 @@ class SetupMainWindow:
             
 
         def model_to_dict(model):
+
             d = dict()
             for i in range(model.rowCount()):
                 ix = model.index(i, 0)
-                fill_dict_from_model(ix, d, model)    
+                fill_dict_from_model(ix, d, model)
+
             return d
 
 
@@ -1569,7 +1599,8 @@ class SetupMainWindow:
             qm=QMessageBox()
             ret = qm.question(self,'', "Are you sure to create a new model? It will reset the unsaved changes", qm.Yes | qm.No)
             if ret == qm.Yes:
-                with open(self.working_directory + "objecttypes.json", 'r') as f:
+
+                with open(os.path.dirname(sys.argv[0]) + "/objecttypes.json", 'r') as f:
                     self.data = json.load(f)
                     if "SystemInputs" in self.data:
                         self.system_inputs = self.data["SystemInputs"]
