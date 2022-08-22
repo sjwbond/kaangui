@@ -792,8 +792,8 @@ class SetupMainWindow:
 
                             # else:
                             #     self.table_widget.setItem(i, value, QTableWidgetItem(item[key]))
-                            self.table_widget.setItem(i, value, QTableWidgetItem(item[key]))
-
+                            #self.table_widget.setItem(i, value, QTableWidgetItem(item[key]))
+                            self.table_widget.setCellWidget(i, value, QLineEdit(item[key]))
                 except TypeError as e:
                     if str(e) == 'string indices must be integers':
                         pass
@@ -838,7 +838,7 @@ class SetupMainWindow:
                         if isinstance(self.table_widget.cellWidget(row, column) , QComboBox):
                             tempDict[self.table_widget.horizontalHeaderItem(column).text()]= self.table_widget.cellWidget(row, column).currentText()
                         else:
-                            tempDict[self.table_widget.horizontalHeaderItem(column).text()]=self.table_widget.item(row, column).text()
+                            tempDict[self.table_widget.horizontalHeaderItem(column).text()]=self.table_widget.cellWidget(row, column).text()
                     except AttributeError:
                         tempDict[self.table_widget.horizontalHeaderItem(column).text()]=""
                 listofPropertiesToAppend.append(tempDict)
