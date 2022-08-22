@@ -175,7 +175,7 @@ class Ui_MainPages(object):
 
     def retranslateUi(self, MainPages):
         MainPages.setWindowTitle(QCoreApplication.translate("MainPages", u"Form", None))
-        self.label.setText(QCoreApplication.translate("MainPages", u"Welcome To PyOneDark GUI", None))
+        self.label.setText(QCoreApplication.translate("MainPages", u"Welcome To Fundamental Model", None))
         self.title_label.setText(QCoreApplication.translate("MainPages", u"Model Objects", None))
         self.description_label.setText(QCoreApplication.translate("MainPages", u"Here a new  or a previously saved model can be loaded and modified\n"
 "The top tree view displays all the objects of the model. The below table object displays selected object properties in detail", None))

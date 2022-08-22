@@ -58,6 +58,8 @@ class MainWindow(QMainWindow):
         self.ui = UI_MainWindow()
         self.ui.setup_ui(self)
 
+
+
         # LOAD SETTINGS
         # ///////////////////////////////////////////////////////////////
         settings = Settings()
@@ -72,10 +74,35 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
         self.show()
 
+    
+    def eventFilter(self, object, event):
+        dragTarget=[]
+        if object is self.tree.viewport():
+            if event.type() == QEvent.DragEnter:
+                print("drag enter calisti")                
+                getSelected = self.tree.selectedIndexes()
+                #print(getSelected[0].data(0))
+                setup_main_window.dragStart()
+            elif event.type() == QEvent.Drop:
+                dragTarget.append(self.tree.indexAt(event.pos()))
+                # print(parent_item.data(0))'
+                
+
+
+
+                setup_main_window.dragEnd(dragTarget)
+
+        return super(MainWindow, self).eventFilter(object, event)
+    
+
+    
+    
     # LEFT MENU BTN IS CLICKED
     # Run function when btn is clicked
     # Check funtion by object name / btn_id
     # ///////////////////////////////////////////////////////////////
+       
+    
     def btn_clicked(self):
         # GET BT CLICKED
         btn = SetupMainWindow.setup_btns(self)
