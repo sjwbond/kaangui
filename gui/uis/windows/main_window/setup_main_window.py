@@ -1526,24 +1526,34 @@ class SetupMainWindow:
 
         def fill_dict_from_model(parent_index, d, model):
 
-            
-            for i in range(model.rowCount(parent_index)):
-                ix = model.index(i, 0, parent_index)
+            ################ Kaan: I dont like the following quick fix for the main folders, but this might change in future anyways
 
-                
-                if model.index(i, 0, parent_index).data(Qt.UserRole) == "folder":
+            if model.rowCount(parent_index) == 0:
+                if model.index(0, 0).data(Qt.UserRole) == "folder":
                     if parent_index.data() in d: 
-                        d[parent_index.data()][model.index(i, 0, parent_index).data(0)] = {}
+                        d[parent_index.data()][model.index(0, 0).data(0)] = {}
                     else:
                         d[parent_index.data()] = {} 
-                else:
-                    if parent_index.data() in d:
-                        d[parent_index.data()][model.index(i, 0, parent_index).data(0)] =  model.index(i, 0, parent_index).data(Qt.UserRole)
+            else:
+            ################
+            
+                for i in range(model.rowCount(parent_index)):
+                    ix = model.index(i, 0, parent_index)
+
+                    
+                    if model.index(i, 0, parent_index).data(Qt.UserRole) == "folder":
+                        if parent_index.data() in d: 
+                            d[parent_index.data()][model.index(i, 0, parent_index).data(0)] = {}
+                        else:
+                            d[parent_index.data()] = {} 
                     else:
-                        d[parent_index.data()] = {model.index(i, 0, parent_index).data(0) :  model.index(i, 0, parent_index).data(Qt.UserRole)}
+                        if parent_index.data() in d:
+                            d[parent_index.data()][model.index(i, 0, parent_index).data(0)] =  model.index(i, 0, parent_index).data(Qt.UserRole)
+                        else:
+                            d[parent_index.data()] = {model.index(i, 0, parent_index).data(0) :  model.index(i, 0, parent_index).data(Qt.UserRole)}
 
 
-                fill_dict_from_model(ix, d[parent_index.data()], model)
+                    fill_dict_from_model(ix, d[parent_index.data()], model)
             
             
 

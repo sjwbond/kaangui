@@ -1,0 +1,42 @@
+{
+    "Simulation": {
+        "Execute": {
+            "Models": {},
+            "Projects": {}
+        },
+        "Settings": {
+            "Competition": {},
+            "Diagnostics": {},
+            "Performance": {},
+            "Production": {},
+            "Stochastics": {},
+            "Transmission": {}
+        },
+        "Simulation": {
+            "Horizons": {},
+            "LT Plan": {},
+            "MT Schedule": {},
+            "PASA": {},
+            "Reports": {},
+            "ST Schedule": {}
+        }
+    },
+    "SystemInputs": {
+        "Currency": {},
+        "DBDataSource": {},
+        "DBTimeSeries": {},
+        "DataSource": {},
+        "Demand": {},
+        "Emissions": {},
+        "Fuel": {},
+        "Generator": {},
+        "Group": {},
+        "Hydro_Generator": {},
+        "Line": {},
+        "Node": {},
+        "Reservoir": {},
+        "Scenario": {},
+        "Storage": {},
+        "Variable": {}
+    }
+}
