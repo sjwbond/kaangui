@@ -759,6 +759,7 @@ class SetupMainWindow:
                     combo.addItem(t)
                 
                 self.table_widget.setCellWidget(row,column,combo)
+                combo.showPopup()
                 combo.currentIndexChanged.connect(removeComboBox)
             else:
                 pass
@@ -782,18 +783,18 @@ class SetupMainWindow:
                     self.table_widget.setRowCount(len(tabledata["Properties"]))
                     for i, item in enumerate(tabledata["Properties"]):
                         for key, value in self.table_header_hash.items():
-                            # if key == "Property":
-                            #     combo = QComboBox()
-                            #     props = self.properties_table_object_properties_dict[self.tree.selectedIndexes()[0].data(Qt.UserRole)["Object_Type"]]
-                            #     for t in props:
-                            #         combo.addItem(t)
-                            #     self.table_widget.setCellWidget(i,value,combo)
-                            #     combo.setCurrentIndex(props.index(item[key]))
+                            if key == "Property":
+                                combo = QComboBox()
+                                props = self.properties_table_object_properties_dict[self.tree.selectedIndexes()[0].data(Qt.UserRole)["Object_Type"]]
+                                for t in props:
+                                    combo.addItem(t)
+                                self.table_widget.setCellWidget(i,value,combo)
+                                combo.setCurrentIndex(props.index(item[key]))
 
-                            # else:
+                            else:
                             #     self.table_widget.setItem(i, value, QTableWidgetItem(item[key]))
                             #self.table_widget.setItem(i, value, QTableWidgetItem(item[key]))
-                            self.table_widget.setCellWidget(i, value, QLineEdit(item[key]))
+                                self.table_widget.setCellWidget(i, value, QLineEdit(item[key]))
                 except TypeError as e:
                     if str(e) == 'string indices must be integers':
                         pass
@@ -1516,7 +1517,7 @@ class SetupMainWindow:
                 self.data["SystemInputs"] = model_to_dict(self.root_model)
 
                 with open(name[0]+'.mdl', 'w') as fp:
-                    json.dump(self.data, fp)
+                    json.dump(self.data, fp, sort_keys=True, indent=2)
 
             except Exception as e:
                 raise
@@ -1529,7 +1530,7 @@ class SetupMainWindow:
             ################ Kaan: I dont like the following quick fix for the main folders, but this might change in future anyways
 
             if model.rowCount(parent_index) == 0:
-                if model.index(0, 0).data(Qt.UserRole) == "folder":
+                if parent_index.data(Qt.UserRole) == "folder":
                     if parent_index.data() in d: 
                         d[parent_index.data()][model.index(0, 0).data(0)] = {}
                     else:
