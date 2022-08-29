@@ -6,7 +6,8 @@
 # add_node_to_tree Function => When a new folder is created, it is an empty dict. It is detected in an if statement. Maybe not the best practice?
 # cutObject Function => Make object text less bold
 # Pasting of cut objects => Naming should be fixed (when moved it should not be "copy of xxx") and if the same object name exist in the new folder, it should be asked to replace or skip or renamed etc..
-
+# assignGroupByModel function => read comments
+# self.ui.load_pages.parentship_button_layout.addStretch() does not work properly
 ###
 
 from sqlite3 import connect
@@ -49,12 +50,14 @@ from functools import reduce
 import operator
 from main import AnotherWindow
 from main import ListViewOpenExistingModel
+from main import AssignGroup
 from functools import partial
 import copy
 from gui.core.create_json import readTxt
 import csv
 
 from gui.uis.windows.main_window import ui_main
+
 # PY WINDOW
 # ///////////////////////////////////////////////////////////////
 
@@ -476,6 +479,35 @@ class SetupMainWindow:
         self.paste_table_row_button.setMaximumHeight(40)
 
 
+        self.add_table_2_row_button = PyPushButton(
+            
+            text="Add New Row",
+            radius=8,
+            color=self.themes["app_color"]["text_foreground"],
+            bg_color=self.themes["app_color"]["dark_one"],
+            bg_color_hover=self.themes["app_color"]["dark_three"],
+            bg_color_pressed=self.themes["app_color"]["dark_four"]
+        )
+
+        self.add_table_2_row_button.setMaximumHeight(40)
+
+
+
+        self.delete_table_2_row_button = PyPushButton(
+            
+            text="Delete Selected Rows",
+            radius=8,
+            color=self.themes["app_color"]["text_foreground"],
+            bg_color=self.themes["app_color"]["dark_one"],
+            bg_color_hover=self.themes["app_color"]["dark_three"],
+            bg_color_pressed=self.themes["app_color"]["dark_four"]
+        )
+        #self.icon = QIcon(Functions.set_svg_icon("icon_save.svg"))
+        #self.delete_table_row_button.setIcon(self.icon)
+        self.delete_table_2_row_button.setMaximumHeight(40)
+
+
+
         self.create_new_model_button = PyPushButton(
             
             text="Create New Model",
@@ -665,6 +697,54 @@ class SetupMainWindow:
         self.table_widget.setHorizontalHeaderItem(12, self.column_13)
 
 
+
+
+        
+        self.table_widget_2 = PyTableWidget(
+            radius = 8,
+            color = self.themes["app_color"]["text_foreground"],
+            selection_color = self.themes["app_color"]["context_color"],
+            #bg_color = self.themes["app_color"]["bg_two"],
+            bg_color = "#eee",
+            header_horizontal_color = self.themes["app_color"]["dark_two"],
+            header_vertical_color = self.themes["app_color"]["bg_three"],
+            bottom_line_color = self.themes["app_color"]["bg_three"],
+            grid_line_color = self.themes["app_color"]["bg_one"],
+            scroll_bar_bg_color = self.themes["app_color"]["bg_one"],
+            scroll_bar_btn_color = self.themes["app_color"]["dark_four"],
+            context_color = self.themes["app_color"]["context_color"]
+
+        )
+        self.table_widget.setStyleSheet("background-color: #eee;")
+        self.table_widget_2.setStyleSheet("background-color: #eee;")
+        self.table_widget_2.setColumnCount(2)
+        self.table_widget_2.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        self.table_widget_2.setSelectionMode(QAbstractItemView.ExtendedSelection)
+        self.table_widget_2.setSelectionBehavior(QAbstractItemView.SelectRows)
+
+        # Columns / Header
+        self.column_1_2 = QTableWidgetItem()
+        self.column_1_2.setTextAlignment(Qt.AlignCenter)
+        self.column_1_2.setText("Parent Object")
+
+        self.column_2_2 = QTableWidgetItem()
+        self.column_2_2.setTextAlignment(Qt.AlignCenter)
+        self.column_2_2.setText("Parent Property")
+
+       
+        self.table_header_hash_2 = {'Parent Object':0, "Parent Property":1}
+
+
+        # Set column
+        self.table_widget_2.setHorizontalHeaderItem(0, self.column_1_2)
+        self.table_widget_2.setHorizontalHeaderItem(1, self.column_2_2)
+
+
+
+
+
+
+
         self.expandedSet = set()
         
 
@@ -774,8 +854,23 @@ class SetupMainWindow:
 
         def update_properties_table():
             # First determine all parent names for the selected object
-            # ///////////////////////////////////////////////////////////////   
-            
+            # ///////////////////////////////////////////////////////////////
+
+            try:
+                self.table_widget.itemChanged.disconnect()
+            except (TypeError, RuntimeError):
+                # was never connected;
+                # PyQt raises TypeError, PySide raises RuntimeError
+                print ("RuntimeError 1")
+                pass
+            try:
+                self.table_widget_2.itemChanged.disconnect()
+            except (TypeError, RuntimeError):
+                # was never connected
+                # PyQt raises TypeError, PySide raises RuntimeError
+                print ("RuntimeError 2")
+                pass
+
             tabledata = self.tree.selectedIndexes()[0].data(Qt.UserRole)
             
             if tabledata is not None:
@@ -788,25 +883,55 @@ class SetupMainWindow:
                                 props = self.properties_table_object_properties_dict[self.tree.selectedIndexes()[0].data(Qt.UserRole)["Object_Type"]]
                                 for t in props:
                                     combo.addItem(t)
+                                ### would the connect work for all comboboxes???
+                                
                                 self.table_widget.setCellWidget(i,value,combo)
                                 combo.setCurrentIndex(props.index(item[key]))
-
+                                combo.currentIndexChanged.connect(save_properties_table)
                             else:
-                            #     self.table_widget.setItem(i, value, QTableWidgetItem(item[key]))
-                            #self.table_widget.setItem(i, value, QTableWidgetItem(item[key]))
-                                self.table_widget.setCellWidget(i, value, QLineEdit(item[key]))
+                                self.table_widget.setItem(i, value, QTableWidgetItem(item[key]))
+                                #self.table_widget.setCellWidget(i, value, QLineEdit(item[key]))
                 except TypeError as e:
                     if str(e) == 'string indices must be integers':
                         pass
                     else:
                         raise
 
+
+            if tabledata is not None:
+                try:
+                    self.table_widget_2.setRowCount(len(tabledata["Parent Objects"]))
+                    for i, item in enumerate(tabledata["Parent Objects"]):
+                        for key, value in self.table_header_hash_2.items():
+                            if key == "Parent Object":
+                                combo_2 = QComboBox()
+                                props = get_all_object_names(self.root_model)
+                                for t in props:
+                                    combo_2.addItem(t)
+                                self.table_widget_2.setCellWidget(i,value,combo_2)
+                                combo_2.setCurrentIndex(props.index(item[key]))
+                                combo_2.currentIndexChanged.connect(save_parent_table)
+                            else:
+                                it = QTableWidgetItem(item[key])
+                                
+                                self.table_widget_2.setItem(i, value, it)
+                                #self.table_widget_2.openPersistentEditor(it)
+
+                                #self.table_widget_2.setCellWidget(i, value, QLineEdit(item[key]))
+                except TypeError as e:
+                    if str(e) == 'string indices must be integers':
+                        pass
+                    else:
+                        raise
+
+
                 except Exception as e:
                     raise
 
             else:
                 self.table_widget.setRowCount(0)
-            
+            self.table_widget.itemChanged.connect(save_properties_table)
+            self.table_widget_2.itemChanged.connect(save_parent_table)
 
         def getFromDict(dataDict, mapList):
             try:
@@ -839,7 +964,8 @@ class SetupMainWindow:
                         if isinstance(self.table_widget.cellWidget(row, column) , QComboBox):
                             tempDict[self.table_widget.horizontalHeaderItem(column).text()]= self.table_widget.cellWidget(row, column).currentText()
                         else:
-                            tempDict[self.table_widget.horizontalHeaderItem(column).text()]=self.table_widget.cellWidget(row, column).text()
+                            #tempDict[self.table_widget.horizontalHeaderItem(column).text()]=self.table_widget.cellWidget(row, column).text()
+                            tempDict[self.table_widget.horizontalHeaderItem(column).text()]= self.table_widget.item(row, column).text()
                     except AttributeError:
                         tempDict[self.table_widget.horizontalHeaderItem(column).text()]=""
                 listofPropertiesToAppend.append(tempDict)
@@ -855,7 +981,86 @@ class SetupMainWindow:
             temp["Properties"].clear()
             temp["Properties"] = listofPropertiesToAppend.copy()
             self.root_model.itemFromIndex(self.proxyModel.mapToSource(getSelected[0])).setData(temp, Qt.UserRole)
-  
+
+
+        #self.table_widget.selectionModel().selectionChanged.connect(save_properties_table)
+        self.table_widget.itemChanged.connect(save_properties_table)
+        self.tree.clicked.connect(update_properties_table)
+        self.save_table_button.clicked.connect(save_properties_table)
+
+
+        def save_parent_table():
+            
+            getSelected = self.tree.selectedIndexes()
+            keysList = getNodeNameAndParentList(getSelected)
+
+            self.currentlySelectedModelObject = copy.deepcopy(keysList)
+
+
+            #### Following 1 line is directly changing data dict file, became obsolete with model view approach
+            #setInDict(self.system_inputs,self.currentlySelectedModelObject+["Properties"],[])
+
+            listofParentsToAppend = []
+            for row in range(self.table_widget_2.rowCount()):
+                tempDict = {}
+                for column in range(self.table_widget_2.columnCount()):
+                    try:
+                        if isinstance(self.table_widget_2.cellWidget(row, column) , QComboBox):
+                            tempDict[self.table_widget_2.horizontalHeaderItem(column).text()]= self.table_widget_2.cellWidget(row, column).currentText()
+                        else:
+                            tempDict[self.table_widget_2.horizontalHeaderItem(column).text()]=self.table_widget_2.item(row, column).text()
+                    except AttributeError:
+                        tempDict[self.table_widget_2.horizontalHeaderItem(column).text()]=""
+                listofParentsToAppend.append(tempDict)
+            
+            #### Following 4 lines are directly changing data dict file, became obsolete with model view approach  
+            #setInDict(self.system_inputs,self.currentlySelectedModelObject+["Properties"],listofPropertiesToAppend)
+            #reset_tree()
+            #add_node_to_tree(self, listofPropertiesToAppend, self.root_model.itemFromIndex(self.proxyModel.mapToSource(getSelected[0])))
+            #self.root_model.itemFromIndex(self.proxyModel.mapToSource(getSelected[0])).data(Qt.UserRole)["Properties"].clear()
+            ####
+            
+            temp = copy.deepcopy(self.root_model.itemFromIndex(self.proxyModel.mapToSource(getSelected[0])).data(Qt.UserRole))
+            temp["Parent Objects"].clear()
+            temp["Parent Objects"] = listofParentsToAppend.copy()
+            self.root_model.itemFromIndex(self.proxyModel.mapToSource(getSelected[0])).setData(temp, Qt.UserRole)
+
+        self.table_widget_2.itemChanged.connect(save_parent_table)
+        #self.table_widget_2.selectionModel().selectionChanged.connect(save_parent_table)
+
+
+        def delete_seleted_rows_parent():
+            indexes = self.table_widget_2.selectionModel().selectedRows()
+            for index in sorted(indexes):
+                self.table_widget_2.removeRow(index.row()) 
+
+        self.delete_table_2_row_button.clicked.connect(delete_seleted_rows_parent)
+
+        def add_new_rows_parent():
+            try:
+                self.table_widget_2.itemChanged.disconnect()
+            except (TypeError, RuntimeError):
+                # was never connected;
+                # PyQt raises TypeError, PySide raises RuntimeError
+                print ("RuntimeError 1")
+                pass
+            rowPosition = self.table_widget_2.rowCount()
+            self.table_widget_2.insertRow(rowPosition)
+            for column in range(self.table_widget_2.columnCount()):
+                if column == 0:
+                    combo = QComboBox()
+                    props = get_all_object_names(self.root_model)
+                    combo.addItem("")
+                    for t in props:
+                        combo.addItem(t)          
+                    self.table_widget_2.setCellWidget(rowPosition,column,combo)
+                    combo.currentIndexChanged.connect(save_parent_table)
+                else:
+                    self.table_widget_2.setItem(rowPosition, column, QTableWidgetItem(""))  
+            self.table_widget_2.itemChanged.connect(save_parent_table)        
+        self.add_table_2_row_button.clicked.connect(add_new_rows_parent)
+
+
         # def reset_tree():
         #     iterate_tree_items_via_model_depth_first(self.tree)    
         #     self.root_model.clear()
@@ -863,8 +1068,7 @@ class SetupMainWindow:
         #     add_node_to_tree(self, self.system_inputs, root_node)
         #     expand_iterate_tree_items_via_model_depth_first(self.tree)
         
-        self.tree.clicked.connect(update_properties_table)
-        self.save_table_button.clicked.connect(save_properties_table)
+
         
         def delete_seleted_rows():
             indexes = self.table_widget.selectionModel().selectedRows()
@@ -874,11 +1078,28 @@ class SetupMainWindow:
         self.delete_table_row_button.clicked.connect(delete_seleted_rows)
 
         def add_new_rows():
+            try:
+                self.table_widget.itemChanged.disconnect()
+            except (TypeError, RuntimeError):
+                # was never connected;
+                # PyQt raises TypeError, PySide raises RuntimeError
+                print ("RuntimeError 1")
+                pass
             rowPosition = self.table_widget.rowCount()
             self.table_widget.insertRow(rowPosition)
-            for column in range(self.table_widget.columnCount()):        
-                self.table_widget.setItem(rowPosition, column, QTableWidgetItem(""))  
-
+            for column in range(self.table_widget.columnCount()):
+                if column == 2:
+                    combo = QComboBox()
+                    props = self.properties_table_object_properties_dict[self.tree.selectedIndexes()[0].data(Qt.UserRole)["Object_Type"]]
+                    combo.addItem("")
+                    for t in props:
+                        combo.addItem(t)          
+                    self.table_widget.setCellWidget(rowPosition,column,combo)
+                    combo.currentIndexChanged.connect(save_properties_table)
+                else:
+                    self.table_widget.setItem(rowPosition, column, QTableWidgetItem(""))  
+                #self.table_widget.setCellWidget(rowPosition, column, QLineEdit(""))
+            self.table_widget.itemChanged.connect(save_properties_table)
         self.add_table_row_button.clicked.connect(add_new_rows)
 
         self.rowsToCopy = []
@@ -939,7 +1160,8 @@ class SetupMainWindow:
                         menu.addAction(qmenupasteobject)
                         qmenudeleteobject = QAction("Delete Object", self)
                         menu.addAction(qmenudeleteobject)
-
+                        qmenuassigngroupbject = QAction("Assign a Group to the Object", self)
+                        menu.addAction(qmenuassigngroupbject)
 
                         if qmenurenameobject:
                             qmenurenameobject.triggered.connect(partial(renameObjectByModel))
@@ -951,7 +1173,8 @@ class SetupMainWindow:
                             qmenupasteobject.triggered.connect(partial(pasteObjectByModel))
                         if qmenudeleteobject:
                             qmenudeleteobject.triggered.connect(partial(deleteObjectByModel))
-
+                        if qmenuassigngroupbject:
+                            qmenuassigngroupbject.triggered.connect(partial(assignGroupByModel))
 
                     elif selectedType == "Folder":
 
@@ -1057,7 +1280,7 @@ class SetupMainWindow:
                     newObjectDict = {text : {"Model Id": "yarrak",
                     "Object_Name": text,
                     "Object_Type": keysList[0],
-                    "Parent Object": [],
+                    "Parent Objects": [],
                     "Properties": []
                     }}
 
@@ -1110,6 +1333,46 @@ class SetupMainWindow:
         #         pass
 
 
+        def assignGroupByModel():
+            print(self.tree.selectedIndexes()[0].data(Qt.UserRole)["Parent Object"])
+            getSelected = self.tree.selectedIndexes()
+            self.dialogBox = AssignGroup()
+            self.dialogBox.listWidget.setSelectionMode(QAbstractItemView.ExtendedSelection)
+            
+            items_obj=get_all_object_names(self.root_model)
+            for item in items_obj:
+                item = QListWidgetItem(item)
+                item.setCheckState(Qt.Unchecked)
+                self.dialogBox.listWidget.addItem(item)
+
+            items_obj_prop = ["a","b","c"]
+            for item in items_obj_prop: 
+                item = QListWidgetItem(item)
+                item.setCheckState(Qt.Unchecked)
+                self.dialogBox.listWidget_2.addItem(item)     
+
+
+
+            def click_add_button():
+                print("botuno bastin")
+
+            self.dialogBox.pushButton.clicked.connect(click_add_button)
+
+            self.dialogBox.show()
+            
+
+
+
+            if self.dialogBox.exec_():
+                ###### Is there are way to set data only for a certain sub dict of the Qt.UserRole????? I just want to edit
+                ###### "Parent Object", so the entire data doesn't have to be copied - edited - pasted ????
+                temp = copy.deepcopy(self.root_model.itemFromIndex(self.proxyModel.mapToSource(getSelected[0])).data(Qt.UserRole))
+                temp["Parent Object"].clear()
+                for selected in self.dialogBox.listWidget.selectedItems():
+                    temp["Parent Object"].append(selected.text())
+                self.root_model.itemFromIndex(self.proxyModel.mapToSource(getSelected[0])).setData(temp, Qt.UserRole)
+                
+
         def deleteObjectByModel():
             qm = QMessageBox
             ret = qm.question(self,'', "Are you sure to delete object?", qm.Yes | qm.No)
@@ -1145,13 +1408,13 @@ class SetupMainWindow:
             if getSelected[0].data(Qt.UserRole) == "folder":
                 pass  #cut folder function is to be coded
             else:
-                cutObject()
+                cutObjectByModel()
 
         global dragEnd
         self.dragTarget = "" 
         def dragEnd(dragTarget):
             self.dragTarget = dragTarget
-            pasteObject()
+            pasteObjectByModel()
         
         # def copyObject():        #This works 28.07.2022 23:52
         #     getSelected = self.tree.selectedIndexes()
@@ -1517,7 +1780,7 @@ class SetupMainWindow:
                 self.data["SystemInputs"] = model_to_dict(self.root_model)
 
                 with open(name[0]+'.mdl', 'w') as fp:
-                    json.dump(self.data, fp, sort_keys=True, indent=2)
+                    json.dump(self.data, fp, sort_keys=True, indent=4)
 
             except Exception as e:
                 raise
@@ -1574,9 +1837,30 @@ class SetupMainWindow:
             return d
 
 
+        def _get_all_object_names(parent_index, d, model):
+    
+            
+                for i in range(model.rowCount(parent_index)):
+                    ix = model.index(i, 0, parent_index)
+
+                    
+                    if model.index(i, 0, parent_index).data(Qt.UserRole) == "folder":
+                        pass
+                    else:
+
+                        d.append(model.index(i, 0, parent_index).data(0))
 
 
+                    _get_all_object_names(ix, d, model)
 
+        def get_all_object_names(model):
+    
+            d = list()
+            for i in range(model.rowCount()):
+                ix = model.index(i, 0)
+                _get_all_object_names(ix, d, model)
+
+            return d
 
         def file_open():
             name = QFileDialog.getOpenFileName(self, 'Open File')
@@ -1595,11 +1879,12 @@ class SetupMainWindow:
 
         def create_json_from_txt():
             name = QFileDialog.getExistingDirectory(None, 'Select a folder:', self.working_directory, QFileDialog.ShowDirsOnly)
-            aaa=readTxt(name, "yarrak")
+
 
             text, okPressed = QInputDialog.getText(self, "Json File Name","Json File Name:", text="")
             if okPressed and text != '':
-                with open(text+'.json', 'w') as fp:
+                aaa=readTxt(name, text)
+                with open("data/"+ text +'.mdl', 'w') as fp:
                     json.dump(aaa, fp, sort_keys=True, indent=4)
 
         self.create_json_database_from_txt_files_button.clicked.connect(create_json_from_txt)        
@@ -1682,11 +1967,18 @@ class SetupMainWindow:
         self.ui.load_pages.row_3_layout.addWidget(self.create_json_database_from_txt_files_button)
         self.ui.load_pages.row_3_layout.addWidget(self.toggle_button)
         #self.ui.load_pages.row_4_layout.addWidget(self.line_edit)
-        self.ui.load_pages.row_5_layout.addWidget(self.filterEdit)
-        self.ui.load_pages.row_5_layout.addWidget(self.tree)
+        self.ui.load_pages.tree_layout.addWidget(self.filterEdit)
+        self.ui.load_pages.tree_layout.addWidget(self.tree)
 
         self.ui.load_pages.table_layout.addWidget(self.table_widget)
- 
+        self.ui.load_pages.parentship_table_layout.addWidget(self.table_widget_2)
+
+        self.ui.load_pages.parentship_button_layout.addWidget(self.add_table_2_row_button)
+
+        self.ui.load_pages.parentship_button_layout.addWidget(self.delete_table_2_row_button)
+        
+        self.ui.load_pages.parentship_button_layout.addStretch()
+
         # RIGHT COLUMN
         # ///////////////////////////////////////////////////////////////
 

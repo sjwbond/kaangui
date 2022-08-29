@@ -45,8 +45,8 @@ os.environ["QT_FONT_DPI"] = "96"
 # IMPORT KAAN OPEN EXISTING MODEL DIALOG BOX
 # ///////////////////////////////////////////////////////////////
 from gui.uis.windows.open_existing_model.openexistingmodel2 import *
+from gui.uis.windows.assign_group.assign_group_dialog_box import *
 
-# MAIN WINDOW
 # ///////////////////////////////////////////////////////////////
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -249,6 +249,11 @@ class ListViewOpenExistingModel(QDialog, Ui_Dialog_Open_Existing_Model):
         QDialog.__init__(self,parent)
         self.setupUi(self)
 
+
+class AssignGroup(QDialog, Ui_Dialog_Assign_Group):
+    def __init__(self, parent=None):
+        QDialog.__init__(self,parent)
+        self.setupUi(self)
 
 
 class AnotherWindow(QWidget):

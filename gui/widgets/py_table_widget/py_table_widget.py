@@ -29,7 +29,7 @@ class PyTableWidget(QTableWidget):
         self, 
         radius = 8,
         color = "#FFF",
-        bg_color = "#444",
+        bg_color = "#eee",
         selection_color = "#FFF",
         header_horizontal_color = "#333",
         header_vertical_color = "#444",

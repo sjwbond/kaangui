@@ -30,10 +30,11 @@ def readTxt(folder, modelID):
              objectDict[line.split('\t')[0]]= {}
              objectDict[line.split('\t')[0]]["Object_Name"] = line.split('\t')[0]
              objectDict[line.split('\t')[0]]["Object_Type"] = line.split('\t')[1]
-             objectDict[line.split('\t')[0]]["Parent Object"] = []
+             objectDict[line.split('\t')[0]]["Parent Objects"] = []
              objectDict[line.split('\t')[0]]["Properties"] = []
              objectDict[line.split('\t')[0]]["Model Id"] = modelID
 
+    allParents = set()
     for relationshipsFilePath in relationshipsFilenamesList:
      with open(relationshipsFilePath) as file_in:
          next(file_in)
@@ -41,9 +42,16 @@ def readTxt(folder, modelID):
                  line= line.rstrip()
                  #line=line.decode('utf-8','ignore').encode("utf-8")
                  try:
-                     objectDict[line.split('\t')[0]]["Parent Object"].append(line.split('\t')[1])
+                     #objectDict[line.split('\t')[0]]["Parent Object"].append([line.split('\t')[1],line.split('\t')[2]])
+                     objectDict[line.split('\t')[0]]["Parent Objects"].append({"Parent Object" : line.split('\t')[1], "Parent Property" : line.split('\t')[2]})
+                     
                  except:
-                     pass
+                    try:
+                        objectDict[line.split('\t')[0]]["Parent Objects"].append({"Parent Object" : line.split('\t')[1], "Parent Property" : ""})
+                    except KeyError as e:
+                        pass
+
+                 allParents.add(line.split('\t')[1])
 
     for propertiesFilePath in propertiesFilenamesList:
      with open(propertiesFilePath) as file_in:
@@ -84,11 +92,11 @@ def readTxt(folder, modelID):
              objectDict[line.split('\t')[0]]= {}
              objectDict[line.split('\t')[0]]["Object_Name"] = line.split('\t')[0]
              objectDict[line.split('\t')[0]]["Object_Type"] = line.split('\t')[1]
-             objectDict[line.split('\t')[0]]["Parent Object"] = []
+             objectDict[line.split('\t')[0]]["Parent Objects"] = []
              objectDict[line.split('\t')[0]]["Properties"] = []
              objectDict[line.split('\t')[0]]["Model Id"] = modelID
 
-    allParents = set()
+    
 
     for relationshipsFilePath in relationshipsFilenamesList:
      with open(relationshipsFilePath) as file_in:
@@ -97,9 +105,11 @@ def readTxt(folder, modelID):
                  line= line.rstrip()
                  #line=line.decode('utf-8','ignore').encode("utf-8")
                  try:
-                     objectDict[line.split('\t')[0]]["Parent Object"].append([line.split('\t')[1],line.split('\t')[2]])
+                     #objectDict[line.split('\t')[0]]["Parent Object"].append([line.split('\t')[1],line.split('\t')[2]])
+                     objectDict[line.split('\t')[0]]["Parent Objects"].append({"Parent Object" : line.split('\t')[1], "Parent Property" : line.split('\t')[2]})
+                     
                  except:
-                     objectDict[line.split('\t')[0]]["Parent Object"].append([line.split('\t')[1],""])
+                    objectDict[line.split('\t')[0]]["Parent Objects"].append({"Parent Object" : line.split('\t')[1], "Parent Property" : ""})
                  allParents.add(line.split('\t')[1])
 
     # my_list = list(allParents)
@@ -140,11 +150,11 @@ def readTxt(folder, modelID):
     return newDict
 
 
-folder = os.getcwd()
+# folder = os.getcwd()
 
-aaa=readTxt(folder, "yarrak")
+# aaa=readTxt(folder, "yarrak")
 
-with open('data.json', 'w') as fp:
-    json.dump(aaa, fp, sort_keys=True, indent=4)
+# with open('data.mdl', 'w') as fp:
+#     json.dump(aaa, fp, sort_keys=True, indent=4)
 
-print("bok")
+# print("bok")

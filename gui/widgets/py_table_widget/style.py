@@ -19,10 +19,10 @@ QTableWidget::item{{
     border-bottom: 1px solid {_bottom_line_color};
 }}
 QTableWidget::item:selected{{
-	background-color: {_selection_color};
+	background-color: {_bg_color};
 }}
 QHeaderView::section{{
-	background-color: rgb(33, 37, 43);
+	background-color: {_bg_color};
 	max-width: 30px;
 	border: 1px solid rgb(44, 49, 58);
 	border-style: none;
@@ -30,24 +30,24 @@ QHeaderView::section{{
     border-right: 1px solid rgb(44, 49, 60);
 }}
 QTableWidget::horizontalHeader {{	
-	background-color: rgb(33, 37, 43);
+	background-color: {_bg_color};
 }}
 QTableWidget QTableCornerButton::section {{
     border: none;
-	background-color: {_header_horizontal_color};
+	background-color: {_bg_color};
 	padding: 3px;
     border-top-left-radius: {_radius}px;
 }}
 QHeaderView::section:horizontal
 {{
     border: none;
-	background-color: {_header_horizontal_color};
+	background-color: {_bg_color};
 	padding: 3px;
 }}
 QHeaderView::section:vertical
 {{
     border: none;
-	background-color: {_header_vertical_color};
+	background-color: {_bg_color};
 	padding-left: 5px;
     padding-right: 5px;
     border-bottom: 1px solid {_bottom_line_color};

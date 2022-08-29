@@ -121,10 +121,45 @@ class Ui_MainPages(object):
 
         self.verticalLayout.addLayout(self.row_4_layout)
 
-        self.row_5_layout = QVBoxLayout()
+        # self.row_5_layout = QVBoxLayout()
+        # self.row_5_layout.setObjectName(u"row_5_layout")
+
+        # self.verticalLayout.addLayout(self.row_5_layout)
+
+        self.row_5_layout = QHBoxLayout()
         self.row_5_layout.setObjectName(u"row_5_layout")
+        
+        self.tree_layout = QVBoxLayout()
+        self.tree_layout.setObjectName(u"tree_layout")
+
+        self.row_5_layout.addLayout(self.tree_layout)
+
+
+
+        self.parentship_layout = QHBoxLayout()
+        self.parentship_layout.setObjectName(u"parentship_layout")
+
+        self.parentship_button_layout = QVBoxLayout()
+        self.parentship_button_layout.setObjectName(u"parentship_button_layout")
+        
+
+        
+        self.parentship_layout.addLayout(self.parentship_button_layout)
+
+
+        self.parentship_table_layout = QVBoxLayout()
+        self.parentship_table_layout.setObjectName(u"parentship_table_layout")
+
+        self.parentship_layout.addLayout(self.parentship_table_layout)
+
+
+        self.row_5_layout.addLayout(self.parentship_layout)
+
+
+
 
         self.verticalLayout.addLayout(self.row_5_layout)
+
 
         self.row_6_layout = QHBoxLayout()
         self.row_6_layout.setObjectName(u"row_6_layout")
@@ -140,6 +175,23 @@ class Ui_MainPages(object):
 
 
         self.verticalLayout.addLayout(self.row_6_layout)
+
+
+
+        self.row_7_layout = QHBoxLayout()
+        self.row_7_layout.setObjectName(u"row_7_layout")
+        self.table_button_layout_2 = QVBoxLayout()
+        self.table_button_layout_2.setObjectName(u"table_button_layout_2")
+
+        self.row_7_layout.addLayout(self.table_button_layout_2)
+
+        self.table_layout_2 = QVBoxLayout()
+        self.table_layout_2.setObjectName(u"table_layout_2")
+
+        self.row_7_layout.addLayout(self.table_layout_2)
+
+
+        self.verticalLayout.addLayout(self.row_7_layout)
 
         self.scroll_area.setWidget(self.contents)
 
