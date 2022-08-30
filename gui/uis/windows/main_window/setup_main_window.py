@@ -2,12 +2,13 @@
 ###
 #TO DO LIST
 # Alphabetical & Typewise Sorting of tree view
-# deleteObject Function => If the last object in a folder is deleted, the folder is deleted as well. The folder should remain
 # add_node_to_tree Function => When a new folder is created, it is an empty dict. It is detected in an if statement. Maybe not the best practice?
 # cutObject Function => Make object text less bold
 # Pasting of cut objects => Naming should be fixed (when moved it should not be "copy of xxx") and if the same object name exist in the new folder, it should be asked to replace or skip or renamed etc..
 # assignGroupByModel function => read comments
 # self.ui.load_pages.parentship_button_layout.addStretch() does not work properly
+# stylesheets
+
 ###
 
 from sqlite3 import connect
@@ -57,6 +58,10 @@ from gui.core.create_json import readTxt
 import csv
 
 from gui.uis.windows.main_window import ui_main
+
+from pymongo import MongoClient
+import gridfs
+
 
 # PY WINDOW
 # ///////////////////////////////////////////////////////////////
@@ -559,6 +564,20 @@ class SetupMainWindow:
         self.icon = QIcon(Functions.set_svg_icon("icon_attachment.svg"))
         self.create_json_database_from_txt_files_button.setIcon(self.icon)
         self.create_json_database_from_txt_files_button.setMaximumHeight(40)
+
+        self.to_MongoBD_button = PyPushButton(
+            
+            text="Save Moden in Mongo",
+            radius=8,
+            color=self.themes["app_color"]["text_foreground"],
+            bg_color=self.themes["app_color"]["dark_one"],
+            bg_color_hover=self.themes["app_color"]["dark_three"],
+            bg_color_pressed=self.themes["app_color"]["dark_four"]
+        )
+        self.icon = QIcon(Functions.set_svg_icon("icon_attachment.svg"))
+        self.to_MongoBD_button.setIcon(self.icon)
+        self.to_MongoBD_button.setMaximumHeight(40)
+
 
         # # PUSH BUTTON 1
         # self.push_button_1 = PyPushButton(
@@ -1096,6 +1115,12 @@ class SetupMainWindow:
                         combo.addItem(t)          
                     self.table_widget.setCellWidget(rowPosition,column,combo)
                     combo.currentIndexChanged.connect(save_properties_table)
+                
+                elif column == 3:
+                    self.table_widget.setItem(rowPosition, column, QTableWidgetItem("2000-01-01"))  
+                elif column == 4:
+                    self.table_widget.setItem(rowPosition, column, QTableWidgetItem("2100-01-01"))  
+
                 else:
                     self.table_widget.setItem(rowPosition, column, QTableWidgetItem(""))  
                 #self.table_widget.setCellWidget(rowPosition, column, QLineEdit(""))
@@ -1109,7 +1134,10 @@ class SetupMainWindow:
             for index in sorted(indexes):
                 rowToCopyDict = {}
                 for column in range(self.table_widget.columnCount()):
-                    rowToCopyDict[self.table_widget.horizontalHeaderItem(column).text()] = self.table_widget.item(index.row(), column).text()
+                    if column == 2:
+                        rowToCopyDict[self.table_widget.horizontalHeaderItem(column).text()] = self.table_widget.cellWidget(index.row(), column).currentText()
+                    else:
+                        rowToCopyDict[self.table_widget.horizontalHeaderItem(column).text()] = self.table_widget.item(index.row(), column).text()
                 self.rowsToCopy.append(copy.deepcopy(rowToCopyDict))
             
 
@@ -1120,10 +1148,24 @@ class SetupMainWindow:
             rowPosition = self.table_widget.rowCount()
             for i in range(len(self.rowsToCopy)):
                 self.table_widget.insertRow(rowPosition)
-                
                 rowToPasteDict = self.rowsToCopy[i]
                 for column in range(self.table_widget.columnCount()):
-                    self.table_widget.setItem(rowPosition, column, QTableWidgetItem(rowToPasteDict[self.table_widget.horizontalHeaderItem(column).text()]))  
+                    if column == 2:
+                        combo = QComboBox()
+                        props = self.properties_table_object_properties_dict[self.tree.selectedIndexes()[0].data(Qt.UserRole)["Object_Type"]]
+                        for t in props:
+                            combo.addItem(t)
+                        
+                        self.table_widget.setCellWidget(rowPosition,column,combo)
+                        combo.setCurrentIndex(props.index(rowToPasteDict[self.table_widget.horizontalHeaderItem(column).text()]))
+                        combo.currentIndexChanged.connect(save_properties_table)
+
+                    else:
+                        self.table_widget.setItem(rowPosition, column, QTableWidgetItem(rowToPasteDict[self.table_widget.horizontalHeaderItem(column).text()]))                                            
+
+
+
+  
                 rowPosition = self.table_widget.rowCount()
             
 
@@ -1771,6 +1813,20 @@ class SetupMainWindow:
 
 
 
+        def save_model_to_MongoBD():
+    
+            try:
+                self.data["SystemInputs"] = model_to_dict(self.root_model)
+                client = MongoClient("127.0.0.1", 27017)
+                db = client['DB_Fundamental']
+                fs = gridfs.GridFS(db)
+                a = fs.put(self.data["SystemInputs"])
+            except Exception as e:
+                raise
+
+        self.to_MongoBD_button.clicked.connect(save_model_to_MongoBD)
+
+
 
         def file_save():
 
@@ -1965,7 +2021,8 @@ class SetupMainWindow:
         self.ui.load_pages.row_3_layout.addWidget(self.open_existing_model_button)
         self.ui.load_pages.row_3_layout.addWidget(self.save_model_button)
         self.ui.load_pages.row_3_layout.addWidget(self.create_json_database_from_txt_files_button)
-        self.ui.load_pages.row_3_layout.addWidget(self.toggle_button)
+        self.ui.load_pages.row_3_layout.addWidget(self.to_MongoBD_button)
+        #self.ui.load_pages.row_3_layout.addWidget(self.toggle_button)
         #self.ui.load_pages.row_4_layout.addWidget(self.line_edit)
         self.ui.load_pages.tree_layout.addWidget(self.filterEdit)
         self.ui.load_pages.tree_layout.addWidget(self.tree)
