@@ -47,6 +47,7 @@ from . functions_main_window import *
 from gui.core.functions import *
 import json
 from gui.widgets.py_customTree_widget import *
+from gui.widgets.comboBoxSearchable.comboBoxSearchable import ExtendedComboBox
 from functools import reduce 
 import operator
 from main import AnotherWindow
@@ -898,7 +899,10 @@ class SetupMainWindow:
                     for i, item in enumerate(tabledata["Properties"]):
                         for key, value in self.table_header_hash.items():
                             if key == "Property":
-                                combo = QComboBox()
+                                combo = ExtendedComboBox()
+                                # combo.setEditable(True)
+                                # combo.completer().setCompletionMode(QCompleter.PopupCompletion)
+                                # combo.setInsertPolicy(QComboBox.NoInsert) 
                                 props = self.properties_table_object_properties_dict[self.tree.selectedIndexes()[0].data(Qt.UserRole)["Object_Type"]]
                                 for t in props:
                                     combo.addItem(t)
@@ -923,7 +927,8 @@ class SetupMainWindow:
                     for i, item in enumerate(tabledata["Parent Objects"]):
                         for key, value in self.table_header_hash_2.items():
                             if key == "Parent Object":
-                                combo_2 = QComboBox()
+                                combo_2 = ExtendedComboBox()
+
                                 props = get_all_object_names(self.root_model)
                                 for t in props:
                                     combo_2.addItem(t)
@@ -1067,7 +1072,8 @@ class SetupMainWindow:
             self.table_widget_2.insertRow(rowPosition)
             for column in range(self.table_widget_2.columnCount()):
                 if column == 0:
-                    combo = QComboBox()
+                    combo = ExtendedComboBox()
+
                     props = get_all_object_names(self.root_model)
                     combo.addItem("")
                     for t in props:
@@ -1108,12 +1114,14 @@ class SetupMainWindow:
             self.table_widget.insertRow(rowPosition)
             for column in range(self.table_widget.columnCount()):
                 if column == 2:
-                    combo = QComboBox()
+                    combo = ExtendedComboBox()
+
                     props = self.properties_table_object_properties_dict[self.tree.selectedIndexes()[0].data(Qt.UserRole)["Object_Type"]]
                     combo.addItem("")
                     for t in props:
                         combo.addItem(t)          
                     self.table_widget.setCellWidget(rowPosition,column,combo)
+
                     combo.currentIndexChanged.connect(save_properties_table)
                 
                 elif column == 3:
@@ -1151,7 +1159,8 @@ class SetupMainWindow:
                 rowToPasteDict = self.rowsToCopy[i]
                 for column in range(self.table_widget.columnCount()):
                     if column == 2:
-                        combo = QComboBox()
+                        combo = ExtendedComboBox()
+
                         props = self.properties_table_object_properties_dict[self.tree.selectedIndexes()[0].data(Qt.UserRole)["Object_Type"]]
                         for t in props:
                             combo.addItem(t)
