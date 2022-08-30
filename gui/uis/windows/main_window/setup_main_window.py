@@ -62,7 +62,7 @@ from gui.uis.windows.main_window import ui_main
 
 from pymongo import MongoClient
 import gridfs
-
+import time
 
 # PY WINDOW
 # ///////////////////////////////////////////////////////////////
@@ -896,6 +896,7 @@ class SetupMainWindow:
             if tabledata is not None:
                 try:
                     self.table_widget.setRowCount(len(tabledata["Properties"]))
+                    props = self.properties_table_object_properties_dict[self.tree.selectedIndexes()[0].data(Qt.UserRole)["Object_Type"]]
                     for i, item in enumerate(tabledata["Properties"]):
                         for key, value in self.table_header_hash.items():
                             if key == "Property":
@@ -903,11 +904,10 @@ class SetupMainWindow:
                                 # combo.setEditable(True)
                                 # combo.completer().setCompletionMode(QCompleter.PopupCompletion)
                                 # combo.setInsertPolicy(QComboBox.NoInsert) 
-                                props = self.properties_table_object_properties_dict[self.tree.selectedIndexes()[0].data(Qt.UserRole)["Object_Type"]]
+                                
                                 for t in props:
                                     combo.addItem(t)
-                                ### would the connect work for all comboboxes???
-                                
+
                                 self.table_widget.setCellWidget(i,value,combo)
                                 combo.setCurrentIndex(props.index(item[key]))
                                 combo.currentIndexChanged.connect(save_properties_table)
@@ -924,17 +924,19 @@ class SetupMainWindow:
             if tabledata is not None:
                 try:
                     self.table_widget_2.setRowCount(len(tabledata["Parent Objects"]))
+                    props = get_all_object_names(self.root_model)
                     for i, item in enumerate(tabledata["Parent Objects"]):
                         for key, value in self.table_header_hash_2.items():
                             if key == "Parent Object":
                                 combo_2 = ExtendedComboBox()
-
-                                props = get_all_object_names(self.root_model)
+                           
                                 for t in props:
                                     combo_2.addItem(t)
+
                                 self.table_widget_2.setCellWidget(i,value,combo_2)
                                 combo_2.setCurrentIndex(props.index(item[key]))
                                 combo_2.currentIndexChanged.connect(save_parent_table)
+
                             else:
                                 it = QTableWidgetItem(item[key])
                                 
