@@ -1202,8 +1202,7 @@ class SetupMainWindow:
                         menu.addAction(qmenupasteobject)
                         qmenudeleteobject = QAction("Delete Object", self)
                         menu.addAction(qmenudeleteobject)
-                        qmenuassigngroupbject = QAction("Assign a Group to the Object", self)
-                        menu.addAction(qmenuassigngroupbject)
+
 
                         if qmenurenameobject:
                             qmenurenameobject.triggered.connect(partial(renameObjectByModel))
@@ -1215,8 +1214,7 @@ class SetupMainWindow:
                             qmenupasteobject.triggered.connect(partial(pasteObjectByModel))
                         if qmenudeleteobject:
                             qmenudeleteobject.triggered.connect(partial(deleteObjectByModel))
-                        if qmenuassigngroupbject:
-                            qmenuassigngroupbject.triggered.connect(partial(assignGroupByModel))
+
 
                     elif selectedType == "Folder":
 
