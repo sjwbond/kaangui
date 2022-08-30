@@ -1448,7 +1448,7 @@ class SetupMainWindow:
             if getSelected[0].data(Qt.UserRole) == "folder":
                 pass  #cut folder function is to be coded
             else:
-                cutObjectByModel()
+                copyObjectByModel()
 
         global dragEnd
         self.dragTarget = "" 
