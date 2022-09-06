@@ -2,7 +2,6 @@
 ###
 #TO DO LIST
 # Alphabetical & Typewise Sorting of tree view
-# add_node_to_tree Function => When a new folder is created, it is an empty dict. It is detected in an if statement. Maybe not the best practice?
 # cutObject Function => Make object text less bold
 # Pasting of cut objects => Naming should be fixed (when moved it should not be "copy of xxx") and if the same object name exist in the new folder, it should be asked to replace or skip or renamed etc..
 # assignGroupByModel function => read comments
@@ -63,6 +62,84 @@ from gui.uis.windows.main_window import ui_main
 from pymongo import MongoClient
 import gridfs
 import time
+
+
+class TableModel(QAbstractTableModel):
+    itemChanged = Signal()
+
+    def __init__(self, data):
+        super(TableModel, self).__init__()
+        self._data = data
+
+    def getData(self):
+        return self._data
+
+    def data(self, index, role):
+        if role == Qt.DisplayRole:
+            # See below for the nested-list data structure.
+            # .row() indexes into the outer list,
+            # .column() indexes into the sub-list
+            return self._data[index.row()][index.column()]
+    
+    def setData(self, index, text, role):
+        if role == Qt.DisplayRole:
+            self._data[index.row()][index.column()] = text
+            self.itemChanged.emit()
+            return True
+        return False
+
+    def rowCount(self, index):
+        # The length of the outer list.
+        return len(self._data)
+
+    def columnCount(self, index):
+        # The following takes the first sub-list, and returns
+        # the length (only works if all rows are an equal length)
+        return len(self._data[0])
+
+    def flags(self, index):
+        return Qt.ItemIsSelectable|Qt.ItemIsEnabled|Qt.ItemIsEditable
+
+class ComboDelegate(QItemDelegate):
+    def __init__(self, items):
+        super().__init__()
+        self.items = items
+        self.selectedIndex = 0
+
+    def createEditor(self, parent, option, proxyModelIndex):
+        combo = ExtendedComboBox(parent)
+        combo.addItems(self.items)
+        combo.setEditable(True)
+        self.connect(combo, SIGNAL("currentIndexChanged(int)"), self, SLOT("currentIndexChanged()"))
+        return combo
+
+    def setModelData(self, combo, model, index):
+        comboIndex = combo.currentIndex()
+        text = self.items[comboIndex]        
+        model.setData(index, text, Qt.DisplayRole)
+
+    @Slot()
+    def currentIndexChanged(self): 
+        self.commitData.emit(self.sender())
+
+class TextDelegate(QItemDelegate):
+    def __init__(self):
+        super().__init__()
+
+    def createEditor(self, parent, option, proxyModelIndex):
+        edit = QLineEdit(parent)
+        a = proxyModelIndex.model()
+        b = a.data(proxyModelIndex, Qt.DisplayRole)
+        edit.setText(b)
+        self.connect(edit, SIGNAL("currentIndexChanged(int)"), self, SLOT("currentIndexChanged()"))
+        return edit
+
+    def setModelData(self, edit, model, index):
+        model.setData(index, edit.text(), Qt.DisplayRole)
+
+    @Slot()
+    def currentIndexChanged(self): 
+        self.commitData.emit(self.sender())
 
 # PY WINDOW
 # ///////////////////////////////////////////////////////////////
@@ -720,24 +797,24 @@ class SetupMainWindow:
 
 
         
-        self.table_widget_2 = PyTableWidget(
-            radius = 8,
-            color = self.themes["app_color"]["text_foreground"],
-            selection_color = self.themes["app_color"]["context_color"],
-            #bg_color = self.themes["app_color"]["bg_two"],
-            bg_color = "#eee",
-            header_horizontal_color = self.themes["app_color"]["dark_two"],
-            header_vertical_color = self.themes["app_color"]["bg_three"],
-            bottom_line_color = self.themes["app_color"]["bg_three"],
-            grid_line_color = self.themes["app_color"]["bg_one"],
-            scroll_bar_bg_color = self.themes["app_color"]["bg_one"],
-            scroll_bar_btn_color = self.themes["app_color"]["dark_four"],
-            context_color = self.themes["app_color"]["context_color"]
+        self.table_widget_2 = QTableView(
+            # radius = 8,
+            # color = self.themes["app_color"]["text_foreground"],
+            # selection_color = self.themes["app_color"]["context_color"],
+            # #bg_color = self.themes["app_color"]["bg_two"],
+            # bg_color = "#eee",
+            # header_horizontal_color = self.themes["app_color"]["dark_two"],
+            # header_vertical_color = self.themes["app_color"]["bg_three"],
+            # bottom_line_color = self.themes["app_color"]["bg_three"],
+            # grid_line_color = self.themes["app_color"]["bg_one"],
+            # scroll_bar_bg_color = self.themes["app_color"]["bg_one"],
+            # scroll_bar_btn_color = self.themes["app_color"]["dark_four"],
+            # context_color = self.themes["app_color"]["context_color"]
 
         )
         self.table_widget.setStyleSheet("background-color: #eee;")
-        self.table_widget_2.setStyleSheet("background-color: #eee;")
-        self.table_widget_2.setColumnCount(2)
+        # self.table_widget_2.setStyleSheet("background-color: #eee;")
+        # self.table_widget_2.setColumnCount(2)
         self.table_widget_2.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         self.table_widget_2.setSelectionMode(QAbstractItemView.ExtendedSelection)
         self.table_widget_2.setSelectionBehavior(QAbstractItemView.SelectRows)
@@ -756,8 +833,8 @@ class SetupMainWindow:
 
 
         # Set column
-        self.table_widget_2.setHorizontalHeaderItem(0, self.column_1_2)
-        self.table_widget_2.setHorizontalHeaderItem(1, self.column_2_2)
+        # self.table_widget_2.setHorizontalHeaderItem(0, self.column_1_2)
+        # self.table_widget_2.setHorizontalHeaderItem(1, self.column_2_2)
 
 
 
@@ -843,32 +920,32 @@ class SetupMainWindow:
             for rows in reader:
                 self.properties_table_object_properties_dict[rows[0]].append(rows[1])             
 
-        def deneme(row, column):
+        # def deneme(row, column):
             
-            def removeComboBox():
-                temp = combo.currentText()
+        #     def removeComboBox():
+        #         temp = combo.currentText()
                 
-                self.table_widget.setItem(row, column, QTableWidgetItem(temp))
-                combo.hide()
+        #         self.table_widget.setItem(row, column, QTableWidgetItem(temp))
+        #         combo.hide()
 
-            if column == 2:
-                combo = QComboBox()
-                props = self.properties_table_object_properties_dict[self.tree.selectedIndexes()[0].data(Qt.UserRole)["Object_Type"]]
-                combo.addItem("")
-                for t in props:
-                    combo.addItem(t)
+        #     if column == 2:
+        #         combo = QComboBox()
+        #         props = self.properties_table_object_properties_dict[self.tree.selectedIndexes()[0].data(Qt.UserRole)["Object_Type"]]
+        #         combo.addItem("")
+        #         for t in props:
+        #             combo.addItem(t)
                 
-                self.table_widget.setCellWidget(row,column,combo)
-                combo.showPopup()
-                combo.currentIndexChanged.connect(removeComboBox)
-            else:
-                pass
+        #         self.table_widget.setCellWidget(row,column,combo)
+        #         combo.showPopup()
+        #         combo.currentIndexChanged.connect(removeComboBox)
+        #     else:
+        #         pass
             
 
 
 
 
-        self.table_widget.cellDoubleClicked.connect(deneme)
+        #self.table_widget.cellDoubleClicked.connect(deneme)
         
 
 
@@ -884,7 +961,8 @@ class SetupMainWindow:
                 print ("RuntimeError 1")
                 pass
             try:
-                self.table_widget_2.itemChanged.disconnect()
+                # self.table_widget_2.itemChanged.disconnect()
+                pass
             except (TypeError, RuntimeError):
                 # was never connected
                 # PyQt raises TypeError, PySide raises RuntimeError
@@ -923,27 +1001,24 @@ class SetupMainWindow:
 
             if tabledata is not None:
                 try:
-                    self.table_widget_2.setRowCount(len(tabledata["Parent Objects"]))
+                    data = [[0, 0] for _ in range(len(tabledata["Parent Objects"]))]
                     props = get_all_object_names(self.root_model)
                     for i, item in enumerate(tabledata["Parent Objects"]):
                         for key, value in self.table_header_hash_2.items():
                             if key == "Parent Object":
-                                combo_2 = ExtendedComboBox()
-                           
-                                for t in props:
-                                    combo_2.addItem(t)
-
-                                self.table_widget_2.setCellWidget(i,value,combo_2)
-                                combo_2.setCurrentIndex(props.index(item[key]))
-                                combo_2.currentIndexChanged.connect(save_parent_table)
-
+                                data[i][value] = item[key]
                             else:
-                                it = QTableWidgetItem(item[key])
-                                
-                                self.table_widget_2.setItem(i, value, it)
-                                #self.table_widget_2.openPersistentEditor(it)
+                                data[i][value] = item[key]
 
-                                #self.table_widget_2.setCellWidget(i, value, QLineEdit(item[key]))
+                    self.model_2 = TableModel(data)
+                    self.model_2.itemChanged.connect(save_parent_table)
+                    self.table_widget_2.setModel(self.model_2)
+
+                    self.comboDelegate = ComboDelegate(props)
+                    self.table_widget_2.setItemDelegateForColumn(0, self.comboDelegate)
+                    
+                    self.textDelegate = TextDelegate()
+                    self.table_widget_2.setItemDelegateForColumn(1, self.textDelegate)
                 except TypeError as e:
                     if str(e) == 'string indices must be integers':
                         pass
@@ -954,10 +1029,43 @@ class SetupMainWindow:
                 except Exception as e:
                     raise
 
+                # try:
+                #     self.table_widget_2.setRowCount(len(tabledata["Parent Objects"]))
+                #     props = get_all_object_names(self.root_model)
+                #     for i, item in enumerate(tabledata["Parent Objects"]):
+                #         for key, value in self.table_header_hash_2.items():
+                #             if key == "Parent Object":
+                #                 combo_2 = ExtendedComboBox()
+                           
+                #                 combo_2.addItems(props)
+                #                 combo_2.setCurrentIndex(props.index(item[key]))
+                #                 combo_2.currentIndexChanged.connect(save_parent_table)
+
+                #                 time1 = time.time()
+                #                 self.table_widget_2.setCellWidget(i,value,combo_2)
+                #                 time2 = time.time()
+                #                 print(time2 - time1)
+                #             else:
+                #                 it = QTableWidgetItem(item[key])
+                                
+                #                 self.table_widget_2.setItem(i, value, it)
+                #                 #self.table_widget_2.openPersistentEditor(it)
+
+                #                 #self.table_widget_2.setCellWidget(i, value, QLineEdit(item[key]))
+                # except TypeError as e:
+                #     if str(e) == 'string indices must be integers':
+                #         pass
+                #     else:
+                #         raise
+
+
+                # except Exception as e:
+                #     raise
+
             else:
                 self.table_widget.setRowCount(0)
             self.table_widget.itemChanged.connect(save_properties_table)
-            self.table_widget_2.itemChanged.connect(save_parent_table)
+            # self.table_widget_2.itemChanged.connect(save_parent_table)
 
         def getFromDict(dataDict, mapList):
             try:
@@ -1027,31 +1135,21 @@ class SetupMainWindow:
             #setInDict(self.system_inputs,self.currentlySelectedModelObject+["Properties"],[])
 
             listofParentsToAppend = []
-            for row in range(self.table_widget_2.rowCount()):
-                tempDict = {}
-                for column in range(self.table_widget_2.columnCount()):
-                    try:
-                        if isinstance(self.table_widget_2.cellWidget(row, column) , QComboBox):
-                            tempDict[self.table_widget_2.horizontalHeaderItem(column).text()]= self.table_widget_2.cellWidget(row, column).currentText()
-                        else:
-                            tempDict[self.table_widget_2.horizontalHeaderItem(column).text()]=self.table_widget_2.item(row, column).text()
-                    except AttributeError:
-                        tempDict[self.table_widget_2.horizontalHeaderItem(column).text()]=""
+            data = self.model_2.getData()
+            for row in data:
+                tempDict = {
+                    "Parent Object": row[0],
+                    "Parent Property": row[1]
+                }
                 listofParentsToAppend.append(tempDict)
             
-            #### Following 4 lines are directly changing data dict file, became obsolete with model view approach  
-            #setInDict(self.system_inputs,self.currentlySelectedModelObject+["Properties"],listofPropertiesToAppend)
-            #reset_tree()
-            #add_node_to_tree(self, listofPropertiesToAppend, self.root_model.itemFromIndex(self.proxyModel.mapToSource(getSelected[0])))
-            #self.root_model.itemFromIndex(self.proxyModel.mapToSource(getSelected[0])).data(Qt.UserRole)["Properties"].clear()
-            ####
-            
+            # TODO clean up this bit
             temp = copy.deepcopy(self.root_model.itemFromIndex(self.proxyModel.mapToSource(getSelected[0])).data(Qt.UserRole))
             temp["Parent Objects"].clear()
             temp["Parent Objects"] = listofParentsToAppend.copy()
             self.root_model.itemFromIndex(self.proxyModel.mapToSource(getSelected[0])).setData(temp, Qt.UserRole)
 
-        self.table_widget_2.itemChanged.connect(save_parent_table)
+        # self.table_widget_2.itemChanged.connect(save_parent_table)
         #self.table_widget_2.selectionModel().selectionChanged.connect(save_parent_table)
 
 
@@ -1342,7 +1440,7 @@ class SetupMainWindow:
 
 
 
-        # def createNewObject(newObjectType):     #This works 28.07.2022 22:52
+        # def createNewObject(newObjectType):     
     
         #     text, okPressed = QInputDialog.getText(self, "New object name","New object name:", text="New Object")
         #     if okPressed and text != '':
@@ -1361,7 +1459,7 @@ class SetupMainWindow:
 
         #         reset_tree()
 
-        # def deleteObject():     #This works 28.07.2022 22:52
+        # def deleteObject():     
             
         #     ### TODO !!! If the last object in a folder is deleted, the folder is deleted as well. The folder should remain
 
@@ -1624,7 +1722,7 @@ class SetupMainWindow:
 # Functions for folder manipulation
 # ///////////////////////////////////////////////////////////////
 
-        # def createNewFolder():  #This works 28.07.2022 22:52
+        # def createNewFolder():  
 
         #     text, okPressed = QInputDialog.getText(self, "New folder name","New folder name:", text="New Folder")
         #     if okPressed and text != '':
@@ -1644,7 +1742,7 @@ class SetupMainWindow:
 
 
 
-        # def deleteFolder():     #This works 28.07.2022 22:52
+        # def deleteFolder():     
         #     qm = QMessageBox
         #     ret = qm.question(self,'', "Are you sure to delete folder and its content?", qm.Yes | qm.No)
         #     if ret ==  qm.Yes:
@@ -1658,7 +1756,7 @@ class SetupMainWindow:
         #     else:
         #         pass
 
-        def deleteFolderByModel():     #This works 28.07.2022 22:52
+        def deleteFolderByModel():     
             qm = QMessageBox
             ret = qm.question(self,'', "Are you sure to delete folder and its content?", qm.Yes | qm.No)
             if ret ==  qm.Yes:
@@ -1668,7 +1766,7 @@ class SetupMainWindow:
                 pass
 
 
-        # def renameFolder():     #This works 28.07.2022 22:52
+        # def renameFolder():     
         #     getSelected = self.tree.selectedIndexes()
         #     keysList=getNodeParentList(getSelected)
         #     renamedFolderName = getSelected[0].data(0)
@@ -1686,7 +1784,7 @@ class SetupMainWindow:
                 self.proxyModel.setData(self.tree.currentIndex(), text)
 
 
-        # def copyFolder():       #This works 28.07.2022 22:52
+        # def copyFolder():       
         #     getSelected = self.tree.selectedIndexes()
         #     self.copiedFolderName = getSelected[0].data(0)
         #     keysList=getNodeParentList(getSelected) + [self.copiedFolderName]
@@ -1694,7 +1792,7 @@ class SetupMainWindow:
         #     self.dictFolderToCopy = copy.deepcopy(a)
         #     resetClipboard("Folder")
 
-        def copyFolderByModel():       #This works 28.07.2022 22:52
+        def copyFolderByModel():       
             getSelected = self.tree.selectedIndexes()
             self.copiedFolderName = getSelected[0].data(0)
             #### The folder node is identified and send to a modification model_to_dict function
@@ -1704,7 +1802,7 @@ class SetupMainWindow:
 
 
 
-        # def pasteFolder():      #This works 28.07.2022 22:52
+        # def pasteFolder():      
 
         #     copiedFolderName = "copy of " + self.copiedFolderName
         #     getSelected = self.tree.selectedIndexes()
@@ -1727,7 +1825,7 @@ class SetupMainWindow:
         #     reset_tree()
 
 
-        def pasteFolderByModel():      #This works 28.07.2022 22:52
+        def pasteFolderByModel():      
 
             copiedFolderName = "copy of " + self.copiedFolderName
             getSelected = self.tree.selectedIndexes()
@@ -1976,41 +2074,6 @@ class SetupMainWindow:
 
 
 
-        def pop():
-            self.bok.show()
-            
-          
-        self.bok = ListViewOpenExistingModel()
-        self.create_new_model_button.clicked.connect(create_new_model)
-
-        def openexistingmodel(self):
-    
-            self.ListViewOpenExistingModelobject = ListViewOpenExistingModel()
-
-            db = globalvars.client['deneme']
-            items=[]
-            for collections in db[self.collectionname].find({},{"_id":0,"Model Name":1}):
-                item = collections["Model Name"]
-                if item not in items:
-                    items.append(item)
-                    item = QListWidgetItem(item)
-                    self.ListViewOpenExistingModelobject.listWidget.addItem(item)
-
-            self.ListViewOpenExistingModelobject.show()
-            self.ListViewOpenExistingModelobject.listWidget.itemClicked.connect(lambda: self.modeltimestamplistupdate(self.ListViewOpenExistingModelobject.listWidget.selectedItems()[0].text()))
-            self.ListViewOpenExistingModelobject.listWidget_2.itemClicked.connect(lambda: self.modelderivedfromlabelupdate(self.ListViewOpenExistingModelobject.listWidget.selectedItems()[0].text(),self.ListViewOpenExistingModelobject.listWidget_2.selectedItems()[0].text()))
-
-            if self.ListViewOpenExistingModelobject.exec_():
-                self.treeWidget_system.clear()
-                self.treeWidget_simulation.clear()
-                globalvars.currentModelName = self.ListViewOpenExistingModelobject.listWidget.selectedItems()[0].text()
-                globalvars.currentModelTimeStamp = self.ListViewOpenExistingModelobject.listWidget_2.selectedItems()[0].text()
-                self.derivedmodelname = self.ListViewOpenExistingModelobject.listWidget.selectedItems()[0].text()
-                self.derivedmodelTimeStamp = self.ListViewOpenExistingModelobject.listWidget_2.selectedItems()[0].text()
-                self.readfromDB(globalvars.currentModelName, globalvars.currentModelTimeStamp)
-                self.addItems2(self.treeWidget_system.invisibleRootItem())
-                self.addItems1(self.treeWidget_simulation.invisibleRootItem())
-            globalvars.client.close()
 
         # ADD WIDGETS
         # self.ui.load_pages.row_1_layout.addWidget(self.circular_progress_1)
