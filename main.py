@@ -19,6 +19,7 @@
 from gui.uis.windows.main_window.functions_main_window import *
 import sys
 import os
+from gui.uis.windows.open_model.open_model import Ui_OpenModelDialog
 
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
@@ -255,6 +256,10 @@ class AssignGroup(QDialog, Ui_Dialog_Assign_Group):
         QDialog.__init__(self,parent)
         self.setupUi(self)
 
+class OpenModelDialog(QDialog, Ui_OpenModelDialog):
+    def __init__(self, parent=None):
+        QDialog.__init__(self, parent)
+        self.setupUi(self)
 
 class AnotherWindow(QWidget):
     """
