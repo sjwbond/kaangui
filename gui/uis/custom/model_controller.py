@@ -25,6 +25,7 @@ class ModelController:
     def __init__(self, tree: NodeTreeView, properties_table: PropertiesTableWidget, parents_table: ParentsTableView):
         self.tree = tree
         self.properties_table = properties_table
+        self.parents_model = None
         self.parents_table = parents_table
         self.clipboard: list[dict] = []
         self.currentlySelectedModelObject =[] #To keep curretly selected object branch
@@ -78,72 +79,42 @@ class ModelController:
         self.tree.rootModel.removeRow(tree_node.row(), tree_node.parent())
 
     def update_properties_table(self):
-        # First determine all parent names for the selected object
-        try:
-            self.properties_table.itemChanged.disconnect()
-        except (TypeError, RuntimeError):
-            # was never connected;
-            # PyQt raises TypeError, PySide raises RuntimeError
-            print ("RuntimeError 1")
-            pass
-        try:
-            pass
-        except (TypeError, RuntimeError):
-            # was never connected
-            # PyQt raises TypeError, PySide raises RuntimeError
-            print ("RuntimeError 2")
-            pass
-
         tabledata = self.tree.selectedIndexes()[0].data(Qt.UserRole)
         
-        if tabledata is not None:
-            try:
-                self.properties_table.setRowCount(len(tabledata["Properties"]))
-                props = self.properties_table_object_properties_dict[self.tree.selectedIndexes()[0].data(Qt.UserRole)["Object_Type"]]
-                for i, item in enumerate(tabledata["Properties"]):
-                    for key, value in table_header_hash.items():
-                        if key == "Property":
-                            combo = ExtendedComboBox()
-                            
-                            for t in props:
-                                combo.addItem(t)
-
-                            self.properties_table.setCellWidget(i,value,combo)
-                            combo.setCurrentIndex(props.index(item[key]))
-                            combo.currentIndexChanged.connect(self.save_properties_table)
-                        else:
-                            self.properties_table.setItem(i, value, QTableWidgetItem(item[key]))
-            except TypeError as e:
-                if str(e) == 'string indices must be integers':
-                    pass
-                else:
-                    raise
-
-        if tabledata is not None:
-            try:
-                data = [[0, 0] for _ in range(len(tabledata["Parent Objects"]))]
-                props = get_all_object_names(self.tree.rootModel)
-                for i, item in enumerate(tabledata["Parent Objects"]):
-                    for key, value in table_header_hash_2.items():
-                        if key == "Parent Object":
-                            data[i][value] = item[key]
-                        else:
-                            data[i][value] = item[key]
-
-                self.model_2 = ParentsTableModel(data)
-                self.model_2.itemChanged.connect(self.save_parent_table)
-                self.parents_table.setModel(self.model_2)
-                self.parents_table.setComboProps(props)
-            except TypeError as e:
-                if str(e) == 'string indices must be integers':
-                    pass
-                else:
-                    raise
-            except Exception as e:
-                raise
-        else:
+        if tabledata == "folder" or tabledata == "model":
             self.properties_table.setRowCount(0)
-        self.properties_table.itemChanged.connect(self.save_properties_table)
+            self.parents_table.setModel(ParentsTableModel([]))
+        elif tabledata is not None:
+            self.properties_table.setRowCount(len(tabledata["Properties"]))
+            props = self.properties_table_object_properties_dict[self.tree.selectedIndexes()[0].data(Qt.UserRole)["Object_Type"]]
+            for i, item in enumerate(tabledata["Properties"]):
+                for key, value in table_header_hash.items():
+                    if key == "Property":
+                        combo = ExtendedComboBox()
+                        
+                        for t in props:
+                            combo.addItem(t)
+
+                        self.properties_table.setCellWidget(i,value,combo)
+                        combo.setCurrentIndex(props.index(item[key]))
+                        combo.currentIndexChanged.connect(self.save_properties_table)
+                    else:
+                        self.properties_table.setItem(i, value, QTableWidgetItem(item[key]))
+
+            data = []
+            for item in tabledata["Parent Objects"]:
+                data.append([
+                    item["Parent Object"],
+                    item["Parent Property"]
+                ])
+
+            self.parents_model = ParentsTableModel(data)
+            self.parents_model.itemChanged.connect(self.save_parent_table)
+            self.parents_table.setModel(self.parents_model)
+
+            # TODO update props when model has changed
+            props = get_all_object_names(self.tree.rootModel)
+            self.parents_table.setComboProps(props)
 
     def save_properties_table(self):
         getSelected = self.tree.selectedIndexes()
@@ -176,7 +147,7 @@ class ModelController:
         self.currentlySelectedModelObject = copy.deepcopy(keysList)
 
         listofParentsToAppend = []
-        data = self.model_2.getData()
+        data = self.parents_model.getData()
         for row in data:
             tempDict = {
                 "Parent Object": row[0],
@@ -191,33 +162,13 @@ class ModelController:
         self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])).setData(temp, Qt.UserRole)
 
     def delete_seleted_rows_parent(self):
-        indexes = self.parents_table.selectionModel().selectedRows()
-        for index in sorted(indexes):
-            self.parents_table.removeRow(index.row())
+        if self.parents_model is not None:
+            indexes = self.parents_table.selectionModel().selectedRows()
+            self.parents_model.removeRows(indexes)
 
     def add_new_rows_parent(self):
-        try:
-            self.parents_table.itemChanged.disconnect()
-        except (TypeError, RuntimeError):
-            # was never connected;
-            # PyQt raises TypeError, PySide raises RuntimeError
-            print ("RuntimeError 1")
-            pass
-        rowPosition = self.parents_table.rowCount()
-        self.parents_table.insertRow(rowPosition)
-        for column in range(self.parents_table.columnCount()):
-            if column == 0:
-                combo = ExtendedComboBox()
-
-                props = get_all_object_names(self.tree.rootModel)
-                combo.addItem("")
-                for t in props:
-                    combo.addItem(t)          
-                self.parents_table.setCellWidget(rowPosition,column,combo)
-                combo.currentIndexChanged.connect(self.save_parent_table)
-            else:
-                self.parents_table.setItem(rowPosition, column, QTableWidgetItem(""))  
-        self.parents_table.itemChanged.connect(self.save_parent_table)
+        if self.parents_model is not None:
+            self.parents_model.appendNewRow()
 
     def delete_seleted_rows(self):
         indexes = self.properties_table.selectionModel().selectedRows()
@@ -225,13 +176,6 @@ class ModelController:
             self.properties_table.removeRow(index.row())
 
     def add_new_rows(self):
-        try:
-            self.properties_table.itemChanged.disconnect()
-        except (TypeError, RuntimeError):
-            # was never connected;
-            # PyQt raises TypeError, PySide raises RuntimeError
-            print ("RuntimeError 1")
-            pass
         rowPosition = self.properties_table.rowCount()
         self.properties_table.insertRow(rowPosition)
         for column in range(self.properties_table.columnCount()):
@@ -252,8 +196,7 @@ class ModelController:
                 self.properties_table.setItem(rowPosition, column, QTableWidgetItem("2100-01-01"))  
 
             else:
-                self.properties_table.setItem(rowPosition, column, QTableWidgetItem(""))  
-        self.properties_table.itemChanged.connect(self.save_properties_table)
+                self.properties_table.setItem(rowPosition, column, QTableWidgetItem(""))
 
     def copy_seleted_rows(self):
         self.clipboard = []

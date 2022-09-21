@@ -136,10 +136,10 @@ class Ui_MainPages(object):
 
 
 
-        self.parentship_layout = QHBoxLayout()
+        self.parentship_layout = QVBoxLayout()
         self.parentship_layout.setObjectName(u"parentship_layout")
 
-        self.parentship_button_layout = QVBoxLayout()
+        self.parentship_button_layout = QHBoxLayout()
         self.parentship_button_layout.setObjectName(u"parentship_button_layout")
         
 

@@ -1,9 +1,10 @@
+from typing import List
 from qt_core import *
 
 class ParentsTableModel(QAbstractTableModel):
     itemChanged = Signal()
 
-    def __init__(self, data):
+    def __init__(self, data: List[List[str]]):
         super(ParentsTableModel, self).__init__()
         self._data = data
 
@@ -31,3 +32,20 @@ class ParentsTableModel(QAbstractTableModel):
 
     def flags(self, index):
         return Qt.ItemIsSelectable|Qt.ItemIsEnabled|Qt.ItemIsEditable
+    
+    def appendNewRow(self):
+        self.beginInsertRows(QModelIndex(), len(self._data), len(self._data))
+        self._data.append(["", ""])
+        self.endInsertRows()
+        self.itemChanged.emit()
+    
+    def removeRows(self, indexes: List[QModelIndex]):
+        if len(indexes) == 0:
+            return
+        sr: List[QModelIndex] = sorted(indexes)
+        sr.reverse()
+        for index in sr:
+            self.beginRemoveRows(QModelIndex(), index.row(), index.row())
+            self._data.pop(index.row())
+            self.endRemoveRows()
+        self.itemChanged.emit()
