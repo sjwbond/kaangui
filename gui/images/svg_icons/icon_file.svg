@@ -53,7 +53,6 @@
      inkscape:groupmode="layer"
      id="layer1">
     <path
-       fill="var(--ci-primary-color, currentColor)"
        d="M 2.5278472,1.5e-7 H -4.3840544e-5 V 4.2333332 H 3.7394002 V 1.2115542 Z M 3.3117606,1.3284462 v 0.01211 H 2.3988452 V 0.40167229 h 0.01211 z M 0.42702697,3.8316611 V 0.40167229 H 1.9400447 V 1.7630023 h 1.3924898 v 2.0686588 z"
        class="ci-primary"
        id="path1797"

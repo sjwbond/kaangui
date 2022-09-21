@@ -41,8 +41,8 @@ class PyTreeView(QTreeView):
     ):
         super().__init__()
         
-        self.short_copy_object = QShortcut(QKeySequence("Ctrl+C"),self)
-        self.short_copy_object.activated.connect(self.copyObject)
+        # self.short_copy_object = QShortcut(QKeySequence("Ctrl+C"),self)
+        # self.short_copy_object.activated.connect(self.copyObject)
 
         # PARAMETERS
 

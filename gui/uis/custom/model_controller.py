@@ -33,6 +33,8 @@ class ModelController:
         self.clipboardContents = None
         self.clipboardName = None
 
+        self.tree.setHeaderHidden(True)
+
         self.tree.short_copy_object = QShortcut(QKeySequence("Ctrl+C"), self.tree)
         self.tree.short_copy_object.activated.connect(self.copyShortcut)
 
