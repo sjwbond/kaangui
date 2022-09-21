@@ -378,16 +378,16 @@ class ModelController:
             
     def deleteObjectByModel(self):
         qm = QMessageBox
-        ret = qm.question(self,'', "Are you sure to delete object?", qm.Yes | qm.No)
+        ret = qm.question(self.tree, '', "Are you sure to delete object?", qm.Yes | qm.No)
 
         if ret ==  qm.Yes:
             getSelected = self.tree.selectedIndexes()
 
-            self.remove_node_from_tree(self, self.tree.proxyModel.mapToSource(getSelected[0]))
+            self.remove_node_from_tree(self.tree.proxyModel.mapToSource(getSelected[0]))
 
     def renameObjectByModel(self):
         getSelected = self.tree.selectedIndexes()
-        text, okPressed = QInputDialog.getText(self, "New name", "New name:", text=getSelected[0].data(0))
+        text, okPressed = QInputDialog.getText(self.tree, "New name", "New name:", text=getSelected[0].data(0))
         if okPressed and text != '':
             self.tree.proxyModel.setData(self.tree.currentIndex(), text)
 
@@ -404,7 +404,7 @@ class ModelController:
         self.clipboardName = getSelected[0].data(0)
         a = getSelected[0].data(Qt.UserRole)
         self.clipboardContents = copy.deepcopy(a)
-        self.remove_node_from_tree(self, self.tree.proxyModel.mapToSource(getSelected[0]))
+        self.remove_node_from_tree(self.tree.proxyModel.mapToSource(getSelected[0]))
 
     def copyShortcut(self):
         getSelected = self.tree.selectedIndexes()
@@ -413,13 +413,8 @@ class ModelController:
         else:
             self.copyObjectByModel()
 
-    def pasteObjectByModel(self, target=None):
-        if target == None:
-            getSelected = self.tree.selectedIndexes()
-        else:
-            getSelected = target
-
-        counter = 0
+    def pasteObjectByModel(self):
+        getSelected = self.tree.selectedIndexes()
 
         names=[]
         if getSelected[0].data(Qt.UserRole) == "folder":
@@ -429,11 +424,11 @@ class ModelController:
             for i in range (self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0].parent())).rowCount()):
                 names.append(self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0].parent())).child(i).data(0))                
 
+        counter = 0
         clipboardName = self.clipboardName
         if clipboardName in names:
             clipboardName = "copy of " + self.clipboardName
         while clipboardName in names:
-            
             counter+=1                
             clipboardName = "copy of " + self.clipboardName + " (" + str(counter) + ")"
             
@@ -470,18 +465,18 @@ class ModelController:
 
     def deleteFolderByModel(self):     
         qm = QMessageBox
-        ret = qm.question(self,'', "Are you sure to delete folder and its content?", qm.Yes | qm.No)
+        ret = qm.question(self.tree, '', "Are you sure to delete folder and its content?", qm.Yes | qm.No)
         if ret ==  qm.Yes:
             getSelected = self.tree.selectedIndexes()
-            self.remove_node_from_tree(self, self.tree.proxyModel.mapToSource(getSelected[0]))
+            self.remove_node_from_tree(self.tree.proxyModel.mapToSource(getSelected[0]))
         else:
             pass
 
     def renameFolderByModel(self):
         getSelected = self.tree.selectedIndexes()
-        text, okPressed = QInputDialog.getText(self, "New name","New name:", text=getSelected[0].data(0))
+        text, okPressed = QInputDialog.getText(self.tree, "New name","New name:", text=getSelected[0].data(0))
         if okPressed and text != '':
-            self.tree.proxyModel.setData(self.tree.tree.currentIndex(), text)
+            self.tree.proxyModel.setData(self.tree.currentIndex(), text)
 
     def renameModel(self):
         getSelected = self.tree.selectedIndexes()
@@ -494,21 +489,22 @@ class ModelController:
         self.clipboardName = getSelected[0].data(0)
         #### The folder node is identified and send to a modification model_to_dict function
         a = model_to_dict_1(self.tree.rootModel.indexFromItem(self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0]))), self.tree.rootModel)
-        self.clipboardContents = copy.deepcopy(a[self.clipboardName])
+        self.clipboardContents = copy.deepcopy(a)
         self.clipboardType = CLIPBOARD_FOLDER
 
     def pasteFolderByModel(self):
-        clipboardName = "copy of " + self.clipboardName
         getSelected = self.tree.selectedIndexes()
 
-        counter = 0
         names=[]
         for i in range (self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])).rowCount()):
             names.append(self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])).child(i).data(0))
 
+        counter = 0
+        clipboardName = self.clipboardName
+        if clipboardName in names:
+            clipboardName = "copy of " + self.clipboardName
         while clipboardName in names:
-            counter+=1
-            
+            counter+=1                
             clipboardName = "copy of " + self.clipboardName + " (" + str(counter) + ")"
             
         self.dictFolderToPaste = {clipboardName : self.clipboardContents}
