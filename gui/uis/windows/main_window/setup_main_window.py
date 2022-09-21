@@ -1,15 +1,5 @@
 # ///////////////////////////////////////////////////////////////
-###
-#TO DO LIST
-# Alphabetical & Typewise Sorting of tree view
-# cutObject Function => Make object text less bold
-# assignGroupByModel function => read comments
-# stylesheets
-
-###
-
 from gui.uis.custom.api import create_model, delete_model, get_model, list_models, update_model
-from gui.uis.custom.io import load_model_from_file, save_model_to_file, save_model_to_mongodb
 from gui.uis.custom.model_controller import ModelController
 from gui.uis.custom.model_helpers import model_to_dict
 from gui.uis.custom.node_tree_view import NodeTreeView
@@ -137,12 +127,9 @@ class SetupMainWindow:
         self.add_table_2_row_button = StyledButton(text="Add Parentship", themes=self.themes)
         self.delete_table_2_row_button = StyledButton(text="Delete Selected Parentships", themes=self.themes)
         self.create_new_model_button = StyledButton(text="Create New Model", icon_name="icon_file.svg", themes=self.themes)
-        self.open_existing_model_button = StyledButton(text="Open Existing Model", icon_name="icon_restore.svg", themes=self.themes)
-        self.save_model_button = StyledButton(text="Save Model", icon_name="icon_save.svg", themes=self.themes)
         self.create_json_database_from_txt_files_button = StyledButton(text="Create Model Json file From Txt Folder", icon_name="icon_attachment.svg", themes=self.themes)
-        self.to_MongoBD_button = StyledButton(text="Save Moden in Mongo", icon_name="icon_attachment.svg", themes=self.themes)
-        self.open_api_model_button = StyledButton(text="Open Model From API", icon_name="icon_restore.svg", themes=self.themes)
-        self.save_api_model_button = StyledButton(text="Save Model To API", icon_name="icon_save.svg", themes=self.themes)
+        self.open_api_model_button = StyledButton(text="Open Model", icon_name="icon_restore.svg", themes=self.themes)
+        self.save_api_model_button = StyledButton(text="Save Model", icon_name="icon_save.svg", themes=self.themes)
 
         # PY LINE EDIT
         self.filterEdit = PyLineEdit(
@@ -168,10 +155,30 @@ class SetupMainWindow:
         # TABLE WIDGETS
         self.table_widget = PropertiesTableWidget(self.themes["app_color"])
 
-        self.table_widget_2 = ParentsTableView()
+        self.table_widget_2 = ParentsTableView(
+            radius = 8,
+            color = self.themes["app_color"]["text_foreground"],
+            selection_color = self.themes["app_color"]["context_color"],
+            bg_color = self.themes["app_color"]["bg_two"],
+            header_horizontal_color = self.themes["app_color"]["dark_two"],
+            header_vertical_color = self.themes["app_color"]["bg_three"],
+            bottom_line_color = self.themes["app_color"]["bg_three"],
+            grid_line_color = self.themes["app_color"]["bg_one"],
+            scroll_bar_bg_color = self.themes["app_color"]["bg_one"],
+            scroll_bar_btn_color = self.themes["app_color"]["dark_four"],
+            context_color = self.themes["app_color"]["context_color"]
+        )
 
         self.working_directory = os.getcwd() 
-        self.tree = NodeTreeView()
+        self.tree = NodeTreeView(
+            radius = 8,
+            color = self.themes["app_color"]["text_foreground"],
+            selection_color = self.themes["app_color"]["bg_one"],
+            bg_color = self.themes["app_color"]["bg_two"],
+            scroll_bar_bg_color = self.themes["app_color"]["bg_one"],
+            scroll_bar_btn_color = self.themes["app_color"]["dark_four"],
+            context_color = self.themes["app_color"]["context_color"]
+        )
 
         self.controller = ModelController(tree=self.tree, properties_table=self.table_widget, parents_table=self.table_widget_2)
 
@@ -192,34 +199,6 @@ class SetupMainWindow:
 
         self.tree.setContextMenuPolicy(Qt.CustomContextMenu)
         self.tree.customContextMenuRequested.connect(self.controller.openMenu)
-
-        def save_model_to_MongoBD():
-            save_model_to_mongodb(model_to_dict(self.tree.rootModel))
-
-        self.to_MongoBD_button.clicked.connect(save_model_to_MongoBD)
-
-        def file_save():
-            (name, _) = QFileDialog.getSaveFileName(self, 'Save File', '', "Model (*.mdl);;JSON (*.json);;All Files (*)")
-            modelNode = self.tree.rootModel.index(0, 0)
-            data = self.data | {"Name": modelNode.data(Qt.DisplayRole), "SystemInputs": model_to_dict(self.tree.rootModel)}
-            save_model_to_file(data, name)
-
-        self.save_model_button.clicked.connect(file_save)
-
-        def file_open():
-            name = QFileDialog.getOpenFileName(self, 'Open File')
-            if name != ('',''):
-                load_result = load_model_from_file(name)
-                if load_result != None:
-                    (data, system_inputs) = load_result
-                    self.data = data
-                    self.system_inputs = system_inputs
-                    self.tree.rootModel.clear()
-                    self.tree.rootNode = self.tree.rootModel.invisibleRootItem()
-                    self.controller.add_node_to_tree(self.system_inputs, self.tree.rootNode)
-            else:
-                pass
-        self.open_existing_model_button.clicked.connect(file_open)
 
         # Model Functions
         def create_new_model():
@@ -248,8 +227,8 @@ class SetupMainWindow:
             data = self.data | {"Name": modelNode.data(Qt.DisplayRole), "SystemInputs": model_to_dict(self.tree.rootModel)}
             modelId = modelNode.data(Qt.UserRole+1)
             if modelId == None:
-                result = create_model(data)
-                self.tree.rootModel.invisibleRootItem().child(0, 0).data(result["id"], Qt.UserRole+1)
+                modelId = create_model(data)
+                self.tree.rootModel.invisibleRootItem().child(0, 0).setData(modelId, Qt.UserRole+1)
             else:
                 update_model(modelId, data)
 
@@ -316,12 +295,9 @@ class SetupMainWindow:
         self.ui.load_pages.table_button_layout.addWidget(self.copy_table_row_button)
         self.ui.load_pages.table_button_layout.addWidget(self.paste_table_row_button)
         self.ui.load_pages.row_3_layout.addWidget(self.create_new_model_button)
-        self.ui.load_pages.row_3_layout.addWidget(self.open_existing_model_button)
         self.ui.load_pages.row_3_layout.addWidget(self.open_api_model_button)
         self.ui.load_pages.row_3_layout.addWidget(self.save_api_model_button)
-        self.ui.load_pages.row_3_layout.addWidget(self.save_model_button)
         self.ui.load_pages.row_3_layout.addWidget(self.create_json_database_from_txt_files_button)
-        self.ui.load_pages.row_3_layout.addWidget(self.to_MongoBD_button)
         self.ui.load_pages.tree_layout.addWidget(self.filterEdit)
         self.ui.load_pages.tree_layout.addWidget(self.tree)
         self.ui.load_pages.table_layout.addWidget(self.table_widget)

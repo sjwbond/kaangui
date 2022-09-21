@@ -2,58 +2,33 @@
 # ///////////////////////////////////////////////////////////////
 style = '''
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
-QTableWidget */
+QTreeView */
 
-QTableWidget {{	
+QTreeView {{	
 	background-color: {_bg_color};
 	padding: 5px;
 	border-radius: {_radius}px;
-	gridline-color: {_grid_line_color};
     color: {_color};
 }}
-QTableWidget::item{{
+QTreeView::item{{
 	border-color: none;
 	padding-left: 5px;
 	padding-right: 5px;
 	gridline-color: rgb(44, 49, 60);
-    border-bottom: 1px solid {_bottom_line_color};
 }}
-QTableWidget::item:selected{{
+QTreeView::item:selected{{
 	background-color: {_selection_color};
 }}
-QHeaderView::section{{
-	background-color: rgb(33, 37, 43);
-	max-width: 30px;
-	border: 1px solid rgb(44, 49, 58);
-	border-style: none;
-    border-bottom: 1px solid rgb(44, 49, 60);
-    border-right: 1px solid rgb(44, 49, 60);
-}}
-QTableWidget::horizontalHeader {{	
-	background-color: rgb(33, 37, 43);
-}}
-QTableWidget QTableCornerButton::section {{
-    border: none;
-	background-color: {_header_horizontal_color};
-	padding: 3px;
-    border-top-left-radius: {_radius}px;
-}}
-QHeaderView::section:horizontal
-{{
-    border: none;
-	background-color: {_header_horizontal_color};
-	padding: 3px;
-}}
-QHeaderView::section:vertical
-{{
-    border: none;
-	background-color: {_header_vertical_color};
-	padding-left: 5px;
-    padding-right: 5px;
-    border-bottom: 1px solid {_bottom_line_color};
-    margin-bottom: 1px;
+
+QTreeView::branch:closed:has-children {{
+        border-image: none;
+        image: url(gui/images/svg_icons/icon_chevron_right.svg);
 }}
 
+QTreeView::branch:open:has-children {{
+        border-image: none;
+        image: url(gui/images/svg_icons/icon_chevron_down.svg);
+}}
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 ScrollBars */

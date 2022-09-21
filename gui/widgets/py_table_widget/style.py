@@ -38,6 +38,40 @@ QTableWidget QTableCornerButton::section {{
 	padding: 3px;
     border-top-left-radius: {_radius}px;
 }}
+QTableView {{	
+	background-color: {_bg_color};
+	padding: 5px;
+	border-radius: {_radius}px;
+	gridline-color: {_grid_line_color};
+    color: {_color};
+}}
+QTableView::item{{
+	border-color: none;
+	padding-left: 5px;
+	padding-right: 5px;
+	gridline-color: rgb(44, 49, 60);
+    border-bottom: 1px solid {_bottom_line_color};
+}}
+QTableView::item:selected{{
+	background-color: {_bg_color};
+}}
+QHeaderView::section{{
+	background-color: {_bg_color};
+	max-width: 30px;
+	border: 1px solid rgb(44, 49, 58);
+	border-style: none;
+    border-bottom: 1px solid rgb(44, 49, 60);
+    border-right: 1px solid rgb(44, 49, 60);
+}}
+QTableView::horizontalHeader {{	
+	background-color: {_bg_color};
+}}
+QTableView QTableCornerButton::section {{
+    border: none;
+	background-color: {_bg_color};
+	padding: 3px;
+    border-top-left-radius: {_radius}px;
+}}
 QHeaderView::section:horizontal
 {{
     border: none;

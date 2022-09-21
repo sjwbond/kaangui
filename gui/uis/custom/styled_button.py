@@ -4,6 +4,8 @@ from gui.core.functions import *
 
 class StyledButton(PyPushButton):
     def __init__(self, text, icon_name=None, themes=None):
+        if icon_name is not None:
+            text = "  " + text
         super().__init__(
             text=text,
             radius=8,

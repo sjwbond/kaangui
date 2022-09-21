@@ -14,6 +14,16 @@ class ParentsTableModel(QAbstractTableModel):
     def data(self, index, role):
         if role == Qt.DisplayRole:
             return self._data[index.row()][index.column()]
+
+    def headerData(self, section: int, orientation: Qt.Orientation, role: int):
+        if orientation == Qt.Horizontal and role == Qt.DisplayRole:
+            if section == 0:
+                return "Parent Object"
+            elif section == 1:
+                return "Parent Property"
+            else:
+                return section
+        return super().headerData(section, orientation, role)
     
     def setData(self, index, text, role):
         if role == Qt.DisplayRole:
@@ -26,9 +36,7 @@ class ParentsTableModel(QAbstractTableModel):
         return len(self._data)
 
     def columnCount(self, index):
-        if len(self._data) == 0:
-            return 0
-        return len(self._data[0])
+        return 2
 
     def flags(self, index):
         return Qt.ItemIsSelectable|Qt.ItemIsEnabled|Qt.ItemIsEditable
