@@ -337,6 +337,9 @@ class ModelController:
         getSelected = self.tree.selectedIndexes()
         self.dialogBox = AssignGroup()
         self.dialogBox.listWidget.setSelectionMode(QAbstractItemView.ExtendedSelection)
+        self.dialogBox.tableWidget.setColumnCount(2)
+        self.dialogBox.tableWidget.setHorizontalHeaderLabels(["Parent Object", "Parent Property"])
+        self.dialogBox.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         
         items_obj = get_all_object_names(self.tree.rootModel)
         for item in items_obj:
@@ -344,14 +347,29 @@ class ModelController:
             item.setCheckState(Qt.Unchecked)
             self.dialogBox.listWidget.addItem(item)
 
-        items_obj_prop = ["a","b","c"]
+        items_obj_prop = ["upstream_reservoir"]
         for item in items_obj_prop: 
             item = QListWidgetItem(item)
             item.setCheckState(Qt.Unchecked)
-            self.dialogBox.listWidget_2.addItem(item)     
+            self.dialogBox.listWidget_2.addItem(item)
 
         def click_add_button():
-            print("botuno bastin")
+            listWidget = self.dialogBox.listWidget
+            listWidget_2 = self.dialogBox.listWidget_2
+            tableWidget = self.dialogBox.tableWidget
+
+            objects = [listWidget.item(x).data(Qt.DisplayRole) for x in range(listWidget.count()) if listWidget.item(x).checkState() == Qt.Checked]
+            properties = [listWidget_2.item(x).data(Qt.DisplayRole) for x in range(listWidget_2.count()) if listWidget_2.item(x).checkState() == Qt.Checked]
+
+            if len(properties) == 0:
+                properties = [""]
+
+            for object in objects:
+                for property in properties:
+                    ix = tableWidget.rowCount()
+                    tableWidget.setRowCount(ix + 1)
+                    tableWidget.setItem(ix, 0, QTableWidgetItem(object))
+                    tableWidget.setItem(ix, 1, QTableWidgetItem(property))
 
         self.dialogBox.pushButton.clicked.connect(click_add_button)
 
