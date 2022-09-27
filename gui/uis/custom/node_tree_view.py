@@ -1,19 +1,6 @@
 from gui.uis.custom.node_sort_filter_proxy_model import NodeSortFilterProxyModel
 from gui.widgets.py_tree_view.py_tree_view import PyTreeView
 from qt_core import *
-from gui.widgets.py_tree_view.style import style
-
-# style = """
-# QTreeView::branch:closed:has-children {
-#         border-image: none;
-#         image: url(gui/images/svg_icons/icon_chevron_right.svg);
-# }
-
-# QTreeView::branch:open:has-children {
-#         border-image: none;
-#         image: url(gui/images/svg_icons/icon_chevron_down.svg);
-# }
-# """
 
 class NodeTreeView(PyTreeView):
     def __init__(
@@ -35,8 +22,6 @@ class NodeTreeView(PyTreeView):
             scroll_bar_btn_color = scroll_bar_btn_color,
             context_color = context_color
         )
-
-        # self.setStyleSheet(style)
 
         self.setSortingEnabled(True)
         self.sortByColumn(0, Qt.AscendingOrder)
