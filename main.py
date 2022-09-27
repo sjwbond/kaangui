@@ -73,15 +73,6 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
         self.show()
 
-    # def eventFilter(self, object, event):
-    #     if object is setup_main_window.tree.viewport():
-    #         if event.type() == QEvent.DragEnter:
-    #             setup_main_window.controller.dragStart()
-    #         elif event.type() == QEvent.Drop:
-    #             setup_main_window.controller.dragEnd(event.pos())
-
-    #     return super(MainWindow, self).eventFilter(object, event)
-
     # RESIZE EVENT
     # ///////////////////////////////////////////////////////////////
     def resizeEvent(self, event):

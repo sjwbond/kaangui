@@ -1,3 +1,4 @@
+from gui.uis.custom.node_sort_filter_proxy_model import NodeSortFilterProxyModel
 from gui.widgets.py_tree_view.py_tree_view import PyTreeView
 from qt_core import *
 from gui.widgets.py_tree_view.style import style
@@ -41,12 +42,7 @@ class NodeTreeView(PyTreeView):
         self.sortByColumn(0, Qt.AscendingOrder)
 
         self.rootModel = QStandardItemModel()
-        self.proxyModel = QSortFilterProxyModel(
-            self, recursiveFilteringEnabled=True
-        )
-
-        self.proxyModel.setFilterCaseSensitivity(Qt.CaseInsensitive)
-        self.proxyModel.setSourceModel(self.rootModel)
+        self.proxyModel = NodeSortFilterProxyModel(self, self.rootModel)
 
         self.setModel(self.proxyModel)
         self.setDragDropMode(QAbstractItemView.InternalMove)

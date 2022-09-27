@@ -222,7 +222,6 @@ class SetupMainWindow:
         self.create_new_model_button.clicked.connect(create_new_model)
 
         # API
-
         def save_model_to_api():
             modelNode = self.tree.rootModel.index(0, 0)
             data = self.data | {"Name": modelNode.data(Qt.DisplayRole), "SystemInputs": model_to_dict(self.tree.rootModel)}

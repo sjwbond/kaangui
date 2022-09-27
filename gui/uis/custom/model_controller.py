@@ -357,11 +357,9 @@ class ModelController:
 
         self.dialogBox.show()
         
-        if self.dialogBox.exec_():
-            ###### Is there are way to set data only for a certain sub dict of the Qt.UserRole????? I just want to edit
-            ###### "Parent Object", so the entire data doesn't have to be copied - edited - pasted ????
+        if self.dialogBox.exec() == 1:
             temp = copy.deepcopy(self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])).data(Qt.UserRole))
-            temp["Parent Object"].clear()
+            temp["Parent Object"] = []
             for selected in self.dialogBox.listWidget.selectedItems():
                 temp["Parent Object"].append(selected.text())
             self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])).setData(temp, Qt.UserRole)
