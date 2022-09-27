@@ -1,3 +1,4 @@
+from gui.widgets.py_tree_view.py_tree_view import PyTreeView
 from qt_core import *
 from gui.widgets.py_tree_view.style import style
 
@@ -13,7 +14,7 @@ from gui.widgets.py_tree_view.style import style
 # }
 # """
 
-class NodeTreeView(QTreeView):
+class NodeTreeView(PyTreeView):
     def __init__(
         self,
         radius = 8,
@@ -24,7 +25,15 @@ class NodeTreeView(QTreeView):
         scroll_bar_btn_color = "#3333",
         context_color = "#00ABE8"
     ):
-        super().__init__()
+        super().__init__(
+            radius = radius,
+            color = color,
+            bg_color = bg_color,
+            selection_color = selection_color,
+            scroll_bar_bg_color = scroll_bar_bg_color,
+            scroll_bar_btn_color = scroll_bar_btn_color,
+            context_color = context_color
+        )
 
         # self.setStyleSheet(style)
 
@@ -44,36 +53,8 @@ class NodeTreeView(QTreeView):
 
         self.rootNode = self.rootModel.invisibleRootItem()
 
-        # SET STYLESHEET
-        self.set_stylesheet(
-            radius,
-            color,
-            bg_color,
-            selection_color,
-            scroll_bar_bg_color,
-            scroll_bar_btn_color,
-            context_color
-        )
-
-    # SET STYLESHEET
-    def set_stylesheet(
-        self,
-        radius,
-        color,
-        bg_color,
-        selection_color,
-        scroll_bar_bg_color,
-        scroll_bar_btn_color,
-        context_color
-    ):
-        # APPLY STYLESHEET
-        style_format = style.format(
-            _radius = radius,          
-            _color = color,
-            _bg_color = bg_color,
-            _selection_color = selection_color,
-            _scroll_bar_bg_color = scroll_bar_bg_color,
-            _scroll_bar_btn_color = scroll_bar_btn_color,
-            _context_color = context_color
-        )
-        self.setStyleSheet(style_format)
+        self.setSelectionMode(self.SingleSelection)
+        self.setDragDropMode(QAbstractItemView.InternalMove)
+        self.setDragEnabled(True)
+        self.setAcceptDrops(True)
+        self.setDropIndicatorShown(True)

@@ -214,6 +214,7 @@ class SetupMainWindow:
                 modelNode.setEditable(False)
                 modelNode.setIcon(QIcon(Functions.set_svg_icon("icon_restore.svg")))
                 modelNode.setData("model", Qt.UserRole)
+                modelNode.setFlags(Qt.ItemIsDropEnabled | modelNode.flags())
                 self.tree.rootNode.appendRow(modelNode)
                 
                 self.controller.add_node_to_tree(self.system_inputs, modelNode)
@@ -271,6 +272,7 @@ class SetupMainWindow:
                 modelNode.setIcon(QIcon(Functions.set_svg_icon("icon_restore.svg")))
                 modelNode.setData("model", Qt.UserRole) 
                 modelNode.setData(modelId, Qt.UserRole+1)
+                modelNode.setFlags(Qt.ItemIsDropEnabled | modelNode.flags())
                 self.tree.rootNode.appendRow(modelNode)
                     
                 self.controller.add_node_to_tree(self.system_inputs, modelNode)

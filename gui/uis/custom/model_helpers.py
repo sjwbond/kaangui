@@ -39,4 +39,16 @@ def get_all_object_names(model: QAbstractItemModel):
         ix = model.index(i, 0)
         _get_all_object_names(ix, d, model)
     return d
+
+def findFreeName(item: QStandardItem, name: str):
+    names = [item.child(i).data(0) for i in range(item.rowCount())]            
+
+    counter = 0
+    freeName = name
+    if freeName in names:
+        freeName = "Copy of " + name
+    while freeName in names:
+        counter+=1                
+        freeName = "Copy of " + name + " (" + str(counter) + ")"
     
+    return freeName

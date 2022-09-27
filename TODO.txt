@@ -2,6 +2,3 @@ Alphabetical & Typewise Sorting of tree view
 cutObject Function => Make object text less bold
 assignGroupByModel function => read comments
 stylesheets
-
-Fix drag and drop
-Fix copy/cut paste naming

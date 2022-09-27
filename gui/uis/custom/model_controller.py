@@ -4,7 +4,7 @@ from functools import partial
 import json
 import sys
 from gui.uis.custom.api import list_models
-from gui.uis.custom.model_helpers import get_all_object_names, model_to_dict_1
+from gui.uis.custom.model_helpers import findFreeName, get_all_object_names, model_to_dict_1
 from qt_core import *
 from gui.core.functions import *
 from gui.uis.custom.node_tree_view import NodeTreeView
@@ -60,7 +60,9 @@ class ModelController:
             node.setEditable(False)
 
             if not "Properties" in model_node[node_key]:
+                node.setFlags(Qt.ItemIsDragEnabled | Qt.ItemIsDropEnabled | node.flags())
                 self.add_node_to_tree(model_node[node_key], node)
+
                 if node.hasChildren():
                     node.setIcon(QIcon(Functions.set_svg_icon("icon_folder.svg")))
                     node.setData("folder", Qt.UserRole)                     
@@ -73,6 +75,7 @@ class ModelController:
             else:
                 node.setIcon(QIcon(Functions.set_svg_icon("icon_file.svg")))
                 node.setData(model_node[node_key], Qt.UserRole) 
+                node.setFlags(Qt.ItemIsDragEnabled | node.flags() & (~Qt.ItemIsDropEnabled))
                 tree_node.appendRow(node)
 
     def remove_node_from_tree(self, tree_node):
@@ -228,7 +231,7 @@ class ModelController:
                     combo.currentIndexChanged.connect(self.save_properties_table)
 
                 else:
-                    self.properties_table.setItem(rowPosition, column, QTableWidgetItem(rowToPasteDict[self.properties_table.horizontalHeaderItem(column).text()]))                                            
+                    self.properties_table.setItem(rowPosition, column, QTableWidgetItem(rowToPasteDict[self.properties_table.horizontalHeaderItem(column).text()]))
 
             rowPosition = self.properties_table.rowCount()
 
@@ -281,74 +284,61 @@ class ModelController:
                 menu.addAction(qmenunewfolder)
 
                 qmenurenamefolder = QAction("Rename Folder")
-                qmenurenamefolder.triggered.connect(self.renameFolderByModel)
+                qmenurenamefolder.triggered.connect(self.renameByModel)
                 menu.addAction(qmenurenamefolder)
 
                 qmenucopyfolder = QAction("Copy Folder and its content")
-                qmenucopyfolder.triggered.connect(self.copyFolderByModel)
+                qmenucopyfolder.triggered.connect(self.copyByModel)
                 menu.addAction(qmenucopyfolder)
+
+                qmenucutfolder = QAction("Cut Folder and its content")
+                qmenucutfolder.triggered.connect(self.cutByModel)
+                menu.addAction(qmenucutfolder)
 
                 if self.clipboardType != None:
                     qmenupaste = QAction("Paste " + self.clipboardName + " under " + self.tree.selectedIndexes()[0].data(0))
-                    if self.clipboardType == CLIPBOARD_FOLDER:
-                        qmenupaste.triggered.connect(self.pasteFolderByModel)
-                    elif self.clipboardType == CLIPBOARD_OBJECT:
-                        qmenupaste.triggered.connect(self.pasteObjectByModel)
+                    qmenupaste.triggered.connect(self.pasteByModel)
                     menu.addAction(qmenupaste)
 
                 qmenudeletefolder = QAction("Delete Folder and its content")
-                qmenudeletefolder.triggered.connect(self.deleteFolderByModel)
+                qmenudeletefolder.triggered.connect(self.deleteByModel)
                 menu.addAction(qmenudeletefolder)
             else:
                 qmenurenameobject = QAction("Rename Object")
-                qmenurenameobject.triggered.connect(self.renameObjectByModel)
+                qmenurenameobject.triggered.connect(self.renameByModel)
                 menu.addAction(qmenurenameobject)
 
                 qmenucopyobject = QAction("Copy Object")
-                qmenucopyobject.triggered.connect(self.copyObjectByModel)
+                qmenucopyobject.triggered.connect(self.copyByModel)
                 menu.addAction(qmenucopyobject)
 
                 qmenucutobject = QAction("Cut Object")
-                qmenucutobject.triggered.connect(self.cutObjectByModel)
+                qmenucutobject.triggered.connect(self.cutByModel)
                 menu.addAction(qmenucutobject)
                 
                 qmenupasteobject = QAction("Paste Object")
-                qmenupasteobject.triggered.connect(self.pasteObjectByModel)
+                qmenupasteobject.triggered.connect(self.pasteByModel)
                 menu.addAction(qmenupasteobject)
 
+                qmenuassignobject = QAction("Assign Object")
+                qmenuassignobject.triggered.connect(self.assignGroupByModel)
+                menu.addAction(qmenuassignobject)
+
                 qmenudeleteobject = QAction("Delete Object")
-                qmenudeleteobject.triggered.connect(self.deleteObjectByModel)
+                qmenudeleteobject.triggered.connect(self.deleteByModel)
                 menu.addAction(qmenudeleteobject)
 
             menu.exec_(QApplication.focusWidget().viewport().mapToGlobal(position))
 
-    # Functions for model object manipulation
+    # Functions for object and model manipulation
     # ///////////////////////////////////////////////////////////////
-
-    def createNewObjectByModel(self):
-        try:
-            text, okPressed = QInputDialog.getText(self.tree, "New object name","New object name:", text="New Object")
-            if okPressed and text != '':
-                getSelected = self.tree.selectedIndexes()
-                keysList = self.getNodeNameAndParentList(getSelected)
-                newObjectDict = {text : {"Model Id": "yarrak",
-                "Object_Name": text,
-                "Object_Type": keysList[1],
-                "Parent Objects": [],
-                "Properties": []
-                }}
-
-            self.add_node_to_tree(newObjectDict, self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])))
-
-        except Exception as e:
-            raise
 
     def assignGroupByModel(self):
         getSelected = self.tree.selectedIndexes()
         self.dialogBox = AssignGroup()
         self.dialogBox.listWidget.setSelectionMode(QAbstractItemView.ExtendedSelection)
         
-        items_obj = self.get_all_object_names(self.tree.rootModel)
+        items_obj = get_all_object_names(self.tree.rootModel)
         for item in items_obj:
             item = QListWidgetItem(item)
             item.setCheckState(Qt.Unchecked)
@@ -375,69 +365,70 @@ class ModelController:
             for selected in self.dialogBox.listWidget.selectedItems():
                 temp["Parent Object"].append(selected.text())
             self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])).setData(temp, Qt.UserRole)
-            
-    def deleteObjectByModel(self):
+
+    def deleteByModel(self):     
         qm = QMessageBox
-        ret = qm.question(self.tree, '', "Are you sure to delete object?", qm.Yes | qm.No)
+        isObject = self.tree.proxyModel.itemData(self.tree.selectedIndexes()[0])[Qt.UserRole] != "folder"
+        ret = qm.question(self.tree, '', "Are you sure to delete object?" if isObject else "Are you sure to delete folder and its content?", qm.Yes | qm.No)
 
         if ret ==  qm.Yes:
             getSelected = self.tree.selectedIndexes()
-
             self.remove_node_from_tree(self.tree.proxyModel.mapToSource(getSelected[0]))
 
-    def renameObjectByModel(self):
+    def renameByModel(self):
         getSelected = self.tree.selectedIndexes()
         text, okPressed = QInputDialog.getText(self.tree, "New name", "New name:", text=getSelected[0].data(0))
         if okPressed and text != '':
             self.tree.proxyModel.setData(self.tree.currentIndex(), text)
 
-    def copyObjectByModel(self):
+    def copyByModel(self):
         getSelected = self.tree.selectedIndexes()
-        self.clipboardName = getSelected[0].data(0)
-        #keysList=getNodeParentList(getSelected) + [self.clipboardName]
-        a = getSelected[0].data(Qt.UserRole)
-        self.clipboardContents =  copy.deepcopy(a)
-        self.clipboardType = CLIPBOARD_OBJECT
+        self.clipboardName = getSelected[0].data(Qt.DisplayRole)
+        type = getSelected[0].data(Qt.UserRole)
+        if type == "folder":
+            self.clipboardContents = copy.deepcopy(model_to_dict_1(self.tree.rootModel.indexFromItem(self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0]))), self.tree.rootModel))
+            self.clipboardType = CLIPBOARD_FOLDER
+        else:
+            self.clipboardContents = copy.deepcopy(getSelected[0].data(Qt.UserRole))
+            self.clipboardType = CLIPBOARD_OBJECT
 
-    def cutObjectByModel(self):
+    def cutByModel(self):
         getSelected = self.tree.selectedIndexes()
-        self.clipboardName = getSelected[0].data(0)
-        a = getSelected[0].data(Qt.UserRole)
-        self.clipboardContents = copy.deepcopy(a)
+        self.copyByModel()
         self.remove_node_from_tree(self.tree.proxyModel.mapToSource(getSelected[0]))
 
-    def copyShortcut(self):
+    def pasteByModel(self):
         getSelected = self.tree.selectedIndexes()
-        if getSelected[0].data(Qt.UserRole) == "folder":
-            self.copyFolderByModel()
-        else:
-            self.copyObjectByModel()
+        item = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0]))
 
-    def pasteObjectByModel(self):
-        getSelected = self.tree.selectedIndexes()
-
-        names=[]
-        if getSelected[0].data(Qt.UserRole) == "folder":
-            for i in range (self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])).rowCount()):
-                names.append(self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])).child(i).data(0))
-        else:
-            for i in range (self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0].parent())).rowCount()):
-                names.append(self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0].parent())).child(i).data(0))                
-
-        counter = 0
-        clipboardName = self.clipboardName
-        if clipboardName in names:
-            clipboardName = "copy of " + self.clipboardName
-        while clipboardName in names:
-            counter+=1                
-            clipboardName = "copy of " + self.clipboardName + " (" + str(counter) + ")"
+        if getSelected[0].data(Qt.UserRole) != "folder" and getSelected[0].data(Qt.UserRole) != "model":
+            item = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0].parent()))
             
-        self.dictObjectToPaste = {clipboardName : self.clipboardContents}
+        self.dictToPaste = {findFreeName(item, self.clipboardName) : self.clipboardContents}
+        self.add_node_to_tree(copy.deepcopy(self.dictToPaste), item)
 
-        if getSelected[0].data(Qt.UserRole) == "folder":
-            self.add_node_to_tree(copy.deepcopy(self.dictObjectToPaste), self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])))
+    def moveByModel(self, source: QModelIndex, target: QModelIndex):
+        name = source.data(Qt.DisplayRole)
+        type = source.data(Qt.UserRole)
+        contents = None
+        sourceItem = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(source))
+        targetItem = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(target))
+        print(f"{source.data(0)} -> {target.data(0)}")
+
+        if type == "folder":
+            contents = copy.deepcopy(model_to_dict_1(self.tree.rootModel.indexFromItem(sourceItem), self.tree.rootModel))
         else:
-            self.add_node_to_tree(copy.deepcopy(self.dictObjectToPaste), self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0].parent())))
+            contents = copy.deepcopy(source.data(Qt.UserRole))
+
+        if targetItem.data(Qt.UserRole) != "folder" and targetItem.data(Qt.UserRole) != "model":
+            targetItem = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(target.parent()))
+
+        # self.remove_node_from_tree(self.tree.proxyModel.mapToSource(source))
+        dict = {findFreeName(targetItem, name) : contents}
+        self.add_node_to_tree(dict, targetItem)
+
+    def copyShortcut(self):
+        self.copyByModel()
 
     def pasteShortcut(self):
         if self.clipboardTypee == CLIPBOARD_FOLDER:
@@ -447,80 +438,45 @@ class ModelController:
         else:
             pass
 
-    # Functions for folder manipulation
+    # Functions for object manipulation
     # ///////////////////////////////////////////////////////////////
 
-    def createNewFolderByModel(self):  
-        text, okPressed = QInputDialog.getText(self.tree, "New folder name","New folder name:", text="New Folder")
-        if okPressed and text != '':
-            getSelected = self.tree.selectedIndexes()
-            newObjectDict = {text : {}}
+    def createNewObjectByModel(self):
+        try:
+            text, okPressed = QInputDialog.getText(self.tree, "New object name","New object name:", text="New Object")
+            if okPressed and text != '':
+                getSelected = self.tree.selectedIndexes()
+                keysList = self.getNodeNameAndParentList(getSelected)
+                newObjectDict = {text : {"Model Id": "yarrak",
+                "Object_Name": text,
+                "Object_Type": keysList[1],
+                "Parent Objects": [],
+                "Properties": []
+                }}
 
-        self.add_node_to_tree(newObjectDict, self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])))
+            self.add_node_to_tree(newObjectDict, self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])))
+
+        except Exception as e:
+            raise
+
+    # Functions for folder manipulation
+    # ///////////////////////////////////////////////////////////////
 
     def createNewFolderByModelWithName(self, name):
         getSelected = self.tree.selectedIndexes()
         newObjectDict = {name : {}}
         self.add_node_to_tree(newObjectDict, self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])))
 
-    def deleteFolderByModel(self):     
-        qm = QMessageBox
-        ret = qm.question(self.tree, '', "Are you sure to delete folder and its content?", qm.Yes | qm.No)
-        if ret ==  qm.Yes:
-            getSelected = self.tree.selectedIndexes()
-            self.remove_node_from_tree(self.tree.proxyModel.mapToSource(getSelected[0]))
-        else:
-            pass
-
-    def renameFolderByModel(self):
-        getSelected = self.tree.selectedIndexes()
-        text, okPressed = QInputDialog.getText(self.tree, "New name","New name:", text=getSelected[0].data(0))
+    def createNewFolderByModel(self):  
+        text, okPressed = QInputDialog.getText(self.tree, "New folder name","New folder name:", text="New Folder")
         if okPressed and text != '':
-            self.tree.proxyModel.setData(self.tree.currentIndex(), text)
+            self.createNewFolderByModelWithName(text)
+
+    # Functions for model manipulation
+    # ///////////////////////////////////////////////////////////////
 
     def renameModel(self):
         getSelected = self.tree.selectedIndexes()
         text, okPressed = QInputDialog.getText(self.tree, "New name","New name:", text=getSelected[0].data(0))
         if okPressed and text != '':
             self.tree.proxyModel.setData(self.tree.currentIndex(), text)
-
-    def copyFolderByModel(self):       
-        getSelected = self.tree.selectedIndexes()
-        self.clipboardName = getSelected[0].data(0)
-        #### The folder node is identified and send to a modification model_to_dict function
-        a = model_to_dict_1(self.tree.rootModel.indexFromItem(self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0]))), self.tree.rootModel)
-        self.clipboardContents = copy.deepcopy(a)
-        self.clipboardType = CLIPBOARD_FOLDER
-
-    def pasteFolderByModel(self):
-        getSelected = self.tree.selectedIndexes()
-
-        names=[]
-        for i in range (self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])).rowCount()):
-            names.append(self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])).child(i).data(0))
-
-        counter = 0
-        clipboardName = self.clipboardName
-        if clipboardName in names:
-            clipboardName = "copy of " + self.clipboardName
-        while clipboardName in names:
-            counter+=1                
-            clipboardName = "copy of " + self.clipboardName + " (" + str(counter) + ")"
-            
-        self.dictFolderToPaste = {clipboardName : self.clipboardContents}
-        self.add_node_to_tree(copy.deepcopy(self.dictFolderToPaste), self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])))
-
-    # Drag and drop
-    # ///////////////////////////////////////////////////////////////
-        
-    global dragStart
-    def dragStart(self):
-        getSelected = self.tree.selectedIndexes()
-        if getSelected[0].data(Qt.UserRole) == "folder":
-            pass  #cut folder function is to be coded
-        else:
-            self.copyObjectByModel()
-
-    global dragEnd
-    def dragEnd(self, dragTarget):
-        self.pasteObjectByModel(dragTarget)
