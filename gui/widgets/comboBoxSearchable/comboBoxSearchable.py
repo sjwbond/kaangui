@@ -1,5 +1,21 @@
 from qt_core import *
 
+style = '''
+QComboBox {
+	background-color: #333;
+	border: 0px solid transparent;
+	padding-left: 1px;
+    padding-right: 1px;
+	selection-color: #FFF;
+	selection-background-color: #00ABE8;
+    color: #FFF;
+}
+QComboBox:focus {
+	border: 0px solid transparent;
+    background-color: #4D5066;
+}
+'''
+
 class ExtendedComboBox(QComboBox):
     def __init__(self, parent=None):
         super(ExtendedComboBox, self).__init__(parent)
@@ -22,13 +38,15 @@ class ExtendedComboBox(QComboBox):
         self.lineEdit().textEdited.connect(self.pFilterModel.setFilterFixedString)
         self.completer.activated.connect(self.on_completer_activated)
 
+        self.setStyleSheet(style)
+
 
     # on selection of an item from the completer, select the corresponding item from combobox 
     def on_completer_activated(self, text):
         if text:
             index = self.findText(text)
             self.setCurrentIndex(index)
-            self.activated[str].emit(self.itemText(index))
+            self.activated.emit(self.itemText(index))
 
 
     # on model change, update the models of the filter and completer as well 

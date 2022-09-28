@@ -18,6 +18,10 @@ class ComboDelegate(QItemDelegate):
         self.connect(combo, SIGNAL("currentIndexChanged(int)"), self, SLOT("currentIndexChanged()"))
         return combo
 
+    def setEditorData(self, edit, index):
+        text = index.data(Qt.DisplayRole)
+        edit.setCurrentIndex(self.items.index(text))
+
     def setModelData(self, combo, model, index):
         comboIndex = combo.currentIndex()
         text = self.items[comboIndex]        
