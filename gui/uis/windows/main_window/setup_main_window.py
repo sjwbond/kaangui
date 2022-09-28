@@ -119,7 +119,6 @@ class SetupMainWindow:
         # ///////////////////////////////////////////////////////////////
 
         # ICON BUTTON 1
-        self.save_table_button = StyledButton(text="Save Table", themes=self.themes)
         self.delete_table_row_button = StyledButton(text="Delete Selected Rows", themes=self.themes)
         self.add_table_row_button = StyledButton(text="Add New Row", themes=self.themes)
         self.copy_table_row_button = StyledButton(text="Copy Selected Rows", themes=self.themes)
@@ -189,7 +188,6 @@ class SetupMainWindow:
 
         self.table_widget.itemChanged.connect(self.controller.save_properties_table)
         self.tree.clicked.connect(self.controller.update_properties_table)
-        self.save_table_button.clicked.connect(self.controller.save_properties_table)
         self.delete_table_2_row_button.clicked.connect(self.controller.delete_seleted_rows_parent)
         self.add_table_2_row_button.clicked.connect(self.controller.add_new_rows_parent)
         self.delete_table_row_button.clicked.connect(self.controller.delete_seleted_rows)
@@ -295,7 +293,6 @@ class SetupMainWindow:
         # ADD WIDGETS
         self.ui.load_pages.table_button_layout.addWidget(self.add_table_row_button)
         self.ui.load_pages.table_button_layout.addWidget(self.delete_table_row_button)
-        self.ui.load_pages.table_button_layout.addWidget(self.save_table_button)
         self.ui.load_pages.table_button_layout.addWidget(self.copy_table_row_button)
         self.ui.load_pages.table_button_layout.addWidget(self.paste_table_row_button)
         self.ui.load_pages.row_3_layout.addWidget(self.create_new_model_button)
