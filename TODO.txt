@@ -1,0 +1,5 @@
+object types/main folders should be loaded dynamically
+remove save table button
+parentship fix editing
+store models as files and keep metadata in mongodb
+ask simon: do we need inheritance or just version tracking?

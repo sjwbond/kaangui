@@ -261,9 +261,8 @@ class ModelController:
             selectedItem = self.tree.selectedIndexes()[0].data(Qt.UserRole)
             menu = QMenu()
 
-            children = []
-            for i in range (self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(self.tree.selectedIndexes()[0])).rowCount()):
-                children.append(self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(self.tree.selectedIndexes()[0])).child(i).data(0))
+            item = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(self.tree.selectedIndexes()[0]))
+            children = [item.child(i).data(0) for i in range(item.rowCount())]
 
             if selectedItem == "model":
                 menuitems = []
@@ -272,9 +271,11 @@ class ModelController:
                         menuitem = QAction(type)
                         menuitem.triggered.connect(partial(self.createNewFolderByModelWithName, type))
                         menuitems.append(menuitem)
-                newfoldermenu = QMenu("Create Folder")
-                newfoldermenu.addActions(menuitems)
-                menu.addMenu(newfoldermenu)
+                
+                if len(menuitems) > 0:
+                    newfoldermenu = QMenu("Create Folder")
+                    newfoldermenu.addActions(menuitems)
+                    menu.addMenu(newfoldermenu)
 
                 qmenurenamemodel = QAction("Rename Model")
                 qmenurenamemodel.triggered.connect(self.renameModel)
@@ -535,3 +536,9 @@ class ModelController:
         text, okPressed = QInputDialog.getText(self.tree, "New name","New name:", text=getSelected[0].data(0))
         if okPressed and text != '':
             self.tree.proxyModel.setData(self.tree.currentIndex(), text)
+    
+    def create_all_base_folders(self):
+        object = {}
+        for type in self.properties_table_object_properties_dict.keys():
+            object[type] = {}
+        self.add_node_to_tree(object, self.tree.rootModel.item(0, 0))

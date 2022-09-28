@@ -218,6 +218,7 @@ class SetupMainWindow:
                 self.tree.rootNode.appendRow(modelNode)
                 
                 self.controller.add_node_to_tree(self.system_inputs, modelNode)
+                self.controller.create_all_base_folders()
                 self.controller.clear_tables()
 
         self.create_new_model_button.clicked.connect(create_new_model)
