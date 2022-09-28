@@ -1,3 +1,4 @@
+from typing import List
 from qt_core import *
 
 
@@ -33,7 +34,7 @@ def _get_all_object_names(parent_index: QModelIndex, d: list, model: QAbstractIt
             d.append(model.index(i, 0, parent_index).data(0))
         _get_all_object_names(ix, d, model)
 
-def get_all_object_names(model: QAbstractItemModel):
+def get_all_object_names(model: QAbstractItemModel) -> List[str]:
     d = list()
     for i in range(model.rowCount()):
         ix = model.index(i, 0)

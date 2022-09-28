@@ -118,6 +118,12 @@ class ModelController:
             # TODO update props when model has changed
             props = get_all_object_names(self.tree.rootModel)
             self.parents_table.setComboProps(props)
+    
+    def clear_tables(self):
+        self.properties_table.setRowCount(0)
+        self.parents_model = ParentsTableModel([])
+        self.parents_model.itemChanged.connect(self.save_parent_table)
+        self.parents_table.setModel(self.parents_model)
 
     def save_properties_table(self):
         getSelected = self.tree.selectedIndexes()
@@ -340,6 +346,23 @@ class ModelController:
         self.dialogBox.tableWidget.setColumnCount(2)
         self.dialogBox.tableWidget.setHorizontalHeaderLabels(["Parent Object", "Parent Property"])
         self.dialogBox.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+            
+        @Slot(str)
+        def onTextChanged(text: str):
+            for index in range(self.dialogBox.listWidget.count()):
+                item = self.dialogBox.listWidget.item(index)
+                if text.lower() in item.data(Qt.DisplayRole).lower():
+                    item.setHidden(False)
+                else:
+                    item.setHidden(True)
+                    item.setCheckState(Qt.Unchecked)
+        self.dialogBox.lineEdit.textChanged.connect(onTextChanged)
+
+        temp = copy.deepcopy(self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])).data(Qt.UserRole))
+        self.dialogBox.tableWidget.setRowCount(len(temp["Parent Objects"]))
+        for row in range(len(temp["Parent Objects"])):
+            self.dialogBox.tableWidget.setItem(row, 0, QTableWidgetItem(temp["Parent Objects"][row]["Parent Object"]))
+            self.dialogBox.tableWidget.setItem(row, 1, QTableWidgetItem(temp["Parent Objects"][row]["Parent Property"]))
         
         items_obj = get_all_object_names(self.tree.rootModel)
         for item in items_obj:
@@ -373,14 +396,27 @@ class ModelController:
 
         self.dialogBox.pushButton.clicked.connect(click_add_button)
 
+        def click_remove_button():
+            indexes = [index.row() for index in self.dialogBox.tableWidget.selectedIndexes()]
+            indexes.sort()
+            indexes.reverse()
+            for index in indexes:
+                self.dialogBox.tableWidget.removeRow(index)
+            
+        self.dialogBox.pushButton_2.clicked.connect(click_remove_button)
+
         self.dialogBox.show()
         
         if self.dialogBox.exec() == 1:
             temp = copy.deepcopy(self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])).data(Qt.UserRole))
-            temp["Parent Object"] = []
-            for selected in self.dialogBox.listWidget.selectedItems():
-                temp["Parent Object"].append(selected.text())
+            temp["Parent Objects"] = []
+            for row in range(self.dialogBox.tableWidget.rowCount()):
+                temp["Parent Objects"].append({
+                        "Parent Object": self.dialogBox.tableWidget.item(row, 0).data(Qt.DisplayRole),
+                        "Parent Property": self.dialogBox.tableWidget.item(row, 1).data(Qt.DisplayRole)
+                    })
             self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])).setData(temp, Qt.UserRole)
+            self.update_properties_table()
 
     def deleteByModel(self):     
         qm = QMessageBox
