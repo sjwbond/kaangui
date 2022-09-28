@@ -46,9 +46,8 @@ class ModelController:
         with open(os.getcwd()+"\\Properties of Object Types.csv", mode='r') as infile:
             reader = csv.reader(infile)
             for rows in reader:
-                self.properties_table_object_properties_dict[rows[0]] = []
-            infile.seek(0)
-            for rows in reader:
+                if rows[0] not in self.properties_table_object_properties_dict:
+                    self.properties_table_object_properties_dict[rows[0]] = []
                 self.properties_table_object_properties_dict[rows[0]].append(rows[1])
         
     def set_filter_text(self, text: str):
@@ -370,7 +369,11 @@ class ModelController:
             item.setCheckState(Qt.Unchecked)
             self.dialogBox.listWidget.addItem(item)
 
-        items_obj_prop = ["upstream_reservoir"]
+        items_obj_prop = []
+        with open(os.getcwd()+"\\ParentProperties.csv", mode='r') as infile:
+            reader = csv.reader(infile)
+            for rows in reader:
+                items_obj_prop.append(rows[0])
         for item in items_obj_prop: 
             item = QListWidgetItem(item)
             item.setCheckState(Qt.Unchecked)
