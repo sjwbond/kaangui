@@ -326,7 +326,7 @@ class ModelController:
                 qmenupasteobject.triggered.connect(self.pasteByModel)
                 menu.addAction(qmenupasteobject)
 
-                qmenuassignobject = QAction("Assign Object")
+                qmenuassignobject = QAction("Assign Group to Object")
                 qmenuassignobject.triggered.connect(self.assignGroupByModel)
                 menu.addAction(qmenuassignobject)
 

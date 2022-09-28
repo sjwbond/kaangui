@@ -90,7 +90,7 @@ class Ui_Dialog_Assign_Group(object):
     # setupUi
 
     def retranslateUi(self, Dialog):
-        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
+        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Assign Group to Object", None))
         self.label_1.setText(QCoreApplication.translate("Dialog", u"Parent Object", None))
         self.label_2.setText(QCoreApplication.translate("Dialog", u"Parent Property", None))
         self.pushButton.setText(QCoreApplication.translate("Dialog", u"Add Parent Object", None))
