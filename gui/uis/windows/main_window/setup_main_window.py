@@ -224,7 +224,7 @@ class SetupMainWindow:
         # API
         def save_model_to_api():
             modelNode = self.tree.rootModel.index(0, 0)
-            data = self.data | {"Name": modelNode.data(Qt.DisplayRole), "SystemInputs": model_to_dict(self.tree.rootModel)}
+            data = self.data | {"name": modelNode.data(Qt.DisplayRole), "SystemInputs": model_to_dict(self.tree.rootModel)}
             modelId = modelNode.data(Qt.UserRole+1)
             if modelId == None:
                 modelId = create_model(data)
@@ -241,7 +241,7 @@ class SetupMainWindow:
             dialog.modelList.setModel(itemModel)
             dialog.modelList.setEditTriggers(QAbstractItemView.NoEditTriggers)
             for model in models:
-                item = QStandardItem(model["Name"])
+                item = QStandardItem(model["name"])
                 item.setData(model["id"], Qt.UserRole)
                 itemModel.appendRow(item)
 
@@ -266,7 +266,7 @@ class SetupMainWindow:
                 self.tree.rootModel.clear()
                 self.tree.rootNode = self.tree.rootModel.invisibleRootItem()
                 
-                modelNode = QStandardItem(model["Name"])
+                modelNode = QStandardItem(model["name"])
                 modelNode.setEditable(False)
                 modelNode.setIcon(QIcon(Functions.set_svg_icon("icon_restore.svg")))
                 modelNode.setData("model", Qt.UserRole) 

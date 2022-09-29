@@ -1,2 +1,2 @@
-store models as files and keep metadata in mongodb
 ask simon: do we need inheritance or just version tracking?
+undo/redo
