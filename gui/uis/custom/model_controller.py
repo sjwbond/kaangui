@@ -1,10 +1,8 @@
 import copy
 import csv
 from functools import partial
-import json
-import sys
 from gui.uis.custom.api import list_models
-from gui.uis.custom.model_helpers import findFreeName, get_all_object_names, model_to_dict_1
+from gui.uis.custom.model_helpers import findFreeName, get_all_object_names, model_to_dict, model_to_dict_1
 from qt_core import *
 from gui.core.functions import *
 from gui.uis.custom.node_tree_view import NodeTreeView
@@ -21,6 +19,7 @@ CLIPBOARD_OBJECT = "object"
 table_header_hash = {'Parent Object':0, "Target Object":1, "Property":2, "Date_From":3,	"Date_To":4,	"Value":5,	"Variable":6,	"Variable_Effect":7,	"Timeslice":8,	"Timeslice_Index":9,	"Group_id":10,	"Priority":11,	"Scenario":12}
 table_header_hash_2 = {'Parent Object':0, "Parent Property":1}
 
+
 class ModelController:
     def __init__(self, tree: NodeTreeView, properties_table: PropertiesTableWidget, parents_table: ParentsTableView):
         self.tree = tree
@@ -28,7 +27,13 @@ class ModelController:
         self.parents_model = None
         self.parents_table = parents_table
         self.clipboard: list[dict] = []
-        self.currentlySelectedModelObject =[] #To keep curretly selected object branch
+        self.currentlySelectedModelObject = [] #To keep curretly selected object branch
+
+        self.base_snapshot = {}
+        self.last_snapshot = {}
+        self.undo_history: list[dict] = []
+        self.redo_history: list[dict] = []
+        self.pause_history = False
 
         self.clipboardType = None
         self.clipboardContents = None
@@ -49,6 +54,149 @@ class ModelController:
                 if rows[0] not in self.properties_table_object_properties_dict:
                     self.properties_table_object_properties_dict[rows[0]] = []
                 self.properties_table_object_properties_dict[rows[0]].append(rows[1])
+    
+    def create_snapshot(self) -> dict:
+        modelNode = self.tree.rootModel.index(0, 0)
+        return {
+            "name": modelNode.data(Qt.DisplayRole),
+            "SystemInputs": model_to_dict(self.tree.rootModel)
+        }
+
+    def save_base_snapshot(self):
+        self.base_snapshot = self.create_snapshot()
+        self.last_snapshot = self.base_snapshot
+        self.undo_history = []
+        self.redo_history = []
+
+    def get_diff(self, old: dict, new: dict, path: list[str], added: list, removed: list, changed: list):
+        for key in new.keys():
+            if key not in old or type(old[key]) != type(new[key]):
+                added.append((path + [key], None, new[key]))
+
+        for key in old.keys():
+            if key not in new or type(old[key]) != type(new[key]):
+                removed.append((path + [key], old[key], None))
+
+        for key in old.keys():
+            if key in new:
+                if ((type(old[key]) is not dict and type(new[key]) is not dict) or "Properties" in new[key]) and old[key] != new[key]:
+                    changed.append((path + [key], old[key], new[key]))
+                elif type(old[key]) is dict and type(new[key]) is dict and "Properties" not in new[key]:
+                    self.get_diff(old[key], new[key], path + [key], added, removed, changed)
+                
+    
+    def create_snapshot_diff(self, snapshot: dict) -> dict:
+        added = []
+        removed = []
+        changed = []
+        self.get_diff(self.last_snapshot, snapshot, [], added, removed, changed)
+        return {
+            "added": added,
+            "removed": removed,
+            "changed": changed
+        }
+
+    def get_item_by_path(self, path: list[str]) -> QModelIndex:
+        return self.get_item_by_path_(self.tree.rootModel.index(0, 0), path)
+
+    def get_item_by_path_(self, index: QModelIndex, path: list[str]) -> QModelIndex:
+        if len(path) == 0:
+            return index
+
+        for i in range(self.tree.rootModel.rowCount(index)):
+            ix = self.tree.rootModel.index(i, 0, index)
+            name = ix.data(Qt.DisplayRole)
+            if name == path[0]:
+                return self.get_item_by_path_(ix, path[1:])
+
+        return index
+
+    def undo_snapshot_diff(self, diff: dict):
+        for item in diff["added"]:
+            (path, _, _) = item
+            index = self.get_item_by_path(path[1:])
+            self.remove_node_from_tree(index)
+
+        for item in diff["removed"]:
+            (path, old, _) = item
+            name = path.pop()
+            index = self.get_item_by_path(path[1:])
+            self.add_node_to_tree({name: old}, self.tree.rootModel.itemFromIndex(index))
+
+        for item in diff["changed"]:
+            (path, old, _) = item
+            if path == ["name"]:
+                self.tree.proxyModel.setData(self.tree.currentIndex(), old)
+            else:
+                index = self.get_item_by_path(path[1:])
+                self.tree.rootModel.itemFromIndex(index).setData(old, Qt.UserRole)
+                
+        self.update_properties_table()
+
+    def redo_snapshot_diff(self, diff: dict):
+        for item in diff["removed"]:
+            (path, _, _) = item
+            index = self.get_item_by_path(path[1:])
+            self.remove_node_from_tree(index)
+
+        for item in diff["added"]:
+            (path, _, new) = item
+            name = path[-1]
+            index = self.get_item_by_path(path[1:-1])
+            self.add_node_to_tree({name: new}, self.tree.rootModel.itemFromIndex(index))
+
+        for item in diff["changed"]:
+            (path, _, new) = item
+            if path == ["name"]:
+                self.tree.proxyModel.setData(self.tree.currentIndex(), new)
+            else:
+                index = self.get_item_by_path(path[1:])
+                self.tree.rootModel.itemFromIndex(index).setData(new, Qt.UserRole)
+        
+        self.update_properties_table()
+
+    def create_undo_snapshot(self):
+        if self.pause_history:
+            return
+
+        snapshot = self.create_snapshot()
+        diff = self.create_snapshot_diff(snapshot)
+        if len(diff["added"]) == 0 and len(diff["removed"]) == 0 and len(diff["changed"]) == 0:
+            return
+
+        self.redo_history.clear()
+        self.last_snapshot = snapshot
+        self.undo_history.append(diff)
+    
+    def pop_undo_item(self) -> dict:
+        if len(self.undo_history) > 0:
+            item = self.undo_history.pop()
+            self.redo_history.append(item)
+            return item
+        return None
+    
+    def pop_redo_item(self) -> dict:
+        if len(self.redo_history) > 0:
+            item = self.redo_history.pop()
+            self.undo_history.append(item)
+            return item
+        return None
+
+    def undo(self):
+        self.pause_history = True
+        item = self.pop_undo_item()
+        if item is not None:
+            self.undo_snapshot_diff(item)
+            self.last_snapshot = self.create_snapshot()
+        self.pause_history = False
+
+    def redo(self):
+        self.pause_history = True
+        item = self.pop_redo_item()
+        if item is not None:
+            self.redo_snapshot_diff(item)
+            self.last_snapshot = self.create_snapshot()
+        self.pause_history = False
         
     def set_filter_text(self, text: str):
         self.tree.proxyModel.setFilterRegularExpression(text)
@@ -59,28 +207,23 @@ class ModelController:
             node.setEditable(False)
 
             if not "Properties" in model_node[node_key]:
-                node.setFlags(Qt.ItemIsDragEnabled | Qt.ItemIsDropEnabled | node.flags())
                 self.add_node_to_tree(model_node[node_key], node)
 
-                if node.hasChildren():
-                    node.setIcon(QIcon(Functions.set_svg_icon("icon_folder.svg")))
-                    node.setData("folder", Qt.UserRole)                     
-                    tree_node.appendRow(node)
-
-                if not model_node[node_key]: #this is to check if the folder is newly created and hence empty
-                    node.setIcon(QIcon(Functions.set_svg_icon("icon_folder.svg")))
-                    node.setData("folder", Qt.UserRole)              
-                    tree_node.appendRow(node)
+                node.setIcon(QIcon(Functions.set_svg_icon("icon_folder.svg")))
+                node.setData("folder", Qt.UserRole)
+                node.setFlags(Qt.ItemIsDragEnabled | Qt.ItemIsDropEnabled | node.flags())
             else:
                 node.setIcon(QIcon(Functions.set_svg_icon("icon_file.svg")))
                 node.setData(model_node[node_key], Qt.UserRole) 
                 node.setFlags(Qt.ItemIsDragEnabled | node.flags() & (~Qt.ItemIsDropEnabled))
-                tree_node.appendRow(node)
 
-    def remove_node_from_tree(self, tree_node):
+            tree_node.appendRow(node)
+
+    def remove_node_from_tree(self, tree_node: QModelIndex):
         self.tree.rootModel.removeRow(tree_node.row(), tree_node.parent())
 
     def update_properties_table(self):
+        self.pause_history = True
         tabledata = self.tree.selectedIndexes()[0].data(Qt.UserRole)
         
         if tabledata == "folder" or tabledata == "model":
@@ -98,7 +241,10 @@ class ModelController:
                             combo.addItem(t)
 
                         self.properties_table.setCellWidget(i,value,combo)
-                        combo.setCurrentIndex(props.index(item[key]))
+                        if item[key] in props:
+                            combo.setCurrentIndex(props.index(item[key]))
+                        else:
+                            combo.setCurrentText(item[key])
                         combo.currentIndexChanged.connect(self.save_properties_table)
                     else:
                         self.properties_table.setItem(i, value, QTableWidgetItem(item[key]))
@@ -117,6 +263,7 @@ class ModelController:
             # TODO update props when model has changed
             props = get_all_object_names(self.tree.rootModel)
             self.parents_table.setComboProps(props)
+        self.pause_history = False
     
     def clear_tables(self):
         self.properties_table.setRowCount(0)
@@ -147,6 +294,7 @@ class ModelController:
         temp["Properties"].clear()
         temp["Properties"] = listofPropertiesToAppend.copy()
         self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])).setData(temp, Qt.UserRole)
+        self.create_undo_snapshot()
 
     def save_parent_table(self):
         getSelected = self.tree.selectedIndexes()
@@ -168,6 +316,7 @@ class ModelController:
         temp["Parent Objects"].clear()
         temp["Parent Objects"] = listofParentsToAppend.copy()
         self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])).setData(temp, Qt.UserRole)
+        self.create_undo_snapshot()
 
     def delete_seleted_rows_parent(self):
         if self.parents_model is not None:
@@ -421,6 +570,7 @@ class ModelController:
                     })
             self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])).setData(temp, Qt.UserRole)
             self.update_properties_table()
+            self.create_undo_snapshot()
 
     def deleteByModel(self):     
         qm = QMessageBox
@@ -430,12 +580,15 @@ class ModelController:
         if ret ==  qm.Yes:
             getSelected = self.tree.selectedIndexes()
             self.remove_node_from_tree(self.tree.proxyModel.mapToSource(getSelected[0]))
+            self.create_undo_snapshot()
 
     def renameByModel(self):
         getSelected = self.tree.selectedIndexes()
         text, okPressed = QInputDialog.getText(self.tree, "New name", "New name:", text=getSelected[0].data(0))
         if okPressed and text != '':
+            # TODO check for duplicate filename
             self.tree.proxyModel.setData(self.tree.currentIndex(), text)
+            self.create_undo_snapshot()
 
     def copyByModel(self):
         getSelected = self.tree.selectedIndexes()
@@ -452,6 +605,7 @@ class ModelController:
         getSelected = self.tree.selectedIndexes()
         self.copyByModel()
         self.remove_node_from_tree(self.tree.proxyModel.mapToSource(getSelected[0]))
+        self.create_undo_snapshot()
 
     def pasteByModel(self):
         getSelected = self.tree.selectedIndexes()
@@ -462,26 +616,7 @@ class ModelController:
             
         self.dictToPaste = {findFreeName(item, self.clipboardName) : self.clipboardContents}
         self.add_node_to_tree(copy.deepcopy(self.dictToPaste), item)
-
-    def moveByModel(self, source: QModelIndex, target: QModelIndex):
-        name = source.data(Qt.DisplayRole)
-        type = source.data(Qt.UserRole)
-        contents = None
-        sourceItem = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(source))
-        targetItem = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(target))
-        print(f"{source.data(0)} -> {target.data(0)}")
-
-        if type == "folder":
-            contents = copy.deepcopy(model_to_dict_1(self.tree.rootModel.indexFromItem(sourceItem), self.tree.rootModel))
-        else:
-            contents = copy.deepcopy(source.data(Qt.UserRole))
-
-        if targetItem.data(Qt.UserRole) != "folder" and targetItem.data(Qt.UserRole) != "model":
-            targetItem = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(target.parent()))
-
-        # self.remove_node_from_tree(self.tree.proxyModel.mapToSource(source))
-        dict = {findFreeName(targetItem, name) : contents}
-        self.add_node_to_tree(dict, targetItem)
+        self.create_undo_snapshot()
 
     def copyShortcut(self):
         self.copyByModel()
@@ -511,6 +646,7 @@ class ModelController:
                 }}
 
             self.add_node_to_tree(newObjectDict, self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])))
+            self.create_undo_snapshot()
 
         except Exception as e:
             raise
@@ -522,11 +658,13 @@ class ModelController:
         getSelected = self.tree.selectedIndexes()
         newObjectDict = {name : {}}
         self.add_node_to_tree(newObjectDict, self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])))
+        self.create_undo_snapshot()
 
-    def createNewFolderByModel(self):  
+    def createNewFolderByModel(self):
         text, okPressed = QInputDialog.getText(self.tree, "New folder name","New folder name:", text="New Folder")
         if okPressed and text != '':
             self.createNewFolderByModelWithName(text)
+            self.create_undo_snapshot()
 
     # Functions for model manipulation
     # ///////////////////////////////////////////////////////////////
@@ -536,6 +674,7 @@ class ModelController:
         text, okPressed = QInputDialog.getText(self.tree, "New name","New name:", text=getSelected[0].data(0))
         if okPressed and text != '':
             self.tree.proxyModel.setData(self.tree.currentIndex(), text)
+            self.create_undo_snapshot()
     
     def create_all_base_folders(self):
         object = {}

@@ -125,6 +125,8 @@ class SetupMainWindow:
         self.paste_table_row_button = StyledButton(text="Paste Copied Rows", themes=self.themes)
         self.add_table_2_row_button = StyledButton(text="Add Parentship", themes=self.themes)
         self.delete_table_2_row_button = StyledButton(text="Delete Selected Parentships", themes=self.themes)
+        self.undo_button = StyledButton(text="Undo", themes=self.themes, icon_name="icon_undo.svg")
+        self.redo_button = StyledButton(text="Redo", themes=self.themes, icon_name="icon_redo.svg")
         self.create_new_model_button = StyledButton(text="Create New Model", icon_name="icon_file.svg", themes=self.themes)
         self.create_json_database_from_txt_files_button = StyledButton(text="Create Model Json file From Txt Folder", icon_name="icon_attachment.svg", themes=self.themes)
         self.open_api_model_button = StyledButton(text="Open Model", icon_name="icon_restore.svg", themes=self.themes)
@@ -197,6 +199,9 @@ class SetupMainWindow:
 
         self.tree.setContextMenuPolicy(Qt.CustomContextMenu)
         self.tree.customContextMenuRequested.connect(self.controller.openMenu)
+        
+        self.redo_button.clicked.connect(self.controller.redo)
+        self.undo_button.clicked.connect(self.controller.undo)
 
         # Model Functions
         def create_new_model():
@@ -218,6 +223,7 @@ class SetupMainWindow:
                 self.controller.add_node_to_tree(self.system_inputs, modelNode)
                 self.controller.create_all_base_folders()
                 self.controller.clear_tables()
+                self.controller.save_base_snapshot()
 
         self.create_new_model_button.clicked.connect(create_new_model)
 
@@ -276,6 +282,7 @@ class SetupMainWindow:
                     
                 self.controller.add_node_to_tree(self.system_inputs, modelNode)
                 self.controller.clear_tables()
+                self.controller.save_base_snapshot()
         
         self.open_api_model_button.clicked.connect(open_model_from_api)
 
@@ -295,6 +302,8 @@ class SetupMainWindow:
         self.ui.load_pages.table_button_layout.addWidget(self.delete_table_row_button)
         self.ui.load_pages.table_button_layout.addWidget(self.copy_table_row_button)
         self.ui.load_pages.table_button_layout.addWidget(self.paste_table_row_button)
+        self.ui.load_pages.row_3_layout.addWidget(self.undo_button)
+        self.ui.load_pages.row_3_layout.addWidget(self.redo_button)
         self.ui.load_pages.row_3_layout.addWidget(self.create_new_model_button)
         self.ui.load_pages.row_3_layout.addWidget(self.open_api_model_button)
         self.ui.load_pages.row_3_layout.addWidget(self.save_api_model_button)
