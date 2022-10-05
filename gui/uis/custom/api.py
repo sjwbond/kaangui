@@ -17,6 +17,18 @@ def get_model(id):
   model = decompress_model(filereq.content)
   return model | metadata
 
+def get_model_history(id):
+  req = requests.get(f"{API_PATH}/models/history/{id}")
+  return req.json()
+
+def get_model_version(model_id, version_id):
+  req = requests.get(f"{API_PATH}/models/version/{version_id}")
+  metadata = req.json()
+  metadata["id"] = model_id
+  filereq = requests.get(f"{API_PATH}/models/file/{metadata['hash']}")
+  model = decompress_model(filereq.content)
+  return model | metadata
+
 def create_model(model):
   stripped = strip_model(model)
   compressed = compress_model(stripped)

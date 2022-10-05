@@ -1,5 +1,6 @@
 # ///////////////////////////////////////////////////////////////
-from gui.uis.custom.api import create_model, delete_model, get_model, list_models, update_model
+from datetime import datetime
+from gui.uis.custom.api import create_model, delete_model, get_model, get_model_history, get_model_version, list_models, update_model
 from gui.uis.custom.model_controller import ModelController
 from gui.uis.custom.model_helpers import model_to_dict
 from gui.uis.custom.node_tree_view import NodeTreeView
@@ -248,25 +249,39 @@ class SetupMainWindow:
             dialog.modelList.setEditTriggers(QAbstractItemView.NoEditTriggers)
             for model in models:
                 item = QStandardItem(model["name"])
-                item.setData(model["id"], Qt.UserRole)
+                item.setData(model, Qt.UserRole)
                 itemModel.appendRow(item)
 
-            def delete_model_clicked():
-                selection = dialog.modelList.selectedIndexes()
-                if len(selection) < 1:
-                    return
-                modelId = selection[0].data(Qt.UserRole)
-                delete_model(modelId)
-                itemModel.removeRow(selection[0].row())
+            def selection_changed(index):
+                modelS = index.data(Qt.UserRole)
+                versions = get_model_history(modelS["id"])
+                itemModel = QStandardItemModel()
+                dialog.versionList.setModel(itemModel)
+                dialog.versionList.setEditTriggers(QAbstractItemView.NoEditTriggers)
+                for version in versions:
+                    date = datetime.fromisoformat(version['savedAt'][0:-1])
+                    formattedDate = date.strftime("%d-%m-%Y %H:%M:%S")
+                    is_current = modelS["hash"] == version['hash']
+                    item = QStandardItem(f"{formattedDate}{' (current)' if is_current else ''}")
+                    item.setData(version["id"], Qt.UserRole)
+                    itemModel.appendRow(item)
+            dialog.modelList.selectionModel().currentChanged.connect(selection_changed)
 
-            dialog.deleteModel.clicked.connect(delete_model_clicked)
             dialog.show()
             if dialog.exec_():
                 selection = dialog.modelList.selectedIndexes()
+                versionSelection = dialog.versionList.selectedIndexes()
                 if len(selection) < 1:
                     return
-                modelId = selection[0].data(Qt.UserRole)
-                model = get_model(modelId)
+                    
+                modelS = selection[0].data(Qt.UserRole)
+                model = None
+
+                if len(versionSelection) == 0:
+                    model = get_model(modelS["id"])
+                else:
+                    model = get_model_version(modelS["id"], versionSelection[0].data(Qt.UserRole))
+
                 self.data = model
                 self.system_inputs = model["SystemInputs"]
                 self.tree.rootModel.clear()
@@ -276,7 +291,7 @@ class SetupMainWindow:
                 modelNode.setEditable(False)
                 modelNode.setIcon(QIcon(Functions.set_svg_icon("icon_restore.svg")))
                 modelNode.setData("model", Qt.UserRole) 
-                modelNode.setData(modelId, Qt.UserRole+1)
+                modelNode.setData(modelS["id"], Qt.UserRole+1)
                 modelNode.setFlags(Qt.ItemIsDropEnabled | modelNode.flags())
                 self.tree.rootNode.appendRow(modelNode)
                     

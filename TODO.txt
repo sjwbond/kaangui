@@ -1,1 +1,0 @@
-ask simon: do we need inheritance or just version tracking?

@@ -19,16 +19,30 @@
      <item>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QPushButton" name="deleteModel">
+        <widget class="QLabel" name="label">
          <property name="text">
-          <string>Delete Model</string>
+          <string>Models</string>
          </property>
         </widget>
+       </item>
+       <item>
+        <widget class="QListView" name="modelList"/>
        </item>
       </layout>
      </item>
      <item>
-      <widget class="QListView" name="modelList"/>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>History</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QListView" name="versionList"/>
+       </item>
+      </layout>
      </item>
     </layout>
    </item>
