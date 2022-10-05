@@ -17,6 +17,10 @@ class NodeSortFilterProxyModel(QSortFilterProxyModel):
             result = sort_order == Qt.AscendingOrder
         elif not left_is_folder and right_is_folder:
             result = sort_order != Qt.AscendingOrder
+        elif left_data is None:
+            result = True
+        elif right_data is None:
+            result = False
         else:
             result = left_data < right_data
         return result

@@ -35,6 +35,8 @@ class ModelController:
         self.redo_history: list[dict] = []
         self.pause_history = False
 
+        self.tree.itemDropped.connect(self.create_undo_snapshot)
+
         self.clipboardType = None
         self.clipboardContents = None
         self.clipboardName = None
@@ -119,8 +121,8 @@ class ModelController:
 
         for item in diff["removed"]:
             (path, old, _) = item
-            name = path.pop()
-            index = self.get_item_by_path(path[1:])
+            name = path[-1]
+            index = self.get_item_by_path(path[1:-1])
             self.add_node_to_tree({name: old}, self.tree.rootModel.itemFromIndex(index))
 
         for item in diff["changed"]:
@@ -183,6 +185,7 @@ class ModelController:
         return None
 
     def undo(self):
+        self.create_undo_snapshot()
         self.pause_history = True
         item = self.pop_undo_item()
         if item is not None:
@@ -223,6 +226,9 @@ class ModelController:
         self.tree.rootModel.removeRow(tree_node.row(), tree_node.parent())
 
     def update_properties_table(self):
+        if len(self.tree.selectedIndexes()) == 0:
+            return
+
         self.pause_history = True
         tabledata = self.tree.selectedIndexes()[0].data(Qt.UserRole)
         
@@ -272,6 +278,7 @@ class ModelController:
         self.parents_table.setModel(self.parents_model)
 
     def save_properties_table(self):
+        self.create_undo_snapshot()
         getSelected = self.tree.selectedIndexes()
         keysList = self.getNodeNameAndParentList(getSelected)
 
@@ -297,6 +304,7 @@ class ModelController:
         self.create_undo_snapshot()
 
     def save_parent_table(self):
+        self.create_undo_snapshot()
         getSelected = self.tree.selectedIndexes()
         keysList = self.getNodeNameAndParentList(getSelected)
 
@@ -561,6 +569,7 @@ class ModelController:
         self.dialogBox.show()
         
         if self.dialogBox.exec() == 1:
+            self.create_undo_snapshot()
             temp = copy.deepcopy(self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])).data(Qt.UserRole))
             temp["Parent Objects"] = []
             for row in range(self.dialogBox.tableWidget.rowCount()):
@@ -578,6 +587,7 @@ class ModelController:
         ret = qm.question(self.tree, '', "Are you sure to delete object?" if isObject else "Are you sure to delete folder and its content?", qm.Yes | qm.No)
 
         if ret ==  qm.Yes:
+            self.create_undo_snapshot()
             getSelected = self.tree.selectedIndexes()
             self.remove_node_from_tree(self.tree.proxyModel.mapToSource(getSelected[0]))
             self.create_undo_snapshot()
@@ -586,6 +596,7 @@ class ModelController:
         getSelected = self.tree.selectedIndexes()
         text, okPressed = QInputDialog.getText(self.tree, "New name", "New name:", text=getSelected[0].data(0))
         if okPressed and text != '':
+            self.create_undo_snapshot()
             # TODO check for duplicate filename
             self.tree.proxyModel.setData(self.tree.currentIndex(), text)
             self.create_undo_snapshot()
@@ -602,12 +613,14 @@ class ModelController:
             self.clipboardType = CLIPBOARD_OBJECT
 
     def cutByModel(self):
+        self.create_undo_snapshot()
         getSelected = self.tree.selectedIndexes()
         self.copyByModel()
         self.remove_node_from_tree(self.tree.proxyModel.mapToSource(getSelected[0]))
         self.create_undo_snapshot()
 
     def pasteByModel(self):
+        self.create_undo_snapshot()
         getSelected = self.tree.selectedIndexes()
         item = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0]))
 
@@ -645,6 +658,7 @@ class ModelController:
                 "Properties": []
                 }}
 
+            self.create_undo_snapshot()
             self.add_node_to_tree(newObjectDict, self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])))
             self.create_undo_snapshot()
 
@@ -655,6 +669,7 @@ class ModelController:
     # ///////////////////////////////////////////////////////////////
 
     def createNewFolderByModelWithName(self, name):
+        self.create_undo_snapshot()
         getSelected = self.tree.selectedIndexes()
         newObjectDict = {name : {}}
         self.add_node_to_tree(newObjectDict, self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])))
@@ -673,6 +688,7 @@ class ModelController:
         getSelected = self.tree.selectedIndexes()
         text, okPressed = QInputDialog.getText(self.tree, "New name","New name:", text=getSelected[0].data(0))
         if okPressed and text != '':
+            self.create_undo_snapshot()
             self.tree.proxyModel.setData(self.tree.currentIndex(), text)
             self.create_undo_snapshot()
     

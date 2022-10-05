@@ -3,6 +3,8 @@ from gui.widgets.py_tree_view.py_tree_view import PyTreeView
 from qt_core import *
 
 class NodeTreeView(PyTreeView):
+    itemDropped = Signal()
+
     def __init__(
         self,
         radius = 8,
@@ -38,3 +40,7 @@ class NodeTreeView(PyTreeView):
         self.setDragEnabled(True)
         self.setAcceptDrops(True)
         self.setDropIndicatorShown(True)
+
+    def dropEvent(self, event):
+        self.itemDropped.emit()
+        super().dropEvent(event)
