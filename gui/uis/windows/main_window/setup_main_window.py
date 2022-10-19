@@ -184,8 +184,8 @@ class SetupMainWindow:
         self.open_api_model_button = StyledButton(text="Open Model", icon_name="icon_restore.svg", themes=self.themes)
         self.save_api_model_button = StyledButton(text="Save Model", icon_name="icon_save.svg", themes=self.themes)
 
-        self.execution_undo_button = StyledButton(text="Undo", themes=self.themes, icon_name="icon_undo.svg")
-        self.execution_redo_button = StyledButton(text="Redo", themes=self.themes, icon_name="icon_redo.svg")
+        self.execution_undo_button = StyledButton(text="Undo (WIP)", themes=self.themes, icon_name="icon_undo.svg")
+        self.execution_redo_button = StyledButton(text="Redo (WIP)", themes=self.themes, icon_name="icon_redo.svg")
         self.execution_save_button = StyledButton(text="Save", themes=self.themes, icon_name="icon_save.svg")
 
         # PY LINE EDIT

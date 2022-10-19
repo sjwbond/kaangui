@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ModelScreen</class>
+ <widget class="QDialog" name="ModelScreen">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>859</width>
+    <height>740</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,0">
+   <item>
+    <widget class="QGroupBox" name="simulation_groupBox">
+     <property name="title">
+      <string>Simulation</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2" columnstretch="0,1" columnminimumwidth="120,0">
+      <item row="3" column="1">
+       <widget class="QComboBox" name="production_comboBox"/>
+      </item>
+      <item row="7" column="1">
+       <widget class="QComboBox" name="mtschedule_comboBox"/>
+      </item>
+      <item row="9" column="1">
+       <widget class="QComboBox" name="horizons_comboBox"/>
+      </item>
+      <item row="8" column="1">
+       <widget class="QComboBox" name="ltplan_comboBox"/>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="stschedule_label">
+        <property name="text">
+         <string>ST Schedule</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QLabel" name="mtschedule_label">
+        <property name="text">
+         <string>MT Schedule</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="1">
+       <widget class="QComboBox" name="pasa_comboBox"/>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="competition_label">
+        <property name="text">
+         <string>Competition</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="competition_comboBox"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="diagnostics_label">
+        <property name="text">
+         <string>Diagnostics</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="stochastics_label">
+        <property name="text">
+         <string>Stochastics</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0">
+       <widget class="QLabel" name="ltplan_label">
+        <property name="text">
+         <string>LT Plan</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="transmission_label">
+        <property name="text">
+         <string>Transmission</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="production_label">
+        <property name="text">
+         <string>Production</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="performance_label">
+        <property name="text">
+         <string>Performance</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="diagnostics_comboBox"/>
+      </item>
+      <item row="5" column="1">
+       <widget class="QComboBox" name="transmission_comboBox"/>
+      </item>
+      <item row="11" column="0">
+       <widget class="QLabel" name="reports_label">
+        <property name="text">
+         <string>Reports</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QComboBox" name="stschedule_comboBox"/>
+      </item>
+      <item row="2" column="1">
+       <widget class="QComboBox" name="performance_comboBox"/>
+      </item>
+      <item row="10" column="0">
+       <widget class="QLabel" name="pasa_label">
+        <property name="text">
+         <string>PASA</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QComboBox" name="stochastics_comboBox"/>
+      </item>
+      <item row="9" column="0">
+       <widget class="QLabel" name="horizons_label">
+        <property name="text">
+         <string>Horizons</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="1">
+       <widget class="QComboBox" name="reports_comboBox"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="scenarios_groupBox">
+     <property name="title">
+      <string>Scenarios</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QTableWidget" name="scenarios_tableWIdget"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

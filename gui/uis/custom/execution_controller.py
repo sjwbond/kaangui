@@ -2,6 +2,7 @@ from functools import partial
 from gui.uis.windows.screens.diagnosticscreen import Ui_DiagnosticsScreen, diagnostics_default_input
 from gui.uis.windows.screens.horizonscreen import Ui_HorizonScreen, horizons_default_input
 from gui.uis.windows.screens.ltplanscreen import Ui_LTPlanScreen, ltplan_default_input
+from gui.uis.windows.screens.modelscreen import Ui_ModelScreen
 from gui.uis.windows.screens.mtschedulescreen import Ui_MTScheaduleScreen, mtschedule_default_input
 from gui.uis.windows.screens.pasascreen import Ui_PASAScreen, pasa_default_input
 from gui.uis.windows.screens.productionscreen import Ui_ProductionScreen, production_default_input
@@ -161,6 +162,7 @@ class ExecutionController:
         
         self.tree.setModel(self.model)
         self.tree.expandAll()
+        self.selection_changed()
     
     def get_simulation(self) -> dict:
         simulation = {}
@@ -252,6 +254,7 @@ class ExecutionController:
 
     def selection_changed(self):
         if len(self.tree.selectedIndexes()) == 0:
+            self.clear_right_widget()
             return
 
         index = self.tree.selectedIndexes()[0]
@@ -259,6 +262,7 @@ class ExecutionController:
         user_data = index.data(Qt.UserRole)
 
         if user_data is None:
+            self.clear_right_widget()
             return
 
         (level, name, type) = user_data
@@ -271,6 +275,8 @@ class ExecutionController:
         self.clear_right_widget()
         
         if level == "leaf":
+            if type == "models":
+                self.set_right_data_screen(Ui_ModelScreen(), item)
             if type == "diagnostics":
                 self.set_right_data_screen(Ui_DiagnosticsScreen(), item)
             elif type == "production":
@@ -307,11 +313,6 @@ class ExecutionController:
 
         old_data = item.data(Qt.UserRole + 1)
         new_data = self.right_side_screen.getOutput()
-        for (key, value) in old_data.items():
-            if key not in new_data:
-                print(f"{key}: {value} > ?")
-            elif new_data[key] != value:
-                print(f"{key}: {value} > {new_data[key]}")
 
         if old_data == new_data:
             return
