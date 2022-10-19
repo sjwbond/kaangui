@@ -235,7 +235,7 @@ class Ui_PASAScreen(QObject):
         self.enforce_line_and_transformer_limits_checkBox.setChecked(self.input["enforce_line_and_transformer_limits"])
         self.enforce_interface_limits_checkBox.setChecked(self.input["enforce_interface_limits"])
         self.maintenance_sculpting_label.setText(self.input["maintenance_sculpting"])
-        self.horizontalSlider.setValue(self.input["maintenance_sculpting"])
+        self.horizontalSlider.setValue(int(self.input["maintenance_sculpting"]))
         self.compute_indices_checkBox.setChecked(self.input["compute_indices"])
         self.compute_multiarea_reliability_indices_checkBox.setChecked(self.input["compute_multiarea_reliability_indices"])
         self.outage_increment_mw.setValue(int(self.input["outage_increment_mw"]))
