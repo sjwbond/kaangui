@@ -202,19 +202,34 @@ class ExecutionController:
 
                 menu.exec_(QApplication.focusWidget().viewport().mapToGlobal(position))
 
-    def create_new(self, item, name, type):
-        subitem = QStandardItem(f"New {name}")
+    def create_new(self, item: QStandardItem, name, type):
+        subitems = [self.model.index(i, 0, item.index()).data(Qt.DisplayRole) for i in range(item.rowCount())]
+        new_name = f"New {name}"
+        counter = 1
+        while new_name in subitems:
+            counter += 1
+            new_name = f"New {name} ({counter})"
+
+        subitem = QStandardItem(new_name)
         subitem.setData(("leaf", name, type), Qt.UserRole)
         subitem.setData({}, Qt.UserRole + 1)
         item.appendRow(subitem)
 
     def rename(self, item: QStandardItem):
-        text, okPressed = QInputDialog.getText(self.tree, "Rename", "New name:", text=item.data(Qt.DisplayRole))
-        if okPressed and text != '':
-            item.setData(text, Qt.DisplayRole)
+        new_name, okPressed = QInputDialog.getText(None, "Rename", "New name:", text=item.data(Qt.DisplayRole))
+        if not okPressed or new_name == '':
+            return
+
+        subitems = [self.model.index(i, 0, item.parent().index()).data(Qt.DisplayRole) for i in range(item.parent().rowCount())]
+        while new_name in subitems:
+            new_name, okPressed = QInputDialog.getText(None, "Rename", "An object with the same name exists. Please choose a different name.\nNew name:", text=item.data(Qt.DisplayRole))
+            if not okPressed or new_name == '':
+                return
+
+        item.setData(new_name, Qt.DisplayRole)
 
     def delete(self, index: QModelIndex):
-        ret = QMessageBox.question(self.tree, "Delete", "Are you sure you wish to delete this object?", QMessageBox.Yes | QMessageBox.No)
+        ret = QMessageBox.question(None, "Delete", "Are you sure you wish to delete this object?", QMessageBox.Yes | QMessageBox.No)
         if ret == QMessageBox.Yes:
             self.model.removeRow(index.row(), index.parent())
 
