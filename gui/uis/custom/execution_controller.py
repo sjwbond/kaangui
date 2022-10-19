@@ -1,12 +1,12 @@
 from functools import partial
-from gui.uis.windows.screens.diagnosticscreen import Ui_DiagnosticsScreen
-from gui.uis.windows.screens.horizonscreen import Ui_HorizonScreen
-from gui.uis.windows.screens.ltplanscreen import Ui_LTPlanScreen
-from gui.uis.windows.screens.mtschedulescreen import Ui_MTScheaduleScreen
-from gui.uis.windows.screens.pasascreen import Ui_PASAScreen
-from gui.uis.windows.screens.productionscreen import Ui_ProductionScreen
-from gui.uis.windows.screens.stochasticscreen import Ui_StochasticsScreen
-from gui.uis.windows.screens.stschedulescreen import Ui_STScheduleScreen
+from gui.uis.windows.screens.diagnosticscreen import Ui_DiagnosticsScreen, diagnostics_default_input
+from gui.uis.windows.screens.horizonscreen import Ui_HorizonScreen, horizons_default_input
+from gui.uis.windows.screens.ltplanscreen import Ui_LTPlanScreen, ltplan_default_input
+from gui.uis.windows.screens.mtschedulescreen import Ui_MTScheaduleScreen, mtschedule_default_input
+from gui.uis.windows.screens.pasascreen import Ui_PASAScreen, pasa_default_input
+from gui.uis.windows.screens.productionscreen import Ui_ProductionScreen, production_default_input
+from gui.uis.windows.screens.stochasticscreen import Ui_StochasticScreen, stochastic_default_input
+from gui.uis.windows.screens.stschedulescreen import Ui_STScheduleScreen, stschedule_default_input
 from qt_core import *
 
 
@@ -120,6 +120,8 @@ class ExecutionController:
         self.container = container
         self.model = QStandardItemModel()
         self.simulation = {}
+        self.right_side_screen = None
+        self.last_index = None
         
         self.tree.setHeaderHidden(True)
         self.tree.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
@@ -212,7 +214,22 @@ class ExecutionController:
 
         subitem = QStandardItem(new_name)
         subitem.setData(("leaf", name, type), Qt.UserRole)
-        subitem.setData({}, Qt.UserRole + 1)
+        if type == "diagnostics":
+            subitem.setData(diagnostics_default_input, Qt.UserRole + 1)
+        elif type == "horizons":
+            subitem.setData(horizons_default_input, Qt.UserRole + 1)
+        elif type == "ltplan":
+            subitem.setData(ltplan_default_input, Qt.UserRole + 1)
+        elif type == "mtschedule":
+            subitem.setData(mtschedule_default_input, Qt.UserRole + 1)
+        elif type == "pasa":
+            subitem.setData(pasa_default_input, Qt.UserRole + 1)
+        elif type == "production":
+            subitem.setData(production_default_input, Qt.UserRole + 1)
+        elif type == "stochastics":
+            subitem.setData(stochastic_default_input, Qt.UserRole + 1)
+        elif type == "stschedule":
+            subitem.setData(stschedule_default_input, Qt.UserRole + 1)
         item.appendRow(subitem)
 
     def rename(self, item: QStandardItem):
@@ -246,7 +263,12 @@ class ExecutionController:
 
         (level, name, type) = user_data
 
-        self.set_right_widget(QWidget())
+        if self.last_index is not None:
+            self.check_save_data(self.model.itemFromIndex(self.last_index))
+
+        self.last_index = index
+
+        self.clear_right_widget()
         
         if level == "leaf":
             if type == "diagnostics":
@@ -254,7 +276,7 @@ class ExecutionController:
             elif type == "production":
                 self.set_right_data_screen(Ui_ProductionScreen(), item)
             elif type == "stochastics":
-                self.set_right_data_screen(Ui_StochasticsScreen(), item)
+                self.set_right_data_screen(Ui_StochasticScreen(), item)
             elif type == "stschedule":
                 self.set_right_data_screen(Ui_STScheduleScreen(), item)
             elif type == "mtschedule":
@@ -270,13 +292,34 @@ class ExecutionController:
         self.right_side_frame = QFrame()
         self.right_side_screen = screen
         self.right_side_screen.setupUi(self.right_side_frame)
-        self.right_side_screen.dataSaved.connect(partial(self.data_saved, item))
         self.right_side_screen.setInput(item.data(Qt.UserRole + 1))
         self.right_side_frame.setStyleSheet(style)
-        self.set_right_widget(self.right_side_frame)
+        self.container.setWidget(self.right_side_frame)
     
-    def set_right_widget(self, widget: QWidget):
-        self.container.setWidget(widget)
+    def clear_right_widget(self):
+        self.right_side_frame = None
+        self.right_side_screen = None
+        self.container.setWidget(QWidget())
 
-    def data_saved(self, item: QStandardItem, data: dict):
+    def check_save_data(self, item: QStandardItem):
+        if self.right_side_screen is None:
+            return
+
+        old_data = item.data(Qt.UserRole + 1)
+        new_data = self.right_side_screen.getOutput()
+        for (key, value) in old_data.items():
+            if key not in new_data:
+                print(f"{key}: {value} > ?")
+            elif new_data[key] != value:
+                print(f"{key}: {value} > {new_data[key]}")
+
+        if old_data == new_data:
+            return
+
+        ret = QMessageBox.question(None, "Object Changed", "Would you like to save changes made to this object?", QMessageBox.Yes | QMessageBox.No)
+        if ret == QMessageBox.Yes:
+            item.setData(new_data, Qt.UserRole + 1)
+
+    def save_data(self, item: QStandardItem):
+        data = self.right_side_screen.getOutput()
         item.setData(data, Qt.UserRole + 1)

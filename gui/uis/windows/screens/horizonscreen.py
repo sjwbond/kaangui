@@ -13,30 +13,29 @@ from datetime import timedelta
 
 from qt_core import *
 
-class Ui_HorizonScreen(QObject):
-    dataSaved = Signal(dict)
+horizons_default_input = {
+    'interval_length': '24',
+    'begin_on': '31 Dec 2016',
+    'end_on': '31 Dec 2016',
+    'day_begins': '12:00 AM',
+    'year_ends': 'Automatic',
+    'week_begins': 'Automatic',
+    'typical_week_per_month': '4',
+    'begin_at': '31 Dec 2016',
+    'begin_at_interval': '1',
+    'end_interval': 'TextLabel',
+    'steps_of': 'Hour',
+    'steps_of_count': '1',
+    'schedule': '7',
+    'additional_lockahead': False,
+    'length': 'Day(s)',
+    'length_count': '1',
+    'resolution': '1',
+    'chronological_phase': 'Typical Week'
+}
 
-    default_input = {
-        'interval_length': '24',
-        'begin_on': '31 Dec 2016',
-        'end_on': '31 Dec 2016',
-        'day_begins': '12:00 AM',
-        'year_ends': 'Automatic',
-        'week_begins': 'Automatic',
-        'typical_week_per_month': '4',
-        'begin_at': '31 Dec 2016',
-        'begin_at_interval': '1',
-        'end_interval': 'TextLabel',
-        'steps_of': 'Hour',
-        'steps_of_count': '1',
-        'schedule': '7',
-        'additional_lockahead': False,
-        'length': 'Day(s)',
-        'length_count': '1',
-        'resolution': '1',
-        'chronological_phase': 'Typical Week'
-    }
-    input = default_input
+class Ui_HorizonScreen(QObject):
+    input = horizons_default_input
     output = None
 
     def setupUi(self, Form):
@@ -101,10 +100,6 @@ class Ui_HorizonScreen(QObject):
         self.week_begins_label.setObjectName("week_begins_label")
         self.gridLayout.addWidget(self.week_begins_label, 4, 0, 1, 1)
         self.gridLayout_2.addWidget(self.planning_horizaon_groupBox, 0, 0, 1, 1)
-        self.buttonBox = QDialogButtonBox(self.groupBox)
-        self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Ok|QDialogButtonBox.RestoreDefaults)
-        self.buttonBox.setObjectName("buttonBox")
-        self.gridLayout_2.addWidget(self.buttonBox, 2, 0, 1, 1)
         self.chronological_phase_groupBox = QGroupBox(self.groupBox)
         self.chronological_phase_groupBox.setObjectName("chronological_phase_groupBox")
         self.full_chronology_radioButton = QRadioButton(self.chronological_phase_groupBox)
@@ -275,32 +270,15 @@ class Ui_HorizonScreen(QObject):
 
         QMetaObject.connectSlotsByName(Form)
 
-        btn = self.buttonBox.button(QDialogButtonBox.Ok)
-        btn.clicked.connect(self.saveandclose)
-        btn = self.buttonBox.button(QDialogButtonBox.Cancel)
-        btn.clicked.connect(self.dontsaveandclose)
-        btn = self.buttonBox.button(QDialogButtonBox.RestoreDefaults)
-        btn.clicked.connect(self.restoredefaults)
-
         self.additional_lockahead.clicked.connect(self.enableSampleGroupBox)
-
-    def saveandclose(self):
-        self.saveHorizon()
-
-    def dontsaveandclose(self):
-        pass
-
-    def restoredefaults(self):
-        self.input = self.default_input
-        self.loadHorizon()
-        self.enableSampleGroupBox()
     
     def setInput(self, input):
-        self.input = self.default_input | input
+        self.input = input
         self.loadHorizon()
         self.enableSampleGroupBox()
     
     def getOutput(self):
+        self.saveHorizon()
         return self.output
 
     def loadHorizon(self):
@@ -337,7 +315,7 @@ class Ui_HorizonScreen(QObject):
         self.resolution_comboBox.setCurrentIndex(temp)
 
     def saveHorizon(self):
-        self.output = {
+        self.output = horizons_default_input | {
           "interval_length": str(24//self.stringsToNumbers(self.interval_length_comboBox.currentText())),
           "begin_on": self.begin_on_dateEdit.date().toString("dd MMM yyyy"),
           "end_on": self.end_on_dateEdit.date().toString("dd MMM yyyy"),
@@ -359,11 +337,8 @@ class Ui_HorizonScreen(QObject):
 
         if self.full_chronology_radioButton.isChecked():
             self.output["chronological_phase"] = "Full"
-
         if self.typical_week_per_month_radioButton.isChecked():
             self.output["chronological_phase"] = "Typical Week"
-
-        self.dataSaved.emit(self.output)
 
     def additionalLockAhead(self):
         if self.additional_lockahead.isChecked():
@@ -431,7 +406,6 @@ class Ui_HorizonScreen(QObject):
             "1 Minute":1/60,
         }[argument]
 
-
     def numbersToStrings(self,argument):
         return {
             "1":"24 Hours",
@@ -450,11 +424,7 @@ class Ui_HorizonScreen(QObject):
             "1440":"1 Minute",
         }[argument]
 
-
-
     def calculateEndAtInterval(self):
-
-
         maxinterval = 24//self.stringsToNumbers(self.interval_length_comboBox.currentText())
         self.begin_at_interval_spinBox.setMaximum(maxinterval)
         self.steps_of_spinBox.setSingleStep(self.stringsToNumbers(self.interval_length_comboBox.currentText()))
@@ -516,9 +486,3 @@ class Ui_HorizonScreen(QObject):
         self.label_15.setText(QApplication.translate("Form", "TextLabel"))
         self.length_label.setText(QApplication.translate("Form", "Length:"))
         self.resolution_label.setText(QApplication.translate("Form", "Resolution:"))
-
-
-
-
-
-

@@ -9,27 +9,26 @@
 
 from qt_core import *
 
-class Ui_PASAScreen(QObject):
-    dataSaved = Signal(dict)
+pasa_default_input = {
+    "demandsize_participation": True,
+    "depand_purchaser_bids": False,
+    "contract_generation": False,
+    "contract_load": False,
+    "market_purchases": False,
+    "enforce_line_and_transformer_limits": True,
+    "enforce_interface_limits": True,
+    "maintenance_sculpting": "0",
+    "compute_indices": False,
+    "compute_multiarea_reliability_indices": False,
+    "outage_increment_mw": "10",
+    "write_outages_to_text_files": False,
+    "resolution": "Day",
+    "transmission": "Regional",
+    "stochastic_method": "Deterministic"
+}
 
-    default_input = {
-        "demandsize_participation": True,
-        "depand_purchaser_bids": False,
-        "contract_generation": False,
-        "contract_load": False,
-        "market_purchases": False,
-        "enforce_line_and_transformer_limits": True,
-        "enforce_interface_limits": True,
-        "maintenance_sculpting": "0",
-        "compute_indices": False,
-        "compute_multiarea_reliability_indices": False,
-        "outage_increment_mw": "10",
-        "write_outages_to_text_files": False,
-        "resolution": "Day",
-        "transmission": "Regional",
-        "stochastic_method": "Deterministic"
-    }
-    input = default_input
+class Ui_PASAScreen(QObject):
+    input = pasa_default_input
     output = None
 
     def setupUi(self, Form):
@@ -181,49 +180,17 @@ class Ui_PASAScreen(QObject):
         self.gridLayout_6.addWidget(self.write_outages_to_text_files_checkBox, 2, 0, 1, 1)
         self.verticalLayout.addWidget(self.output_groupBox)
         self.gridLayout_7.addWidget(self.groupBox, 0, 1, 1, 1)
-        self.groupBox_8 = QGroupBox(Form)
-        self.groupBox_8.setTitle("")
-        self.groupBox_8.setObjectName("groupBox_8")
-        self.gridLayout_8 = QGridLayout(self.groupBox_8)
-        self.gridLayout_8.setObjectName("gridLayout_8")
-        self.buttonBox = QDialogButtonBox(self.groupBox_8)
-        self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Ok|QDialogButtonBox.RestoreDefaults)
-        self.buttonBox.setObjectName("buttonBox")
-        self.gridLayout_8.addWidget(self.buttonBox, 0, 0, 1, 1)
-        self.gridLayout_7.addWidget(self.groupBox_8, 1, 1, 1, 1)
 
         self.retranslateUi(Form)
         QObject.connect(self.horizontalSlider, SIGNAL("valueChanged(int)"), self.maintenance_sculpting_label.setNum)
         QMetaObject.connectSlotsByName(Form)
-
-
-
-        btn = self.buttonBox.button(QDialogButtonBox.Ok)
-        btn.clicked.connect(self.saveandclose)
-        btn = self.buttonBox.button(QDialogButtonBox.Cancel)
-        btn.clicked.connect(self.dontsaveandclose)
-        btn = self.buttonBox.button(QDialogButtonBox.RestoreDefaults)
-        btn.clicked.connect(self.restoredefaults)
-
-    def saveandclose(self):
-        self.savepasascreen()
-
-    def dontsaveandclose(self):
-        pass
-
-    def restoredefaults(self):
-        self.loadpasascreen()
-        self.horizontalSlider.setValue(0)
-
-    def restoredefaults(self):
-        self.input = self.default_input
-        self.loadpasascreen()
     
     def setInput(self, input):
-        self.input = self.default_input | input
+        self.input = input
         self.loadpasascreen()
     
     def getOutput(self):
+        self.savepasascreen()
         return self.output
 
     def loadpasascreen(self):
@@ -254,7 +221,7 @@ class Ui_PASAScreen(QObject):
         self.scenariowise_decomposition_radioButton.setChecked(self.input["stochastic_method"] == "Scenario-wise Decomposition")
 
     def savepasascreen(self):
-        self.output = {
+        self.output = pasa_default_input | {
             "demandsize_participation": self.demandsize_participation_checkBox.isChecked(),
             "depand_purchaser_bids": self.depand_purchaser_bids_checkBox.isChecked(),
             "contract_generation": self.contract_generation_checkBox.isChecked(),
@@ -289,8 +256,6 @@ class Ui_PASAScreen(QObject):
             self.output["stochastic_method"] = "Independent Samples (Parallel)"
         if self.scenariowise_decomposition_radioButton.isChecked():
             self.output["stochastic_method"] = "Scenario-wise Decomposition"
-
-        self.dataSaved.emit(self.output)
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(QApplication.translate("Form", "Form"))

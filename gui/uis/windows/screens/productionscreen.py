@@ -9,29 +9,28 @@
 
 from qt_core import *
 
-class Ui_ProductionScreen(QObject):
-    dataSaved = Signal(dict)
+production_default_input = {
+    "group_generators_by_power_station": True,
+    "rounding_up_threshold": 0,
+    "self_tune": False,
+    "rounding_up_start": 0.0,
+    "rounding_up_end": 0.0,
+    "rounding_up_increment": 0.0,
+    "capacity_factor_threshold": 0,
+    "capacity_factor_error_threshold": 0,
+    "precision": 0,
+    "max_tranches": 10,
+    "formulate_additional_unit_commitment_constraints_upfront": True,
+    "formulate_ramp_constrains_upfront": True,
+    "unit_commitment_optimality": "Linear",
+    "heat_rates_nonconvexities": "Warn Adjust Report Adjusted",
+    "start_cost_method": "Optimize",
+    "capacity_factor_refers_to": "Installed Capacity",
+    "integers_in_lookahead": "Auto"
+}
 
-    default_input = {
-        "group_generators_by_power_station": True,
-        "rounding_up_threshold": 0,
-        "self_tune": False,
-        "rounding_up_start": 0.0,
-        "rounding_up_end": 0.0,
-        "rounding_up_increment": 0.0,
-        "capacity_factor_threshold": 0,
-        "capacity_factor_error_threshold": 0,
-        "precision": 0,
-        "max_tranches": 10,
-        "formulate_additional_unit_commitment_constraints_upfront": True,
-        "formulate_ramp_constrains_upfront": True,
-        "unit_commitment_optimality": "Linear",
-        "heat_rates_nonconvexities": "Warn Adjust Report Adjusted",
-        "start_cost_method": "Optimize",
-        "capacity_factor_refers_to": "Installed Capacity",
-        "integers_in_lookahead": "Auto"
-    }
-    input = default_input
+class Ui_ProductionScreen(QObject):
+    input = production_default_input
     output = None
 
     def setupUi(self, Form):
@@ -220,16 +219,6 @@ class Ui_ProductionScreen(QObject):
         self.gridLayout_11.addWidget(self.allow_non_convex_radioButton, 4, 0, 1, 1)
         self.gridLayout_9.addWidget(self.heat_rates_nonconvexities_groupBox, 1, 0, 1, 1)
         self.gridLayout.addWidget(self.groupBox_2, 0, 2, 1, 1)
-        self.groupBox_3 = QGroupBox(Form)
-        self.groupBox_3.setTitle("")
-        self.groupBox_3.setObjectName("groupBox_3")
-        self.gridLayout_12 = QGridLayout(self.groupBox_3)
-        self.gridLayout_12.setObjectName("gridLayout_12")
-        self.buttonBox = QDialogButtonBox(self.groupBox_3)
-        self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Ok|QDialogButtonBox.RestoreDefaults)
-        self.buttonBox.setObjectName("buttonBox")
-        self.gridLayout_12.addWidget(self.buttonBox, 0, 0, 1, 1)
-        self.gridLayout.addWidget(self.groupBox_3, 1, 2, 1, 1)
 
 
         self.retranslateUi(Form)
@@ -237,36 +226,18 @@ class Ui_ProductionScreen(QObject):
         QMetaObject.connectSlotsByName(Form)
 
 
-        btn = self.buttonBox.button(QDialogButtonBox.Ok)
-        btn.clicked.connect(self.saveandclose)
-        btn = self.buttonBox.button(QDialogButtonBox.Cancel)
-        btn.clicked.connect(self.dontsaveandclose)
-        btn = self.buttonBox.button(QDialogButtonBox.RestoreDefaults)
-        btn.clicked.connect(self.restoredefaults)
-
-
         self.linear_radioButton.clicked.connect(self.roundingUpThresholdHide)
         self.rounded_relaxation_radioButton.clicked.connect(self.roundingUpThresholdHide)
         self.integer_radioButton.clicked.connect(self.roundingUpThresholdHide)
         self.self_tune_checkBox.clicked.connect(self.selfTuneHide)
-
-    def saveandclose(self):
-        self.saveproductionscreen()
-
-    def dontsaveandclose(self):
-        pass
-
-    def restoredefaults(self):
-        self.input = self.default_input
-        self.loadproductionscreen()
-        self.roundingUpThresholdHide()
     
     def setInput(self, input):
-        self.input = self.default_input | input
+        self.input = input
         self.loadproductionscreen()
         self.roundingUpThresholdHide()
     
     def getOutput(self):
+        self.saveproductionscreen()
         return self.output
 
     def loadproductionscreen(self):
@@ -304,7 +275,7 @@ class Ui_ProductionScreen(QObject):
         self.always_radioButton.setChecked(self.input["integers_in_lookahead"] == "Always")
 
     def saveproductionscreen(self):
-        self.output = {
+        self.output = production_default_input | {
             "group_generators_by_power_station": self.group_generators_by_power_station_checkBox.isChecked(),
             "rounding_up_threshold": self.rounding_up_threshold_horizontalSlider.value()/100,
             "self_tune": self.self_tune_checkBox.isChecked(),
@@ -354,8 +325,6 @@ class Ui_ProductionScreen(QObject):
         if self.always_radioButton.isChecked():
             self.output["integers_in_lookahead"] = "Always"
 
-        self.dataSaved.emit(self.output)
-
     def roundingUpThresholdHide(self):
         if self.rounded_relaxation_radioButton.isChecked() == True:
             self.rounding_up_threshold_horizontalSlider.setEnabled(True)
@@ -370,7 +339,6 @@ class Ui_ProductionScreen(QObject):
             self.rounding_up_start_doubleSpinbox.setEnabled(False)
             self.rounding_up_end_doubleSpinbox.setEnabled(False)
             self.rounding_up_increment_doubleSpinbox.setEnabled(False)
-
 
     def selfTuneHide(self):
         if self.self_tune_checkBox.isChecked() == True:
@@ -387,7 +355,6 @@ class Ui_ProductionScreen(QObject):
             self.rounding_up_start_doubleSpinbox.setEnabled(False)
             self.rounding_up_end_doubleSpinbox.setEnabled(False)
             self.rounding_up_increment_doubleSpinbox.setEnabled(False)
-
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(QApplication.translate("Form", "Form"))

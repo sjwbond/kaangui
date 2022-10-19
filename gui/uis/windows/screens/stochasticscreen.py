@@ -9,23 +9,22 @@
 
 from qt_core import *
 
-class Ui_StochasticsScreen(QObject):
-    dataSaved = Signal(dict)
+stochastic_default_input = {
+    "outage_patterns": 1,
+    "weibull_shape_parameter": 3,
+    "samples_per_pattern": 5,
+    "stochastic_samples": 1,
+    "reduced_samples": 0,
+    "reduction_relative_accuracy": 99,
+    "forced_outages_in_lookahead": False,
+    "efor_maintenance_adjust": False,
+    "outage_method": "Normal",
+    "automatically_schedule": "All",
+    "convergence_period_type": ""
+}
 
-    default_input = {
-            "outage_patterns": 1,
-            "weibull_shape_parameter": 3,
-            "samples_per_pattern": 5,
-            "stochastic_samples": 1,
-            "reduced_samples": 0,
-            "reduction_relative_accuracy": 99,
-            "forced_outages_in_lookahead": False,
-            "efor_maintenance_adjust": False,
-            "outage_method": "Normal",
-            "automatically_schedule": "All",
-            "convergence_period_type": ""
-    }
-    input = default_input
+class Ui_StochasticScreen(QObject):
+    input = stochastic_default_input
     output = None
 
     def setupUi(self, Form):
@@ -181,16 +180,6 @@ class Ui_StochasticsScreen(QObject):
         self.gridLayout_5.addWidget(self.efor_maintenance_adjust_checkBox, 4, 0, 1, 4)
         self.gridLayout_4.addWidget(self.groupBox_8, 3, 0, 1, 1)
         self.gridLayout.addWidget(self.groupBox_2, 0, 2, 1, 1)
-        self.groupBox_3 = QGroupBox(Form)
-        self.groupBox_3.setTitle("")
-        self.groupBox_3.setObjectName("groupBox_3")
-        self.gridLayout_6 = QGridLayout(self.groupBox_3)
-        self.gridLayout_6.setObjectName("gridLayout_6")
-        self.buttonBox = QDialogButtonBox(self.groupBox_3)
-        self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Ok|QDialogButtonBox.RestoreDefaults)
-        self.buttonBox.setObjectName("buttonBox")
-        self.gridLayout_6.addWidget(self.buttonBox, 0, 0, 1, 1)
-        self.gridLayout.addWidget(self.groupBox_3, 1, 2, 1, 1)
 
         self.stochastic_samples_spinBox.valueChanged.connect(self.maxOfSamples)
         self.reduced_samples_spinBox.valueChanged.connect(self.maxOfSamples)
@@ -201,33 +190,14 @@ class Ui_StochasticsScreen(QObject):
 
         self.retranslateUi(Form)
         QMetaObject.connectSlotsByName(Form)
-
-
-
-        btn = self.buttonBox.button(QDialogButtonBox.Ok)
-        btn.clicked.connect(self.saveandclose)
-        btn = self.buttonBox.button(QDialogButtonBox.Cancel)
-        btn.clicked.connect(self.dontsaveandclose)
-        btn = self.buttonBox.button(QDialogButtonBox.RestoreDefaults)
-        btn.clicked.connect(self.restoredefaults)
-
-    def saveandclose(self):
-        self.savestochasticsscreen()
-
-    def dontsaveandclose(self):
-        pass
-
-    def restoredefaults(self):
-        self.input = self.default_input
-        self.loadstochasticsscreen()
-        self.outageMethodHide()
     
     def setInput(self, input):
-        self.input = self.default_input | input
+        self.input = input
         self.loadstochasticsscreen()
         self.outageMethodHide()
     
     def getOutput(self):
+        self.savestochasticsscreen()
         return self.output
 
     def loadstochasticsscreen(self):
@@ -254,7 +224,7 @@ class Ui_StochasticsScreen(QObject):
         self.year_radioButton.setChecked(self.input["convergence_period_type"] == "Year")
 
     def savestochasticsscreen(self):
-        self.output = {
+        self.output = stochastic_default_input | {
             "outage_patterns": self.outage_patterns_spinBox.value(),
             "weibull_shape_parameter": self.weibull_shape_parameter_spinBox.value(),
             "samples_per_pattern": self.samples_per_pattern_spinBox.value(),
@@ -287,8 +257,6 @@ class Ui_StochasticsScreen(QObject):
             self.output["convergence_period_type"] = "Month"
         if self.year_radioButton.isChecked():
             self.output["convergence_period_type"] = "Year"
-
-        self.dataSaved.emit(self.output)
 
     def maxOfSamples(self):
         if self.reduced_samples_spinBox.value() == 0:

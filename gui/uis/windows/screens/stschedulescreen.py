@@ -9,18 +9,17 @@
 
 from qt_core import *
 
-class Ui_STScheduleScreen(QObject):
-    dataSaved = Signal(dict)
+stschedule_default_input = {
+    "discount_rate": 0,
+    "discount_period": "Week",
+    "end_effects_method": "Perpetuity",
+    "heat_rate": "Detailed",
+    "transmission_detail": "Nodal",
+    "stochastic_method": "Independent Samples (Sequential)"
+}
 
-    default_input = {
-        "discount_rate": 0,
-        "discount_period": "Week",
-        "end_effects_method": "Perpetuity",
-        "heat_rate": "Detailed",
-        "transmission_detail": "Nodal",
-        "stochastic_method": "Independent Samples (Sequential)"
-    }
-    input = default_input
+class Ui_STScheduleScreen(QObject):
+    input = stschedule_default_input
     output = None
 
     def setupUi(self, Form):
@@ -181,52 +180,17 @@ class Ui_STScheduleScreen(QObject):
         self.verticalLayout_3.addWidget(self.groupBox_8)
         self.verticalLayout.addWidget(self.discounting_groupBox)
         self.gridLayout_5.addWidget(self.groupBox, 0, 1, 1, 1)
-        self.groupBox_9 = QGroupBox(Form)
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.groupBox_9.sizePolicy().hasHeightForWidth())
-        self.groupBox_9.setSizePolicy(sizePolicy)
-        self.groupBox_9.setTitle("")
-        self.groupBox_9.setObjectName("groupBox_9")
-        self.gridLayout_6 = QGridLayout(self.groupBox_9)
-        self.gridLayout_6.setObjectName("gridLayout_6")
-        self.buttonBox = QDialogButtonBox(self.groupBox_9)
-        self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Ok|QDialogButtonBox.RestoreDefaults)
-        self.buttonBox.setObjectName("buttonBox")
-        self.gridLayout_6.addWidget(self.buttonBox, 0, 0, 1, 1)
-        self.gridLayout_5.addWidget(self.groupBox_9, 1, 1, 1, 1)
 
         self.retranslateUi(Form)
         QMetaObject.connectSlotsByName(Form)
-
-
-
-        QMetaObject.connectSlotsByName(Form)
-        btn = self.buttonBox.button(QDialogButtonBox.Ok)
-        btn.clicked.connect(self.saveandclose)
-        btn = self.buttonBox.button(QDialogButtonBox.Cancel)
-        btn.clicked.connect(self.dontsaveandclose)
-        btn = self.buttonBox.button(QDialogButtonBox.RestoreDefaults)
-        btn.clicked.connect(self.restoredefaults)
-
-    def saveandclose(self):
-        self.savestschedulescreen()
-
-    def dontsaveandclose(self):
-        pass
-
-    def restoredefaults(self):
-        self.input = self.default_input
-        self.loadstschedulescreen()
     
     def setInput(self, input):
-        self.input = self.default_input | input
+        self.input = input
         self.loadstschedulescreen()
     
     def getOutput(self):
+        self.savestschedulescreen()
         return self.output
-
 
     def loadstschedulescreen(self):
         self.discount_rate_spinBox.setValue(self.input["discount_rate"])
@@ -254,7 +218,7 @@ class Ui_STScheduleScreen(QObject):
         self.scenariowise_decomposition_radioButton.setChecked(self.input["stochastic_method"] == "Scenario-wise Decomposition")
 
     def savestschedulescreen(self):
-        self.output = {
+        self.output = stschedule_default_input | {
             "discount_rate": self.discount_rate_spinBox.value()
         }
 
@@ -296,8 +260,6 @@ class Ui_STScheduleScreen(QObject):
             self.output["stochastic_method"] = "Independent Samples (Parallel)"
         if self.scenariowise_decomposition_radioButton.isChecked():
             self.output["stochastic_method"] = "Scenario-wise Decomposition"
-
-        self.dataSaved.emit(self.output)
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(QApplication.translate("Form", "Form"))

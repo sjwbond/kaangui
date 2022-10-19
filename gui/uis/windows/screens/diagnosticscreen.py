@@ -9,63 +9,62 @@
 
 from qt_core import *
 
-class Ui_DiagnosticsScreen(QObject):
-    dataSaved = Signal(dict)
+diagnostics_default_input = {
+    "clear_existing_diagnostics": True,
+    "task_size": True,
+    "task_components": False,
+    "lp_solver": False,
+    "mip_solver": True,
+    "solver_summary": False,
+    "execution_times": True,
+    "summary_each_sample": False,
+    "summary_each_step": True,
+    "step_from": "1",
+    "step_to": "-1",
+    "lp_files": False,
+    "mps_files": False,
+    "solution_files": False,
+    "write_with_generic_names": False,
+    "binary_files": False,
+    "infeasibility_diagnostic_files": False,
+    "max_infeasibility_log_lines": "-1",
+    "bertrand_pricing": False,
+    "revenue_recovery": False,
+    "nashcournot": False,
+    "rsi_bidcost_markup": False,
+    "mt_schedule_new_entry": False,
+    "ptdf_shift_factors": False,
+    "unserved_energy": False,
+    "interrupsion_sharing": False,
+    "transmission_loss_matrices_and_convergence": False,
+    "congestion_charges": False,
+    "marginal_loss_charges": False,
+    "binding_contingencies": False,
+    "unit_commitment": False,
+    "constraint_decomposition": False,
+    "constraint_rollover": False,
+    "uniform_pricing": False,
+    "marginal_unit": False,
+    "load_increment": "-1",
+    "marginal_expansion_unit": False,
+    "load_increment_2": "100",
+    "region_supply": False,
+    "lt_plan_annuities": False,
+    "lt_plan_npv": False,
+    "load_includes_losses_iterations": False,
+    "pasa_outage_patterns": False,
+    "random_number_seed": False,
+    "interleaved_run_mode": False,
+    "heat_rate": False,
+    "objective_function": False,
+    "future_cost_function": False,
+    "write_scenario_tree": False,
+    "write_sample_weights": False,
+    "marginal_unit_transmission_detail": "Regional"
+}
 
-    default_input = {
-            "clear_existing_diagnostics": True,
-            "task_size": True,
-            "task_components": False,
-            "lp_solver": False,
-            "mip_solver": True,
-            "solver_summary": False,
-            "execution_times": True,
-            "summary_each_sample": False,
-            "summary_each_step": True,
-            "clear_existing_documents": "-1",
-            "step_form": "1",
-            "lp_files": False,
-            "mps_files": False,
-            "solution_files": False,
-            "write_with_generic_names": False,
-            "binary_files": False,
-            "infeasibility_diagnostic_files": False,
-            "max_infeasibility_log_lines": "-1",
-            "bertrand_pricing": False,
-            "revenue_recovery": False,
-            "nashcournot": False,
-            "rsi_bidcost_markup": False,
-            "mt_schedule_new_entry": False,
-            "ptdf_shift_factors": False,
-            "unserved_energy": False,
-            "interrupsion_sharing": False,
-            "transmission_loss_matrices_and_convergence": False,
-            "congestion_charges": False,
-            "marginal_loss_charges": False,
-            "binding_contingencies": False,
-            "unit_commitment": False,
-            "constraint_decomposition": False,
-            "constraint_rollover": False,
-            "uniform_pricing": False,
-            "marginal_unit": False,
-            "load_increment": "-1",
-            "marginal_expansion_unit": False,
-            "load_increment_2": "100",
-            "region_supply": False,
-            "lt_plan_annuities": False,
-            "lt_plan_npv": False,
-            "load_includes_losses_iterations": False,
-            "pasa_outage_patterns": False,
-            "random_number_seed": False,
-            "interleaved_run_mode": False,
-            "heat_rate": False,
-            "objective_function": False,
-            "future_cost_function": False,
-            "write_scenario_tree": False,
-            "write_sample_weights": False,
-            "marginal_unit_transmission_detail": ""
-    }
-    input = default_input
+class Ui_DiagnosticsScreen(QObject):
+    input = diagnostics_default_input
     output = None
 
     def setupUi(self, Form):
@@ -184,16 +183,6 @@ class Ui_DiagnosticsScreen(QObject):
         self.gridLayout_9.addWidget(self.write_sample_weights_checkBox, 3, 0, 1, 1)
         self.gridLayout_8.addWidget(self.stochastic_diagnostics_checkBox, 0, 0, 1, 1)
         self.gridLayout.addWidget(self.groupBox_2, 0, 2, 1, 1)
-        self.groupBox_3 = QGroupBox(Form)
-        self.groupBox_3.setTitle("")
-        self.groupBox_3.setObjectName("groupBox_3")
-        self.gridLayout_15 = QGridLayout(self.groupBox_3)
-        self.gridLayout_15.setObjectName("gridLayout_15")
-        self.buttonBox = QDialogButtonBox(self.groupBox_3)
-        self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Ok|QDialogButtonBox.RestoreDefaults)
-        self.buttonBox.setObjectName("buttonBox")
-        self.gridLayout_15.addWidget(self.buttonBox, 0, 0, 1, 1)
-        self.gridLayout.addWidget(self.groupBox_3, 1, 2, 1, 1)
         self.groupBox = QGroupBox(Form)
         self.groupBox.setTitle("")
         self.groupBox.setObjectName("groupBox")
@@ -242,23 +231,23 @@ class Ui_DiagnosticsScreen(QObject):
         self.interleaved_run_mode_checkBox.setObjectName("interleaved_run_mode_checkBox")
         self.gridLayout_5.addWidget(self.interleaved_run_mode_checkBox, 0, 0, 1, 1)
         self.gridLayout_2.addWidget(self.execution_diagnostics_groupBox, 4, 0, 1, 4)
-        self.step_form_label = QLabel(self.groupBox)
-        self.step_form_label.setObjectName("step_form_label")
-        self.gridLayout_2.addWidget(self.step_form_label, 1, 0, 1, 1)
-        self.step_form_spinBox = QSpinBox(self.groupBox)
-        self.step_form_spinBox.setMinimum(-1)
-        self.step_form_spinBox.setProperty("value", -1)
-        self.step_form_spinBox.setObjectName("step_form_spinBox")
-        self.gridLayout_2.addWidget(self.step_form_spinBox, 1, 3, 1, 1)
+        self.step_from_label = QLabel(self.groupBox)
+        self.step_from_label.setObjectName("step_from_label")
+        self.gridLayout_2.addWidget(self.step_from_label, 1, 0, 1, 1)
+        self.step_to_spinBox = QSpinBox(self.groupBox)
+        self.step_to_spinBox.setMinimum(-1)
+        self.step_to_spinBox.setProperty("value", -1)
+        self.step_to_spinBox.setObjectName("step_to_spinBox")
+        self.gridLayout_2.addWidget(self.step_to_spinBox, 1, 3, 1, 1)
         self.clear_existing_diagnostics_checkBox = QCheckBox(self.groupBox)
         self.clear_existing_diagnostics_checkBox.setChecked(True)
         self.clear_existing_diagnostics_checkBox.setObjectName("clear_existing_diagnostics_checkBox")
         self.gridLayout_2.addWidget(self.clear_existing_diagnostics_checkBox, 0, 0, 1, 2)
-        self.clear_existing_documents_spinBox = QSpinBox(self.groupBox)
-        self.clear_existing_documents_spinBox.setMinimum(1)
-        self.clear_existing_documents_spinBox.setProperty("value", 1)
-        self.clear_existing_documents_spinBox.setObjectName("clear_existing_documents_spinBox")
-        self.gridLayout_2.addWidget(self.clear_existing_documents_spinBox, 1, 1, 1, 1)
+        self.step_from_spinBox = QSpinBox(self.groupBox)
+        self.step_from_spinBox.setMinimum(1)
+        self.step_from_spinBox.setProperty("value", 1)
+        self.step_from_spinBox.setObjectName("step_from_spinBox")
+        self.gridLayout_2.addWidget(self.step_from_spinBox, 1, 1, 1, 1)
         self.step_to_label = QLabel(self.groupBox)
         self.step_to_label.setObjectName("step_to_label")
         self.gridLayout_2.addWidget(self.step_to_label, 1, 2, 1, 1)
@@ -354,34 +343,15 @@ class Ui_DiagnosticsScreen(QObject):
 
         self.marginal_unit_checkBox.clicked.connect(self.enablemarginalunittransmissiondetail)
         self.marginal_expansion_unit_checkBox.clicked.connect(self.enableloadincrement)
-
-
-        btn = self.buttonBox.button(QDialogButtonBox.Ok)
-        btn.clicked.connect(self.saveandclose)
-        btn = self.buttonBox.button(QDialogButtonBox.Cancel)
-        btn.clicked.connect(self.dontsaveandclose)
-        btn = self.buttonBox.button(QDialogButtonBox.RestoreDefaults)
-        btn.clicked.connect(self.restoredefaults)
-
-    def saveandclose(self):
-        self.savediagnosticsscreen()
-
-    def dontsaveandclose(self):
-        pass
-
-    def restoredefaults(self):
-        self.input = self.default_input
-        self.loaddiagnosticsscreen()
-        self.enableloadincrement()
-        self.enablemarginalunittransmissiondetail()
     
     def setInput(self, input):
-        self.input = self.default_input | input
+        self.input = input
         self.loaddiagnosticsscreen()
         self.enableloadincrement()
         self.enablemarginalunittransmissiondetail()
     
     def getOutput(self):
+        self.savediagnosticsscreen()
         return self.output
 
     def loaddiagnosticsscreen(self):
@@ -394,8 +364,8 @@ class Ui_DiagnosticsScreen(QObject):
         self.execution_times_checkBox.setChecked(self.input["execution_times"])
         self.summary_each_sample_checkBox.setChecked(self.input["summary_each_sample"])
         self.summary_each_step_checkBox.setChecked(self.input["summary_each_step"])
-        self.clear_existing_documents_spinBox.setValue(int(self.input["clear_existing_documents"]))
-        self.step_form_spinBox.setValue(int(self.input["step_form"]))
+        self.step_from_spinBox.setValue(int(self.input["step_from"]))
+        self.step_to_spinBox.setValue(int(self.input["step_to"]))
         self.lp_files_checkBox.setChecked(self.input["lp_files"])
         self.mps_files_checkBox.setChecked(self.input["mps_files"])
         self.solution_files_checkBox.setChecked(self.input["solution_files"])
@@ -442,7 +412,7 @@ class Ui_DiagnosticsScreen(QObject):
             self.system_radioButton.setChecked(True)
 
     def savediagnosticsscreen(self):
-        self.output = {
+        self.output = diagnostics_default_input | {
             "clear_existing_diagnostics": self.clear_existing_diagnostics_checkBox.isChecked(),
             "task_size": self.task_size_checkBox.isChecked(),
             "task_components": self.task_components_checkBox.isChecked(),
@@ -452,8 +422,8 @@ class Ui_DiagnosticsScreen(QObject):
             "execution_times": self.execution_times_checkBox.isChecked(),
             "summary_each_sample": self.summary_each_sample_checkBox.isChecked(),
             "summary_each_step": self.summary_each_step_checkBox.isChecked(),
-            "clear_existing_documents": str(self.clear_existing_documents_spinBox.value()),
-            "step_form": str(self.step_form_spinBox.value()),
+            "step_from": str(self.step_from_spinBox.value()),
+            "step_to": str(self.step_to_spinBox.value()),
             "lp_files": self.lp_files_checkBox.isChecked(),
             "mps_files": self.mps_files_checkBox.isChecked(),
             "solution_files": self.solution_files_checkBox.isChecked(),
@@ -499,8 +469,6 @@ class Ui_DiagnosticsScreen(QObject):
             self.output["marginal_unit_transmission_detail"] = "Regional"
         elif self.system_radioButton.isChecked() == True:
             self.output["marginal_unit_transmission_detail"] = "System"
-
-        self.dataSaved.emit(self.output)
 
     def enablemarginalunittransmissiondetail(self):
         if self.marginal_unit_checkBox.isChecked()  == True:
@@ -560,7 +528,7 @@ class Ui_DiagnosticsScreen(QObject):
         self.objective_function_checkBox.setText(QApplication.translate("Form", "Objective Function"))
         self.execution_diagnostics_groupBox.setTitle(QApplication.translate("Form", "Execution Diagnostics"))
         self.interleaved_run_mode_checkBox.setText(QApplication.translate("Form", "Interleaved Run Mode"))
-        self.step_form_label.setText(QApplication.translate("Form", "Step From"))
+        self.step_from_label.setText(QApplication.translate("Form", "Step From"))
         self.clear_existing_diagnostics_checkBox.setText(QApplication.translate("Form", "Clear Existing Diagnostics"))
         self.step_to_label.setText(QApplication.translate("Form", "Step To"))
         self.show_progress_messages_groupBox.setTitle(QApplication.translate("Form", "Show Progress Messages"))

@@ -9,40 +9,39 @@
 
 from qt_core import *
 
-class Ui_MTScheaduleScreen(QObject):
-    dataSaved = Signal(dict)
+mtschedule_default_input = {
+    "discount_rate": 0,
+    "simulation_steps": 0,
+    "use_effective_load_approach": False,
+    "time_lag": 12,
+    "blocks_in_each_duration_curve": 12,
+    "blocks_in_last_curve_in_horizon": 0,
+    "samples_per_year": 4,
+    "pin_top": -1,
+    "pin_bottom": -1,
+    "weight_a_constant": 0,
+    "weight_b_linear": 1,
+    "weight_c_quadratic": 0,
+    "weight_d_cubic": 0,
+    "start_cost_amortization_hrs": 0,
+    "outage_increment_mw": 0,
+    "discount_period": "",
+    "end_effects_method": "",
+    "steps_in_each_simulation": "",
+    "chronology": "",
+    "one_duration_curve_each": "",
+    "slicing_method": "",
+    "sample": "Week",
+    "new_entry_driver": "",
+    "capacity_mechanism": "",
+    "heat_rate": "",
+    "generation_pricing_method": "",
+    "transmission": "",
+    "stochastic_method": ""
+}
 
-    default_input = {
-        "discount_rate": 0,
-        "simulation_steps": 0,
-        "use_effective_load_approach": False,
-        "time_lag": 12,
-        "blocks_in_each_duration_curve": 12,
-        "blocks_in_last_curve_in_horizon": 0,
-        "samples_per_year": 4,
-        "pin_top": -1,
-        "pin_bottom": -1,
-        "weight_a_constant": 0,
-        "weight_b_linear": 1,
-        "weight_c_quadratic": 0,
-        "weight_d_cubic": 0,
-        "start_cost_amortization_hrs": 0,
-        "outage_increment_mw": 0,
-        "discount_period": "",
-        "end_effects_method": "",
-        "steps_in_each_simulation": "",
-        "chronology": "",
-        "one_duration_curve_each": "",
-        "slicing_method": "",
-        "sample": "",
-        "new_entry_driver": "",
-        "capacity_mechanism": "",
-        "heat_rate": "",
-        "generation_pricing_method": "",
-        "transmission": "",
-        "stochastic_method": ""
-    }
-    input = default_input
+class Ui_MTScheaduleScreen(QObject):
+    input = mtschedule_default_input
     output = None
 
     def setupUi(self, Form):
@@ -255,21 +254,6 @@ class Ui_MTScheaduleScreen(QObject):
         self.gridLayout_13.addWidget(self.nodal_radioButton, 0, 2, 1, 1)
         self.gridLayout_8.addWidget(self.transmission_groupBox, 4, 0, 1, 1)
         self.gridLayout.addWidget(self.groupBox_3, 0, 3, 1, 1)
-        self.groupBox_4 = QGroupBox(Form)
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.groupBox_4.sizePolicy().hasHeightForWidth())
-        self.groupBox_4.setSizePolicy(sizePolicy)
-        self.groupBox_4.setTitle("")
-        self.groupBox_4.setObjectName("groupBox_4")
-        self.gridLayout_14 = QGridLayout(self.groupBox_4)
-        self.gridLayout_14.setObjectName("gridLayout_14")
-        self.buttonBox = QDialogButtonBox(self.groupBox_4)
-        self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Ok|QDialogButtonBox.RestoreDefaults)
-        self.buttonBox.setObjectName("buttonBox")
-        self.gridLayout_14.addWidget(self.buttonBox, 0, 0, 1, 1)
-        self.gridLayout.addWidget(self.groupBox_4, 1, 3, 1, 1)
         self.groupBox = QGroupBox(Form)
         self.groupBox.setTitle("")
         self.groupBox.setObjectName("groupBox")
@@ -469,36 +453,19 @@ class Ui_MTScheaduleScreen(QObject):
 
 
         QMetaObject.connectSlotsByName(Form)
-        btn = self.buttonBox.button(QDialogButtonBox.Ok)
-        btn.clicked.connect(self.saveandclose)
-        btn = self.buttonBox.button(QDialogButtonBox.Cancel)
-        btn.clicked.connect(self.dontsaveandclose)
-        btn = self.buttonBox.button(QDialogButtonBox.RestoreDefaults)
-        btn.clicked.connect(self.restoredefaults)
-
-    def saveandclose(self):
-        self.savemtschedulescreen()
-
-    def dontsaveandclose(self):
-        pass
-
-    def restoredefaults(self):
-        self.input = self.default_input
-        self.loadmtschedulescreen()
-        self.enableChoronology()
-        self.enableWeights()
     
     def setInput(self, input):
-        self.input = self.default_input | input
+        self.input = input
         self.loadmtschedulescreen()
         self.enableChoronology()
         self.enableWeights()
     
     def getOutput(self):
+        self.savemtschedulescreen()
         return self.output
 
     def savemtschedulescreen(self):
-        self.output = {
+        self.output = mtschedule_default_input | {
             "discount_rate": self.discount_rate_spinBox.value(),
             "simulation_steps": self.simulation_steps_spinBox.value(),
             "use_effective_load_approach": self.use_effective_load_approach_checkBox.isChecked(),
@@ -612,8 +579,6 @@ class Ui_MTScheaduleScreen(QObject):
             self.output["stochastic_method"] = "Independent Samples (Parallel)"
         if self.scenariowise_decomposition_radioButton.isChecked():
             self.output["stochastic_method"] = "Scenario-wise Decomposition"
-
-        self.dataSaved.emit(self.output)
 
     def loadmtschedulescreen(self):
         self.discount_rate_spinBox.setValue(self.input["discount_rate"])

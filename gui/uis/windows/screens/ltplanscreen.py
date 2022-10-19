@@ -9,45 +9,44 @@
 
 from qt_core import *
 
-class Ui_LTPlanScreen(QObject):
-    dataSaved = Signal(dict)
+ltplan_default_input = {
+    "step_size_years": "0",
+    "overlap_years": "0",
+    "blocks_in_each_duration_curve": "12",
+    "blocks_in_last_curve_in_horizon": "0",
+    "discounting_rate": "0",
+    "inflation_rate": "0",
+    "pin_top": "-1",
+    "pin_bottom": "-1",
+    "integration_horizon_years": "-1",
+    "allow_capacity_sharing": False,
+    "number_of_solutions": "1",
+    "solution_quality": "0",
+    "use_effective_load_approach": False,
+    "compute_reliability_indices": False,
+    "compute_multiarea_reliability_incides": False,
+    "outage_increment": "10",
+    "maintenance_sculpting": False,
+    "start_cost_amortization_hrs": "11",
+    "make_capacity_payments": False,
+    "write_expansion_plan_to_text_files": False,
+    "samples_per_year": "4",
+    "tax_rate": "0",
+    "chronology": "",
+    "one_duration_curve": "Year",
+    "slicing_method": "",
+    "sample": "Week",
+    "end_effects_method": "",
+    "depreciation_method": "None",
+    "expansions_decisions_integer_optimality": "",
+    "stochastic_method": "Deterministic",
+    "transmission": "Regional",
+    "heat_rate": "Simplest",
+    "generation_pricing_method": "Average"
+}
 
-    default_input = {
-        "step_size_years": "0",
-        "overlap_years": "0",
-        "blocks_in_each_duration_curve": "12",
-        "blocks_in_last_curve_in_horizon": "0",
-        "discounting_rate": "0",
-        "inflation_rate": "0",
-        "pin_top": "-1",
-        "pin_bottom": "-1",
-        "integration_horizon_years": "-1",
-        "allow_capacity_sharing": False,
-        "number_of_solutions": "1",
-        "solution_quality": "0",
-        "use_effective_load_approach": False,
-        "compute_reliability_indices": False,
-        "compute_multiarea_reliability_incides": False,
-        "outage_increment": "10",
-        "maintenance_sculpting": False,
-        "start_cost_amortization_hrs": "11",
-        "make_capacity_payments": False,
-        "write_expansion_plan_to_text_files": False,
-        "samples_per_year": "4",
-        "tax_rate": "0",
-        "chronology": "",
-        "one_duration_curve": "Year",
-        "slicing_method": "",
-        "sample": "",
-        "end_effects_method": "",
-        "depreciation_method": "None",
-        "expansions_decisions_integer_optimality": "",
-        "stochastic_method": "Deterministic",
-        "transmission": "Regional",
-        "heat_rate": "Simplest",
-        "generation_pricing_method": "Average"
-    }
-    input = default_input
+class Ui_LTPlanScreen(QObject):
+    input = ltplan_default_input
     output = None
 
     def setupUi(self, Form):
@@ -195,21 +194,6 @@ class Ui_LTPlanScreen(QObject):
         self.gridLayout_10.addWidget(self.write_expansion_plan_to_text_files_checkBox, 0, 0, 1, 1)
         self.verticalLayout_5.addWidget(self.output_groupBox)
         self.gridLayout_3.addWidget(self.groupBox, 0, 3, 1, 1)
-        self.groupBox_18 = QGroupBox(Form)
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.MinimumExpanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.groupBox_18.sizePolicy().hasHeightForWidth())
-        self.groupBox_18.setSizePolicy(sizePolicy)
-        self.groupBox_18.setTitle("")
-        self.groupBox_18.setObjectName("groupBox_18")
-        self.gridLayout_11 = QGridLayout(self.groupBox_18)
-        self.gridLayout_11.setObjectName("gridLayout_11")
-        self.buttonBox = QDialogButtonBox(self.groupBox_18)
-        self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Ok|QDialogButtonBox.RestoreDefaults)
-        self.buttonBox.setObjectName("buttonBox")
-        self.gridLayout_11.addWidget(self.buttonBox, 0, 0, 1, 1)
-        self.gridLayout_3.addWidget(self.groupBox_18, 1, 3, 1, 1)
         self.groupBox_3 = QGroupBox(Form)
         self.groupBox_3.setTitle("")
         self.groupBox_3.setObjectName("groupBox_3")
@@ -464,31 +448,14 @@ class Ui_LTPlanScreen(QObject):
         self.partial_radioButton.clicked.connect(self.enableSampleGroupBox)
         self.fitterd_radioButton.clicked.connect(self.enableSampleGroupBox)
         self.samples_radioButton.clicked.connect(self.enableSampleGroupBox)
-
-        btn = self.buttonBox.button(QDialogButtonBox.Ok)
-        btn.clicked.connect(self.saveandclose)
-        btn = self.buttonBox.button(QDialogButtonBox.Cancel)
-        btn.clicked.connect(self.dontsaveandclose)
-        btn = self.buttonBox.button(QDialogButtonBox.RestoreDefaults)
-        btn.clicked.connect(self.restoredefaults)
-
-    def saveandclose(self):
-        self.saveltplanscreen()
-
-    def dontsaveandclose(self):
-        pass
-
-    def restoredefaults(self):
-        self.input = self.default_input
-        self.loadltplanscreen()
-        self.enableSampleGroupBox()
     
     def setInput(self, input):
-        self.input = self.default_input | input
+        self.input = input
         self.loadltplanscreen()
         self.enableSampleGroupBox()
     
     def getOutput(self):
+        self.saveltplanscreen()
         return self.output
 
     def loadltplanscreen(self):
@@ -558,7 +525,7 @@ class Ui_LTPlanScreen(QObject):
         self.marginal_radioButton.setChecked(self.input["generation_pricing_method"] == "Marginal")
 
     def saveltplanscreen(self):
-        self.output = {
+        self.output = ltplan_default_input | {
             "step_size_years": str(self.step_size_years_spinBox.value()),
             "overlap_years": str(self.overlap_years_spinBox.value()),
             "blocks_in_each_duration_curve": str(self.blocks_in_each_duration_curve_spinBox.value()),
@@ -655,8 +622,6 @@ class Ui_LTPlanScreen(QObject):
             self.output["generation_pricing_method"] = "Average"
         if self.marginal_radioButton.isChecked()==True:
             self.output["generation_pricing_method"] = "Marginal"
-
-        self.dataSaved.emit(self.output)
 
     def enableSampleGroupBox(self):
         if self.samples_radioButton.isChecked() == True:
