@@ -62,7 +62,8 @@ QGroupBox::title {
     padding: 0px 5px 0px 5px;
 }
 
-QSpinBox {
+QSpinBox,
+QDoubleSpinBox {
 	background-color: #282a36;
 	border-radius: 8px;
 	border: 2px solid transparent;
@@ -73,7 +74,8 @@ QSpinBox {
     color: #f8f8f2;
     min-height: 25px;
 }
-QSpinBox:focus {
+QSpinBox:focus,
+QDoubleSpinBox:focus {
 	border: 2px solid #ffffff;
     background-color: #333645;
 }
