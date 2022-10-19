@@ -320,6 +320,15 @@ class ExecutionController:
         if ret == QMessageBox.Yes:
             item.setData(new_data, Qt.UserRole + 1)
 
-    def save_data(self, item: QStandardItem):
+    def undo(self):
+        print("undo pressed")
+
+    def redo(self):
+        print("redo pressed")
+
+    def save(self):
+        if self.last_index is None:
+            return
+
         data = self.right_side_screen.getOutput()
-        item.setData(data, Qt.UserRole + 1)
+        self.model.itemFromIndex(self.last_index).setData(data, Qt.UserRole + 1)

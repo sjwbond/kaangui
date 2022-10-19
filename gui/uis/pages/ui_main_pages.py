@@ -203,8 +203,12 @@ class Ui_MainPages(object):
         self.page_3_layout = QVBoxLayout(self.page_3)
         self.page_3_layout.setObjectName(u"page_3_layout")
 
+        self.row_9_layout = QHBoxLayout()
+        self.row_9_layout.setObjectName(u"row_9_layout")
+
+        self.page_3_layout.addLayout(self.row_9_layout)
+
         self.row_8_layout = QHBoxLayout()
-        self.row_8_layout.setStretch
         self.row_8_layout.setObjectName(u"row_8_layout")
 
         self.page_3_layout.addLayout(self.row_8_layout)

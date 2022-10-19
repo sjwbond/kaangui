@@ -184,6 +184,10 @@ class SetupMainWindow:
         self.open_api_model_button = StyledButton(text="Open Model", icon_name="icon_restore.svg", themes=self.themes)
         self.save_api_model_button = StyledButton(text="Save Model", icon_name="icon_save.svg", themes=self.themes)
 
+        self.execution_undo_button = StyledButton(text="Undo", themes=self.themes, icon_name="icon_undo.svg")
+        self.execution_redo_button = StyledButton(text="Redo", themes=self.themes, icon_name="icon_redo.svg")
+        self.execution_save_button = StyledButton(text="Save", themes=self.themes, icon_name="icon_save.svg")
+
         # PY LINE EDIT
         self.filterEdit = PyLineEdit(
             text = "",
@@ -389,6 +393,10 @@ class SetupMainWindow:
 
         self.execution_controller = ExecutionController(self.execution_tree, self.execution_screen_scroll_area)
 
+        self.execution_undo_button.clicked.connect(self.execution_controller.undo)
+        self.execution_redo_button.clicked.connect(self.execution_controller.redo)
+        self.execution_save_button.clicked.connect(self.execution_controller.save)
+
         # ADD WIDGETS
         self.ui.load_pages.table_button_layout.addWidget(self.add_table_row_button)
         self.ui.load_pages.table_button_layout.addWidget(self.delete_table_row_button)
@@ -409,3 +417,6 @@ class SetupMainWindow:
 
         self.ui.load_pages.row_8_layout.addWidget(self.execution_tree, 1)
         self.ui.load_pages.row_8_layout.addWidget(self.execution_screen_scroll_area, 3)
+        self.ui.load_pages.row_9_layout.addWidget(self.execution_undo_button)
+        self.ui.load_pages.row_9_layout.addWidget(self.execution_redo_button)
+        self.ui.load_pages.row_9_layout.addWidget(self.execution_save_button)
