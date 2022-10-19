@@ -1,0 +1,4 @@
+add undo redo to execution tab
+auto save in execution
+unique names in each node
+git repository for backend

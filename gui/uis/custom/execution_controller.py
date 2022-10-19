@@ -149,27 +149,33 @@ class ExecutionController:
                 subitem.setData(("node", name, type), Qt.UserRole)
                 item.appendRow(subitem)
 
-                # TODO remove
-                subsubitem = QStandardItem("New Item")
-                subsubitem.setData(("leaf", "New Item", type), Qt.UserRole)
-                subsubitem.setData({}, Qt.UserRole + 1)
-                subitem.appendRow(subsubitem)
-                # end remove
-
                 if key_a in simulation:
                     if key_b in simulation[key_a]:
-                        for (key_c, value_c) in simulation[key_a][key_b]:
+                        for (key_c, value_c) in simulation[key_a][key_b].items():
                             subsubitem = QStandardItem(key_c)
                             subsubitem.setData(("leaf", key_c, type), Qt.UserRole)
                             subsubitem.setData(value_c, Qt.UserRole + 1)
-                            subitem.appendRow()
+                            subitem.appendRow(subsubitem)
         
         self.tree.setModel(self.model)
         self.tree.expandAll()
     
     def get_simulation(self) -> dict:
-        # TODO serialize tree as simulation
-        return self.simulation
+        simulation = {}
+
+        for i in range(self.model.rowCount()):
+            ix_a = self.model.index(i, 0, self.model.invisibleRootItem().index())
+            simulation[ix_a.data(Qt.DisplayRole)] = {}
+
+            for i in range(self.model.rowCount(ix_a)):
+                ix_b = self.model.index(i, 0, ix_a)
+                simulation[ix_a.data(Qt.DisplayRole)][ix_b.data(Qt.DisplayRole)] = {}
+
+                for i in range(self.model.rowCount(ix_b)):
+                    ix_c = self.model.index(i, 0, ix_b)
+                    simulation[ix_a.data(Qt.DisplayRole)][ix_b.data(Qt.DisplayRole)][ix_c.data(Qt.DisplayRole)] = ix_c.data(Qt.UserRole + 1)
+
+        return simulation
 
     def open_menu(self, position):
         if len(self.tree.selectedIndexes()) > 0:
