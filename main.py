@@ -73,6 +73,45 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
         self.show()
 
+    
+
+    
+    
+    # LEFT MENU BTN IS CLICKED
+    # Run function when btn is clicked
+    # Check funtion by object name / btn_id
+    # ///////////////////////////////////////////////////////////////
+       
+    
+    def btn_clicked(self):
+        # GET BT CLICKED
+        btn = SetupMainWindow.setup_btns(self)
+
+        # Remove Selection If Clicked By "btn_close_left_column"
+        if btn.objectName() != "btn_settings":
+            self.ui.left_menu.deselect_all_tab()
+
+        # LEFT MENU
+        # ///////////////////////////////////////////////////////////////
+
+        self.ui.left_menu.select_only_one(btn.objectName())
+
+        if btn.objectName() == "btn_model":
+            MainFunctions.set_page(self, self.ui.load_pages.page_2)
+
+        if btn.objectName() == "btn_execution":
+            MainFunctions.set_page(self, self.ui.load_pages.page_3)
+
+        if btn.objectName() == "btn_results":
+            MainFunctions.set_page(self, self.ui.load_pages.page_1)
+
+    # LEFT MENU BTN IS RELEASED
+    # Run function when btn is released
+    # Check funtion by object name / btn_id
+    # ///////////////////////////////////////////////////////////////
+    def btn_released(self):
+        SetupMainWindow.setup_btns(self)
+
     # RESIZE EVENT
     # ///////////////////////////////////////////////////////////////
     def resizeEvent(self, event):
@@ -95,7 +134,6 @@ class ListViewOpenExistingModel(QDialog, Ui_Dialog_Open_Existing_Model):
     def __init__(self, parent=None):
         QDialog.__init__(self,parent)
         self.setupUi(self)
-
 
 class AssignGroup(QDialog, Ui_Dialog_Assign_Group):
     def __init__(self, parent=None):

@@ -1,12 +1,14 @@
 # ///////////////////////////////////////////////////////////////
 from datetime import datetime
-from gui.uis.custom.api import create_model, delete_model, get_model, get_model_history, get_model_version, list_models, update_model
+from gui.uis.custom.api import create_model, get_model, get_model_history, get_model_version, list_models, update_model
+from gui.uis.custom.execution_controller import ExecutionController
 from gui.uis.custom.model_controller import ModelController
 from gui.uis.custom.model_helpers import model_to_dict
 from gui.uis.custom.node_tree_view import NodeTreeView
 from gui.uis.custom.parents_table_view import ParentsTableView
 from gui.uis.custom.properties_table_widget import PropertiesTableWidget
 from gui.uis.custom.styled_button import StyledButton
+from gui.widgets.py_tree_view.py_tree_view import PyTreeView
 from . functions_main_window import *
 import os
 
@@ -54,6 +56,46 @@ class SetupMainWindow:
         # ///////////////////////////////////////////////////////////////
         self.ui = UI_MainWindow()
         self.ui.setup_ui(self)
+    
+    # ADD LEFT MENUS
+    # ///////////////////////////////////////////////////////////////
+    add_left_menus = [
+        {
+            "btn_icon" : "icon_widgets.svg",
+            "btn_id" : "btn_model",
+            "btn_text" : "Model",
+            "btn_tooltip" : "Model",
+            "show_top" : True,
+            "is_active" : True
+        },
+        {
+            "btn_icon" : "icon_add_user.svg",
+            "btn_id" : "btn_execution",
+            "btn_text" : "Execution",
+            "btn_tooltip" : "Execution",
+            "show_top" : True,
+            "is_active" : False
+        },
+        {
+            "btn_icon" : "icon_file.svg",
+            "btn_id" : "btn_results",
+            "btn_text" : "Results",
+            "btn_tooltip" : "Results",
+            "show_top" : True,
+            "is_active" : False
+        }
+    ]
+
+    # SETUP CUSTOM BTNs OF CUSTOM WIDGETS
+    # Get sender() function when btn is clicked
+    # ///////////////////////////////////////////////////////////////
+    def setup_btns(self):
+        if self.ui.title_bar.sender() != None:
+            return self.ui.title_bar.sender()
+        elif self.ui.left_menu.sender() != None:
+            return self.ui.left_menu.sender()
+        elif self.ui.left_column.sender() != None:
+            return self.ui.left_column.sender()
 
     # RESIZE GRIPS AND CHANGE POSITION
     # Resize or change position when window is resized
@@ -92,6 +134,15 @@ class SetupMainWindow:
             self.top_right_grip = PyGrips(self, "top_right", self.hide_grips)
             self.bottom_left_grip = PyGrips(self, "bottom_left", self.hide_grips)
             self.bottom_right_grip = PyGrips(self, "bottom_right", self.hide_grips)
+
+        # LEFT MENUS / GET SIGNALS WHEN LEFT MENU BTN IS CLICKED / RELEASED
+        # ///////////////////////////////////////////////////////////////
+        # ADD MENUS
+        self.ui.left_menu.add_menus(SetupMainWindow.add_left_menus)
+
+        # SET SIGNALS
+        self.ui.left_menu.clicked.connect(self.btn_clicked)
+        self.ui.left_menu.released.connect(self.btn_released)
 
         # TITLE BAR / ADD EXTRA BUTTONS
         # ///////////////////////////////////////////////////////////////
@@ -171,7 +222,7 @@ class SetupMainWindow:
             context_color = self.themes["app_color"]["context_color"]
         )
 
-        self.working_directory = os.getcwd() 
+        self.working_directory = os.getcwd()
         self.tree = NodeTreeView(
             radius = 8,
             color = self.themes["app_color"]["text_foreground"],
@@ -210,9 +261,12 @@ class SetupMainWindow:
             ret = qm.question(self.tree, '', "Are you sure to create a new model? It will reset the unsaved changes", qm.Yes | qm.No)
             if ret == qm.Yes:
                 self.data = {}
+                self.simulation_settings = {}
                 self.system_inputs = {}
                 self.tree.rootModel.clear()
                 self.tree.rootNode = self.tree.rootModel.invisibleRootItem()
+
+                self.execution_controller.set_simulation({})
                 
                 modelNode = QStandardItem("New Model")
                 modelNode.setEditable(False)
@@ -231,7 +285,7 @@ class SetupMainWindow:
         # API
         def save_model_to_api():
             modelNode = self.tree.rootModel.index(0, 0)
-            data = self.data | {"name": modelNode.data(Qt.DisplayRole), "SystemInputs": model_to_dict(self.tree.rootModel)}
+            data = self.data | {"name": modelNode.data(Qt.DisplayRole), "Simulation": self.execution_controller.get_simulation(), "SystemInputs": model_to_dict(self.tree.rootModel)}
             modelId = modelNode.data(Qt.UserRole+1)
             if modelId == None:
                 modelId = create_model(data)
@@ -286,6 +340,11 @@ class SetupMainWindow:
                 self.system_inputs = model["SystemInputs"]
                 self.tree.rootModel.clear()
                 self.tree.rootNode = self.tree.rootModel.invisibleRootItem()
+
+                if "Simulation" in self.data:
+                    self.execution_controller.set_simulation(self.data["Simulation"])
+                else:
+                    self.execution_controller.set_simulation({})
                 
                 modelNode = QStandardItem(model["name"])
                 modelNode.setEditable(False)
@@ -312,6 +371,24 @@ class SetupMainWindow:
 
         self.tree.viewport().installEventFilter(self)
 
+        # EXECUTION
+
+        self.execution_tree = PyTreeView(
+            radius = 8,
+            color = self.themes["app_color"]["text_foreground"],
+            selection_color = self.themes["app_color"]["bg_one"],
+            bg_color = self.themes["app_color"]["bg_two"],
+            scroll_bar_bg_color = self.themes["app_color"]["bg_one"],
+            scroll_bar_btn_color = self.themes["app_color"]["dark_four"],
+            context_color = self.themes["app_color"]["context_color"]
+        )
+
+        self.execution_screen_scroll_area = QScrollArea()
+        # TODO fix stylesheet
+        self.execution_screen_scroll_area.setStyleSheet("QFrame { background-color: #2B2E3B; }")
+
+        self.execution_controller = ExecutionController(self.execution_tree, self.execution_screen_scroll_area)
+
         # ADD WIDGETS
         self.ui.load_pages.table_button_layout.addWidget(self.add_table_row_button)
         self.ui.load_pages.table_button_layout.addWidget(self.delete_table_row_button)
@@ -329,3 +406,6 @@ class SetupMainWindow:
         self.ui.load_pages.parentship_table_layout.addWidget(self.table_widget_2)
         self.ui.load_pages.parentship_button_layout.addWidget(self.add_table_2_row_button)
         self.ui.load_pages.parentship_button_layout.addWidget(self.delete_table_2_row_button)
+
+        self.ui.load_pages.row_8_layout.addWidget(self.execution_tree, 1)
+        self.ui.load_pages.row_8_layout.addWidget(self.execution_screen_scroll_area, 3)

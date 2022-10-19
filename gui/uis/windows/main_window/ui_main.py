@@ -17,6 +17,8 @@
 # IMPORT PACKAGES AND MODULES
 # ///////////////////////////////////////////////////////////////
 from gui.core.functions import Functions
+from gui.uis.windows.screens.diagnosticscreen import Ui_DiagnosticsScreen
+from gui.uis.windows.screens.horizonscreen import Ui_HorizonScreen
 
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
@@ -303,5 +305,3 @@ class UI_MainWindow(object):
         # ADD CENTRAL WIDGET AND SET CONTENT MARGINS
         # ///////////////////////////////////////////////////////////////
         parent.setCentralWidget(self.central_widget)
-
- 

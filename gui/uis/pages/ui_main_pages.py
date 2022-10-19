@@ -200,17 +200,14 @@ class Ui_MainPages(object):
         self.pages.addWidget(self.page_2)
         self.page_3 = QWidget()
         self.page_3.setObjectName(u"page_3")
-        self.page_3.setStyleSheet(u"QFrame {\n"
-"	font-size: 16pt;\n"
-"}")
         self.page_3_layout = QVBoxLayout(self.page_3)
         self.page_3_layout.setObjectName(u"page_3_layout")
-        self.empty_page_label = QLabel(self.page_3)
-        self.empty_page_label.setObjectName(u"empty_page_label")
-        self.empty_page_label.setFont(font)
-        self.empty_page_label.setAlignment(Qt.AlignCenter)
 
-        self.page_3_layout.addWidget(self.empty_page_label)
+        self.row_8_layout = QHBoxLayout()
+        self.row_8_layout.setStretch
+        self.row_8_layout.setObjectName(u"row_8_layout")
+
+        self.page_3_layout.addLayout(self.row_8_layout)
 
         self.pages.addWidget(self.page_3)
 
@@ -231,6 +228,5 @@ class Ui_MainPages(object):
         self.title_label.setText(QCoreApplication.translate("MainPages", u"Model Objects", None))
         self.description_label.setText(QCoreApplication.translate("MainPages", u"Here a new  or a previously saved model can be loaded and modified\n"
 "The top tree view displays all the objects of the model. The below table object displays selected object properties in detail", None))
-        self.empty_page_label.setText(QCoreApplication.translate("MainPages", u"Empty Page", None))
     # retranslateUi
 
