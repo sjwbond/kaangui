@@ -232,10 +232,23 @@ class Ui_ModelScreen(object):
         self.reports_comboBox.setCurrentText(input["reports"])
 
         for name, value in input["scenarios"].items():
+            found = False
             for i in range(self.scenarios_tableWidget.rowCount()):
                 if name == self.scenarios_tableWidget.item(i, 1).text():
                     self.scenarios_tableWidget.cellWidget(i, 0).setChecked(value["enabled"])
                     self.scenarios_tableWidget.item(i, 2).setText(value["priority"])
+                    found = True
+                    continue
+            if not found:
+                i = self.scenarios_tableWidget.rowCount()
+                self.scenarios_tableWidget.setRowCount(i + 1)
+                checkbox = QCheckBox()
+                checkbox.setChecked(value["enabled"])
+                self.scenarios_tableWidget.setCellWidget(i, 0, checkbox)
+                item = QTableWidgetItem(name)
+                item.setFlags(Qt.ItemIsSelectable|Qt.ItemIsEnabled)
+                self.scenarios_tableWidget.setItem(i, 1, item)
+                self.scenarios_tableWidget.setItem(i, 2, QTableWidgetItem(value["priority"]))
     
     def getOutput(self):
         scenarios = {}
