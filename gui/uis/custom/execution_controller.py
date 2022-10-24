@@ -221,8 +221,6 @@ class ExecutionController:
         self.execution_tree.clicked.connect(self.selection_changed)
         self.execution_tree.customContextMenuRequested.connect(self.open_menu)
 
-        self.set_simulation({})
-
     def set_simulation(self, simulation: dict):
         self.simulation = simulation
         self.model = QStandardItemModel()
