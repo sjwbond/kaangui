@@ -1,3 +1,4 @@
 add undo redo to execution tab
 git repository for backend
-in execution models add ability to toggle flags and select scenario based on input from model properties
+hide execution tab if no model is loaded
+renaming object requires updating model

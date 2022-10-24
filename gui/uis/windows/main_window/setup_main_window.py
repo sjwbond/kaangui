@@ -391,7 +391,7 @@ class SetupMainWindow:
         # TODO fix stylesheet
         self.execution_screen_scroll_area.setStyleSheet("QFrame { background-color: #2B2E3B; }")
 
-        self.execution_controller = ExecutionController(self.execution_tree, self.execution_screen_scroll_area)
+        self.execution_controller = ExecutionController(self.tree, self.execution_tree, self.execution_screen_scroll_area)
 
         self.execution_undo_button.clicked.connect(self.execution_controller.undo)
         self.execution_redo_button.clicked.connect(self.execution_controller.redo)

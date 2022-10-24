@@ -150,7 +150,7 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <widget class="QTableWidget" name="scenarios_tableWIdget"/>
+       <widget class="QTableWidget" name="scenarios_tableWidget"/>
       </item>
      </layout>
     </widget>

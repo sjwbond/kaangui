@@ -10,6 +10,21 @@
 
 from qt_core import *
 
+model_default_input = {
+    "production": "",
+    "mtschedule": "",
+    "horizons": "",
+    "ltplan": "",
+    "pasa": "",
+    "competition": "",
+    "diagnostics": "",
+    "transmission": "",
+    "stschedule": "",
+    "performance": "",
+    "stochastics": "",
+    "reports": "",
+    "scenarios": {}
+}
 
 class Ui_ModelScreen(object):
     def setupUi(self, ModelScreen):
@@ -100,11 +115,11 @@ class Ui_ModelScreen(object):
         self.scenarios_groupBox.setObjectName("scenarios_groupBox")
         self.verticalLayout = QVBoxLayout(self.scenarios_groupBox)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.scenarios_tableWIdget = QTableWidget(self.scenarios_groupBox)
-        self.scenarios_tableWIdget.setObjectName("scenarios_tableWIdget")
-        self.scenarios_tableWIdget.setColumnCount(0)
-        self.scenarios_tableWIdget.setRowCount(0)
-        self.verticalLayout.addWidget(self.scenarios_tableWIdget)
+        self.scenarios_tableWidget = QTableWidget(self.scenarios_groupBox)
+        self.scenarios_tableWidget.setObjectName("scenarios_tableWidget")
+        self.scenarios_tableWidget.setColumnCount(0)
+        self.scenarios_tableWidget.setRowCount(0)
+        self.verticalLayout.addWidget(self.scenarios_tableWidget)
         self.verticalLayout_2.addWidget(self.scenarios_groupBox)
 
         self.retranslateUi(ModelScreen)
@@ -127,9 +142,126 @@ class Ui_ModelScreen(object):
         self.pasa_label.setText(_translate("ModelScreen", "PASA"))
         self.horizons_label.setText(_translate("ModelScreen", "Horizons"))
         self.scenarios_groupBox.setTitle(_translate("ModelScreen", "Scenarios"))
-    
+
+    def setOptions(self, options):
+        # Merge default options with provided options
+        options = {
+            "production": [],
+            "mtschedule": [],
+            "horizons": [],
+            "ltplan": [],
+            "pasa": [],
+            "competition": [],
+            "diagnostics": [],
+            "transmission": [],
+            "stschedule": [],
+            "performance": [],
+            "stochastics": [],
+            "reports": []
+        } | options
+
+        # Clear all combo boxes
+        self.production_comboBox.clear()
+        self.mtschedule_comboBox.clear()
+        self.horizons_comboBox.clear()
+        self.ltplan_comboBox.clear()
+        self.pasa_comboBox.clear()
+        self.competition_comboBox.clear()
+        self.diagnostics_comboBox.clear()
+        self.transmission_comboBox.clear()
+        self.stschedule_comboBox.clear()
+        self.performance_comboBox.clear()
+        self.stochastics_comboBox.clear()
+        self.reports_comboBox.clear()
+
+        # Add empty (placeholder) item
+        self.production_comboBox.addItem("")
+        self.mtschedule_comboBox.addItem("")
+        self.horizons_comboBox.addItem("")
+        self.ltplan_comboBox.addItem("")
+        self.pasa_comboBox.addItem("")
+        self.competition_comboBox.addItem("")
+        self.diagnostics_comboBox.addItem("")
+        self.transmission_comboBox.addItem("")
+        self.stschedule_comboBox.addItem("")
+        self.performance_comboBox.addItem("")
+        self.stochastics_comboBox.addItem("")
+        self.reports_comboBox.addItem("")
+
+        # Add all items
+        self.production_comboBox.addItems(options["production"])
+        self.mtschedule_comboBox.addItems(options["mtschedule"])
+        self.horizons_comboBox.addItems(options["horizons"])
+        self.ltplan_comboBox.addItems(options["ltplan"])
+        self.pasa_comboBox.addItems(options["pasa"])
+        self.competition_comboBox.addItems(options["competition"])
+        self.diagnostics_comboBox.addItems(options["diagnostics"])
+        self.transmission_comboBox.addItems(options["transmission"])
+        self.stschedule_comboBox.addItems(options["stschedule"])
+        self.performance_comboBox.addItems(options["performance"])
+        self.stochastics_comboBox.addItems(options["stochastics"])
+        self.reports_comboBox.addItems(options["reports"])
+
+    def setScenarios(self, scenarios):
+        self.scenarios_tableWidget.setColumnCount(3)
+        self.scenarios_tableWidget.setHorizontalHeaderLabels(["Enabled?", "Scenario", "Priority"])
+        self.scenarios_tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        self.scenarios_tableWidget.verticalHeader().hide()
+
+        scenarios = list(set(scenarios))
+        self.scenarios_tableWidget.setRowCount(len(scenarios))
+        for i in range(len(scenarios)):
+            self.scenarios_tableWidget.setCellWidget(i, 0, QCheckBox())
+            item = QTableWidgetItem(scenarios[i])
+            item.setFlags(Qt.ItemIsSelectable|Qt.ItemIsEnabled)
+            self.scenarios_tableWidget.setItem(i, 1, item)
+            self.scenarios_tableWidget.setItem(i, 2, QTableWidgetItem("0"))
+
     def setInput(self, input):
-        pass
+        self.production_comboBox.setCurrentText(input["production"])
+        self.mtschedule_comboBox.setCurrentText(input["mtschedule"])
+        self.horizons_comboBox.setCurrentText(input["horizons"])
+        self.ltplan_comboBox.setCurrentText(input["ltplan"])
+        self.pasa_comboBox.setCurrentText(input["pasa"])
+        self.competition_comboBox.setCurrentText(input["competition"])
+        self.diagnostics_comboBox.setCurrentText(input["diagnostics"])
+        self.transmission_comboBox.setCurrentText(input["transmission"])
+        self.stschedule_comboBox.setCurrentText(input["stschedule"])
+        self.performance_comboBox.setCurrentText(input["performance"])
+        self.stochastics_comboBox.setCurrentText(input["stochastics"])
+        self.reports_comboBox.setCurrentText(input["reports"])
+
+        for name, value in input["scenarios"].items():
+            for i in range(self.scenarios_tableWidget.rowCount()):
+                if name == self.scenarios_tableWidget.item(i, 1).text():
+                    self.scenarios_tableWidget.cellWidget(i, 0).setChecked(value["enabled"])
+                    self.scenarios_tableWidget.item(i, 2).setText(value["priority"])
     
     def getOutput(self):
-        pass
+        scenarios = {}
+        for i in range(self.scenarios_tableWidget.rowCount()):
+            enabled = self.scenarios_tableWidget.cellWidget(i, 0).isChecked()
+            if enabled:
+                name = self.scenarios_tableWidget.item(i, 1).text()
+                priority = self.scenarios_tableWidget.item(i, 2).text()
+                scenarios[name] = {
+                    "enabled": enabled,
+                    "priority": priority
+                }
+
+        output = {
+            "production": self.production_comboBox.currentText(),
+            "mtschedule": self.mtschedule_comboBox.currentText(),
+            "horizons": self.horizons_comboBox.currentText(),
+            "ltplan": self.ltplan_comboBox.currentText(),
+            "pasa": self.pasa_comboBox.currentText(),
+            "competition": self.competition_comboBox.currentText(),
+            "diagnostics": self.diagnostics_comboBox.currentText(),
+            "transmission": self.transmission_comboBox.currentText(),
+            "stschedule": self.stschedule_comboBox.currentText(),
+            "performance": self.performance_comboBox.currentText(),
+            "stochastics": self.stochastics_comboBox.currentText(),
+            "reports": self.reports_comboBox.currentText(),
+            "scenarios": scenarios
+        }
+        return output
