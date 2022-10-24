@@ -1,7 +1,6 @@
 import copy
 import csv
 from functools import partial
-from gui.uis.custom.api import list_models
 from gui.uis.custom.model_helpers import findFreeName, get_all_object_names, model_to_dict, model_to_dict_1
 from qt_core import *
 from gui.core.functions import *
@@ -86,7 +85,6 @@ class ModelController:
                 elif type(old[key]) is dict and type(new[key]) is dict and "Properties" not in new[key]:
                     self.get_diff(old[key], new[key], path + [key], added, removed, changed)
                 
-    
     def create_snapshot_diff(self, snapshot: dict) -> dict:
         added = []
         removed = []
@@ -127,10 +125,10 @@ class ModelController:
 
         for item in diff["changed"]:
             (path, old, _) = item
+            index = self.get_item_by_path(path[1:])
             if path == ["name"]:
-                self.tree.proxyModel.setData(self.tree.currentIndex(), old)
+                self.tree.rootModel.itemFromIndex(index).setData(old, Qt.DisplayRole)
             else:
-                index = self.get_item_by_path(path[1:])
                 self.tree.rootModel.itemFromIndex(index).setData(old, Qt.UserRole)
                 
         self.update_properties_table()
@@ -149,10 +147,10 @@ class ModelController:
 
         for item in diff["changed"]:
             (path, _, new) = item
+            index = self.get_item_by_path(path[1:])
             if path == ["name"]:
-                self.tree.proxyModel.setData(self.tree.currentIndex(), new)
+                self.tree.rootModel.itemFromIndex(index).setData(new, Qt.DisplayRole)
             else:
-                index = self.get_item_by_path(path[1:])
                 self.tree.rootModel.itemFromIndex(index).setData(new, Qt.UserRole)
         
         self.update_properties_table()

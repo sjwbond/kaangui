@@ -241,9 +241,9 @@ class Ui_ModelScreen(object):
         scenarios = {}
         for i in range(self.scenarios_tableWidget.rowCount()):
             enabled = self.scenarios_tableWidget.cellWidget(i, 0).isChecked()
-            if enabled:
+            priority = self.scenarios_tableWidget.item(i, 2).text()
+            if enabled or priority != "0":
                 name = self.scenarios_tableWidget.item(i, 1).text()
-                priority = self.scenarios_tableWidget.item(i, 2).text()
                 scenarios[name] = {
                     "enabled": enabled,
                     "priority": priority

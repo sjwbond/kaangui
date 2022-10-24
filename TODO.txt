@@ -1,4 +1,1 @@
-add undo redo to execution tab
-git repository for backend
-hide execution tab if no model is loaded
 renaming object requires updating model

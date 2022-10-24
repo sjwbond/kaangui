@@ -209,7 +209,10 @@ class ExecutionController:
         self.simulation = {}
         self.right_side_screen = None
         self.last_index = None
-        
+
+        self.undo_history: list[dict] = []
+        self.redo_history: list[dict] = []
+
         self.execution_tree.setHeaderHidden(True)
         self.execution_tree.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
         self.execution_tree.setDragEnabled(False)
@@ -247,6 +250,7 @@ class ExecutionController:
         self.execution_tree.setModel(self.model)
         self.execution_tree.expandAll()
         self.selection_changed()
+        self.clear_history()
     
     def get_simulation(self) -> dict:
         simulation = {}
@@ -325,6 +329,8 @@ class ExecutionController:
             subitem.setData(stschedule_default_input, Qt.UserRole + 1)
         item.appendRow(subitem)
 
+        self.create_undo_snapshot_added(self.get_item_path(subitem), (subitem.data(Qt.UserRole), subitem.data(Qt.UserRole + 1)))
+
     def rename(self, item: QStandardItem):
         new_name, okPressed = QInputDialog.getText(None, "Rename", "New name:", text=item.data(Qt.DisplayRole))
         if not okPressed or new_name == '':
@@ -336,12 +342,21 @@ class ExecutionController:
             if not okPressed or new_name == '':
                 return
 
+        old_path = self.get_item_path(item)
+
         item.setData(new_name, Qt.DisplayRole)
+
+        self.create_undo_snapshot_renamed(old_path, self.get_item_path(item))
 
     def delete(self, index: QModelIndex):
         ret = QMessageBox.question(None, "Delete", "Are you sure you wish to delete this object?", QMessageBox.Yes | QMessageBox.No)
-        if ret == QMessageBox.Yes:
-            self.model.removeRow(index.row(), index.parent())
+        if ret != QMessageBox.Yes:
+            return
+
+        item = self.model.itemFromIndex(index)
+        self.create_undo_snapshot_removed(self.get_item_path(item), (item.data(Qt.UserRole), item.data(Qt.UserRole + 1)))
+
+        self.model.removeRow(index.row(), index.parent())
 
     def get_simulations(self, index: QModelIndex = None):
         res = []
@@ -476,8 +491,13 @@ class ExecutionController:
         self.right_side_screen = None
         self.container.setWidget(QWidget())
 
-    def check_save_data(self, item: QStandardItem):
-        if self.right_side_screen is None:
+    def check_save_data(self, item: QStandardItem = None):
+        if item is None:
+            if self.last_index is None:
+                return
+            item = self.model.itemFromIndex(self.last_index)
+
+        if self.right_side_screen is None or item is None:
             return
 
         old_data = item.data(Qt.UserRole + 1)
@@ -488,17 +508,165 @@ class ExecutionController:
 
         ret = QMessageBox.question(None, "Object Changed", "Would you like to save changes made to this object?", QMessageBox.Yes | QMessageBox.No)
         if ret == QMessageBox.Yes:
+            old_data = item.data(Qt.UserRole + 1)
+
             item.setData(new_data, Qt.UserRole + 1)
 
-    def undo(self):
-        print("undo pressed")
-
-    def redo(self):
-        print("redo pressed")
+            self.create_undo_snapshot_changed(self.get_item_path(item), old_data, new_data)
 
     def save(self):
         if self.last_index is None:
             return
 
-        data = self.right_side_screen.getOutput()
-        self.model.itemFromIndex(self.last_index).setData(data, Qt.UserRole + 1)
+        item = self.model.itemFromIndex(self.last_index)
+        old_data = item.data(Qt.UserRole + 1)
+
+        new_data = self.right_side_screen.getOutput()
+        item.setData(new_data, Qt.UserRole + 1)
+
+        self.create_undo_snapshot_changed(self.get_item_path(item), old_data, new_data)
+
+    def clear_history(self):
+        self.undo_history = []
+        self.redo_history = []
+
+    def get_item_by_path(self, path: list[str], index: QModelIndex = None) -> QModelIndex:
+        if len(path) == 0:
+            return index
+
+        if index is None:
+            index = self.model.invisibleRootItem().index()
+
+        for i in range(self.model.rowCount(index)):
+            ix = self.model.index(i, 0, index)
+            name = ix.data(Qt.DisplayRole)
+            if name == path[0]:
+                return self.get_item_by_path(path[1:], ix)
+
+        return index
+
+    def undo_snapshot_diff(self, diff: dict):
+        for path, _ in diff["added"]:
+            index = self.get_item_by_path(path)
+            self.model.removeRow(index.row(), index.parent())
+
+        for path, old in diff["removed"]:
+            name = path[-1]
+            index = self.get_item_by_path(path[:-1])
+            item = self.model.itemFromIndex(index)
+            subitem = QStandardItem(name)
+            data1, data2 = old
+            subitem.setData(data1, Qt.UserRole)
+            subitem.setData(data2, Qt.UserRole + 1)
+            item.appendRow(subitem)
+
+        for old_path, new_path in diff["renamed"]:
+            old_name = old_path[-1]
+            index = self.get_item_by_path(new_path)
+            self.model.itemFromIndex(index).setData(old_name, Qt.DisplayRole)
+
+        for path, old, _ in diff["changed"]:
+            index = self.get_item_by_path(path)
+            self.model.itemFromIndex(index).setData(old, Qt.UserRole + 1)
+                
+        self.selection_changed()
+
+    def redo_snapshot_diff(self, diff: dict):
+        for path, _ in diff["removed"]:
+            index = self.get_item_by_path(path)
+            self.model.removeRow(index.row(), index.parent())
+
+        for path, new in diff["added"]:
+            name = path[-1]
+            index = self.get_item_by_path(path[:-1])
+            item = self.model.itemFromIndex(index)
+            subitem = QStandardItem(name)
+            data1, data2 = new
+            subitem.setData(data1, Qt.UserRole)
+            subitem.setData(data2, Qt.UserRole + 1)
+            item.appendRow(subitem)
+
+        for old_path, new_path in diff["renamed"]:
+            new_name = new_path[-1]
+            index = self.get_item_by_path(old_path)
+            self.model.itemFromIndex(index).setData(new_name, Qt.DisplayRole)
+
+        for path, _, new in diff["changed"]:
+            index = self.get_item_by_path(path)
+            self.model.itemFromIndex(index).setData(new, Qt.UserRole + 1)
+        
+        self.selection_changed()
+
+    def get_item_path(self, item: QStandardItem):
+        res = [item.data(Qt.DisplayRole)]
+        parent = item.parent()
+        while parent is not None:
+            res = [parent.data(Qt.DisplayRole)] + res
+            parent = parent.parent()
+        return res
+
+    def create_undo_snapshot(self, diff: dict):
+        self.redo_history.clear()
+        self.undo_history.append(diff)
+
+    def create_undo_snapshot_added(self, path, new):
+        self.create_undo_snapshot({
+            "added": [(path, new)],
+            "removed": [],
+            "renamed": [],
+            "changed": []
+        })
+
+    def create_undo_snapshot_removed(self, path, old):
+        self.create_undo_snapshot({
+            "added": [],
+            "removed": [(path, old)],
+            "renamed": [],
+            "changed": []
+        })
+
+    def create_undo_snapshot_renamed(self, old_path, new_path):
+        self.create_undo_snapshot({
+            "added": [],
+            "removed": [],
+            "renamed": [(old_path, new_path)],
+            "changed": []
+        })
+
+    def create_undo_snapshot_changed(self, path, old, new):
+        self.create_undo_snapshot({
+            "added": [],
+            "removed": [],
+            "renamed": [],
+            "changed": [(path, old, new)]
+        })
+    
+    def pop_undo_item(self) -> dict:
+        if len(self.undo_history) > 0:
+            item = self.undo_history.pop()
+            self.redo_history.append(item)
+            return item
+        return None
+    
+    def pop_redo_item(self) -> dict:
+        if len(self.redo_history) > 0:
+            item = self.redo_history.pop()
+            self.undo_history.append(item)
+            return item
+        return None
+
+    def undo(self):
+        self.check_save_data()
+        self.last_index = None
+        item = self.pop_undo_item()
+        if item is not None:
+            self.undo_snapshot_diff(item)
+            self.selection_changed()
+
+    def redo(self):
+        self.check_save_data()
+        self.last_index = None
+        item = self.pop_redo_item()
+        if item is not None:
+            self.redo_snapshot_diff(item)
+            self.selection_changed()
