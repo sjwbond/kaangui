@@ -114,6 +114,20 @@ QDateEdit:focus {
     background-color: #333645;
 }
 
+QLineEdit {
+	background-color: #333;
+	border: 0px solid transparent;
+	padding-left: 1px;
+    padding-right: 1px;
+	selection-color: #FFF;
+	selection-background-color: #00ABE8;
+    color: #FFF;
+}
+QLineEdit:focus {
+	border: 0px solid transparent;
+    background-color: #4D5066;
+}
+
 QTableWidget {	
 	background-color: #4D5066;
 	padding: 5px;
