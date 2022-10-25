@@ -187,6 +187,7 @@ class SetupMainWindow:
         self.execution_undo_button = StyledButton(text="Undo", themes=self.themes, icon_name="icon_undo.svg")
         self.execution_redo_button = StyledButton(text="Redo", themes=self.themes, icon_name="icon_redo.svg")
         self.execution_save_button = StyledButton(text="Save", themes=self.themes, icon_name="icon_save.svg")
+        self.execution_execute_button = StyledButton(text="Execute", themes=self.themes, icon_name="icon_signal.svg")
 
         # PY LINE EDIT
         self.filterEdit = PyLineEdit(
@@ -396,6 +397,7 @@ class SetupMainWindow:
         self.execution_undo_button.clicked.connect(self.execution_controller.undo)
         self.execution_redo_button.clicked.connect(self.execution_controller.redo)
         self.execution_save_button.clicked.connect(self.execution_controller.save)
+        self.execution_execute_button.clicked.connect(self.execution_controller.execute)
 
         # ADD WIDGETS
         self.ui.load_pages.table_button_layout.addWidget(self.add_table_row_button)
@@ -420,3 +422,4 @@ class SetupMainWindow:
         self.ui.load_pages.row_9_layout.addWidget(self.execution_undo_button)
         self.ui.load_pages.row_9_layout.addWidget(self.execution_redo_button)
         self.ui.load_pages.row_9_layout.addWidget(self.execution_save_button)
+        # self.ui.load_pages.row_9_layout.addWidget(self.execution_execute_button)

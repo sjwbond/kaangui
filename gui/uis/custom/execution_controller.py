@@ -289,6 +289,18 @@ class ExecutionController:
                 elif level == "leaf":
                     menu = QMenu()
 
+                    if type == "models":
+                        priorities = ["Low", "Normal", "High", "Urgent"]
+                        menuitems = []
+                        for priority in priorities:
+                            menuitem = QAction(f"{priority} Priority")
+                            menuitem.triggered.connect(partial(self.execute_model, item, priority))
+                            menuitems.append(menuitem)
+
+                        qmenu_execute_model = QMenu("Execute Model")
+                        qmenu_execute_model.addActions(menuitems)
+                        menu.addMenu(qmenu_execute_model)
+
                     qmenu_rename = QAction(f"Rename")
                     qmenu_rename.triggered.connect(partial(self.rename, item))
                     menu.addAction(qmenu_rename)
@@ -330,6 +342,10 @@ class ExecutionController:
         item.appendRow(subitem)
 
         self.create_undo_snapshot_added(self.get_item_path(subitem), (subitem.data(Qt.UserRole), subitem.data(Qt.UserRole + 1)))
+
+    def execute_model(self, item: QStandardItem, priority: str):
+        self.check_save_data(item)
+        print(f"Execute model {item.data(Qt.DisplayRole)} with {priority} priority")
 
     def replace_item_in_models_settings(self, type: str, old: str, new: str):
         items = self.get_objects_of_type("leaf", "models")
@@ -695,3 +711,6 @@ class ExecutionController:
         if item is not None:
             self.redo_snapshot_diff(item)
             self.selection_changed()
+
+    def execute(self):
+        pass
