@@ -331,20 +331,39 @@ class ExecutionController:
 
         self.create_undo_snapshot_added(self.get_item_path(subitem), (subitem.data(Qt.UserRole), subitem.data(Qt.UserRole + 1)))
 
+    def replace_item_in_models_settings(self, type: str, old: str, new: str):
+        items = self.get_objects_of_type("leaf", "models")
+
+        for item in items:
+            data = item.data(Qt.UserRole + 1)
+
+            if type not in data:
+                return
+
+            if data[type] == old:
+                data[type] = new
+
+            item.setData(data, Qt.UserRole + 1)
+
     def rename(self, item: QStandardItem):
-        new_name, okPressed = QInputDialog.getText(None, "Rename", "New name:", text=item.data(Qt.DisplayRole))
-        if not okPressed or new_name == '':
+        old_name = item.data(Qt.DisplayRole)
+        _, _, type = item.data(Qt.UserRole)
+
+        new_name, okPressed = QInputDialog.getText(None, "Rename", "New name:", text=old_name)
+        if not okPressed or new_name == '' or new_name == old_name:
             return
 
         subitems = [self.model.index(i, 0, item.parent().index()).data(Qt.DisplayRole) for i in range(item.parent().rowCount())]
         while new_name in subitems:
-            new_name, okPressed = QInputDialog.getText(None, "Rename", "An object with the same name exists. Please choose a different name.\nNew name:", text=item.data(Qt.DisplayRole))
-            if not okPressed or new_name == '':
+            new_name, okPressed = QInputDialog.getText(None, "Rename", "An object with the same name exists. Please choose a different name.\nNew name:", text=old_name)
+            if not okPressed or new_name == '' or new_name == old_name:
                 return
 
         old_path = self.get_item_path(item)
 
         item.setData(new_name, Qt.DisplayRole)
+
+        self.replace_item_in_models_settings(type, old_name, new_name)
 
         self.create_undo_snapshot_renamed(old_path, self.get_item_path(item))
 
@@ -382,7 +401,7 @@ class ExecutionController:
 
         return res
 
-    def get_objects_of_type(self, level: str, type: str, index: QModelIndex = None):
+    def get_objects_of_type(self, level: str, type: str, index: QModelIndex = None) -> list[QStandardItem]:
         res = []
         item = None
 
@@ -394,11 +413,10 @@ class ExecutionController:
         for i in range(item.rowCount()):
             ix = self.model.index(i, 0, item.index())
             it = self.model.itemFromIndex(ix)
-            iname = it.data(Qt.DisplayRole)
             ilevel, _, itype = it.data(Qt.UserRole)
 
             if ilevel == level and itype == type:
-                res.append(iname)
+                res.append(it)
             
             res = res + self.get_objects_of_type(level, type, ix)
 
@@ -428,7 +446,6 @@ class ExecutionController:
             res = self.get_objects_of_level_by_type(level, res, ix)
 
         return res
-
 
     def selection_changed(self):
         if len(self.execution_tree.selectedIndexes()) == 0:
@@ -563,7 +580,11 @@ class ExecutionController:
         for old_path, new_path in diff["renamed"]:
             old_name = old_path[-1]
             index = self.get_item_by_path(new_path)
-            self.model.itemFromIndex(index).setData(old_name, Qt.DisplayRole)
+            item = self.model.itemFromIndex(index)
+            new_name = item.data(Qt.DisplayRole)
+            _, _, type = item.data(Qt.UserRole)
+            self.replace_item_in_models_settings(type, new_name, old_name)
+            item.setData(old_name, Qt.DisplayRole)
 
         for path, old, _ in diff["changed"]:
             index = self.get_item_by_path(path)
@@ -589,6 +610,10 @@ class ExecutionController:
         for old_path, new_path in diff["renamed"]:
             new_name = new_path[-1]
             index = self.get_item_by_path(old_path)
+            item = self.model.itemFromIndex(index)
+            old_name = item.data(Qt.DisplayRole)
+            _, _, type = item.data(Qt.UserRole)
+            self.replace_item_in_models_settings(type, old_name, new_name)
             self.model.itemFromIndex(index).setData(new_name, Qt.DisplayRole)
 
         for path, _, new in diff["changed"]:
