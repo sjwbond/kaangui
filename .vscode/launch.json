@@ -11,6 +11,14 @@
             "program": "main.py",
             "console": "integratedTerminal",
             "justMyCode": true
+        },
+        {
+            "name": "Python: Json From Model",
+            "type": "python",
+            "request": "launch",
+            "program": "json_from_model.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
         }
     ]
 }

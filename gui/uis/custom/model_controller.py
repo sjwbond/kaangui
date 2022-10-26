@@ -26,7 +26,6 @@ class ModelController:
         self.parents_model = None
         self.parents_table = parents_table
         self.clipboard: list[dict] = []
-        self.currentlySelectedModelObject = [] #To keep curretly selected object branch
 
         self.base_snapshot = {}
         self.last_snapshot = {}
@@ -167,7 +166,7 @@ class ModelController:
         self.redo_history.clear()
         self.last_snapshot = snapshot
         self.undo_history.append(diff)
-    
+
     def pop_undo_item(self) -> dict:
         if len(self.undo_history) > 0:
             item = self.undo_history.pop()
@@ -198,10 +197,10 @@ class ModelController:
             self.redo_snapshot_diff(item)
             self.last_snapshot = self.create_snapshot()
         self.pause_history = False
-        
+
     def set_filter_text(self, text: str):
         self.tree.proxyModel.setFilterRegularExpression(text)
-        
+
     def add_node_to_tree(self, model_node: dict, tree_node: QStandardItem):
         for node_key in model_node:
             node = QStandardItem(node_key)
@@ -264,7 +263,6 @@ class ModelController:
             self.parents_model.itemChanged.connect(self.save_parent_table)
             self.parents_table.setModel(self.parents_model)
 
-            # TODO update props when model has changed
             props = get_all_object_names(self.tree.rootModel)
             self.parents_table.setComboProps(props)
         self.pause_history = False
@@ -278,9 +276,6 @@ class ModelController:
     def save_properties_table(self):
         self.create_undo_snapshot()
         getSelected = self.tree.selectedIndexes()
-        keysList = self.getNodeNameAndParentList(getSelected)
-
-        self.currentlySelectedModelObject = copy.deepcopy(keysList)
 
         listofPropertiesToAppend = []
         for row in range(self.properties_table.rowCount()):
@@ -304,9 +299,6 @@ class ModelController:
     def save_parent_table(self):
         self.create_undo_snapshot()
         getSelected = self.tree.selectedIndexes()
-        keysList = self.getNodeNameAndParentList(getSelected)
-
-        self.currentlySelectedModelObject = copy.deepcopy(keysList)
 
         listofParentsToAppend = []
         data = self.parents_model.getData()
@@ -595,7 +587,7 @@ class ModelController:
         text, okPressed = QInputDialog.getText(self.tree, "New name", "New name:", text=getSelected[0].data(0))
         if okPressed and text != '':
             self.create_undo_snapshot()
-            # TODO check for duplicate filename
+            # TODO check for duplicate model name
             self.tree.proxyModel.setData(self.tree.currentIndex(), text)
             self.create_undo_snapshot()
 
