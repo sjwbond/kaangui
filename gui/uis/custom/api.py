@@ -41,7 +41,7 @@ def create_model(model: dict) -> str:
   req = requests.post(f"{API_PATH}/models", json=metadata)
   return req.json()["id"]
 
-def update_model(id: str, model: dict) -> None:
+def update_model(id: str, model: dict) -> str:
   compressed = compress_model(model)
   req = requests.post(f"{API_PATH}/models/file", files={"model": ("model", compressed)})
   res = req.json()
@@ -50,9 +50,18 @@ def update_model(id: str, model: dict) -> None:
     "hash": res["hash"]
   }
   requests.put(f"{API_PATH}/models/{id}", json=metadata)
+  return res["hash"]
 
 def delete_model(id: str) -> None:
   requests.delete(f"{API_PATH}/models/{id}")
+
+def send_model_to_processing(name: str, hash: str, priority: int):
+  data = {
+    "name": name,
+    "hash": hash,
+    "priority": priority
+  }
+  requests.post(f"{API_PATH}/models/jobs", json=data)
 
 def strip_model(model: dict) -> dict:
   new_model = deepcopy(model)

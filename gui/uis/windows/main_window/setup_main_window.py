@@ -1,6 +1,6 @@
 # ///////////////////////////////////////////////////////////////
 from datetime import datetime
-from gui.uis.custom.api import create_model, get_model, get_model_history, get_model_version, list_models, update_model
+from gui.uis.custom.api import create_model, get_model, get_model_history, get_model_version, list_models, send_model_to_processing, update_model
 from gui.uis.custom.execution_controller import ExecutionController
 from gui.uis.custom.model_controller import ModelController
 from gui.uis.custom.model_helpers import model_to_dict
@@ -296,7 +296,9 @@ class SetupMainWindow:
                 modelId = create_model(data)
                 self.tree.rootModel.invisibleRootItem().child(0, 0).setData(modelId, Qt.UserRole+1)
             else:
-                update_model(modelId, data)
+                new_hash = update_model(modelId, data)
+                self.data["name"] = self.tree.rootModel.invisibleRootItem().child(0, 0).data(Qt.DisplayRole)
+                self.data["hash"] = new_hash
 
         self.save_api_model_button.clicked.connect(save_model_to_api)
 
@@ -374,6 +376,10 @@ class SetupMainWindow:
                     json.dump(data, fp, sort_keys=True, indent=4)
         self.create_json_database_from_txt_files_button.clicked.connect(create_json_from_txt)
 
+        def send_model_to_queue():
+            send_model_to_processing(self.data["name"], self.data["hash"], 100)
+        self.execution_execute_button.clicked.connect(send_model_to_queue)
+
         self.tree.viewport().installEventFilter(self)
 
         # EXECUTION
@@ -422,4 +428,4 @@ class SetupMainWindow:
         self.ui.load_pages.row_9_layout.addWidget(self.execution_undo_button)
         self.ui.load_pages.row_9_layout.addWidget(self.execution_redo_button)
         self.ui.load_pages.row_9_layout.addWidget(self.execution_save_button)
-        # self.ui.load_pages.row_9_layout.addWidget(self.execution_execute_button)
+        self.ui.load_pages.row_9_layout.addWidget(self.execution_execute_button)

@@ -50,7 +50,7 @@ del full_model["_id"]
 del full_model["id"]
 
 print()
-file_name = input(f"Output file: [{model['name']}.json]")
+file_name = input(f"Output file [{model['name']}.json]:")
 if file_name == "":
     file_name = f"{model['name']}.json"
 

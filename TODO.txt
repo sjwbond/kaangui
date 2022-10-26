@@ -1,3 +1,7 @@
 check back on queue for processing
 task priority
 could we need the light theme in the future?
+ask about Model Id key
+ask about moving main folders and moving objects across folders
+force scenario uppercase
+split models controller into models, versions, jobs controllers
