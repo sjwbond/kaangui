@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Union
 from qt_core import *
 
 class ParentsTableModel(QAbstractTableModel):
@@ -11,7 +11,7 @@ class ParentsTableModel(QAbstractTableModel):
     def getData(self):
         return self._data
 
-    def data(self, index, role):
+    def data(self, index: Union[QModelIndex, QPersistentModelIndex], role: Qt.ItemDataRole):
         if role == Qt.DisplayRole:
             return self._data[index.row()][index.column()]
 
@@ -25,20 +25,20 @@ class ParentsTableModel(QAbstractTableModel):
                 return section
         return super().headerData(section, orientation, role)
     
-    def setData(self, index, text, role):
+    def setData(self, index: Union[QModelIndex, QPersistentModelIndex], text: str, role: Qt.ItemDataRole):
         if role == Qt.DisplayRole:
             self._data[index.row()][index.column()] = text
             self.itemChanged.emit()
             return True
         return False
 
-    def rowCount(self, index):
+    def rowCount(self, index: Union[QModelIndex, QPersistentModelIndex]):
         return len(self._data)
 
-    def columnCount(self, index):
+    def columnCount(self, index: Union[QModelIndex, QPersistentModelIndex]):
         return 2
 
-    def flags(self, index):
+    def flags(self, index: Union[QModelIndex, QPersistentModelIndex]):
         return Qt.ItemIsSelectable|Qt.ItemIsEnabled|Qt.ItemIsEditable
     
     def appendNewRow(self):
@@ -47,7 +47,7 @@ class ParentsTableModel(QAbstractTableModel):
         self.endInsertRows()
         self.itemChanged.emit()
     
-    def removeRows(self, indexes: List[QModelIndex]):
+    def removeRows(self, indexes: List[Union[QModelIndex, QPersistentModelIndex]]):
         if len(indexes) == 0:
             return
         sr: List[QModelIndex] = sorted(indexes)

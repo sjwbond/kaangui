@@ -44,7 +44,7 @@ class ParentsTableView(QTableView):
             context_color
         )
     
-    def setComboProps(self, props):
+    def setComboProps(self, props: list[str]):
         self.comboDelegate.setItems(props)
 
     # SET STYLESHEET

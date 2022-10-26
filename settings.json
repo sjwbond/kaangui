@@ -6,8 +6,8 @@
     "theme_name" : "default",
     "custom_title_bar": true,
     "startup_size": [
-        1400,
-        720
+        1600,
+        1000
     ],
     "minimum_size": [
         960,
