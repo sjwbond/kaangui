@@ -641,7 +641,7 @@ class ModelController:
             if okPressed and text != '':
                 getSelected = self.tree.selectedIndexes()
                 keysList = self.getNodeNameAndParentList(getSelected)
-                newObjectDict = {text : {"Model Id": "yarrak",
+                newObjectDict = {text : {
                 "Object_Name": text,
                 "Object_Type": keysList[1],
                 "Parent Objects": [],
