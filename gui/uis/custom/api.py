@@ -13,7 +13,7 @@ def list_models() -> list[dict]:
 def get_model(id: str) -> dict:
   req = requests.get(f"{API_PATH}/models/{id}")
   metadata = req.json()
-  filereq = requests.get(f"{API_PATH}/models/file/{metadata['hash']}")
+  filereq = requests.get(f"{API_PATH}/files/{metadata['hash']}")
   model = decompress_model(filereq.content)
   return model | metadata
 
@@ -25,14 +25,14 @@ def get_model_version(model_id: str, version_id: str) -> dict:
   req = requests.get(f"{API_PATH}/models/version/{version_id}")
   metadata = req.json()
   metadata["id"] = model_id
-  filereq = requests.get(f"{API_PATH}/models/file/{metadata['hash']}")
+  filereq = requests.get(f"{API_PATH}/files/{metadata['hash']}")
   model = decompress_model(filereq.content)
   return model | metadata
 
 def create_model(model: dict) -> str:
   stripped = strip_model(model)
   compressed = compress_model(stripped)
-  req = requests.post(f"{API_PATH}/models/file", files={"model": ("model", compressed)})
+  req = requests.post(f"{API_PATH}/files", files={"model": ("model", compressed)})
   res = req.json()
   metadata = {
     "name": model["name"],
@@ -43,7 +43,7 @@ def create_model(model: dict) -> str:
 
 def update_model(id: str, model: dict) -> str:
   compressed = compress_model(model)
-  req = requests.post(f"{API_PATH}/models/file", files={"model": ("model", compressed)})
+  req = requests.post(f"{API_PATH}/files", files={"model": ("model", compressed)})
   res = req.json()
   metadata = {
     "name": model["name"],
@@ -61,7 +61,7 @@ def send_model_to_processing(name: str, hash: str, priority: int):
     "hash": hash,
     "priority": priority
   }
-  requests.post(f"{API_PATH}/models/jobs", json=data)
+  requests.post(f"{API_PATH}/jobs", json=data)
 
 def strip_model(model: dict) -> dict:
   new_model = deepcopy(model)
