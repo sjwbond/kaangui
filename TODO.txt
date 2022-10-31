@@ -1,7 +1,5 @@
-check back on queue for processing
-task priority
 could we need the light theme in the future?
-ask about Model Id key
-ask about moving main folders and moving objects across folders
-force scenario uppercase
-split models controller into models, versions, jobs controllers
+force scenario uppercase?
+ask about priority mapping
+add import/export json functionality
+don't allow moving top-level folders or objects between top-level folders
