@@ -1,5 +1,4 @@
 could we need the light theme in the future?
 force scenario uppercase?
 ask about priority mapping
-add import/export json functionality
 don't allow moving top-level folders or objects between top-level folders

@@ -50,7 +50,12 @@ if version_index is None:
 else:
     full_model = api.get_model_version(model["id"], versions[version_index]["id"])
 
-del full_model["id"]
+if "name" in full_model:
+    del full_model["name"]
+if "hash" in full_model:
+    del full_model["hash"]
+if "id" in full_model:
+    del full_model["id"]
 
 print()
 file_name = input(f"Output file [{model['name']}.json]:")
