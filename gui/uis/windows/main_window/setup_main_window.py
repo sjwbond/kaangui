@@ -313,20 +313,24 @@ class SetupMainWindow:
                 item.setData(model, Qt.UserRole)
                 itemModel.appendRow(item)
 
-            def selection_changed(index):
-                modelS = index.data(Qt.UserRole)
+            versionModel = QStandardItemModel()
+            dialog.versionList.setModel(versionModel)
+            dialog.versionList.setEditTriggers(QAbstractItemView.NoEditTriggers)
+            def selection_changed(selected: QItemSelection, deselected: QItemSelection):
+                versionModel = QStandardItemModel()
+                dialog.versionList.setModel(versionModel)
+                if selected.length() < 1:
+                    return
+                modelS = selected.indexes()[0].data(Qt.UserRole)
                 versions = get_model_history(modelS["id"])
-                itemModel = QStandardItemModel()
-                dialog.versionList.setModel(itemModel)
-                dialog.versionList.setEditTriggers(QAbstractItemView.NoEditTriggers)
                 for version in versions:
                     date = datetime.fromisoformat(version['savedAt'][0:-1])
                     formattedDate = date.strftime("%d-%m-%Y %H:%M:%S")
                     is_current = modelS["hash"] == version['hash']
                     item = QStandardItem(f"{formattedDate}{' (current)' if is_current else ''}")
                     item.setData(version["id"], Qt.UserRole)
-                    itemModel.appendRow(item)
-            dialog.modelList.selectionModel().currentChanged.connect(selection_changed)
+                    versionModel.appendRow(item)
+            dialog.modelList.selectionModel().selectionChanged.connect(selection_changed)
 
             dialog.show()
             if dialog.exec_():
