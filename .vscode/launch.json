@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Current File",
+            "name": "Python: main.py",
             "type": "python",
             "request": "launch",
             "program": "main.py",
@@ -13,7 +13,7 @@
             "justMyCode": true
         },
         {
-            "name": "Python: Json From Model",
+            "name": "Python: json_from_model.py",
             "type": "python",
             "request": "launch",
             "program": "json_from_model.py",
