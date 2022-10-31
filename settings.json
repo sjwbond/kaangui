@@ -4,6 +4,7 @@
     "copyright" : "By: Modelly McModelface",
     "year" : 2021,
     "theme_name" : "default",
+    "api_path": "http://localhost:3000",
     "custom_title_bar": true,
     "startup_size": [
         1600,

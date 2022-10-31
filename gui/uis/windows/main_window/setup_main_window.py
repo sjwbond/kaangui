@@ -1,6 +1,6 @@
 # ///////////////////////////////////////////////////////////////
 from datetime import datetime
-from gui.uis.custom.api import create_model, get_model, get_model_history, get_model_version, list_models, send_model_to_processing, update_model
+from gui.uis.custom.api import WebAPI
 from gui.uis.custom.execution_controller import ExecutionController
 from gui.uis.custom.model_controller import ModelController
 from gui.uis.custom.model_helpers import model_to_dict
@@ -167,6 +167,10 @@ class SetupMainWindow:
         themes = Themes()
         self.themes = themes.items
 
+        # CREATE WebAPI INSTANCE
+        # ///////////////////////////////////////////////////////////////
+        self.api = WebAPI(settings.items["api_path"])
+
         # LEFT COLUMN
         # ///////////////////////////////////////////////////////////////
 
@@ -293,10 +297,10 @@ class SetupMainWindow:
             data = self.data | {"name": modelNode.data(Qt.DisplayRole), "Simulation": self.execution_controller.get_simulation(), "SystemInputs": model_to_dict(self.tree.rootModel)}
             modelId = modelNode.data(Qt.UserRole+1)
             if modelId == None:
-                modelId = create_model(data)
+                modelId = self.api.create_model(data)
                 self.tree.rootModel.invisibleRootItem().child(0, 0).setData(modelId, Qt.UserRole+1)
             else:
-                new_hash = update_model(modelId, data)
+                new_hash = self.api.update_model(modelId, data)
                 self.data["name"] = self.tree.rootModel.invisibleRootItem().child(0, 0).data(Qt.DisplayRole)
                 self.data["hash"] = new_hash
 
@@ -304,7 +308,7 @@ class SetupMainWindow:
 
         def open_model_from_api():
             dialog = OpenModelDialog()
-            models = list_models()
+            models = self.api.list_models()
             itemModel = QStandardItemModel()
             dialog.modelList.setModel(itemModel)
             dialog.modelList.setEditTriggers(QAbstractItemView.NoEditTriggers)
@@ -322,7 +326,7 @@ class SetupMainWindow:
                 if selected.length() < 1:
                     return
                 modelS = selected.indexes()[0].data(Qt.UserRole)
-                versions = get_model_history(modelS["id"])
+                versions = self.api.get_model_history(modelS["id"])
                 for version in versions:
                     date = datetime.fromisoformat(version['savedAt'][0:-1])
                     formattedDate = date.strftime("%d-%m-%Y %H:%M:%S")
@@ -343,9 +347,9 @@ class SetupMainWindow:
                 model = None
 
                 if len(versionSelection) == 0:
-                    model = get_model(modelS["id"])
+                    model = self.api.get_model(modelS["id"])
                 else:
-                    model = get_model_version(modelS["id"], versionSelection[0].data(Qt.UserRole))
+                    model = self.api.get_model_version(modelS["id"], versionSelection[0].data(Qt.UserRole))
 
                 self.data = model
                 self.system_inputs = model["SystemInputs"]
@@ -381,7 +385,7 @@ class SetupMainWindow:
         self.create_json_database_from_txt_files_button.clicked.connect(create_json_from_txt)
 
         def send_model_to_queue():
-            send_model_to_processing(self.data["name"], self.data["hash"], 100)
+            self.api.send_model_to_processing(self.data["name"], self.data["hash"], 100)
         self.execution_execute_button.clicked.connect(send_model_to_queue)
 
         self.tree.viewport().installEventFilter(self)

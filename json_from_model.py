@@ -1,7 +1,11 @@
 from datetime import datetime
 import json
 from typing import Union
-from gui.uis.custom.api import list_models, get_model, get_model_history, get_model_version
+from gui.core.json_settings import Settings
+from gui.uis.custom.api import WebAPI
+
+settings = Settings()
+api = WebAPI(settings.items["api_path"])
 
 def input_int(prompt: str, less_than: int, allow_empty: bool = False) -> Union[int, None]:
     user_input = input(prompt)
@@ -22,7 +26,7 @@ def input_int(prompt: str, less_than: int, allow_empty: bool = False) -> Union[i
     return user_input
 
 print("Models")
-models = list_models()
+models = api.list_models()
 for i in range(len(models)):
     print(f"  {i} - {models[i]['name']}")
 
@@ -31,7 +35,7 @@ model = models[model_index]
 
 print()
 print("Versions")
-versions = get_model_history(model["id"])
+versions = api.get_model_history(model["id"])
 for i in range(len(versions)):
     date = datetime.fromisoformat(versions[i]['savedAt'][0:-1])
     formattedDate = date.strftime("%d-%m-%Y %H:%M:%S")
@@ -42,11 +46,10 @@ version_index = input_int("Select a version: ", len(versions), True)
 
 full_model = None
 if version_index is None:
-    full_model = get_model(model["id"])
+    full_model = api.get_model(model["id"])
 else:
-    full_model = get_model_version(model["id"], versions[version_index]["id"])
+    full_model = api.get_model_version(model["id"], versions[version_index]["id"])
 
-del full_model["_id"]
 del full_model["id"]
 
 print()
