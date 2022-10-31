@@ -65,10 +65,10 @@ def send_model_to_processing(name: str, hash: str, priority: int):
 
 def strip_model(model: dict) -> dict:
   new_model = deepcopy(model)
-  model.pop("name", None)
-  model.pop("hash", None)
-  model.pop("id", None)
-  model.pop("_id", None)
+  new_model.pop("name", None)
+  new_model.pop("hash", None)
+  new_model.pop("id", None)
+  new_model.pop("_id", None)
   return new_model
 
 def compress_model(model: dict) -> bytes:
