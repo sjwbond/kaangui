@@ -592,11 +592,22 @@ class ModelController:
 
     def renameByModel(self):
         getSelected = self.tree.selectedIndexes()
-        text, okPressed = QInputDialog.getText(self.tree, "New name", "New name:", text=getSelected[0].data(0))
-        if okPressed and text != '':
+        oldName = getSelected[0].data(Qt.DisplayRole)
+        text, okPressed = QInputDialog.getText(self.tree, "New name", "New name:", text=oldName)
+        if okPressed and text != '' and text != oldName:
             self.create_undo_snapshot()
-            # TODO check for duplicate object name
-            self.tree.proxyModel.setData(self.tree.currentIndex(), text)
+            ix = self.tree.currentIndex()
+            ix2 = self.tree.proxyModel.mapToSource(ix)
+            it = self.tree.rootModel.itemFromIndex(ix2)
+
+            if text in self.tree.getChildren(it.parent()):
+                msg = QMessageBox()
+                msg.setWindowTitle("Rename Failed")
+                msg.setText("An object/folder with the same name already exists.")
+                msg.exec()
+                return
+
+            it.setData(text, Qt.DisplayRole)
             self.create_undo_snapshot()
 
     def copyByModel(self):
@@ -628,6 +639,10 @@ class ModelController:
         
         targetAncestors = self.tree.getAncestors(item)
         if self.clipboardAncestors[0:2] != targetAncestors[0:2]:
+            msg = QMessageBox()
+            msg.setWindowTitle("Paste Failed")
+            msg.setText("Cannot copy objects/folders across different top-level folders.")
+            msg.exec()
             return
         
         self.dictToPaste = {findFreeName(item, self.clipboardName, "Copy of ") : self.clipboardContents}
