@@ -493,6 +493,7 @@ class ModelController:
         self.dialogBox.tableWidget.setColumnCount(2)
         self.dialogBox.tableWidget.setHorizontalHeaderLabels(["Parent Object", "Parent Property"])
         self.dialogBox.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        self.dialogBox.tableWidget.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
             
         @Slot(str)
         def onTextChanged(text: str):
@@ -549,6 +550,7 @@ class ModelController:
 
         def click_remove_button():
             indexes = [index.row() for index in self.dialogBox.tableWidget.selectedIndexes()]
+            indexes = list(set(indexes))
             indexes.sort()
             indexes.reverse()
             for index in indexes:
