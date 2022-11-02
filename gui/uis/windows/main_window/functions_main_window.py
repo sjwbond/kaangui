@@ -105,11 +105,11 @@ class MainFunctions():
     def start_box_animation(self, left_box_width, right_box_width, direction):
         right_width = 0
         left_width = 0
-        time_animation = self.ui.settings["time_animation"]
-        minimum_left = self.ui.settings["left_column_size"]["minimum"]
-        maximum_left = self.ui.settings["left_column_size"]["maximum"]
-        minimum_right = self.ui.settings["right_column_size"]["minimum"]
-        maximum_right = self.ui.settings["right_column_size"]["maximum"]
+        time_animation = 500
+        minimum_left = 0
+        maximum_left = 240
+        minimum_right = 0
+        maximum_right = 240
 
         # Check Left Values        
         if left_box_width == minimum_left and direction == "left":

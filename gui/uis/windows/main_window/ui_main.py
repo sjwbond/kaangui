@@ -70,8 +70,8 @@ class UI_MainWindow(object):
         self.themes = themes.items
 
         # SET INITIAL PARAMETERS
-        parent.resize(self.settings["startup_size"][0], self.settings["startup_size"][1])
-        parent.setMinimumSize(self.settings["minimum_size"][0], self.settings["minimum_size"][1])
+        parent.resize(1600, 1000)
+        parent.setMinimumSize(960, 540)
 
         # SET CENTRAL WIDGET
         # Add central widget to app
@@ -107,8 +107,8 @@ class UI_MainWindow(object):
         # ADD FRAME LEFT MENU
         # Add here the custom left menu bar
         # ///////////////////////////////////////////////////////////////
-        left_menu_margin = self.settings["left_menu_content_margins"]
-        left_menu_minimum = self.settings["lef_menu_size"]["minimum"]
+        left_menu_margin = 3
+        left_menu_minimum = 50
         self.left_menu_frame = QFrame()
         self.left_menu_frame.setMaximumSize(left_menu_minimum + (left_menu_margin * 2), 17280)
         self.left_menu_frame.setMinimumSize(left_menu_minimum + (left_menu_margin * 2), 0)
@@ -146,8 +146,8 @@ class UI_MainWindow(object):
         # Add here the left column with Stacked Widgets
         # ///////////////////////////////////////////////////////////////
         self.left_column_frame = QFrame()
-        self.left_column_frame.setMaximumWidth(self.settings["left_column_size"]["minimum"])
-        self.left_column_frame.setMinimumWidth(self.settings["left_column_size"]["minimum"])
+        self.left_column_frame.setMaximumWidth(0)
+        self.left_column_frame.setMinimumWidth(0)
         self.left_column_frame.setStyleSheet(f"background: {self.themes['app_color']['bg_two']}")
 
         # ADD LAYOUT TO LEFT COLUMN
@@ -236,8 +236,8 @@ class UI_MainWindow(object):
 
         # RIGHT BAR
         self.right_column_frame = QFrame()
-        self.right_column_frame.setMinimumWidth(self.settings["right_column_size"]["minimum"])
-        self.right_column_frame.setMaximumWidth(self.settings["right_column_size"]["minimum"])
+        self.right_column_frame.setMinimumWidth(0)
+        self.right_column_frame.setMaximumWidth(0)
 
         # IMPORT RIGHT COLUMN
         # ///////////////////////////////////////////////////////////////
