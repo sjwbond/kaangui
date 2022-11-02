@@ -125,6 +125,14 @@ class MainWindow(QMainWindow):
         globalPos = p.toPoint()
         self.dragPos = globalPos
 
+    def closeEvent(self, event):
+        quit_msg = "Are you sure you want to exit the program? Any unsaved changes will be lost."
+        reply = QMessageBox.question(self, "Exit Confirmation", quit_msg, QMessageBox.Yes, QMessageBox.No)
+
+        if reply == QMessageBox.Yes:
+            event.accept()
+        else:
+            event.ignore()
 
 # SETTINGS WHEN TO START
 # Set the initial class and also additional parameters of the "QApplication" class
