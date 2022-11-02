@@ -5,8 +5,9 @@ import zlib
 import hashlib
 
 class WebAPI:
-  def __init__(self, api_path: str):
+  def __init__(self, api_path: str, user_id: str):
     self.api_path = api_path
+    self.user_id = user_id
 
   def list_models(self) -> list[dict]:
     req = requests.get(f"{self.api_path}/models")
@@ -23,10 +24,9 @@ class WebAPI:
     req = requests.get(f"{self.api_path}/models/history/{id}")
     return req.json()
 
-  def get_model_version(self, model_id: str, version_id: str) -> dict:
+  def get_model_version(self, version_id: str) -> dict:
     req = requests.get(f"{self.api_path}/models/version/{version_id}")
     metadata = req.json()
-    metadata["id"] = model_id
     filereq = requests.get(f"{self.api_path}/files/{metadata['hash']}")
     model = self.decompress_model(filereq.content)
     return model | metadata
@@ -38,10 +38,11 @@ class WebAPI:
     res = req.json()
     metadata = {
       "name": model["name"],
-      "hash": res["hash"]
+      "hash": res["hash"],
+      "user_id": self.user_id
     }
     req = requests.post(f"{self.api_path}/models", json=metadata)
-    return req.json()["id"]
+    return req.json()["modelId"]
 
   def update_model(self, id: str, model: dict) -> str:
     compressed = self.compress_model(model)
@@ -49,7 +50,8 @@ class WebAPI:
     res = req.json()
     metadata = {
       "name": model["name"],
-      "hash": res["hash"]
+      "hash": res["hash"],
+      "user_id": self.user_id
     }
     requests.put(f"{self.api_path}/models/{id}", json=metadata)
     return res["hash"]
@@ -61,7 +63,8 @@ class WebAPI:
     data = {
       "name": name,
       "hash": hash,
-      "priority": priority
+      "priority": priority,
+      "user_id": self.user_id
     }
     requests.post(f"{self.api_path}/jobs", json=data)
 
@@ -71,6 +74,9 @@ class WebAPI:
     new_model.pop("hash", None)
     new_model.pop("id", None)
     new_model.pop("_id", None)
+    new_model.pop("modelId", None)
+    new_model.pop("versionId", None)
+    new_model.pop("savedByName", None)
     return new_model
 
   def compress_model(self, model: dict) -> bytes:

@@ -5,7 +5,7 @@ from gui.core.json_settings import Settings
 from gui.uis.custom.api import WebAPI
 
 settings = Settings()
-api = WebAPI(settings.items["api_path"])
+api = WebAPI(settings.items["api_path"], settings.items["user_id"])
 
 def input_int(prompt: str, less_than: int, allow_empty: bool = False) -> Union[int, None]:
     user_input = input(prompt)

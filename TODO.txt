@@ -2,3 +2,4 @@ could we need the light theme in the future?
 force scenario uppercase?
 ask about priority mapping
 don't allow moving top-level folders or objects between top-level folders
+create defaultconfig.json

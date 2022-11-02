@@ -170,7 +170,7 @@ class SetupMainWindow:
 
         # CREATE WebAPI INSTANCE
         # ///////////////////////////////////////////////////////////////
-        self.api = WebAPI(settings.items["api_path"])
+        self.api = WebAPI(settings.items["api_path"], settings.items["user_id"])
 
         # LEFT COLUMN
         # ///////////////////////////////////////////////////////////////
@@ -326,8 +326,8 @@ class SetupMainWindow:
                 modelNode.setEditable(False)
                 modelNode.setIcon(QIcon(Functions.set_svg_icon("icon_restore.svg")))
                 modelNode.setData("model", Qt.UserRole)
-                if "id" in model:
-                    modelNode.setData(model["id"], Qt.UserRole+1)
+                if "modelId" in model:
+                    modelNode.setData(model["modelId"], Qt.UserRole+1)
                 modelNode.setFlags(Qt.ItemIsDropEnabled | modelNode.flags())
                 self.tree.rootNode.appendRow(modelNode)
                     
@@ -346,23 +346,33 @@ class SetupMainWindow:
                 item.setData(model, Qt.UserRole)
                 itemModel.appendRow(item)
 
-            versionModel = QStandardItemModel()
-            dialog.versionList.setModel(versionModel)
+            dialog.versionList.setColumnCount(4)
+            dialog.versionList.setHorizontalHeaderLabels(["Name", "Saved At", "Saved By", "Current?"])
+            dialog.versionList.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+            dialog.versionList.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
+            dialog.versionList.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
             dialog.versionList.setEditTriggers(QAbstractItemView.NoEditTriggers)
+            
             def selection_changed(selected: QItemSelection, deselected: QItemSelection):
-                versionModel = QStandardItemModel()
-                dialog.versionList.setModel(versionModel)
                 if selected.length() < 1:
-                    return
+                    dialog.versionList.setRowCount(0)
                 modelS = selected.indexes()[0].data(Qt.UserRole)
-                versions = self.api.get_model_history(modelS["id"])
-                for version in versions:
+                versions = self.api.get_model_history(modelS["modelId"])
+                dialog.versionList.setRowCount(len(versions))
+                for ix in range(len(versions)):
+                    version = versions[ix]
                     date = datetime.fromisoformat(version['savedAt'][0:-1])
-                    formattedDate = date.strftime("%d-%m-%Y %H:%M:%S")
+                    formatted_date = date.strftime("%d-%m-%Y %H:%M:%S")
                     is_current = modelS["hash"] == version['hash']
-                    item = QStandardItem(f"{formattedDate}{' (current)' if is_current else ''}")
-                    item.setData(version["id"], Qt.UserRole)
-                    versionModel.appendRow(item)
+
+                    name_item = QTableWidgetItem(version['name'])
+                    name_item.setData(Qt.UserRole, version["versionId"])
+
+                    dialog.versionList.setItem(ix, 0, name_item)
+                    dialog.versionList.setItem(ix, 1, QTableWidgetItem(formatted_date))
+                    dialog.versionList.setItem(ix, 2, QTableWidgetItem(version['savedByName']))
+                    dialog.versionList.setItem(ix, 3, QTableWidgetItem("Yes" if is_current else ""))
+
             dialog.modelList.selectionModel().selectionChanged.connect(selection_changed)
 
             dialog.show()
@@ -372,13 +382,13 @@ class SetupMainWindow:
                 if len(selection) < 1:
                     return
                     
-                modelId = selection[0].data(Qt.UserRole)["id"]
+                modelId = selection[0].data(Qt.UserRole)["modelId"]
                 model = None
 
                 if len(versionSelection) == 0:
                     model = self.api.get_model(modelId)
                 else:
-                    model = self.api.get_model_version(modelId, versionSelection[0].data(Qt.UserRole))
+                    model = self.api.get_model_version(versionSelection[0].data(Qt.UserRole))
                 
                 load_model(model)
         

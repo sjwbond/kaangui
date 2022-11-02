@@ -493,7 +493,7 @@ class ModelController:
         self.dialogBox.tableWidget.setColumnCount(2)
         self.dialogBox.tableWidget.setHorizontalHeaderLabels(["Parent Object", "Parent Property"])
         self.dialogBox.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
-        self.dialogBox.tableWidget.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
+        self.dialogBox.tableWidget.setSelectionBehavior(QAbstractItemView.SelectRows)
             
         @Slot(str)
         def onTextChanged(text: str):

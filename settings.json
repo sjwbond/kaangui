@@ -4,6 +4,7 @@
     "copyright" : "By: Modelly McModelface",
     "year" : 2021,
     "theme_name" : "default",
+    "user_id": "24ad7fa7-3e16-4220-976c-8374476e67e5",
     "api_path": "http://localhost:3000",
     "custom_title_bar": true,
     "startup_size": [
