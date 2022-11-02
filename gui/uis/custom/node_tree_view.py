@@ -48,19 +48,31 @@ class NodeTreeView(PyTreeView):
             item = item.parent()
         return list(reversed(res))
 
+    def getChildren(self, item: QStandardItem):
+        res = []
+        for row in range(item.rowCount()):
+            ix = self.rootModel.index(row, 0, item.index())
+            it = self.rootModel.itemFromIndex(ix)
+            res.append(it.data(Qt.DisplayRole))
+        return res
+
     def dragMoveEvent(self, event):
         pos = event.pos()
         ix = self.indexAt(pos)
         ix2 = self.proxyModel.mapToSource(ix)
         item = self.rootModel.itemFromIndex(ix2)
-        topLevelDrop = self.getAncestors(item)[0:2]
+        ancestorsDrop = self.getAncestors(item)
+        topLevelDrop = ancestorsDrop[0:2]
+        siblingsDrop = self.getChildren(item.parent() if item.data(Qt.UserRole) != "folder" else item)
 
         ix = self.selectedIndexes()[0]
         ix2 = self.proxyModel.mapToSource(ix)
         item = self.rootModel.itemFromIndex(ix2)
-        topLevelDrag = self.getAncestors(item)[0:2]
+        ancestorsDrag = self.getAncestors(item)
+        topLevelDrag = ancestorsDrag[0:2]
+        nameDrag = ancestorsDrag[-1]
 
-        if topLevelDrop == topLevelDrag:
+        if topLevelDrop == topLevelDrag and nameDrag not in siblingsDrop:
             event.accept()
         else:
             event.ignore()
