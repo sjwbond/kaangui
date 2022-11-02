@@ -40,6 +40,30 @@ class NodeTreeView(PyTreeView):
         self.setDragEnabled(True)
         self.setAcceptDrops(True)
         self.setDropIndicatorShown(True)
+    
+    def getAncestors(self, item: QStandardItem):
+        res = []
+        while item is not None:
+            res.append(item.data(Qt.DisplayRole))
+            item = item.parent()
+        return list(reversed(res))
+
+    def dragMoveEvent(self, event):
+        pos = event.pos()
+        ix = self.indexAt(pos)
+        ix2 = self.proxyModel.mapToSource(ix)
+        item = self.rootModel.itemFromIndex(ix2)
+        topLevelDrop = self.getAncestors(item)[0:2]
+
+        ix = self.selectedIndexes()[0]
+        ix2 = self.proxyModel.mapToSource(ix)
+        item = self.rootModel.itemFromIndex(ix2)
+        topLevelDrag = self.getAncestors(item)[0:2]
+
+        if topLevelDrop == topLevelDrag:
+            event.accept()
+        else:
+            event.ignore()
 
     def dropEvent(self, event):
         self.itemDropped.emit()
