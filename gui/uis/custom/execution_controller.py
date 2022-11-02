@@ -238,6 +238,18 @@ class ExecutionController:
         self.execution_tree.clicked.connect(self.selection_changed)
         self.execution_tree.customContextMenuRequested.connect(self.open_menu)
 
+        self.short_paste_object = QShortcut(QKeySequence("F2"), self.execution_tree)
+        self.short_paste_object.activated.connect(self.renameShortcut)
+
+        self.short_paste_object = QShortcut(QKeySequence("Delete"), self.execution_tree)
+        self.short_paste_object.activated.connect(self.deleteShortcut)
+
+        self.short_undo_object = QShortcut(QKeySequence("Ctrl+Z"), self.execution_tree)
+        self.short_undo_object.activated.connect(self.undo)
+
+        self.short_redo_object = QShortcut(QKeySequence("Ctrl+Y"), self.execution_tree)
+        self.short_redo_object.activated.connect(self.redo)
+
     def set_simulation(self, simulation: dict):
         self.simulation = simulation
         self.model = QStandardItemModel()
@@ -396,6 +408,11 @@ class ExecutionController:
         self.replace_item_in_models_settings(type, old_name, new_name)
 
         self.create_undo_snapshot_renamed(old_path, self.get_item_path(item))
+    
+    def renameShortcut(self):
+        current = self.execution_tree.currentIndex()
+        if current is not None:
+            self.rename(self.model.itemFromIndex(current))
 
     def delete(self, index: QModelIndex):
         ret = QMessageBox.question(None, "Delete", "Are you sure you wish to delete this object?", QMessageBox.Yes | QMessageBox.No)
@@ -406,6 +423,11 @@ class ExecutionController:
         self.create_undo_snapshot_removed(self.get_item_path(item), (item.data(Qt.UserRole), item.data(Qt.UserRole + 1)))
 
         self.model.removeRow(index.row(), index.parent())
+    
+    def deleteShortcut(self):
+        current = self.execution_tree.currentIndex()
+        if current is not None:
+            self.delete(current)
 
     def get_simulations(self, index: QModelIndex = None):
         res = []
