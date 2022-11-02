@@ -42,6 +42,12 @@ class ModelController:
 
         self.tree.setHeaderHidden(True)
 
+        self.tree.short_paste_object = QShortcut(QKeySequence("F2"), self.tree)
+        self.tree.short_paste_object.activated.connect(self.renameShortcut)
+
+        self.tree.short_paste_object = QShortcut(QKeySequence("Delete"), self.tree)
+        self.tree.short_paste_object.activated.connect(self.deleteShortcut)
+
         self.tree.short_cut_object = QShortcut(QKeySequence("Ctrl+X"), self.tree)
         self.tree.short_cut_object.activated.connect(self.cutShortcut)
 
@@ -657,6 +663,12 @@ class ModelController:
         self.dictToPaste = {findFreeName(item, self.clipboardName, "Copy of ") : self.clipboardContents}
         self.add_node_to_tree(copy.deepcopy(self.dictToPaste), item)
         self.create_undo_snapshot()
+
+    def renameShortcut(self):
+        self.renameByModel()
+
+    def deleteShortcut(self):
+        self.deleteByModel()
 
     def cutShortcut(self):
         self.cutByModel()
