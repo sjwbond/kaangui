@@ -42,11 +42,20 @@ class ModelController:
 
         self.tree.setHeaderHidden(True)
 
+        self.tree.short_cut_object = QShortcut(QKeySequence("Ctrl+X"), self.tree)
+        self.tree.short_cut_object.activated.connect(self.cutShortcut)
+
         self.tree.short_copy_object = QShortcut(QKeySequence("Ctrl+C"), self.tree)
         self.tree.short_copy_object.activated.connect(self.copyShortcut)
 
-        self.tree.short_copy_object = QShortcut(QKeySequence("Ctrl+V"), self.tree)
-        self.tree.short_copy_object.activated.connect(self.pasteShortcut)
+        self.tree.short_paste_object = QShortcut(QKeySequence("Ctrl+V"), self.tree)
+        self.tree.short_paste_object.activated.connect(self.pasteShortcut)
+
+        self.tree.short_undo_object = QShortcut(QKeySequence("Ctrl+Z"), self.tree)
+        self.tree.short_undo_object.activated.connect(self.undoShortcut)
+
+        self.tree.short_redo_object = QShortcut(QKeySequence("Ctrl+Y"), self.tree)
+        self.tree.short_redo_object.activated.connect(self.redoShortcut)
 
         self.properties_table_object_properties_dict= {}
         with open(os.getcwd()+"\\Properties of Object Types.csv", mode='r') as infile:
@@ -649,16 +658,21 @@ class ModelController:
         self.add_node_to_tree(copy.deepcopy(self.dictToPaste), item)
         self.create_undo_snapshot()
 
+    def cutShortcut(self):
+        self.cutByModel()
+
     def copyShortcut(self):
         self.copyByModel()
 
     def pasteShortcut(self):
-        if self.clipboardTypee == CLIPBOARD_FOLDER:
-            self.pasteFolderByModel()
-        elif self.clipboardTypee == CLIPBOARD_OBJECT:
-            self.pasteObjectByModel()
-        else:
-            pass
+        if self.clipboardType is not None:
+            self.pasteByModel()
+
+    def undoShortcut(self):
+        self.undo()
+
+    def redoShortcut(self):
+        self.redo()
 
     # Functions for object manipulation
     # ///////////////////////////////////////////////////////////////
