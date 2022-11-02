@@ -436,26 +436,31 @@ class ModelController:
                 qmenunewfolder.triggered.connect(self.createNewFolderByModel)
                 menu.addAction(qmenunewfolder)
 
-                qmenurenamefolder = QAction("Rename Folder")
-                qmenurenamefolder.triggered.connect(self.renameByModel)
-                menu.addAction(qmenurenamefolder)
+                isTopLevel = item.parent() == self.tree.rootModel.item(0, 0)
+
+                if not isTopLevel:
+                    qmenurenamefolder = QAction("Rename Folder")
+                    qmenurenamefolder.triggered.connect(self.renameByModel)
+                    menu.addAction(qmenurenamefolder)
 
                 qmenucopyfolder = QAction("Copy Folder and its content")
                 qmenucopyfolder.triggered.connect(self.copyByModel)
                 menu.addAction(qmenucopyfolder)
 
-                qmenucutfolder = QAction("Cut Folder and its content")
-                qmenucutfolder.triggered.connect(self.cutByModel)
-                menu.addAction(qmenucutfolder)
+                if not isTopLevel:
+                    qmenucutfolder = QAction("Cut Folder and its content")
+                    qmenucutfolder.triggered.connect(self.cutByModel)
+                    menu.addAction(qmenucutfolder)
 
                 if self.clipboardType != None:
                     qmenupaste = QAction("Paste " + self.clipboardName + " under " + self.tree.selectedIndexes()[0].data(0))
                     qmenupaste.triggered.connect(self.pasteByModel)
                     menu.addAction(qmenupaste)
 
-                qmenudeletefolder = QAction("Delete Folder and its content")
-                qmenudeletefolder.triggered.connect(self.deleteByModel)
-                menu.addAction(qmenudeletefolder)
+                if not isTopLevel:
+                    qmenudeletefolder = QAction("Delete Folder and its content")
+                    qmenudeletefolder.triggered.connect(self.deleteByModel)
+                    menu.addAction(qmenudeletefolder)
             else:
                 qmenurenameobject = QAction("Rename Object")
                 qmenurenameobject.triggered.connect(self.renameByModel)
@@ -619,7 +624,7 @@ class ModelController:
         if getSelected[0].data(Qt.UserRole) != "folder" and getSelected[0].data(Qt.UserRole) != "model":
             item = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0].parent()))
             
-        self.dictToPaste = {findFreeName(item, self.clipboardName) : self.clipboardContents}
+        self.dictToPaste = {findFreeName(item, self.clipboardName, "Copy of ") : self.clipboardContents}
         self.add_node_to_tree(copy.deepcopy(self.dictToPaste), item)
         self.create_undo_snapshot()
 
@@ -643,16 +648,18 @@ class ModelController:
             if okPressed and text != '':
                 getSelected = self.tree.selectedIndexes()
                 keysList = self.getNodeNameAndParentList(getSelected)
-                newObjectDict = {text : {
-                "Object_Name": text,
+                item = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0]))
+                name = findFreeName(item, text)
+                newObjectDict = {name : {
+                "Object_Name": name,
                 "Object_Type": keysList[1],
                 "Parent Objects": [],
                 "Properties": []
                 }}
 
-            self.create_undo_snapshot()
-            self.add_node_to_tree(newObjectDict, self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])))
-            self.create_undo_snapshot()
+                self.create_undo_snapshot()
+                self.add_node_to_tree(newObjectDict, item)
+                self.create_undo_snapshot()
 
         except Exception as e:
             raise
