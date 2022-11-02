@@ -214,7 +214,9 @@ QHeaderView::section:vertical
 '''
 
 
-class ExecutionController:
+class ExecutionController(QObject):
+    executed = Signal(int)
+
     def __init__(self, node_tree: NodeTreeView, execution_tree: QTreeView, container: QScrollArea) -> None:
         self.node_tree = node_tree
         self.execution_tree = execution_tree
@@ -249,6 +251,8 @@ class ExecutionController:
 
         self.short_redo_object = QShortcut(QKeySequence("Ctrl+Y"), self.execution_tree)
         self.short_redo_object.activated.connect(self.redo)
+
+        super().__init__()
 
     def set_simulation(self, simulation: dict):
         self.simulation = simulation
@@ -316,10 +320,10 @@ class ExecutionController:
                     menu = QMenu()
 
                     if type == "models":
-                        priorities = ["Low", "Normal", "High", "Urgent"]
+                        priorities = [("Low", 25), ("Normal", 50), ("High", 75), ("Urgent", 100)]
                         menuitems = []
-                        for priority in priorities:
-                            menuitem = QAction(f"{priority} Priority")
+                        for (label, priority) in priorities:
+                            menuitem = QAction(f"{label} Priority")
                             menuitem.triggered.connect(partial(self.execute_model, item, priority))
                             menuitems.append(menuitem)
 
@@ -371,7 +375,7 @@ class ExecutionController:
 
     def execute_model(self, item: QStandardItem, priority: str):
         self.check_save_data(item)
-        print(f"Execute model {item.data(Qt.DisplayRole)} with {priority} priority")
+        self.executed.emit(priority)
 
     def replace_item_in_models_settings(self, type: str, old: str, new: str):
         items = self.get_objects_of_type("leaf", "models")
@@ -747,6 +751,3 @@ class ExecutionController:
         if item is not None:
             self.redo_snapshot_diff(item)
             self.selection_changed()
-
-    def execute(self):
-        pass

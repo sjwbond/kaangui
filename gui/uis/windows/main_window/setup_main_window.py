@@ -1,5 +1,6 @@
 # ///////////////////////////////////////////////////////////////
 from datetime import datetime
+from functools import partial
 import re
 from gui.uis.custom.api import WebAPI
 from gui.uis.custom.execution_controller import ExecutionController
@@ -430,9 +431,9 @@ class SetupMainWindow:
                     json.dump(data, fp, sort_keys=True, indent=4)
         self.create_json_database_from_txt_files_button.clicked.connect(create_json_from_txt)
 
-        def send_model_to_queue():
-            self.api.send_model_to_processing(self.data["name"], self.data["hash"], 100)
-        self.execution_execute_button.clicked.connect(send_model_to_queue)
+        def send_model_to_queue(priority):
+            self.api.send_model_to_processing(self.data["name"], self.data["hash"], priority)
+        self.execution_execute_button.clicked.connect(partial(send_model_to_queue, 100))
 
         self.tree.viewport().installEventFilter(self)
 
@@ -453,11 +454,11 @@ class SetupMainWindow:
         self.execution_screen_scroll_area.setStyleSheet("QFrame { background-color: #2B2E3B; }")
 
         self.execution_controller = ExecutionController(self.tree, self.execution_tree, self.execution_screen_scroll_area)
+        self.execution_controller.executed.connect(send_model_to_queue)
 
         self.execution_undo_button.clicked.connect(self.execution_controller.undo)
         self.execution_redo_button.clicked.connect(self.execution_controller.redo)
         self.execution_save_button.clicked.connect(self.execution_controller.save)
-        self.execution_execute_button.clicked.connect(self.execution_controller.execute)
 
         # ADD WIDGETS
         self.ui.load_pages.table_button_layout.addWidget(self.add_table_row_button)
@@ -484,4 +485,4 @@ class SetupMainWindow:
         self.ui.load_pages.row_9_layout.addWidget(self.execution_undo_button)
         self.ui.load_pages.row_9_layout.addWidget(self.execution_redo_button)
         self.ui.load_pages.row_9_layout.addWidget(self.execution_save_button)
-        self.ui.load_pages.row_9_layout.addWidget(self.execution_execute_button)
+        # self.ui.load_pages.row_9_layout.addWidget(self.execution_execute_button)
