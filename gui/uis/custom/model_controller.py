@@ -38,6 +38,7 @@ class ModelController:
         self.clipboardType = None
         self.clipboardContents = None
         self.clipboardName = None
+        self.clipboardAncestors = None
 
         self.tree.setHeaderHidden(True)
 
@@ -594,13 +595,14 @@ class ModelController:
         text, okPressed = QInputDialog.getText(self.tree, "New name", "New name:", text=getSelected[0].data(0))
         if okPressed and text != '':
             self.create_undo_snapshot()
-            # TODO check for duplicate model name
+            # TODO check for duplicate object name
             self.tree.proxyModel.setData(self.tree.currentIndex(), text)
             self.create_undo_snapshot()
 
     def copyByModel(self):
         getSelected = self.tree.selectedIndexes()
         self.clipboardName = getSelected[0].data(Qt.DisplayRole)
+        self.clipboardAncestors = self.tree.getAncestors(getSelected[0])
         type = getSelected[0].data(Qt.UserRole)
         if type == "folder":
             self.clipboardContents = copy.deepcopy(model_to_dict_1(self.tree.rootModel.indexFromItem(self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0]))), self.tree.rootModel))
@@ -623,7 +625,11 @@ class ModelController:
 
         if getSelected[0].data(Qt.UserRole) != "folder" and getSelected[0].data(Qt.UserRole) != "model":
             item = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0].parent()))
-            
+        
+        targetAncestors = self.tree.getAncestors(item)
+        if self.clipboardAncestors[0:2] != targetAncestors[0:2]:
+            return
+        
         self.dictToPaste = {findFreeName(item, self.clipboardName, "Copy of ") : self.clipboardContents}
         self.add_node_to_tree(copy.deepcopy(self.dictToPaste), item)
         self.create_undo_snapshot()

@@ -43,7 +43,7 @@ class NodeTreeView(PyTreeView):
     
     def getAncestors(self, item: QStandardItem):
         res = []
-        while item is not None:
+        while item is not None and item.data(Qt.DisplayRole) is not None:
             res.append(item.data(Qt.DisplayRole))
             item = item.parent()
         return list(reversed(res))
