@@ -41,20 +41,20 @@ QPushButton {
 	border: none;
     padding-left: 10px;
     padding-right: 10px;
-    color: #f8f8f2;
+    color: #f5f6f9;
 	border-radius: 8px;	
-	background-color: #282a36;
+	background-color: #1b1e23;
     min-height: 30px;
 }
 QPushButton:hover {
-	background-color: #333645;
+	background-color: #21252d;
 }
 QPushButton:pressed {
-	background-color: #3C4052;
+	background-color: #272c36;
 }
 
 QGroupBox {
-    border: 1px solid #4D5066;
+    border: 1px solid #343b48;
     border-radius: 8px;
     margin-top: 8px;
 }
@@ -66,52 +66,52 @@ QGroupBox::title {
 
 QSpinBox,
 QDoubleSpinBox {
-	background-color: #282a36;
+	background-color: #1b1e23;
 	border-radius: 8px;
 	border: 2px solid transparent;
 	padding-left: 10px;
     padding-right: 10px;
 	selection-color: #f5f6f9;
 	selection-background-color: #555555;
-    color: #f8f8f2;
+    color: #f5f6f9;
     min-height: 25px;
 }
 QSpinBox:focus,
 QDoubleSpinBox:focus {
 	border: 2px solid #ffffff;
-    background-color: #333645;
+    background-color: #21252d;
 }
 
 QComboBox {
-	background-color: #282a36;
+	background-color: #1b1e23;
 	border-radius: 8px;
 	border: 2px solid transparent;
 	padding-left: 10px;
     padding-right: 10px;
 	selection-color: #f5f6f9;
 	selection-background-color: #555555;
-    color: #f8f8f2;
+    color: #f5f6f9;
     min-height: 25px;
 }
 QComboBox:focus {
 	border: 2px solid #ffffff;
-    background-color: #333645;
+    background-color: #21252d;
 }
 
 QDateEdit {
-	background-color: #282a36;
+	background-color: #1b1e23;
 	border-radius: 8px;
 	border: 2px solid transparent;
 	padding-left: 10px;
     padding-right: 10px;
 	selection-color: #f5f6f9;
 	selection-background-color: #555555;
-    color: #f8f8f2;
+    color: #f5f6f9;
     min-height: 25px;
 }
 QDateEdit:focus {
 	border: 2px solid #ffffff;
-    background-color: #333645;
+    background-color: #21252d;
 }
 
 QLineEdit {
@@ -125,15 +125,15 @@ QLineEdit {
 }
 QLineEdit:focus {
 	border: 0px solid transparent;
-    background-color: #4D5066;
+    background-color: #343b48;
 }
 
 QTableWidget {	
-	background-color: #4D5066;
+	background-color: #343b48;
 	padding: 5px;
 	border-radius: 8px;
 	gridline-color: #44475a;
-    color: #f8f8f2;
+    color: #f5f6f9;
 }
 QTableWidget::item{
 	border-color: none;
@@ -143,10 +143,10 @@ QTableWidget::item{
     border-bottom: 1px solid #595D75;
 }
 QTableWidget::item:selected{
-	background-color: #4D5066;
+	background-color: #343b48;
 }
 QHeaderView::section{
-	background-color: #4D5066;
+	background-color: #343b48;
 	max-width: 30px;
 	border: 1px solid rgb(44, 49, 58);
 	border-style: none;
@@ -154,20 +154,20 @@ QHeaderView::section{
     border-right: 1px solid rgb(44, 49, 60);
 }
 QTableWidget::horizontalHeader {	
-	background-color: #4D5066;
+	background-color: #343b48;
 }
 QTableWidget QTableCornerButton::section {
     border: none;
-	background-color: #4D5066;
+	background-color: #343b48;
 	padding: 3px;
     border-top-left-radius: 8px;
 }
 QTableView {	
-	background-color: #4D5066;
+	background-color: #343b48;
 	padding: 5px;
 	border-radius: 8px;
 	gridline-color: #44475a;
-    color: #f8f8f2;
+    color: #f5f6f9;
 }
 QTableView::item{
 	border-color: none;
@@ -177,10 +177,10 @@ QTableView::item{
     border-bottom: 1px solid #595D75;
 }
 QTableView::item:selected{
-	background-color: #4D5066;
+	background-color: #343b48;
 }
 QHeaderView::section{
-	background-color: #4D5066;
+	background-color: #343b48;
 	max-width: 30px;
 	border: 1px solid rgb(44, 49, 58);
 	border-style: none;
@@ -188,24 +188,24 @@ QHeaderView::section{
     border-right: 1px solid rgb(44, 49, 60);
 }
 QTableView::horizontalHeader {	
-	background-color: #4D5066;
+	background-color: #343b48;
 }
 QTableView QTableCornerButton::section {
     border: none;
-	background-color: #4D5066;
+	background-color: #343b48;
 	padding: 3px;
     border-top-left-radius: 8px;
 }
 QHeaderView::section:horizontal
 {
     border: none;
-	background-color: #4D5066;
+	background-color: #343b48;
 	padding: 3px;
 }
 QHeaderView::section:vertical
 {
     border: none;
-	background-color: #4D5066;
+	background-color: #343b48;
 	padding-left: 5px;
     padding-right: 5px;
     border-bottom: 1px solid #595D75;
