@@ -80,6 +80,8 @@ class PyLeftMenu(QWidget):
         self._icon_path = Functions.set_svg_icon(icon_path)
         self._icon_path_close = Functions.set_svg_icon(icon_path_close)
 
+        self._expanded = False
+
         # SET PARENT
         self._parent = parent
         self._app_parent = app_parent
@@ -179,16 +181,18 @@ class PyLeftMenu(QWidget):
         # CREATE ANIMATION
         self.animation = QPropertyAnimation(self._parent, b"minimumWidth")
         self.animation.stop()
-        if self.width() == self._minimum_width:
+        if not self._expanded:
             self.animation.setStartValue(self.width())
             self.animation.setEndValue(self._maximum_width)
             self.toggle_button.set_active_toggle(True)
             self.toggle_button.set_icon(self._icon_path_close)
+            self._expanded = True
         else:
             self.animation.setStartValue(self.width())
             self.animation.setEndValue(self._minimum_width)
             self.toggle_button.set_active_toggle(False)
             self.toggle_button.set_icon(self._icon_path)
+            self._expanded = False
         self.animation.setEasingCurve(QEasingCurve.InOutCubic)
         self.animation.setDuration(self._duration_time)
         self.animation.start()
