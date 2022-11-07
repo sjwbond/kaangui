@@ -1,3 +1,3 @@
-could we need the light theme in the future?
-force scenario uppercase?
 ask about priority mapping
+ask about execution button logic
+use theme variables in ExecutionController

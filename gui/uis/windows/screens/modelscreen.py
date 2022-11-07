@@ -208,7 +208,7 @@ class Ui_ModelScreen(object):
         self.scenarios_tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         self.scenarios_tableWidget.verticalHeader().hide()
 
-        scenarios = list(set(scenarios))
+        scenarios = list(set([scenario.upper() for scenario in scenarios]))
         self.scenarios_tableWidget.setRowCount(len(scenarios))
         for i in range(len(scenarios)):
             self.scenarios_tableWidget.setCellWidget(i, 0, QCheckBox())
