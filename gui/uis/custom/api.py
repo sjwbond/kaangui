@@ -42,7 +42,7 @@ class WebAPI:
       "user_id": self.user_id
     }
     req = requests.post(f"{self.api_path}/models", json=metadata)
-    return req.json()["modelId"]
+    return (req.json()["modelId"], res["hash"])
 
   def update_model(self, id: str, model: dict) -> str:
     compressed = self.compress_model(model)

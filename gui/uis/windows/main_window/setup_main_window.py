@@ -303,8 +303,10 @@ class SetupMainWindow:
             data = dump_model()
             modelId = self.tree.rootModel.index(0, 0).data(Qt.UserRole+1)
             if modelId == None:
-                modelId = self.api.create_model(data)
+                (modelId, hash) = self.api.create_model(data)
                 self.tree.rootModel.invisibleRootItem().child(0, 0).setData(modelId, Qt.UserRole+1)
+                self.data["name"] = self.tree.rootModel.invisibleRootItem().child(0, 0).data(Qt.DisplayRole)
+                self.data["hash"] = hash
             else:
                 new_hash = self.api.update_model(modelId, data)
                 self.data["name"] = self.tree.rootModel.invisibleRootItem().child(0, 0).data(Qt.DisplayRole)
@@ -432,6 +434,7 @@ class SetupMainWindow:
         self.create_json_database_from_txt_files_button.clicked.connect(create_json_from_txt)
 
         def send_model_to_queue(priority):
+            save_model_to_api()
             self.api.send_model_to_processing(self.data["name"], self.data["hash"], priority)
         self.execution_execute_button.clicked.connect(partial(send_model_to_queue, 100))
 
