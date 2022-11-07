@@ -459,9 +459,13 @@ class SetupMainWindow:
         self.execution_controller = ExecutionController(self.tree, self.execution_tree, self.execution_screen_scroll_area)
         self.execution_controller.executed.connect(send_model_to_queue)
 
+        def save_execution():
+            self.execution_controller.save()
+            save_model_to_api()
+
         self.execution_undo_button.clicked.connect(self.execution_controller.undo)
         self.execution_redo_button.clicked.connect(self.execution_controller.redo)
-        self.execution_save_button.clicked.connect(self.execution_controller.save)
+        self.execution_save_button.clicked.connect(save_execution)
 
         # ADD WIDGETS
         self.ui.load_pages.table_button_layout.addWidget(self.add_table_row_button)
