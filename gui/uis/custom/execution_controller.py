@@ -215,7 +215,7 @@ QHeaderView::section:vertical
 
 
 class ExecutionController(QObject):
-    executed = Signal(int)
+    executed = Signal(str, int)
 
     def __init__(self, node_tree: NodeTreeView, execution_tree: QTreeView, container: QScrollArea) -> None:
         self.node_tree = node_tree
@@ -375,7 +375,7 @@ class ExecutionController(QObject):
 
     def execute_model(self, item: QStandardItem, priority: str):
         self.check_save_data(item)
-        self.executed.emit(priority)
+        self.executed.emit(item.data(Qt.DisplayRole), priority)
 
     def replace_item_in_models_settings(self, type: str, old: str, new: str):
         items = self.get_objects_of_type("leaf", "models")

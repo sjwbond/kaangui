@@ -433,10 +433,10 @@ class SetupMainWindow:
                     json.dump(data, fp, sort_keys=True, indent=4)
         self.create_json_database_from_txt_files_button.clicked.connect(create_json_from_txt)
 
-        def send_model_to_queue(priority):
+        def send_model_to_queue(name, priority):
             save_model_to_api()
-            self.api.send_model_to_processing(self.data["name"], self.data["hash"], priority)
-        self.execution_execute_button.clicked.connect(partial(send_model_to_queue, 100))
+            self.api.send_model_to_processing(name, self.data["hash"], priority)
+        # self.execution_execute_button.clicked.connect(partial(send_model_to_queue, 100))
 
         self.tree.viewport().installEventFilter(self)
 
