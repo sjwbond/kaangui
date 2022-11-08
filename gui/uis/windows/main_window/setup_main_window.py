@@ -451,8 +451,6 @@ class SetupMainWindow:
         )
 
         self.execution_screen_scroll_area = QScrollArea()
-        # TODO fix stylesheet
-        self.execution_screen_scroll_area.setStyleSheet("QFrame { background-color: #2B2E3B; }")
 
         self.execution_controller = ExecutionController(
             node_tree=self.tree,

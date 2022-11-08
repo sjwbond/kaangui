@@ -36,6 +36,12 @@ tree_structure = {
     }
 }
 
+container_style = '''
+QFrame {{
+    background-color: {background_color};
+    border: none;
+}}
+'''
 
 style = '''
 QPushButton {{
@@ -227,6 +233,8 @@ class ExecutionController(QObject):
         self.simulation = {}
         self.right_side_screen = None
         self.last_index = None
+
+        container.setStyleSheet(container_style.format(background_color=theme["bg_one"]))
 
         self.undo_history: list[dict] = []
         self.redo_history: list[dict] = []
