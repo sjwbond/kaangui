@@ -9,32 +9,9 @@ from gui.uis.windows.screens.pasascreen import Ui_PASAScreen, pasa_default_input
 from gui.uis.windows.screens.productionscreen import Ui_ProductionScreen, production_default_input
 from gui.uis.windows.screens.stochasticscreen import Ui_StochasticScreen, stochastic_default_input
 from gui.uis.windows.screens.stschedulescreen import Ui_STScheduleScreen, stschedule_default_input
-from gui.uis.custom.constants import execution_priorities
+from gui.uis.custom.constants import tree_structure, execution_priorities
 from qt_core import *
 
-
-tree_structure = {
-    "Execute": {
-        "Models": ("Model", "models"),
-        "Projects": ("Project", "projects")
-    },
-    "Settings": {
-        "Competition": ("Competition", "competition"),
-        "Diagnostics": ("Diagnostic", "diagnostics"),
-        "Performance": ("Performance", "performance"),
-        "Production": ("Production", "production"),
-        "Stochastics": ("Stochastic", "stochastics"),
-        "Transmission": ("Transmission", "transmission")
-    },
-    "Simulation": {
-        "ST Schedule": ("Short Term Schedule", "stschedule"),
-        "MT Schedule": ("Medium Term Schedule", "mtschedule"),
-        "LT Plan": ("Long Term Plan", "ltplan"),
-        "Horizons": ("Horizaon", "horizons"),
-        "PASA": ("PASA", "pasa"),
-        "Reports": ("Report", "reports")
-    }
-}
 
 container_style = '''
 QFrame {{
