@@ -1,0 +1,1 @@
+execution_priorities = [("Low", 25), ("Normal", 50), ("High", 75), ("Urgent", 100)]

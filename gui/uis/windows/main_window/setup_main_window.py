@@ -195,7 +195,6 @@ class SetupMainWindow:
         self.execution_undo_button = StyledButton(text="Undo", themes=self.themes, icon_name="icon_undo.svg")
         self.execution_redo_button = StyledButton(text="Redo", themes=self.themes, icon_name="icon_redo.svg")
         self.execution_save_button = StyledButton(text="Save", themes=self.themes, icon_name="icon_save.svg")
-        self.execution_execute_button = StyledButton(text="Execute", themes=self.themes, icon_name="icon_signal.svg")
 
         # PY LINE EDIT
         self.filterEdit = PyLineEdit(
@@ -436,7 +435,6 @@ class SetupMainWindow:
         def send_model_to_queue(name, priority):
             save_model_to_api()
             self.api.send_model_to_processing(name, self.data["hash"], priority)
-        # self.execution_execute_button.clicked.connect(partial(send_model_to_queue, 100))
 
         self.tree.viewport().installEventFilter(self)
 
@@ -492,4 +490,3 @@ class SetupMainWindow:
         self.ui.load_pages.row_9_layout.addWidget(self.execution_undo_button)
         self.ui.load_pages.row_9_layout.addWidget(self.execution_redo_button)
         self.ui.load_pages.row_9_layout.addWidget(self.execution_save_button)
-        # self.ui.load_pages.row_9_layout.addWidget(self.execution_execute_button)

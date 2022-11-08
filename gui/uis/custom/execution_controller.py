@@ -9,6 +9,7 @@ from gui.uis.windows.screens.pasascreen import Ui_PASAScreen, pasa_default_input
 from gui.uis.windows.screens.productionscreen import Ui_ProductionScreen, production_default_input
 from gui.uis.windows.screens.stochasticscreen import Ui_StochasticScreen, stochastic_default_input
 from gui.uis.windows.screens.stschedulescreen import Ui_STScheduleScreen, stschedule_default_input
+from gui.uis.custom.constants import execution_priorities
 from qt_core import *
 
 
@@ -320,9 +321,8 @@ class ExecutionController(QObject):
                     menu = QMenu()
 
                     if type == "models":
-                        priorities = [("Low", 25), ("Normal", 50), ("High", 75), ("Urgent", 100)]
                         menuitems = []
-                        for (label, priority) in priorities:
+                        for (label, priority) in execution_priorities:
                             menuitem = QAction(f"{label} Priority")
                             menuitem.triggered.connect(partial(self.execute_model, item, priority))
                             menuitems.append(menuitem)
@@ -373,9 +373,16 @@ class ExecutionController(QObject):
 
         self.create_undo_snapshot_added(self.get_item_path(subitem), (subitem.data(Qt.UserRole), subitem.data(Qt.UserRole + 1)))
 
-    def execute_model(self, item: QStandardItem, priority: str):
+    def execute_model(self, item: QStandardItem, priority: int):
         self.check_save_data(item)
         self.executed.emit(item.data(Qt.DisplayRole), priority)
+
+    def execute_selected_model(self, priority: int):
+        if len(self.execution_tree.selectedIndexes()) > 0:
+            index = self.execution_tree.selectedIndexes()[0]
+            item = self.model.itemFromIndex(index)
+            self.check_save_data(item)
+            self.executed.emit(item.data(Qt.DisplayRole), priority)
 
     def replace_item_in_models_settings(self, type: str, old: str, new: str):
         items = self.get_objects_of_type("leaf", "models")
@@ -550,6 +557,8 @@ class ExecutionController(QObject):
         self.right_side_screen = screen
         self.right_side_screen.setupUi(self.right_side_frame)
         
+        if hasattr(self.right_side_screen, "executed"):
+            self.right_side_screen.executed.connect(self.execute_selected_model)
         if hasattr(self.right_side_screen, "setOptions"):
             self.right_side_screen.setOptions(self.get_objects_of_level_by_type("leaf"))
         if hasattr(self.right_side_screen, "setScenarios"):
