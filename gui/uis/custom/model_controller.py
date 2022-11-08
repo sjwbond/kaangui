@@ -64,7 +64,7 @@ class ModelController:
         self.tree.short_redo_object.activated.connect(self.redoShortcut)
 
         self.properties_table_object_properties_dict= {}
-        with open(os.getcwd()+"\\Properties of Object Types.csv", mode='r') as infile:
+        with open(os.getcwd()+"/Properties of Object Types.csv", mode='r') as infile:
             reader = csv.reader(infile)
             for rows in reader:
                 if rows[0] not in self.properties_table_object_properties_dict:
@@ -540,7 +540,7 @@ class ModelController:
             self.dialogBox.listWidget.addItem(item)
 
         items_obj_prop = []
-        with open(os.getcwd()+"\\ParentProperties.csv", mode='r') as infile:
+        with open(os.getcwd()+"/ParentProperties.csv", mode='r') as infile:
             reader = csv.reader(infile)
             for rows in reader:
                 items_obj_prop.append(rows[0])
