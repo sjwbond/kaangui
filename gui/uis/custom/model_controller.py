@@ -315,21 +315,10 @@ class ModelController:
     def save_parent_table(self):
         self.create_undo_snapshot()
         getSelected = self.tree.selectedIndexes()
-
-        listofParentsToAppend = []
-        data = self.parents_model.getData()
-        for row in data:
-            tempDict = {
-                "Parent Object": row[0],
-                "Parent Property": row[1]
-            }
-            listofParentsToAppend.append(tempDict)
-        
-        # TODO clean up this bit
-        temp = copy.deepcopy(self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])).data(Qt.UserRole))
-        temp["Parent Objects"].clear()
-        temp["Parent Objects"] = listofParentsToAppend.copy()
-        self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])).setData(temp, Qt.UserRole)
+        item = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0]))
+        data = item.data(Qt.UserRole)
+        data["Parent Objects"] = [{"Parent Object": row[0], "Parent Property": row[1]} for row in self.parents_model.getData()]
+        item.setData(data, Qt.UserRole)
         self.create_undo_snapshot()
 
     def delete_seleted_rows_parent(self):
