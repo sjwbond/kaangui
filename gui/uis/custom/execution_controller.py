@@ -38,84 +38,84 @@ tree_structure = {
 
 
 style = '''
-QPushButton {
+QPushButton {{
 	border: none;
     padding-left: 10px;
     padding-right: 10px;
-    color: #f5f6f9;
-	border-radius: 8px;	
-	background-color: #1b1e23;
+    color: {foreground_color};
+	border-radius: {border_radius}px;	
+	background-color: {background_color};
     min-height: 30px;
-}
-QPushButton:hover {
-	background-color: #21252d;
-}
-QPushButton:pressed {
-	background-color: #272c36;
-}
+}}
+QPushButton:hover {{
+	background-color: {focus_color};
+}}
+QPushButton:pressed {{
+	background-color: {pressed_color};
+}}
 
-QGroupBox {
-    border: 1px solid #343b48;
-    border-radius: 8px;
+QGroupBox {{
+    border: 1px solid {background_color_2};
+    border-radius: {border_radius}px;
     margin-top: 8px;
-}
-QGroupBox::title {
+}}
+QGroupBox::title {{
     subcontrol-origin: margin;
     left: 7px;
     padding: 0px 5px 0px 5px;
-}
+}}
 
 QSpinBox,
-QDoubleSpinBox {
-	background-color: #1b1e23;
-	border-radius: 8px;
+QDoubleSpinBox {{
+	background-color: {background_color};
+	border-radius: {border_radius}px;
 	border: 2px solid transparent;
 	padding-left: 10px;
     padding-right: 10px;
-	selection-color: #f5f6f9;
+	selection-color: {foreground_color};
 	selection-background-color: #555555;
-    color: #f5f6f9;
+    color: {foreground_color};
     min-height: 25px;
-}
+}}
 QSpinBox:focus,
-QDoubleSpinBox:focus {
+QDoubleSpinBox:focus {{
 	border: 2px solid #ffffff;
-    background-color: #21252d;
-}
+    background-color: {focus_color};
+}}
 
-QComboBox {
-	background-color: #1b1e23;
-	border-radius: 8px;
+QComboBox {{
+	background-color: {background_color};
+	border-radius: {border_radius}px;
 	border: 2px solid transparent;
 	padding-left: 10px;
     padding-right: 10px;
-	selection-color: #f5f6f9;
+	selection-color: {foreground_color};
 	selection-background-color: #555555;
-    color: #f5f6f9;
+    color: {foreground_color};
     min-height: 25px;
-}
-QComboBox:focus {
+}}
+QComboBox:focus {{
 	border: 2px solid #ffffff;
-    background-color: #21252d;
-}
+    background-color: {focus_color};
+}}
 
-QDateEdit {
-	background-color: #1b1e23;
-	border-radius: 8px;
+QDateEdit {{
+	background-color: {background_color};
+	border-radius: {border_radius}px;
 	border: 2px solid transparent;
 	padding-left: 10px;
     padding-right: 10px;
-	selection-color: #f5f6f9;
+	selection-color: {foreground_color};
 	selection-background-color: #555555;
-    color: #f5f6f9;
+    color: {foreground_color};
     min-height: 25px;
-}
-QDateEdit:focus {
+}}
+QDateEdit:focus {{
 	border: 2px solid #ffffff;
-    background-color: #21252d;
-}
+    background-color: {focus_color};
+}}
 
-QLineEdit {
+QLineEdit {{
 	background-color: #333;
 	border: 0px solid transparent;
 	padding-left: 1px;
@@ -123,105 +123,106 @@ QLineEdit {
 	selection-color: #FFF;
 	selection-background-color: #00ABE8;
     color: #FFF;
-}
-QLineEdit:focus {
+}}
+QLineEdit:focus {{
 	border: 0px solid transparent;
-    background-color: #343b48;
-}
+    background-color: {background_color_2};
+}}
 
-QTableWidget {	
-	background-color: #343b48;
+QTableWidget {{
+	background-color: {background_color_2};
 	padding: 5px;
-	border-radius: 8px;
+	border-radius: {border_radius}px;
 	gridline-color: #44475a;
-    color: #f5f6f9;
-}
-QTableWidget::item{
+    color: {foreground_color};
+}}
+QTableWidget::item{{
 	border-color: none;
 	padding-left: 5px;
 	padding-right: 5px;
 	gridline-color: rgb(44, 49, 60);
     border-bottom: 1px solid #595D75;
-}
-QTableWidget::item:selected{
-	background-color: #343b48;
-}
-QHeaderView::section{
-	background-color: #343b48;
+}}
+QTableWidget::item:selected{{
+	background-color: {background_color_2};
+}}
+QHeaderView::section{{
+	background-color: {background_color_2};
 	max-width: 30px;
 	border: 1px solid rgb(44, 49, 58);
 	border-style: none;
     border-bottom: 1px solid rgb(44, 49, 60);
     border-right: 1px solid rgb(44, 49, 60);
-}
-QTableWidget::horizontalHeader {	
-	background-color: #343b48;
-}
-QTableWidget QTableCornerButton::section {
+}}
+QTableWidget::horizontalHeader {{	
+	background-color: {background_color_2};
+}}
+QTableWidget QTableCornerButton::section {{
     border: none;
-	background-color: #343b48;
+	background-color: {background_color_2};
 	padding: 3px;
-    border-top-left-radius: 8px;
-}
-QTableView {	
-	background-color: #343b48;
+    border-top-left-radius: {border_radius}px;
+}}
+QTableView {{
+	background-color: {background_color_2};
 	padding: 5px;
-	border-radius: 8px;
+	border-radius: {border_radius}px;
 	gridline-color: #44475a;
-    color: #f5f6f9;
-}
-QTableView::item{
+    color: {foreground_color};
+}}
+QTableView::item{{
 	border-color: none;
 	padding-left: 5px;
 	padding-right: 5px;
 	gridline-color: rgb(44, 49, 60);
     border-bottom: 1px solid #595D75;
-}
-QTableView::item:selected{
-	background-color: #343b48;
-}
-QHeaderView::section{
-	background-color: #343b48;
+}}
+QTableView::item:selected{{
+	background-color: {background_color_2};
+}}
+QHeaderView::section{{
+	background-color: {background_color_2};
 	max-width: 30px;
 	border: 1px solid rgb(44, 49, 58);
 	border-style: none;
     border-bottom: 1px solid rgb(44, 49, 60);
     border-right: 1px solid rgb(44, 49, 60);
-}
-QTableView::horizontalHeader {	
-	background-color: #343b48;
-}
-QTableView QTableCornerButton::section {
+}}
+QTableView::horizontalHeader {{
+	background-color: {background_color_2};
+}}
+QTableView QTableCornerButton::section {{
     border: none;
-	background-color: #343b48;
+	background-color: {background_color_2};
 	padding: 3px;
-    border-top-left-radius: 8px;
-}
+    border-top-left-radius: {border_radius}px;
+}}
 QHeaderView::section:horizontal
-{
+{{
     border: none;
-	background-color: #343b48;
+	background-color: {background_color_2};
 	padding: 3px;
-}
+}}
 QHeaderView::section:vertical
-{
+{{
     border: none;
-	background-color: #343b48;
+	background-color: {background_color_2};
 	padding-left: 5px;
     padding-right: 5px;
     border-bottom: 1px solid #595D75;
     margin-bottom: 1px;
-}
+}}
 '''
 
 
 class ExecutionController(QObject):
     executed = Signal(str, int)
 
-    def __init__(self, node_tree: NodeTreeView, execution_tree: QTreeView, container: QScrollArea) -> None:
+    def __init__(self, node_tree: NodeTreeView, execution_tree: QTreeView, container: QScrollArea, theme: dict) -> None:
         self.node_tree = node_tree
         self.execution_tree = execution_tree
         self.container = container
+        self.theme = theme
         self.model = QStandardItemModel()
         self.simulation = {}
         self.right_side_screen = None
@@ -565,7 +566,14 @@ class ExecutionController(QObject):
             self.right_side_screen.setScenarios(self.get_simulations())
 
         self.right_side_screen.setInput(item.data(Qt.UserRole + 1))
-        self.right_side_frame.setStyleSheet(style)
+        self.right_side_frame.setStyleSheet(style.format(
+            border_radius=8,
+            background_color=self.theme["dark_one"],
+            foreground_color=self.theme["text_foreground"],
+            focus_color=self.theme["dark_three"],
+            pressed_color=self.theme["dark_four"],
+            background_color_2=self.theme["bg_two"],
+        ))
         self.container.setWidget(self.right_side_frame)
     
     def clear_right_widget(self):

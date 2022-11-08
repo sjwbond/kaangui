@@ -454,7 +454,12 @@ class SetupMainWindow:
         # TODO fix stylesheet
         self.execution_screen_scroll_area.setStyleSheet("QFrame { background-color: #2B2E3B; }")
 
-        self.execution_controller = ExecutionController(self.tree, self.execution_tree, self.execution_screen_scroll_area)
+        self.execution_controller = ExecutionController(
+            node_tree=self.tree,
+            execution_tree=self.execution_tree,
+            container=self.execution_screen_scroll_area,
+            theme=self.themes["app_color"]
+        )
         self.execution_controller.executed.connect(send_model_to_queue)
 
         def save_execution():
