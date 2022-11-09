@@ -1,15 +1,16 @@
 from functools import partial
 from gui.uis.custom.node_tree_view import NodeTreeView
 from gui.uis.windows.screens.diagnosticscreen import Ui_DiagnosticsScreen, diagnostics_default_input
-from gui.uis.windows.screens.horizonscreen import Ui_HorizonScreen, horizons_default_input
-from gui.uis.windows.screens.ltplanscreen import Ui_LTPlanScreen, ltplan_default_input
-from gui.uis.windows.screens.modelscreen import Ui_ModelScreen, model_default_input
+from gui.uis.windows.screens2.horizons import Ui_Horizons, horizons_default_input
+from gui.uis.windows.screens2.lrmc_models import Ui_LRMCModels, lrmc_models_default_input
+from gui.uis.windows.screens2.execution_plans import Ui_ExecutionPlans, execution_plans_default_input
 from gui.uis.windows.screens.mtschedulescreen import Ui_MTScheaduleScreen, mtschedule_default_input
 from gui.uis.windows.screens.pasascreen import Ui_PASAScreen, pasa_default_input
 from gui.uis.windows.screens.productionscreen import Ui_ProductionScreen, production_default_input
 from gui.uis.windows.screens.stochasticscreen import Ui_StochasticScreen, stochastic_default_input
 from gui.uis.windows.screens.stschedulescreen import Ui_STScheduleScreen, stschedule_default_input
 from gui.uis.custom.constants import tree_structure, execution_priorities
+from gui.uis.windows.screens2.settings import Ui_Settings, settings_default_input
 from qt_core import *
 
 
@@ -256,13 +257,12 @@ class ExecutionController(QObject):
                 subitem.setData(("node", name, type), Qt.UserRole)
                 item.appendRow(subitem)
 
-                if key_a in simulation:
-                    if key_b in simulation[key_a]:
-                        for (key_c, value_c) in simulation[key_a][key_b].items():
-                            subsubitem = QStandardItem(key_c)
-                            subsubitem.setData(("leaf", key_c, type), Qt.UserRole)
-                            subsubitem.setData(value_c, Qt.UserRole + 1)
-                            subitem.appendRow(subsubitem)
+                if key_b in simulation:
+                    for (key_c, value_c) in simulation[key_b].items():
+                        subsubitem = QStandardItem(key_c)
+                        subsubitem.setData(("leaf", key_c, type), Qt.UserRole)
+                        subsubitem.setData(value_c, Qt.UserRole + 1)
+                        subitem.appendRow(subsubitem)
         
         self.execution_tree.setModel(self.model)
         self.execution_tree.expandAll()
@@ -337,14 +337,16 @@ class ExecutionController(QObject):
 
         subitem = QStandardItem(new_name)
         subitem.setData(("leaf", name, type), Qt.UserRole)
-        if type == "models":
-            subitem.setData(model_default_input, Qt.UserRole + 1)
+        if type == "executionplan":
+            subitem.setData(execution_plans_default_input, Qt.UserRole + 1)
+        if type == "settings":
+            subitem.setData(settings_default_input, Qt.UserRole + 1)
         if type == "diagnostics":
             subitem.setData(diagnostics_default_input, Qt.UserRole + 1)
         elif type == "horizons":
             subitem.setData(horizons_default_input, Qt.UserRole + 1)
-        elif type == "ltplan":
-            subitem.setData(ltplan_default_input, Qt.UserRole + 1)
+        elif type == "lrmcmodels":
+            subitem.setData(lrmc_models_default_input, Qt.UserRole + 1)
         elif type == "mtschedule":
             subitem.setData(mtschedule_default_input, Qt.UserRole + 1)
         elif type == "pasa":
@@ -519,8 +521,10 @@ class ExecutionController(QObject):
         self.clear_right_widget()
         
         if level == "leaf":
-            if type == "models":
-                self.set_right_data_screen(Ui_ModelScreen(), item)
+            if type == "executionplans":
+                self.set_right_data_screen(Ui_ExecutionPlans(), item)
+            if type == "settings":
+                self.set_right_data_screen(Ui_Settings(), item)
             if type == "diagnostics":
                 self.set_right_data_screen(Ui_DiagnosticsScreen(), item)
             elif type == "production":
@@ -531,10 +535,10 @@ class ExecutionController(QObject):
                 self.set_right_data_screen(Ui_STScheduleScreen(), item)
             elif type == "mtschedule":
                 self.set_right_data_screen(Ui_MTScheaduleScreen(), item)
-            elif type == "ltplan":
-                self.set_right_data_screen(Ui_LTPlanScreen(), item)
+            elif type == "lrmcmodels":
+                self.set_right_data_screen(Ui_LRMCModels(), item)
             elif type == "horizons":
-                self.set_right_data_screen(Ui_HorizonScreen(), item)
+                self.set_right_data_screen(Ui_Horizons(), item)
             elif type == "pasa":
                 self.set_right_data_screen(Ui_PASAScreen(), item)
     

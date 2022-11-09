@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>642</width>
+    <height>541</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="competitionLabel">
+       <property name="text">
+        <string>Competition</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QComboBox" name="competitionComboBox"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="diagnosticsLabel">
+       <property name="text">
+        <string>Diagnostics</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="diagnosticsComboBox"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="performanceLabel">
+       <property name="text">
+        <string>Performance</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QComboBox" name="performanceComboBox"/>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="productionLabel">
+       <property name="text">
+        <string>Production</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QComboBox" name="productionComboBox"/>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="stochasticsLabel">
+       <property name="text">
+        <string>Stochastics</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QComboBox" name="stochasticsComboBox"/>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="transmissionLabel">
+       <property name="text">
+        <string>Transmission</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QComboBox" name="transmissionComboBox"/>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

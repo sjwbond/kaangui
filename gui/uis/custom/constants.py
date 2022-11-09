@@ -1,7 +1,7 @@
 tree_structure = {
     "Execute": {
-        "Models": ("Model", "models"),
-        "Projects": ("Project", "projects")
+        "Execution Plans": ("Execution Plans", "executionplans"),
+        "Settings": ("Settings", "settings")
     },
     "Settings": {
         "Competition": ("Competition", "competition"),
@@ -14,7 +14,7 @@ tree_structure = {
     "Simulation": {
         "ST Schedule": ("Short Term Schedule", "stschedule"),
         "MT Schedule": ("Medium Term Schedule", "mtschedule"),
-        "LT Plan": ("Long Term Plan", "ltplan"),
+        "LRMC Models": ("LRMC Models", "lrmcmodels"),
         "Horizons": ("Horizaon", "horizons"),
         "PASA": ("PASA", "pasa"),
         "Reports": ("Report", "reports")
