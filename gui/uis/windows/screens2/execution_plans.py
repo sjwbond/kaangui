@@ -164,7 +164,6 @@ class Ui_ExecutionPlans(QObject):
             self.scenariosTableWidget.setItem(i, 2, QTableWidgetItem("0"))
 
     def setInput(self, input):
-        print(input)
         self.input = input
         self.settingsComboBox.setCurrentText(self.input["Settings"])
         self.horizonsComboBox.setCurrentText(self.input["Simulation"]["Horizons"])
@@ -214,5 +213,4 @@ class Ui_ExecutionPlans(QObject):
                 "Scenarios": scenarios
             }
         }
-        print(output)
         return output
