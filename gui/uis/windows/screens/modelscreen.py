@@ -10,7 +10,6 @@
 
 from functools import partial
 from gui.core.functions import Functions
-from gui.widgets.py_push_button.py_push_button import PyPushButton
 from gui.uis.custom.constants import execution_priorities
 from qt_core import *
 
