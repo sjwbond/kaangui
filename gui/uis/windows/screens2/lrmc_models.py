@@ -18,11 +18,6 @@ lrmc_models_default_input = {
     "Feature Bins Per Period": 6
 }
 
-settings = {
-    "Location Granularities": ["Region", "Country", "Continent"],
-    "Types": ["Year", "Month", "Week", "Day"]
-}
-
 
 class Ui_LRMCModels(QObject):
     def setupUi(self, Dialog):
@@ -37,21 +32,18 @@ class Ui_LRMCModels(QObject):
         self.formLayout.setWidget(0, QFormLayout.LabelRole, self.locationalGranularityLabel)
         self.locationalGranularityComboBox = QComboBox(Dialog)
         self.locationalGranularityComboBox.setObjectName("locationalGranularityComboBox")
-        self.locationalGranularityComboBox.addItems(settings["Location Granularities"])
         self.formLayout.setWidget(0, QFormLayout.FieldRole, self.locationalGranularityComboBox)
         self.optimisationGranularityLabel = QLabel(Dialog)
         self.optimisationGranularityLabel.setObjectName("optimisationGranularityLabel")
         self.formLayout.setWidget(1, QFormLayout.LabelRole, self.optimisationGranularityLabel)
         self.optimisationGranularityComboBox = QComboBox(Dialog)
         self.optimisationGranularityComboBox.setObjectName("optimisationGranularityComboBox")
-        self.optimisationGranularityComboBox.addItems(settings["Types"])
         self.formLayout.setWidget(1, QFormLayout.FieldRole, self.optimisationGranularityComboBox)
         self.featureBinningPeriodicityLabel = QLabel(Dialog)
         self.featureBinningPeriodicityLabel.setObjectName("featureBinningPeriodicityLabel")
         self.formLayout.setWidget(2, QFormLayout.LabelRole, self.featureBinningPeriodicityLabel)
         self.featureBinningPeriodicityComboBox = QComboBox(Dialog)
         self.featureBinningPeriodicityComboBox.setObjectName("featureBinningPeriodicityComboBox")
-        self.featureBinningPeriodicityComboBox.addItems(settings["Types"])
         self.formLayout.setWidget(2, QFormLayout.FieldRole, self.featureBinningPeriodicityComboBox)
         self.featureBinsPerPeriodLabel = QLabel(Dialog)
         self.featureBinsPerPeriodLabel.setObjectName("featureBinsPerPeriodLabel")
@@ -72,6 +64,16 @@ class Ui_LRMCModels(QObject):
         self.optimisationGranularityLabel.setText(_translate("Dialog", "Optimisation Granularity"))
         self.featureBinningPeriodicityLabel.setText(_translate("Dialog", "Feature Binning Periodicity"))
         self.featureBinsPerPeriodLabel.setText(_translate("Dialog", "Feature Bins Per Period"))
+    
+    def setChoices(self, options):
+        self.locationalGranularityComboBox.clear()
+        self.locationalGranularityComboBox.addItems(options["Location Granularities"])
+
+        self.optimisationGranularityComboBox.clear()
+        self.optimisationGranularityComboBox.addItems(options["Periodicities"])
+
+        self.featureBinningPeriodicityComboBox.clear()
+        self.featureBinningPeriodicityComboBox.addItems(options["Periodicities"])
 
     def setInput(self, input):
         self.input = input

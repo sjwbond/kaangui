@@ -1,6 +1,11 @@
 {
     "user_id": "",
     "api_path": "",
+    "options": {
+        "Periodicities": ["Year", "Month", "Week", "Day"],
+        "Location Granularities": ["Region", "Country", "Continent"],
+        "Years": [2000, 2001, 2009, 2010, 2011, 2012, 2013, 2014, 2015]
+    },
     "app_name": "Fundamental Model",
     "version" : "v1.0.0",
     "copyright" : "By: Modelly McModelface",

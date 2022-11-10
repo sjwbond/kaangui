@@ -456,7 +456,8 @@ class SetupMainWindow:
             node_tree=self.tree,
             execution_tree=self.execution_tree,
             container=self.execution_screen_scroll_area,
-            theme=self.themes["app_color"]
+            theme=self.themes["app_color"],
+            options=settings.items["options"]
         )
         self.execution_controller.executed.connect(send_model_to_queue)
 

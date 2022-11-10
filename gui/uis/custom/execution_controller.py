@@ -202,11 +202,12 @@ QHeaderView::section:vertical
 class ExecutionController(QObject):
     executed = Signal(str, int)
 
-    def __init__(self, node_tree: NodeTreeView, execution_tree: QTreeView, container: QScrollArea, theme: dict) -> None:
+    def __init__(self, node_tree: NodeTreeView, execution_tree: QTreeView, container: QScrollArea, theme: dict, options: dict) -> None:
         self.node_tree = node_tree
         self.execution_tree = execution_tree
         self.container = container
         self.theme = theme
+        self.options = options
         self.model = QStandardItemModel()
         self.simulation = {}
         self.right_side_screen = None
@@ -549,6 +550,8 @@ class ExecutionController(QObject):
         
         if hasattr(self.right_side_screen, "executed"):
             self.right_side_screen.executed.connect(self.execute_selected_model)
+        if hasattr(self.right_side_screen, "setChoices"):
+            self.right_side_screen.setChoices(self.options)
         if hasattr(self.right_side_screen, "setOptions"):
             self.right_side_screen.setOptions(self.get_objects_of_level_by_type("leaf"))
         if hasattr(self.right_side_screen, "setScenarios"):

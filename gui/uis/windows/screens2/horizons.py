@@ -24,11 +24,6 @@ horizons_default_input = {
     "Historic Sample Years": []
 }
 
-settings = {
-    "Types": ["Year", "Month", "Week", "Day"],
-    "Years": [2000 + i for i in range(50)]
-}
-
 
 class Ui_Horizons(QObject):
     def setupUi(self, Dialog):
@@ -69,7 +64,6 @@ class Ui_Horizons(QObject):
         self.formLayout.setWidget(0, QFormLayout.LabelRole, self.typeLabel)
         self.typeComboBox = QComboBox(self.periodicityGroupBox)
         self.typeComboBox.setObjectName("typeComboBox")
-        self.typeComboBox.addItems(settings["Types"])
         self.formLayout.setWidget(0, QFormLayout.FieldRole, self.typeComboBox)
         self.onLabel = QLabel(self.periodicityGroupBox)
         self.onLabel.setObjectName("onLabel")
@@ -92,10 +86,6 @@ class Ui_Horizons(QObject):
         self.historicSampleYearsListView = QListView(self.historicSampleYearsGroupBox)
         self.historicSampleYearsListView.setObjectName("historicSampleYearsListView")
         self.historicSampleYearsModel = QStandardItemModel()
-        for year in settings["Years"]:
-            item = QStandardItem(str(year))
-            item.setCheckable(True)
-            self.historicSampleYearsModel.appendRow(item)
         self.historicSampleYearsListView.setModel(self.historicSampleYearsModel)
         self.verticalLayout_3.addWidget(self.historicSampleYearsListView)
         self.verticalLayout.addWidget(self.historicSampleYearsGroupBox)
@@ -114,6 +104,16 @@ class Ui_Horizons(QObject):
         self.onLabel.setText(_translate("Dialog", "On"))
         self.offLabel.setText(_translate("Dialog", "Off"))
         self.historicSampleYearsGroupBox.setTitle(_translate("Dialog", "Historic Sample Years"))
+    
+    def setChoices(self, options):
+        self.typeComboBox.clear()
+        self.typeComboBox.addItems(options["Periodicities"])
+
+        self.historicSampleYearsModel.clear()
+        for year in options["Years"]:
+            item = QStandardItem(str(year))
+            item.setCheckable(True)
+            self.historicSampleYearsModel.appendRow(item)
     
     def setInput(self, input):
         self.input = input
