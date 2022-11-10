@@ -275,15 +275,14 @@ class ExecutionController(QObject):
 
         for i in range(self.model.rowCount()):
             ix_a = self.model.index(i, 0, self.model.invisibleRootItem().index())
-            simulation[ix_a.data(Qt.DisplayRole)] = {}
 
             for i in range(self.model.rowCount(ix_a)):
                 ix_b = self.model.index(i, 0, ix_a)
-                simulation[ix_a.data(Qt.DisplayRole)][ix_b.data(Qt.DisplayRole)] = {}
+                simulation[ix_b.data(Qt.DisplayRole)] = {}
 
                 for i in range(self.model.rowCount(ix_b)):
                     ix_c = self.model.index(i, 0, ix_b)
-                    simulation[ix_a.data(Qt.DisplayRole)][ix_b.data(Qt.DisplayRole)][ix_c.data(Qt.DisplayRole)] = ix_c.data(Qt.UserRole + 1)
+                    simulation[ix_b.data(Qt.DisplayRole)][ix_c.data(Qt.DisplayRole)] = ix_c.data(Qt.UserRole + 1)
 
         return simulation
 
@@ -307,14 +306,14 @@ class ExecutionController(QObject):
                 elif level == "leaf":
                     menu = QMenu()
 
-                    if type == "models":
+                    if type == "executionplans":
                         menuitems = []
                         for (label, priority) in execution_priorities:
                             menuitem = QAction(f"{label} Priority")
                             menuitem.triggered.connect(partial(self.execute_model, item, priority))
                             menuitems.append(menuitem)
 
-                        qmenu_execute_model = QMenu("Execute Model")
+                        qmenu_execute_model = QMenu("Execute")
                         qmenu_execute_model.addActions(menuitems)
                         menu.addMenu(qmenu_execute_model)
 
