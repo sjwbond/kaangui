@@ -2,6 +2,7 @@ import copy
 import csv
 from functools import partial
 from gui.uis.custom.model_helpers import findFreeName, get_all_object_names, model_to_dict, model_to_dict_1
+from gui.uis.windows.assign_group.assign_group_dialog_box import Ui_Dialog_Assign_Group
 from qt_core import *
 from gui.core.functions import *
 from gui.uis.custom.node_tree_view import NodeTreeView
@@ -9,7 +10,6 @@ from gui.uis.custom.parents_table_model import ParentsTableModel
 from gui.uis.custom.parents_table_view import ParentsTableView
 from gui.widgets.comboBoxSearchable.comboBoxSearchable import ExtendedComboBox
 from gui.uis.custom.properties_table_widget import PropertiesTableWidget
-from main import AssignGroup
 
 
 CLIPBOARD_FOLDER = "folder"
@@ -17,6 +17,12 @@ CLIPBOARD_OBJECT = "object"
 
 table_header_hash = {'Parent Object':0, "Target Object":1, "Property":2, "Date_From":3,	"Date_To":4,	"Value":5,	"Variable":6,	"Variable_Effect":7,	"Timeslice":8,	"Timeslice_Index":9,	"Group_id":10,	"Priority":11,	"Scenario":12}
 table_header_hash_2 = {'Parent Object':0, "Parent Property":1}
+
+
+class AssignGroup(QDialog, Ui_Dialog_Assign_Group):
+    def __init__(self, parent=None):
+        QDialog.__init__(self,parent)
+        self.setupUi(self)
 
 
 class ModelController:
@@ -124,7 +130,7 @@ class ModelController:
             if name == path[0]:
                 return self.get_item_by_path_(ix, path[1:])
 
-        return index
+        return None
 
     def undo_snapshot_diff(self, diff: dict):
         for item in diff["added"]:
@@ -221,7 +227,6 @@ class ModelController:
         for node_key in model_node:
             node = QStandardItem(node_key)
             node.setEditable(False)
-
             if not "Properties" in model_node[node_key]:
                 self.add_node_to_tree(model_node[node_key], node)
 
@@ -615,31 +620,31 @@ class ModelController:
             self.create_undo_snapshot()
 
     def copyByModel(self):
-        getSelected = self.tree.selectedIndexes()
-        self.clipboardName = getSelected[0].data(Qt.DisplayRole)
-        self.clipboardAncestors = self.tree.getAncestors(getSelected[0])
-        type = getSelected[0].data(Qt.UserRole)
+        selected = self.tree.currentIndex()
+        self.clipboardName = selected.data(Qt.DisplayRole)
+        self.clipboardAncestors = self.tree.getAncestors(selected)
+        type = selected.data(Qt.UserRole)
         if type == "folder":
-            self.clipboardContents = copy.deepcopy(model_to_dict_1(self.tree.rootModel.indexFromItem(self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0]))), self.tree.rootModel))
+            self.clipboardContents = copy.deepcopy(model_to_dict_1(self.tree.rootModel.indexFromItem(self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(selected))), self.tree.rootModel))
             self.clipboardType = CLIPBOARD_FOLDER
         else:
-            self.clipboardContents = copy.deepcopy(getSelected[0].data(Qt.UserRole))
+            self.clipboardContents = copy.deepcopy(selected.data(Qt.UserRole))
             self.clipboardType = CLIPBOARD_OBJECT
 
     def cutByModel(self):
         self.create_undo_snapshot()
-        getSelected = self.tree.selectedIndexes()
+        selected = self.tree.currentIndex()
         self.copyByModel()
-        self.remove_node_from_tree(self.tree.proxyModel.mapToSource(getSelected[0]))
+        self.remove_node_from_tree(self.tree.proxyModel.mapToSource(selected))
         self.create_undo_snapshot()
 
     def pasteByModel(self):
         self.create_undo_snapshot()
-        getSelected = self.tree.selectedIndexes()
-        item = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0]))
+        selected = self.tree.currentIndex()
+        item = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(selected))
 
-        if getSelected[0].data(Qt.UserRole) != "folder" and getSelected[0].data(Qt.UserRole) != "model":
-            item = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0].parent()))
+        if selected.data(Qt.UserRole) != "folder" and selected.data(Qt.UserRole) != "model":
+            item = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(selected.parent()))
         
         targetAncestors = self.tree.getAncestors(item)
         if self.clipboardAncestors[0:2] != targetAncestors[0:2]:
@@ -720,11 +725,11 @@ class ModelController:
     # ///////////////////////////////////////////////////////////////
 
     def renameModel(self):
-        getSelected = self.tree.selectedIndexes()
-        text, okPressed = QInputDialog.getText(self.tree, "New name","New name:", text=getSelected[0].data(0))
+        selected = self.tree.currentIndex()
+        text, okPressed = QInputDialog.getText(self.tree, "New name","New name:", text=selected.data(0))
         if okPressed and text != '':
             self.create_undo_snapshot()
-            self.tree.proxyModel.setData(self.tree.currentIndex(), text)
+            self.tree.proxyModel.setData(selected, text)
             self.create_undo_snapshot()
     
     def create_all_base_folders(self):
@@ -732,3 +737,13 @@ class ModelController:
         for type in self.properties_table_object_properties_dict.keys():
             object[type] = {}
         self.add_node_to_tree(object, self.tree.rootModel.item(0, 0))
+
+    def select_path(self, path: list[str]):
+        idx = self.get_item_by_path(path)
+        idx_proxy = self.tree.proxyModel.mapFromSource(idx)
+        self.tree.setCurrentIndex(idx_proxy)
+
+    def select_model(self):
+        idx = self.tree.rootModel.index(0, 0)
+        idx_proxy = self.tree.proxyModel.mapFromSource(idx)
+        self.tree.setCurrentIndex(idx_proxy)

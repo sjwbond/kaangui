@@ -2,6 +2,8 @@
 from datetime import datetime
 from functools import partial
 import re
+
+from gui.uis.windows.open_model.open_model import Ui_OpenModelDialog
 from gui.uis.custom.api import WebAPI
 from gui.uis.custom.execution_controller import ExecutionController
 from gui.uis.custom.model_controller import ModelController
@@ -45,7 +47,11 @@ import json
 from gui.widgets.py_customTree_widget import *
 from gui.core.create_json import readTxt
 
-from main import OpenModelDialog
+
+class OpenModelDialog(QDialog, Ui_OpenModelDialog):
+    def __init__(self, parent=None):
+        QDialog.__init__(self, parent)
+        self.setupUi(self)
 
 
 # PY WINDOW
@@ -267,174 +273,12 @@ class SetupMainWindow:
         self.redo_button.clicked.connect(self.controller.redo)
         self.undo_button.clicked.connect(self.controller.undo)
 
-        # Model Functions
-        def create_new_model():
-            qm=QMessageBox()
-            ret = qm.question(self.tree, '', "Are you sure to create a new model? It will reset the unsaved changes", qm.Yes | qm.No)
-            if ret == qm.Yes:
-                self.data = {}
-                self.simulation_settings = {}
-                self.system_inputs = {}
-                self.tree.rootModel.clear()
-                self.tree.rootNode = self.tree.rootModel.invisibleRootItem()
-
-                self.execution_controller.set_simulation({})
-                
-                modelNode = QStandardItem("New Model")
-                modelNode.setEditable(False)
-                modelNode.setIcon(QIcon(Functions.set_svg_icon("icon_restore.svg")))
-                modelNode.setData("model", Qt.UserRole)
-                modelNode.setFlags(Qt.ItemIsDropEnabled | modelNode.flags())
-                self.tree.rootNode.appendRow(modelNode)
-                
-                self.controller.add_node_to_tree(self.system_inputs, modelNode)
-                self.controller.create_all_base_folders()
-                self.controller.clear_tables()
-                self.controller.save_base_snapshot()
-
-        self.create_new_model_button.clicked.connect(create_new_model)
-
-        # API
-        def dump_model():
-            return self.data | {"name": self.tree.rootModel.index(0, 0).data(Qt.DisplayRole), "Simulation": self.execution_controller.get_simulation(), "SystemInputs": model_to_dict(self.tree.rootModel)}
-
-        def save_model_to_api():
-            data = dump_model()
-            modelId = self.tree.rootModel.index(0, 0).data(Qt.UserRole+1)
-            if modelId == None:
-                (modelId, hash) = self.api.create_model(data)
-                self.tree.rootModel.invisibleRootItem().child(0, 0).setData(modelId, Qt.UserRole+1)
-                self.data["name"] = self.tree.rootModel.invisibleRootItem().child(0, 0).data(Qt.DisplayRole)
-                self.data["hash"] = hash
-            else:
-                new_hash = self.api.update_model(modelId, data)
-                self.data["name"] = self.tree.rootModel.invisibleRootItem().child(0, 0).data(Qt.DisplayRole)
-                self.data["hash"] = new_hash
-
-        self.save_api_model_button.clicked.connect(save_model_to_api)
-                
-        def load_model(model):
-                self.data = model
-                self.system_inputs = model["SystemInputs"]
-                self.tree.rootModel.clear()
-                self.tree.rootNode = self.tree.rootModel.invisibleRootItem()
-
-                if "Simulation" in self.data:
-                    self.execution_controller.set_simulation(self.data["Simulation"])
-                else:
-                    self.execution_controller.set_simulation({})
-
-                modelNode = QStandardItem(model["name"])
-                modelNode.setEditable(False)
-                modelNode.setIcon(QIcon(Functions.set_svg_icon("icon_restore.svg")))
-                modelNode.setData("model", Qt.UserRole)
-                if "modelId" in model:
-                    modelNode.setData(model["modelId"], Qt.UserRole+1)
-                modelNode.setFlags(Qt.ItemIsDropEnabled | modelNode.flags())
-                self.tree.rootNode.appendRow(modelNode)
-                    
-                self.controller.add_node_to_tree(self.system_inputs, modelNode)
-                self.controller.clear_tables()
-                self.controller.save_base_snapshot()
-
-        def open_model_from_api():
-            dialog = OpenModelDialog()
-            models = self.api.list_models()
-            itemModel = QStandardItemModel()
-            dialog.modelList.setModel(itemModel)
-            dialog.modelList.setEditTriggers(QAbstractItemView.NoEditTriggers)
-            for model in models:
-                item = QStandardItem(model["name"])
-                item.setData(model, Qt.UserRole)
-                itemModel.appendRow(item)
-
-            dialog.versionList.setColumnCount(4)
-            dialog.versionList.setHorizontalHeaderLabels(["Name", "Saved At", "Saved By", "Current?"])
-            dialog.versionList.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
-            dialog.versionList.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
-            dialog.versionList.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
-            dialog.versionList.setEditTriggers(QAbstractItemView.NoEditTriggers)
-            
-            def selection_changed(selected: QItemSelection, deselected: QItemSelection):
-                if selected.length() < 1:
-                    dialog.versionList.setRowCount(0)
-                modelS = selected.indexes()[0].data(Qt.UserRole)
-                versions = self.api.get_model_history(modelS["modelId"])
-                dialog.versionList.setRowCount(len(versions))
-                for ix in range(len(versions)):
-                    version = versions[ix]
-                    date = datetime.fromisoformat(version['savedAt'][0:-1])
-                    formatted_date = date.strftime("%d-%m-%Y %H:%M:%S")
-                    is_current = modelS["hash"] == version['hash']
-
-                    name_item = QTableWidgetItem(version['name'])
-                    name_item.setData(Qt.UserRole, version["versionId"])
-
-                    dialog.versionList.setItem(ix, 0, name_item)
-                    dialog.versionList.setItem(ix, 1, QTableWidgetItem(formatted_date))
-                    dialog.versionList.setItem(ix, 2, QTableWidgetItem(version['savedByName']))
-                    dialog.versionList.setItem(ix, 3, QTableWidgetItem("Yes" if is_current else ""))
-
-            dialog.modelList.selectionModel().selectionChanged.connect(selection_changed)
-
-            dialog.show()
-            if dialog.exec_():
-                selection = dialog.modelList.selectedIndexes()
-                versionSelection = dialog.versionList.selectedIndexes()
-                if len(selection) < 1:
-                    return
-                    
-                modelId = selection[0].data(Qt.UserRole)["modelId"]
-                model = None
-
-                if len(versionSelection) == 0:
-                    model = self.api.get_model(modelId)
-                else:
-                    model = self.api.get_model_version(versionSelection[0].data(Qt.UserRole))
-                
-                load_model(model)
-        
-        self.open_api_model_button.clicked.connect(open_model_from_api)
-
-        def save_model_to_json():
-            data = dump_model()
-            (name, _) = QFileDialog.getSaveFileName(None, "Select JSON File", dir=f"{data['name']}.json")
-            if "name" in data:
-                del data["name"]
-            if "hash" in data:
-                del data["hash"]
-            if "id" in data:
-                del data["id"]
-            if name != '':
-                with open(name, "w", encoding="utf8") as file:
-                    json.dump(data, file, sort_keys=True, indent=4)
-        
-        self.save_json_model_button.clicked.connect(save_model_to_json)
-
-        def open_model_from_json():
-            (name, _) = QFileDialog.getOpenFileName(None, "Select JSON File")
-            if name != '':
-                with open(name, "r", encoding="utf8") as file:
-                    model = json.load(file)
-                    # Extract file name from path without extension
-                    m = re.match(r"^(?:.*[\/\\])?([^\/\\]+?|)(?=(?:\.[^\/\\.]*)?$)", name)
-                    model["name"] = m.group(1)
-                    load_model(model)
-        
-        self.open_json_model_button.clicked.connect(open_model_from_json)
-
-        def create_json_from_txt():
-            name = QFileDialog.getExistingDirectory(None, 'Select a folder:', self.working_directory, QFileDialog.ShowDirsOnly)
-            text, okPressed = QInputDialog.getText(self, "Json File Name", "Json File Name:", text="")
-            if okPressed and text != '':
-                data = readTxt(name, text)
-                with open("data/"+ text +'.mdl', 'w') as fp:
-                    json.dump(data, fp, sort_keys=True, indent=4)
-        self.create_json_database_from_txt_files_button.clicked.connect(create_json_from_txt)
-
-        def send_model_to_queue(name, priority):
-            save_model_to_api()
-            self.api.send_model_to_processing(name, self.data["hash"], priority)
+        self.create_new_model_button.clicked.connect(self.create_new_model)
+        self.save_api_model_button.clicked.connect(self.save_model_to_api)
+        self.open_api_model_button.clicked.connect(self.open_model_from_api)
+        self.save_json_model_button.clicked.connect(self.save_model_to_json)
+        self.open_json_model_button.clicked.connect(self.open_model_from_json)
+        self.create_json_database_from_txt_files_button.clicked.connect(self.create_json_from_txt)
 
         self.tree.viewport().installEventFilter(self)
 
@@ -459,15 +303,11 @@ class SetupMainWindow:
             theme=self.themes["app_color"],
             options=settings.items["options"]
         )
-        self.execution_controller.executed.connect(send_model_to_queue)
-
-        def save_execution():
-            self.execution_controller.save()
-            save_model_to_api()
+        self.execution_controller.executed.connect(self.send_model_to_queue)
 
         self.execution_undo_button.clicked.connect(self.execution_controller.undo)
         self.execution_redo_button.clicked.connect(self.execution_controller.redo)
-        self.execution_save_button.clicked.connect(save_execution)
+        self.execution_save_button.clicked.connect(self.save_execution)
 
         # ADD WIDGETS
         self.ui.load_pages.table_button_layout.addWidget(self.add_table_row_button)
@@ -494,3 +334,166 @@ class SetupMainWindow:
         self.ui.load_pages.row_9_layout.addWidget(self.execution_undo_button)
         self.ui.load_pages.row_9_layout.addWidget(self.execution_redo_button)
         self.ui.load_pages.row_9_layout.addWidget(self.execution_save_button)
+
+    # Model Functions
+    def create_new_model(self):
+        qm=QMessageBox()
+        ret = qm.question(self.tree, '', "Are you sure to create a new model? It will reset the unsaved changes", qm.Yes | qm.No)
+        if ret == qm.Yes:
+            self.data = {}
+            self.simulation_settings = {}
+            self.system_inputs = {}
+            self.tree.rootModel.clear()
+            self.tree.rootNode = self.tree.rootModel.invisibleRootItem()
+
+            self.execution_controller.set_simulation({})
+            
+            modelNode = QStandardItem("New Model")
+            modelNode.setEditable(False)
+            modelNode.setIcon(QIcon(Functions.set_svg_icon("icon_restore.svg")))
+            modelNode.setData("model", Qt.UserRole)
+            modelNode.setFlags(Qt.ItemIsDropEnabled | modelNode.flags())
+            self.tree.rootNode.appendRow(modelNode)
+            
+            self.controller.add_node_to_tree(self.system_inputs, modelNode)
+            self.controller.create_all_base_folders()
+            self.controller.clear_tables()
+            self.controller.save_base_snapshot()
+
+    # API
+    def dump_model(self):
+        return self.data | {"name": self.tree.rootModel.index(0, 0).data(Qt.DisplayRole), "Simulation": self.execution_controller.get_simulation(), "SystemInputs": model_to_dict(self.tree.rootModel)}
+
+    def save_model_to_api(self):
+        data = self.dump_model()
+        modelId = self.tree.rootModel.index(0, 0).data(Qt.UserRole+1)
+        if modelId == None:
+            (modelId, hash) = self.api.create_model(data)
+            self.tree.rootModel.invisibleRootItem().child(0, 0).setData(modelId, Qt.UserRole+1)
+            self.data["name"] = self.tree.rootModel.invisibleRootItem().child(0, 0).data(Qt.DisplayRole)
+            self.data["hash"] = hash
+        else:
+            new_hash = self.api.update_model(modelId, data)
+            self.data["name"] = self.tree.rootModel.invisibleRootItem().child(0, 0).data(Qt.DisplayRole)
+            self.data["hash"] = new_hash
+
+                
+    def load_model(self, model):
+        self.data = model
+        self.system_inputs = model["SystemInputs"]
+        self.tree.rootModel.clear()
+        self.tree.rootNode = self.tree.rootModel.invisibleRootItem()
+
+        if "Simulation" in self.data:
+            self.execution_controller.set_simulation(self.data["Simulation"])
+        else:
+            self.execution_controller.set_simulation({})
+
+        modelNode = QStandardItem(model["name"])
+        modelNode.setEditable(False)
+        modelNode.setIcon(QIcon(Functions.set_svg_icon("icon_restore.svg")))
+        modelNode.setData("model", Qt.UserRole)
+        if "modelId" in model:
+            modelNode.setData(model["modelId"], Qt.UserRole+1)
+        modelNode.setFlags(Qt.ItemIsDropEnabled | modelNode.flags())
+        self.tree.rootNode.appendRow(modelNode)
+            
+        self.controller.add_node_to_tree(self.system_inputs, modelNode)
+        self.controller.clear_tables()
+        self.controller.save_base_snapshot()
+
+    def open_model_from_api(self):
+        dialog = OpenModelDialog()
+        models = self.api.list_models()
+        itemModel = QStandardItemModel()
+        dialog.modelList.setModel(itemModel)
+        dialog.modelList.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        for model in models:
+            item = QStandardItem(model["name"])
+            item.setData(model, Qt.UserRole)
+            itemModel.appendRow(item)
+
+        dialog.versionList.setColumnCount(4)
+        dialog.versionList.setHorizontalHeaderLabels(["Name", "Saved At", "Saved By", "Current?"])
+        dialog.versionList.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        dialog.versionList.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
+        dialog.versionList.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
+        dialog.versionList.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        
+        def selection_changed(selected: QItemSelection, deselected: QItemSelection):
+            if selected.length() < 1:
+                dialog.versionList.setRowCount(0)
+            modelS = selected.indexes()[0].data(Qt.UserRole)
+            versions = self.api.get_model_history(modelS["modelId"])
+            dialog.versionList.setRowCount(len(versions))
+            for ix in range(len(versions)):
+                version = versions[ix]
+                date = datetime.fromisoformat(version['savedAt'][0:-1])
+                formatted_date = date.strftime("%d-%m-%Y %H:%M:%S")
+                is_current = modelS["hash"] == version['hash']
+
+                name_item = QTableWidgetItem(version['name'])
+                name_item.setData(Qt.UserRole, version["versionId"])
+
+                dialog.versionList.setItem(ix, 0, name_item)
+                dialog.versionList.setItem(ix, 1, QTableWidgetItem(formatted_date))
+                dialog.versionList.setItem(ix, 2, QTableWidgetItem(version['savedByName']))
+                dialog.versionList.setItem(ix, 3, QTableWidgetItem("Yes" if is_current else ""))
+
+        dialog.modelList.selectionModel().selectionChanged.connect(selection_changed)
+
+        dialog.show()
+        if dialog.exec_():
+            selection = dialog.modelList.selectedIndexes()
+            versionSelection = dialog.versionList.selectedIndexes()
+            if len(selection) < 1:
+                return
+                
+            modelId = selection[0].data(Qt.UserRole)["modelId"]
+            model = None
+
+            if len(versionSelection) == 0:
+                model = self.api.get_model(modelId)
+            else:
+                model = self.api.get_model_version(versionSelection[0].data(Qt.UserRole))
+            
+            self.load_model(model)
+
+    def save_model_to_json(self):
+        data = self.dump_model()
+        (name, _) = QFileDialog.getSaveFileName(None, "Select JSON File", dir=f"{data['name']}.json")
+        if "name" in data:
+            del data["name"]
+        if "hash" in data:
+            del data["hash"]
+        if "id" in data:
+            del data["id"]
+        if name != '':
+            with open(name, "w", encoding="utf8") as file:
+                json.dump(data, file, sort_keys=True, indent=4)
+
+    def open_model_from_json(self):
+        (name, _) = QFileDialog.getOpenFileName(None, "Select JSON File")
+        if name != '':
+            with open(name, "r", encoding="utf8") as file:
+                model = json.load(file)
+                # Extract file name from path without extension
+                m = re.match(r"^(?:.*[\/\\])?([^\/\\]+?|)(?=(?:\.[^\/\\.]*)?$)", name)
+                model["name"] = m.group(1)
+                self.load_model(model)
+
+    def create_json_from_txt(self):
+        name = QFileDialog.getExistingDirectory(None, 'Select a folder:', self.working_directory, QFileDialog.ShowDirsOnly)
+        text, okPressed = QInputDialog.getText(self, "Json File Name", "Json File Name:", text="")
+        if okPressed and text != '':
+            data = readTxt(name, text)
+            with open("data/"+ text +'.mdl', 'w') as fp:
+                json.dump(data, fp, sort_keys=True, indent=4)
+
+    def send_model_to_queue(self, name, priority):
+        self.save_model_to_api()
+        self.api.send_model_to_processing(name, self.data["hash"], priority)
+
+    def save_execution(self):
+        self.execution_controller.save()
+        self.save_model_to_api()

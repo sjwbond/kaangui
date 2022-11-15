@@ -16,10 +16,10 @@
 
 # IMPORT PACKAGES AND MODULES
 # ///////////////////////////////////////////////////////////////
+from gui.uis.custom.testing import is_testing
 from gui.uis.windows.main_window.functions_main_window import *
 import sys
 import os
-from gui.uis.windows.open_model.open_model import Ui_OpenModelDialog
 
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
@@ -43,13 +43,8 @@ from gui.widgets import *
 os.environ["QT_FONT_DPI"] = "96"
 # IF IS 4K MONITOR ENABLE 'os.environ["QT_SCALE_FACTOR"] = "2"'
 
-# IMPORT KAAN OPEN EXISTING MODEL DIALOG BOX
 # ///////////////////////////////////////////////////////////////
-from gui.uis.windows.open_existing_model.openexistingmodel2 import *
-from gui.uis.windows.assign_group.assign_group_dialog_box import *
-
-# ///////////////////////////////////////////////////////////////
-class MainWindow(QMainWindow):
+class MainWindow(QMainWindow, SetupMainWindow):
     def __init__(self):
         super().__init__()
 
@@ -126,6 +121,10 @@ class MainWindow(QMainWindow):
         self.dragPos = globalPos
 
     def closeEvent(self, event):
+        if is_testing():
+            event.accept()
+            return
+
         quit_msg = "Are you sure you want to exit the program? Any unsaved changes will be lost."
         reply = QMessageBox.question(self, "Exit Confirmation", quit_msg, QMessageBox.Yes, QMessageBox.No)
 
@@ -137,23 +136,7 @@ class MainWindow(QMainWindow):
 # SETTINGS WHEN TO START
 # Set the initial class and also additional parameters of the "QApplication" class
 # ///////////////////////////////////////////////////////////////
-
-class ListViewOpenExistingModel(QDialog, Ui_Dialog_Open_Existing_Model):
-    def __init__(self, parent=None):
-        QDialog.__init__(self,parent)
-        self.setupUi(self)
-
-class AssignGroup(QDialog, Ui_Dialog_Assign_Group):
-    def __init__(self, parent=None):
-        QDialog.__init__(self,parent)
-        self.setupUi(self)
-
-class OpenModelDialog(QDialog, Ui_OpenModelDialog):
-    def __init__(self, parent=None):
-        QDialog.__init__(self, parent)
-        self.setupUi(self)
         
-
 if __name__ == "__main__":
     # APPLICATION
     # ///////////////////////////////////////////////////////////////
