@@ -1,6 +1,5 @@
 # ///////////////////////////////////////////////////////////////
 from datetime import datetime
-from functools import partial
 import re
 
 from gui.uis.windows.open_model.open_model import Ui_OpenModelDialog

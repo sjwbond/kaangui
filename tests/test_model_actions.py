@@ -1,5 +1,5 @@
-from main import MainWindow
 from qt_core import *
+from main import MainWindow
 
 test_model = {
     "name": "Test Model",
@@ -261,4 +261,121 @@ def test_cannot_paste_under_different_folder(qtbot, monkeypatch):
     idx_copy_of_eur = widget.controller.get_item_by_path(["Demand", "EUR"])
     assert idx_copy_of_eur is None
 
-# qtbot.mouseClick(widget.ui.left_column.title_label.text(), qt_api.QtCore.Qt.MouseButton.LeftButton)
+def test_create_new_folder(qtbot, monkeypatch):
+    widget = create_test_widget(qtbot)
+
+    # Create new folder under Currency
+    monkeypatch.setattr(QInputDialog, "getText", lambda *args, **args2: ("My Folder", True))
+    widget.controller.select_path(["Currency"])
+    widget.controller.createNewFolderByModel()
+
+    # Make sure new folder exists
+    idx_new_folder = widget.controller.get_item_by_path(["Currency", "My Folder"])
+    assert idx_new_folder.data(Qt.DisplayRole) == "My Folder"
+    assert idx_new_folder.data(Qt.UserRole) == "folder"
+
+def test_create_new_object(qtbot, monkeypatch):
+    widget = create_test_widget(qtbot)
+
+    # Create new object under Currency
+    monkeypatch.setattr(QInputDialog, "getText", lambda *args, **args2: ("My Object", True))
+    widget.controller.select_path(["Currency"])
+    widget.controller.createNewObjectByModel()
+
+    # Make sure new object exists
+    idx_new_object = widget.controller.get_item_by_path(["Currency", "My Object"])
+    assert idx_new_object.data(Qt.DisplayRole) == "My Object"
+    assert idx_new_object.data(Qt.UserRole) == {"Object_Name": "My Object", "Object_Type": "Currency", "Parent Objects": [], "Properties": []}
+
+def test_undo_redo(qtbot, monkeypatch):
+    widget = create_test_widget(qtbot)
+    
+    # 1. Create new object
+    monkeypatch.setattr(QInputDialog, "getText", lambda *args, **args2: ("My Object", True))
+    widget.controller.select_path(["Currency"])
+    widget.controller.createNewObjectByModel()
+
+    # Copy object
+    widget.controller.select_path(["Currency", "My Object"])
+    widget.controller.copyByModel()
+
+    # 2. Rename object
+    monkeypatch.setattr(QInputDialog, "getText", lambda *args, **args2: ("My Renamed Object", True))
+    widget.controller.select_path(["Currency", "My Object"])
+    widget.controller.renameByModel()
+
+    # 3. Delete object
+    monkeypatch.setattr(QMessageBox, "question", lambda *args: QMessageBox.Yes)
+    widget.controller.select_path(["Currency", "My Renamed Object"])
+    widget.controller.deleteByModel()
+
+    # 4. Paste object
+    widget.controller.select_path(["Currency", "Subfolder"])
+    widget.controller.pasteByModel()
+
+    # Check initial state
+    idx_deleted_object = widget.controller.get_item_by_path(["Currency", "My Renamed Object"])
+    assert idx_deleted_object is None
+
+    idx_pasted_object = widget.controller.get_item_by_path(["Currency", "Subfolder", "My Object"])
+    assert idx_pasted_object.data(Qt.DisplayRole) == "My Object"
+
+    # Undo 4. Paste object
+    widget.controller.undo()
+
+    idx_pasted_object_undone = widget.controller.get_item_by_path(["Currency", "Subfolder", "My Object"])
+    assert idx_pasted_object_undone == None
+
+    # Undo 3. Delete object
+    widget.controller.undo()
+
+    idx_deleted_object_undone = widget.controller.get_item_by_path(["Currency", "My Renamed Object"])
+    assert idx_deleted_object_undone.data(Qt.DisplayRole) == "My Renamed Object"
+
+    # Redo 3. Delete object
+    widget.controller.redo()
+
+    idx_deleted_object_undone_redone = widget.controller.get_item_by_path(["Currency", "My Renamed Object"])
+    assert idx_deleted_object_undone_redone is None
+
+    # Redo 4. Paste object
+    widget.controller.redo()
+
+    idx_pasted_object_undone_redone = widget.controller.get_item_by_path(["Currency", "Subfolder", "My Object"])
+    assert idx_pasted_object_undone_redone.data(Qt.DisplayRole) == "My Object"
+
+    # Undo 4. Paste object
+    widget.controller.undo()
+
+    idx_pasted_object_undone = widget.controller.get_item_by_path(["Currency", "My Object"])
+    assert idx_pasted_object_undone == None
+
+    # Undo 3. Delete object
+    widget.controller.undo()
+
+    idx_pasted_object_undone = widget.controller.get_item_by_path(["Currency", "My Renamed Object"])
+    assert idx_pasted_object_undone.data(Qt.DisplayRole) == "My Renamed Object"
+
+    # Undo 2. Rename object
+    widget.controller.undo()
+
+    idx_renamed_object_undone = widget.controller.get_item_by_path(["Currency", "My Renamed Object"])
+    assert idx_renamed_object_undone is None
+
+    idx_renamed_object_2_undone = widget.controller.get_item_by_path(["Currency", "My Object"])
+    assert idx_renamed_object_2_undone.data(Qt.DisplayRole) == "My Object"
+
+    # Undo 1. Create new object
+    widget.controller.undo()
+
+    idx_create_object_undone = widget.controller.get_item_by_path(["Currency", "My Object"])
+    assert idx_create_object_undone is None
+
+def test_dump_model(qtbot):
+    widget = create_test_widget(qtbot)
+
+    # Get model as dict
+    model_dump = widget.dump_model()
+
+    # Make sure model equals test_model
+    assert model_dump == test_model
