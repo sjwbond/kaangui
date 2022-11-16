@@ -401,15 +401,13 @@ class ModelController:
     # Helping function for gettin selected nodes parents
     # ///////////////////////////////////////////////////////////////
 
-    def getNodeNameAndParentList(self, indices: list[QModelIndex]):
-        parents: list[QModelIndex] = []
-        for index in indices:
-            while index.parent().isValid():
-                index = index.parent()
-                parents.append(index.sibling(index.row(), 0))
-        parentObjects = [index.data() for index in parents]
-        parentObjects.reverse()
-        return parentObjects + [indices[0].data(0)]
+    def getAncestry(self, index: QModelIndex):
+        ancestry: list[str] = []
+        while index.isValid():
+            ancestry.append(index.data(Qt.DisplayRole))
+            index = index.parent()
+        ancestry.reverse()
+        return ancestry
 
     # Right click menu for Tree Widget
     # ///////////////////////////////////////////////////////////////
@@ -706,7 +704,7 @@ class ModelController:
             text, okPressed = QInputDialog.getText(self.tree, "New object name","New object name:", text="New Object")
             if okPressed and text != '':
                 selected = self.tree.currentIndex()
-                keysList = self.getNodeNameAndParentList(selected)
+                keysList = self.getAncestry(selected)
                 item = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(selected))
                 name = findFreeName(item, text)
                 newObjectDict = {name : {
