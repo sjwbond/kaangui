@@ -297,7 +297,7 @@ class ModelController:
 
     def save_properties_table(self):
         self.create_undo_snapshot()
-        getSelected = self.tree.selectedIndexes()
+        selected = self.tree.currentIndex()
 
         listofPropertiesToAppend = []
         for row in range(self.properties_table.rowCount()):
@@ -312,16 +312,16 @@ class ModelController:
                     tempDict[self.properties_table.horizontalHeaderItem(column).text()]=""
             listofPropertiesToAppend.append(tempDict)
         
-        temp = copy.deepcopy(self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])).data(Qt.UserRole))
+        temp = copy.deepcopy(self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(selected)).data(Qt.UserRole))
         temp["Properties"].clear()
         temp["Properties"] = listofPropertiesToAppend.copy()
-        self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])).setData(temp, Qt.UserRole)
+        self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(selected)).setData(temp, Qt.UserRole)
         self.create_undo_snapshot()
 
     def save_parent_table(self):
         self.create_undo_snapshot()
-        getSelected = self.tree.selectedIndexes()
-        item = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0]))
+        selected = self.tree.currentIndex()
+        item = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(selected))
         data = item.data(Qt.UserRole)
         data["Parent Objects"] = [{"Parent Object": row[0], "Parent Property": row[1]} for row in self.parents_model.getData()]
         item.setData(data, Qt.UserRole)
@@ -401,15 +401,15 @@ class ModelController:
     # Helping function for gettin selected nodes parents
     # ///////////////////////////////////////////////////////////////
 
-    def getNodeNameAndParentList(self, getSelected: list[QModelIndex]):
+    def getNodeNameAndParentList(self, indices: list[QModelIndex]):
         parents: list[QModelIndex] = []
-        for index in getSelected:
+        for index in indices:
             while index.parent().isValid():
                 index = index.parent()
                 parents.append(index.sibling(index.row(), 0))
         parentObjects = [index.data() for index in parents]
         parentObjects.reverse()
-        return parentObjects + [getSelected[0].data(0)]
+        return parentObjects + [indices[0].data(0)]
 
     # Right click menu for Tree Widget
     # ///////////////////////////////////////////////////////////////
@@ -503,7 +503,7 @@ class ModelController:
     # ///////////////////////////////////////////////////////////////
 
     def assignGroupByModel(self):
-        getSelected = self.tree.selectedIndexes()
+        selected = self.tree.currentIndex()
         self.dialogBox = AssignGroup()
         self.dialogBox.listWidget.setSelectionMode(QAbstractItemView.ExtendedSelection)
         self.dialogBox.tableWidget.setColumnCount(2)
@@ -522,7 +522,7 @@ class ModelController:
                     item.setCheckState(Qt.Unchecked)
         self.dialogBox.lineEdit.textChanged.connect(onTextChanged)
 
-        temp = copy.deepcopy(self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])).data(Qt.UserRole))
+        temp = copy.deepcopy(self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(selected)).data(Qt.UserRole))
         self.dialogBox.tableWidget.setRowCount(len(temp["Parent Objects"]))
         for row in range(len(temp["Parent Objects"])):
             self.dialogBox.tableWidget.setItem(row, 0, QTableWidgetItem(temp["Parent Objects"][row]["Parent Object"]))
@@ -574,20 +574,38 @@ class ModelController:
             
         self.dialogBox.pushButton_2.clicked.connect(click_remove_button)
 
-        self.dialogBox.show()
-        
-        if self.dialogBox.exec() == 1:
+        def finished(result):
+            if result != 1:
+                return
             self.create_undo_snapshot()
-            temp = copy.deepcopy(self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])).data(Qt.UserRole))
+            temp = copy.deepcopy(self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(selected)).data(Qt.UserRole))
             temp["Parent Objects"] = []
             for row in range(self.dialogBox.tableWidget.rowCount()):
                 temp["Parent Objects"].append({
                         "Parent Object": self.dialogBox.tableWidget.item(row, 0).data(Qt.DisplayRole),
                         "Parent Property": self.dialogBox.tableWidget.item(row, 1).data(Qt.DisplayRole)
                     })
-            self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])).setData(temp, Qt.UserRole)
+            self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(selected)).setData(temp, Qt.UserRole)
             self.update_properties_table()
             self.create_undo_snapshot()
+
+        self.dialogBox.finished.connect(finished)
+
+        self.dialogBox.show()
+        self.dialogBox.open()
+        
+        # if self.dialogBox.exec() == 1:
+        #     self.create_undo_snapshot()
+        #     temp = copy.deepcopy(self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(selected)).data(Qt.UserRole))
+        #     temp["Parent Objects"] = []
+        #     for row in range(self.dialogBox.tableWidget.rowCount()):
+        #         temp["Parent Objects"].append({
+        #                 "Parent Object": self.dialogBox.tableWidget.item(row, 0).data(Qt.DisplayRole),
+        #                 "Parent Property": self.dialogBox.tableWidget.item(row, 1).data(Qt.DisplayRole)
+        #             })
+        #     self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(selected)).setData(temp, Qt.UserRole)
+        #     self.update_properties_table()
+        #     self.create_undo_snapshot()
 
     def deleteByModel(self):     
         qm = QMessageBox
@@ -596,17 +614,16 @@ class ModelController:
 
         if ret ==  qm.Yes:
             self.create_undo_snapshot()
-            getSelected = self.tree.selectedIndexes()
-            self.remove_node_from_tree(self.tree.proxyModel.mapToSource(getSelected[0]))
+            self.remove_node_from_tree(self.tree.proxyModel.mapToSource(self.tree.currentIndex()))
             self.create_undo_snapshot()
 
     def renameByModel(self):
-        getSelected = self.tree.selectedIndexes()
-        oldName = getSelected[0].data(Qt.DisplayRole)
+        selected = self.tree.currentIndex()
+        oldName = selected.data(Qt.DisplayRole)
         text, okPressed = QInputDialog.getText(self.tree, "New name", "New name:", text=oldName)
         if okPressed and text != '' and text != oldName:
             self.create_undo_snapshot()
-            ix = self.tree.currentIndex()
+            ix = selected
             ix2 = self.tree.proxyModel.mapToSource(ix)
             it = self.tree.rootModel.itemFromIndex(ix2)
 
@@ -688,9 +705,9 @@ class ModelController:
         try:
             text, okPressed = QInputDialog.getText(self.tree, "New object name","New object name:", text="New Object")
             if okPressed and text != '':
-                getSelected = self.tree.selectedIndexes()
-                keysList = self.getNodeNameAndParentList(getSelected)
-                item = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0]))
+                selected = self.tree.currentIndex()
+                keysList = self.getNodeNameAndParentList(selected)
+                item = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(selected))
                 name = findFreeName(item, text)
                 newObjectDict = {name : {
                 "Object_Name": name,
@@ -711,9 +728,9 @@ class ModelController:
 
     def createNewFolderByModelWithName(self, name):
         self.create_undo_snapshot()
-        getSelected = self.tree.selectedIndexes()
+        selected = self.tree.currentIndex()
         newObjectDict = {name : {}}
-        self.add_node_to_tree(newObjectDict, self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(getSelected[0])))
+        self.add_node_to_tree(newObjectDict, self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(selected)))
         self.create_undo_snapshot()
 
     def createNewFolderByModel(self):

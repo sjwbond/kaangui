@@ -12,8 +12,11 @@ class ParentsTableModel(QAbstractTableModel):
         return self._data
 
     def data(self, index: Union[QModelIndex, QPersistentModelIndex], role: Qt.ItemDataRole):
+        return self.dataAt(index.row(), index.column(), role)
+
+    def dataAt(self, row: int, column: int, role: Qt.ItemDataRole):
         if role == Qt.DisplayRole:
-            return self._data[index.row()][index.column()]
+            return self._data[row][column]
 
     def headerData(self, section: int, orientation: Qt.Orientation, role: int):
         if orientation == Qt.Horizontal and role == Qt.DisplayRole:
@@ -26,8 +29,11 @@ class ParentsTableModel(QAbstractTableModel):
         return super().headerData(section, orientation, role)
     
     def setData(self, index: Union[QModelIndex, QPersistentModelIndex], text: str, role: Qt.ItemDataRole):
+        return self.setDataAt(index.row(), index.column(), text, role)
+    
+    def setDataAt(self, row: int, column: int, text: str, role: Qt.ItemDataRole):
         if role == Qt.DisplayRole:
-            self._data[index.row()][index.column()] = text
+            self._data[row][column] = text
             self.itemChanged.emit()
             return True
         return False

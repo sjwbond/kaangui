@@ -94,6 +94,6 @@ class Ui_Dialog_Assign_Group(object):
         self.label_1.setText(QCoreApplication.translate("Dialog", u"Parent Object", None))
         self.label_2.setText(QCoreApplication.translate("Dialog", u"Parent Property", None))
         self.pushButton.setText(QCoreApplication.translate("Dialog", u"Add Parent Object", None))
-        self.pushButton_2.setText(QCoreApplication.translate("Dialog", u"Delete Row", None))
+        self.pushButton_2.setText(QCoreApplication.translate("Dialog", u"Delete Rows", None))
     # retranslateUi
 

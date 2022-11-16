@@ -1,5 +1,5 @@
 from qt_core import *
-from . fixtures import create_test_widget, test_model_1
+from . fixtures import create_test_widget
 
 def test_add_new_row(qtbot):
     widget = create_test_widget(qtbot)
