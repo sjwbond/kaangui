@@ -339,24 +339,11 @@ class SetupMainWindow:
         qm=QMessageBox()
         ret = qm.question(self.tree, '', "Are you sure to create a new model? It will reset the unsaved changes", qm.Yes | qm.No)
         if ret == qm.Yes:
-            self.data = {}
-            self.simulation_settings = {}
-            self.system_inputs = {}
-            self.tree.rootModel.clear()
-            self.tree.rootNode = self.tree.rootModel.invisibleRootItem()
-
-            self.execution_controller.set_simulation({})
-            
-            modelNode = QStandardItem("New Model")
-            modelNode.setEditable(False)
-            modelNode.setIcon(QIcon(Functions.set_svg_icon("icon_restore.svg")))
-            modelNode.setData("model", Qt.UserRole)
-            modelNode.setFlags(Qt.ItemIsDropEnabled | modelNode.flags())
-            self.tree.rootNode.appendRow(modelNode)
-            
-            self.controller.add_node_to_tree(self.system_inputs, modelNode)
+            self.load_model({
+                "name": "New Model",
+                "SystemInputs": {}
+            })
             self.controller.create_all_base_folders()
-            self.controller.clear_tables()
             self.controller.save_base_snapshot()
 
     # API
@@ -396,6 +383,7 @@ class SetupMainWindow:
             modelNode.setData(model["modelId"], Qt.UserRole+1)
         modelNode.setFlags(Qt.ItemIsDropEnabled | modelNode.flags())
         self.tree.rootNode.appendRow(modelNode)
+        self.tree.setExpanded(self.tree.proxyModel.mapFromSource(self.tree.rootModel.indexFromItem(modelNode)), True)
             
         self.controller.add_node_to_tree(self.system_inputs, modelNode)
         self.controller.clear_tables()
