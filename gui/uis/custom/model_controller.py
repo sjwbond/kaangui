@@ -244,18 +244,19 @@ class ModelController:
         self.tree.rootModel.removeRow(tree_node.row(), tree_node.parent())
 
     def update_properties_table(self):
-        if len(self.tree.selectedIndexes()) == 0:
+        selected = self.tree.currentIndex()
+        if selected is None:
             return
 
         self.pause_history = True
-        tabledata = self.tree.selectedIndexes()[0].data(Qt.UserRole)
+        tabledata = selected.data(Qt.UserRole)
         
         if tabledata == "folder" or tabledata == "model":
             self.properties_table.setRowCount(0)
             self.parents_table.setModel(ParentsTableModel([]))
         elif tabledata is not None:
             self.properties_table.setRowCount(len(tabledata["Properties"]))
-            props = self.properties_table_object_properties_dict[self.tree.selectedIndexes()[0].data(Qt.UserRole)["Object_Type"]]
+            props = self.properties_table_object_properties_dict[selected.data(Qt.UserRole)["Object_Type"]]
             for i, item in enumerate(tabledata["Properties"]):
                 for key, value in table_header_hash.items():
                     if key == "Property":
@@ -389,7 +390,7 @@ class ModelController:
                         combo.addItem(t)
                     
                     self.properties_table.setCellWidget(rowPosition,column,combo)
-                    combo.setCurrentIndex(props.index(rowToPasteDict[self.properties_table.horizontalHeaderItem(column).text()]))
+                    combo.setCurrentText(rowToPasteDict[self.properties_table.horizontalHeaderItem(column).text()])
                     combo.currentIndexChanged.connect(self.save_properties_table)
 
                 else:
@@ -742,8 +743,10 @@ class ModelController:
         idx = self.get_item_by_path(path)
         idx_proxy = self.tree.proxyModel.mapFromSource(idx)
         self.tree.setCurrentIndex(idx_proxy)
+        self.update_properties_table()
 
     def select_model(self):
         idx = self.tree.rootModel.index(0, 0)
         idx_proxy = self.tree.proxyModel.mapFromSource(idx)
         self.tree.setCurrentIndex(idx_proxy)
+        self.update_properties_table()

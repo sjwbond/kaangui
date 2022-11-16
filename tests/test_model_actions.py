@@ -1,89 +1,5 @@
 from qt_core import *
-from main import MainWindow
-
-test_model = {
-    "name": "Test Model",
-    "Simulation": {
-        "Competition": {},
-        "Diagnostics": {},
-        "Execution Plans": {},
-        "Horizons": {},
-        "LRMC Models": {},
-        "MT Schedule": {},
-        "PASA": {},
-        "Performance": {},
-        "Production": {},
-        "Reports": {},
-        "ST Schedule": {},
-        "Settings": {},
-        "Stochastics": {},
-        "Transmission": {}
-    },
-    "SystemInputs": {
-        "Currency": {
-            "EUR": {
-                "Object_Name": "EUR",
-                "Object_Type": "Currency",
-                "Parent Objects": [],
-                "Properties": [
-                    {
-                        "Date_From": "2000-01-01",
-                        "Date_To": "2100-01-01",
-                        "Group_id": "",
-                        "Parent Object": "",
-                        "Priority": "",
-                        "Property": "",
-                        "Scenario": "",
-                        "Target Object": "",
-                        "Timeslice": "",
-                        "Timeslice_Index": "",
-                        "Value": "",
-                        "Variable": "",
-                        "Variable_Effect": ""
-                    }
-                ]
-            },
-            "USD": {
-                "Object_Name": "USD",
-                "Object_Type": "Currency",
-                "Parent Objects": [],
-                "Properties": []
-            },
-            "Subfolder": {
-                "TRY": {
-                    "Object_Name": "TRY",
-                    "Object_Type": "Currency",
-                    "Parent Objects": [],
-                    "Properties": []
-                }
-            }
-        },
-        "DBDataSource": {},
-        "DBTimeSeries": {},
-        "DataSource": {},
-        "Demand": {},
-        "Emissions": {},
-        "Fuel": {},
-        "Generator": {},
-        "Group": {},
-        "Hydro_Generator": {},
-        "Line": {},
-        "Node": {},
-        "Reservoir": {},
-        "Storage": {},
-        "Variable": {}
-    }
-}
-
-def create_test_widget(qtbot):
-    widget = MainWindow()
-    qtbot.addWidget(widget)
-
-    # Load test model
-    widget.load_model(test_model)
-    widget.controller.tree.expandAll()
-
-    return widget
+from . fixtures import create_test_widget, test_model_1
 
 def test_create_new_model(qtbot, monkeypatch):
     widget = create_test_widget(qtbot)
@@ -187,7 +103,7 @@ def test_copy_paste(qtbot):
     # Make sure Copy of EUR now exists
     idx_copy_of_eur = widget.controller.get_item_by_path(["Currency", "Copy of EUR"])
     assert idx_copy_of_eur.data(Qt.DisplayRole) == "Copy of EUR"
-    assert idx_copy_of_eur.data(Qt.UserRole) == test_model["SystemInputs"]["Currency"]["EUR"]
+    assert idx_copy_of_eur.data(Qt.UserRole) == test_model_1["SystemInputs"]["Currency"]["EUR"]
 
 def test_cut_paste(qtbot):
     widget = create_test_widget(qtbot)
@@ -207,7 +123,7 @@ def test_cut_paste(qtbot):
     # Make sure EUR now exists
     idx_eur_pasted = widget.controller.get_item_by_path(["Currency", "EUR"])
     assert idx_eur_pasted.data(Qt.DisplayRole) == "EUR"
-    assert idx_eur_pasted.data(Qt.UserRole) == test_model["SystemInputs"]["Currency"]["EUR"]
+    assert idx_eur_pasted.data(Qt.UserRole) == test_model_1["SystemInputs"]["Currency"]["EUR"]
 
     # Paste again under currency
     widget.controller.pasteByModel()
@@ -215,7 +131,7 @@ def test_cut_paste(qtbot):
     # Make sure that Copy of EUR now exists
     idx_copy_of_eur = widget.controller.get_item_by_path(["Currency", "Copy of EUR"])
     assert idx_copy_of_eur.data(Qt.DisplayRole) == "Copy of EUR"
-    assert idx_copy_of_eur.data(Qt.UserRole) == test_model["SystemInputs"]["Currency"]["EUR"]
+    assert idx_copy_of_eur.data(Qt.UserRole) == test_model_1["SystemInputs"]["Currency"]["EUR"]
 
 def test_delete(qtbot, monkeypatch):
     widget = create_test_widget(qtbot)
@@ -378,4 +294,4 @@ def test_dump_model(qtbot):
     model_dump = widget.dump_model()
 
     # Make sure model equals test_model
-    assert model_dump == test_model
+    assert model_dump == test_model_1

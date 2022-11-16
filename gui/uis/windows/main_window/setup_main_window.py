@@ -182,7 +182,7 @@ class SetupMainWindow:
         # ///////////////////////////////////////////////////////////////
 
         # ICON BUTTON 1
-        self.delete_table_row_button = StyledButton(text="Delete Selected Rows", themes=self.themes)
+        self.delete_table_row_button = StyledButton(text="Delete Selected Row", themes=self.themes)
         self.add_table_row_button = StyledButton(text="Add New Row", themes=self.themes)
         self.copy_table_row_button = StyledButton(text="Copy Selected Rows", themes=self.themes)
         self.paste_table_row_button = StyledButton(text="Paste Copied Rows", themes=self.themes)
