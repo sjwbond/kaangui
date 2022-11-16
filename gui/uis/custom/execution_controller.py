@@ -337,7 +337,7 @@ class ExecutionController(QObject):
 
         subitem = QStandardItem(new_name)
         subitem.setData(("leaf", name, type), Qt.UserRole)
-        if type == "executionplan":
+        if type == "executionplans":
             subitem.setData(execution_plans_default_input, Qt.UserRole + 1)
         if type == "settings":
             subitem.setData(settings_default_input, Qt.UserRole + 1)
