@@ -15,7 +15,7 @@ tree_structure = {
         "ST Schedule": ("Short Term Schedule", "stschedule"),
         "MT Schedule": ("Medium Term Schedule", "mtschedule"),
         "LRMC Models": ("LRMC Models", "lrmcmodels"),
-        "Horizons": ("Horizaon", "horizons"),
+        "Horizons": ("Horizon", "horizons"),
         "PASA": ("PASA", "pasa"),
         "Reports": ("Report", "reports")
     }

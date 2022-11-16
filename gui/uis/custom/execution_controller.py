@@ -499,11 +499,12 @@ class ExecutionController(QObject):
         return res
 
     def selection_changed(self):
-        if len(self.execution_tree.selectedIndexes()) == 0:
+        selected = self.execution_tree.selectedIndexes()
+        if len(selected) == 0:
             self.clear_right_widget()
             return
 
-        index = self.execution_tree.selectedIndexes()[0]
+        index = selected[0]
         item = self.model.itemFromIndex(index)
         user_data = index.data(Qt.UserRole)
 
