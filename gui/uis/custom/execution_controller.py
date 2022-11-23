@@ -1,6 +1,8 @@
 from functools import partial
+from queue import Queue
 from gui.uis.custom.node_tree_view import NodeTreeView
 from gui.uis.windows.screens.diagnosticscreen import Ui_DiagnosticsScreen, diagnostics_default_input
+from gui.uis.windows.screens2.featurebinningproperties import Ui_FeatureBinningProperties, feature_binning_properties_default_input
 from gui.uis.windows.screens2.horizons import Ui_Horizons, horizons_default_input
 from gui.uis.windows.screens2.lrmc_models import Ui_LRMCModels, lrmc_models_default_input
 from gui.uis.windows.screens2.execution_plans import Ui_ExecutionPlans, execution_plans_default_input
@@ -202,7 +204,7 @@ QHeaderView::section:vertical
 class ExecutionController(QObject):
     executed = Signal(str, int)
 
-    def __init__(self, node_tree: NodeTreeView, execution_tree: QTreeView, container: QScrollArea, theme: dict, options: dict) -> None:
+    def __init__(self, node_tree: NodeTreeView, execution_tree: QTreeView, container: QHBoxLayout, theme: dict, options: dict) -> None:
         self.node_tree = node_tree
         self.execution_tree = execution_tree
         self.container = container
@@ -213,7 +215,7 @@ class ExecutionController(QObject):
         self.right_side_screen = None
         self.last_index = None
 
-        container.setStyleSheet(container_style.format(background_color=theme["bg_one"]))
+        # container.setStyleSheet(container_style.format(background_color=theme["bg_one"]))
 
         self.undo_history: list[dict] = []
         self.redo_history: list[dict] = []
@@ -357,6 +359,8 @@ class ExecutionController(QObject):
             subitem.setData(stochastic_default_input, Qt.UserRole + 1)
         elif type == "stschedule":
             subitem.setData(stschedule_default_input, Qt.UserRole + 1)
+        elif type == "featurebinningproperties":
+            subitem.setData(feature_binning_properties_default_input, Qt.UserRole + 1)
         item.appendRow(subitem)
 
         self.create_undo_snapshot_added(self.get_item_path(subitem), (subitem.data(Qt.UserRole), subitem.data(Qt.UserRole + 1)))
@@ -497,6 +501,37 @@ class ExecutionController(QObject):
             res = self.get_objects_of_level_by_type(level, res, ix)
 
         return res
+    
+    def get_object_hierarchy(self):
+        ps = {}
+        pt = {}
+        model = self.node_tree.rootModel
+        queue = Queue()
+        queue.put(model.index(0, 0, model.invisibleRootItem().index()))
+
+        while not queue.empty():
+            index = queue.get()
+
+            it = model.itemFromIndex(index)
+
+            iname = it.data(Qt.DisplayRole)
+            idata = it.data(Qt.UserRole)
+
+            if "Parent Objects" in idata:
+                pt[iname] = idata["Object_Type"]
+
+                for ob in idata["Parent Objects"]:
+                    if ob["Parent Object"] not in ps:
+                        ps[ob["Parent Object"]] = []
+                    ps[ob["Parent Object"]].append(iname)
+            else:
+                for i in range(it.rowCount()):
+                    queue.put(it.child(i, 0).index())
+        
+        return {
+            "children": ps,
+            "types": pt
+        }
 
     def selection_changed(self):
         selected = self.execution_tree.selectedIndexes()
@@ -542,6 +577,8 @@ class ExecutionController(QObject):
                 self.set_right_data_screen(Ui_Horizons(), item)
             elif type == "pasa":
                 self.set_right_data_screen(Ui_PASAScreen(), item)
+            if type == "featurebinningproperties":
+                self.set_right_data_screen(Ui_FeatureBinningProperties(parent=None, theme=self.theme), item)
     
     def set_right_data_screen(self, screen: QObject, item: QStandardItem):
         self.right_side_frame = QFrame()
@@ -556,6 +593,8 @@ class ExecutionController(QObject):
             self.right_side_screen.setOptions(self.get_objects_of_level_by_type("leaf"))
         if hasattr(self.right_side_screen, "setScenarios"):
             self.right_side_screen.setScenarios(self.get_simulations())
+        if hasattr(self.right_side_screen, "setObjectHierarchy"):
+            self.right_side_screen.setObjectHierarchy(self.get_object_hierarchy())
 
         self.right_side_screen.setInput(item.data(Qt.UserRole + 1))
         self.right_side_frame.setStyleSheet(style.format(
@@ -566,12 +605,18 @@ class ExecutionController(QObject):
             pressed_color=self.theme["dark_four"],
             background_color_2=self.theme["bg_two"],
         ))
-        self.container.setWidget(self.right_side_frame)
+
+        for i in reversed(range(self.container.count())): 
+            self.container.itemAt(i).widget().setParent(None)
+
+        self.container.addWidget(self.right_side_frame)
     
     def clear_right_widget(self):
         self.right_side_frame = None
         self.right_side_screen = None
-        self.container.setWidget(QWidget())
+        for i in reversed(range(self.container.count())): 
+            self.container.itemAt(i).widget().setParent(None)
+        self.container.addWidget(QWidget())
 
     def check_save_data(self, item: QStandardItem = None):
         if item is None:

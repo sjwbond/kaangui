@@ -18,6 +18,9 @@ tree_structure = {
         "Horizons": ("Horizon", "horizons"),
         "PASA": ("PASA", "pasa"),
         "Reports": ("Report", "reports")
+    },
+    "Extra": {
+        "Feature Binning Properties": ("Feature Binning Properties", "featurebinningproperties"),
     }
 }
 

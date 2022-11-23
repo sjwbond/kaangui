@@ -292,7 +292,8 @@ class SetupMainWindow:
             context_color = self.themes["app_color"]["context_color"]
         )
 
-        self.execution_screen_scroll_area = QScrollArea()
+        self.execution_screen_scroll_area = QHBoxLayout()
+        self.execution_screen_scroll_area.addWidget(QWidget())
 
         self.execution_controller = ExecutionController(
             node_tree=self.tree,
@@ -328,7 +329,7 @@ class SetupMainWindow:
         self.ui.load_pages.parentship_button_layout.addWidget(self.delete_table_2_row_button)
 
         self.ui.load_pages.row_8_layout.addWidget(self.execution_tree, 1)
-        self.ui.load_pages.row_8_layout.addWidget(self.execution_screen_scroll_area, 3)
+        self.ui.load_pages.row_8_layout.addLayout(self.execution_screen_scroll_area, 3)
         self.ui.load_pages.row_9_layout.addWidget(self.execution_undo_button)
         self.ui.load_pages.row_9_layout.addWidget(self.execution_redo_button)
         self.ui.load_pages.row_9_layout.addWidget(self.execution_save_button)
