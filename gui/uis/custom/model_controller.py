@@ -278,7 +278,7 @@ class ModelController:
             for item in tabledata["Parent Objects"]:
                 data.append([
                     item["Parent Object"],
-                    item["Parent Property"]
+                    item["Parent Property"] if "Parent Property" in item else ""
                 ])
 
             self.parents_model = ParentsTableModel(data)

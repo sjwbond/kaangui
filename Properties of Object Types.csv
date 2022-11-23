@@ -38,6 +38,8 @@ Line,Capacity
 Line,Line_Loss
 Node,Currency
 Node,Emissions
+Region,Currency
+Region,Emissions
 Reservoir,max_storage
 Reservoir,min_storage
 Reservoir,natural_inflow_minute
@@ -55,3 +57,5 @@ Storage,Save Blocks
 Storage,Save Data
 Variable,Value
 Variable,value
+Zone,Currency
+Zone,Emissions
