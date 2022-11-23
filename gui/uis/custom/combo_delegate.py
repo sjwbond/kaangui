@@ -20,7 +20,7 @@ class ComboDelegate(QItemDelegate):
 
     def setEditorData(self, edit, index):
         text = index.data(Qt.DisplayRole)
-        edit.setCurrentIndex(self.items.index(text))
+        edit.setCurrentText(text)
 
     def setModelData(self, combo, model, index):
         comboIndex = combo.currentIndex()

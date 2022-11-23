@@ -9,7 +9,7 @@ from gui.uis.custom.model_controller import ModelController
 from gui.uis.custom.model_helpers import model_to_dict
 from gui.uis.custom.node_tree_view import NodeTreeView
 from gui.uis.custom.parents_table_view import ParentsTableView
-from gui.uis.custom.properties_table_widget import PropertiesTableWidget
+from gui.uis.custom.properties_table_view import PropertiesTableView
 from gui.uis.custom.styled_button import StyledButton
 from gui.widgets.py_tree_view.py_tree_view import PyTreeView
 from . functions_main_window import *
@@ -223,7 +223,7 @@ class SetupMainWindow:
         )
 
         # TABLE WIDGETS
-        self.table_widget = PropertiesTableWidget(self.themes["app_color"])
+        self.table_widget = PropertiesTableView(self.themes["app_color"])
 
         self.table_widget_2 = ParentsTableView(
             radius = 8,
@@ -257,7 +257,6 @@ class SetupMainWindow:
             self.controller.set_filter_text(text)
         self.filterEdit.textChanged.connect(onTextChanged)
 
-        self.table_widget.itemChanged.connect(self.controller.save_properties_table)
         self.tree.clicked.connect(self.controller.update_properties_table)
         self.delete_table_2_row_button.clicked.connect(self.controller.delete_seleted_rows_parent)
         self.add_table_2_row_button.clicked.connect(self.controller.add_new_rows_parent)

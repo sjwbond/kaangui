@@ -2,6 +2,7 @@ import copy
 import csv
 from functools import partial
 from gui.uis.custom.model_helpers import findFreeName, get_all_object_names, model_to_dict, model_to_dict_1
+from gui.uis.custom.properties_table_model import PropertiesTableModel
 from gui.uis.windows.assign_group.assign_group_dialog_box import Ui_Dialog_Assign_Group
 from qt_core import *
 from gui.core.functions import *
@@ -9,7 +10,7 @@ from gui.uis.custom.node_tree_view import NodeTreeView
 from gui.uis.custom.parents_table_model import ParentsTableModel
 from gui.uis.custom.parents_table_view import ParentsTableView
 from gui.widgets.comboBoxSearchable.comboBoxSearchable import ExtendedComboBox
-from gui.uis.custom.properties_table_widget import PropertiesTableWidget
+from gui.uis.custom.properties_table_view import PropertiesTableView
 
 
 CLIPBOARD_FOLDER = "folder"
@@ -26,7 +27,7 @@ class AssignGroup(QDialog, Ui_Dialog_Assign_Group):
 
 
 class ModelController:
-    def __init__(self, tree: NodeTreeView, properties_table: PropertiesTableWidget, parents_table: ParentsTableView, object_properties: dict, parent_properties: list[str]):
+    def __init__(self, tree: NodeTreeView, properties_table: PropertiesTableView, parents_table: ParentsTableView, object_properties: dict, parent_properties: list[str]):
         self.tree = tree
         self.properties_table = properties_table
         self.parents_model = None
@@ -247,27 +248,31 @@ class ModelController:
         tabledata = selected.data(Qt.UserRole)
         
         if tabledata == "folder" or tabledata == "model":
-            self.properties_table.setRowCount(0)
-            self.parents_table.setModel(ParentsTableModel([]))
+            self.clear_tables()
         elif tabledata is not None:
-            self.properties_table.setRowCount(len(tabledata["Properties"]))
+            data = []
             props = self.properties_table_object_properties_dict[selected.data(Qt.UserRole)["Object_Type"]]
-            for i, item in enumerate(tabledata["Properties"]):
-                for key, value in table_header_hash.items():
-                    if key == "Property":
-                        combo = ExtendedComboBox()
-                        
-                        for t in props:
-                            combo.addItem(t)
+            for item in tabledata["Properties"]:
+                data.append([
+                    item["Parent Object"],
+                    item["Target Object"],
+                    item["Property"],
+                    item["Date_From"],
+                    item["Date_To"],
+                    item["Value"],
+                    item["Variable"],
+                    item["Variable_Effect"],
+                    item["Timeslice"],
+                    item["Timeslice_Index"],
+                    item["Group_id"],
+                    item["Priority"],
+                    item["Scenario"]
+                ])
 
-                        self.properties_table.setCellWidget(i,value,combo)
-                        if item[key] in props:
-                            combo.setCurrentIndex(props.index(item[key]))
-                        else:
-                            combo.setCurrentText(item[key])
-                        combo.currentIndexChanged.connect(self.save_properties_table)
-                    else:
-                        self.properties_table.setItem(i, value, QTableWidgetItem(item[key]))
+            self.properties_model = PropertiesTableModel(data)
+            self.properties_model.itemChanged.connect(self.save_properties_table)
+            self.properties_table.setComboProps(props)
+            self.properties_table.setModel(self.properties_model)
 
             data = []
             for item in tabledata["Parent Objects"]:
@@ -285,7 +290,9 @@ class ModelController:
         self.pause_history = False
     
     def clear_tables(self):
-        self.properties_table.setRowCount(0)
+        self.properties_model = PropertiesTableModel([])
+        self.properties_model.itemChanged.connect(self.save_properties_table)
+        self.properties_table.setModel(self.properties_model)
         self.parents_model = ParentsTableModel([])
         self.parents_model.itemChanged.connect(self.save_parent_table)
         self.parents_table.setModel(self.parents_model)
@@ -295,17 +302,23 @@ class ModelController:
         selected = self.tree.currentIndex()
 
         listofPropertiesToAppend = []
-        for row in range(self.properties_table.rowCount()):
-            tempDict = {}
-            for column in range(self.properties_table.columnCount()):
-                try:
-                    if isinstance(self.properties_table.cellWidget(row, column) , QComboBox):
-                        tempDict[self.properties_table.horizontalHeaderItem(column).text()]= self.properties_table.cellWidget(row, column).currentText()
-                    else:
-                        tempDict[self.properties_table.horizontalHeaderItem(column).text()]= self.properties_table.item(row, column).text()
-                except AttributeError:
-                    tempDict[self.properties_table.horizontalHeaderItem(column).text()]=""
-            listofPropertiesToAppend.append(tempDict)
+        for row in range(self.properties_model.rowCount(QModelIndex())):
+            object = {
+                "Parent Object": self.properties_model.dataAt(row, 0, Qt.DisplayRole),
+                "Target Object": self.properties_model.dataAt(row, 1, Qt.DisplayRole),
+                "Property": self.properties_model.dataAt(row, 2, Qt.DisplayRole),
+                "Date_From": self.properties_model.dataAt(row, 3, Qt.DisplayRole),
+                "Date_To": self.properties_model.dataAt(row, 4, Qt.DisplayRole),
+                "Value": self.properties_model.dataAt(row, 5, Qt.DisplayRole),
+                "Variable": self.properties_model.dataAt(row, 6, Qt.DisplayRole),
+                "Variable_Effect": self.properties_model.dataAt(row, 7, Qt.DisplayRole),
+                "Timeslice": self.properties_model.dataAt(row, 8, Qt.DisplayRole),
+                "Timeslice_Index": self.properties_model.dataAt(row, 9, Qt.DisplayRole),
+                "Group_id": self.properties_model.dataAt(row, 10, Qt.DisplayRole),
+                "Priority": self.properties_model.dataAt(row, 11, Qt.DisplayRole),
+                "Scenario": self.properties_model.dataAt(row, 12, Qt.DisplayRole)
+            }
+            listofPropertiesToAppend.append(object)
         
         temp = copy.deepcopy(self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(selected)).data(Qt.UserRole))
         temp["Properties"].clear()
@@ -332,66 +345,24 @@ class ModelController:
             self.parents_model.appendNewRow()
 
     def delete_seleted_rows(self):
-        indexes = self.properties_table.selectionModel().selectedRows()
-        for index in sorted(indexes):
-            self.properties_table.removeRow(index.row())
+        if self.properties_model is not None:
+            indexes = self.properties_model.selectionModel().selectedRows()
+            self.properties_model.removeRows(indexes)
 
     def add_new_rows(self):
-        rowPosition = self.properties_table.rowCount()
-        self.properties_table.insertRow(rowPosition)
-        for column in range(self.properties_table.columnCount()):
-            if column == 2:
-                combo = ExtendedComboBox()
-
-                props = self.properties_table_object_properties_dict[self.tree.selectedIndexes()[0].data(Qt.UserRole)["Object_Type"]]
-                combo.addItem("")
-                for t in props:
-                    combo.addItem(t)          
-                self.properties_table.setCellWidget(rowPosition,column,combo)
-
-                combo.currentIndexChanged.connect(self.save_properties_table)
-            
-            elif column == 3:
-                self.properties_table.setItem(rowPosition, column, QTableWidgetItem("2000-01-01"))  
-            elif column == 4:
-                self.properties_table.setItem(rowPosition, column, QTableWidgetItem("2100-01-01"))  
-
-            else:
-                self.properties_table.setItem(rowPosition, column, QTableWidgetItem(""))
+        if self.properties_model is not None:
+            self.properties_model.appendNewRow()
 
     def copy_seleted_rows(self):
         self.clipboard = []
         indexes = self.properties_table.selectionModel().selectedRows()
-        for index in sorted(indexes):
-            rowToCopyDict = {}
-            for column in range(self.properties_table.columnCount()):
-                if column == 2:
-                    rowToCopyDict[self.properties_table.horizontalHeaderItem(column).text()] = self.properties_table.cellWidget(index.row(), column).currentText()
-                else:
-                    rowToCopyDict[self.properties_table.horizontalHeaderItem(column).text()] = self.properties_table.item(index.row(), column).text()
-            self.clipboard.append(copy.deepcopy(rowToCopyDict))
+        data = self.properties_model.getData()
+        for index in indexes:
+            self.clipboard.append(copy.deepcopy(data[index.row()]))
 
     def paste_copied_rows(self):
-        rowPosition = self.properties_table.rowCount()
-        for i in range(len(self.clipboard)):
-            self.properties_table.insertRow(rowPosition)
-            rowToPasteDict = self.clipboard[i]
-            for column in range(self.properties_table.columnCount()):
-                if column == 2:
-                    combo = ExtendedComboBox()
-
-                    props = self.properties_table_object_properties_dict[self.tree.selectedIndexes()[0].data(Qt.UserRole)["Object_Type"]]
-                    for t in props:
-                        combo.addItem(t)
-                    
-                    self.properties_table.setCellWidget(rowPosition,column,combo)
-                    combo.setCurrentText(rowToPasteDict[self.properties_table.horizontalHeaderItem(column).text()])
-                    combo.currentIndexChanged.connect(self.save_properties_table)
-
-                else:
-                    self.properties_table.setItem(rowPosition, column, QTableWidgetItem(rowToPasteDict[self.properties_table.horizontalHeaderItem(column).text()]))
-
-            rowPosition = self.properties_table.rowCount()
+        for object in self.clipboard:
+            self.properties_model.appendRow(object)
 
     # Helping function for gettin selected nodes parents
     # ///////////////////////////////////////////////////////////////
@@ -581,19 +552,6 @@ class ModelController:
 
         self.dialogBox.show()
         self.dialogBox.open()
-        
-        # if self.dialogBox.exec() == 1:
-        #     self.create_undo_snapshot()
-        #     temp = copy.deepcopy(self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(selected)).data(Qt.UserRole))
-        #     temp["Parent Objects"] = []
-        #     for row in range(self.dialogBox.tableWidget.rowCount()):
-        #         temp["Parent Objects"].append({
-        #                 "Parent Object": self.dialogBox.tableWidget.item(row, 0).data(Qt.DisplayRole),
-        #                 "Parent Property": self.dialogBox.tableWidget.item(row, 1).data(Qt.DisplayRole)
-        #             })
-        #     self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(selected)).setData(temp, Qt.UserRole)
-        #     self.update_properties_table()
-        #     self.create_undo_snapshot()
 
     def deleteByModel(self):     
         qm = QMessageBox
