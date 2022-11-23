@@ -25,6 +25,9 @@
             2015
         ]
     },
+    "parent_properties": [
+        "upstream_reservoir"
+    ],
     "object_properties": {
         "Currency": [
             "fx_rate"
