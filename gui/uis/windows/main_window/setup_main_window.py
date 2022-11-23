@@ -250,7 +250,7 @@ class SetupMainWindow:
             context_color = self.themes["app_color"]["context_color"]
         )
 
-        self.controller = ModelController(tree=self.tree, properties_table=self.table_widget, parents_table=self.table_widget_2)
+        self.controller = ModelController(tree=self.tree, properties_table=self.table_widget, parents_table=self.table_widget_2, object_properties=self.settings["object_properties"], parent_properties=self.settings["parent_properties"])
 
         @Slot(str)
         def onTextChanged(text: str):

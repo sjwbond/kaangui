@@ -26,7 +26,7 @@ class AssignGroup(QDialog, Ui_Dialog_Assign_Group):
 
 
 class ModelController:
-    def __init__(self, tree: NodeTreeView, properties_table: PropertiesTableWidget, parents_table: ParentsTableView):
+    def __init__(self, tree: NodeTreeView, properties_table: PropertiesTableWidget, parents_table: ParentsTableView, object_properties: dict, parent_properties: list[str]):
         self.tree = tree
         self.properties_table = properties_table
         self.parents_model = None
@@ -69,13 +69,8 @@ class ModelController:
         self.tree.short_redo_object = QShortcut(QKeySequence("Ctrl+Y"), self.tree)
         self.tree.short_redo_object.activated.connect(self.redoShortcut)
 
-        self.properties_table_object_properties_dict= {}
-        with open(os.getcwd()+"/Properties of Object Types.csv", mode='r') as infile:
-            reader = csv.reader(infile)
-            for rows in reader:
-                if rows[0] not in self.properties_table_object_properties_dict:
-                    self.properties_table_object_properties_dict[rows[0]] = []
-                self.properties_table_object_properties_dict[rows[0]].append(rows[1])
+        self.properties_table_object_properties_dict = object_properties
+        self.parent_properties = parent_properties
     
     def create_snapshot(self) -> dict:
         modelNode = self.tree.rootModel.index(0, 0)
@@ -532,12 +527,7 @@ class ModelController:
             item.setCheckState(Qt.Unchecked)
             self.dialogBox.listWidget.addItem(item)
 
-        items_obj_prop = []
-        with open(os.getcwd()+"/ParentProperties.csv", mode='r') as infile:
-            reader = csv.reader(infile)
-            for rows in reader:
-                items_obj_prop.append(rows[0])
-        for item in items_obj_prop: 
+        for item in self.parent_properties: 
             item = QListWidgetItem(item)
             item.setCheckState(Qt.Unchecked)
             self.dialogBox.listWidget_2.addItem(item)
