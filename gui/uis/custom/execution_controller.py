@@ -198,13 +198,17 @@ QHeaderView::section:vertical
     border-bottom: 1px solid #595D75;
     margin-bottom: 1px;
 }}
+
+QListView {{
+	background-color: {background_color_2};
+}}
 '''
 
 
 class ExecutionController(QObject):
     executed = Signal(str, int)
 
-    def __init__(self, node_tree: NodeTreeView, execution_tree: QTreeView, container: QHBoxLayout, theme: dict, options: dict) -> None:
+    def __init__(self, node_tree: NodeTreeView, execution_tree: QTreeView, container: QHBoxLayout, theme: dict, options: dict, object_properties: dict) -> None:
         self.node_tree = node_tree
         self.execution_tree = execution_tree
         self.container = container
@@ -214,6 +218,7 @@ class ExecutionController(QObject):
         self.simulation = {}
         self.right_side_screen = None
         self.last_index = None
+        self.object_properties = object_properties
 
         # container.setStyleSheet(container_style.format(background_color=theme["bg_one"]))
 
@@ -595,6 +600,8 @@ class ExecutionController(QObject):
             self.right_side_screen.setScenarios(self.get_simulations())
         if hasattr(self.right_side_screen, "setObjectHierarchy"):
             self.right_side_screen.setObjectHierarchy(self.get_object_hierarchy())
+        if hasattr(self.right_side_screen, "setObjectProperties"):
+            self.right_side_screen.setObjectProperties(self.object_properties)
 
         self.right_side_screen.setInput(item.data(Qt.UserRole + 1))
         self.right_side_frame.setStyleSheet(style.format(
