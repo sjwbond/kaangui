@@ -21,6 +21,7 @@ class Ui_FeatureBinningProperties(QObject):
     def __init__(self, parent: Optional[QObject], theme: dict) -> None:
         super().__init__(parent)
         self.theme = theme
+        self.currentSelection = None
 
     def setupUi(self, Dialog):
         Dialog.setObjectName("Feature Binning Properties")
@@ -66,17 +67,42 @@ class Ui_FeatureBinningProperties(QObject):
         self.treeView.setDropIndicatorShown(False)
         self.treeView.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.treeView.setContextMenuPolicy(Qt.CustomContextMenu)
-
-        # self.treeView.clicked.connect(self.selection_changed)
-        # self.treeView.customContextMenuRequested.connect(self.open_menu)
+        self.treeView.clicked.connect(self.selectionChanged)
 
         self.verticalLayout.addWidget(self.treeView)
         self.horizontalLayout.addLayout(self.verticalLayout)
-        self.listView = QListView(Dialog)
-        self.listView.setObjectName("listView")
-        self.horizontalLayout.addWidget(self.listView)
+        self.tableWidget = QTableWidget(Dialog)
+        self.tableWidget.setObjectName("tableWidget")
+
+        self.tableWidget.setColumnCount(3)
+        self.tableWidget.setRowCount(0)
+        self.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        self.tableWidget.setSelectionMode(QAbstractItemView.SingleSelection)
+        self.tableWidget.setSelectionBehavior(QAbstractItemView.SelectRows)
+        self.tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.tableWidget.verticalHeader().setVisible(False)
+        
+        self.column_1 = QTableWidgetItem()
+        self.column_1.setTextAlignment(Qt.AlignCenter)
+        self.column_1.setText("Enabled?")
+        self.tableWidget.setHorizontalHeaderItem(0, self.column_1)
+        self.tableWidget.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeToContents)
+
+        self.column_2 = QTableWidgetItem()
+        self.column_2.setTextAlignment(Qt.AlignCenter)
+        self.column_2.setText("Property")
+        self.tableWidget.setHorizontalHeaderItem(1, self.column_2)
+        self.tableWidget.horizontalHeader().setSectionResizeMode(1, QHeaderView.Stretch)
+
+        self.column_3 = QTableWidgetItem()
+        self.column_3.setTextAlignment(Qt.AlignCenter)
+        self.column_3.setText("Group")
+        self.tableWidget.setHorizontalHeaderItem(2, self.column_3)
+        self.tableWidget.horizontalHeader().setSectionResizeMode(2, QHeaderView.ResizeToContents)
+
+        self.horizontalLayout.addWidget(self.tableWidget)
         self.horizontalLayout.setStretch(0, 1)
-        self.horizontalLayout.setStretch(2, 1)
+        self.horizontalLayout.setStretch(1, 1)
 
         self.retranslateUi(Dialog)
         QMetaObject.connectSlotsByName(Dialog)
@@ -93,6 +119,7 @@ class Ui_FeatureBinningProperties(QObject):
         self.input = input
     
     def getOutput(self):
+        self.saveFeatures()
         return self.input
     
     def setObjectHierarchy(self, hierarchy: dict):
@@ -102,12 +129,17 @@ class Ui_FeatureBinningProperties(QObject):
         self.proxyModel.setFilterCaseSensitivity(Qt.CaseInsensitive)
         self.proxyModel.setSourceModel(self.model)
         self.treeView.setModel(self.proxyModel)
+        self.currentSelection = None
 
         for name, type in hierarchy["types"].items():
             if type == "Region":
                 item = QStandardItem(name)
+                item.setData("Region", Qt.UserRole)
                 self.model.appendRow(item)
                 self.populateChildren(item, name, hierarchy)
+    
+    def setObjectProperties(self, properties: dict):
+        self.objectProperties = properties
     
     def populateChildren(self, item: QStandardItem, name: str, hierarchy: dict):
         if name in hierarchy["children"]:
@@ -121,6 +153,7 @@ class Ui_FeatureBinningProperties(QObject):
                     parent_item = self.getOrCreateItem(item, hierarchy["types"][child])
 
                 new_item = QStandardItem(child)
+                new_item.setData(hierarchy["types"][child], Qt.UserRole)
                 parent_item.appendRow(new_item)
                 self.populateChildren(new_item, child, hierarchy)
     
@@ -133,3 +166,51 @@ class Ui_FeatureBinningProperties(QObject):
         new_item = QStandardItem(name)
         item.appendRow(new_item)
         return new_item
+
+    def selectionChanged(self):
+        self.saveFeatures()
+
+        selected = self.treeView.currentIndex()
+        if selected is None:
+            self.currentSelection = None
+            return
+
+        type = selected.data(Qt.UserRole)
+        self.currentSelection = selected.data(Qt.DisplayRole)
+        
+        self.clearTable()
+
+        if type not in ["Region", "Zone", "Node", None]:
+            self.addTableItems(self.objectProperties[type])
+
+    def clearTable(self):
+        self.tableWidget.setRowCount(0)
+
+    def addTableItems(self, items):
+        self.tableWidget.setRowCount(len(items))
+        for i, item in enumerate(items):
+            enabledCheckbox = QCheckBox()
+            groupLineEdit = QLineEdit()
+            if self.currentSelection in self.input:
+                if item in self.input[self.currentSelection]:
+                    enabledCheckbox.setChecked(self.input[self.currentSelection][item]["enabled"])
+                    groupLineEdit.setText(self.input[self.currentSelection][item]["group"])
+
+            self.tableWidget.setCellWidget(i, 0, enabledCheckbox)
+            self.tableWidget.setItem(i, 1, QTableWidgetItem(item))
+            self.tableWidget.setCellWidget(i, 2, groupLineEdit)
+
+    def saveFeatures(self):
+        if self.currentSelection is None:
+            return
+
+        self.input[self.currentSelection] = {}
+        for i in range(self.tableWidget.rowCount()):
+            enabled = self.tableWidget.cellWidget(i, 0).isChecked()
+            name = self.tableWidget.item(i, 1).text()
+            group = self.tableWidget.cellWidget(i, 2).text()
+
+            self.input[self.currentSelection][name] = {
+                "enabled": enabled,
+                "group": group
+            }
