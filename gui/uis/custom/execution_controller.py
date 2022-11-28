@@ -427,6 +427,10 @@ class ExecutionController(QObject):
         if ret != QMessageBox.Yes:
             return
 
+        if self.execution_tree.currentIndex() == index:
+            self.clear_right_widget()
+            self.last_index = None
+
         item = self.model.itemFromIndex(index)
         self.create_undo_snapshot_removed(self.get_item_path(item), (item.data(Qt.UserRole), item.data(Qt.UserRole + 1)))
 
