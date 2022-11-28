@@ -17,7 +17,8 @@ settings_default_input = {
     "Performance": "",
     "Production": "",
     "Stochastics": "",
-    "Transmission": ""
+    "Transmission": "",
+    "Feature Binning Properties": ""
 }
 
 
@@ -65,6 +66,12 @@ class Ui_Settings(QObject):
         self.transmissionComboBox = QComboBox(Dialog)
         self.transmissionComboBox.setObjectName("transmissionComboBox")
         self.formLayout.setWidget(5, QFormLayout.FieldRole, self.transmissionComboBox)
+        self.featureBinningLabel = QLabel(Dialog)
+        self.featureBinningLabel.setObjectName("featureBinningLabel")
+        self.formLayout.setWidget(6, QFormLayout.LabelRole, self.featureBinningLabel)
+        self.featureBinningComboBox = QComboBox(Dialog)
+        self.featureBinningComboBox.setObjectName("featureBinningComboBox")
+        self.formLayout.setWidget(6, QFormLayout.FieldRole, self.featureBinningComboBox)
         self.verticalLayout.addLayout(self.formLayout)
 
         self.retranslateUi(Dialog)
@@ -79,6 +86,7 @@ class Ui_Settings(QObject):
         self.productionLabel.setText(_translate("Dialog", "Production"))
         self.stochasticsLabel.setText(_translate("Dialog", "Stochastics"))
         self.transmissionLabel.setText(_translate("Dialog", "Transmission"))
+        self.featureBinningLabel.setText(_translate("Dialog", "Feature Binning Properties"))
     
     def setOptions(self, options):
         # Merge default options with provided options
@@ -88,7 +96,8 @@ class Ui_Settings(QObject):
             "performance": [],
             "production": [],
             "stochastics": [],
-            "transmission": []
+            "transmission": [],
+            "featurebinningproperties": []
         } | options
 
         self.competitionComboBox.clear()
@@ -97,6 +106,7 @@ class Ui_Settings(QObject):
         self.productionComboBox.clear()
         self.stochasticsComboBox.clear()
         self.transmissionComboBox.clear()
+        self.featureBinningComboBox.clear()
         
         self.competitionComboBox.addItem("")
         self.diagnosticsComboBox.addItem("")
@@ -104,6 +114,7 @@ class Ui_Settings(QObject):
         self.productionComboBox.addItem("")
         self.stochasticsComboBox.addItem("")
         self.transmissionComboBox.addItem("")
+        self.featureBinningComboBox.addItem("")
         
         self.competitionComboBox.addItems(options["competition"])
         self.diagnosticsComboBox.addItems(options["diagnostics"])
@@ -111,6 +122,7 @@ class Ui_Settings(QObject):
         self.productionComboBox.addItems(options["production"])
         self.stochasticsComboBox.addItems(options["stochastics"])
         self.transmissionComboBox.addItems(options["transmission"])
+        self.featureBinningComboBox.addItems(options["featurebinningproperties"])
 
     def setInput(self, input):
         self.input = input
@@ -120,6 +132,7 @@ class Ui_Settings(QObject):
         self.productionComboBox.setCurrentText(self.input["Production"])
         self.stochasticsComboBox.setCurrentText(self.input["Stochastics"])
         self.transmissionComboBox.setCurrentText(self.input["Transmission"])
+        self.featureBinningComboBox.setCurrentText(self.input["Feature Binning Properties"])
     
     def getOutput(self):
         output = {
@@ -128,6 +141,7 @@ class Ui_Settings(QObject):
             "Performance": self.performanceComboBox.currentText(),
             "Production": self.productionComboBox.currentText(),
             "Stochastics": self.stochasticsComboBox.currentText(),
-            "Transmission": self.transmissionComboBox.currentText()
+            "Transmission": self.transmissionComboBox.currentText(),
+            "Feature Binning Properties": self.featureBinningComboBox.currentText()
         }
         return output
