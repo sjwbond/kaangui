@@ -6,7 +6,7 @@ from gui.uis.windows.open_model.open_model import Ui_OpenModelDialog
 from gui.uis.custom.api import WebAPI
 from gui.uis.custom.execution_controller import ExecutionController
 from gui.uis.custom.model_controller import ModelController
-from gui.uis.custom.model_helpers import model_to_dict
+from gui.uis.custom.model_helpers import model_to_dict, sanitize_json
 from gui.uis.custom.node_tree_view import NodeTreeView
 from gui.uis.custom.parents_table_view import ParentsTableView
 from gui.uis.custom.properties_table_view import PropertiesTableView
@@ -450,12 +450,7 @@ class SetupMainWindow:
     def save_model_to_json(self):
         data = self.dump_model()
         (name, _) = QFileDialog.getSaveFileName(None, "Select JSON File", dir=f"{data['name']}.json")
-        if "name" in data:
-            del data["name"]
-        if "hash" in data:
-            del data["hash"]
-        if "id" in data:
-            del data["id"]
+        data = sanitize_json(data)
         if name != '':
             with open(name, "w", encoding="utf8") as file:
                 json.dump(data, file, sort_keys=True, indent=4)
@@ -465,6 +460,7 @@ class SetupMainWindow:
         if name != '':
             with open(name, "r", encoding="utf8") as file:
                 model = json.load(file)
+                model = sanitize_json(model)
                 # Extract file name from path without extension
                 m = re.match(r"^(?:.*[\/\\])?([^\/\\]+?|)(?=(?:\.[^\/\\.]*)?$)", name)
                 model["name"] = m.group(1)

@@ -1,3 +1,4 @@
+import copy
 from typing import List
 from qt_core import *
 
@@ -53,3 +54,24 @@ def findFreeName(item: QStandardItem, name: str, prefix: str = ""):
         freeName = prefix + name + " (" + str(counter) + ")"
     
     return freeName
+
+
+def sanitize_json(json):
+    model = copy.deepcopy(json) 
+    if "name" in model:
+        del model["name"]
+    if "hash" in model:
+        del model["hash"]
+    if "id" in model:
+        del model["id"]
+    if "modelId" in model:
+        del model["modelId"]
+    if "savedAt" in model:
+        del model["savedAt"]
+    if "savedBy" in model:
+        del model["savedBy"]
+    if "savedByName" in model:
+        del model["savedByName"]
+    if "versionId" in model:
+        del model["versionId"]
+    return model
