@@ -43,7 +43,7 @@ def get_all_object_names(model: QAbstractItemModel) -> List[str]:
     return d
 
 def findFreeName(item: QStandardItem, name: str, prefix: str = ""):
-    names = [item.child(i).data(0) for i in range(item.rowCount())]            
+    names = [item.child(i).data(0) for i in range(item.rowCount())]
 
     counter = 0
     freeName = name

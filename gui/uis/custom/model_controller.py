@@ -33,6 +33,7 @@ class ModelController:
         self.parents_model = None
         self.parents_table = parents_table
         self.clipboard: list[dict] = []
+        self.object_names = set()
 
         self.base_snapshot = {}
         self.last_snapshot = {}
@@ -230,6 +231,7 @@ class ModelController:
                 node.setData("folder", Qt.UserRole)
                 node.setFlags(Qt.ItemIsDragEnabled | Qt.ItemIsDropEnabled | node.flags())
             else:
+                self.object_names.add(node_key)
                 node.setIcon(QIcon(Functions.set_svg_icon("icon_file.svg")))
                 node.setData(model_node[node_key], Qt.UserRole) 
                 node.setFlags(Qt.ItemIsDragEnabled | node.flags() & (~Qt.ItemIsDropEnabled))
@@ -237,6 +239,7 @@ class ModelController:
             tree_node.appendRow(node)
 
     def remove_node_from_tree(self, tree_node: QModelIndex):
+        self.object_names.remove(tree_node.data(Qt.DisplayRole))
         self.tree.rootModel.removeRow(tree_node.row(), tree_node.parent())
 
     def update_properties_table(self):
@@ -573,10 +576,10 @@ class ModelController:
             ix2 = self.tree.proxyModel.mapToSource(ix)
             it = self.tree.rootModel.itemFromIndex(ix2)
 
-            if text in self.tree.getChildren(it.parent()):
+            if text in self.object_names:
                 msg = QMessageBox()
                 msg.setWindowTitle("Rename Failed")
-                msg.setText("An object/folder with the same name already exists.")
+                msg.setText("An object with the same name already exists.")
                 msg.exec()
                 return
 
@@ -618,7 +621,7 @@ class ModelController:
             msg.exec()
             return
         
-        self.dictToPaste = {findFreeName(item, self.clipboardName, "Copy of ") : self.clipboardContents}
+        self.dictToPaste = {self.findFreeName(self.clipboardName, "Copy of ") : self.clipboardContents}
         self.add_node_to_tree(copy.deepcopy(self.dictToPaste), item)
         self.create_undo_snapshot()
 
@@ -647,6 +650,17 @@ class ModelController:
     # Functions for object manipulation
     # ///////////////////////////////////////////////////////////////
 
+    def findFreeName(self, name, prefix = ""):
+        counter = 0
+        freeName = name
+        if freeName in self.object_names:
+            freeName = prefix + name
+        while freeName in self.object_names:
+            counter += 1
+            freeName = prefix + name + " (" + str(counter) + ")"
+        
+        return freeName
+
     def createNewObjectByModel(self):
         try:
             text, okPressed = QInputDialog.getText(self.tree, "New object name","New object name:", text="New Object")
@@ -654,7 +668,7 @@ class ModelController:
                 selected = self.tree.currentIndex()
                 keysList = self.getAncestry(selected)
                 item = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(selected))
-                name = findFreeName(item, text)
+                name = self.findFreeName(text)
                 newObjectDict = {name : {
                 "Object_Name": name,
                 "Object_Type": keysList[1],
@@ -675,8 +689,10 @@ class ModelController:
     def createNewFolderByModelWithName(self, name):
         self.create_undo_snapshot()
         selected = self.tree.currentIndex()
+        item = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(selected))
+        name = findFreeName(item, name)
         newObjectDict = {name : {}}
-        self.add_node_to_tree(newObjectDict, self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(selected)))
+        self.add_node_to_tree(newObjectDict, item)
         self.create_undo_snapshot()
 
     def createNewFolderByModel(self):
