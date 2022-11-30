@@ -468,11 +468,12 @@ class SetupMainWindow:
 
     def create_json_from_txt(self):
         name = QFileDialog.getExistingDirectory(None, 'Select a folder:', self.working_directory, QFileDialog.ShowDirsOnly)
-        text, okPressed = QInputDialog.getText(self, "Json File Name", "Json File Name:", text="")
-        if okPressed and text != '':
-            data = readTxt(name, text)
-            with open("data/"+ text +'.mdl', 'w') as fp:
-                json.dump(data, fp, sort_keys=True, indent=4)
+        if name != '':
+            (outname, _) = QFileDialog.getSaveFileName(None, "Select JSON File", dir=f".json")
+            if outname != '':
+                data = readTxt(name)
+                with open(outname, "w", encoding="utf8") as file:
+                    json.dump(data, file, sort_keys=True, indent=4)
 
     def send_model_to_queue(self, name, priority):
         self.save_model_to_api()
