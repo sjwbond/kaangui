@@ -36,7 +36,7 @@ class NodeTreeView(PyTreeView):
 
         self.rootNode = self.rootModel.invisibleRootItem()
 
-        self.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
+        self.setSelectionMode(QAbstractItemView.ExtendedSelection)
         self.setDragEnabled(True)
         self.setAcceptDrops(True)
         self.setDropIndicatorShown(True)

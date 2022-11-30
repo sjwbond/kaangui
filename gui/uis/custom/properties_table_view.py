@@ -7,13 +7,16 @@ from gui.widgets.py_table_widget.style import style
 class PropertiesTableView(QTableView):
   def __init__(self, theme):
     super().__init__()
-    self.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+    self.horizontalHeader().setSectionResizeMode(QHeaderView.Interactive)
+    self.horizontalHeader().setSectionsClickable(True)
+    self.horizontalHeader().setSectionsMovable(True)
     self.setSelectionMode(QAbstractItemView.ExtendedSelection)
     self.setSelectionBehavior(QAbstractItemView.SelectRows)
+    self.setSortingEnabled(True)
 
     self.comboDelegate = ComboDelegate([])
     self.setItemDelegateForColumn(2, self.comboDelegate)
-        
+
     self.textDelegate = TextDelegate()
     self.setItemDelegateForColumn(0, self.textDelegate)
     self.setItemDelegateForColumn(1, self.textDelegate)

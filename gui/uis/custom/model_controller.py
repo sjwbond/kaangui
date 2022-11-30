@@ -243,53 +243,57 @@ class ModelController:
         self.tree.rootModel.removeRow(tree_node.row(), tree_node.parent())
 
     def update_properties_table(self):
-        selected = self.tree.currentIndex()
-        if selected is None:
-            return
-
+        selected = self.tree.selectedIndexes()
         self.pause_history = True
-        tabledata = selected.data(Qt.UserRole)
-        
-        if tabledata == "folder" or tabledata == "model":
-            self.clear_tables()
-        elif tabledata is not None:
-            data = []
-            props = self.properties_table_object_properties_dict[selected.data(Qt.UserRole)["Object_Type"]]
-            for item in tabledata["Properties"]:
-                data.append([
-                    item["Parent Object"],
-                    item["Target Object"],
-                    item["Property"],
-                    item["Date_From"],
-                    item["Date_To"],
-                    item["Value"],
-                    item["Variable"],
-                    item["Variable_Effect"],
-                    item["Timeslice"],
-                    item["Timeslice_Index"],
-                    item["Group_id"],
-                    item["Priority"],
-                    item["Scenario"]
-                ])
 
-            self.properties_model = PropertiesTableModel(data)
-            self.properties_model.itemChanged.connect(self.save_properties_table)
-            self.properties_table.setComboProps(props)
-            self.properties_table.setModel(self.properties_model)
+        properties = []
+        props = set()
 
-            data = []
-            for item in tabledata["Parent Objects"]:
-                data.append([
-                    item["Parent Object"],
-                    item["Parent Property"] if "Parent Property" in item else ""
-                ])
+        for i in range(len(selected)):
+            tabledata = selected[i].data(Qt.UserRole)
+            if tabledata not in ["folder", "model", None]:
+                props.update(self.properties_table_object_properties_dict[selected[i].data(Qt.UserRole)["Object_Type"]])
+                for item in tabledata["Properties"]:
+                    properties.append([
+                        item["Parent Object"],
+                        item["Target Object"],
+                        item["Property"],
+                        item["Date_From"],
+                        item["Date_To"],
+                        item["Value"],
+                        item["Variable"],
+                        item["Variable_Effect"],
+                        item["Timeslice"],
+                        item["Timeslice_Index"],
+                        item["Group_id"],
+                        item["Priority"],
+                        item["Scenario"]
+                    ])
 
-            self.parents_model = ParentsTableModel(data)
-            self.parents_model.itemChanged.connect(self.save_parent_table)
-            self.parents_table.setModel(self.parents_model)
+        self.properties_model = PropertiesTableModel(properties)
+        self.properties_model.itemChanged.connect(self.save_properties_table)
+        self.properties_proxy_model = QSortFilterProxyModel(self.properties_table)
+        self.properties_proxy_model.setSourceModel(self.properties_model)
+        self.properties_table.setComboProps(list(props))
+        self.properties_table.setModel(self.properties_proxy_model)
 
-            props = get_all_object_names(self.tree.rootModel)
-            self.parents_table.setComboProps(props)
+        parentships = []
+        current = self.tree.currentIndex()
+        if current is not None:
+            tabledata = current.data(Qt.UserRole)
+            if tabledata not in ["folder", "model", None]:
+                for item in tabledata["Parent Objects"]:
+                    parentships.append([
+                        item["Parent Object"],
+                        item["Parent Property"] if "Parent Property" in item else ""
+                    ])
+
+        self.parents_model = ParentsTableModel(parentships)
+        self.parents_model.itemChanged.connect(self.save_parent_table)
+        props = get_all_object_names(self.tree.rootModel)
+        self.parents_table.setComboProps(props)
+        self.parents_table.setModel(self.parents_model)
+
         self.pause_history = False
     
     def clear_tables(self):
@@ -349,7 +353,7 @@ class ModelController:
 
     def delete_seleted_rows(self):
         if self.properties_model is not None:
-            indexes = self.properties_model.selectionModel().selectedRows()
+            indexes = self.properties_table.selectionModel().selectedRows()
             self.properties_model.removeRows(indexes)
 
     def add_new_rows(self):
@@ -382,11 +386,12 @@ class ModelController:
     # ///////////////////////////////////////////////////////////////
 
     def openMenu(self, position):
-        if len(self.tree.selectedIndexes()) > 0:
-            selectedItem = self.tree.selectedIndexes()[0].data(Qt.UserRole)
+        current = self.tree.currentIndex()
+        if current is not None:
+            selectedItem = current.data(Qt.UserRole)
             menu = QMenu()
 
-            item = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(self.tree.selectedIndexes()[0]))
+            item = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(current))
             children = [item.child(i).data(0) for i in range(item.rowCount())]
 
             if selectedItem == "model":
@@ -406,11 +411,11 @@ class ModelController:
                 qmenurenamemodel.triggered.connect(self.renameModel)
                 menu.addAction(qmenurenamemodel)
             elif selectedItem == "folder":
-                qmenunewobject = QAction("Create a New Object under " + self.tree.selectedIndexes()[0].data(0))
+                qmenunewobject = QAction("Create a New Object under " + current.data(0))
                 qmenunewobject.triggered.connect(self.createNewObjectByModel)
                 menu.addAction(qmenunewobject)
 
-                qmenunewfolder = QAction("Create a New Folder under " + self.tree.selectedIndexes()[0].data(0))
+                qmenunewfolder = QAction("Create a New Folder under " + current.data(0))
                 qmenunewfolder.triggered.connect(self.createNewFolderByModel)
                 menu.addAction(qmenunewfolder)
 
@@ -431,7 +436,7 @@ class ModelController:
                     menu.addAction(qmenucutfolder)
 
                 if self.clipboardType != None:
-                    qmenupaste = QAction("Paste " + self.clipboardName + " under " + self.tree.selectedIndexes()[0].data(0))
+                    qmenupaste = QAction("Paste " + self.clipboardName + " under " + current.data(0))
                     qmenupaste.triggered.connect(self.pasteByModel)
                     menu.addAction(qmenupaste)
 
@@ -558,7 +563,7 @@ class ModelController:
 
     def deleteByModel(self):     
         qm = QMessageBox
-        isObject = self.tree.proxyModel.itemData(self.tree.selectedIndexes()[0])[Qt.UserRole] != "folder"
+        isObject = self.tree.proxyModel.itemData(self.tree.currentIndex())[Qt.UserRole] != "folder"
         ret = qm.question(self.tree, '', "Are you sure to delete object?" if isObject else "Are you sure to delete folder and its content?", qm.Yes | qm.No)
 
         if ret ==  qm.Yes:
