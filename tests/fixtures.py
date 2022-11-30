@@ -16,7 +16,8 @@ test_model_1 = {
         "ST Schedule": {},
         "Settings": {},
         "Stochastics": {},
-        "Transmission": {}
+        "Transmission": {},
+        "Feature Binning Properties": {}
     },
     "SystemInputs": {
         "Currency": {
@@ -167,7 +168,8 @@ test_simulation_1 = {
     "ST Schedule": {},
     "Settings": {},
     "Stochastics": {},
-    "Transmission": {}
+    "Transmission": {},
+    "Feature Binning Properties": {}
 }
 
 def create_test_widget(qtbot):

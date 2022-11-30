@@ -142,10 +142,12 @@ class ModelController:
             self.add_node_to_tree({name: old}, self.tree.rootModel.itemFromIndex(index))
 
         for item in diff["changed"]:
-            (path, old, _) = item
+            (path, old, new) = item
             index = self.get_item_by_path(path[1:])
             if path == ["name"]:
                 self.tree.rootModel.itemFromIndex(index).setData(old, Qt.DisplayRole)
+                self.object_names.remove(new)
+                self.object_names.add(old)
             else:
                 self.tree.rootModel.itemFromIndex(index).setData(old, Qt.UserRole)
                 
@@ -164,10 +166,12 @@ class ModelController:
             self.add_node_to_tree({name: new}, self.tree.rootModel.itemFromIndex(index))
 
         for item in diff["changed"]:
-            (path, _, new) = item
+            (path, old, new) = item
             index = self.get_item_by_path(path[1:])
             if path == ["name"]:
                 self.tree.rootModel.itemFromIndex(index).setData(new, Qt.DisplayRole)
+                self.object_names.remove(old)
+                self.object_names.add(new)
             else:
                 self.tree.rootModel.itemFromIndex(index).setData(new, Qt.UserRole)
         
@@ -306,6 +310,7 @@ class ModelController:
 
     def save_properties_table(self):
         self.create_undo_snapshot()
+        # TODO fix me to handle multiple objects
         selected = self.tree.currentIndex()
 
         listofPropertiesToAppend = []
@@ -589,6 +594,8 @@ class ModelController:
                 return
 
             it.setData(text, Qt.DisplayRole)
+            self.object_names.remove(oldName)
+            self.object_names.add(text)
             self.create_undo_snapshot()
 
     def copyByModel(self):
