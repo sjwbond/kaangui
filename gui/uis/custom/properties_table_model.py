@@ -21,30 +21,32 @@ class PropertiesTableModel(QAbstractTableModel):
     def headerData(self, section: int, orientation: Qt.Orientation, role: int):
         if orientation == Qt.Horizontal and role == Qt.DisplayRole:
             if section == 0:
+                return "Name"
+            if section == 1:
                 return "Parent Object"
-            elif section == 1:
-                return "Target Object"
             elif section == 2:
-                return "Property"
+                return "Target Object"
             elif section == 3:
-                return "Date From"
+                return "Property"
             elif section == 4:
-                return "Date To"
+                return "Date From"
             elif section == 5:
-                return "Value"
+                return "Date To"
             elif section == 6:
-                return "Variable"
+                return "Value"
             elif section == 7:
-                return "Variable Effect"
+                return "Variable"
             elif section == 8:
+                return "Variable Effect"
+            elif section == 0:
                 return "Timeslice"
-            elif section == 9:
-                return "Timeslice Index"
             elif section == 10:
-                return "Group ID"
+                return "Timeslice Index"
             elif section == 11:
-                return "Priority"
+                return "Group ID"
             elif section == 12:
+                return "Priority"
+            elif section == 13:
                 return "Scenario"
             else:
                 return section
@@ -64,13 +66,13 @@ class PropertiesTableModel(QAbstractTableModel):
         return len(self._data)
 
     def columnCount(self, index: Union[QModelIndex, QPersistentModelIndex]):
-        return 13
+        return 14
 
     def flags(self, index: Union[QModelIndex, QPersistentModelIndex]):
         return Qt.ItemIsSelectable|Qt.ItemIsEnabled|Qt.ItemIsEditable
     
-    def appendNewRow(self):
-        self.appendRow(["", "", "", "2000-01-01", "2100-01-01", "", "", "", "", "", "", "", ""])
+    def appendNewRow(self, name=""):
+        self.appendRow([name, "", "", "", "2000-01-01", "2100-01-01", "", "", "", "", "", "", "", ""])
     
     def appendRow(self, row: list[str]):
         self.beginInsertRows(QModelIndex(), len(self._data), len(self._data))

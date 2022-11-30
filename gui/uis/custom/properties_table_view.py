@@ -15,12 +15,12 @@ class PropertiesTableView(QTableView):
     self.setSortingEnabled(True)
 
     self.comboDelegate = ComboDelegate([])
-    self.setItemDelegateForColumn(2, self.comboDelegate)
+    self.setItemDelegateForColumn(3, self.comboDelegate)
 
     self.textDelegate = TextDelegate()
     self.setItemDelegateForColumn(0, self.textDelegate)
     self.setItemDelegateForColumn(1, self.textDelegate)
-    self.setItemDelegateForColumn(3, self.textDelegate)
+    self.setItemDelegateForColumn(2, self.textDelegate)
     self.setItemDelegateForColumn(4, self.textDelegate)
     self.setItemDelegateForColumn(5, self.textDelegate)
     self.setItemDelegateForColumn(6, self.textDelegate)
@@ -30,6 +30,7 @@ class PropertiesTableView(QTableView):
     self.setItemDelegateForColumn(10, self.textDelegate)
     self.setItemDelegateForColumn(11, self.textDelegate)
     self.setItemDelegateForColumn(12, self.textDelegate)
+    self.setItemDelegateForColumn(13, self.textDelegate)
 
     # SET STYLESHEET
     self.set_stylesheet(

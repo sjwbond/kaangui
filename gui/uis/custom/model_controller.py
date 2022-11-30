@@ -254,11 +254,13 @@ class ModelController:
         props = set()
 
         for i in range(len(selected)):
+            name = selected[i].data(Qt.DisplayRole)
             tabledata = selected[i].data(Qt.UserRole)
             if tabledata not in ["folder", "model", None]:
-                props.update(self.properties_table_object_properties_dict[selected[i].data(Qt.UserRole)["Object_Type"]])
+                props.update(self.properties_table_object_properties_dict[tabledata["Object_Type"]])
                 for item in tabledata["Properties"]:
                     properties.append([
+                        name,
                         item["Parent Object"],
                         item["Target Object"],
                         item["Property"],
@@ -310,32 +312,40 @@ class ModelController:
 
     def save_properties_table(self):
         self.create_undo_snapshot()
-        # TODO fix me to handle multiple objects
-        selected = self.tree.currentIndex()
+        selected = self.tree.selectedIndexes()
 
-        listofPropertiesToAppend = []
+        objectProperties = {}
         for row in range(self.properties_model.rowCount(QModelIndex())):
+            name = self.properties_model.dataAt(row, 0, Qt.DisplayRole)
+            if name not in objectProperties:
+                objectProperties[name] = []
+
             object = {
-                "Parent Object": self.properties_model.dataAt(row, 0, Qt.DisplayRole),
-                "Target Object": self.properties_model.dataAt(row, 1, Qt.DisplayRole),
-                "Property": self.properties_model.dataAt(row, 2, Qt.DisplayRole),
-                "Date_From": self.properties_model.dataAt(row, 3, Qt.DisplayRole),
-                "Date_To": self.properties_model.dataAt(row, 4, Qt.DisplayRole),
-                "Value": self.properties_model.dataAt(row, 5, Qt.DisplayRole),
-                "Variable": self.properties_model.dataAt(row, 6, Qt.DisplayRole),
-                "Variable_Effect": self.properties_model.dataAt(row, 7, Qt.DisplayRole),
-                "Timeslice": self.properties_model.dataAt(row, 8, Qt.DisplayRole),
-                "Timeslice_Index": self.properties_model.dataAt(row, 9, Qt.DisplayRole),
-                "Group_id": self.properties_model.dataAt(row, 10, Qt.DisplayRole),
-                "Priority": self.properties_model.dataAt(row, 11, Qt.DisplayRole),
-                "Scenario": self.properties_model.dataAt(row, 12, Qt.DisplayRole)
+                "Parent Object": self.properties_model.dataAt(row, 1, Qt.DisplayRole),
+                "Target Object": self.properties_model.dataAt(row, 2, Qt.DisplayRole),
+                "Property": self.properties_model.dataAt(row, 3, Qt.DisplayRole),
+                "Date_From": self.properties_model.dataAt(row, 4, Qt.DisplayRole),
+                "Date_To": self.properties_model.dataAt(row, 5, Qt.DisplayRole),
+                "Value": self.properties_model.dataAt(row, 6, Qt.DisplayRole),
+                "Variable": self.properties_model.dataAt(row, 7, Qt.DisplayRole),
+                "Variable_Effect": self.properties_model.dataAt(row, 8, Qt.DisplayRole),
+                "Timeslice": self.properties_model.dataAt(row, 9, Qt.DisplayRole),
+                "Timeslice_Index": self.properties_model.dataAt(row, 10, Qt.DisplayRole),
+                "Group_id": self.properties_model.dataAt(row, 11, Qt.DisplayRole),
+                "Priority": self.properties_model.dataAt(row, 12, Qt.DisplayRole),
+                "Scenario": self.properties_model.dataAt(row, 13, Qt.DisplayRole)
             }
-            listofPropertiesToAppend.append(object)
+            objectProperties[name].append(object)
         
-        temp = copy.deepcopy(self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(selected)).data(Qt.UserRole))
-        temp["Properties"].clear()
-        temp["Properties"] = listofPropertiesToAppend.copy()
-        self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(selected)).setData(temp, Qt.UserRole)
+        for i in range(len(selected)):
+            item = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(selected[i]))
+            name = item.data(Qt.DisplayRole)
+            data = copy.deepcopy(item.data(Qt.UserRole))
+            data["Properties"].clear()
+            if name in objectProperties:
+                data["Properties"] = objectProperties[name]
+            item.setData(data, Qt.UserRole)
+
         self.create_undo_snapshot()
 
     def save_parent_table(self):
@@ -363,7 +373,9 @@ class ModelController:
 
     def add_new_rows(self):
         if self.properties_model is not None:
-            self.properties_model.appendNewRow()
+            selected = self.tree.selectedIndexes()
+            name = selected[0].data(Qt.DisplayRole) if len(selected) == 1 else ""
+            self.properties_model.appendNewRow(name)
 
     def copy_seleted_rows(self):
         self.clipboard = []
