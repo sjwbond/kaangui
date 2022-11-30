@@ -606,8 +606,9 @@ class ModelController:
                 return
 
             it.setData(text, Qt.DisplayRole)
-            self.object_names.remove(oldName)
-            self.object_names.add(text)
+            if it.data(Qt.UserRole) not in ["folder", "mode", None]:
+                self.object_names.remove(oldName)
+                self.object_names.add(text)
             self.create_undo_snapshot()
 
     def copyByModel(self):
