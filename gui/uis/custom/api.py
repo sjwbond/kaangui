@@ -95,3 +95,7 @@ class WebAPI:
     m = hashlib.sha256()
     m.update(bytes)
     return m.hexdigest()
+
+  def list_results(self) -> list[dict]:
+    req = requests.get(f"{self.api_path}/results")
+    return req.json()

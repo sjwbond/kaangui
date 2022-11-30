@@ -24,42 +24,14 @@ class Ui_MainPages(object):
         self.pages.setObjectName(u"pages")
         self.page_1 = QWidget()
         self.page_1.setObjectName(u"page_1")
-        self.page_1.setStyleSheet(u"font-size: 14pt")
-        self.page_1_layout = QVBoxLayout(self.page_1)
+        self.page_1_layout = QHBoxLayout(self.page_1)
         self.page_1_layout.setSpacing(5)
         self.page_1_layout.setObjectName(u"page_1_layout")
         self.page_1_layout.setContentsMargins(5, 5, 5, 5)
-        self.welcome_base = QFrame(self.page_1)
-        self.welcome_base.setObjectName(u"welcome_base")
-        self.welcome_base.setMinimumSize(QSize(300, 150))
-        self.welcome_base.setMaximumSize(QSize(300, 150))
-        self.welcome_base.setFrameShape(QFrame.NoFrame)
-        self.welcome_base.setFrameShadow(QFrame.Raised)
-        self.center_page_layout = QVBoxLayout(self.welcome_base)
-        self.center_page_layout.setSpacing(10)
-        self.center_page_layout.setObjectName(u"center_page_layout")
-        self.center_page_layout.setContentsMargins(0, 0, 0, 0)
-        self.logo = QFrame(self.welcome_base)
-        self.logo.setObjectName(u"logo")
-        self.logo.setMinimumSize(QSize(300, 120))
-        self.logo.setMaximumSize(QSize(300, 120))
-        self.logo.setFrameShape(QFrame.NoFrame)
-        self.logo.setFrameShadow(QFrame.Raised)
-        self.logo_layout = QVBoxLayout(self.logo)
-        self.logo_layout.setSpacing(0)
-        self.logo_layout.setObjectName(u"logo_layout")
-        self.logo_layout.setContentsMargins(0, 0, 0, 0)
-
-        self.center_page_layout.addWidget(self.logo)
-
-        self.label = QLabel(self.welcome_base)
-        self.label.setObjectName(u"label")
-        self.label.setAlignment(Qt.AlignCenter)
-
-        self.center_page_layout.addWidget(self.label)
-
-
-        self.page_1_layout.addWidget(self.welcome_base, 0, Qt.AlignHCenter)
+        
+        self.results_list_layout = QVBoxLayout()
+        self.results_list_layout.setObjectName(u"results_list_layout")
+        self.page_1_layout.addLayout(self.results_list_layout)
 
         self.pages.addWidget(self.page_1)
         self.page_2 = QWidget()
@@ -228,7 +200,6 @@ class Ui_MainPages(object):
 
     def retranslateUi(self, MainPages):
         MainPages.setWindowTitle(QCoreApplication.translate("MainPages", u"Form", None))
-        self.label.setText(QCoreApplication.translate("MainPages", u"Welcome To Fundamental Model", None))
         self.title_label.setText(QCoreApplication.translate("MainPages", u"Model Objects", None))
         self.description_label.setText(QCoreApplication.translate("MainPages", u"Here a new  or a previously saved model can be loaded and modified\n"
 "The top tree view displays all the objects of the model. The below table object displays selected object properties in detail", None))
