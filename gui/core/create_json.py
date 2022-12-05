@@ -52,6 +52,12 @@ def load_directory(path, objects):
                         "Scenario": parts[13]
                     })
 
+def get_folder(name: str):
+    parts = name.split()
+    if len(parts[0]) == 2:
+        return parts[0].upper()
+    return None
+
 def readTxt(folder):
     objectDict = {}
     load_directory(folder+"/Common", objectDict)
@@ -60,6 +66,12 @@ def readTxt(folder):
     newDict = {"SystemInputs": {"Generator":{} , "Demand":{},"Variable":{},"DataSource":{},"Storage":{},"Reservoir":{},"DBDataSource":{},"DBTimeSeries":{},"Hydro_Generator":{},"Group":{},"Fuel":{},"Node":{},"Line":{},"Currency":{},"Emissions":{},"Scenario":{}}}
 
     for key, value in objectDict.items():
-        newDict["SystemInputs"][value["Object_Type"]][value["Object_Name"]] = value
+        folder = get_folder(value["Object_Name"])
+        if folder is not None:
+            if folder not in newDict["SystemInputs"][value["Object_Type"]]:
+                newDict["SystemInputs"][value["Object_Type"]][folder] = {}
+            newDict["SystemInputs"][value["Object_Type"]][folder][value["Object_Name"]] = value
+        else:
+            newDict["SystemInputs"][value["Object_Type"]][value["Object_Name"]] = value
 
     return newDict
