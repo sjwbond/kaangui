@@ -10,8 +10,8 @@ class PropertiesTableView(QTableView):
     self.horizontalHeader().setSectionResizeMode(QHeaderView.Interactive)
     self.horizontalHeader().setSectionsClickable(True)
     self.horizontalHeader().setSectionsMovable(True)
-    self.setSelectionMode(QAbstractItemView.ExtendedSelection)
-    self.setSelectionBehavior(QAbstractItemView.SelectRows)
+    self.setSelectionMode(QAbstractItemView.ContiguousSelection)
+    self.setSelectionBehavior(QAbstractItemView.SelectItems)
     self.setSortingEnabled(True)
 
     self.comboDelegate = ComboDelegate([])

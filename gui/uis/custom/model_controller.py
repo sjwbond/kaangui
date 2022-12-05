@@ -59,17 +59,23 @@ class ModelController:
         self.tree.short_cut_object = QShortcut(QKeySequence("Ctrl+X"), self.tree)
         self.tree.short_cut_object.activated.connect(self.cutShortcut)
 
-        self.tree.short_copy_object = QShortcut(QKeySequence("Ctrl+C"), self.tree)
-        self.tree.short_copy_object.activated.connect(self.copyShortcut)
+        # self.tree.short_copy_object = QShortcut(QKeySequence("Ctrl+C"), self.tree)
+        # self.tree.short_copy_object.activated.connect(self.copyShortcut)
 
-        self.tree.short_paste_object = QShortcut(QKeySequence("Ctrl+V"), self.tree)
-        self.tree.short_paste_object.activated.connect(self.pasteShortcut)
+        # self.tree.short_paste_object = QShortcut(QKeySequence("Ctrl+V"), self.tree)
+        # self.tree.short_paste_object.activated.connect(self.pasteShortcut)
 
         self.tree.short_undo_object = QShortcut(QKeySequence("Ctrl+Z"), self.tree)
         self.tree.short_undo_object.activated.connect(self.undoShortcut)
 
         self.tree.short_redo_object = QShortcut(QKeySequence("Ctrl+Y"), self.tree)
         self.tree.short_redo_object.activated.connect(self.redoShortcut)
+
+        self.properties_table.short_copy_object = QShortcut(QKeySequence("Ctrl+C"), self.properties_table)
+        self.properties_table.short_copy_object.activated.connect(self.copyPropertiesShortcut)
+
+        self.properties_table.short_paste_properties = QShortcut(QKeySequence("Ctrl+V"), self.properties_table)
+        self.properties_table.short_paste_properties.activated.connect(self.pastePropertiesShortcut)
 
         self.properties_table_object_properties_dict = object_properties
         self.parent_properties = parent_properties
@@ -311,6 +317,7 @@ class ModelController:
         self.parents_table.setModel(self.parents_model)
 
     def save_properties_table(self):
+        self.properties_table.viewport().update()
         self.create_undo_snapshot()
         selected = self.tree.selectedIndexes()
 
@@ -388,6 +395,55 @@ class ModelController:
         for object in self.clipboard:
             self.properties_model.appendRow(object)
 
+    def copyPropertiesShortcut(self):
+        indexes = self.properties_table.selectionModel().selectedIndexes()
+        if len(indexes) == 0:
+            return
+
+        row0 = indexes[0].row()
+        col0 = indexes[0].column()
+
+        items_out = []
+        for index in indexes:
+            row = index.row() - row0
+            col = index.column() - col0
+
+            while len(items_out) <= row:
+                items_out.append([])
+            while len(items_out[row]) <= col:
+                items_out[row].append([])
+
+            items_out[row][col] = index.data(Qt.DisplayRole)
+        
+        QApplication.clipboard().setText("\n".join(["\t".join(row) for row in items_out]))
+
+    def pastePropertiesShortcut(self):
+        indexes = self.properties_table.selectionModel().selectedIndexes()
+        if len(indexes) == 0:
+            return
+
+        cb = QApplication.clipboard().text()
+        items = [line.split() for line in cb.split("\n")]
+
+        row0 = indexes[0].row()
+        col0 = indexes[0].column()
+
+        indexes_out = []
+        items_out = []
+        for index in indexes:
+            row = index.row() - row0
+            col = index.column() - col0
+
+            if row >= len(items):
+                continue
+            if col >= len(items[row]):
+                continue
+
+            indexes_out.append(self.properties_proxy_model.mapToSource(index))
+            items_out.append(items[row][col])
+            
+        self.properties_model.setDataMulti(indexes_out, items_out, Qt.DisplayRole)
+
     # Helping function for gettin selected nodes parents
     # ///////////////////////////////////////////////////////////////
 
@@ -409,84 +465,85 @@ class ModelController:
             menu = QMenu()
 
             item = self.tree.rootModel.itemFromIndex(self.tree.proxyModel.mapToSource(current))
-            children = [item.child(i).data(0) for i in range(item.rowCount())]
+            if item is not None:
+                children = [item.child(i).data(0) for i in range(item.rowCount())]
 
-            if selectedItem == "model":
-                menuitems = []
-                for type in self.properties_table_object_properties_dict.keys():
-                    if type not in children:
-                        menuitem = QAction(type)
-                        menuitem.triggered.connect(partial(self.createNewFolderByModelWithName, type))
-                        menuitems.append(menuitem)
-                
-                if len(menuitems) > 0:
-                    newfoldermenu = QMenu("Create Folder")
-                    newfoldermenu.addActions(menuitems)
-                    menu.addMenu(newfoldermenu)
+                if selectedItem == "model":
+                    menuitems = []
+                    for type in self.properties_table_object_properties_dict.keys():
+                        if type not in children:
+                            menuitem = QAction(type)
+                            menuitem.triggered.connect(partial(self.createNewFolderByModelWithName, type))
+                            menuitems.append(menuitem)
+                    
+                    if len(menuitems) > 0:
+                        newfoldermenu = QMenu("Create Folder")
+                        newfoldermenu.addActions(menuitems)
+                        menu.addMenu(newfoldermenu)
 
-                qmenurenamemodel = QAction("Rename Model")
-                qmenurenamemodel.triggered.connect(self.renameModel)
-                menu.addAction(qmenurenamemodel)
-            elif selectedItem == "folder":
-                qmenunewobject = QAction("Create a New Object under " + current.data(0))
-                qmenunewobject.triggered.connect(self.createNewObjectByModel)
-                menu.addAction(qmenunewobject)
+                    qmenurenamemodel = QAction("Rename Model")
+                    qmenurenamemodel.triggered.connect(self.renameModel)
+                    menu.addAction(qmenurenamemodel)
+                elif selectedItem == "folder":
+                    qmenunewobject = QAction("Create a New Object under " + current.data(0))
+                    qmenunewobject.triggered.connect(self.createNewObjectByModel)
+                    menu.addAction(qmenunewobject)
 
-                qmenunewfolder = QAction("Create a New Folder under " + current.data(0))
-                qmenunewfolder.triggered.connect(self.createNewFolderByModel)
-                menu.addAction(qmenunewfolder)
+                    qmenunewfolder = QAction("Create a New Folder under " + current.data(0))
+                    qmenunewfolder.triggered.connect(self.createNewFolderByModel)
+                    menu.addAction(qmenunewfolder)
 
-                isTopLevel = item.parent() == self.tree.rootModel.item(0, 0)
+                    isTopLevel = item.parent() == self.tree.rootModel.item(0, 0)
 
-                if not isTopLevel:
-                    qmenurenamefolder = QAction("Rename Folder")
-                    qmenurenamefolder.triggered.connect(self.renameByModel)
-                    menu.addAction(qmenurenamefolder)
+                    if not isTopLevel:
+                        qmenurenamefolder = QAction("Rename Folder")
+                        qmenurenamefolder.triggered.connect(self.renameByModel)
+                        menu.addAction(qmenurenamefolder)
 
-                qmenucopyfolder = QAction("Copy Folder and its content")
-                qmenucopyfolder.triggered.connect(self.copyByModel)
-                menu.addAction(qmenucopyfolder)
+                    qmenucopyfolder = QAction("Copy Folder and its content")
+                    qmenucopyfolder.triggered.connect(self.copyByModel)
+                    menu.addAction(qmenucopyfolder)
 
-                if not isTopLevel:
-                    qmenucutfolder = QAction("Cut Folder and its content")
-                    qmenucutfolder.triggered.connect(self.cutByModel)
-                    menu.addAction(qmenucutfolder)
+                    if not isTopLevel:
+                        qmenucutfolder = QAction("Cut Folder and its content")
+                        qmenucutfolder.triggered.connect(self.cutByModel)
+                        menu.addAction(qmenucutfolder)
 
-                if self.clipboardType != None:
-                    qmenupaste = QAction("Paste " + self.clipboardName + " under " + current.data(0))
-                    qmenupaste.triggered.connect(self.pasteByModel)
-                    menu.addAction(qmenupaste)
+                    if self.clipboardType != None:
+                        qmenupaste = QAction("Paste " + self.clipboardName + " under " + current.data(0))
+                        qmenupaste.triggered.connect(self.pasteByModel)
+                        menu.addAction(qmenupaste)
 
-                if not isTopLevel:
-                    qmenudeletefolder = QAction("Delete Folder and its content")
-                    qmenudeletefolder.triggered.connect(self.deleteByModel)
-                    menu.addAction(qmenudeletefolder)
-            else:
-                qmenurenameobject = QAction("Rename Object")
-                qmenurenameobject.triggered.connect(self.renameByModel)
-                menu.addAction(qmenurenameobject)
+                    if not isTopLevel:
+                        qmenudeletefolder = QAction("Delete Folder and its content")
+                        qmenudeletefolder.triggered.connect(self.deleteByModel)
+                        menu.addAction(qmenudeletefolder)
+                else:
+                    qmenurenameobject = QAction("Rename Object")
+                    qmenurenameobject.triggered.connect(self.renameByModel)
+                    menu.addAction(qmenurenameobject)
 
-                qmenucopyobject = QAction("Copy Object")
-                qmenucopyobject.triggered.connect(self.copyByModel)
-                menu.addAction(qmenucopyobject)
+                    qmenucopyobject = QAction("Copy Object")
+                    qmenucopyobject.triggered.connect(self.copyByModel)
+                    menu.addAction(qmenucopyobject)
 
-                qmenucutobject = QAction("Cut Object")
-                qmenucutobject.triggered.connect(self.cutByModel)
-                menu.addAction(qmenucutobject)
-                
-                qmenupasteobject = QAction("Paste Object")
-                qmenupasteobject.triggered.connect(self.pasteByModel)
-                menu.addAction(qmenupasteobject)
+                    qmenucutobject = QAction("Cut Object")
+                    qmenucutobject.triggered.connect(self.cutByModel)
+                    menu.addAction(qmenucutobject)
+                    
+                    qmenupasteobject = QAction("Paste Object")
+                    qmenupasteobject.triggered.connect(self.pasteByModel)
+                    menu.addAction(qmenupasteobject)
 
-                qmenuassignobject = QAction("Assign Group to Object")
-                qmenuassignobject.triggered.connect(self.assignGroupByModel)
-                menu.addAction(qmenuassignobject)
+                    qmenuassignobject = QAction("Assign Group to Object")
+                    qmenuassignobject.triggered.connect(self.assignGroupByModel)
+                    menu.addAction(qmenuassignobject)
 
-                qmenudeleteobject = QAction("Delete Object")
-                qmenudeleteobject.triggered.connect(self.deleteByModel)
-                menu.addAction(qmenudeleteobject)
+                    qmenudeleteobject = QAction("Delete Object")
+                    qmenudeleteobject.triggered.connect(self.deleteByModel)
+                    menu.addAction(qmenudeleteobject)
 
-            menu.exec_(QApplication.focusWidget().viewport().mapToGlobal(position))
+                menu.exec_(QApplication.focusWidget().viewport().mapToGlobal(position))
 
     # Functions for object and model manipulation
     # ///////////////////////////////////////////////////////////////

@@ -52,6 +52,14 @@ class PropertiesTableModel(QAbstractTableModel):
                 return section
         return super().headerData(section, orientation, role)
     
+    def setDataMulti(self, indexes: list[Union[QModelIndex, QPersistentModelIndex]], texts: list[str], role: Qt.ItemDataRole):
+        if role == Qt.DisplayRole:
+            for i in range(len(indexes)):
+                self._data[indexes[i].row()][indexes[i].column()] = texts[i]
+            self.itemChanged.emit()
+            return True
+        return False
+    
     def setData(self, index: Union[QModelIndex, QPersistentModelIndex], text: str, role: Qt.ItemDataRole):
         return self.setDataAt(index.row(), index.column(), text, role)
     
