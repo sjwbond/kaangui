@@ -1,5 +1,4 @@
 import copy
-import csv
 from functools import partial
 from gui.uis.custom.model_helpers import findFreeName, get_all_object_names, model_to_dict, model_to_dict_1
 from gui.uis.custom.properties_table_model import PropertiesTableModel
@@ -9,7 +8,6 @@ from gui.core.functions import *
 from gui.uis.custom.node_tree_view import NodeTreeView
 from gui.uis.custom.parents_table_model import ParentsTableModel
 from gui.uis.custom.parents_table_view import ParentsTableView
-from gui.widgets.comboBoxSearchable.comboBoxSearchable import ExtendedComboBox
 from gui.uis.custom.properties_table_view import PropertiesTableView
 
 
@@ -71,8 +69,8 @@ class ModelController:
         self.tree.short_redo_object = QShortcut(QKeySequence("Ctrl+Y"), self.tree)
         self.tree.short_redo_object.activated.connect(self.redoShortcut)
 
-        self.properties_table.short_copy_object = QShortcut(QKeySequence("Ctrl+C"), self.properties_table)
-        self.properties_table.short_copy_object.activated.connect(self.copyPropertiesShortcut)
+        self.properties_table.short_copy_properties = QShortcut(QKeySequence("Ctrl+C"), self.properties_table)
+        self.properties_table.short_copy_properties.activated.connect(self.copyPropertiesShortcut)
 
         self.properties_table.short_paste_properties = QShortcut(QKeySequence("Ctrl+V"), self.properties_table)
         self.properties_table.short_paste_properties.activated.connect(self.pastePropertiesShortcut)
