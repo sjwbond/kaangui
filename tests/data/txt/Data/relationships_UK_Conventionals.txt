@@ -1,0 +1,683 @@
+Object_Name	Parent_Object
+UK Coal 1990	UK Coal Generators
+UK Coal 1990	UK Hard Coal Generators
+UK Coal 1990	UK
+UK Coal 1995	UK Coal Generators
+UK Coal 1995	UK Hard Coal Generators
+UK Coal 1995	UK
+UK Coal 2000	UK Coal Generators
+UK Coal 2000	UK Hard Coal Generators
+UK Coal 2000	UK
+UK Coal 2005	UK Coal Generators
+UK Coal 2005	UK Hard Coal Generators
+UK Coal 2005	UK
+UK Coal 2010	UK Coal Generators
+UK Coal 2010	UK Hard Coal Generators
+UK Coal 2010	UK
+UK Coal 2015	UK Coal Generators
+UK Coal 2015	UK Hard Coal Generators
+UK Coal 2015	UK
+UK Coal 2020	UK Coal Generators
+UK Coal 2020	UK Hard Coal Generators
+UK Coal 2020	UK
+UK Coal 2025	UK Coal Generators
+UK Coal 2025	UK Hard Coal Generators
+UK Coal 2025	UK
+UK Coal 2030	UK Coal Generators
+UK Coal 2030	UK Hard Coal Generators
+UK Coal 2030	UK
+UK Coal 2035	UK Coal Generators
+UK Coal 2035	UK Hard Coal Generators
+UK Coal 2035	UK
+UK Coal 2040	UK Coal Generators
+UK Coal 2040	UK Hard Coal Generators
+UK Coal 2040	UK
+UK Coal 2045	UK Coal Generators
+UK Coal 2045	UK Hard Coal Generators
+UK Coal 2045	UK
+UK Coal 2050	UK Coal Generators
+UK Coal 2050	UK Hard Coal Generators
+UK Coal 2050	UK
+UK Coal 2055	UK Coal Generators
+UK Coal 2055	UK Hard Coal Generators
+UK Coal 2055	UK
+UK Coal 2060	UK Coal Generators
+UK Coal 2060	UK Hard Coal Generators
+UK Coal 2060	UK
+UK Coal 2065	UK Coal Generators
+UK Coal 2065	UK Hard Coal Generators
+UK Coal 2065	UK
+UK CCGT 1990	UK Gas Generators
+UK CCGT 1990	UK CCGT Generators
+UK CCGT 1990	UK
+UK CCGT 1995	UK Gas Generators
+UK CCGT 1995	UK CCGT Generators
+UK CCGT 1995	UK
+UK CCGT 2000	UK Gas Generators
+UK CCGT 2000	UK CCGT Generators
+UK CCGT 2000	UK
+UK CCGT 2005	UK Gas Generators
+UK CCGT 2005	UK CCGT Generators
+UK CCGT 2005	UK
+UK CCGT 2010	UK Gas Generators
+UK CCGT 2010	UK CCGT Generators
+UK CCGT 2010	UK
+UK CCGT 2015	UK Gas Generators
+UK CCGT 2015	UK CCGT Generators
+UK CCGT 2015	UK
+UK CCGT 2020	UK Gas Generators
+UK CCGT 2020	UK CCGT Generators
+UK CCGT 2020	UK
+UK CCGT 2025	UK Gas Generators
+UK CCGT 2025	UK CCGT Generators
+UK CCGT 2025	UK
+UK CCGT 2030	UK Gas Generators
+UK CCGT 2030	UK CCGT Generators
+UK CCGT 2030	UK
+UK CCGT 2031	UK Gas Generators
+UK CCGT 2031	UK CCGT Generators
+UK CCGT 2031	UK
+UK CCGT 2032	UK Gas Generators
+UK CCGT 2032	UK CCGT Generators
+UK CCGT 2032	UK
+UK CCGT 2033	UK Gas Generators
+UK CCGT 2033	UK CCGT Generators
+UK CCGT 2033	UK
+UK CCGT 2034	UK Gas Generators
+UK CCGT 2034	UK CCGT Generators
+UK CCGT 2034	UK
+UK CCGT 2035	UK Gas Generators
+UK CCGT 2035	UK CCGT Generators
+UK CCGT 2035	UK
+UK CCGT 2036	UK Gas Generators
+UK CCGT 2036	UK CCGT Generators
+UK CCGT 2036	UK
+UK CCGT 2037	UK Gas Generators
+UK CCGT 2037	UK CCGT Generators
+UK CCGT 2037	UK
+UK CCGT 2038	UK Gas Generators
+UK CCGT 2038	UK CCGT Generators
+UK CCGT 2038	UK
+UK CCGT 2039	UK Gas Generators
+UK CCGT 2039	UK CCGT Generators
+UK CCGT 2039	UK
+UK CCGT 2040	UK Gas Generators
+UK CCGT 2040	UK CCGT Generators
+UK CCGT 2040	UK
+UK CCGT 2045	UK Gas Generators
+UK CCGT 2045	UK CCGT Generators
+UK CCGT 2045	UK
+UK CCGT 2050	UK Gas Generators
+UK CCGT 2050	UK CCGT Generators
+UK CCGT 2050	UK
+UK CCGT 2055	UK Gas Generators
+UK CCGT 2055	UK CCGT Generators
+UK CCGT 2055	UK
+UK CCGT 2060	UK Gas Generators
+UK CCGT 2060	UK CCGT Generators
+UK CCGT 2060	UK
+UK CCGT 2065	UK Gas Generators
+UK CCGT 2065	UK CCGT Generators
+UK CCGT 2065	UK
+UK OCGT 1990	UK Gas Generators
+UK OCGT 1990	UK OCGT Generators
+UK OCGT 1990	UK
+UK OCGT 1995	UK Gas Generators
+UK OCGT 1995	UK OCGT Generators
+UK OCGT 1995	UK
+UK OCGT 2000	UK Gas Generators
+UK OCGT 2000	UK OCGT Generators
+UK OCGT 2000	UK
+UK OCGT 2005	UK Gas Generators
+UK OCGT 2005	UK OCGT Generators
+UK OCGT 2005	UK
+UK OCGT 2010	UK Gas Generators
+UK OCGT 2010	UK OCGT Generators
+UK OCGT 2010	UK
+UK OCGT 2015	UK Gas Generators
+UK OCGT 2015	UK OCGT Generators
+UK OCGT 2015	UK
+UK OCGT 2025	UK Gas Generators
+UK OCGT 2025	UK OCGT Generators
+UK OCGT 2025	UK
+UK OCGT 2026	UK Gas Generators
+UK OCGT 2026	UK OCGT Generators
+UK OCGT 2026	UK
+UK OCGT 2027	UK Gas Generators
+UK OCGT 2027	UK OCGT Generators
+UK OCGT 2027	UK
+UK OCGT 2028	UK Gas Generators
+UK OCGT 2028	UK OCGT Generators
+UK OCGT 2028	UK
+UK OCGT 2029	UK Gas Generators
+UK OCGT 2029	UK OCGT Generators
+UK OCGT 2029	UK
+UK OCGT 2030	UK Gas Generators
+UK OCGT 2030	UK OCGT Generators
+UK OCGT 2030	UK
+UK OCGT 2031	UK Gas Generators
+UK OCGT 2031	UK OCGT Generators
+UK OCGT 2031	UK
+UK OCGT 2032	UK Gas Generators
+UK OCGT 2032	UK OCGT Generators
+UK OCGT 2032	UK
+UK OCGT 2033	UK Gas Generators
+UK OCGT 2033	UK OCGT Generators
+UK OCGT 2033	UK
+UK OCGT 2034	UK Gas Generators
+UK OCGT 2034	UK OCGT Generators
+UK OCGT 2034	UK
+UK OCGT 2035	UK Gas Generators
+UK OCGT 2035	UK OCGT Generators
+UK OCGT 2035	UK
+UK OCGT 2036	UK Gas Generators
+UK OCGT 2036	UK OCGT Generators
+UK OCGT 2036	UK
+UK OCGT 2037	UK Gas Generators
+UK OCGT 2037	UK OCGT Generators
+UK OCGT 2037	UK
+UK OCGT 2038	UK Gas Generators
+UK OCGT 2038	UK OCGT Generators
+UK OCGT 2038	UK
+UK OCGT 2039	UK Gas Generators
+UK OCGT 2039	UK OCGT Generators
+UK OCGT 2039	UK
+UK OCGT 2040	UK Gas Generators
+UK OCGT 2040	UK OCGT Generators
+UK OCGT 2040	UK
+UK Biomass 1990	UK Biomass Generators
+UK Biomass 1990	UK
+UK Biomass 1995	UK Biomass Generators
+UK Biomass 1995	UK
+UK Biomass 2000	UK Biomass Generators
+UK Biomass 2000	UK
+UK Biomass 2005	UK Biomass Generators
+UK Biomass 2005	UK
+UK Biomass 2010	UK Biomass Generators
+UK Biomass 2010	UK
+UK Biomass 2015	UK Biomass Generators
+UK Biomass 2015	UK
+UK Biomass 2020	UK Biomass Generators
+UK Biomass 2020	UK
+UK Biomass 2025	UK Biomass Generators
+UK Biomass 2025	UK
+UK Biomass 2030	UK Biomass Generators
+UK Biomass 2030	UK
+UK Biomass 2035	UK Biomass Generators
+UK Biomass 2035	UK
+UK Biomass 2040	UK Biomass Generators
+UK Biomass 2040	UK
+UK Biomass 2045	UK Biomass Generators
+UK Biomass 2045	UK
+UK Biomass 2050	UK Biomass Generators
+UK Biomass 2050	UK
+UK Biomass 2055	UK Biomass Generators
+UK Biomass 2055	UK
+UK Biomass 2060	UK Biomass Generators
+UK Biomass 2060	UK
+UK Biomass 2065	UK Biomass Generators
+UK Biomass 2065	UK
+UK Lignite 1990	UK Coal Generators
+UK Lignite 1990	UK Lignite Generators
+UK Lignite 1990	UK
+UK Lignite 1995	UK Coal Generators
+UK Lignite 1995	UK Lignite Generators
+UK Lignite 1995	UK
+UK Lignite 2000	UK Coal Generators
+UK Lignite 2000	UK Lignite Generators
+UK Lignite 2000	UK
+UK Lignite 2005	UK Coal Generators
+UK Lignite 2005	UK Lignite Generators
+UK Lignite 2005	UK
+UK Lignite 2010	UK Coal Generators
+UK Lignite 2010	UK Lignite Generators
+UK Lignite 2010	UK
+UK Lignite 2015	UK Coal Generators
+UK Lignite 2015	UK Lignite Generators
+UK Lignite 2015	UK
+UK Lignite 2020	UK Coal Generators
+UK Lignite 2020	UK Lignite Generators
+UK Lignite 2020	UK
+UK Lignite 2025	UK Coal Generators
+UK Lignite 2025	UK Lignite Generators
+UK Lignite 2025	UK
+UK Lignite 2030	UK Coal Generators
+UK Lignite 2030	UK Lignite Generators
+UK Lignite 2030	UK
+UK Lignite 2035	UK Coal Generators
+UK Lignite 2035	UK Lignite Generators
+UK Lignite 2035	UK
+UK Lignite 2040	UK Coal Generators
+UK Lignite 2040	UK Lignite Generators
+UK Lignite 2040	UK
+UK Lignite 2045	UK Coal Generators
+UK Lignite 2045	UK Lignite Generators
+UK Lignite 2045	UK
+UK Lignite 2050	UK Coal Generators
+UK Lignite 2050	UK Lignite Generators
+UK Lignite 2050	UK
+UK Lignite 2055	UK Coal Generators
+UK Lignite 2055	UK Lignite Generators
+UK Lignite 2055	UK
+UK Lignite 2060	UK Coal Generators
+UK Lignite 2060	UK Lignite Generators
+UK Lignite 2060	UK
+UK Lignite 2065	UK Coal Generators
+UK Lignite 2065	UK Lignite Generators
+UK Lignite 2065	UK
+UK Nuclear 1990	UK Nuclear Generators
+UK Nuclear 1990	UK
+UK Nuclear 1995	UK Nuclear Generators
+UK Nuclear 1995	UK
+UK Nuclear 2000	UK Nuclear Generators
+UK Nuclear 2000	UK
+UK Nuclear 2005	UK Nuclear Generators
+UK Nuclear 2005	UK
+UK Nuclear 2010	UK Nuclear Generators
+UK Nuclear 2010	UK
+UK Nuclear 2015	UK Nuclear Generators
+UK Nuclear 2015	UK
+UK Nuclear 2020	UK Nuclear Generators
+UK Nuclear 2020	UK
+UK Nuclear 2025	UK Nuclear Generators
+UK Nuclear 2025	UK
+UK Nuclear 2030	UK Nuclear Generators
+UK Nuclear 2030	UK
+UK Nuclear 2035	UK Nuclear Generators
+UK Nuclear 2035	UK
+UK Nuclear 2040	UK Nuclear Generators
+UK Nuclear 2040	UK
+UK CHP 1990	UK Gas Generators
+UK CHP 1990	UK CHP Generators
+UK CHP 1990	UK
+UK CHP 1995	UK Gas Generators
+UK CHP 1995	UK CHP Generators
+UK CHP 1995	UK
+UK CHP 2000	UK Gas Generators
+UK CHP 2000	UK CHP Generators
+UK CHP 2000	UK
+UK CHP 2005	UK Gas Generators
+UK CHP 2005	UK CHP Generators
+UK CHP 2005	UK
+UK CHP 2010	UK Gas Generators
+UK CHP 2010	UK CHP Generators
+UK CHP 2010	UK
+UK CHP 2015	UK Gas Generators
+UK CHP 2015	UK CHP Generators
+UK CHP 2015	UK
+UK CHP 2020	UK Gas Generators
+UK CHP 2020	UK CHP Generators
+UK CHP 2020	UK
+UK CHP 2025	UK Gas Generators
+UK CHP 2025	UK CHP Generators
+UK CHP 2025	UK
+UK CHP 2030	UK Gas Generators
+UK CHP 2030	UK CHP Generators
+UK CHP 2030	UK
+UK CHP 2035	UK Gas Generators
+UK CHP 2035	UK CHP Generators
+UK CHP 2035	UK
+UK CHP 2040	UK Gas Generators
+UK CHP 2040	UK CHP Generators
+UK CHP 2040	UK
+UK CHP 2045	UK Gas Generators
+UK CHP 2045	UK CHP Generators
+UK CHP 2045	UK
+UK CHP 2050	UK Gas Generators
+UK CHP 2050	UK CHP Generators
+UK CHP 2050	UK
+UK CHP 2055	UK Gas Generators
+UK CHP 2055	UK CHP Generators
+UK CHP 2055	UK
+UK CHP 2060	UK Gas Generators
+UK CHP 2060	UK CHP Generators
+UK CHP 2060	UK
+UK CHP 2065	UK Gas Generators
+UK CHP 2065	UK CHP Generators
+UK CHP 2065	UK
+UK Liquid 1990	UK Liquid Generators
+UK Liquid 1990	UK
+UK Liquid 1995	UK Liquid Generators
+UK Liquid 1995	UK
+UK Liquid 2000	UK Liquid Generators
+UK Liquid 2000	UK
+UK Liquid 2005	UK Liquid Generators
+UK Liquid 2005	UK
+UK Liquid 2010	UK Liquid Generators
+UK Liquid 2010	UK
+UK Liquid 2015	UK Liquid Generators
+UK Liquid 2015	UK
+UK Liquid 2020	UK Liquid Generators
+UK Liquid 2020	UK
+UK Liquid 2025	UK Liquid Generators
+UK Liquid 2025	UK
+UK Liquid 2030	UK Liquid Generators
+UK Liquid 2030	UK
+UK Liquid 2035	UK Liquid Generators
+UK Liquid 2035	UK
+UK Liquid 2040	UK Liquid Generators
+UK Liquid 2040	UK
+UK Liquid 2045	UK Liquid Generators
+UK Liquid 2045	UK
+UK Liquid 2050	UK Liquid Generators
+UK Liquid 2050	UK
+UK Liquid 2055	UK Liquid Generators
+UK Liquid 2055	UK
+UK Liquid 2060	UK Liquid Generators
+UK Liquid 2060	UK
+UK Liquid 2065	UK Liquid Generators
+UK Liquid 2065	UK
+UK GB_PP_Drax Bio1	UK Biomass Generators
+UK GB_PP_Drax Bio1	UK
+UK GB_PP_Drax Bio2	UK Biomass Generators
+UK GB_PP_Drax Bio2	UK
+UK GB_PP_Drax Bio3	UK Biomass Generators
+UK GB_PP_Drax Bio3	UK
+UK GB_PP_Drax Bio4	UK Biomass Generators
+UK GB_PP_Drax Bio4	UK
+UK GB_PP_Lynemouth Bio 1	UK Biomass Generators
+UK GB_PP_Lynemouth Bio 1	UK
+UK GB_PP_Lynemouth Bio 2	UK Biomass Generators
+UK GB_PP_Lynemouth Bio 2	UK
+UK GB_PP_Lynemouth Bio 3	UK Biomass Generators
+UK GB_PP_Lynemouth Bio 3	UK
+UK GB_PP_Markinch	UK Biomass Generators
+UK GB_PP_Markinch	UK RWE Generators
+UK GB_PP_Markinch	UK RWE Conventional Generators
+UK GB_PP_Markinch	UK
+UK GB_PP_Teesside_Bio	UK Biomass Generators
+UK GB_PP_Teesside_Bio	UK
+UK GB_PP_Baglan Bay2	UK CCGT Generators
+UK GB_PP_Baglan Bay2	UK
+UK GB_PP_Fawley CoGen1	UK CCGT Generators
+UK GB_PP_Fawley CoGen1	UK
+UK GB_PP_Grangemouth CHP	UK CCGT Generators
+UK GB_PP_Grangemouth CHP	UK
+UK GB_PP_Fellside1	UK CCGT Generators
+UK GB_PP_Fellside1	UK
+UK GB_PP_Connahs Quay1	UK CCGT Generators
+UK GB_PP_Connahs Quay1	UK
+UK GB_PP_Connahs Quay2	UK CCGT Generators
+UK GB_PP_Connahs Quay2	UK
+UK GB_PP_Connahs Quay3	UK CCGT Generators
+UK GB_PP_Connahs Quay3	UK
+UK GB_PP_Connahs Quay4	UK CCGT Generators
+UK GB_PP_Connahs Quay4	UK
+UK GB_PP_Seabank2	UK CCGT Generators
+UK GB_PP_Seabank2	UK
+UK GB_PP_Kings Lynn A1	UK CCGT Generators
+UK GB_PP_Kings Lynn A1	UK
+UK GB_PP_Corby1	UK CCGT Generators
+UK GB_PP_Corby1	UK
+UK GB_PP_Cottam DevCentre1	UK CCGT Generators
+UK GB_PP_Cottam DevCentre1	UK
+UK GB_PP_Shoreham1	UK CCGT Generators
+UK GB_PP_Shoreham1	UK
+UK GB_PP_Saltend1	UK CCGT Generators
+UK GB_PP_Saltend1	UK
+UK GB_PP_Saltend2	UK CCGT Generators
+UK GB_PP_Saltend2	UK
+UK GB_PP_Saltend3	UK CCGT Generators
+UK GB_PP_Saltend3	UK
+UK GB_PP_Enfield Energy1	UK CCGT Generators
+UK GB_PP_Enfield Energy1	UK
+UK GB_PP_Great Yarmouth1	UK CCGT Generators
+UK GB_PP_Great Yarmouth1	UK
+UK GB_PP_Severn 1	UK CCGT Generators
+UK GB_PP_Severn 1	UK
+UK GB_PP_Severn 2	UK CCGT Generators
+UK GB_PP_Severn 2	UK
+UK GB_PP_Grain5	UK CCGT Generators
+UK GB_PP_Grain5	UK
+UK GB_PP_Grain6	UK CCGT Generators
+UK GB_PP_Grain6	UK
+UK GB_PP_Grain7	UK CCGT Generators
+UK GB_PP_Grain7	UK
+UK GB_PP_Pembroke 11	UK CCGT Generators
+UK GB_PP_Pembroke 11	UK RWE Generators
+UK GB_PP_Pembroke 11	UK RWE Conventional Generators
+UK GB_PP_Pembroke 11	UK
+UK GB_PP_Pembroke 21	UK CCGT Generators
+UK GB_PP_Pembroke 21	UK RWE Generators
+UK GB_PP_Pembroke 21	UK RWE Conventional Generators
+UK GB_PP_Pembroke 21	UK
+UK GB_PP_Pembroke 31	UK CCGT Generators
+UK GB_PP_Pembroke 31	UK RWE Generators
+UK GB_PP_Pembroke 31	UK RWE Conventional Generators
+UK GB_PP_Pembroke 31	UK
+UK GB_PP_Pembroke 41	UK CCGT Generators
+UK GB_PP_Pembroke 41	UK RWE Generators
+UK GB_PP_Pembroke 41	UK RWE Conventional Generators
+UK GB_PP_Pembroke 41	UK
+UK GB_PP_Pembroke 51	UK CCGT Generators
+UK GB_PP_Pembroke 51	UK RWE Generators
+UK GB_PP_Pembroke 51	UK RWE Conventional Generators
+UK GB_PP_Pembroke 51	UK
+UK GB_PP_Staythorpe1	UK CCGT Generators
+UK GB_PP_Staythorpe1	UK RWE Generators
+UK GB_PP_Staythorpe1	UK RWE Conventional Generators
+UK GB_PP_Staythorpe1	UK
+UK GB_PP_Staythorpe2	UK CCGT Generators
+UK GB_PP_Staythorpe2	UK RWE Generators
+UK GB_PP_Staythorpe2	UK RWE Conventional Generators
+UK GB_PP_Staythorpe2	UK
+UK GB_PP_Staythorpe3	UK CCGT Generators
+UK GB_PP_Staythorpe3	UK RWE Generators
+UK GB_PP_Staythorpe3	UK RWE Conventional Generators
+UK GB_PP_Staythorpe3	UK
+UK GB_PP_Staythorpe4	UK CCGT Generators
+UK GB_PP_Staythorpe4	UK RWE Generators
+UK GB_PP_Staythorpe4	UK RWE Conventional Generators
+UK GB_PP_Staythorpe4	UK
+UK GB_PP_Carrington1	UK CCGT Generators
+UK GB_PP_Carrington1	UK
+UK GB_PP_Carrington2	UK CCGT Generators
+UK GB_PP_Carrington2	UK
+UK GB_PP_West Burton2 1	UK CCGT Generators
+UK GB_PP_West Burton2 1	UK
+UK GB_PP_West Burton2 2	UK CCGT Generators
+UK GB_PP_West Burton2 2	UK
+UK GB_PP_West Burton2 3	UK CCGT Generators
+UK GB_PP_West Burton2 3	UK
+UK GB_PP_Immingham 21	UK CCGT Generators
+UK GB_PP_Immingham 21	UK
+UK GB_PP_Baglan Bay1	UK CCGT Generators
+UK GB_PP_Baglan Bay1	UK
+UK GB_PP_South Humber Bank2	UK CCGT Generators
+UK GB_PP_South Humber Bank2	UK
+UK GB_PP_Didcot B6	UK CCGT Generators
+UK GB_PP_Didcot B6	UK RWE Generators
+UK GB_PP_Didcot B6	UK RWE Conventional Generators
+UK GB_PP_Didcot B6	UK
+UK GB_PP_Keadby 11	UK CCGT Generators
+UK GB_PP_Keadby 11	UK
+UK GB_PP_Medway1	UK CCGT Generators
+UK GB_PP_Medway1	UK
+UK GB_PP_Rye House1	UK CCGT Generators
+UK GB_PP_Rye House1	UK
+UK GB_PP_Immingham CHP1	UK CCGT Generators
+UK GB_PP_Immingham CHP1	UK
+UK GB_PP_Didcot B5	UK CCGT Generators
+UK GB_PP_Didcot B5	UK RWE Generators
+UK GB_PP_Didcot B5	UK RWE Conventional Generators
+UK GB_PP_Didcot B5	UK
+UK GB_PP_Little Barford1	UK CCGT Generators
+UK GB_PP_Little Barford1	UK RWE Generators
+UK GB_PP_Little Barford1	UK RWE Conventional Generators
+UK GB_PP_Little Barford1	UK
+UK GB_PP_Coryton1	UK CCGT Generators
+UK GB_PP_Coryton1	UK
+UK GB_PP_South Humber Bank1	UK CCGT Generators
+UK GB_PP_South Humber Bank1	UK
+UK GB_PP_Damhead Creek1	UK CCGT Generators
+UK GB_PP_Damhead Creek1	UK
+UK GB_PP_Rocksavage1	UK CCGT Generators
+UK GB_PP_Rocksavage1	UK
+UK GB_PP_Seabank1	UK CCGT Generators
+UK GB_PP_Seabank1	UK
+UK GB_PP_Sutton Bridge1	UK CCGT Generators
+UK GB_PP_Sutton Bridge1	UK
+UK GB_PP_Marchwood1	UK CCGT Generators
+UK GB_PP_Marchwood1	UK
+UK GB_PP_Spalding1	UK CCGT Generators
+UK GB_PP_Spalding1	UK
+UK GB_PP_Langage 1	UK CCGT Generators
+UK GB_PP_Langage 1	UK
+UK GB_PP_Peterhead1	UK CCGT Generators
+UK GB_PP_Peterhead1	UK
+UK GB_PP_Drax5	UK Hard Coal Generators
+UK GB_PP_Drax5	UK
+UK GB_PP_Drax6	UK Hard Coal Generators
+UK GB_PP_Drax6	UK
+UK GB_PP_Ratcliffe On Soar1	UK Hard Coal Generators
+UK GB_PP_Ratcliffe On Soar1	UK
+UK GB_PP_Ratcliffe On Soar2	UK Hard Coal Generators
+UK GB_PP_Ratcliffe On Soar2	UK
+UK GB_PP_Ratcliffe On Soar3	UK Hard Coal Generators
+UK GB_PP_Ratcliffe On Soar3	UK
+UK GB_PP_Ratcliffe On Soar4	UK Hard Coal Generators
+UK GB_PP_Ratcliffe On Soar4	UK
+UK GB_PP_West Burton1	UK Hard Coal Generators
+UK GB_PP_West Burton1	UK
+UK GB_PP_West Burton2	UK Hard Coal Generators
+UK GB_PP_West Burton2	UK
+UK GB_PP_West Burton3	UK Hard Coal Generators
+UK GB_PP_West Burton3	UK
+UK GB_PP_West Burton4	UK Hard Coal Generators
+UK GB_PP_West Burton4	UK
+UK GB_PP_Dungeness B21	UK Nuclear Generators
+UK GB_PP_Dungeness B21	UK
+UK GB_PP_Dungeness B22	UK Nuclear Generators
+UK GB_PP_Dungeness B22	UK
+UK GB_PP_Hartlepool1	UK Nuclear Generators
+UK GB_PP_Hartlepool1	UK
+UK GB_PP_Hartlepool2	UK Nuclear Generators
+UK GB_PP_Hartlepool2	UK
+UK GB_PP_Heysham 11	UK Nuclear Generators
+UK GB_PP_Heysham 11	UK
+UK GB_PP_Heysham 12	UK Nuclear Generators
+UK GB_PP_Heysham 12	UK
+UK GB_PP_Heysham 27	UK Nuclear Generators
+UK GB_PP_Heysham 27	UK
+UK GB_PP_Heysham 28	UK Nuclear Generators
+UK GB_PP_Heysham 28	UK
+UK GB_PP_Hinkley Point B7	UK Nuclear Generators
+UK GB_PP_Hinkley Point B7	UK
+UK GB_PP_Hinkley Point B8	UK Nuclear Generators
+UK GB_PP_Hinkley Point B8	UK
+UK GB_PP_Hunterson B1	UK Nuclear Generators
+UK GB_PP_Hunterson B1	UK
+UK GB_PP_Hunterson B2	UK Nuclear Generators
+UK GB_PP_Hunterson B2	UK
+UK GB_PP_Sizewell B3	UK Nuclear Generators
+UK GB_PP_Sizewell B3	UK
+UK GB_PP_Sizewell B4	UK Nuclear Generators
+UK GB_PP_Sizewell B4	UK
+UK GB_PP_Torness1	UK Nuclear Generators
+UK GB_PP_Torness1	UK
+UK GB_PP_Torness2	UK Nuclear Generators
+UK GB_PP_Torness2	UK
+UK GB_PP_Barra	UK OCGT Generators
+UK GB_PP_Barra	UK
+UK GB_PP_Arnish	UK OCGT Generators
+UK GB_PP_Arnish	UK
+UK GB_PP_Bowmore	UK OCGT Generators
+UK GB_PP_Bowmore	UK
+UK GB_PP_Chippenham	UK OCGT Generators
+UK GB_PP_Chippenham	UK
+UK GB_PP_Loch Carnan	UK OCGT Generators
+UK GB_PP_Loch Carnan	UK
+UK GB_PP_Little Barford GT	UK OCGT Generators
+UK GB_PP_Little Barford GT	UK RWE Generators
+UK GB_PP_Little Barford GT	UK RWE Conventional Generators
+UK GB_PP_Little Barford GT	UK
+UK GB_PP_Fiddlers FerryG1	UK OCGT Generators
+UK GB_PP_Fiddlers FerryG1	UK
+UK GB_PP_Fiddlers FerryG3	UK OCGT Generators
+UK GB_PP_Fiddlers FerryG3	UK
+UK GB_PP_Ratcliffe On SoarG2	UK OCGT Generators
+UK GB_PP_Ratcliffe On SoarG2	UK
+UK GB_PP_Ratcliffe On SoarG4	UK OCGT Generators
+UK GB_PP_Ratcliffe On SoarG4	UK
+UK GB_PP_West BurtonG1	UK OCGT Generators
+UK GB_PP_West BurtonG1	UK
+UK GB_PP_West BurtonG4	UK OCGT Generators
+UK GB_PP_West BurtonG4	UK
+UK GB_PP_Battery Point	UK OCGT Generators
+UK GB_PP_Battery Point	UK
+UK GB_PP_DraxG10	UK OCGT Generators
+UK GB_PP_DraxG10	UK
+UK GB_PP_DraxG12	UK OCGT Generators
+UK GB_PP_DraxG12	UK
+UK GB_PP_DraxG9	UK OCGT Generators
+UK GB_PP_DraxG9	UK
+UK GB_PP_KeadbyG1	UK OCGT Generators
+UK GB_PP_KeadbyG1	UK
+UK GB_PP_Stornoway	UK OCGT Generators
+UK GB_PP_Stornoway	UK
+UK GB_PP_Didcot AG1	UK OCGT Generators
+UK GB_PP_Didcot AG1	UK
+UK GB_PP_Didcot AG2	UK OCGT Generators
+UK GB_PP_Didcot AG2	UK
+UK GB_PP_Didcot AG3	UK OCGT Generators
+UK GB_PP_Didcot AG3	UK
+UK GB_PP_Didcot AG4	UK OCGT Generators
+UK GB_PP_Didcot AG4	UK
+UK GB_PP_Five Oaks	UK OCGT Generators
+UK GB_PP_Five Oaks	UK
+UK GB_PP_Kirkwall	UK OCGT Generators
+UK GB_PP_Kirkwall	UK
+UK GB_PP_South Cornelly	UK OCGT Generators
+UK GB_PP_South Cornelly	UK
+UK GB_PP_Thatcham	UK OCGT Generators
+UK GB_PP_Thatcham	UK
+UK GB_PP_Tiree	UK OCGT Generators
+UK GB_PP_Tiree	UK
+UK GB_PP_Wheldale	UK OCGT Generators
+UK GB_PP_Wheldale	UK
+UK GB_PP_GrainG1	UK OCGT Generators
+UK GB_PP_GrainG1	UK
+UK GB_PP_GrainG4	UK OCGT Generators
+UK GB_PP_GrainG4	UK
+UK GB_PP_Redditch	UK OCGT Generators
+UK GB_PP_Redditch	UK
+UK GB_PP_Seabank_OCGT1	UK OCGT Generators
+UK GB_PP_Seabank_OCGT1	UK
+UK GB_PP_Knapton	UK OCGT Generators
+UK GB_PP_Knapton	UK
+UK GB_PP_Burghfield	UK OCGT Generators
+UK GB_PP_Burghfield	UK
+UK GB_PP_Chickerell	UK OCGT Generators
+UK GB_PP_Chickerell	UK
+UK GB_PP_Taylors Lane2	UK OCGT Generators
+UK GB_PP_Taylors Lane2	UK
+UK GB_PP_Taylors Lane3	UK OCGT Generators
+UK GB_PP_Taylors Lane3	UK
+UK GB_PP_Lerwick	UK OCGT Generators
+UK GB_PP_Lerwick	UK
+UK GB_PP_Cowes1	UK OCGT Generators
+UK GB_PP_Cowes1	UK
+UK GB_PP_Cowes2	UK OCGT Generators
+UK GB_PP_Cowes2	UK
+UK GB_PP_Brigg_OCGT	UK OCGT Generators
+UK GB_PP_Brigg_OCGT	UK
+UK GB_PP_Peterborough1_OCGT	UK OCGT Generators
+UK GB_PP_Peterborough1_OCGT	UK
+UK GB_PP_Killingholme_OCGT1	UK OCGT Generators
+UK GB_PP_Killingholme_OCGT1	UK
+UK GB_PP_Killingholme_OCGT2	UK OCGT Generators
+UK GB_PP_Killingholme_OCGT2	UK
+UK GB_PP_Spalding_OCGT	UK OCGT Generators
+UK GB_PP_Spalding_OCGT	UK
+UK GB_PP_Existing Embedded Peaker	UK OCGT Generators
+UK GB_PP_Existing Embedded Peaker	UK
+UK GB_PP_Peaking_Band_1	UK OCGT Generators
+UK GB_PP_Peaking_Band_1	UK
+UK GB_PP_Peaking_Band_2	UK OCGT Generators
+UK GB_PP_Peaking_Band_2	UK
+UK GB_PP_Peaking_Band_3	UK OCGT Generators
+UK GB_PP_Peaking_Band_3	UK
+UK GB_PP_Peaking_Band_4	UK OCGT Generators
+UK GB_PP_Peaking_Band_4	UK
+UK GB_PP_Peaking_Band_5	UK OCGT Generators
+UK GB_PP_Peaking_Band_5	UK

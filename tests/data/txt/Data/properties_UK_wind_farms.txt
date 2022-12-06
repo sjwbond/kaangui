@@ -1,0 +1,813 @@
+Object_Name	Parent_Object	Target_Object	Property	Date_From	Date_To	Value	Variable	Variable_Effect	Timeslice	Timeslice_Index	Group_id	Priority	Scenario
+UK RWE Rhyd-Y-Groes			Capacity	1992-01-01	2015-01-01	3.3							
+UK RWE Rhyd-Y-Groes			Variable Cost	2010-01-01	2100-01-01	0.559							
+UK RWE Rhyd-Y-Groes			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Rhyd-Y-Groes			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Rhyd-Y-Groes			Bid Up Price	1992-01-01	2012-01-01	-45							
+UK RWE Rhyd-Y-Groes			Bid Up Price	2012-01-01	2100-01-01	0							
+UK RWE Rhyd-Y-Groes			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 31M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Royd Moor			Capacity	1993-01-01	2016-01-01	3.25							
+UK RWE Royd Moor			Variable Cost	2010-01-01	2100-01-01	1.413							
+UK RWE Royd Moor			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Royd Moor			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Royd Moor			Bid Up Price	1993-01-01	2013-01-01	-45							
+UK RWE Royd Moor			Bid Up Price	2013-01-01	2100-01-01	0							
+UK RWE Royd Moor			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore Huddersfield 3129 53.5 -1.875 39M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Bowbeat Emly Bank			Capacity	2002-01-01	2026-01-01	15.6							
+UK RWE Bowbeat Emly Bank			Variable Cost	2010-01-01	2100-01-01	0.611							
+UK RWE Bowbeat Emly Bank			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Bowbeat Emly Bank			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Bowbeat Emly Bank			Bid Up Price	2002-01-01	2022-01-01	-45							
+UK RWE Bowbeat Emly Bank			Bid Up Price	2022-01-01	2100-01-01	0							
+UK RWE Bowbeat Emly Bank			Capacity Rating Factor	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 50M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Deucheran Hill			Capacity	2002-01-01	2025-01-01	15.75							
+UK RWE Deucheran Hill			Variable Cost	2010-01-01	2100-01-01	1.289							
+UK RWE Deucheran Hill			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Deucheran Hill			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Deucheran Hill			Bid Up Price	2002-01-01	2022-01-01	-45							
+UK RWE Deucheran Hill			Bid Up Price	2022-01-01	2100-01-01	0							
+UK RWE Deucheran Hill			Capacity Rating Factor	2010-01-01	2100-01-01	AB Offshore Western_Scotland_Near 3568 56.0 -5.625 66M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Bowbeat Roughside			Capacity	2002-01-01	2026-01-01	15.6							
+UK RWE Bowbeat Roughside			Variable Cost	2010-01-01	2100-01-01	1.185							
+UK RWE Bowbeat Roughside			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Bowbeat Roughside			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Bowbeat Roughside			Bid Up Price	2002-01-01	2022-01-01	-45							
+UK RWE Bowbeat Roughside			Bid Up Price	2022-01-01	2100-01-01	0							
+UK RWE Bowbeat Roughside			Capacity Rating Factor	2010-01-01	2100-01-01	AB Onshore South_Scotland 3483 55.5 -3.125 50M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Out Newton			Capacity	2002-01-01	2026-01-01	9.1							
+UK RWE Out Newton			Variable Cost	2010-01-01	2100-01-01	0.765							
+UK RWE Out Newton			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Out Newton			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Out Newton			Bid Up Price	2002-01-01	2022-01-01	-45							
+UK RWE Out Newton			Bid Up Price	2022-01-01	2100-01-01	0							
+UK RWE Out Newton			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore Grimsby 3132 53.5 0.0 50M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Scroby Sands			Capacity	2004-01-01	2024-01-01	60							
+UK RWE Scroby Sands			Variable Cost	2010-01-01	2100-01-01	1.182							
+UK RWE Scroby Sands			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Scroby Sands			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Scroby Sands			Bid Up Price	2004-01-01	2024-01-01	-45							
+UK RWE Scroby Sands			Bid Up Price	2024-01-01	2100-01-01	0							
+UK RWE Scroby Sands			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Suffolk_Near 2957 52.5 1.875 68M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Harehill			Capacity	2004-01-01	2028-01-01	2.75							
+UK RWE Harehill			Variable Cost	2010-01-01	2100-01-01	1.322							
+UK RWE Harehill			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Harehill			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Harehill			Bid Up Price	2004-01-01	2024-01-01	-45							
+UK RWE Harehill			Bid Up Price	2024-01-01	2100-01-01	0							
+UK RWE Harehill			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Tyneside_Near 3397 55.0 -1.25 60M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Harehill II			Capacity	2004-01-01	2028-01-01	2.33							
+UK RWE Harehill II			Variable Cost	2010-01-01	2100-01-01	1.112							
+UK RWE Harehill II			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Harehill II			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Harehill II			Bid Up Price	2004-01-01	2024-01-01	-45							
+UK RWE Harehill II			Bid Up Price	2024-01-01	2100-01-01	0							
+UK RWE Harehill II			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Tyneside_Near 3397 55.0 -1.25 60M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE High Volts			Capacity	2004-01-01	2028-01-01	5.5							
+UK RWE High Volts			Variable Cost	2010-01-01	2100-01-01	0.939							
+UK RWE High Volts			Save Data	2010-01-01	2100-01-01	1							
+UK RWE High Volts			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE High Volts			Bid Up Price	2004-01-01	2024-01-01	-45							
+UK RWE High Volts			Bid Up Price	2024-01-01	2100-01-01	0							
+UK RWE High Volts			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore Middlesborough 3308 54.5 -1.25 60M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE High Volts II			Capacity	2004-01-01	2028-01-01	2.33							
+UK RWE High Volts II			Variable Cost	2010-01-01	2100-01-01	1.498							
+UK RWE High Volts II			Save Data	2010-01-01	2100-01-01	1							
+UK RWE High Volts II			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE High Volts II			Bid Up Price	2004-01-01	2024-01-01	-45							
+UK RWE High Volts II			Bid Up Price	2024-01-01	2100-01-01	0							
+UK RWE High Volts II			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore Middlesborough 3308 54.5 -1.25 60M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Holmside			Capacity	2004-01-01	2028-01-01	2.75							
+UK RWE Holmside			Variable Cost	2010-01-01	2100-01-01	1.34							
+UK RWE Holmside			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Holmside			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Holmside			Bid Up Price	2004-01-01	2024-01-01	-45							
+UK RWE Holmside			Bid Up Price	2024-01-01	2100-01-01	0							
+UK RWE Holmside			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore Tyneside 3396 55.0 -1.875 60M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Holmside			Capacity	2004-01-01	2028-01-01	2.75							
+UK RWE Holmside			Variable Cost	2010-01-01	2100-01-01	1.413							
+UK RWE Holmside			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Holmside			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Holmside			Bid Up Price	2004-01-01	2024-01-01	-45							
+UK RWE Holmside			Bid Up Price	2024-01-01	2100-01-01	0							
+UK RWE Holmside			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore Tyneside 3396 55.0 -1.875 60M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Holmside II			Capacity	2004-01-01	2028-01-01	2.33							
+UK RWE Holmside II			Variable Cost	2010-01-01	2100-01-01	0.671							
+UK RWE Holmside II			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Holmside II			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Holmside II			Bid Up Price	2004-01-01	2024-01-01	-45							
+UK RWE Holmside II			Bid Up Price	2024-01-01	2100-01-01	0							
+UK RWE Holmside II			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore Tyneside 3396 55.0 -1.875 60M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Burgar Hill			Capacity	2006-01-01	2026-01-01	5							
+UK RWE Burgar Hill			Variable Cost	2010-01-01	2100-01-01	0.635							
+UK RWE Burgar Hill			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Burgar Hill			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Burgar Hill			Bid Up Price	2006-01-01	2026-01-01	-45							
+UK RWE Burgar Hill			Bid Up Price	2026-01-01	2100-01-01	0							
+UK RWE Burgar Hill			Capacity Rating Factor	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 60M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Hameldon Hill			Capacity	2006-01-01	2027-01-01	6							
+UK RWE Hameldon Hill			Variable Cost	2010-01-01	2100-01-01	1.476							
+UK RWE Hameldon Hill			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Hameldon Hill			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Hameldon Hill			Bid Up Price	2006-01-01	2026-01-01	-45							
+UK RWE Hameldon Hill			Bid Up Price	2026-01-01	2100-01-01	0							
+UK RWE Hameldon Hill			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore Chorley 3128 53.5 -2.5 55M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Stags Holt			Capacity	2007-01-01	2031-01-01	20							
+UK RWE Stags Holt			Variable Cost	2010-01-01	2100-01-01	0.781							
+UK RWE Stags Holt			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Stags Holt			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Stags Holt			Bid Up Price	2007-01-01	2027-01-01	-45							
+UK RWE Stags Holt			Bid Up Price	2027-01-01	2100-01-01	0							
+UK RWE Stags Holt			Capacity Rating Factor	2010-01-01	2100-01-01	AB Onshore South_Scotland 3483 55.5 -3.125 80M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE The Hollies			Capacity	2007-01-01	2027-01-01	2.6							
+UK RWE The Hollies			Variable Cost	2010-01-01	2100-01-01	1.457							
+UK RWE The Hollies			Save Data	2010-01-01	2100-01-01	1							
+UK RWE The Hollies			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE The Hollies			Bid Up Price	2007-01-01	2027-01-01	-45							
+UK RWE The Hollies			Bid Up Price	2027-01-01	2100-01-01	0							
+UK RWE The Hollies			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore Grimsby 3132 53.5 0.0 60M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Knabs Ridge			Capacity	2007-01-01	2027-01-01	16							
+UK RWE Knabs Ridge			Variable Cost	2010-01-01	2100-01-01	0.623							
+UK RWE Knabs Ridge			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Knabs Ridge			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Knabs Ridge			Bid Up Price	2007-01-01	2027-01-01	-45							
+UK RWE Knabs Ridge			Bid Up Price	2027-01-01	2100-01-01	0							
+UK RWE Knabs Ridge			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore Huddersfield 3129 53.5 -1.875 55M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Bilbster			Capacity	2008-01-01	2028-01-01	3.9							
+UK RWE Bilbster			Variable Cost	2010-01-01	2100-01-01	0.554							
+UK RWE Bilbster			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Bilbster			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Bilbster			Bid Up Price	2008-01-01	2028-01-01	-45							
+UK RWE Bilbster			Bid Up Price	2028-01-01	2100-01-01	0							
+UK RWE Bilbster			Capacity Rating Factor	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 60M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Little Cheyne Court			Capacity	2008-01-01	2028-01-01	35.282							
+UK RWE Little Cheyne Court			Variable Cost	2010-01-01	2100-01-01	0.999							
+UK RWE Little Cheyne Court			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Little Cheyne Court			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Little Cheyne Court			Bid Up Price	2008-01-01	2028-01-01	-45							
+UK RWE Little Cheyne Court			Bid Up Price	2028-01-01	2100-01-01	0							
+UK RWE Little Cheyne Court			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore LCC 2688 51.0 0.625 70M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Rhyl Flats			Capacity	2009-01-01	2029-01-01	45.09							
+UK RWE Rhyl Flats			Variable Cost	2010-01-01	2100-01-01	0.842							
+UK RWE Rhyl Flats			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Rhyl Flats			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Rhyl Flats			Bid Up Price	2009-01-01	2029-01-01	-45							
+UK RWE Rhyl Flats			Bid Up Price	2029-01-01	2100-01-01	0							
+UK RWE Rhyl Flats			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 75M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK RWE Robin Rigg West			Capacity	2009-01-01	2029-01-01	90							
+UK RWE Robin Rigg West			Variable Cost	2010-01-01	2100-01-01	1.028							
+UK RWE Robin Rigg West			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Robin Rigg West			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Robin Rigg West			Bid Up Price	2009-01-01	2029-01-01	-45							
+UK RWE Robin Rigg West			Bid Up Price	2029-01-01	2100-01-01	0							
+UK RWE Robin Rigg West			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Lake_District 3304 54.5 -3.75 80M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE An Suidhe			Capacity	2010-01-01	2030-01-01	9.843							
+UK RWE An Suidhe			Variable Cost	2010-01-01	2100-01-01	1.272							
+UK RWE An Suidhe			Save Data	2010-01-01	2100-01-01	1							
+UK RWE An Suidhe			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE An Suidhe			Bid Up Price	2010-01-01	2030-01-01	-45							
+UK RWE An Suidhe			Bid Up Price	2030-01-01	2100-01-01	0							
+UK RWE An Suidhe			Capacity Rating Factor	2010-01-01	2100-01-01	AB Offshore Western_Scotland_Near 3568 56.0 -5.625 56M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK RWE Robin Rigg East			Capacity	2010-01-01	2030-01-01	84							
+UK RWE Robin Rigg East			Variable Cost	2010-01-01	2100-01-01	1.146							
+UK RWE Robin Rigg East			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Robin Rigg East			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Robin Rigg East			Bid Up Price	2010-01-01	2030-01-01	-45							
+UK RWE Robin Rigg East			Bid Up Price	2030-01-01	2100-01-01	0							
+UK RWE Robin Rigg East			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Lake_District 3304 54.5 -3.75 80M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Haswell Moor			Capacity	2010-01-01	2034-01-01	6.15							
+UK RWE Haswell Moor			Variable Cost	2010-01-01	2100-01-01	0.668							
+UK RWE Haswell Moor			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Haswell Moor			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Haswell Moor			Bid Up Price	2010-01-01	2030-01-01	-45							
+UK RWE Haswell Moor			Bid Up Price	2030-01-01	2100-01-01	0							
+UK RWE Haswell Moor			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Tyneside_Near 3397 55.0 -1.25 69M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Haswell Moor II			Capacity	2010-01-01	2034-01-01	4.1							
+UK RWE Haswell Moor II			Variable Cost	2010-01-01	2100-01-01	1.408							
+UK RWE Haswell Moor II			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Haswell Moor II			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Haswell Moor II			Bid Up Price	2010-01-01	2030-01-01	-45							
+UK RWE Haswell Moor II			Bid Up Price	2030-01-01	2100-01-01	0							
+UK RWE Haswell Moor II			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Tyneside_Near 3397 55.0 -1.25 69M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Lindhurst			Capacity	2010-01-01	2030-01-01	4.59							
+UK RWE Lindhurst			Variable Cost	2010-01-01	2100-01-01	1.21							
+UK RWE Lindhurst			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Lindhurst			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Lindhurst			Bid Up Price	2010-01-01	2030-01-01	-45							
+UK RWE Lindhurst			Bid Up Price	2030-01-01	2100-01-01	0							
+UK RWE Lindhurst			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore Nottingham 3041 53.0 -1.25 80M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Lochelbank			Capacity	2011-01-01	2031-01-01	9.6							
+UK RWE Lochelbank			Variable Cost	2010-01-01	2100-01-01	1.139							
+UK RWE Lochelbank			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Lochelbank			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Lochelbank			Bid Up Price	2011-01-01	2031-01-01	-45							
+UK RWE Lochelbank			Bid Up Price	2031-01-01	2100-01-01	0							
+UK RWE Lochelbank			Capacity Rating Factor	2010-01-01	2100-01-01	AB Onshore Perth 3660 56.5 -3.75 60M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Greater Gabbard			Capacity	2011-01-01	2032-01-01	252							
+UK RWE Greater Gabbard			Variable Cost	2010-01-01	2100-01-01	0.793							
+UK RWE Greater Gabbard			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Greater Gabbard			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Greater Gabbard			Bid Up Price	2011-01-01	2031-01-01	-45							
+UK RWE Greater Gabbard			Bid Up Price	2031-01-01	2100-01-01	0							
+UK RWE Greater Gabbard			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Harwick_Near 2868 52.0 1.875 78M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK RWE Great Eppleton			Capacity	2011-01-01	2035-01-01	4.1							
+UK RWE Great Eppleton			Variable Cost	2010-01-01	2100-01-01	1.291							
+UK RWE Great Eppleton			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Great Eppleton			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Great Eppleton			Bid Up Price	2011-01-01	2031-01-01	-45							
+UK RWE Great Eppleton			Bid Up Price	2031-01-01	2100-01-01	0							
+UK RWE Great Eppleton			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Tyneside_Near 3397 55.0 -1.25 69M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Great Eppleton II			Capacity	2011-01-01	2035-01-01	4.1							
+UK RWE Great Eppleton II			Variable Cost	2010-01-01	2100-01-01	0.706							
+UK RWE Great Eppleton II			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Great Eppleton II			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Great Eppleton II			Bid Up Price	2011-01-01	2031-01-01	-45							
+UK RWE Great Eppleton II			Bid Up Price	2031-01-01	2100-01-01	0							
+UK RWE Great Eppleton II			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Tyneside_Near 3397 55.0 -1.25 69M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Hellrigg			Capacity	2011-01-01	2031-01-01	9.2							
+UK RWE Hellrigg			Variable Cost	2010-01-01	2100-01-01	1.099							
+UK RWE Hellrigg			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Hellrigg			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Hellrigg			Bid Up Price	2011-01-01	2031-01-01	-45							
+UK RWE Hellrigg			Bid Up Price	2031-01-01	2100-01-01	0							
+UK RWE Hellrigg			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore Lake_District 3305 54.5 -3.125 80M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Butterwick Moor I			Capacity	2011-01-01	2035-01-01	9.4							
+UK RWE Butterwick Moor I			Variable Cost	2010-01-01	2100-01-01	1.43							
+UK RWE Butterwick Moor I			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Butterwick Moor I			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Butterwick Moor I			Bid Up Price	2011-01-01	2031-01-01	-45							
+UK RWE Butterwick Moor I			Bid Up Price	2031-01-01	2100-01-01	0							
+UK RWE Butterwick Moor I			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore Middlesborough 3308 54.5 -1.25 69M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Butterwick Moor II			Capacity	2011-01-01	2035-01-01	9.4							
+UK RWE Butterwick Moor II			Variable Cost	2010-01-01	2100-01-01	1.099							
+UK RWE Butterwick Moor II			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Butterwick Moor II			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Butterwick Moor II			Bid Up Price	2011-01-01	2031-01-01	-45							
+UK RWE Butterwick Moor II			Bid Up Price	2031-01-01	2100-01-01	0							
+UK RWE Butterwick Moor II			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore Middlesborough 3308 54.5 -1.25 69M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Butterwick Moor Wind Farm			Capacity	2011-01-01	2035-01-01	18.8							
+UK RWE Butterwick Moor Wind Farm			Variable Cost	2010-01-01	2100-01-01	0.841							
+UK RWE Butterwick Moor Wind Farm			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Butterwick Moor Wind Farm			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Butterwick Moor Wind Farm			Bid Up Price	2011-01-01	2031-01-01	-45							
+UK RWE Butterwick Moor Wind Farm			Bid Up Price	2031-01-01	2100-01-01	0							
+UK RWE Butterwick Moor Wind Farm			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore Middlesborough 3308 54.5 -1.25 69M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Novar 2			Capacity	2012-01-01	2032-01-01	36.8							
+UK RWE Novar 2			Variable Cost	2010-01-01	2100-01-01	1.464							
+UK RWE Novar 2			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Novar 2			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Novar 2			Bid Up Price	2012-01-01	2032-01-01	-45							
+UK RWE Novar 2			Bid Up Price	2032-01-01	2100-01-01	0							
+UK RWE Novar 2			Capacity Rating Factor	2010-01-01	2100-01-01	AB Onshore Northern_Scotland 3926 58.0 -4.375 65M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Tween Bridge			Capacity	2012-01-01	2036-01-01	44							
+UK RWE Tween Bridge			Variable Cost	2010-01-01	2100-01-01	0.924							
+UK RWE Tween Bridge			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Tween Bridge			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Tween Bridge			Bid Up Price	2012-01-01	2032-01-01	-45							
+UK RWE Tween Bridge			Bid Up Price	2032-01-01	2100-01-01	0							
+UK RWE Tween Bridge			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore Scunthorpe 3131 53.5 -0.625 80M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Kiln Pit Hill			Capacity	2012-01-01	2032-01-01	13.8							
+UK RWE Kiln Pit Hill			Variable Cost	2010-01-01	2100-01-01	1.129							
+UK RWE Kiln Pit Hill			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Kiln Pit Hill			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Kiln Pit Hill			Bid Up Price	2012-01-01	2032-01-01	-45							
+UK RWE Kiln Pit Hill			Bid Up Price	2032-01-01	2100-01-01	0							
+UK RWE Kiln Pit Hill			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore Tyneside 3396 55.0 -1.875 64M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Camster			Capacity	2013-01-01	2035-01-01	50							
+UK RWE Camster			Variable Cost	2010-01-01	2100-01-01	0.905							
+UK RWE Camster			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Camster			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Camster			Bid Up Price	2013-01-01	2033-01-01	-45							
+UK RWE Camster			Bid Up Price	2033-01-01	2100-01-01	0							
+UK RWE Camster			Capacity Rating Factor	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 80M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Rosehall			Capacity	2013-01-01	2036-01-01	24.7							
+UK RWE Rosehall			Variable Cost	2010-01-01	2100-01-01	1.243							
+UK RWE Rosehall			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Rosehall			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Rosehall			Bid Up Price	2013-01-01	2033-01-01	-45							
+UK RWE Rosehall			Bid Up Price	2033-01-01	2100-01-01	0							
+UK RWE Rosehall			Capacity Rating Factor	2010-01-01	2100-01-01	AB Onshore Northeast_Scotland 3839 57.5 -3.125 59M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Bradwell			Capacity	2013-01-01	2033-01-01	20.5							
+UK RWE Bradwell			Variable Cost	2010-01-01	2100-01-01	1.334							
+UK RWE Bradwell			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Bradwell			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Bradwell			Bid Up Price	2013-01-01	2033-01-01	-45							
+UK RWE Bradwell			Bid Up Price	2033-01-01	2100-01-01	0							
+UK RWE Bradwell			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 80M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE London Array 1			Capacity	2013-01-01	2037-01-01	46.44							
+UK RWE London Array 1			Variable Cost	2010-01-01	2100-01-01	0.937							
+UK RWE London Array 1			Save Data	2010-01-01	2100-01-01	1							
+UK RWE London Array 1			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE London Array 1			Bid Up Price	2013-01-01	2033-01-01	-45							
+UK RWE London Array 1			Bid Up Price	2033-01-01	2100-01-01	0							
+UK RWE London Array 1			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 87M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK RWE London Array 2			Capacity	2013-01-01	2037-01-01	47.52							
+UK RWE London Array 2			Variable Cost	2010-01-01	2100-01-01	1.109							
+UK RWE London Array 2			Save Data	2010-01-01	2100-01-01	1							
+UK RWE London Array 2			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE London Array 2			Bid Up Price	2013-01-01	2033-01-01	-45							
+UK RWE London Array 2			Bid Up Price	2033-01-01	2100-01-01	0							
+UK RWE London Array 2			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 87M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK RWE London Array 3			Capacity	2013-01-01	2037-01-01	47.52							
+UK RWE London Array 3			Variable Cost	2010-01-01	2100-01-01	1.053							
+UK RWE London Array 3			Save Data	2010-01-01	2100-01-01	1							
+UK RWE London Array 3			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE London Array 3			Bid Up Price	2013-01-01	2033-01-01	-45							
+UK RWE London Array 3			Bid Up Price	2033-01-01	2100-01-01	0							
+UK RWE London Array 3			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 87M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK RWE London Array 4			Capacity	2013-01-01	2037-01-01	47.52							
+UK RWE London Array 4			Variable Cost	2010-01-01	2100-01-01	1.481							
+UK RWE London Array 4			Save Data	2010-01-01	2100-01-01	1							
+UK RWE London Array 4			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE London Array 4			Bid Up Price	2013-01-01	2033-01-01	-45							
+UK RWE London Array 4			Bid Up Price	2033-01-01	2100-01-01	0							
+UK RWE London Array 4			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 87M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK RWE Middlemoor			Capacity	2013-01-01	2033-01-01	27.54							
+UK RWE Middlemoor			Variable Cost	2010-01-01	2100-01-01	1.062							
+UK RWE Middlemoor			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Middlemoor			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Middlemoor			Bid Up Price	2013-01-01	2033-01-01	-45							
+UK RWE Middlemoor			Bid Up Price	2033-01-01	2100-01-01	0							
+UK RWE Middlemoor			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore Northumberland 3485 55.5 -1.875 80M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Gwynt y Mor			Capacity	2014-01-01	2035-01-01	288							
+UK RWE Gwynt y Mor			Variable Cost	2010-01-01	2100-01-01	0.555							
+UK RWE Gwynt y Mor			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Gwynt y Mor			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Gwynt y Mor			Bid Up Price	2014-01-01	2034-01-01	-45							
+UK RWE Gwynt y Mor			Bid Up Price	2034-01-01	2100-01-01	0							
+UK RWE Gwynt y Mor			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 98M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK RWE Hameldon Hill Extension			Capacity	2014-01-01	2034-01-01	6							
+UK RWE Hameldon Hill Extension			Variable Cost	2010-01-01	2100-01-01	1.315							
+UK RWE Hameldon Hill Extension			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Hameldon Hill Extension			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Hameldon Hill Extension			Bid Up Price	2014-01-01	2034-01-01	-45							
+UK RWE Hameldon Hill Extension			Bid Up Price	2034-01-01	2100-01-01	0							
+UK RWE Hameldon Hill Extension			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore Chorley 3128 53.5 -2.5 60M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Goole Fields A			Capacity	2014-01-01	2033-01-01	32.8							
+UK RWE Goole Fields A			Variable Cost	2010-01-01	2100-01-01	0.547							
+UK RWE Goole Fields A			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Goole Fields A			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Goole Fields A			Bid Up Price	2014-01-01	2034-01-01	-45							
+UK RWE Goole Fields A			Bid Up Price	2034-01-01	2100-01-01	0							
+UK RWE Goole Fields A			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore Scunthorpe 3131 53.5 -0.625 80M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Humber 1			Capacity	2015-01-01	2039-01-01	108							
+UK RWE Humber 1			Variable Cost	2010-01-01	2100-01-01	0.507							
+UK RWE Humber 1			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Humber 1			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Humber 1			Bid Up Price	2015-01-01	2035-01-01	-45							
+UK RWE Humber 1			Bid Up Price	2035-01-01	2100-01-01	0							
+UK RWE Humber 1			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore Grimsby 3132 53.5 0.0 80M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK RWE Humber 2			Capacity	2015-01-01	2039-01-01	111							
+UK RWE Humber 2			Variable Cost	2010-01-01	2100-01-01	1.3							
+UK RWE Humber 2			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Humber 2			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Humber 2			Bid Up Price	2015-01-01	2035-01-01	-45							
+UK RWE Humber 2			Bid Up Price	2035-01-01	2100-01-01	0							
+UK RWE Humber 2			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore Grimsby 3132 53.5 0.0 80M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK RWE Goole Fields B			Capacity	2016-01-01	2036-01-01	34.85							
+UK RWE Goole Fields B			Variable Cost	2010-01-01	2100-01-01	1.306							
+UK RWE Goole Fields B			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Goole Fields B			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Goole Fields B			Bid Up Price	2016-01-01	2036-01-01	-45							
+UK RWE Goole Fields B			Bid Up Price	2036-01-01	2100-01-01	0							
+UK RWE Goole Fields B			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore Scunthorpe 3131 53.5 -0.625 80M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Rampion 1			Capacity	2018-01-01	2042-01-01	60.2301							
+UK RWE Rampion 1			Variable Cost	2010-01-01	2100-01-01	0.938							
+UK RWE Rampion 1			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Rampion 1			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Rampion 1			Bid Up Price	2018-01-01	2038-01-01	-45							
+UK RWE Rampion 1			Bid Up Price	2038-01-01	2100-01-01	0							
+UK RWE Rampion 1			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore English_Channel_Near 2598 50.5 0.0 80M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK RWE Rampion 2			Capacity	2018-01-01	2042-01-01	60.2301							
+UK RWE Rampion 2			Variable Cost	2010-01-01	2100-01-01	1.267							
+UK RWE Rampion 2			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Rampion 2			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Rampion 2			Bid Up Price	2018-01-01	2038-01-01	-45							
+UK RWE Rampion 2			Bid Up Price	2038-01-01	2100-01-01	0							
+UK RWE Rampion 2			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore English_Channel_Near 2598 50.5 0.0 80M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK RWE Brechfa Forest West			Capacity	2018-01-01	2038-01-01	57.4							
+UK RWE Brechfa Forest West			Variable Cost	2010-01-01	2100-01-01	0.699							
+UK RWE Brechfa Forest West			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Brechfa Forest West			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Brechfa Forest West			Bid Up Price	2018-01-01	2038-01-01	-45							
+UK RWE Brechfa Forest West			Bid Up Price	2038-01-01	2100-01-01	0							
+UK RWE Brechfa Forest West			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Harwick_Far 2869 52.0 2.5 Base Wind Speed	NWST Wind Power Curve	Lookup					
+UK RWE Galloper			Capacity	2018-01-01	2041-01-01	88.2							
+UK RWE Galloper			Variable Cost	2010-01-01	2100-01-01	1.12							
+UK RWE Galloper			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Galloper			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Galloper			Bid Up Price	2018-01-01	2038-01-01	-45							
+UK RWE Galloper			Bid Up Price	2038-01-01	2100-01-01	0							
+UK RWE Galloper			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Harwick_Near 2868 52.0 1.875 116M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK RWE Clocaenog Forest			Capacity	2019-01-01	2044-01-01	96							
+UK RWE Clocaenog Forest			Variable Cost	2010-01-01	2100-01-01	0.784							
+UK RWE Clocaenog Forest			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Clocaenog Forest			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Clocaenog Forest			Bid Up Price	2019-01-01	2039-01-01	-45							
+UK RWE Clocaenog Forest			Bid Up Price	2039-01-01	2100-01-01	0							
+UK RWE Clocaenog Forest			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 98M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Mynydd Y Gwair			Capacity	2019-01-01	2039-01-01	32.8							
+UK RWE Mynydd Y Gwair			Variable Cost	2010-01-01	2100-01-01	1.075							
+UK RWE Mynydd Y Gwair			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Mynydd Y Gwair			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Mynydd Y Gwair			Bid Up Price	2019-01-01	2039-01-01	-45							
+UK RWE Mynydd Y Gwair			Bid Up Price	2039-01-01	2100-01-01	0							
+UK RWE Mynydd Y Gwair			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore South_Wales 2770 51.5 -3.75 80M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Bad a Cheo			Capacity	2019-01-01	2038-01-01	26.65							
+UK RWE Bad a Cheo			Variable Cost	2010-01-01	2100-01-01	1.256							
+UK RWE Bad a Cheo			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Bad a Cheo			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Bad a Cheo			Bid Up Price	2019-01-01	2039-01-01	-45							
+UK RWE Bad a Cheo			Bid Up Price	2039-01-01	2100-01-01	0							
+UK RWE Bad a Cheo			Capacity Rating Factor	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 80M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Triton Knoll			Capacity	2022-01-01	2042-01-01	505.63							
+UK RWE Triton Knoll			Variable Cost	2010-01-01	2100-01-01	0.868							
+UK RWE Triton Knoll			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Triton Knoll			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Triton Knoll			Bid Up Price	2022-01-01	2042-01-01	-45							
+UK RWE Triton Knoll			Bid Up Price	2042-01-01	2100-01-01	0							
+UK RWE Triton Knoll			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Lincs_Far 3134 53.5 1.25 140M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK RWE Benbrack			Capacity	2023-01-01	2048-01-01	60							
+UK RWE Benbrack			Variable Cost	2010-01-01	2100-01-01	0.931							
+UK RWE Benbrack			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Benbrack			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Benbrack			Bid Up Price	2023-01-01	2043-01-01	-45							
+UK RWE Benbrack			Bid Up Price	2043-01-01	2100-01-01	0							
+UK RWE Benbrack			Capacity Rating Factor	2010-01-01	2100-01-01	AB Onshore Southwest_Scotland 3392 55.0 -4.375 80M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Enoch Hill			Capacity	2023-01-01	2048-01-01	72							
+UK RWE Enoch Hill			Variable Cost	2010-01-01	2100-01-01	0.655							
+UK RWE Enoch Hill			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Enoch Hill			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Enoch Hill			Bid Up Price	2023-01-01	2043-01-01	-45							
+UK RWE Enoch Hill			Bid Up Price	2043-01-01	2100-01-01	0							
+UK RWE Enoch Hill			Capacity Rating Factor	2010-01-01	2100-01-01	AB Onshore Glasgow 3481 55.5 -4.375 80M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Golticlay			Capacity	2023-01-01	2048-01-01	49.9							
+UK RWE Golticlay			Variable Cost	2010-01-01	2100-01-01	0.967							
+UK RWE Golticlay			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Golticlay			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Golticlay			Bid Up Price	2023-01-01	2043-01-01	-45							
+UK RWE Golticlay			Bid Up Price	2043-01-01	2100-01-01	0							
+UK RWE Golticlay			Capacity Rating Factor	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 55M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Sofia			Capacity	2023-01-01	2048-01-01	686							
+UK RWE Sofia			Variable Cost	2010-01-01	2100-01-01	0.835							
+UK RWE Sofia			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Sofia			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Sofia			Bid Up Price	2023-01-01	2043-01-01	-45							
+UK RWE Sofia			Bid Up Price	2043-01-01	2100-01-01	0							
+UK RWE Sofia			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Dogger_Bank_Near 3313 54.5 1.875 130M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK RWE Clachaig Glen			Capacity	2024-01-01	2054-01-01	48							
+UK RWE Clachaig Glen			Variable Cost	2010-01-01	2100-01-01	1.095							
+UK RWE Clachaig Glen			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Clachaig Glen			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Clachaig Glen			Bid Up Price	2024-01-01	2044-01-01	-45							
+UK RWE Clachaig Glen			Bid Up Price	2044-01-01	2100-01-01	0							
+UK RWE Clachaig Glen			Capacity Rating Factor	2010-01-01	2100-01-01	AB Onshore Northern_Scotland 4016 58.5 -3.75 55M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Cyfyngedig			Capacity	2024-01-01	2052-01-01	43.2							
+UK RWE Cyfyngedig			Variable Cost	2010-01-01	2100-01-01	0.516							
+UK RWE Cyfyngedig			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Cyfyngedig			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Cyfyngedig			Bid Up Price	2024-01-01	2044-01-01	-45							
+UK RWE Cyfyngedig			Bid Up Price	2044-01-01	2100-01-01	0							
+UK RWE Cyfyngedig			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore Brecon Beacons 2860 52.0 -3.125 60M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Strathy Wood			Capacity	2024-01-01	2054-01-01	58.5							
+UK RWE Strathy Wood			Variable Cost	2010-01-01	2100-01-01	1.231							
+UK RWE Strathy Wood			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Strathy Wood			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Strathy Wood			Bid Up Price	2024-01-01	2044-01-01	-45							
+UK RWE Strathy Wood			Bid Up Price	2044-01-01	2100-01-01	0							
+UK RWE Strathy Wood			Capacity Rating Factor	2010-01-01	2100-01-01	AB Onshore Northern_Scotland 4016 58.5 -3.75 83M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Camster ll			Capacity	2025-01-01	2055-01-01	39.6							
+UK RWE Camster ll			Variable Cost	2010-01-01	2100-01-01	0.715							
+UK RWE Camster ll			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Camster ll			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Camster ll			Bid Up Price	2025-01-01	2045-01-01	-45							
+UK RWE Camster ll			Bid Up Price	2045-01-01	2100-01-01	0							
+UK RWE Camster ll			Capacity Rating Factor	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 80M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Enoch Hill II			Capacity	2025-01-01	2055-01-01	6.9							
+UK RWE Enoch Hill II			Variable Cost	2010-01-01	2100-01-01	0.84							
+UK RWE Enoch Hill II			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Enoch Hill II			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Enoch Hill II			Bid Up Price	2025-01-01	2045-01-01	-45							
+UK RWE Enoch Hill II			Bid Up Price	2045-01-01	2100-01-01	0							
+UK RWE Enoch Hill II			Capacity Rating Factor	2010-01-01	2100-01-01	AB Onshore Glasgow 3481 55.5 -4.375 80M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Lorg			Capacity	2025-01-01	2055-01-01	69							
+UK RWE Lorg			Variable Cost	2010-01-01	2100-01-01	0.987							
+UK RWE Lorg			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Lorg			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Lorg			Bid Up Price	2025-01-01	2045-01-01	-45							
+UK RWE Lorg			Bid Up Price	2045-01-01	2100-01-01	0							
+UK RWE Lorg			Capacity Rating Factor	2010-01-01	2100-01-01	AB Onshore Southwest_Scotland 3392 55.0 -4.375 70M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Pen March			Capacity	2025-01-01	2055-01-01	28.5							
+UK RWE Pen March			Variable Cost	2010-01-01	2100-01-01	0.707							
+UK RWE Pen March			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Pen March			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Pen March			Bid Up Price	2025-01-01	2045-01-01	-45							
+UK RWE Pen March			Bid Up Price	2045-01-01	2100-01-01	0							
+UK RWE Pen March			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore Brecon Beacons 2860 52.0 -3.125 89M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Stemster			Capacity	2025-01-01	2055-01-01	36.72							
+UK RWE Stemster			Variable Cost	2010-01-01	2100-01-01	1.349							
+UK RWE Stemster			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Stemster			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Stemster			Bid Up Price	2025-01-01	2045-01-01	-45							
+UK RWE Stemster			Bid Up Price	2045-01-01	2100-01-01	0							
+UK RWE Stemster			Capacity Rating Factor	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 80M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Abertillery			Capacity	2026-01-01	2051-01-01	48							
+UK RWE Abertillery			Variable Cost	2010-01-01	2100-01-01	1.071							
+UK RWE Abertillery			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Abertillery			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Abertillery			Bid Up Price	2026-01-01	2046-01-01	-45							
+UK RWE Abertillery			Bid Up Price	2046-01-01	2100-01-01	0							
+UK RWE Abertillery			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore South_Wales 2771 51.5 -3.125 70M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Eredine			Capacity	2026-01-01	2056-01-01	81.6							
+UK RWE Eredine			Variable Cost	2010-01-01	2100-01-01	0.75							
+UK RWE Eredine			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Eredine			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Eredine			Bid Up Price	2026-01-01	2046-01-01	-45							
+UK RWE Eredine			Bid Up Price	2046-01-01	2100-01-01	0							
+UK RWE Eredine			Capacity Rating Factor	2010-01-01	2100-01-01	AB Offshore Western_Scotland_Near 3568 56.0 -5.625 70M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Daer			Capacity	2027-01-01	2057-01-01	108							
+UK RWE Daer			Variable Cost	2010-01-01	2100-01-01	1.101							
+UK RWE Daer			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Daer			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Daer			Bid Up Price	2027-01-01	2047-01-01	-45							
+UK RWE Daer			Bid Up Price	2047-01-01	2100-01-01	0							
+UK RWE Daer			Capacity Rating Factor	2010-01-01	2100-01-01	AB Onshore Glasgow 3482 55.5 -3.75 65M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Gaerwen			Capacity	2027-01-01	2057-01-01	72							
+UK RWE Gaerwen			Variable Cost	2010-01-01	2100-01-01	0.726							
+UK RWE Gaerwen			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Gaerwen			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Gaerwen			Bid Up Price	2027-01-01	2047-01-01	-45							
+UK RWE Gaerwen			Bid Up Price	2047-01-01	2100-01-01	0							
+UK RWE Gaerwen			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 55M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Lorne			Capacity	2027-01-01	2057-01-01	28.8							
+UK RWE Lorne			Variable Cost	2010-01-01	2100-01-01	1.429							
+UK RWE Lorne			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Lorne			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Lorne			Bid Up Price	2027-01-01	2047-01-01	-45							
+UK RWE Lorne			Bid Up Price	2047-01-01	2100-01-01	0							
+UK RWE Lorne			Capacity Rating Factor	2010-01-01	2100-01-01	AB Onshore Southwest_Scotland 3392 55.0 -4.375 98M Windspeed	NWST Wind Power Curve	Lookup					
+UK RWE Struie			Capacity	2029-01-01	2059-01-01	52.8							
+UK RWE Struie			Variable Cost	2010-01-01	2100-01-01	0.851							
+UK RWE Struie			Save Data	2010-01-01	2100-01-01	1							
+UK RWE Struie			Save Blocks	2010-01-01	2100-01-01	0							
+UK RWE Struie			Bid Up Price	2029-01-01	2049-01-01	-45							
+UK RWE Struie			Bid Up Price	2049-01-01	2100-01-01	0							
+UK RWE Struie			Capacity Rating Factor	2010-01-01	2100-01-01	AB Onshore Northern_Scotland 3926 58.0 -4.375 70M Windspeed	NWST Wind Power Curve	Lookup					
+UK Sofia			Capacity	2023-01-01	2048-01-01	686							
+UK Sofia			Variable Cost	2010-01-01	2100-01-01	1.019							
+UK Sofia			Save Data	2010-01-01	2100-01-01	1							
+UK Sofia			Save Blocks	2010-01-01	2100-01-01	0							
+UK Sofia			Bid Up Price	2023-01-01	2043-01-01	-45							
+UK Sofia			Bid Up Price	2043-01-01	2100-01-01	0							
+UK Sofia			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Dogger_Bank_Near 3313 54.5 1.875 130M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Galloper			Capacity	2018-01-01	2041-01-01	264.6							
+UK Galloper			Variable Cost	2010-01-01	2100-01-01	1.453							
+UK Galloper			Save Data	2010-01-01	2100-01-01	1							
+UK Galloper			Save Blocks	2010-01-01	2100-01-01	0							
+UK Galloper			Bid Up Price	2018-01-01	2038-01-01	-45							
+UK Galloper			Bid Up Price	2038-01-01	2100-01-01	0							
+UK Galloper			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Harwick_Near 2868 52.0 1.875 116M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Triton Knoll			Capacity	2022-01-01	2042-01-01	351.37							
+UK Triton Knoll			Variable Cost	2010-01-01	2100-01-01	0.544							
+UK Triton Knoll			Save Data	2010-01-01	2100-01-01	1							
+UK Triton Knoll			Save Blocks	2010-01-01	2100-01-01	0							
+UK Triton Knoll			Bid Up Price	2022-01-01	2042-01-01	-45							
+UK Triton Knoll			Bid Up Price	2042-01-01	2100-01-01	0							
+UK Triton Knoll			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Lincs_Far 3134 53.5 1.25 140M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Kentish Flats			Capacity	2005-01-01	2025-01-01	90							
+UK Kentish Flats			Variable Cost	2010-01-01	2100-01-01	0.52							
+UK Kentish Flats			Save Data	2010-01-01	2100-01-01	1							
+UK Kentish Flats			Save Blocks	2010-01-01	2100-01-01	0							
+UK Kentish Flats			Bid Up Price	2005-01-01	2025-01-01	-45							
+UK Kentish Flats			Bid Up Price	2025-01-01	2100-01-01	0							
+UK Kentish Flats			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 70M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Barrow			Capacity	2006-01-01	2026-01-01	90							
+UK Barrow			Variable Cost	2010-01-01	2100-01-01	0.959							
+UK Barrow			Save Data	2010-01-01	2100-01-01	1							
+UK Barrow			Save Blocks	2010-01-01	2100-01-01	0							
+UK Barrow			Bid Up Price	2006-01-01	2026-01-01	-45							
+UK Barrow			Bid Up Price	2026-01-01	2100-01-01	0							
+UK Barrow			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 75M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Little Cheyne Court			Capacity	2008-01-01	2028-01-01	25							
+UK Little Cheyne Court			Variable Cost	2010-01-01	2100-01-01	0.8							
+UK Little Cheyne Court			Save Data	2010-01-01	2100-01-01	1							
+UK Little Cheyne Court			Save Blocks	2010-01-01	2100-01-01	0							
+UK Little Cheyne Court			Bid Up Price	2008-01-01	2028-01-01	-45							
+UK Little Cheyne Court			Bid Up Price	2028-01-01	2100-01-01	0							
+UK Little Cheyne Court			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore LCC 2688 51.0 0.625 70M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Burbo			Capacity	2008-01-01	2028-01-01	90							
+UK Burbo			Variable Cost	2010-01-01	2100-01-01	0.645							
+UK Burbo			Save Data	2010-01-01	2100-01-01	1							
+UK Burbo			Save Blocks	2010-01-01	2100-01-01	0							
+UK Burbo			Bid Up Price	2008-01-01	2028-01-01	-45							
+UK Burbo			Bid Up Price	2028-01-01	2100-01-01	0							
+UK Burbo			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 80M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Lynn			Capacity	2008-01-01	2028-01-01	97.2							
+UK Lynn			Variable Cost	2010-01-01	2100-01-01	1.335							
+UK Lynn			Save Data	2010-01-01	2100-01-01	1							
+UK Lynn			Save Blocks	2010-01-01	2100-01-01	0							
+UK Lynn			Bid Up Price	2008-01-01	2028-01-01	-45							
+UK Lynn			Bid Up Price	2028-01-01	2100-01-01	0							
+UK Lynn			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Lincs_Near 3133 53.5 0.625 85M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Rhyl Flats			Capacity	2009-01-01	2029-01-01	45.09							
+UK Rhyl Flats			Variable Cost	2010-01-01	2100-01-01	0.814							
+UK Rhyl Flats			Save Data	2010-01-01	2100-01-01	1							
+UK Rhyl Flats			Save Blocks	2010-01-01	2100-01-01	0							
+UK Rhyl Flats			Bid Up Price	2009-01-01	2029-01-01	-45							
+UK Rhyl Flats			Bid Up Price	2029-01-01	2100-01-01	0							
+UK Rhyl Flats			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 75M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Gunfleet Sands 1-2			Capacity	2010-01-01	2030-01-01	172.8							
+UK Gunfleet Sands 1-2			Variable Cost	2010-01-01	2100-01-01	0.917							
+UK Gunfleet Sands 1-2			Save Data	2010-01-01	2100-01-01	1							
+UK Gunfleet Sands 1-2			Save Blocks	2010-01-01	2100-01-01	0							
+UK Gunfleet Sands 1-2			Bid Up Price	2010-01-01	2030-01-01	-45							
+UK Gunfleet Sands 1-2			Bid Up Price	2030-01-01	2100-01-01	0							
+UK Gunfleet Sands 1-2			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 75M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Thanet			Capacity	2010-01-01	2030-01-01	300							
+UK Thanet			Variable Cost	2010-01-01	2100-01-01	1.421							
+UK Thanet			Save Data	2010-01-01	2100-01-01	1							
+UK Thanet			Save Blocks	2010-01-01	2100-01-01	0							
+UK Thanet			Bid Up Price	2010-01-01	2030-01-01	-45							
+UK Thanet			Bid Up Price	2030-01-01	2100-01-01	0							
+UK Thanet			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Thames_Estuary_Far 2779 51.5 1.875 70M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Greater Gabbard			Capacity	2011-01-01	2032-01-01	252							
+UK Greater Gabbard			Variable Cost	2010-01-01	2100-01-01	0.927							
+UK Greater Gabbard			Save Data	2010-01-01	2100-01-01	1							
+UK Greater Gabbard			Save Blocks	2010-01-01	2100-01-01	0							
+UK Greater Gabbard			Bid Up Price	2011-01-01	2031-01-01	-45							
+UK Greater Gabbard			Bid Up Price	2031-01-01	2100-01-01	0							
+UK Greater Gabbard			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Harwick_Near 2868 52.0 1.875 78M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Ormonde			Capacity	2011-01-01	2031-01-01	150							
+UK Ormonde			Variable Cost	2010-01-01	2100-01-01	1.295							
+UK Ormonde			Save Data	2010-01-01	2100-01-01	1							
+UK Ormonde			Save Blocks	2010-01-01	2100-01-01	0							
+UK Ormonde			Bid Up Price	2011-01-01	2031-01-01	-45							
+UK Ormonde			Bid Up Price	2031-01-01	2100-01-01	0							
+UK Ormonde			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 90M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Walney 1-2			Capacity	2011-01-01	2031-01-01	368							
+UK Walney 1-2			Variable Cost	2010-01-01	2100-01-01	1.07							
+UK Walney 1-2			Save Data	2010-01-01	2100-01-01	1							
+UK Walney 1-2			Save Blocks	2010-01-01	2100-01-01	0							
+UK Walney 1-2			Bid Up Price	2011-01-01	2031-01-01	-45							
+UK Walney 1-2			Bid Up Price	2031-01-01	2100-01-01	0							
+UK Walney 1-2			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 75M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Sheringham Shoal 1			Capacity	2012-01-01	2032-01-01	158							
+UK Sheringham Shoal 1			Variable Cost	2010-01-01	2100-01-01	1.171							
+UK Sheringham Shoal 1			Save Data	2010-01-01	2100-01-01	1							
+UK Sheringham Shoal 1			Save Blocks	2010-01-01	2100-01-01	0							
+UK Sheringham Shoal 1			Bid Up Price	2012-01-01	2032-01-01	-45							
+UK Sheringham Shoal 1			Bid Up Price	2032-01-01	2100-01-01	0							
+UK Sheringham Shoal 1			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Norflok_Near 3045 53.0 1.25 82M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Sheringham Shoal 2			Capacity	2012-01-01	2032-01-01	158							
+UK Sheringham Shoal 2			Variable Cost	2010-01-01	2100-01-01	1.144							
+UK Sheringham Shoal 2			Save Data	2010-01-01	2100-01-01	1							
+UK Sheringham Shoal 2			Save Blocks	2010-01-01	2100-01-01	0							
+UK Sheringham Shoal 2			Bid Up Price	2012-01-01	2032-01-01	-45							
+UK Sheringham Shoal 2			Bid Up Price	2032-01-01	2100-01-01	0							
+UK Sheringham Shoal 2			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Norflok_Near 3045 53.0 1.25 82M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK London Array			Capacity	2013-01-01	2037-01-01	441							
+UK London Array			Variable Cost	2010-01-01	2100-01-01	0.716							
+UK London Array			Save Data	2010-01-01	2100-01-01	1							
+UK London Array			Save Blocks	2010-01-01	2100-01-01	0							
+UK London Array			Bid Up Price	2013-01-01	2033-01-01	-45							
+UK London Array			Bid Up Price	2033-01-01	2100-01-01	0							
+UK London Array			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 87M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Lincs			Capacity	2013-01-01	2033-01-01	270							
+UK Lincs			Variable Cost	2010-01-01	2100-01-01	1.036							
+UK Lincs			Save Data	2010-01-01	2100-01-01	1							
+UK Lincs			Save Blocks	2010-01-01	2100-01-01	0							
+UK Lincs			Bid Up Price	2013-01-01	2033-01-01	-45							
+UK Lincs			Bid Up Price	2033-01-01	2100-01-01	0							
+UK Lincs			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Lincs_Near 3133 53.5 0.625 Base Wind Speed	NWST Offshore Wind Power Curve	Lookup					
+UK Teesside			Capacity	2013-01-01	2033-01-01	62							
+UK Teesside			Variable Cost	2010-01-01	2100-01-01	0.677							
+UK Teesside			Save Data	2010-01-01	2100-01-01	1							
+UK Teesside			Save Blocks	2010-01-01	2100-01-01	0							
+UK Teesside			Bid Up Price	2013-01-01	2033-01-01	-45							
+UK Teesside			Bid Up Price	2033-01-01	2100-01-01	0							
+UK Teesside			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore Middlesborough 3308 54.5 -1.25 80M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Gwynt y Mor			Capacity	2014-01-01	2035-01-01	288							
+UK Gwynt y Mor			Variable Cost	2010-01-01	2100-01-01	0.892							
+UK Gwynt y Mor			Save Data	2010-01-01	2100-01-01	1							
+UK Gwynt y Mor			Save Blocks	2010-01-01	2100-01-01	0							
+UK Gwynt y Mor			Bid Up Price	2014-01-01	2034-01-01	-45							
+UK Gwynt y Mor			Bid Up Price	2034-01-01	2100-01-01	0							
+UK Gwynt y Mor			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 98M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK West of Duddon Sands			Capacity	2014-01-01	2034-01-01	389							
+UK West of Duddon Sands			Variable Cost	2010-01-01	2100-01-01	0.764							
+UK West of Duddon Sands			Save Data	2010-01-01	2100-01-01	1							
+UK West of Duddon Sands			Save Blocks	2010-01-01	2100-01-01	0							
+UK West of Duddon Sands			Bid Up Price	2014-01-01	2034-01-01	-45							
+UK West of Duddon Sands			Bid Up Price	2034-01-01	2100-01-01	0							
+UK West of Duddon Sands			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 90M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Kentish Flats Extension			Capacity	2015-01-01	2035-01-01	49.5							
+UK Kentish Flats Extension			Variable Cost	2010-01-01	2100-01-01	0.51							
+UK Kentish Flats Extension			Save Data	2010-01-01	2100-01-01	1							
+UK Kentish Flats Extension			Save Blocks	2010-01-01	2100-01-01	0							
+UK Kentish Flats Extension			Bid Up Price	2015-01-01	2035-01-01	-45							
+UK Kentish Flats Extension			Bid Up Price	2035-01-01	2100-01-01	0							
+UK Kentish Flats Extension			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 70M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Westermost Rough			Capacity	2015-01-01	2035-01-01	210							
+UK Westermost Rough			Variable Cost	2010-01-01	2100-01-01	0.599							
+UK Westermost Rough			Save Data	2010-01-01	2100-01-01	1							
+UK Westermost Rough			Save Blocks	2010-01-01	2100-01-01	0							
+UK Westermost Rough			Bid Up Price	2015-01-01	2035-01-01	-45							
+UK Westermost Rough			Bid Up Price	2035-01-01	2100-01-01	0							
+UK Westermost Rough			Capacity Rating Factor	2010-01-01	2100-01-01	UK Onshore Grimsby 3132 53.5 0.0 Base Wind Speed	NWST Offshore Wind Power Curve	Lookup					
+UK Burbo Extension			Capacity	2016-01-01	2036-01-01	259							
+UK Burbo Extension			Variable Cost	2010-01-01	2100-01-01	0.971							
+UK Burbo Extension			Save Data	2010-01-01	2100-01-01	1							
+UK Burbo Extension			Save Blocks	2010-01-01	2100-01-01	0							
+UK Burbo Extension			Bid Up Price	2016-01-01	2036-01-01	-45							
+UK Burbo Extension			Bid Up Price	2036-01-01	2100-01-01	0							
+UK Burbo Extension			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 85M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Dudgeon 1			Capacity	2017-01-01	2037-01-01	108							
+UK Dudgeon 1			Variable Cost	2010-01-01	2100-01-01	1.152							
+UK Dudgeon 1			Save Data	2010-01-01	2100-01-01	1							
+UK Dudgeon 1			Save Blocks	2010-01-01	2100-01-01	0							
+UK Dudgeon 1			Bid Up Price	2017-01-01	2037-01-01	-45							
+UK Dudgeon 1			Bid Up Price	2037-01-01	2100-01-01	0							
+UK Dudgeon 1			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Lincs_Far 3134 53.5 1.25 110M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Dudgeon 2			Capacity	2017-01-01	2037-01-01	90							
+UK Dudgeon 2			Variable Cost	2010-01-01	2100-01-01	0.873							
+UK Dudgeon 2			Save Data	2010-01-01	2100-01-01	1							
+UK Dudgeon 2			Save Blocks	2010-01-01	2100-01-01	0							
+UK Dudgeon 2			Bid Up Price	2017-01-01	2037-01-01	-45							
+UK Dudgeon 2			Bid Up Price	2037-01-01	2100-01-01	0							
+UK Dudgeon 2			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Lincs_Far 3134 53.5 1.25 110M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Dudgeon 3			Capacity	2017-01-01	2037-01-01	102							
+UK Dudgeon 3			Variable Cost	2010-01-01	2100-01-01	1.441							
+UK Dudgeon 3			Save Data	2010-01-01	2100-01-01	1							
+UK Dudgeon 3			Save Blocks	2010-01-01	2100-01-01	0							
+UK Dudgeon 3			Bid Up Price	2017-01-01	2037-01-01	-45							
+UK Dudgeon 3			Bid Up Price	2037-01-01	2100-01-01	0							
+UK Dudgeon 3			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Lincs_Far 3134 53.5 1.25 110M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Dudgeon 4			Capacity	2017-01-01	2037-01-01	102							
+UK Dudgeon 4			Variable Cost	2010-01-01	2100-01-01	0.611							
+UK Dudgeon 4			Save Data	2010-01-01	2100-01-01	1							
+UK Dudgeon 4			Save Blocks	2010-01-01	2100-01-01	0							
+UK Dudgeon 4			Bid Up Price	2017-01-01	2037-01-01	-45							
+UK Dudgeon 4			Bid Up Price	2037-01-01	2100-01-01	0							
+UK Dudgeon 4			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Lincs_Far 3134 53.5 1.25 110M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Hywind 1			Capacity	2017-01-01	2037-01-01	30							
+UK Hywind 1			Variable Cost	2010-01-01	2100-01-01	0.533							
+UK Hywind 1			Save Data	2010-01-01	2100-01-01	1							
+UK Hywind 1			Save Blocks	2010-01-01	2100-01-01	0							
+UK Hywind 1			Bid Up Price	2017-01-01	2037-01-01	-45							
+UK Hywind 1			Bid Up Price	2037-01-01	2100-01-01	0							
+UK Hywind 1			Capacity Rating Factor	2010-01-01	2100-01-01	AB Offshore Aberdeen_Far 3753 57.0 -1.25 101M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Walney 3			Capacity	2017-01-01	2037-01-01	330							
+UK Walney 3			Variable Cost	2010-01-01	2100-01-01	0.917							
+UK Walney 3			Save Data	2010-01-01	2100-01-01	1							
+UK Walney 3			Save Blocks	2010-01-01	2100-01-01	0							
+UK Walney 3			Bid Up Price	2017-01-01	2037-01-01	-45							
+UK Walney 3			Bid Up Price	2037-01-01	2100-01-01	0							
+UK Walney 3			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 75M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Rampion			Capacity	2018-01-01	2042-01-01	280							
+UK Rampion			Variable Cost	2010-01-01	2100-01-01	1.176							
+UK Rampion			Save Data	2010-01-01	2100-01-01	1							
+UK Rampion			Save Blocks	2010-01-01	2100-01-01	0							
+UK Rampion			Bid Up Price	2018-01-01	2038-01-01	-45							
+UK Rampion			Bid Up Price	2038-01-01	2100-01-01	0							
+UK Rampion			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore English_Channel_Near 2598 50.5 0.0 80M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Aberdeen			Capacity	2018-01-01	2038-01-01	96.8							
+UK Aberdeen			Variable Cost	2010-01-01	2100-01-01	0.693							
+UK Aberdeen			Save Data	2010-01-01	2100-01-01	1							
+UK Aberdeen			Save Blocks	2010-01-01	2100-01-01	0							
+UK Aberdeen			Bid Up Price	2018-01-01	2038-01-01	-45							
+UK Aberdeen			Bid Up Price	2038-01-01	2100-01-01	0							
+UK Aberdeen			Capacity Rating Factor	2010-01-01	2100-01-01	AB Offshore Aberdeen_Far 3753 57.0 -1.25 120M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Beatrice			Capacity	2018-01-01	2038-01-01	588							
+UK Beatrice			Variable Cost	2010-01-01	2100-01-01	0.976							
+UK Beatrice			Save Data	2010-01-01	2100-01-01	1							
+UK Beatrice			Save Blocks	2010-01-01	2100-01-01	0							
+UK Beatrice			Bid Up Price	2018-01-01	2038-01-01	-45							
+UK Beatrice			Bid Up Price	2038-01-01	2100-01-01	0							
+UK Beatrice			Capacity Rating Factor	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 105M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Blyth			Capacity	2018-01-01	2038-01-01	40							
+UK Blyth			Variable Cost	2010-01-01	2100-01-01	0.956							
+UK Blyth			Save Data	2010-01-01	2100-01-01	1							
+UK Blyth			Save Blocks	2010-01-01	2100-01-01	0							
+UK Blyth			Bid Up Price	2018-01-01	2038-01-01	-45							
+UK Blyth			Bid Up Price	2038-01-01	2100-01-01	0							
+UK Blyth			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Tyneside_Near 3397 55.0 -1.25 76M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Race Bank			Capacity	2018-01-01	2038-01-01	573							
+UK Race Bank			Variable Cost	2010-01-01	2100-01-01	0.595							
+UK Race Bank			Save Data	2010-01-01	2100-01-01	1							
+UK Race Bank			Save Blocks	2010-01-01	2100-01-01	0							
+UK Race Bank			Bid Up Price	2018-01-01	2038-01-01	-45							
+UK Race Bank			Bid Up Price	2038-01-01	2100-01-01	0							
+UK Race Bank			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Lincs_Far 3134 53.5 1.25 110M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Walney 4			Capacity	2018-01-01	2038-01-01	329							
+UK Walney 4			Variable Cost	2010-01-01	2100-01-01	0.814							
+UK Walney 4			Save Data	2010-01-01	2100-01-01	1							
+UK Walney 4			Save Blocks	2010-01-01	2100-01-01	0							
+UK Walney 4			Bid Up Price	2018-01-01	2038-01-01	-45							
+UK Walney 4			Bid Up Price	2038-01-01	2100-01-01	0							
+UK Walney 4			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 75M Windspeed	NWST Offshore Wind Power Curve	Lookup					
+UK Hornsea 1			Capacity	2019-01-01	2039-01-01	1218							
+UK Hornsea 1			Variable Cost	2010-01-01	2100-01-01	0.541							
+UK Hornsea 1			Save Data	2010-01-01	2100-01-01	1							
+UK Hornsea 1			Save Blocks	2010-01-01	2100-01-01	0							
+UK Hornsea 1			Bid Up Price	2019-01-01	2039-01-01	-45							
+UK Hornsea 1			Bid Up Price	2039-01-01	2100-01-01	0							
+UK Hornsea 1			Capacity Rating Factor	2010-01-01	2100-01-01	UK Offshore Dogger_Bank_Near 3313 54.5 1.875 Base Wind Speed	NWST Offshore Wind Power Curve	Lookup					

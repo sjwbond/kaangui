@@ -1,0 +1,79 @@
+Object_Name	Parent_Object	Target_Object	Property	Date_From	Date_To	Value	Variable	Variable_Effect	Timeslice	Timeslice_Index	Group_id	Priority	Scenario
+ca_db_wind			connectiondata	2000-01-01	2100-01-01	__settings;Databases;0							
+ca_db_pv			connectiondata	2000-01-01	2100-01-01	__settings;Databases;0							
+ca_db_wind			schema	2000-01-01	2100-01-01	time_series_wind							
+ca_db_pv			schema	2000-01-01	2100-01-01	time_series_pv							
+ARA API 2			Value	2000-01-01	2100-01-01	Fuel Price File							
+Base Demand File			Data_Type	2010-01-01	2100-01-01	File							
+Base Demand File			Location	2010-01-01	2100-01-01	/Variables/Demand/Base Demand.txt							
+Base Demand File			Location	2010-01-01	2100-01-01	/Variables/Demand/NP 2020Q3/Base Demand.txt							NP 2020Q3
+Base Demand File			Location	2010-01-01	2100-01-01	/Variables/Demand/ELEC 2020Q3/Base Demand.txt							Elec 2020Q3
+Base Demand File			Location	2010-01-01	2100-01-01	/Variables/Demand/E&D 2020Q3Base Demand.txt							E&D 2020Q3
+Base Demand File			Location_Type	2010-01-01	2100-01-01	Relative							
+CAPP Coal			Value	2000-01-01	2100-01-01	Fuel Price File							
+EnergyConversionsFile			Data_Type	2000-01-01	2100-01-01	File							
+EnergyConversionsFile			Location	2000-01-01	2100-01-01	/Variables/Conversions/EnergyConversions.txt							
+EnergyConversionsFile			Location_Type	2000-01-01	2100-01-01	Relative							
+ETS EUA			Price	2000-01-01	2100-01-01	Fuel Price File							
+ETS EUA			Price	2000-01-01	2100-01-01	Fuel Price File	CO2 Stochastic	Multiply					CO2 Stochastics
+EU Biomass			Value	2000-01-01	2100-01-01	Fuel Price File							
+EU Lignite			Value	2000-01-01	2100-01-01	Fuel Price File							
+EU Uranium			Value	2000-01-01	2100-01-01	Fuel Price File							
+EU LSFO			Value	2000-01-01	2100-01-01	Fuel Price File							
+EUR	EUR	USD	fx_rate	2000-01-01	2100-01-01	0.769230769							
+Fuel Price File			Data_Type	2000-01-01	2100-01-01	File							
+Fuel Price File			Location	2000-01-01	2100-01-01	/Variables/Fuels/BaseFuels.txt							
+Fuel Price File			Location_Type	2000-01-01	2100-01-01	Relative							
+TX Gas Stochastic			Value	2000-01-01	2100-01-01	TX Gas Stochastic File							
+TX Gas Stochastic File			Data_Type	2000-01-01	2100-01-01	File							
+TX Gas Stochastic File			Location	2000-01-01	2100-01-01	/Variables/Fuels/Gas Stochastic.txt							
+TX Gas Stochastic File			Location_Type	2000-01-01	2100-01-01	Relative							
+Generic Offshore Wind Power Curve			Value	2000-01-01	2100-01-01	Power Curve File							
+Generic Onshore Wind Power Curve			Value	2000-01-01	2100-01-01	Power Curve File							
+Generic Wind Power Curve			Value	2000-01-01	2100-01-01	Power Curve File							
+GJ			Value	2000-01-01	2100-01-01	EnergyConversionsFile							
+height_coefficient			Value	2000-01-01	2100-01-01	-0.001281578							
+height_x_windspeed_coefficient			Value	2000-01-01	2100-01-01	0.000921908							
+Henry Hub Gas			Value	2000-01-01	2100-01-01	Fuel Price File							
+HWST Offshore Wind Power Curve			Value	2000-01-01	2100-01-01	Power Curve File							
+HWST Wind Power Curve			Value	2000-01-01	2100-01-01	Power Curve File							
+LWST Offshore Wind Power Curve			Value	2000-01-01	2100-01-01	Power Curve File							
+LWST Wind Power Curve			Value	2000-01-01	2100-01-01	Power Curve File							
+MED LSFO			Value	2000-01-01	2100-01-01	Fuel Price File							
+mmbtu			Value	2000-01-01	2100-01-01	EnergyConversionsFile							
+MWh			Value	2000-01-01	2100-01-01	EnergyConversionsFile							
+NOCO2			Price	2000-01-01	2100-01-01	Fuel Price File							
+NWST Offshore Wind Power Curve			Value	2000-01-01	2100-01-01	Power Curve File							
+NWST Wind Power Curve			Value	2000-01-01	2100-01-01	Power Curve File							
+NWST Wind Power Curve PL			Value	2000-01-01	2100-01-01	Power Curve File							
+Nordsee One Power Curve			Value	2000-01-01	2100-01-01	Power Curve File							
+Power Curve File			Data_Type	2000-01-01	2100-01-01	File							
+Power Curve File			Location	2000-01-01	2100-01-01	/Variables/Power Curves/Wind Power Curves.txt							
+Power Curve File			Location_Type	2000-01-01	2100-01-01	Relative							
+Siemes SWT 36 120			Value	2000-01-01	2100-01-01	Power Curve File							
+Siemes SWT 60 154			Value	2000-01-01	2100-01-01	Power Curve File							
+Therm			Value	2000-01-01	2100-01-01	EnergyConversionsFile							
+Tonne			Value	2000-01-01	2100-01-01	EnergyConversionsFile							
+TTF Gas			Value	2000-01-01	2100-01-01	Fuel Price File							
+US Biomass			Value	2000-01-01	2100-01-01	Fuel Price File							
+US CO2			Price	2000-01-01	2100-01-01	Fuel Price File							
+US Lignite			Value	2000-01-01	2100-01-01	Fuel Price File							
+US LSFO			Value	2000-01-01	2100-01-01	Fuel Price File							
+US Uranium			Value	2000-01-01	2100-01-01	Fuel Price File							
+USD	USD	EUR	fx_rate	2000-01-01	2100-01-01	1.3							
+windspeed_coefficient			Value	2000-01-01	2100-01-01	0.902214346							
+windspeed_constant			Value	2000-01-01	2100-01-01	0.135929529							
+DE Offshore North_Sea_Near_West 3233 54.0 7.5 Base Wind Speed 90p 			Value	2000-01-01	2100-01-01	0.9	DE Offshore North_Sea_Near_West 3233 54.0 7.5 Base Wind Speed	Multiply					
+DE Offshore North_Sea_Near_West 3233 54.0 7.5 Base Wind Speed 80p			Value	2000-01-01	2100-01-01	0.95	DE Offshore North_Sea_Near_West 3233 54.0 7.5 Base Wind Speed	Multiply					
+DE Offshore North_Sea_Near_West 3233 54.0 7.5 130M Windspeed 90p			Value	2000-01-01	2100-01-01	0.9	DE Offshore North_Sea_Near_West 3233 54.0 7.5 130M Windspeed	Multiply					
+DE Offshore North_Sea_Near_West 3233 54.0 7.5 130M Windspeed 80p			Value	2000-01-01	2100-01-01	0.95	DE Offshore North_Sea_Near_West 3233 54.0 7.5 130M Windspeed	Multiply					
+DE Offshore North_Sea_Near_West 3233 54.0 7.5 160M Windspeed 90p			Value	2000-01-01	2100-01-01	0.9	DE Offshore North_Sea_Near_West 3233 54.0 7.5 160M Windspeed	Multiply					
+DE Offshore North_Sea_Near_West 3233 54.0 7.5 160M Windspeed 80p			Value	2000-01-01	2100-01-01	0.95	DE Offshore North_Sea_Near_West 3233 54.0 7.5 160M Windspeed	Multiply					
+TTF Gas Stochastic			Value	2000-01-01	2100-01-01	TTF Gas Stochastic File							
+TTF Gas Stochastic File			Data_Type	2000-01-01	2100-01-01	File							
+TTF Gas Stochastic File			Location	2000-01-01	2100-01-01	/Variables/Fuels/Gas Stochastic.txt							
+TTF Gas Stochastic File			Location_Type	2000-01-01	2100-01-01	Relative							
+CO2 Stochastic			Value	2000-01-01	2100-01-01	CO2 Stochastic File							
+CO2 Stochastic File			Data_Type	2000-01-01	2100-01-01	File							
+CO2 Stochastic File			Location	2000-01-01	2100-01-01	/Variables/Fuels/CO2 Stochastic.txt							
+CO2 Stochastic File			Location_Type	2000-01-01	2100-01-01	Relative							

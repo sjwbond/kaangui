@@ -1,0 +1,2522 @@
+Object_Name	Parent_Object	Target_Object	Property	Date_From	Date_To	Value	Variable	Variable_Effect	Timeslice	Timeslice_Index	Group_id	Priority	Scenario
+UK Coal 1990			Capacity	1990-01-01	2040-01-01	0	UK Availability Coal	Multiply					
+UK Coal 1990			Marginal Heat Rate	1990-01-01	2040-01-01	10.7							
+UK Coal 1990			Variable Cost	1990-01-01	2040-01-01	4							
+UK Coal 1990			Bid Up Price	1990-01-01	2040-01-01	0							
+UK Coal 1990			Bid Up Heat Rate	1990-01-01	2040-01-01	0							
+UK Coal 1990			Fuel	1990-01-01	2040-01-01	UK Station Coal							
+UK Coal 1990			Minimum Load	1990-01-01	2040-01-01	0							
+UK Coal 1990			Minimum Load Bid Up Price	1990-01-01	2040-01-01	0							
+UK Coal 1990			Minimum Load Bid Up Heat Rate	1990-01-01	2040-01-01	0							
+UK Coal 1995			Capacity	1995-01-01	2045-01-01	0	UK Availability Coal	Multiply					
+UK Coal 1995			Marginal Heat Rate	1995-01-01	2045-01-01	10.52631579							
+UK Coal 1995			Variable Cost	1995-01-01	2045-01-01	4							
+UK Coal 1995			Bid Up Price	1995-01-01	2045-01-01	0							
+UK Coal 1995			Bid Up Heat Rate	1995-01-01	2045-01-01	0							
+UK Coal 1995			Fuel	1995-01-01	2045-01-01	UK Station Coal							
+UK Coal 1995			Minimum Load	1995-01-01	2045-01-01	0							
+UK Coal 1995			Minimum Load Bid Up Price	1995-01-01	2045-01-01	0							
+UK Coal 1995			Minimum Load Bid Up Heat Rate	1995-01-01	2045-01-01	0							
+UK Coal 2000			Capacity	2000-01-01	2050-01-01	0	UK Availability Coal	Multiply					
+UK Coal 2000			Marginal Heat Rate	2000-01-01	2050-01-01	10.46511628							
+UK Coal 2000			Variable Cost	2000-01-01	2050-01-01	4							
+UK Coal 2000			Bid Up Price	2000-01-01	2050-01-01	0							
+UK Coal 2000			Bid Up Heat Rate	2000-01-01	2050-01-01	0							
+UK Coal 2000			Fuel	2000-01-01	2050-01-01	UK Station Coal							
+UK Coal 2000			Minimum Load	2000-01-01	2050-01-01	0							
+UK Coal 2000			Minimum Load Bid Up Price	2000-01-01	2050-01-01	0							
+UK Coal 2000			Minimum Load Bid Up Heat Rate	2000-01-01	2050-01-01	0							
+UK Coal 2005			Capacity	2005-01-01	2055-01-01	0	UK Availability Coal	Multiply					
+UK Coal 2005			Marginal Heat Rate	2005-01-01	2055-01-01	10.40462428							
+UK Coal 2005			Variable Cost	2005-01-01	2055-01-01	4							
+UK Coal 2005			Bid Up Price	2005-01-01	2055-01-01	0							
+UK Coal 2005			Bid Up Heat Rate	2005-01-01	2055-01-01	0							
+UK Coal 2005			Fuel	2005-01-01	2055-01-01	UK Station Coal							
+UK Coal 2005			Minimum Load	2005-01-01	2055-01-01	0							
+UK Coal 2005			Minimum Load Bid Up Price	2005-01-01	2055-01-01	0							
+UK Coal 2005			Minimum Load Bid Up Heat Rate	2005-01-01	2055-01-01	0							
+UK Coal 2010			Capacity	2010-01-01	2060-01-01	0	UK Availability Coal	Multiply					
+UK Coal 2010			Marginal Heat Rate	2010-01-01	2060-01-01	10.34482759							
+UK Coal 2010			Variable Cost	2010-01-01	2060-01-01	4							
+UK Coal 2010			Bid Up Price	2010-01-01	2060-01-01	0							
+UK Coal 2010			Bid Up Heat Rate	2010-01-01	2060-01-01	0							
+UK Coal 2010			Fuel	2010-01-01	2060-01-01	UK Station Coal							
+UK Coal 2010			Minimum Load	2010-01-01	2060-01-01	0							
+UK Coal 2010			Minimum Load Bid Up Price	2010-01-01	2060-01-01	0							
+UK Coal 2010			Minimum Load Bid Up Heat Rate	2010-01-01	2060-01-01	0							
+UK Coal 2015			Capacity	2015-01-01	2065-01-01	0	UK Availability Coal	Multiply					
+UK Coal 2015			Marginal Heat Rate	2015-01-01	2065-01-01	10.28571429							
+UK Coal 2015			Variable Cost	2015-01-01	2065-01-01	4							
+UK Coal 2015			Bid Up Price	2015-01-01	2065-01-01	0							
+UK Coal 2015			Bid Up Heat Rate	2015-01-01	2065-01-01	0							
+UK Coal 2015			Fuel	2015-01-01	2065-01-01	UK Station Coal							
+UK Coal 2015			Minimum Load	2015-01-01	2065-01-01	0							
+UK Coal 2015			Minimum Load Bid Up Price	2015-01-01	2065-01-01	0							
+UK Coal 2015			Minimum Load Bid Up Heat Rate	2015-01-01	2065-01-01	0							
+UK Coal 2020			Capacity	2020-01-01	2070-01-01	0	UK Availability Coal	Multiply					
+UK Coal 2020			Marginal Heat Rate	2020-01-01	2070-01-01	10.22727273							
+UK Coal 2020			Variable Cost	2020-01-01	2070-01-01	4							
+UK Coal 2020			Bid Up Price	2020-01-01	2070-01-01	0							
+UK Coal 2020			Bid Up Heat Rate	2020-01-01	2070-01-01	0							
+UK Coal 2020			Fuel	2020-01-01	2070-01-01	UK Station Coal							
+UK Coal 2020			Minimum Load	2020-01-01	2070-01-01	0							
+UK Coal 2020			Minimum Load Bid Up Price	2020-01-01	2070-01-01	0							
+UK Coal 2020			Minimum Load Bid Up Heat Rate	2020-01-01	2070-01-01	0							
+UK Coal 2025			Capacity	2025-01-01	2075-01-01	0	UK Availability Coal	Multiply					
+UK Coal 2025			Marginal Heat Rate	2025-01-01	2075-01-01	10.16949153							
+UK Coal 2025			Variable Cost	2025-01-01	2075-01-01	4							
+UK Coal 2025			Bid Up Price	2025-01-01	2075-01-01	0							
+UK Coal 2025			Bid Up Heat Rate	2025-01-01	2075-01-01	0							
+UK Coal 2025			Fuel	2025-01-01	2075-01-01	UK Station Coal							
+UK Coal 2025			Minimum Load	2025-01-01	2075-01-01	0							
+UK Coal 2025			Minimum Load Bid Up Price	2025-01-01	2075-01-01	0							
+UK Coal 2025			Minimum Load Bid Up Heat Rate	2025-01-01	2075-01-01	0							
+UK Coal 2030			Capacity	2030-01-01	2080-01-01	0	UK Availability Coal	Multiply					
+UK Coal 2030			Marginal Heat Rate	2030-01-01	2080-01-01	10.11235955							
+UK Coal 2030			Variable Cost	2030-01-01	2080-01-01	4							
+UK Coal 2030			Bid Up Price	2030-01-01	2080-01-01	0							
+UK Coal 2030			Bid Up Heat Rate	2030-01-01	2080-01-01	0							
+UK Coal 2030			Fuel	2030-01-01	2080-01-01	UK Station Coal							
+UK Coal 2030			Minimum Load	2030-01-01	2080-01-01	0							
+UK Coal 2030			Minimum Load Bid Up Price	2030-01-01	2080-01-01	0							
+UK Coal 2030			Minimum Load Bid Up Heat Rate	2030-01-01	2080-01-01	0							
+UK Coal 2035			Capacity	2035-01-01	2085-01-01	0	UK Availability Coal	Multiply					
+UK Coal 2035			Marginal Heat Rate	2035-01-01	2085-01-01	10.05586592							
+UK Coal 2035			Variable Cost	2035-01-01	2085-01-01	4							
+UK Coal 2035			Bid Up Price	2035-01-01	2085-01-01	0							
+UK Coal 2035			Bid Up Heat Rate	2035-01-01	2085-01-01	0							
+UK Coal 2035			Fuel	2035-01-01	2085-01-01	UK Station Coal							
+UK Coal 2035			Minimum Load	2035-01-01	2085-01-01	0							
+UK Coal 2035			Minimum Load Bid Up Price	2035-01-01	2085-01-01	0							
+UK Coal 2035			Minimum Load Bid Up Heat Rate	2035-01-01	2085-01-01	0							
+UK Coal 2040			Capacity	2040-01-01	2090-01-01	0	UK Availability Coal	Multiply					
+UK Coal 2040			Marginal Heat Rate	2040-01-01	2090-01-01	10							
+UK Coal 2040			Variable Cost	2040-01-01	2090-01-01	4							
+UK Coal 2040			Bid Up Price	2040-01-01	2090-01-01	0							
+UK Coal 2040			Bid Up Heat Rate	2040-01-01	2090-01-01	0							
+UK Coal 2040			Fuel	2040-01-01	2090-01-01	UK Station Coal							
+UK Coal 2040			Minimum Load	2040-01-01	2090-01-01	0							
+UK Coal 2040			Minimum Load Bid Up Price	2040-01-01	2090-01-01	0							
+UK Coal 2040			Minimum Load Bid Up Heat Rate	2040-01-01	2090-01-01	0							
+UK Coal 2045			Capacity	2045-01-01	2095-01-01	0	UK Availability Coal	Multiply					
+UK Coal 2045			Marginal Heat Rate	2045-01-01	2095-01-01	9.944751381							
+UK Coal 2045			Variable Cost	2045-01-01	2095-01-01	4							
+UK Coal 2045			Bid Up Price	2045-01-01	2095-01-01	0							
+UK Coal 2045			Bid Up Heat Rate	2045-01-01	2095-01-01	0							
+UK Coal 2045			Fuel	2045-01-01	2095-01-01	UK Station Coal							
+UK Coal 2045			Minimum Load	2045-01-01	2095-01-01	0							
+UK Coal 2045			Minimum Load Bid Up Price	2045-01-01	2095-01-01	0							
+UK Coal 2045			Minimum Load Bid Up Heat Rate	2045-01-01	2095-01-01	0							
+UK Coal 2050			Capacity	2050-01-01	2100-01-01	0	UK Availability Coal	Multiply					
+UK Coal 2050			Marginal Heat Rate	2050-01-01	2100-01-01	9.89010989							
+UK Coal 2050			Variable Cost	2050-01-01	2100-01-01	4							
+UK Coal 2050			Bid Up Price	2050-01-01	2100-01-01	0							
+UK Coal 2050			Bid Up Heat Rate	2050-01-01	2100-01-01	0							
+UK Coal 2050			Fuel	2050-01-01	2100-01-01	UK Station Coal							
+UK Coal 2050			Minimum Load	2050-01-01	2100-01-01	0							
+UK Coal 2050			Minimum Load Bid Up Price	2050-01-01	2100-01-01	0							
+UK Coal 2050			Minimum Load Bid Up Heat Rate	2050-01-01	2100-01-01	0							
+UK Coal 2055			Capacity	2055-01-01	2105-01-01	0	UK Availability Coal	Multiply					
+UK Coal 2055			Marginal Heat Rate	2055-01-01	2105-01-01	9.836065574							
+UK Coal 2055			Variable Cost	2055-01-01	2105-01-01	4							
+UK Coal 2055			Bid Up Price	2055-01-01	2105-01-01	0							
+UK Coal 2055			Bid Up Heat Rate	2055-01-01	2105-01-01	0							
+UK Coal 2055			Fuel	2055-01-01	2105-01-01	UK Station Coal							
+UK Coal 2055			Minimum Load	2055-01-01	2105-01-01	0							
+UK Coal 2055			Minimum Load Bid Up Price	2055-01-01	2105-01-01	0							
+UK Coal 2055			Minimum Load Bid Up Heat Rate	2055-01-01	2105-01-01	0							
+UK Coal 2060			Capacity	2060-01-01	2110-01-01	0	UK Availability Coal	Multiply					
+UK Coal 2060			Marginal Heat Rate	2060-01-01	2110-01-01	9.782608696							
+UK Coal 2060			Variable Cost	2060-01-01	2110-01-01	4							
+UK Coal 2060			Bid Up Price	2060-01-01	2110-01-01	0							
+UK Coal 2060			Bid Up Heat Rate	2060-01-01	2110-01-01	0							
+UK Coal 2060			Fuel	2060-01-01	2110-01-01	UK Station Coal							
+UK Coal 2060			Minimum Load	2060-01-01	2110-01-01	0							
+UK Coal 2060			Minimum Load Bid Up Price	2060-01-01	2110-01-01	0							
+UK Coal 2060			Minimum Load Bid Up Heat Rate	2060-01-01	2110-01-01	0							
+UK Coal 2065			Capacity	2065-01-01	2115-01-01	0	UK Availability Coal	Multiply					
+UK Coal 2065			Marginal Heat Rate	2065-01-01	2115-01-01	9.72972973							
+UK Coal 2065			Variable Cost	2065-01-01	2115-01-01	4							
+UK Coal 2065			Bid Up Price	2065-01-01	2115-01-01	0							
+UK Coal 2065			Bid Up Heat Rate	2065-01-01	2115-01-01	0							
+UK Coal 2065			Fuel	2065-01-01	2115-01-01	UK Station Coal							
+UK Coal 2065			Minimum Load	2065-01-01	2115-01-01	0							
+UK Coal 2065			Minimum Load Bid Up Price	2065-01-01	2115-01-01	0							
+UK Coal 2065			Minimum Load Bid Up Heat Rate	2065-01-01	2115-01-01	0							
+UK CCGT 1990			Capacity	1990-01-01	2040-01-01	0	UK Availability CCGT	Multiply					
+UK CCGT 1990			Marginal Heat Rate	1990-01-01	2040-01-01	7.79245283							
+UK CCGT 1990			Variable Cost	1990-01-01	2040-01-01	1.5							
+UK CCGT 1990			Bid Up Price	1990-01-01	2040-01-01	0							
+UK CCGT 1990			Bid Up Heat Rate	1990-01-01	2040-01-01	3.896226415							
+UK CCGT 1990			Fuel	1990-01-01	2040-01-01	UK Station Gas							
+UK CCGT 1990			Minimum Load	1990-01-01	2040-01-01	0							
+UK CCGT 1990			Minimum Load Bid Up Price	1990-01-01	2040-01-01	0							
+UK CCGT 1990			Minimum Load Bid Up Heat Rate	1990-01-01	2040-01-01	0							
+UK CCGT 1995			Capacity	1995-01-01	2045-01-01	0	UK Availability CCGT	Multiply					
+UK CCGT 1995			Marginal Heat Rate	1995-01-01	2045-01-01	7.666917293							
+UK CCGT 1995			Variable Cost	1995-01-01	2045-01-01	1.5							
+UK CCGT 1995			Bid Up Price	1995-01-01	2045-01-01	0							
+UK CCGT 1995			Bid Up Heat Rate	1995-01-01	2045-01-01	3.5							
+UK CCGT 1995			Fuel	1995-01-01	2045-01-01	UK Station Gas							
+UK CCGT 1995			Minimum Load	1995-01-01	2045-01-01	0							
+UK CCGT 1995			Minimum Load Bid Up Price	1995-01-01	2045-01-01	0							
+UK CCGT 1995			Minimum Load Bid Up Heat Rate	1995-01-01	2045-01-01	0							
+UK CCGT 2000			Capacity	2000-01-01	2050-01-01	0	UK Availability CCGT	Multiply					
+UK CCGT 2000			Marginal Heat Rate	2000-01-01	2050-01-01	7.541573034							
+UK CCGT 2000			Variable Cost	2000-01-01	2050-01-01	1.5							
+UK CCGT 2000			Bid Up Price	2000-01-01	2050-01-01	0							
+UK CCGT 2000			Bid Up Heat Rate	2000-01-01	2050-01-01	3							
+UK CCGT 2000			Fuel	2000-01-01	2050-01-01	UK Station Gas							
+UK CCGT 2000			Minimum Load	2000-01-01	2050-01-01	0							
+UK CCGT 2000			Minimum Load Bid Up Price	2000-01-01	2050-01-01	0							
+UK CCGT 2000			Minimum Load Bid Up Heat Rate	2000-01-01	2050-01-01	0							
+UK CCGT 2005			Capacity	2005-01-01	2055-01-01	0	UK Availability CCGT	Multiply					
+UK CCGT 2005			Marginal Heat Rate	2005-01-01	2055-01-01	7.41641791							
+UK CCGT 2005			Variable Cost	2005-01-01	2055-01-01	1.5							
+UK CCGT 2005			Bid Up Price	2005-01-01	2055-01-01	0							
+UK CCGT 2005			Bid Up Heat Rate	2005-01-01	2055-01-01	2.5							
+UK CCGT 2005			Fuel	2005-01-01	2055-01-01	UK Station Gas							
+UK CCGT 2005			Minimum Load	2005-01-01	2055-01-01	0							
+UK CCGT 2005			Minimum Load Bid Up Price	2005-01-01	2055-01-01	0							
+UK CCGT 2005			Minimum Load Bid Up Heat Rate	2005-01-01	2055-01-01	0							
+UK CCGT 2010			Capacity	2010-01-01	2060-01-01	0	UK Availability CCGT	Multiply					
+UK CCGT 2010			Marginal Heat Rate	2010-01-01	2060-01-01	7.291449814							
+UK CCGT 2010			Variable Cost	2010-01-01	2060-01-01	1.5							
+UK CCGT 2010			Bid Up Price	2010-01-01	2060-01-01	0							
+UK CCGT 2010			Bid Up Heat Rate	2010-01-01	2060-01-01	2							
+UK CCGT 2010			Fuel	2010-01-01	2060-01-01	UK Station Gas							
+UK CCGT 2010			Minimum Load	2010-01-01	2060-01-01	0							
+UK CCGT 2010			Minimum Load Bid Up Price	2010-01-01	2060-01-01	0							
+UK CCGT 2010			Minimum Load Bid Up Heat Rate	2010-01-01	2060-01-01	0							
+UK CCGT 2015			Capacity	2015-01-01	2065-01-01	0	UK Availability CCGT	Multiply					
+UK CCGT 2015			Marginal Heat Rate	2015-01-01	2065-01-01	7.166666667							
+UK CCGT 2015			Variable Cost	2015-01-01	2065-01-01	1.5							
+UK CCGT 2015			Bid Up Price	2015-01-01	2065-01-01	0							
+UK CCGT 2015			Bid Up Heat Rate	2015-01-01	2065-01-01	1.5							
+UK CCGT 2015			Fuel	2015-01-01	2065-01-01	UK Station Gas							
+UK CCGT 2015			Minimum Load	2015-01-01	2065-01-01	0							
+UK CCGT 2015			Minimum Load Bid Up Price	2015-01-01	2065-01-01	0							
+UK CCGT 2015			Minimum Load Bid Up Heat Rate	2015-01-01	2065-01-01	0							
+UK CCGT 2020			Capacity	2020-01-01	2070-01-01	0	UK Availability CCGT	Multiply					
+UK CCGT 2020			Marginal Heat Rate	2020-01-01	2070-01-01	7.142066421							
+UK CCGT 2020			Variable Cost	2020-01-01	2070-01-01	1.5							
+UK CCGT 2020			Bid Up Price	2020-01-01	2070-01-01	0							
+UK CCGT 2020			Bid Up Heat Rate	2020-01-01	2070-01-01	1							
+UK CCGT 2020			Fuel	2020-01-01	2070-01-01	UK Station Gas							
+UK CCGT 2020			Minimum Load	2020-01-01	2070-01-01	0							
+UK CCGT 2020			Minimum Load Bid Up Price	2020-01-01	2070-01-01	0							
+UK CCGT 2020			Minimum Load Bid Up Heat Rate	2020-01-01	2070-01-01	-3.57103321							
+UK CCGT 2025			Capacity	2025-01-01	2075-01-01	0	UK Availability CCGT	Multiply					
+UK CCGT 2025			Marginal Heat Rate	2025-01-01	2075-01-01	6.617647059							
+UK CCGT 2025			Variable Cost	2025-01-01	2075-01-01	1.5							
+UK CCGT 2025			Bid Up Price	2025-01-01	2075-01-01	0							
+UK CCGT 2025			Bid Up Heat Rate	2025-01-01	2075-01-01	0.9							
+UK CCGT 2025			Fuel	2025-01-01	2075-01-01	UK Station Gas							
+UK CCGT 2025			Minimum Load	2025-01-01	2075-01-01	0							
+UK CCGT 2025			Minimum Load Bid Up Price	2025-01-01	2075-01-01	0							
+UK CCGT 2025			Minimum Load Bid Up Heat Rate	2025-01-01	2075-01-01	-3.308823529							
+UK CCGT 2030			Capacity	2030-01-01	2080-01-01	0	UK Availability CCGT	Multiply					
+UK CCGT 2030			Marginal Heat Rate	2030-01-01	2080-01-01	6.593406593							
+UK CCGT 2030			Variable Cost	2030-01-01	2080-01-01	1.5							
+UK CCGT 2030			Bid Up Price	2030-01-01	2080-01-01	0							
+UK CCGT 2030			Bid Up Heat Rate	2030-01-01	2080-01-01	0.8							
+UK CCGT 2030			Fuel	2030-01-01	2080-01-01	UK Station Gas							
+UK CCGT 2030			Minimum Load	2030-01-01	2080-01-01	0							
+UK CCGT 2030			Minimum Load Bid Up Price	2030-01-01	2080-01-01	0							
+UK CCGT 2030			Minimum Load Bid Up Heat Rate	2030-01-01	2080-01-01	-3.296703297							
+UK CCGT 2031			Capacity	2031-01-01	2081-01-01	0	UK Availability CCGT	Multiply					
+UK CCGT 2031			Marginal Heat Rate	2031-01-01	2081-01-01	6.593406593							
+UK CCGT 2031			Variable Cost	2031-01-01	2081-01-01	1.5							
+UK CCGT 2031			Bid Up Price	2031-01-01	2081-01-01	0							
+UK CCGT 2031			Bid Up Heat Rate	2031-01-01	2081-01-01	0.7							
+UK CCGT 2031			Fuel	2031-01-01	2081-01-01	UK Station Gas							
+UK CCGT 2031			Minimum Load	2031-01-01	2081-01-01	0							
+UK CCGT 2031			Minimum Load Bid Up Price	2031-01-01	2081-01-01	0							
+UK CCGT 2031			Minimum Load Bid Up Heat Rate	2031-01-01	2081-01-01	-3.296703297							
+UK CCGT 2032			Capacity	2032-01-01	2082-01-01	0	UK Availability CCGT	Multiply					
+UK CCGT 2032			Marginal Heat Rate	2032-01-01	2082-01-01	6.593406593							
+UK CCGT 2032			Variable Cost	2032-01-01	2082-01-01	1.5							
+UK CCGT 2032			Bid Up Price	2032-01-01	2082-01-01	0							
+UK CCGT 2032			Bid Up Heat Rate	2032-01-01	2082-01-01	0.6							
+UK CCGT 2032			Fuel	2032-01-01	2082-01-01	UK Station Gas							
+UK CCGT 2032			Minimum Load	2032-01-01	2082-01-01	0							
+UK CCGT 2032			Minimum Load Bid Up Price	2032-01-01	2082-01-01	0							
+UK CCGT 2032			Minimum Load Bid Up Heat Rate	2032-01-01	2082-01-01	-3.296703297							
+UK CCGT 2033			Capacity	2033-01-01	2083-01-01	0	UK Availability CCGT	Multiply					
+UK CCGT 2033			Marginal Heat Rate	2033-01-01	2083-01-01	6.593406593							
+UK CCGT 2033			Variable Cost	2033-01-01	2083-01-01	1.5							
+UK CCGT 2033			Bid Up Price	2033-01-01	2083-01-01	0							
+UK CCGT 2033			Bid Up Heat Rate	2033-01-01	2083-01-01	0.5							
+UK CCGT 2033			Fuel	2033-01-01	2083-01-01	UK Station Gas							
+UK CCGT 2033			Minimum Load	2033-01-01	2083-01-01	0							
+UK CCGT 2033			Minimum Load Bid Up Price	2033-01-01	2083-01-01	0							
+UK CCGT 2033			Minimum Load Bid Up Heat Rate	2033-01-01	2083-01-01	-3.296703297							
+UK CCGT 2034			Capacity	2034-01-01	2084-01-01	0	UK Availability CCGT	Multiply					
+UK CCGT 2034			Marginal Heat Rate	2034-01-01	2084-01-01	6.593406593							
+UK CCGT 2034			Variable Cost	2034-01-01	2084-01-01	1.5							
+UK CCGT 2034			Bid Up Price	2034-01-01	2084-01-01	0							
+UK CCGT 2034			Bid Up Heat Rate	2034-01-01	2084-01-01	0.4							
+UK CCGT 2034			Fuel	2034-01-01	2084-01-01	UK Station Gas							
+UK CCGT 2034			Minimum Load	2034-01-01	2084-01-01	0							
+UK CCGT 2034			Minimum Load Bid Up Price	2034-01-01	2084-01-01	0							
+UK CCGT 2034			Minimum Load Bid Up Heat Rate	2034-01-01	2084-01-01	-3.296703297							
+UK CCGT 2035			Capacity	2035-01-01	2085-01-01	0	UK Availability CCGT	Multiply					
+UK CCGT 2035			Marginal Heat Rate	2035-01-01	2085-01-01	6.569343066							
+UK CCGT 2035			Variable Cost	2035-01-01	2085-01-01	1.5							
+UK CCGT 2035			Bid Up Price	2035-01-01	2085-01-01	0							
+UK CCGT 2035			Bid Up Heat Rate	2035-01-01	2085-01-01	0.3							
+UK CCGT 2035			Fuel	2035-01-01	2085-01-01	UK Station Gas							
+UK CCGT 2035			Minimum Load	2035-01-01	2085-01-01	0							
+UK CCGT 2035			Minimum Load Bid Up Price	2035-01-01	2085-01-01	0							
+UK CCGT 2035			Minimum Load Bid Up Heat Rate	2035-01-01	2085-01-01	-3.284671533							
+UK CCGT 2036			Capacity	2036-01-01	2086-01-01	0	UK Availability CCGT	Multiply					
+UK CCGT 2036			Marginal Heat Rate	2036-01-01	2086-01-01	6.569343066							
+UK CCGT 2036			Variable Cost	2036-01-01	2086-01-01	1.5							
+UK CCGT 2036			Bid Up Price	2036-01-01	2086-01-01	0							
+UK CCGT 2036			Bid Up Heat Rate	2036-01-01	2086-01-01	0.2							
+UK CCGT 2036			Fuel	2036-01-01	2086-01-01	UK Station Gas							
+UK CCGT 2036			Minimum Load	2036-01-01	2086-01-01	0							
+UK CCGT 2036			Minimum Load Bid Up Price	2036-01-01	2086-01-01	0							
+UK CCGT 2036			Minimum Load Bid Up Heat Rate	2036-01-01	2086-01-01	-3.284671533							
+UK CCGT 2037			Capacity	2037-01-01	2087-01-01	0	UK Availability CCGT	Multiply					
+UK CCGT 2037			Marginal Heat Rate	2037-01-01	2087-01-01	6.569343066							
+UK CCGT 2037			Variable Cost	2037-01-01	2087-01-01	1.5							
+UK CCGT 2037			Bid Up Price	2037-01-01	2087-01-01	0							
+UK CCGT 2037			Bid Up Heat Rate	2037-01-01	2087-01-01	0.1							
+UK CCGT 2037			Fuel	2037-01-01	2087-01-01	UK Station Gas							
+UK CCGT 2037			Minimum Load	2037-01-01	2087-01-01	0							
+UK CCGT 2037			Minimum Load Bid Up Price	2037-01-01	2087-01-01	0							
+UK CCGT 2037			Minimum Load Bid Up Heat Rate	2037-01-01	2087-01-01	-3.284671533							
+UK CCGT 2038			Capacity	2038-01-01	2088-01-01	0	UK Availability CCGT	Multiply					
+UK CCGT 2038			Marginal Heat Rate	2038-01-01	2088-01-01	6.569343066							
+UK CCGT 2038			Variable Cost	2038-01-01	2088-01-01	1.5							
+UK CCGT 2038			Bid Up Price	2038-01-01	2088-01-01	0							
+UK CCGT 2038			Bid Up Heat Rate	2038-01-01	2088-01-01	0							
+UK CCGT 2038			Fuel	2038-01-01	2088-01-01	UK Station Gas							
+UK CCGT 2038			Minimum Load	2038-01-01	2088-01-01	0							
+UK CCGT 2038			Minimum Load Bid Up Price	2038-01-01	2088-01-01	0							
+UK CCGT 2038			Minimum Load Bid Up Heat Rate	2038-01-01	2088-01-01	0							
+UK CCGT 2039			Capacity	2039-01-01	2089-01-01	0	UK Availability CCGT	Multiply					
+UK CCGT 2039			Marginal Heat Rate	2039-01-01	2089-01-01	6.569343066							
+UK CCGT 2039			Variable Cost	2039-01-01	2089-01-01	1.5							
+UK CCGT 2039			Bid Up Price	2039-01-01	2089-01-01	0							
+UK CCGT 2039			Bid Up Heat Rate	2039-01-01	2089-01-01	0							
+UK CCGT 2039			Fuel	2039-01-01	2089-01-01	UK Station Gas							
+UK CCGT 2039			Minimum Load	2039-01-01	2089-01-01	0							
+UK CCGT 2039			Minimum Load Bid Up Price	2039-01-01	2089-01-01	0							
+UK CCGT 2039			Minimum Load Bid Up Heat Rate	2039-01-01	2089-01-01	0							
+UK CCGT 2040			Capacity	2040-01-01	2090-01-01	0	UK Availability CCGT	Multiply					
+UK CCGT 2040			Marginal Heat Rate	2040-01-01	2090-01-01	6.545454545							
+UK CCGT 2040			Variable Cost	2040-01-01	2090-01-01	1.5							
+UK CCGT 2040			Bid Up Price	2040-01-01	2090-01-01	0							
+UK CCGT 2040			Bid Up Heat Rate	2040-01-01	2090-01-01	0							
+UK CCGT 2040			Fuel	2040-01-01	2090-01-01	UK Station Gas							
+UK CCGT 2040			Minimum Load	2040-01-01	2090-01-01	0							
+UK CCGT 2040			Minimum Load Bid Up Price	2040-01-01	2090-01-01	0							
+UK CCGT 2040			Minimum Load Bid Up Heat Rate	2040-01-01	2090-01-01	0							
+UK CCGT 2045			Capacity	2045-01-01	2095-01-01	0	UK Availability CCGT	Multiply					
+UK CCGT 2045			Marginal Heat Rate	2045-01-01	2095-01-01	6.52173913							
+UK CCGT 2045			Variable Cost	2045-01-01	2095-01-01	1.5							
+UK CCGT 2045			Bid Up Price	2045-01-01	2095-01-01	0							
+UK CCGT 2045			Bid Up Heat Rate	2045-01-01	2095-01-01	0							
+UK CCGT 2045			Fuel	2045-01-01	2095-01-01	UK Station Gas							
+UK CCGT 2045			Minimum Load	2045-01-01	2095-01-01	0							
+UK CCGT 2045			Minimum Load Bid Up Price	2045-01-01	2095-01-01	0							
+UK CCGT 2045			Minimum Load Bid Up Heat Rate	2045-01-01	2095-01-01	0							
+UK CCGT 2050			Capacity	2050-01-01	2100-01-01	0	UK Availability CCGT	Multiply					
+UK CCGT 2050			Marginal Heat Rate	2050-01-01	2100-01-01	6.498194946							
+UK CCGT 2050			Variable Cost	2050-01-01	2100-01-01	1.5							
+UK CCGT 2050			Bid Up Price	2050-01-01	2100-01-01	0							
+UK CCGT 2050			Bid Up Heat Rate	2050-01-01	2100-01-01	0							
+UK CCGT 2050			Fuel	2050-01-01	2100-01-01	UK Station Gas							
+UK CCGT 2050			Minimum Load	2050-01-01	2100-01-01	0							
+UK CCGT 2050			Minimum Load Bid Up Price	2050-01-01	2100-01-01	0							
+UK CCGT 2050			Minimum Load Bid Up Heat Rate	2050-01-01	2100-01-01	0							
+UK CCGT 2055			Capacity	2055-01-01	2105-01-01	0	UK Availability CCGT	Multiply					
+UK CCGT 2055			Marginal Heat Rate	2055-01-01	2105-01-01	6.474820144							
+UK CCGT 2055			Variable Cost	2055-01-01	2105-01-01	1.5							
+UK CCGT 2055			Bid Up Price	2055-01-01	2105-01-01	0							
+UK CCGT 2055			Bid Up Heat Rate	2055-01-01	2105-01-01	0							
+UK CCGT 2055			Fuel	2055-01-01	2105-01-01	UK Station Gas							
+UK CCGT 2055			Minimum Load	2055-01-01	2105-01-01	0							
+UK CCGT 2055			Minimum Load Bid Up Price	2055-01-01	2105-01-01	0							
+UK CCGT 2055			Minimum Load Bid Up Heat Rate	2055-01-01	2105-01-01	0							
+UK CCGT 2060			Capacity	2060-01-01	2110-01-01	0	UK Availability CCGT	Multiply					
+UK CCGT 2060			Marginal Heat Rate	2060-01-01	2110-01-01	6.451612903							
+UK CCGT 2060			Variable Cost	2060-01-01	2110-01-01	1.5							
+UK CCGT 2060			Bid Up Price	2060-01-01	2110-01-01	0							
+UK CCGT 2060			Bid Up Heat Rate	2060-01-01	2110-01-01	0							
+UK CCGT 2060			Fuel	2060-01-01	2110-01-01	UK Station Gas							
+UK CCGT 2060			Minimum Load	2060-01-01	2110-01-01	0							
+UK CCGT 2060			Minimum Load Bid Up Price	2060-01-01	2110-01-01	0							
+UK CCGT 2060			Minimum Load Bid Up Heat Rate	2060-01-01	2110-01-01	0							
+UK CCGT 2065			Capacity	2065-01-01	2115-01-01	0	UK Availability CCGT	Multiply					
+UK CCGT 2065			Marginal Heat Rate	2065-01-01	2115-01-01	6.428571429							
+UK CCGT 2065			Variable Cost	2065-01-01	2115-01-01	1.5							
+UK CCGT 2065			Bid Up Price	2065-01-01	2115-01-01	0							
+UK CCGT 2065			Bid Up Heat Rate	2065-01-01	2115-01-01	0							
+UK CCGT 2065			Fuel	2065-01-01	2115-01-01	UK Station Gas							
+UK CCGT 2065			Minimum Load	2065-01-01	2115-01-01	0							
+UK CCGT 2065			Minimum Load Bid Up Price	2065-01-01	2115-01-01	0							
+UK CCGT 2065			Minimum Load Bid Up Heat Rate	2065-01-01	2115-01-01	0							
+UK OCGT 1990			Capacity	1990-01-01	2040-01-01	0	UK Availability OCGT	Multiply					
+UK OCGT 1990			Marginal Heat Rate	1990-01-01	2040-01-01	10							
+UK OCGT 1990			Variable Cost	1990-01-01	2040-01-01	1							
+UK OCGT 1990			Bid Up Price	1990-01-01	2040-01-01	3.333333333							
+UK OCGT 1990			Bid Up Heat Rate	1990-01-01	2040-01-01	0							
+UK OCGT 1990			Fuel	1990-01-01	2040-01-01	UK Station Gas							
+UK OCGT 1990			Minimum Load	1990-01-01	2040-01-01	0							
+UK OCGT 1990			Minimum Load Bid Up Price	1990-01-01	2040-01-01	0							
+UK OCGT 1990			Minimum Load Bid Up Heat Rate	1990-01-01	2040-01-01	0							
+UK OCGT 1995			Capacity	1995-01-01	2045-01-01	0	UK Availability OCGT	Multiply					
+UK OCGT 1995			Marginal Heat Rate	1995-01-01	2045-01-01	9.944751381							
+UK OCGT 1995			Variable Cost	1995-01-01	2045-01-01	1							
+UK OCGT 1995			Bid Up Price	1995-01-01	2045-01-01	3.314917127							
+UK OCGT 1995			Bid Up Heat Rate	1995-01-01	2045-01-01	0							
+UK OCGT 1995			Fuel	1995-01-01	2045-01-01	UK Station Gas							
+UK OCGT 1995			Minimum Load	1995-01-01	2045-01-01	0							
+UK OCGT 1995			Minimum Load Bid Up Price	1995-01-01	2045-01-01	0							
+UK OCGT 1995			Minimum Load Bid Up Heat Rate	1995-01-01	2045-01-01	0							
+UK OCGT 2000			Capacity	2000-01-01	2050-01-01	0	UK Availability OCGT	Multiply					
+UK OCGT 2000			Marginal Heat Rate	2000-01-01	2050-01-01	9.89010989							
+UK OCGT 2000			Variable Cost	2000-01-01	2050-01-01	1							
+UK OCGT 2000			Bid Up Price	2000-01-01	2050-01-01	3.296703297							
+UK OCGT 2000			Bid Up Heat Rate	2000-01-01	2050-01-01	0							
+UK OCGT 2000			Fuel	2000-01-01	2050-01-01	UK Station Gas							
+UK OCGT 2000			Minimum Load	2000-01-01	2050-01-01	0							
+UK OCGT 2000			Minimum Load Bid Up Price	2000-01-01	2050-01-01	0							
+UK OCGT 2000			Minimum Load Bid Up Heat Rate	2000-01-01	2050-01-01	0							
+UK OCGT 2005			Capacity	2005-01-01	2055-01-01	0	UK Availability OCGT	Multiply					
+UK OCGT 2005			Marginal Heat Rate	2005-01-01	2055-01-01	9.836065574							
+UK OCGT 2005			Variable Cost	2005-01-01	2055-01-01	1							
+UK OCGT 2005			Bid Up Price	2005-01-01	2055-01-01	0							
+UK OCGT 2005			Bid Up Heat Rate	2005-01-01	2055-01-01	0							
+UK OCGT 2005			Fuel	2005-01-01	2055-01-01	UK Station Gas							
+UK OCGT 2005			Minimum Load	2005-01-01	2055-01-01	0							
+UK OCGT 2005			Minimum Load Bid Up Price	2005-01-01	2055-01-01	0							
+UK OCGT 2005			Minimum Load Bid Up Heat Rate	2005-01-01	2055-01-01	0							
+UK OCGT 2010			Capacity	2010-01-01	2060-01-01	0	UK Availability OCGT	Multiply					
+UK OCGT 2010			Marginal Heat Rate	2010-01-01	2060-01-01	9.782608696							
+UK OCGT 2010			Variable Cost	2010-01-01	2060-01-01	1							
+UK OCGT 2010			Bid Up Price	2010-01-01	2060-01-01	0							
+UK OCGT 2010			Bid Up Heat Rate	2010-01-01	2060-01-01	0							
+UK OCGT 2010			Fuel	2010-01-01	2060-01-01	UK Station Gas							
+UK OCGT 2010			Minimum Load	2010-01-01	2060-01-01	0							
+UK OCGT 2010			Minimum Load Bid Up Price	2010-01-01	2060-01-01	0							
+UK OCGT 2010			Minimum Load Bid Up Heat Rate	2010-01-01	2060-01-01	0							
+UK OCGT 2015			Capacity	2015-01-01	2065-01-01	0	UK Availability OCGT	Multiply					
+UK OCGT 2015			Marginal Heat Rate	2015-01-01	2065-01-01	9.72972973							
+UK OCGT 2015			Variable Cost	2015-01-01	2065-01-01	1							
+UK OCGT 2015			Bid Up Price	2015-01-01	2065-01-01	0							
+UK OCGT 2015			Bid Up Heat Rate	2015-01-01	2065-01-01	0							
+UK OCGT 2015			Fuel	2015-01-01	2065-01-01	UK Station Gas							
+UK OCGT 2015			Minimum Load	2015-01-01	2065-01-01	0							
+UK OCGT 2015			Minimum Load Bid Up Price	2015-01-01	2065-01-01	0							
+UK OCGT 2015			Minimum Load Bid Up Heat Rate	2015-01-01	2065-01-01	0							
+UK OCGT 2025			Capacity	2025-01-01	2075-01-01	300	UK Availability OCGT	Multiply					
+UK OCGT 2025			Marginal Heat Rate	2025-01-01	2075-01-01	9.677419355							
+UK OCGT 2025			Variable Cost	2025-01-01	2075-01-01	1							
+UK OCGT 2025			Bid Up Price	2025-01-01	2075-01-01	0							
+UK OCGT 2025			Bid Up Heat Rate	2025-01-01	2075-01-01	0							
+UK OCGT 2025			Fuel	2025-01-01	2075-01-01	UK Station Gas							
+UK OCGT 2025			Minimum Load	2025-01-01	2075-01-01	0							
+UK OCGT 2025			Minimum Load Bid Up Price	2025-01-01	2075-01-01	0							
+UK OCGT 2025			Minimum Load Bid Up Heat Rate	2025-01-01	2075-01-01	0							
+UK OCGT 2026			Capacity	2026-01-01	2076-01-01	200	UK Availability OCGT	Multiply					
+UK OCGT 2026			Marginal Heat Rate	2026-01-01	2076-01-01	9.625668449							
+UK OCGT 2026			Variable Cost	2026-01-01	2076-01-01	1							
+UK OCGT 2026			Bid Up Price	2026-01-01	2076-01-01	0							
+UK OCGT 2026			Bid Up Heat Rate	2026-01-01	2076-01-01	0							
+UK OCGT 2026			Fuel	2026-01-01	2076-01-01	UK Station Gas							
+UK OCGT 2026			Minimum Load	2026-01-01	2076-01-01	0							
+UK OCGT 2026			Minimum Load Bid Up Price	2026-01-01	2076-01-01	0							
+UK OCGT 2026			Minimum Load Bid Up Heat Rate	2026-01-01	2076-01-01	0							
+UK OCGT 2027			Capacity	2027-01-01	2077-01-01	300	UK Availability OCGT	Multiply					
+UK OCGT 2027			Marginal Heat Rate	2027-01-01	2077-01-01	9.574468085							
+UK OCGT 2027			Variable Cost	2027-01-01	2077-01-01	1							
+UK OCGT 2027			Bid Up Price	2027-01-01	2077-01-01	0							
+UK OCGT 2027			Bid Up Heat Rate	2027-01-01	2077-01-01	0							
+UK OCGT 2027			Fuel	2027-01-01	2077-01-01	UK Station Gas							
+UK OCGT 2027			Minimum Load	2027-01-01	2077-01-01	0							
+UK OCGT 2027			Minimum Load Bid Up Price	2027-01-01	2077-01-01	0							
+UK OCGT 2027			Minimum Load Bid Up Heat Rate	2027-01-01	2077-01-01	0							
+UK OCGT 2028			Capacity	2028-01-01	2078-01-01	100	UK Availability OCGT	Multiply					
+UK OCGT 2028			Marginal Heat Rate	2028-01-01	2078-01-01	9.523809524							
+UK OCGT 2028			Variable Cost	2028-01-01	2078-01-01	1							
+UK OCGT 2028			Bid Up Price	2028-01-01	2078-01-01	0							
+UK OCGT 2028			Bid Up Heat Rate	2028-01-01	2078-01-01	0							
+UK OCGT 2028			Fuel	2028-01-01	2078-01-01	UK Station Gas							
+UK OCGT 2028			Minimum Load	2028-01-01	2078-01-01	0							
+UK OCGT 2028			Minimum Load Bid Up Price	2028-01-01	2078-01-01	0							
+UK OCGT 2028			Minimum Load Bid Up Heat Rate	2028-01-01	2078-01-01	0							
+UK OCGT 2029			Capacity	2029-01-01	2079-01-01	300	UK Availability OCGT	Multiply					
+UK OCGT 2029			Marginal Heat Rate	2029-01-01	2079-01-01	9.473684211							
+UK OCGT 2029			Variable Cost	2029-01-01	2079-01-01	1							
+UK OCGT 2029			Bid Up Price	2029-01-01	2079-01-01	0							
+UK OCGT 2029			Bid Up Heat Rate	2029-01-01	2079-01-01	0							
+UK OCGT 2029			Fuel	2029-01-01	2079-01-01	UK Station Gas							
+UK OCGT 2029			Minimum Load	2029-01-01	2079-01-01	0							
+UK OCGT 2029			Minimum Load Bid Up Price	2029-01-01	2079-01-01	0							
+UK OCGT 2029			Minimum Load Bid Up Heat Rate	2029-01-01	2079-01-01	0							
+UK OCGT 2030			Capacity	2030-01-01	2080-01-01	100	UK Availability OCGT	Multiply					
+UK OCGT 2030			Marginal Heat Rate	2030-01-01	2080-01-01	9.42408377							
+UK OCGT 2030			Variable Cost	2030-01-01	2080-01-01	1							
+UK OCGT 2030			Bid Up Price	2030-01-01	2080-01-01	0							
+UK OCGT 2030			Bid Up Heat Rate	2030-01-01	2080-01-01	0							
+UK OCGT 2030			Fuel	2030-01-01	2080-01-01	UK Station Gas							
+UK OCGT 2030			Minimum Load	2030-01-01	2080-01-01	0							
+UK OCGT 2030			Minimum Load Bid Up Price	2030-01-01	2080-01-01	0							
+UK OCGT 2030			Minimum Load Bid Up Heat Rate	2030-01-01	2080-01-01	0							
+UK OCGT 2031			Capacity	2031-01-01	2081-01-01	500	UK Availability OCGT	Multiply					
+UK OCGT 2031			Marginal Heat Rate	2031-01-01	2081-01-01	9.375							
+UK OCGT 2031			Variable Cost	2031-01-01	2081-01-01	1							
+UK OCGT 2031			Bid Up Price	2031-01-01	2081-01-01	0							
+UK OCGT 2031			Bid Up Heat Rate	2031-01-01	2081-01-01	0							
+UK OCGT 2031			Fuel	2031-01-01	2081-01-01	UK Station Gas							
+UK OCGT 2031			Minimum Load	2031-01-01	2081-01-01	0							
+UK OCGT 2031			Minimum Load Bid Up Price	2031-01-01	2081-01-01	0							
+UK OCGT 2031			Minimum Load Bid Up Heat Rate	2031-01-01	2081-01-01	0							
+UK OCGT 2032			Capacity	2032-01-01	2082-01-01	600	UK Availability OCGT	Multiply					
+UK OCGT 2032			Marginal Heat Rate	2032-01-01	2082-01-01	9.32642487							
+UK OCGT 2032			Variable Cost	2032-01-01	2082-01-01	1							
+UK OCGT 2032			Bid Up Price	2032-01-01	2082-01-01	0							
+UK OCGT 2032			Bid Up Heat Rate	2032-01-01	2082-01-01	0							
+UK OCGT 2032			Fuel	2032-01-01	2082-01-01	UK Station Gas							
+UK OCGT 2032			Minimum Load	2032-01-01	2082-01-01	0							
+UK OCGT 2032			Minimum Load Bid Up Price	2032-01-01	2082-01-01	0							
+UK OCGT 2032			Minimum Load Bid Up Heat Rate	2032-01-01	2082-01-01	0							
+UK OCGT 2033			Capacity	2033-01-01	2083-01-01	500	UK Availability OCGT	Multiply					
+UK OCGT 2033			Marginal Heat Rate	2033-01-01	2083-01-01	9.278350515							
+UK OCGT 2033			Variable Cost	2033-01-01	2083-01-01	1							
+UK OCGT 2033			Bid Up Price	2033-01-01	2083-01-01	0							
+UK OCGT 2033			Bid Up Heat Rate	2033-01-01	2083-01-01	0							
+UK OCGT 2033			Fuel	2033-01-01	2083-01-01	UK Station Gas							
+UK OCGT 2033			Minimum Load	2033-01-01	2083-01-01	0							
+UK OCGT 2033			Minimum Load Bid Up Price	2033-01-01	2083-01-01	0							
+UK OCGT 2033			Minimum Load Bid Up Heat Rate	2033-01-01	2083-01-01	0							
+UK OCGT 2034			Capacity	2034-01-01	2084-01-01	900	UK Availability OCGT	Multiply					
+UK OCGT 2034			Marginal Heat Rate	2034-01-01	2084-01-01	9.230769231							
+UK OCGT 2034			Variable Cost	2034-01-01	2084-01-01	1							
+UK OCGT 2034			Bid Up Price	2034-01-01	2084-01-01	0							
+UK OCGT 2034			Bid Up Heat Rate	2034-01-01	2084-01-01	0							
+UK OCGT 2034			Fuel	2034-01-01	2084-01-01	UK Station Gas							
+UK OCGT 2034			Minimum Load	2034-01-01	2084-01-01	0							
+UK OCGT 2034			Minimum Load Bid Up Price	2034-01-01	2084-01-01	0							
+UK OCGT 2034			Minimum Load Bid Up Heat Rate	2034-01-01	2084-01-01	0							
+UK OCGT 2035			Capacity	2035-01-01	2085-01-01	400	UK Availability OCGT	Multiply					
+UK OCGT 2035			Marginal Heat Rate	2035-01-01	2085-01-01	9.230769231							
+UK OCGT 2035			Variable Cost	2035-01-01	2085-01-01	1							
+UK OCGT 2035			Bid Up Price	2035-01-01	2085-01-01	0							
+UK OCGT 2035			Bid Up Heat Rate	2035-01-01	2085-01-01	0							
+UK OCGT 2035			Fuel	2035-01-01	2085-01-01	UK Station Gas							
+UK OCGT 2035			Minimum Load	2035-01-01	2085-01-01	0							
+UK OCGT 2035			Minimum Load Bid Up Price	2035-01-01	2085-01-01	0							
+UK OCGT 2035			Minimum Load Bid Up Heat Rate	2035-01-01	2085-01-01	0							
+UK OCGT 2036			Capacity	2036-01-01	2086-01-01	0	UK Availability OCGT	Multiply					
+UK OCGT 2036			Marginal Heat Rate	2036-01-01	2086-01-01	9.230769231							
+UK OCGT 2036			Variable Cost	2036-01-01	2086-01-01	1							
+UK OCGT 2036			Bid Up Price	2036-01-01	2086-01-01	0							
+UK OCGT 2036			Bid Up Heat Rate	2036-01-01	2086-01-01	0							
+UK OCGT 2036			Fuel	2036-01-01	2086-01-01	UK Station Gas							
+UK OCGT 2036			Minimum Load	2036-01-01	2086-01-01	0							
+UK OCGT 2036			Minimum Load Bid Up Price	2036-01-01	2086-01-01	0							
+UK OCGT 2036			Minimum Load Bid Up Heat Rate	2036-01-01	2086-01-01	0							
+UK OCGT 2037			Capacity	2037-01-01	2087-01-01	300	UK Availability OCGT	Multiply					
+UK OCGT 2037			Marginal Heat Rate	2037-01-01	2087-01-01	9.230769231							
+UK OCGT 2037			Variable Cost	2037-01-01	2087-01-01	1							
+UK OCGT 2037			Bid Up Price	2037-01-01	2087-01-01	0							
+UK OCGT 2037			Bid Up Heat Rate	2037-01-01	2087-01-01	0							
+UK OCGT 2037			Fuel	2037-01-01	2087-01-01	UK Station Gas							
+UK OCGT 2037			Minimum Load	2037-01-01	2087-01-01	0							
+UK OCGT 2037			Minimum Load Bid Up Price	2037-01-01	2087-01-01	0							
+UK OCGT 2037			Minimum Load Bid Up Heat Rate	2037-01-01	2087-01-01	0							
+UK OCGT 2038			Capacity	2038-01-01	2088-01-01	600	UK Availability OCGT	Multiply					
+UK OCGT 2038			Marginal Heat Rate	2038-01-01	2088-01-01	9.230769231							
+UK OCGT 2038			Variable Cost	2038-01-01	2088-01-01	1							
+UK OCGT 2038			Bid Up Price	2038-01-01	2088-01-01	0							
+UK OCGT 2038			Bid Up Heat Rate	2038-01-01	2088-01-01	0							
+UK OCGT 2038			Fuel	2038-01-01	2088-01-01	UK Station Gas							
+UK OCGT 2038			Minimum Load	2038-01-01	2088-01-01	0							
+UK OCGT 2038			Minimum Load Bid Up Price	2038-01-01	2088-01-01	0							
+UK OCGT 2038			Minimum Load Bid Up Heat Rate	2038-01-01	2088-01-01	0							
+UK OCGT 2039			Capacity	2039-01-01	2089-01-01	200	UK Availability OCGT	Multiply					
+UK OCGT 2039			Marginal Heat Rate	2039-01-01	2089-01-01	9.230769231							
+UK OCGT 2039			Variable Cost	2039-01-01	2089-01-01	1							
+UK OCGT 2039			Bid Up Price	2039-01-01	2089-01-01	0							
+UK OCGT 2039			Bid Up Heat Rate	2039-01-01	2089-01-01	0							
+UK OCGT 2039			Fuel	2039-01-01	2089-01-01	UK Station Gas							
+UK OCGT 2039			Minimum Load	2039-01-01	2089-01-01	0							
+UK OCGT 2039			Minimum Load Bid Up Price	2039-01-01	2089-01-01	0							
+UK OCGT 2039			Minimum Load Bid Up Heat Rate	2039-01-01	2089-01-01	0							
+UK OCGT 2040			Capacity	2040-01-01	2090-01-01	0	UK Availability OCGT	Multiply					
+UK OCGT 2040			Marginal Heat Rate	2040-01-01	2090-01-01	9.230769231							
+UK OCGT 2040			Variable Cost	2040-01-01	2090-01-01	1							
+UK OCGT 2040			Bid Up Price	2040-01-01	2090-01-01	0							
+UK OCGT 2040			Bid Up Heat Rate	2040-01-01	2090-01-01	0							
+UK OCGT 2040			Fuel	2040-01-01	2090-01-01	UK Station Gas							
+UK OCGT 2040			Minimum Load	2040-01-01	2090-01-01	0							
+UK OCGT 2040			Minimum Load Bid Up Price	2040-01-01	2090-01-01	0							
+UK OCGT 2040			Minimum Load Bid Up Heat Rate	2040-01-01	2090-01-01	0							
+UK Biomass 1990			Capacity	1990-01-01	2040-01-01	0	UK Availability Biomass	Multiply					
+UK Biomass 1990			Marginal Heat Rate	1990-01-01	2040-01-01	10.52631579							
+UK Biomass 1990			Variable Cost	1990-01-01	2040-01-01	3							
+UK Biomass 1990			Bid Up Price	1990-01-01	2040-01-01	0							
+UK Biomass 1990			Bid Up Heat Rate	1990-01-01	2040-01-01	0							
+UK Biomass 1990			Fuel	1990-01-01	2040-01-01	UK Station Biomass							
+UK Biomass 1990			Minimum Load	1990-01-01	2040-01-01	0							
+UK Biomass 1990			Minimum Load Bid Up Price	1990-01-01	2040-01-01	0							
+UK Biomass 1990			Minimum Load Bid Up Heat Rate	1990-01-01	2040-01-01	0							
+UK Biomass 1995			Capacity	1995-01-01	2045-01-01	0	UK Availability Biomass	Multiply					
+UK Biomass 1995			Marginal Heat Rate	1995-01-01	2045-01-01	10.46511628							
+UK Biomass 1995			Variable Cost	1995-01-01	2045-01-01	3							
+UK Biomass 1995			Bid Up Price	1995-01-01	2045-01-01	0							
+UK Biomass 1995			Bid Up Heat Rate	1995-01-01	2045-01-01	0							
+UK Biomass 1995			Fuel	1995-01-01	2045-01-01	UK Station Biomass							
+UK Biomass 1995			Minimum Load	1995-01-01	2045-01-01	0							
+UK Biomass 1995			Minimum Load Bid Up Price	1995-01-01	2045-01-01	0							
+UK Biomass 1995			Minimum Load Bid Up Heat Rate	1995-01-01	2045-01-01	0							
+UK Biomass 2000			Capacity	2000-01-01	2050-01-01	0	UK Availability Biomass	Multiply					
+UK Biomass 2000			Marginal Heat Rate	2000-01-01	2050-01-01	10.40462428							
+UK Biomass 2000			Variable Cost	2000-01-01	2050-01-01	3							
+UK Biomass 2000			Bid Up Price	2000-01-01	2050-01-01	0							
+UK Biomass 2000			Bid Up Heat Rate	2000-01-01	2050-01-01	0							
+UK Biomass 2000			Fuel	2000-01-01	2050-01-01	UK Station Biomass							
+UK Biomass 2000			Minimum Load	2000-01-01	2050-01-01	0							
+UK Biomass 2000			Minimum Load Bid Up Price	2000-01-01	2050-01-01	0							
+UK Biomass 2000			Minimum Load Bid Up Heat Rate	2000-01-01	2050-01-01	0							
+UK Biomass 2005			Capacity	2005-01-01	2055-01-01	0	UK Availability Biomass	Multiply					
+UK Biomass 2005			Marginal Heat Rate	2005-01-01	2055-01-01	10.34482759							
+UK Biomass 2005			Variable Cost	2005-01-01	2055-01-01	3							
+UK Biomass 2005			Bid Up Price	2005-01-01	2055-01-01	0							
+UK Biomass 2005			Bid Up Heat Rate	2005-01-01	2055-01-01	0							
+UK Biomass 2005			Fuel	2005-01-01	2055-01-01	UK Station Biomass							
+UK Biomass 2005			Minimum Load	2005-01-01	2055-01-01	0							
+UK Biomass 2005			Minimum Load Bid Up Price	2005-01-01	2055-01-01	0							
+UK Biomass 2005			Minimum Load Bid Up Heat Rate	2005-01-01	2055-01-01	0							
+UK Biomass 2010			Capacity	2010-01-01	2060-01-01	0	UK Availability Biomass	Multiply					
+UK Biomass 2010			Marginal Heat Rate	2010-01-01	2060-01-01	10.28571429							
+UK Biomass 2010			Variable Cost	2010-01-01	2060-01-01	3							
+UK Biomass 2010			Bid Up Price	2010-01-01	2060-01-01	0							
+UK Biomass 2010			Bid Up Heat Rate	2010-01-01	2060-01-01	0							
+UK Biomass 2010			Fuel	2010-01-01	2060-01-01	UK Station Biomass							
+UK Biomass 2010			Minimum Load	2010-01-01	2060-01-01	0							
+UK Biomass 2010			Minimum Load Bid Up Price	2010-01-01	2060-01-01	0							
+UK Biomass 2010			Minimum Load Bid Up Heat Rate	2010-01-01	2060-01-01	0							
+UK Biomass 2015			Capacity	2015-01-01	2065-01-01	0	UK Availability Biomass	Multiply					
+UK Biomass 2015			Marginal Heat Rate	2015-01-01	2065-01-01	10.22727273							
+UK Biomass 2015			Variable Cost	2015-01-01	2065-01-01	3							
+UK Biomass 2015			Bid Up Price	2015-01-01	2065-01-01	0							
+UK Biomass 2015			Bid Up Heat Rate	2015-01-01	2065-01-01	0							
+UK Biomass 2015			Fuel	2015-01-01	2065-01-01	UK Station Biomass							
+UK Biomass 2015			Minimum Load	2015-01-01	2065-01-01	0							
+UK Biomass 2015			Minimum Load Bid Up Price	2015-01-01	2065-01-01	0							
+UK Biomass 2015			Minimum Load Bid Up Heat Rate	2015-01-01	2065-01-01	0							
+UK Biomass 2020			Capacity	2020-01-01	2070-01-01	0	UK Availability Biomass	Multiply					
+UK Biomass 2020			Marginal Heat Rate	2020-01-01	2070-01-01	10.16949153							
+UK Biomass 2020			Variable Cost	2020-01-01	2070-01-01	3							
+UK Biomass 2020			Bid Up Price	2020-01-01	2070-01-01	0							
+UK Biomass 2020			Bid Up Heat Rate	2020-01-01	2070-01-01	0							
+UK Biomass 2020			Fuel	2020-01-01	2070-01-01	UK Station Biomass							
+UK Biomass 2020			Minimum Load	2020-01-01	2070-01-01	0							
+UK Biomass 2020			Minimum Load Bid Up Price	2020-01-01	2070-01-01	0							
+UK Biomass 2020			Minimum Load Bid Up Heat Rate	2020-01-01	2070-01-01	0							
+UK Biomass 2025			Capacity	2025-01-01	2075-01-01	0	UK Availability Biomass	Multiply					
+UK Biomass 2025			Marginal Heat Rate	2025-01-01	2075-01-01	10.11235955							
+UK Biomass 2025			Variable Cost	2025-01-01	2075-01-01	3							
+UK Biomass 2025			Bid Up Price	2025-01-01	2075-01-01	0							
+UK Biomass 2025			Bid Up Heat Rate	2025-01-01	2075-01-01	0							
+UK Biomass 2025			Fuel	2025-01-01	2075-01-01	UK Station Biomass							
+UK Biomass 2025			Minimum Load	2025-01-01	2075-01-01	0							
+UK Biomass 2025			Minimum Load Bid Up Price	2025-01-01	2075-01-01	0							
+UK Biomass 2025			Minimum Load Bid Up Heat Rate	2025-01-01	2075-01-01	0							
+UK Biomass 2030			Capacity	2030-01-01	2080-01-01	0	UK Availability Biomass	Multiply					
+UK Biomass 2030			Marginal Heat Rate	2030-01-01	2080-01-01	10.05586592							
+UK Biomass 2030			Variable Cost	2030-01-01	2080-01-01	3							
+UK Biomass 2030			Bid Up Price	2030-01-01	2080-01-01	0							
+UK Biomass 2030			Bid Up Heat Rate	2030-01-01	2080-01-01	0							
+UK Biomass 2030			Fuel	2030-01-01	2080-01-01	UK Station Biomass							
+UK Biomass 2030			Minimum Load	2030-01-01	2080-01-01	0							
+UK Biomass 2030			Minimum Load Bid Up Price	2030-01-01	2080-01-01	0							
+UK Biomass 2030			Minimum Load Bid Up Heat Rate	2030-01-01	2080-01-01	0							
+UK Biomass 2035			Capacity	2035-01-01	2085-01-01	0	UK Availability Biomass	Multiply					
+UK Biomass 2035			Marginal Heat Rate	2035-01-01	2085-01-01	10							
+UK Biomass 2035			Variable Cost	2035-01-01	2085-01-01	3							
+UK Biomass 2035			Bid Up Price	2035-01-01	2085-01-01	0							
+UK Biomass 2035			Bid Up Heat Rate	2035-01-01	2085-01-01	0							
+UK Biomass 2035			Fuel	2035-01-01	2085-01-01	UK Station Biomass							
+UK Biomass 2035			Minimum Load	2035-01-01	2085-01-01	0							
+UK Biomass 2035			Minimum Load Bid Up Price	2035-01-01	2085-01-01	0							
+UK Biomass 2035			Minimum Load Bid Up Heat Rate	2035-01-01	2085-01-01	0							
+UK Biomass 2040			Capacity	2040-01-01	2090-01-01	0	UK Availability Biomass	Multiply					
+UK Biomass 2040			Marginal Heat Rate	2040-01-01	2090-01-01	9.944751381							
+UK Biomass 2040			Variable Cost	2040-01-01	2090-01-01	3							
+UK Biomass 2040			Bid Up Price	2040-01-01	2090-01-01	0							
+UK Biomass 2040			Bid Up Heat Rate	2040-01-01	2090-01-01	0							
+UK Biomass 2040			Fuel	2040-01-01	2090-01-01	UK Station Biomass							
+UK Biomass 2040			Minimum Load	2040-01-01	2090-01-01	0							
+UK Biomass 2040			Minimum Load Bid Up Price	2040-01-01	2090-01-01	0							
+UK Biomass 2040			Minimum Load Bid Up Heat Rate	2040-01-01	2090-01-01	0							
+UK Biomass 2045			Capacity	2045-01-01	2095-01-01	0	UK Availability Biomass	Multiply					
+UK Biomass 2045			Marginal Heat Rate	2045-01-01	2095-01-01	9.89010989							
+UK Biomass 2045			Variable Cost	2045-01-01	2095-01-01	3							
+UK Biomass 2045			Bid Up Price	2045-01-01	2095-01-01	0							
+UK Biomass 2045			Bid Up Heat Rate	2045-01-01	2095-01-01	0							
+UK Biomass 2045			Fuel	2045-01-01	2095-01-01	UK Station Biomass							
+UK Biomass 2045			Minimum Load	2045-01-01	2095-01-01	0							
+UK Biomass 2045			Minimum Load Bid Up Price	2045-01-01	2095-01-01	0							
+UK Biomass 2045			Minimum Load Bid Up Heat Rate	2045-01-01	2095-01-01	0							
+UK Biomass 2050			Capacity	2050-01-01	2100-01-01	0	UK Availability Biomass	Multiply					
+UK Biomass 2050			Marginal Heat Rate	2050-01-01	2100-01-01	9.836065574							
+UK Biomass 2050			Variable Cost	2050-01-01	2100-01-01	3							
+UK Biomass 2050			Bid Up Price	2050-01-01	2100-01-01	0							
+UK Biomass 2050			Bid Up Heat Rate	2050-01-01	2100-01-01	0							
+UK Biomass 2050			Fuel	2050-01-01	2100-01-01	UK Station Biomass							
+UK Biomass 2050			Minimum Load	2050-01-01	2100-01-01	0							
+UK Biomass 2050			Minimum Load Bid Up Price	2050-01-01	2100-01-01	0							
+UK Biomass 2050			Minimum Load Bid Up Heat Rate	2050-01-01	2100-01-01	0							
+UK Biomass 2055			Capacity	2055-01-01	2105-01-01	0	UK Availability Biomass	Multiply					
+UK Biomass 2055			Marginal Heat Rate	2055-01-01	2105-01-01	9.782608696							
+UK Biomass 2055			Variable Cost	2055-01-01	2105-01-01	3							
+UK Biomass 2055			Bid Up Price	2055-01-01	2105-01-01	0							
+UK Biomass 2055			Bid Up Heat Rate	2055-01-01	2105-01-01	0							
+UK Biomass 2055			Fuel	2055-01-01	2105-01-01	UK Station Biomass							
+UK Biomass 2055			Minimum Load	2055-01-01	2105-01-01	0							
+UK Biomass 2055			Minimum Load Bid Up Price	2055-01-01	2105-01-01	0							
+UK Biomass 2055			Minimum Load Bid Up Heat Rate	2055-01-01	2105-01-01	0							
+UK Biomass 2060			Capacity	2060-01-01	2110-01-01	0	UK Availability Biomass	Multiply					
+UK Biomass 2060			Marginal Heat Rate	2060-01-01	2110-01-01	9.72972973							
+UK Biomass 2060			Variable Cost	2060-01-01	2110-01-01	3							
+UK Biomass 2060			Bid Up Price	2060-01-01	2110-01-01	0							
+UK Biomass 2060			Bid Up Heat Rate	2060-01-01	2110-01-01	0							
+UK Biomass 2060			Fuel	2060-01-01	2110-01-01	UK Station Biomass							
+UK Biomass 2060			Minimum Load	2060-01-01	2110-01-01	0							
+UK Biomass 2060			Minimum Load Bid Up Price	2060-01-01	2110-01-01	0							
+UK Biomass 2060			Minimum Load Bid Up Heat Rate	2060-01-01	2110-01-01	0							
+UK Biomass 2065			Capacity	2065-01-01	2115-01-01	0	UK Availability Biomass	Multiply					
+UK Biomass 2065			Marginal Heat Rate	2065-01-01	2115-01-01	9.677419355							
+UK Biomass 2065			Variable Cost	2065-01-01	2115-01-01	3							
+UK Biomass 2065			Bid Up Price	2065-01-01	2115-01-01	0							
+UK Biomass 2065			Bid Up Heat Rate	2065-01-01	2115-01-01	0							
+UK Biomass 2065			Fuel	2065-01-01	2115-01-01	UK Station Biomass							
+UK Biomass 2065			Minimum Load	2065-01-01	2115-01-01	0							
+UK Biomass 2065			Minimum Load Bid Up Price	2065-01-01	2115-01-01	0							
+UK Biomass 2065			Minimum Load Bid Up Heat Rate	2065-01-01	2115-01-01	0							
+UK Lignite 1990			Capacity	1990-01-01	2040-01-01	0	UK Availability Lignite	Multiply					
+UK Lignite 1990			Marginal Heat Rate	1990-01-01	2040-01-01	11.18012422							
+UK Lignite 1990			Variable Cost	1990-01-01	2040-01-01	3							
+UK Lignite 1990			Bid Up Price	1990-01-01	2040-01-01	0							
+UK Lignite 1990			Bid Up Heat Rate	1990-01-01	2040-01-01	0							
+UK Lignite 1990			Fuel	1990-01-01	2040-01-01	UK Station Lignite							
+UK Lignite 1990			Minimum Load	1990-01-01	2040-01-01	0							
+UK Lignite 1990			Minimum Load Bid Up Price	1990-01-01	2040-01-01	0							
+UK Lignite 1990			Minimum Load Bid Up Heat Rate	1990-01-01	2040-01-01	0							
+UK Lignite 1995			Capacity	1995-01-01	2045-01-01	0	UK Availability Lignite	Multiply					
+UK Lignite 1995			Marginal Heat Rate	1995-01-01	2045-01-01	11.11111111							
+UK Lignite 1995			Variable Cost	1995-01-01	2045-01-01	3							
+UK Lignite 1995			Bid Up Price	1995-01-01	2045-01-01	0							
+UK Lignite 1995			Bid Up Heat Rate	1995-01-01	2045-01-01	0							
+UK Lignite 1995			Fuel	1995-01-01	2045-01-01	UK Station Lignite							
+UK Lignite 1995			Minimum Load	1995-01-01	2045-01-01	0							
+UK Lignite 1995			Minimum Load Bid Up Price	1995-01-01	2045-01-01	0							
+UK Lignite 1995			Minimum Load Bid Up Heat Rate	1995-01-01	2045-01-01	0							
+UK Lignite 2000			Capacity	2000-01-01	2031-01-01	0	UK Availability Lignite	Multiply					
+UK Lignite 2000			Marginal Heat Rate	2000-01-01	2031-01-01	11.04294479							
+UK Lignite 2000			Variable Cost	2000-01-01	2031-01-01	3							
+UK Lignite 2000			Bid Up Price	2000-01-01	2031-01-01	0							
+UK Lignite 2000			Bid Up Heat Rate	2000-01-01	2031-01-01	0							
+UK Lignite 2000			Fuel	2000-01-01	2031-01-01	UK Station Lignite							
+UK Lignite 2000			Minimum Load	2000-01-01	2031-01-01	0							
+UK Lignite 2000			Minimum Load Bid Up Price	2000-01-01	2031-01-01	0							
+UK Lignite 2000			Minimum Load Bid Up Heat Rate	2000-01-01	2031-01-01	0							
+UK Lignite 2005			Capacity	2005-01-01	2038-01-01	0	UK Availability Lignite	Multiply					
+UK Lignite 2005			Marginal Heat Rate	2005-01-01	2038-01-01	10.97560976							
+UK Lignite 2005			Variable Cost	2005-01-01	2038-01-01	3							
+UK Lignite 2005			Bid Up Price	2005-01-01	2038-01-01	0							
+UK Lignite 2005			Bid Up Heat Rate	2005-01-01	2038-01-01	0							
+UK Lignite 2005			Fuel	2005-01-01	2038-01-01	UK Station Lignite							
+UK Lignite 2005			Minimum Load	2005-01-01	2038-01-01	0							
+UK Lignite 2005			Minimum Load Bid Up Price	2005-01-01	2038-01-01	0							
+UK Lignite 2005			Minimum Load Bid Up Heat Rate	2005-01-01	2038-01-01	0							
+UK Lignite 2010			Capacity	2010-01-01	2038-01-01	0	UK Availability Lignite	Multiply					
+UK Lignite 2010			Marginal Heat Rate	2010-01-01	2038-01-01	10.90909091							
+UK Lignite 2010			Variable Cost	2010-01-01	2038-01-01	3							
+UK Lignite 2010			Bid Up Price	2010-01-01	2038-01-01	0							
+UK Lignite 2010			Bid Up Heat Rate	2010-01-01	2038-01-01	0							
+UK Lignite 2010			Fuel	2010-01-01	2038-01-01	UK Station Lignite							
+UK Lignite 2010			Minimum Load	2010-01-01	2038-01-01	0							
+UK Lignite 2010			Minimum Load Bid Up Price	2010-01-01	2038-01-01	0							
+UK Lignite 2010			Minimum Load Bid Up Heat Rate	2010-01-01	2038-01-01	0							
+UK Lignite 2015			Capacity	2015-01-01	2038-01-01	0	UK Availability Lignite	Multiply					
+UK Lignite 2015			Marginal Heat Rate	2015-01-01	2038-01-01	10.84337349							
+UK Lignite 2015			Variable Cost	2015-01-01	2038-01-01	3							
+UK Lignite 2015			Bid Up Price	2015-01-01	2038-01-01	0							
+UK Lignite 2015			Bid Up Heat Rate	2015-01-01	2038-01-01	0							
+UK Lignite 2015			Fuel	2015-01-01	2038-01-01	UK Station Lignite							
+UK Lignite 2015			Minimum Load	2015-01-01	2038-01-01	0							
+UK Lignite 2015			Minimum Load Bid Up Price	2015-01-01	2038-01-01	0							
+UK Lignite 2015			Minimum Load Bid Up Heat Rate	2015-01-01	2038-01-01	0							
+UK Lignite 2020			Capacity	2020-01-01	2039-01-01	0	UK Availability Lignite	Multiply					
+UK Lignite 2020			Marginal Heat Rate	2020-01-01	2039-01-01	10.77844311							
+UK Lignite 2020			Variable Cost	2020-01-01	2039-01-01	3							
+UK Lignite 2020			Bid Up Price	2020-01-01	2039-01-01	0							
+UK Lignite 2020			Bid Up Heat Rate	2020-01-01	2039-01-01	0							
+UK Lignite 2020			Fuel	2020-01-01	2039-01-01	UK Station Lignite							
+UK Lignite 2020			Minimum Load	2020-01-01	2039-01-01	0							
+UK Lignite 2020			Minimum Load Bid Up Price	2020-01-01	2039-01-01	0							
+UK Lignite 2020			Minimum Load Bid Up Heat Rate	2020-01-01	2039-01-01	0							
+UK Lignite 2025			Capacity	2025-01-01	2039-01-01	0	UK Availability Lignite	Multiply					
+UK Lignite 2025			Marginal Heat Rate	2025-01-01	2039-01-01	10.71428571							
+UK Lignite 2025			Variable Cost	2025-01-01	2039-01-01	3							
+UK Lignite 2025			Bid Up Price	2025-01-01	2039-01-01	0							
+UK Lignite 2025			Bid Up Heat Rate	2025-01-01	2039-01-01	0							
+UK Lignite 2025			Fuel	2025-01-01	2039-01-01	UK Station Lignite							
+UK Lignite 2025			Minimum Load	2025-01-01	2039-01-01	0							
+UK Lignite 2025			Minimum Load Bid Up Price	2025-01-01	2039-01-01	0							
+UK Lignite 2025			Minimum Load Bid Up Heat Rate	2025-01-01	2039-01-01	0							
+UK Lignite 2030			Capacity	2030-01-01	2040-01-01	0	UK Availability Lignite	Multiply					
+UK Lignite 2030			Marginal Heat Rate	2030-01-01	2040-01-01	10.65088757							
+UK Lignite 2030			Variable Cost	2030-01-01	2040-01-01	3							
+UK Lignite 2030			Bid Up Price	2030-01-01	2040-01-01	0							
+UK Lignite 2030			Bid Up Heat Rate	2030-01-01	2040-01-01	0							
+UK Lignite 2030			Fuel	2030-01-01	2040-01-01	UK Station Lignite							
+UK Lignite 2030			Minimum Load	2030-01-01	2040-01-01	0							
+UK Lignite 2030			Minimum Load Bid Up Price	2030-01-01	2040-01-01	0							
+UK Lignite 2030			Minimum Load Bid Up Heat Rate	2030-01-01	2040-01-01	0							
+UK Lignite 2035			Capacity	2035-01-01	2040-01-01	0	UK Availability Lignite	Multiply					
+UK Lignite 2035			Marginal Heat Rate	2035-01-01	2040-01-01	10.58823529							
+UK Lignite 2035			Variable Cost	2035-01-01	2040-01-01	3							
+UK Lignite 2035			Bid Up Price	2035-01-01	2040-01-01	0							
+UK Lignite 2035			Bid Up Heat Rate	2035-01-01	2040-01-01	0							
+UK Lignite 2035			Fuel	2035-01-01	2040-01-01	UK Station Lignite							
+UK Lignite 2035			Minimum Load	2035-01-01	2040-01-01	0							
+UK Lignite 2035			Minimum Load Bid Up Price	2035-01-01	2040-01-01	0							
+UK Lignite 2035			Minimum Load Bid Up Heat Rate	2035-01-01	2040-01-01	0							
+UK Lignite 2040			Capacity	2040-01-01	2040-01-01	0	UK Availability Lignite	Multiply					
+UK Lignite 2040			Marginal Heat Rate	2040-01-01	2040-01-01	10.52631579							
+UK Lignite 2040			Variable Cost	2040-01-01	2040-01-01	3							
+UK Lignite 2040			Bid Up Price	2040-01-01	2040-01-01	0							
+UK Lignite 2040			Bid Up Heat Rate	2040-01-01	2040-01-01	0							
+UK Lignite 2040			Fuel	2040-01-01	2040-01-01	UK Station Lignite							
+UK Lignite 2040			Minimum Load	2040-01-01	2040-01-01	0							
+UK Lignite 2040			Minimum Load Bid Up Price	2040-01-01	2040-01-01	0							
+UK Lignite 2040			Minimum Load Bid Up Heat Rate	2040-01-01	2040-01-01	0							
+UK Lignite 2045			Capacity	2045-01-01	2040-01-01	0	UK Availability Lignite	Multiply					
+UK Lignite 2045			Marginal Heat Rate	2045-01-01	2040-01-01	10.46511628							
+UK Lignite 2045			Variable Cost	2045-01-01	2040-01-01	3							
+UK Lignite 2045			Bid Up Price	2045-01-01	2040-01-01	0							
+UK Lignite 2045			Bid Up Heat Rate	2045-01-01	2040-01-01	0							
+UK Lignite 2045			Fuel	2045-01-01	2040-01-01	UK Station Lignite							
+UK Lignite 2045			Minimum Load	2045-01-01	2040-01-01	0							
+UK Lignite 2045			Minimum Load Bid Up Price	2045-01-01	2040-01-01	0							
+UK Lignite 2045			Minimum Load Bid Up Heat Rate	2045-01-01	2040-01-01	0							
+UK Lignite 2050			Capacity	2050-01-01	2100-01-01	0	UK Availability Lignite	Multiply					
+UK Lignite 2050			Marginal Heat Rate	2050-01-01	2100-01-01	10.40462428							
+UK Lignite 2050			Variable Cost	2050-01-01	2100-01-01	3							
+UK Lignite 2050			Bid Up Price	2050-01-01	2100-01-01	0							
+UK Lignite 2050			Bid Up Heat Rate	2050-01-01	2100-01-01	0							
+UK Lignite 2050			Fuel	2050-01-01	2100-01-01	UK Station Lignite							
+UK Lignite 2050			Minimum Load	2050-01-01	2100-01-01	0							
+UK Lignite 2050			Minimum Load Bid Up Price	2050-01-01	2100-01-01	0							
+UK Lignite 2050			Minimum Load Bid Up Heat Rate	2050-01-01	2100-01-01	0							
+UK Lignite 2055			Capacity	2055-01-01	2105-01-01	0	UK Availability Lignite	Multiply					
+UK Lignite 2055			Marginal Heat Rate	2055-01-01	2105-01-01	10.34482759							
+UK Lignite 2055			Variable Cost	2055-01-01	2105-01-01	3							
+UK Lignite 2055			Bid Up Price	2055-01-01	2105-01-01	0							
+UK Lignite 2055			Bid Up Heat Rate	2055-01-01	2105-01-01	0							
+UK Lignite 2055			Fuel	2055-01-01	2105-01-01	UK Station Lignite							
+UK Lignite 2055			Minimum Load	2055-01-01	2105-01-01	0							
+UK Lignite 2055			Minimum Load Bid Up Price	2055-01-01	2105-01-01	0							
+UK Lignite 2055			Minimum Load Bid Up Heat Rate	2055-01-01	2105-01-01	0							
+UK Lignite 2060			Capacity	2060-01-01	2110-01-01	0	UK Availability Lignite	Multiply					
+UK Lignite 2060			Marginal Heat Rate	2060-01-01	2110-01-01	10.28571429							
+UK Lignite 2060			Variable Cost	2060-01-01	2110-01-01	3							
+UK Lignite 2060			Bid Up Price	2060-01-01	2110-01-01	0							
+UK Lignite 2060			Bid Up Heat Rate	2060-01-01	2110-01-01	0							
+UK Lignite 2060			Fuel	2060-01-01	2110-01-01	UK Station Lignite							
+UK Lignite 2060			Minimum Load	2060-01-01	2110-01-01	0							
+UK Lignite 2060			Minimum Load Bid Up Price	2060-01-01	2110-01-01	0							
+UK Lignite 2060			Minimum Load Bid Up Heat Rate	2060-01-01	2110-01-01	0							
+UK Lignite 2065			Capacity	2065-01-01	2115-01-01	0	UK Availability Lignite	Multiply					
+UK Lignite 2065			Marginal Heat Rate	2065-01-01	2115-01-01	10.22727273							
+UK Lignite 2065			Variable Cost	2065-01-01	2115-01-01	3							
+UK Lignite 2065			Bid Up Price	2065-01-01	2115-01-01	0							
+UK Lignite 2065			Bid Up Heat Rate	2065-01-01	2115-01-01	0							
+UK Lignite 2065			Fuel	2065-01-01	2115-01-01	UK Station Lignite							
+UK Lignite 2065			Minimum Load	2065-01-01	2115-01-01	0							
+UK Lignite 2065			Minimum Load Bid Up Price	2065-01-01	2115-01-01	0							
+UK Lignite 2065			Minimum Load Bid Up Heat Rate	2065-01-01	2115-01-01	0							
+UK Nuclear 1990			Capacity	1990-01-01	2040-01-01	0	UK Availability Nuclear	Multiply					
+UK Nuclear 1990			Marginal Heat Rate	1990-01-01	2040-01-01	11.18012422							
+UK Nuclear 1990			Variable Cost	1990-01-01	2040-01-01	5							
+UK Nuclear 1990			Bid Up Price	1990-01-01	2040-01-01	0							
+UK Nuclear 1990			Bid Up Heat Rate	1990-01-01	2040-01-01	0							
+UK Nuclear 1990			Fuel	1990-01-01	2040-01-01	UK Station Uranium							
+UK Nuclear 1990			Minimum Load	1990-01-01	2040-01-01	0							
+UK Nuclear 1990			Minimum Load Bid Up Price	1990-01-01	2040-01-01	0							
+UK Nuclear 1990			Minimum Load Bid Up Heat Rate	1990-01-01	2040-01-01	0							
+UK Nuclear 1995			Capacity	1995-01-01	2045-01-01	0	UK Availability Nuclear	Multiply					
+UK Nuclear 1995			Marginal Heat Rate	1995-01-01	2045-01-01	11.11111111							
+UK Nuclear 1995			Variable Cost	1995-01-01	2045-01-01	5							
+UK Nuclear 1995			Bid Up Price	1995-01-01	2045-01-01	0							
+UK Nuclear 1995			Bid Up Heat Rate	1995-01-01	2045-01-01	0							
+UK Nuclear 1995			Fuel	1995-01-01	2045-01-01	UK Station Uranium							
+UK Nuclear 1995			Minimum Load	1995-01-01	2045-01-01	0							
+UK Nuclear 1995			Minimum Load Bid Up Price	1995-01-01	2045-01-01	0							
+UK Nuclear 1995			Minimum Load Bid Up Heat Rate	1995-01-01	2045-01-01	0							
+UK Nuclear 2000			Capacity	2000-01-01	2050-01-01	0	UK Availability Nuclear	Multiply					
+UK Nuclear 2000			Marginal Heat Rate	2000-01-01	2050-01-01	11.04294479							
+UK Nuclear 2000			Variable Cost	2000-01-01	2050-01-01	5							
+UK Nuclear 2000			Bid Up Price	2000-01-01	2050-01-01	0							
+UK Nuclear 2000			Bid Up Heat Rate	2000-01-01	2050-01-01	0							
+UK Nuclear 2000			Fuel	2000-01-01	2050-01-01	UK Station Uranium							
+UK Nuclear 2000			Minimum Load	2000-01-01	2050-01-01	0							
+UK Nuclear 2000			Minimum Load Bid Up Price	2000-01-01	2050-01-01	0							
+UK Nuclear 2000			Minimum Load Bid Up Heat Rate	2000-01-01	2050-01-01	0							
+UK Nuclear 2005			Capacity	2005-01-01	2055-01-01	0	UK Availability Nuclear	Multiply					
+UK Nuclear 2005			Marginal Heat Rate	2005-01-01	2055-01-01	10.97560976							
+UK Nuclear 2005			Variable Cost	2005-01-01	2055-01-01	5							
+UK Nuclear 2005			Bid Up Price	2005-01-01	2055-01-01	0							
+UK Nuclear 2005			Bid Up Heat Rate	2005-01-01	2055-01-01	0							
+UK Nuclear 2005			Fuel	2005-01-01	2055-01-01	UK Station Uranium							
+UK Nuclear 2005			Minimum Load	2005-01-01	2055-01-01	0							
+UK Nuclear 2005			Minimum Load Bid Up Price	2005-01-01	2055-01-01	0							
+UK Nuclear 2005			Minimum Load Bid Up Heat Rate	2005-01-01	2055-01-01	0							
+UK Nuclear 2010			Capacity	2010-01-01	2060-01-01	0	UK Availability Nuclear	Multiply					
+UK Nuclear 2010			Marginal Heat Rate	2010-01-01	2060-01-01	10.90909091							
+UK Nuclear 2010			Variable Cost	2010-01-01	2060-01-01	5							
+UK Nuclear 2010			Bid Up Price	2010-01-01	2060-01-01	0							
+UK Nuclear 2010			Bid Up Heat Rate	2010-01-01	2060-01-01	0							
+UK Nuclear 2010			Fuel	2010-01-01	2060-01-01	UK Station Uranium							
+UK Nuclear 2010			Minimum Load	2010-01-01	2060-01-01	0							
+UK Nuclear 2010			Minimum Load Bid Up Price	2010-01-01	2060-01-01	0							
+UK Nuclear 2010			Minimum Load Bid Up Heat Rate	2010-01-01	2060-01-01	0							
+UK Nuclear 2015			Capacity	2015-01-01	2065-01-01	0	UK Availability Nuclear	Multiply					
+UK Nuclear 2015			Marginal Heat Rate	2015-01-01	2065-01-01	10.84337349							
+UK Nuclear 2015			Variable Cost	2015-01-01	2065-01-01	5							
+UK Nuclear 2015			Bid Up Price	2015-01-01	2065-01-01	0							
+UK Nuclear 2015			Bid Up Heat Rate	2015-01-01	2065-01-01	0							
+UK Nuclear 2015			Fuel	2015-01-01	2065-01-01	UK Station Uranium							
+UK Nuclear 2015			Minimum Load	2015-01-01	2065-01-01	0							
+UK Nuclear 2015			Minimum Load Bid Up Price	2015-01-01	2065-01-01	0							
+UK Nuclear 2015			Minimum Load Bid Up Heat Rate	2015-01-01	2065-01-01	0							
+UK Nuclear 2020			Capacity	2020-01-01	2070-01-01	0	UK Availability Nuclear	Multiply					
+UK Nuclear 2020			Marginal Heat Rate	2020-01-01	2070-01-01	10.77844311							
+UK Nuclear 2020			Variable Cost	2020-01-01	2070-01-01	5							
+UK Nuclear 2020			Bid Up Price	2020-01-01	2070-01-01	0							
+UK Nuclear 2020			Bid Up Heat Rate	2020-01-01	2070-01-01	0							
+UK Nuclear 2020			Fuel	2020-01-01	2070-01-01	UK Station Uranium							
+UK Nuclear 2020			Minimum Load	2020-01-01	2070-01-01	0							
+UK Nuclear 2020			Minimum Load Bid Up Price	2020-01-01	2070-01-01	0							
+UK Nuclear 2020			Minimum Load Bid Up Heat Rate	2020-01-01	2070-01-01	0							
+UK Nuclear 2025			Capacity	2025-01-01	2075-01-01	1650	UK Availability Nuclear	Multiply					
+UK Nuclear 2025			Marginal Heat Rate	2025-01-01	2075-01-01	10.77844311							
+UK Nuclear 2025			Variable Cost	2025-01-01	2075-01-01	5							
+UK Nuclear 2025			Bid Up Price	2025-01-01	2075-01-01	0							
+UK Nuclear 2025			Bid Up Heat Rate	2025-01-01	2075-01-01	0							
+UK Nuclear 2025			Fuel	2025-01-01	2075-01-01	UK Station Uranium							
+UK Nuclear 2025			Minimum Load	2025-01-01	2075-01-01	825							
+UK Nuclear 2025			Minimum Load Bid Up Price	2025-01-01	2075-01-01	-50							
+UK Nuclear 2025			Minimum Load Bid Up Heat Rate	2025-01-01	2075-01-01	-10.77844311							
+UK Nuclear 2030			Capacity	2030-01-01	2080-01-01	1650	UK Availability Nuclear	Multiply					
+UK Nuclear 2030			Marginal Heat Rate	2030-01-01	2080-01-01	10.77844311							
+UK Nuclear 2030			Variable Cost	2030-01-01	2080-01-01	5							
+UK Nuclear 2030			Bid Up Price	2030-01-01	2080-01-01	0							
+UK Nuclear 2030			Bid Up Heat Rate	2030-01-01	2080-01-01	0							
+UK Nuclear 2030			Fuel	2030-01-01	2080-01-01	UK Station Uranium							
+UK Nuclear 2030			Minimum Load	2030-01-01	2080-01-01	825							
+UK Nuclear 2030			Minimum Load Bid Up Price	2030-01-01	2080-01-01	-55							
+UK Nuclear 2030			Minimum Load Bid Up Heat Rate	2030-01-01	2080-01-01	-10.77844311							
+UK Nuclear 2035			Capacity	2035-01-01	2085-01-01	1650	UK Availability Nuclear	Multiply					
+UK Nuclear 2035			Marginal Heat Rate	2035-01-01	2085-01-01	10.77844311							
+UK Nuclear 2035			Variable Cost	2035-01-01	2085-01-01	5							
+UK Nuclear 2035			Bid Up Price	2035-01-01	2085-01-01	0							
+UK Nuclear 2035			Bid Up Heat Rate	2035-01-01	2085-01-01	0							
+UK Nuclear 2035			Fuel	2035-01-01	2085-01-01	UK Station Uranium							
+UK Nuclear 2035			Minimum Load	2035-01-01	2085-01-01	825							
+UK Nuclear 2035			Minimum Load Bid Up Price	2035-01-01	2085-01-01	-60							
+UK Nuclear 2035			Minimum Load Bid Up Heat Rate	2035-01-01	2085-01-01	-10.77844311							
+UK Nuclear 2040			Capacity	2040-01-01	2090-01-01	1650	UK Availability Nuclear	Multiply					
+UK Nuclear 2040			Marginal Heat Rate	2040-01-01	2090-01-01	10.77844311							
+UK Nuclear 2040			Variable Cost	2040-01-01	2090-01-01	5							
+UK Nuclear 2040			Bid Up Price	2040-01-01	2090-01-01	0							
+UK Nuclear 2040			Bid Up Heat Rate	2040-01-01	2090-01-01	0							
+UK Nuclear 2040			Fuel	2040-01-01	2090-01-01	UK Station Uranium							
+UK Nuclear 2040			Minimum Load	2040-01-01	2090-01-01	825							
+UK Nuclear 2040			Minimum Load Bid Up Price	2040-01-01	2090-01-01	-65							
+UK Nuclear 2040			Minimum Load Bid Up Heat Rate	2040-01-01	2090-01-01	-10.77844311							
+UK CHP 1990			Capacity	1990-01-01	2040-01-01	0	UK Availability CHP	Multiply					
+UK CHP 1990			Marginal Heat Rate	1990-01-01	2040-01-01	7.171314741							
+UK CHP 1990			Variable Cost	1990-01-01	2040-01-01	3							
+UK CHP 1990			Bid Up Price	1990-01-01	2040-01-01	0							
+UK CHP 1990			Bid Up Heat Rate	1990-01-01	2040-01-01	0							
+UK CHP 1990			Fuel	1990-01-01	2040-01-01	UK Station Gas							
+UK CHP 1990			Minimum Load	1990-01-01	2040-01-01	0							
+UK CHP 1990			Minimum Load Bid Up Price	1990-01-01	2040-01-01	-5							
+UK CHP 1990			Minimum Load Bid Up Heat Rate	1990-01-01	2040-01-01	-7.171314741							
+UK CHP 1995			Capacity	1995-01-01	2045-01-01	0	UK Availability CHP	Multiply					
+UK CHP 1995			Marginal Heat Rate	1995-01-01	2045-01-01	7.142857143							
+UK CHP 1995			Variable Cost	1995-01-01	2045-01-01	3							
+UK CHP 1995			Bid Up Price	1995-01-01	2045-01-01	0							
+UK CHP 1995			Bid Up Heat Rate	1995-01-01	2045-01-01	0							
+UK CHP 1995			Fuel	1995-01-01	2045-01-01	UK Station Gas							
+UK CHP 1995			Minimum Load	1995-01-01	2045-01-01	0							
+UK CHP 1995			Minimum Load Bid Up Price	1995-01-01	2045-01-01	-4							
+UK CHP 1995			Minimum Load Bid Up Heat Rate	1995-01-01	2045-01-01	-7.142857143							
+UK CHP 2000			Capacity	2000-01-01	2050-01-01	0	UK Availability CHP	Multiply					
+UK CHP 2000			Marginal Heat Rate	2000-01-01	2050-01-01	7.114624506							
+UK CHP 2000			Variable Cost	2000-01-01	2050-01-01	3							
+UK CHP 2000			Bid Up Price	2000-01-01	2050-01-01	0							
+UK CHP 2000			Bid Up Heat Rate	2000-01-01	2050-01-01	0							
+UK CHP 2000			Fuel	2000-01-01	2050-01-01	UK Station Gas							
+UK CHP 2000			Minimum Load	2000-01-01	2050-01-01	0							
+UK CHP 2000			Minimum Load Bid Up Price	2000-01-01	2050-01-01	-3							
+UK CHP 2000			Minimum Load Bid Up Heat Rate	2000-01-01	2050-01-01	-7.114624506							
+UK CHP 2005			Capacity	2005-01-01	2055-01-01	0	UK Availability CHP	Multiply					
+UK CHP 2005			Marginal Heat Rate	2005-01-01	2055-01-01	7.086614173							
+UK CHP 2005			Variable Cost	2005-01-01	2055-01-01	3							
+UK CHP 2005			Bid Up Price	2005-01-01	2055-01-01	0							
+UK CHP 2005			Bid Up Heat Rate	2005-01-01	2055-01-01	0							
+UK CHP 2005			Fuel	2005-01-01	2055-01-01	UK Station Gas							
+UK CHP 2005			Minimum Load	2005-01-01	2055-01-01	0							
+UK CHP 2005			Minimum Load Bid Up Price	2005-01-01	2055-01-01	-2							
+UK CHP 2005			Minimum Load Bid Up Heat Rate	2005-01-01	2055-01-01	-7.086614173							
+UK CHP 2010			Capacity	2010-01-01	2060-01-01	0	UK Availability CHP	Multiply					
+UK CHP 2010			Marginal Heat Rate	2010-01-01	2060-01-01	7.058823529							
+UK CHP 2010			Variable Cost	2010-01-01	2060-01-01	3							
+UK CHP 2010			Bid Up Price	2010-01-01	2060-01-01	0							
+UK CHP 2010			Bid Up Heat Rate	2010-01-01	2060-01-01	0							
+UK CHP 2010			Fuel	2010-01-01	2060-01-01	UK Station Gas							
+UK CHP 2010			Minimum Load	2010-01-01	2060-01-01	0							
+UK CHP 2010			Minimum Load Bid Up Price	2010-01-01	2060-01-01	-1							
+UK CHP 2010			Minimum Load Bid Up Heat Rate	2010-01-01	2060-01-01	-7.058823529							
+UK CHP 2015			Capacity	2015-01-01	2065-01-01	0	UK Availability CHP	Multiply					
+UK CHP 2015			Marginal Heat Rate	2015-01-01	2065-01-01	7.03125							
+UK CHP 2015			Variable Cost	2015-01-01	2065-01-01	3							
+UK CHP 2015			Bid Up Price	2015-01-01	2065-01-01	0							
+UK CHP 2015			Bid Up Heat Rate	2015-01-01	2065-01-01	0							
+UK CHP 2015			Fuel	2015-01-01	2065-01-01	UK Station Gas							
+UK CHP 2015			Minimum Load	2015-01-01	2065-01-01	0							
+UK CHP 2015			Minimum Load Bid Up Price	2015-01-01	2065-01-01	0							
+UK CHP 2015			Minimum Load Bid Up Heat Rate	2015-01-01	2065-01-01	-7.03125							
+UK CHP 2020			Capacity	2020-01-01	2070-01-01	0	UK Availability CHP	Multiply					
+UK CHP 2020			Marginal Heat Rate	2020-01-01	2070-01-01	7.003891051							
+UK CHP 2020			Variable Cost	2020-01-01	2070-01-01	3							
+UK CHP 2020			Bid Up Price	2020-01-01	2070-01-01	0							
+UK CHP 2020			Bid Up Heat Rate	2020-01-01	2070-01-01	0							
+UK CHP 2020			Fuel	2020-01-01	2070-01-01	UK Station Gas							
+UK CHP 2020			Minimum Load	2020-01-01	2070-01-01	0							
+UK CHP 2020			Minimum Load Bid Up Price	2020-01-01	2070-01-01	0							
+UK CHP 2020			Minimum Load Bid Up Heat Rate	2020-01-01	2070-01-01	0							
+UK CHP 2025			Capacity	2025-01-01	2075-01-01	0	UK Availability CHP	Multiply					
+UK CHP 2025			Marginal Heat Rate	2025-01-01	2075-01-01	6.976744186							
+UK CHP 2025			Variable Cost	2025-01-01	2075-01-01	3							
+UK CHP 2025			Bid Up Price	2025-01-01	2075-01-01	0							
+UK CHP 2025			Bid Up Heat Rate	2025-01-01	2075-01-01	0							
+UK CHP 2025			Fuel	2025-01-01	2075-01-01	UK Station Gas							
+UK CHP 2025			Minimum Load	2025-01-01	2075-01-01	0							
+UK CHP 2025			Minimum Load Bid Up Price	2025-01-01	2075-01-01	0							
+UK CHP 2025			Minimum Load Bid Up Heat Rate	2025-01-01	2075-01-01	0							
+UK CHP 2030			Capacity	2030-01-01	2080-01-01	0	UK Availability CHP	Multiply					
+UK CHP 2030			Marginal Heat Rate	2030-01-01	2080-01-01	6.94980695							
+UK CHP 2030			Variable Cost	2030-01-01	2080-01-01	3							
+UK CHP 2030			Bid Up Price	2030-01-01	2080-01-01	0							
+UK CHP 2030			Bid Up Heat Rate	2030-01-01	2080-01-01	0							
+UK CHP 2030			Fuel	2030-01-01	2080-01-01	UK Station Gas							
+UK CHP 2030			Minimum Load	2030-01-01	2080-01-01	0							
+UK CHP 2030			Minimum Load Bid Up Price	2030-01-01	2080-01-01	0							
+UK CHP 2030			Minimum Load Bid Up Heat Rate	2030-01-01	2080-01-01	0							
+UK CHP 2035			Capacity	2035-01-01	2085-01-01	0	UK Availability CHP	Multiply					
+UK CHP 2035			Marginal Heat Rate	2035-01-01	2085-01-01	6.923076923							
+UK CHP 2035			Variable Cost	2035-01-01	2085-01-01	3							
+UK CHP 2035			Bid Up Price	2035-01-01	2085-01-01	0							
+UK CHP 2035			Bid Up Heat Rate	2035-01-01	2085-01-01	0							
+UK CHP 2035			Fuel	2035-01-01	2085-01-01	UK Station Gas							
+UK CHP 2035			Minimum Load	2035-01-01	2085-01-01	0							
+UK CHP 2035			Minimum Load Bid Up Price	2035-01-01	2085-01-01	0							
+UK CHP 2035			Minimum Load Bid Up Heat Rate	2035-01-01	2085-01-01	0							
+UK CHP 2040			Capacity	2040-01-01	2090-01-01	0	UK Availability CHP	Multiply					
+UK CHP 2040			Marginal Heat Rate	2040-01-01	2090-01-01	6.896551724							
+UK CHP 2040			Variable Cost	2040-01-01	2090-01-01	3							
+UK CHP 2040			Bid Up Price	2040-01-01	2090-01-01	0							
+UK CHP 2040			Bid Up Heat Rate	2040-01-01	2090-01-01	0							
+UK CHP 2040			Fuel	2040-01-01	2090-01-01	UK Station Gas							
+UK CHP 2040			Minimum Load	2040-01-01	2090-01-01	0							
+UK CHP 2040			Minimum Load Bid Up Price	2040-01-01	2090-01-01	0							
+UK CHP 2040			Minimum Load Bid Up Heat Rate	2040-01-01	2090-01-01	0							
+UK CHP 2045			Capacity	2045-01-01	2095-01-01	0	UK Availability CHP	Multiply					
+UK CHP 2045			Marginal Heat Rate	2045-01-01	2095-01-01	6.870229008							
+UK CHP 2045			Variable Cost	2045-01-01	2095-01-01	3							
+UK CHP 2045			Bid Up Price	2045-01-01	2095-01-01	0							
+UK CHP 2045			Bid Up Heat Rate	2045-01-01	2095-01-01	0							
+UK CHP 2045			Fuel	2045-01-01	2095-01-01	UK Station Gas							
+UK CHP 2045			Minimum Load	2045-01-01	2095-01-01	0							
+UK CHP 2045			Minimum Load Bid Up Price	2045-01-01	2095-01-01	0							
+UK CHP 2045			Minimum Load Bid Up Heat Rate	2045-01-01	2095-01-01	0							
+UK CHP 2050			Capacity	2050-01-01	2100-01-01	0	UK Availability CHP	Multiply					
+UK CHP 2050			Marginal Heat Rate	2050-01-01	2100-01-01	6.844106464							
+UK CHP 2050			Variable Cost	2050-01-01	2100-01-01	3							
+UK CHP 2050			Bid Up Price	2050-01-01	2100-01-01	0							
+UK CHP 2050			Bid Up Heat Rate	2050-01-01	2100-01-01	0							
+UK CHP 2050			Fuel	2050-01-01	2100-01-01	UK Station Gas							
+UK CHP 2050			Minimum Load	2050-01-01	2100-01-01	0							
+UK CHP 2050			Minimum Load Bid Up Price	2050-01-01	2100-01-01	0							
+UK CHP 2050			Minimum Load Bid Up Heat Rate	2050-01-01	2100-01-01	0							
+UK CHP 2055			Capacity	2055-01-01	2105-01-01	0	UK Availability CHP	Multiply					
+UK CHP 2055			Marginal Heat Rate	2055-01-01	2105-01-01	6.818181818							
+UK CHP 2055			Variable Cost	2055-01-01	2105-01-01	3							
+UK CHP 2055			Bid Up Price	2055-01-01	2105-01-01	0							
+UK CHP 2055			Bid Up Heat Rate	2055-01-01	2105-01-01	0							
+UK CHP 2055			Fuel	2055-01-01	2105-01-01	UK Station Gas							
+UK CHP 2055			Minimum Load	2055-01-01	2105-01-01	0							
+UK CHP 2055			Minimum Load Bid Up Price	2055-01-01	2105-01-01	0							
+UK CHP 2055			Minimum Load Bid Up Heat Rate	2055-01-01	2105-01-01	0							
+UK CHP 2060			Capacity	2060-01-01	2110-01-01	0	UK Availability CHP	Multiply					
+UK CHP 2060			Marginal Heat Rate	2060-01-01	2110-01-01	6.79245283							
+UK CHP 2060			Variable Cost	2060-01-01	2110-01-01	3							
+UK CHP 2060			Bid Up Price	2060-01-01	2110-01-01	0							
+UK CHP 2060			Bid Up Heat Rate	2060-01-01	2110-01-01	0							
+UK CHP 2060			Fuel	2060-01-01	2110-01-01	UK Station Gas							
+UK CHP 2060			Minimum Load	2060-01-01	2110-01-01	0							
+UK CHP 2060			Minimum Load Bid Up Price	2060-01-01	2110-01-01	0							
+UK CHP 2060			Minimum Load Bid Up Heat Rate	2060-01-01	2110-01-01	0							
+UK CHP 2065			Capacity	2065-01-01	2115-01-01	0	UK Availability CHP	Multiply					
+UK CHP 2065			Marginal Heat Rate	2065-01-01	2115-01-01	6.766917293							
+UK CHP 2065			Variable Cost	2065-01-01	2115-01-01	3							
+UK CHP 2065			Bid Up Price	2065-01-01	2115-01-01	0							
+UK CHP 2065			Bid Up Heat Rate	2065-01-01	2115-01-01	0							
+UK CHP 2065			Fuel	2065-01-01	2115-01-01	UK Station Gas							
+UK CHP 2065			Minimum Load	2065-01-01	2115-01-01	0							
+UK CHP 2065			Minimum Load Bid Up Price	2065-01-01	2115-01-01	0							
+UK CHP 2065			Minimum Load Bid Up Heat Rate	2065-01-01	2115-01-01	0							
+UK Liquid 1990			Capacity	1990-01-01	2040-01-01	4000	UK Availability Liquid	Multiply					
+UK Liquid 1990			Marginal Heat Rate	1990-01-01	2040-01-01	10.22727273							
+UK Liquid 1990			Variable Cost	1990-01-01	2040-01-01	1							
+UK Liquid 1990			Bid Up Price	1990-01-01	2040-01-01	0							
+UK Liquid 1990			Bid Up Heat Rate	1990-01-01	2040-01-01	10.22727273							
+UK Liquid 1990			Fuel	1990-01-01	2040-01-01	UK Station LSFO							
+UK Liquid 1990			Minimum Load	1990-01-01	2040-01-01	0							
+UK Liquid 1990			Minimum Load Bid Up Price	1990-01-01	2040-01-01	0							
+UK Liquid 1990			Minimum Load Bid Up Heat Rate	1990-01-01	2040-01-01	0							
+UK Liquid 1995			Capacity	1995-01-01	2045-01-01	4000	UK Availability Liquid	Multiply					
+UK Liquid 1995			Marginal Heat Rate	1995-01-01	2045-01-01	10.16949153							
+UK Liquid 1995			Variable Cost	1995-01-01	2045-01-01	1							
+UK Liquid 1995			Bid Up Price	1995-01-01	2045-01-01	0							
+UK Liquid 1995			Bid Up Heat Rate	1995-01-01	2045-01-01	10.16949153							
+UK Liquid 1995			Fuel	1995-01-01	2045-01-01	UK Station LSFO							
+UK Liquid 1995			Minimum Load	1995-01-01	2045-01-01	0							
+UK Liquid 1995			Minimum Load Bid Up Price	1995-01-01	2045-01-01	0							
+UK Liquid 1995			Minimum Load Bid Up Heat Rate	1995-01-01	2045-01-01	0							
+UK Liquid 2000			Capacity	2000-01-01	2050-01-01	4000	UK Availability Liquid	Multiply					
+UK Liquid 2000			Marginal Heat Rate	2000-01-01	2050-01-01	10.11235955							
+UK Liquid 2000			Variable Cost	2000-01-01	2050-01-01	1							
+UK Liquid 2000			Bid Up Price	2000-01-01	2050-01-01	0							
+UK Liquid 2000			Bid Up Heat Rate	2000-01-01	2050-01-01	10.11235955							
+UK Liquid 2000			Fuel	2000-01-01	2050-01-01	UK Station LSFO							
+UK Liquid 2000			Minimum Load	2000-01-01	2050-01-01	0							
+UK Liquid 2000			Minimum Load Bid Up Price	2000-01-01	2050-01-01	0							
+UK Liquid 2000			Minimum Load Bid Up Heat Rate	2000-01-01	2050-01-01	0							
+UK Liquid 2005			Capacity	2005-01-01	2055-01-01	4000	UK Availability Liquid	Multiply					
+UK Liquid 2005			Marginal Heat Rate	2005-01-01	2055-01-01	10.05586592							
+UK Liquid 2005			Variable Cost	2005-01-01	2055-01-01	1							
+UK Liquid 2005			Bid Up Price	2005-01-01	2055-01-01	0							
+UK Liquid 2005			Bid Up Heat Rate	2005-01-01	2055-01-01	10.05586592							
+UK Liquid 2005			Fuel	2005-01-01	2055-01-01	UK Station LSFO							
+UK Liquid 2005			Minimum Load	2005-01-01	2055-01-01	0							
+UK Liquid 2005			Minimum Load Bid Up Price	2005-01-01	2055-01-01	0							
+UK Liquid 2005			Minimum Load Bid Up Heat Rate	2005-01-01	2055-01-01	0							
+UK Liquid 2010			Capacity	2010-01-01	2060-01-01	0	UK Availability Liquid	Multiply					
+UK Liquid 2010			Marginal Heat Rate	2010-01-01	2060-01-01	10							
+UK Liquid 2010			Variable Cost	2010-01-01	2060-01-01	1							
+UK Liquid 2010			Bid Up Price	2010-01-01	2060-01-01	0							
+UK Liquid 2010			Bid Up Heat Rate	2010-01-01	2060-01-01	3							
+UK Liquid 2010			Fuel	2010-01-01	2060-01-01	UK Station LSFO							
+UK Liquid 2010			Minimum Load	2010-01-01	2060-01-01	0							
+UK Liquid 2010			Minimum Load Bid Up Price	2010-01-01	2060-01-01	0							
+UK Liquid 2010			Minimum Load Bid Up Heat Rate	2010-01-01	2060-01-01	0							
+UK Liquid 2015			Capacity	2015-01-01	2065-01-01	0	UK Availability Liquid	Multiply					
+UK Liquid 2015			Marginal Heat Rate	2015-01-01	2065-01-01	9.944751381							
+UK Liquid 2015			Variable Cost	2015-01-01	2065-01-01	1							
+UK Liquid 2015			Bid Up Price	2015-01-01	2065-01-01	0							
+UK Liquid 2015			Bid Up Heat Rate	2015-01-01	2065-01-01	2							
+UK Liquid 2015			Fuel	2015-01-01	2065-01-01	UK Station LSFO							
+UK Liquid 2015			Minimum Load	2015-01-01	2065-01-01	0							
+UK Liquid 2015			Minimum Load Bid Up Price	2015-01-01	2065-01-01	0							
+UK Liquid 2015			Minimum Load Bid Up Heat Rate	2015-01-01	2065-01-01	0							
+UK Liquid 2020			Capacity	2020-01-01	2070-01-01	0	UK Availability Liquid	Multiply					
+UK Liquid 2020			Marginal Heat Rate	2020-01-01	2070-01-01	9.89010989							
+UK Liquid 2020			Variable Cost	2020-01-01	2070-01-01	1							
+UK Liquid 2020			Bid Up Price	2020-01-01	2070-01-01	0							
+UK Liquid 2020			Bid Up Heat Rate	2020-01-01	2070-01-01	1							
+UK Liquid 2020			Fuel	2020-01-01	2070-01-01	UK Station LSFO							
+UK Liquid 2020			Minimum Load	2020-01-01	2070-01-01	0							
+UK Liquid 2020			Minimum Load Bid Up Price	2020-01-01	2070-01-01	0							
+UK Liquid 2020			Minimum Load Bid Up Heat Rate	2020-01-01	2070-01-01	0							
+UK Liquid 2025			Capacity	2025-01-01	2075-01-01	0	UK Availability Liquid	Multiply					
+UK Liquid 2025			Marginal Heat Rate	2025-01-01	2075-01-01	9.836065574							
+UK Liquid 2025			Variable Cost	2025-01-01	2075-01-01	1							
+UK Liquid 2025			Bid Up Price	2025-01-01	2075-01-01	0							
+UK Liquid 2025			Bid Up Heat Rate	2025-01-01	2075-01-01	0							
+UK Liquid 2025			Fuel	2025-01-01	2075-01-01	UK Station LSFO							
+UK Liquid 2025			Minimum Load	2025-01-01	2075-01-01	0							
+UK Liquid 2025			Minimum Load Bid Up Price	2025-01-01	2075-01-01	0							
+UK Liquid 2025			Minimum Load Bid Up Heat Rate	2025-01-01	2075-01-01	0							
+UK Liquid 2030			Capacity	2030-01-01	2080-01-01	0	UK Availability Liquid	Multiply					
+UK Liquid 2030			Marginal Heat Rate	2030-01-01	2080-01-01	9.782608696							
+UK Liquid 2030			Variable Cost	2030-01-01	2080-01-01	1							
+UK Liquid 2030			Bid Up Price	2030-01-01	2080-01-01	0							
+UK Liquid 2030			Bid Up Heat Rate	2030-01-01	2080-01-01	0							
+UK Liquid 2030			Fuel	2030-01-01	2080-01-01	UK Station LSFO							
+UK Liquid 2030			Minimum Load	2030-01-01	2080-01-01	0							
+UK Liquid 2030			Minimum Load Bid Up Price	2030-01-01	2080-01-01	0							
+UK Liquid 2030			Minimum Load Bid Up Heat Rate	2030-01-01	2080-01-01	0							
+UK Liquid 2035			Capacity	2035-01-01	2085-01-01	0	UK Availability Liquid	Multiply					
+UK Liquid 2035			Marginal Heat Rate	2035-01-01	2085-01-01	9.72972973							
+UK Liquid 2035			Variable Cost	2035-01-01	2085-01-01	1							
+UK Liquid 2035			Bid Up Price	2035-01-01	2085-01-01	0							
+UK Liquid 2035			Bid Up Heat Rate	2035-01-01	2085-01-01	0							
+UK Liquid 2035			Fuel	2035-01-01	2085-01-01	UK Station LSFO							
+UK Liquid 2035			Minimum Load	2035-01-01	2085-01-01	0							
+UK Liquid 2035			Minimum Load Bid Up Price	2035-01-01	2085-01-01	0							
+UK Liquid 2035			Minimum Load Bid Up Heat Rate	2035-01-01	2085-01-01	0							
+UK Liquid 2040			Capacity	2040-01-01	2090-01-01	0	UK Availability Liquid	Multiply					
+UK Liquid 2040			Marginal Heat Rate	2040-01-01	2090-01-01	9.677419355							
+UK Liquid 2040			Variable Cost	2040-01-01	2090-01-01	1							
+UK Liquid 2040			Bid Up Price	2040-01-01	2090-01-01	0							
+UK Liquid 2040			Bid Up Heat Rate	2040-01-01	2090-01-01	0							
+UK Liquid 2040			Fuel	2040-01-01	2090-01-01	UK Station LSFO							
+UK Liquid 2040			Minimum Load	2040-01-01	2090-01-01	0							
+UK Liquid 2040			Minimum Load Bid Up Price	2040-01-01	2090-01-01	0							
+UK Liquid 2040			Minimum Load Bid Up Heat Rate	2040-01-01	2090-01-01	0							
+UK Liquid 2045			Capacity	2045-01-01	2095-01-01	0	UK Availability Liquid	Multiply					
+UK Liquid 2045			Marginal Heat Rate	2045-01-01	2095-01-01	9.625668449							
+UK Liquid 2045			Variable Cost	2045-01-01	2095-01-01	1							
+UK Liquid 2045			Bid Up Price	2045-01-01	2095-01-01	0							
+UK Liquid 2045			Bid Up Heat Rate	2045-01-01	2095-01-01	0							
+UK Liquid 2045			Fuel	2045-01-01	2095-01-01	UK Station LSFO							
+UK Liquid 2045			Minimum Load	2045-01-01	2095-01-01	0							
+UK Liquid 2045			Minimum Load Bid Up Price	2045-01-01	2095-01-01	0							
+UK Liquid 2045			Minimum Load Bid Up Heat Rate	2045-01-01	2095-01-01	0							
+UK Liquid 2050			Capacity	2050-01-01	2100-01-01	0	UK Availability Liquid	Multiply					
+UK Liquid 2050			Marginal Heat Rate	2050-01-01	2100-01-01	9.574468085							
+UK Liquid 2050			Variable Cost	2050-01-01	2100-01-01	1							
+UK Liquid 2050			Bid Up Price	2050-01-01	2100-01-01	0							
+UK Liquid 2050			Bid Up Heat Rate	2050-01-01	2100-01-01	0							
+UK Liquid 2050			Fuel	2050-01-01	2100-01-01	UK Station LSFO							
+UK Liquid 2050			Minimum Load	2050-01-01	2100-01-01	0							
+UK Liquid 2050			Minimum Load Bid Up Price	2050-01-01	2100-01-01	0							
+UK Liquid 2050			Minimum Load Bid Up Heat Rate	2050-01-01	2100-01-01	0							
+UK Liquid 2055			Capacity	2055-01-01	2105-01-01	0	UK Availability Liquid	Multiply					
+UK Liquid 2055			Marginal Heat Rate	2055-01-01	2105-01-01	9.523809524							
+UK Liquid 2055			Variable Cost	2055-01-01	2105-01-01	1							
+UK Liquid 2055			Bid Up Price	2055-01-01	2105-01-01	0							
+UK Liquid 2055			Bid Up Heat Rate	2055-01-01	2105-01-01	0							
+UK Liquid 2055			Fuel	2055-01-01	2105-01-01	UK Station LSFO							
+UK Liquid 2055			Minimum Load	2055-01-01	2105-01-01	0							
+UK Liquid 2055			Minimum Load Bid Up Price	2055-01-01	2105-01-01	0							
+UK Liquid 2055			Minimum Load Bid Up Heat Rate	2055-01-01	2105-01-01	0							
+UK Liquid 2060			Capacity	2060-01-01	2110-01-01	0	UK Availability Liquid	Multiply					
+UK Liquid 2060			Marginal Heat Rate	2060-01-01	2110-01-01	9.473684211							
+UK Liquid 2060			Variable Cost	2060-01-01	2110-01-01	1							
+UK Liquid 2060			Bid Up Price	2060-01-01	2110-01-01	0							
+UK Liquid 2060			Bid Up Heat Rate	2060-01-01	2110-01-01	0							
+UK Liquid 2060			Fuel	2060-01-01	2110-01-01	UK Station LSFO							
+UK Liquid 2060			Minimum Load	2060-01-01	2110-01-01	0							
+UK Liquid 2060			Minimum Load Bid Up Price	2060-01-01	2110-01-01	0							
+UK Liquid 2060			Minimum Load Bid Up Heat Rate	2060-01-01	2110-01-01	0							
+UK Liquid 2065			Capacity	2065-01-01	2115-01-01	0	UK Availability Liquid	Multiply					
+UK Liquid 2065			Marginal Heat Rate	2065-01-01	2115-01-01	9.42408377							
+UK Liquid 2065			Variable Cost	2065-01-01	2115-01-01	1							
+UK Liquid 2065			Bid Up Price	2065-01-01	2115-01-01	0							
+UK Liquid 2065			Bid Up Heat Rate	2065-01-01	2115-01-01	0							
+UK Liquid 2065			Fuel	2065-01-01	2115-01-01	UK Station LSFO							
+UK Liquid 2065			Minimum Load	2065-01-01	2115-01-01	0							
+UK Liquid 2065			Minimum Load Bid Up Price	2065-01-01	2115-01-01	0							
+UK Liquid 2065			Minimum Load Bid Up Heat Rate	2065-01-01	2115-01-01	0							
+UK GB_PP_Drax Bio1			Capacity	2009-01-01	2100-01-01	645	UK Availability Biomass	Multiply					
+UK GB_PP_Drax Bio1			Marginal Heat Rate	2009-01-01	2100-01-01	9							
+UK GB_PP_Drax Bio1			Variable Cost	2009-01-01	2100-01-01	1							
+UK GB_PP_Drax Bio1			Bid Up Price	2009-01-01	2100-01-01	0							
+UK GB_PP_Drax Bio1			Bid Up Heat Rate	2009-01-01	2100-01-01	2							
+UK GB_PP_Drax Bio1			Fuel	2009-01-01	2100-01-01	UK Station Biomass							
+UK GB_PP_Drax Bio1			Minimum Load	2009-01-01	2100-01-01	322.5							
+UK GB_PP_Drax Bio1			Minimum Load Bid Up Price	2009-01-01	2100-01-01	0							
+UK GB_PP_Drax Bio1			Minimum Load Bid Up Heat Rate	2009-01-01	2100-01-01	-6.3							
+UK GB_PP_Drax Bio2			Capacity	1993-01-01	2100-01-01	645	UK Availability Biomass	Multiply					
+UK GB_PP_Drax Bio2			Marginal Heat Rate	1993-01-01	2100-01-01	8.888888889							
+UK GB_PP_Drax Bio2			Variable Cost	1993-01-01	2100-01-01	1							
+UK GB_PP_Drax Bio2			Bid Up Price	1993-01-01	2100-01-01	0							
+UK GB_PP_Drax Bio2			Bid Up Heat Rate	1993-01-01	2100-01-01	1.8125							
+UK GB_PP_Drax Bio2			Fuel	1993-01-01	2100-01-01	UK Station Biomass							
+UK GB_PP_Drax Bio2			Minimum Load	1993-01-01	2100-01-01	322.5							
+UK GB_PP_Drax Bio2			Minimum Load Bid Up Price	1993-01-01	2100-01-01	0							
+UK GB_PP_Drax Bio2			Minimum Load Bid Up Heat Rate	1993-01-01	2100-01-01	-6.222222222							
+UK GB_PP_Drax Bio3			Capacity	2010-01-01	2100-01-01	645	UK Availability Biomass	Multiply					
+UK GB_PP_Drax Bio3			Marginal Heat Rate	2010-01-01	2100-01-01	8.780487805							
+UK GB_PP_Drax Bio3			Variable Cost	2010-01-01	2100-01-01	1							
+UK GB_PP_Drax Bio3			Bid Up Price	2010-01-01	2100-01-01	0							
+UK GB_PP_Drax Bio3			Bid Up Heat Rate	2010-01-01	2100-01-01	1.625							
+UK GB_PP_Drax Bio3			Fuel	2010-01-01	2100-01-01	UK Station Biomass							
+UK GB_PP_Drax Bio3			Minimum Load	2010-01-01	2100-01-01	322.5							
+UK GB_PP_Drax Bio3			Minimum Load Bid Up Price	2010-01-01	2100-01-01	0							
+UK GB_PP_Drax Bio3			Minimum Load Bid Up Heat Rate	2010-01-01	2100-01-01	-6.146341463							
+UK GB_PP_Drax Bio4			Capacity	2005-01-01	2100-01-01	645	UK Availability Biomass	Multiply					
+UK GB_PP_Drax Bio4			Marginal Heat Rate	2005-01-01	2100-01-01	8.674698795							
+UK GB_PP_Drax Bio4			Variable Cost	2005-01-01	2100-01-01	1							
+UK GB_PP_Drax Bio4			Bid Up Price	2005-01-01	2100-01-01	0							
+UK GB_PP_Drax Bio4			Bid Up Heat Rate	2005-01-01	2100-01-01	1.4375							
+UK GB_PP_Drax Bio4			Fuel	2005-01-01	2100-01-01	UK Station Biomass							
+UK GB_PP_Drax Bio4			Minimum Load	2005-01-01	2100-01-01	322.5							
+UK GB_PP_Drax Bio4			Minimum Load Bid Up Price	2005-01-01	2100-01-01	0							
+UK GB_PP_Drax Bio4			Minimum Load Bid Up Heat Rate	2005-01-01	2100-01-01	-6.072289157							
+UK GB_PP_Lynemouth Bio 1			Capacity	1985-01-01	2100-01-01	132	UK Availability Biomass	Multiply					
+UK GB_PP_Lynemouth Bio 1			Marginal Heat Rate	1985-01-01	2100-01-01	8.571428571							
+UK GB_PP_Lynemouth Bio 1			Variable Cost	1985-01-01	2100-01-01	1							
+UK GB_PP_Lynemouth Bio 1			Bid Up Price	1985-01-01	2100-01-01	0							
+UK GB_PP_Lynemouth Bio 1			Bid Up Heat Rate	1985-01-01	2100-01-01	1.25							
+UK GB_PP_Lynemouth Bio 1			Fuel	1985-01-01	2100-01-01	UK Station Biomass							
+UK GB_PP_Lynemouth Bio 1			Minimum Load	1985-01-01	2100-01-01	66							
+UK GB_PP_Lynemouth Bio 1			Minimum Load Bid Up Price	1985-01-01	2100-01-01	0							
+UK GB_PP_Lynemouth Bio 1			Minimum Load Bid Up Heat Rate	1985-01-01	2100-01-01	-6							
+UK GB_PP_Lynemouth Bio 2			Capacity	1999-01-01	2100-01-01	132	UK Availability Biomass	Multiply					
+UK GB_PP_Lynemouth Bio 2			Marginal Heat Rate	1999-01-01	2100-01-01	8.470588235							
+UK GB_PP_Lynemouth Bio 2			Variable Cost	1999-01-01	2100-01-01	1							
+UK GB_PP_Lynemouth Bio 2			Bid Up Price	1999-01-01	2100-01-01	0							
+UK GB_PP_Lynemouth Bio 2			Bid Up Heat Rate	1999-01-01	2100-01-01	1.0625							
+UK GB_PP_Lynemouth Bio 2			Fuel	1999-01-01	2100-01-01	UK Station Biomass							
+UK GB_PP_Lynemouth Bio 2			Minimum Load	1999-01-01	2100-01-01	66							
+UK GB_PP_Lynemouth Bio 2			Minimum Load Bid Up Price	1999-01-01	2100-01-01	0							
+UK GB_PP_Lynemouth Bio 2			Minimum Load Bid Up Heat Rate	1999-01-01	2100-01-01	-5.929411765							
+UK GB_PP_Lynemouth Bio 3			Capacity	1973-01-01	2100-01-01	132	UK Availability Biomass	Multiply					
+UK GB_PP_Lynemouth Bio 3			Marginal Heat Rate	1973-01-01	2100-01-01	8.372093023							
+UK GB_PP_Lynemouth Bio 3			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Lynemouth Bio 3			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Lynemouth Bio 3			Bid Up Heat Rate	1973-01-01	2100-01-01	0.875							
+UK GB_PP_Lynemouth Bio 3			Fuel	1973-01-01	2100-01-01	UK Station Biomass							
+UK GB_PP_Lynemouth Bio 3			Minimum Load	1973-01-01	2100-01-01	66							
+UK GB_PP_Lynemouth Bio 3			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Lynemouth Bio 3			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-5.860465116							
+UK GB_PP_Markinch			Capacity	1973-01-01	2100-01-01	50	UK Availability Biomass	Multiply					
+UK GB_PP_Markinch			Marginal Heat Rate	1973-01-01	2100-01-01	8.275862069							
+UK GB_PP_Markinch			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Markinch			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Markinch			Bid Up Heat Rate	1973-01-01	2100-01-01	0.6875							
+UK GB_PP_Markinch			Fuel	1973-01-01	2100-01-01	UK Station Biomass							
+UK GB_PP_Markinch			Minimum Load	1973-01-01	2100-01-01	25							
+UK GB_PP_Markinch			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Markinch			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Teesside_Bio			Capacity	1973-01-01	2100-01-01	299	UK Availability Biomass	Multiply					
+UK GB_PP_Teesside_Bio			Marginal Heat Rate	1973-01-01	2100-01-01	8.181818182							
+UK GB_PP_Teesside_Bio			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Teesside_Bio			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Teesside_Bio			Bid Up Heat Rate	1973-01-01	2100-01-01	0.5							
+UK GB_PP_Teesside_Bio			Fuel	1973-01-01	2100-01-01	UK Station Biomass							
+UK GB_PP_Teesside_Bio			Minimum Load	1973-01-01	2100-01-01	149.5							
+UK GB_PP_Teesside_Bio			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Teesside_Bio			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-5.727272727							
+UK GB_PP_Baglan Bay2			Capacity	1973-01-01	2100-01-01	30	UK Availability CCGT	Multiply					
+UK GB_PP_Baglan Bay2			Marginal Heat Rate	1973-01-01	2100-01-01	9.473684211							
+UK GB_PP_Baglan Bay2			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Baglan Bay2			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Baglan Bay2			Bid Up Heat Rate	1973-01-01	2100-01-01	5							
+UK GB_PP_Baglan Bay2			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Baglan Bay2			Minimum Load	1973-01-01	2100-01-01	9							
+UK GB_PP_Baglan Bay2			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Baglan Bay2			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Fawley CoGen1			Capacity	1973-01-01	2100-01-01	125	UK Availability CCGT	Multiply					
+UK GB_PP_Fawley CoGen1			Marginal Heat Rate	1973-01-01	2100-01-01	9.473684211							
+UK GB_PP_Fawley CoGen1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Fawley CoGen1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Fawley CoGen1			Bid Up Heat Rate	1973-01-01	2100-01-01	4.928571429							
+UK GB_PP_Fawley CoGen1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Fawley CoGen1			Minimum Load	1973-01-01	2100-01-01	37.5							
+UK GB_PP_Fawley CoGen1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Fawley CoGen1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Grangemouth CHP			Capacity	1973-01-01	2100-01-01	140	UK Availability CCGT	Multiply					
+UK GB_PP_Grangemouth CHP			Marginal Heat Rate	1973-01-01	2100-01-01	9.375							
+UK GB_PP_Grangemouth CHP			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Grangemouth CHP			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Grangemouth CHP			Bid Up Heat Rate	1973-01-01	2100-01-01	4.857142857							
+UK GB_PP_Grangemouth CHP			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Grangemouth CHP			Minimum Load	1973-01-01	2100-01-01	42							
+UK GB_PP_Grangemouth CHP			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Grangemouth CHP			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Fellside1			Capacity	1973-01-01	2100-01-01	168	UK Availability CCGT	Multiply					
+UK GB_PP_Fellside1			Marginal Heat Rate	1973-01-01	2100-01-01	9.278350515							
+UK GB_PP_Fellside1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Fellside1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Fellside1			Bid Up Heat Rate	1973-01-01	2100-01-01	4.785714286							
+UK GB_PP_Fellside1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Fellside1			Minimum Load	1973-01-01	2100-01-01	50.4							
+UK GB_PP_Fellside1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Fellside1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Connahs Quay1			Capacity	1973-01-01	2100-01-01	355	UK Availability CCGT	Multiply					
+UK GB_PP_Connahs Quay1			Marginal Heat Rate	1973-01-01	2100-01-01	9.183673469							
+UK GB_PP_Connahs Quay1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Connahs Quay1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Connahs Quay1			Bid Up Heat Rate	1973-01-01	2100-01-01	4.714285714							
+UK GB_PP_Connahs Quay1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Connahs Quay1			Minimum Load	1973-01-01	2100-01-01	106.5							
+UK GB_PP_Connahs Quay1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Connahs Quay1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Connahs Quay2			Capacity	1973-01-01	2100-01-01	355	UK Availability CCGT	Multiply					
+UK GB_PP_Connahs Quay2			Marginal Heat Rate	1973-01-01	2100-01-01	9.090909091							
+UK GB_PP_Connahs Quay2			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Connahs Quay2			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Connahs Quay2			Bid Up Heat Rate	1973-01-01	2100-01-01	4.642857143							
+UK GB_PP_Connahs Quay2			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Connahs Quay2			Minimum Load	1973-01-01	2100-01-01	106.5							
+UK GB_PP_Connahs Quay2			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Connahs Quay2			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Connahs Quay3			Capacity	1973-01-01	2100-01-01	355	UK Availability CCGT	Multiply					
+UK GB_PP_Connahs Quay3			Marginal Heat Rate	1973-01-01	2100-01-01	9							
+UK GB_PP_Connahs Quay3			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Connahs Quay3			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Connahs Quay3			Bid Up Heat Rate	1973-01-01	2100-01-01	4.571428571							
+UK GB_PP_Connahs Quay3			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Connahs Quay3			Minimum Load	1973-01-01	2100-01-01	106.5							
+UK GB_PP_Connahs Quay3			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Connahs Quay3			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Connahs Quay4			Capacity	1973-01-01	2100-01-01	355	UK Availability CCGT	Multiply					
+UK GB_PP_Connahs Quay4			Marginal Heat Rate	1973-01-01	2100-01-01	8.910891089							
+UK GB_PP_Connahs Quay4			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Connahs Quay4			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Connahs Quay4			Bid Up Heat Rate	1973-01-01	2100-01-01	4.5							
+UK GB_PP_Connahs Quay4			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Connahs Quay4			Minimum Load	1973-01-01	2100-01-01	106.5							
+UK GB_PP_Connahs Quay4			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Connahs Quay4			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Seabank2			Capacity	1973-01-01	2100-01-01	375	UK Availability CCGT	Multiply					
+UK GB_PP_Seabank2			Marginal Heat Rate	1973-01-01	2100-01-01	8.823529412							
+UK GB_PP_Seabank2			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Seabank2			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Seabank2			Bid Up Heat Rate	1973-01-01	2100-01-01	4.428571429							
+UK GB_PP_Seabank2			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Seabank2			Minimum Load	1973-01-01	2100-01-01	112.5							
+UK GB_PP_Seabank2			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Seabank2			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Kings Lynn A1			Capacity	1973-01-01	2100-01-01	380	UK Availability CCGT	Multiply					
+UK GB_PP_Kings Lynn A1			Marginal Heat Rate	1973-01-01	2100-01-01	8.737864078							
+UK GB_PP_Kings Lynn A1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Kings Lynn A1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Kings Lynn A1			Bid Up Heat Rate	1973-01-01	2100-01-01	4.357142857							
+UK GB_PP_Kings Lynn A1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Kings Lynn A1			Minimum Load	1973-01-01	2100-01-01	114							
+UK GB_PP_Kings Lynn A1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Kings Lynn A1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Corby1			Capacity	1973-01-01	2100-01-01	390	UK Availability CCGT	Multiply					
+UK GB_PP_Corby1			Marginal Heat Rate	1973-01-01	2100-01-01	8.653846154							
+UK GB_PP_Corby1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Corby1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Corby1			Bid Up Heat Rate	1973-01-01	2100-01-01	4.285714286							
+UK GB_PP_Corby1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Corby1			Minimum Load	1973-01-01	2100-01-01	117							
+UK GB_PP_Corby1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Corby1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Cottam DevCentre1			Capacity	1973-01-01	2100-01-01	400	UK Availability CCGT	Multiply					
+UK GB_PP_Cottam DevCentre1			Marginal Heat Rate	1973-01-01	2100-01-01	8.571428571							
+UK GB_PP_Cottam DevCentre1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Cottam DevCentre1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Cottam DevCentre1			Bid Up Heat Rate	1973-01-01	2100-01-01	4.214285714							
+UK GB_PP_Cottam DevCentre1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Cottam DevCentre1			Minimum Load	1973-01-01	2100-01-01	120							
+UK GB_PP_Cottam DevCentre1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Cottam DevCentre1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Shoreham1			Capacity	1973-01-01	2100-01-01	400	UK Availability CCGT	Multiply					
+UK GB_PP_Shoreham1			Marginal Heat Rate	1973-01-01	2100-01-01	8.490566038							
+UK GB_PP_Shoreham1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Shoreham1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Shoreham1			Bid Up Heat Rate	1973-01-01	2100-01-01	4.142857143							
+UK GB_PP_Shoreham1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Shoreham1			Minimum Load	1973-01-01	2100-01-01	120							
+UK GB_PP_Shoreham1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Shoreham1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Saltend1			Capacity	1973-01-01	2100-01-01	400	UK Availability CCGT	Multiply					
+UK GB_PP_Saltend1			Marginal Heat Rate	1973-01-01	2100-01-01	8.411214953							
+UK GB_PP_Saltend1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Saltend1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Saltend1			Bid Up Heat Rate	1973-01-01	2100-01-01	4.071428571							
+UK GB_PP_Saltend1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Saltend1			Minimum Load	1973-01-01	2100-01-01	120							
+UK GB_PP_Saltend1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Saltend1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Saltend2			Capacity	1973-01-01	2100-01-01	400	UK Availability CCGT	Multiply					
+UK GB_PP_Saltend2			Marginal Heat Rate	1973-01-01	2100-01-01	8.333333333							
+UK GB_PP_Saltend2			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Saltend2			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Saltend2			Bid Up Heat Rate	1973-01-01	2100-01-01	4							
+UK GB_PP_Saltend2			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Saltend2			Minimum Load	1973-01-01	2100-01-01	120							
+UK GB_PP_Saltend2			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Saltend2			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Saltend3			Capacity	1973-01-01	2100-01-01	400	UK Availability CCGT	Multiply					
+UK GB_PP_Saltend3			Marginal Heat Rate	1973-01-01	2100-01-01	8.256880734							
+UK GB_PP_Saltend3			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Saltend3			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Saltend3			Bid Up Heat Rate	1973-01-01	2100-01-01	3.928571429							
+UK GB_PP_Saltend3			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Saltend3			Minimum Load	1973-01-01	2100-01-01	120							
+UK GB_PP_Saltend3			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Saltend3			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Enfield Energy1			Capacity	1973-01-01	2100-01-01	406	UK Availability CCGT	Multiply					
+UK GB_PP_Enfield Energy1			Marginal Heat Rate	1973-01-01	2100-01-01	8.181818182							
+UK GB_PP_Enfield Energy1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Enfield Energy1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Enfield Energy1			Bid Up Heat Rate	1973-01-01	2100-01-01	3.857142857							
+UK GB_PP_Enfield Energy1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Enfield Energy1			Minimum Load	1973-01-01	2100-01-01	121.8							
+UK GB_PP_Enfield Energy1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Enfield Energy1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Great Yarmouth1			Capacity	1973-01-01	2100-01-01	420	UK Availability CCGT	Multiply					
+UK GB_PP_Great Yarmouth1			Marginal Heat Rate	1973-01-01	2100-01-01	8.108108108							
+UK GB_PP_Great Yarmouth1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Great Yarmouth1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Great Yarmouth1			Bid Up Heat Rate	1973-01-01	2100-01-01	3.785714286							
+UK GB_PP_Great Yarmouth1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Great Yarmouth1			Minimum Load	1973-01-01	2100-01-01	126							
+UK GB_PP_Great Yarmouth1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Great Yarmouth1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Severn 1			Capacity	1973-01-01	2100-01-01	425	UK Availability CCGT	Multiply					
+UK GB_PP_Severn 1			Marginal Heat Rate	1973-01-01	2100-01-01	8.035714286							
+UK GB_PP_Severn 1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Severn 1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Severn 1			Bid Up Heat Rate	1973-01-01	2100-01-01	3.714285714							
+UK GB_PP_Severn 1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Severn 1			Minimum Load	1973-01-01	2100-01-01	127.5							
+UK GB_PP_Severn 1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Severn 1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Severn 2			Capacity	1973-01-01	2100-01-01	425	UK Availability CCGT	Multiply					
+UK GB_PP_Severn 2			Marginal Heat Rate	1973-01-01	2100-01-01	7.96460177							
+UK GB_PP_Severn 2			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Severn 2			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Severn 2			Bid Up Heat Rate	1973-01-01	2100-01-01	3.642857143							
+UK GB_PP_Severn 2			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Severn 2			Minimum Load	1973-01-01	2100-01-01	127.5							
+UK GB_PP_Severn 2			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Severn 2			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Grain5			Capacity	1973-01-01	2100-01-01	435	UK Availability CCGT	Multiply					
+UK GB_PP_Grain5			Marginal Heat Rate	1973-01-01	2100-01-01	7.894736842							
+UK GB_PP_Grain5			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Grain5			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Grain5			Bid Up Heat Rate	1973-01-01	2100-01-01	3.571428571							
+UK GB_PP_Grain5			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Grain5			Minimum Load	1973-01-01	2100-01-01	130.5							
+UK GB_PP_Grain5			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Grain5			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Grain6			Capacity	1973-01-01	2100-01-01	435	UK Availability CCGT	Multiply					
+UK GB_PP_Grain6			Marginal Heat Rate	1973-01-01	2100-01-01	7.826086957							
+UK GB_PP_Grain6			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Grain6			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Grain6			Bid Up Heat Rate	1973-01-01	2100-01-01	3.5							
+UK GB_PP_Grain6			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Grain6			Minimum Load	1973-01-01	2100-01-01	130.5							
+UK GB_PP_Grain6			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Grain6			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Grain7			Capacity	1973-01-01	2100-01-01	435	UK Availability CCGT	Multiply					
+UK GB_PP_Grain7			Marginal Heat Rate	1973-01-01	2100-01-01	7.75862069							
+UK GB_PP_Grain7			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Grain7			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Grain7			Bid Up Heat Rate	1973-01-01	2100-01-01	3.428571429							
+UK GB_PP_Grain7			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Grain7			Minimum Load	1973-01-01	2100-01-01	130.5							
+UK GB_PP_Grain7			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Grain7			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Pembroke 11			Capacity	1973-01-01	2100-01-01	435	UK Availability CCGT	Multiply					
+UK GB_PP_Pembroke 11			Marginal Heat Rate	1973-01-01	2100-01-01	7.692307692							
+UK GB_PP_Pembroke 11			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Pembroke 11			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Pembroke 11			Bid Up Heat Rate	1973-01-01	2100-01-01	3.357142857							
+UK GB_PP_Pembroke 11			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Pembroke 11			Minimum Load	1973-01-01	2100-01-01	130.5							
+UK GB_PP_Pembroke 11			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Pembroke 11			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Pembroke 21			Capacity	1973-01-01	2100-01-01	435	UK Availability CCGT	Multiply					
+UK GB_PP_Pembroke 21			Marginal Heat Rate	1973-01-01	2100-01-01	7.627118644							
+UK GB_PP_Pembroke 21			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Pembroke 21			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Pembroke 21			Bid Up Heat Rate	1973-01-01	2100-01-01	3.285714286							
+UK GB_PP_Pembroke 21			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Pembroke 21			Minimum Load	1973-01-01	2100-01-01	130.5							
+UK GB_PP_Pembroke 21			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Pembroke 21			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Pembroke 31			Capacity	1973-01-01	2100-01-01	435	UK Availability CCGT	Multiply					
+UK GB_PP_Pembroke 31			Marginal Heat Rate	1973-01-01	2100-01-01	7.56302521							
+UK GB_PP_Pembroke 31			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Pembroke 31			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Pembroke 31			Bid Up Heat Rate	1973-01-01	2100-01-01	3.214285714							
+UK GB_PP_Pembroke 31			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Pembroke 31			Minimum Load	1973-01-01	2100-01-01	130.5							
+UK GB_PP_Pembroke 31			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Pembroke 31			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Pembroke 41			Capacity	1973-01-01	2100-01-01	435	UK Availability CCGT	Multiply					
+UK GB_PP_Pembroke 41			Marginal Heat Rate	1973-01-01	2100-01-01	7.5							
+UK GB_PP_Pembroke 41			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Pembroke 41			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Pembroke 41			Bid Up Heat Rate	1973-01-01	2100-01-01	3.142857143							
+UK GB_PP_Pembroke 41			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Pembroke 41			Minimum Load	1973-01-01	2100-01-01	130.5							
+UK GB_PP_Pembroke 41			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Pembroke 41			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Pembroke 51			Capacity	1973-01-01	2100-01-01	435	UK Availability CCGT	Multiply					
+UK GB_PP_Pembroke 51			Marginal Heat Rate	1973-01-01	2100-01-01	7.438016529							
+UK GB_PP_Pembroke 51			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Pembroke 51			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Pembroke 51			Bid Up Heat Rate	1973-01-01	2100-01-01	3.071428571							
+UK GB_PP_Pembroke 51			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Pembroke 51			Minimum Load	1973-01-01	2100-01-01	130.5							
+UK GB_PP_Pembroke 51			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Pembroke 51			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Staythorpe1			Capacity	1973-01-01	2100-01-01	435	UK Availability CCGT	Multiply					
+UK GB_PP_Staythorpe1			Marginal Heat Rate	1973-01-01	2100-01-01	7.37704918							
+UK GB_PP_Staythorpe1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Staythorpe1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Staythorpe1			Bid Up Heat Rate	1973-01-01	2100-01-01	3							
+UK GB_PP_Staythorpe1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Staythorpe1			Minimum Load	1973-01-01	2100-01-01	130.5							
+UK GB_PP_Staythorpe1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Staythorpe1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Staythorpe1			Save Data	1973-01-01	2100-01-01	1							
+UK GB_PP_Staythorpe2			Capacity	1973-01-01	2100-01-01	435	UK Availability CCGT	Multiply					
+UK GB_PP_Staythorpe2			Marginal Heat Rate	1973-01-01	2100-01-01	7.317073171							
+UK GB_PP_Staythorpe2			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Staythorpe2			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Staythorpe2			Bid Up Heat Rate	1973-01-01	2100-01-01	2.928571429							
+UK GB_PP_Staythorpe2			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Staythorpe2			Minimum Load	1973-01-01	2100-01-01	130.5							
+UK GB_PP_Staythorpe2			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Staythorpe2			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Staythorpe3			Capacity	1973-01-01	2100-01-01	435	UK Availability CCGT	Multiply					
+UK GB_PP_Staythorpe3			Marginal Heat Rate	1973-01-01	2100-01-01	7.258064516							
+UK GB_PP_Staythorpe3			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Staythorpe3			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Staythorpe3			Bid Up Heat Rate	1973-01-01	2100-01-01	2.857142857							
+UK GB_PP_Staythorpe3			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Staythorpe3			Minimum Load	1973-01-01	2100-01-01	130.5							
+UK GB_PP_Staythorpe3			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Staythorpe3			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Staythorpe4			Capacity	1973-01-01	2100-01-01	435	UK Availability CCGT	Multiply					
+UK GB_PP_Staythorpe4			Marginal Heat Rate	1973-01-01	2100-01-01	7.2							
+UK GB_PP_Staythorpe4			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Staythorpe4			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Staythorpe4			Bid Up Heat Rate	1973-01-01	2100-01-01	2.785714286							
+UK GB_PP_Staythorpe4			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Staythorpe4			Minimum Load	1973-01-01	2100-01-01	130.5							
+UK GB_PP_Staythorpe4			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Staythorpe4			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Carrington1			Capacity	1973-01-01	2100-01-01	440	UK Availability CCGT	Multiply					
+UK GB_PP_Carrington1			Marginal Heat Rate	1973-01-01	2100-01-01	7.142857143							
+UK GB_PP_Carrington1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Carrington1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Carrington1			Bid Up Heat Rate	1973-01-01	2100-01-01	2.714285714							
+UK GB_PP_Carrington1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Carrington1			Minimum Load	1973-01-01	2100-01-01	132							
+UK GB_PP_Carrington1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Carrington1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Carrington2			Capacity	1973-01-01	2100-01-01	440	UK Availability CCGT	Multiply					
+UK GB_PP_Carrington2			Marginal Heat Rate	1973-01-01	2100-01-01	7.086614173							
+UK GB_PP_Carrington2			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Carrington2			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Carrington2			Bid Up Heat Rate	1973-01-01	2100-01-01	2.642857143							
+UK GB_PP_Carrington2			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Carrington2			Minimum Load	1973-01-01	2100-01-01	132							
+UK GB_PP_Carrington2			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Carrington2			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_West Burton2 1			Capacity	1973-01-01	2100-01-01	470	UK Availability CCGT	Multiply					
+UK GB_PP_West Burton2 1			Marginal Heat Rate	1973-01-01	2100-01-01	7.03125							
+UK GB_PP_West Burton2 1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_West Burton2 1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_West Burton2 1			Bid Up Heat Rate	1973-01-01	2100-01-01	2.571428571							
+UK GB_PP_West Burton2 1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_West Burton2 1			Minimum Load	1973-01-01	2100-01-01	141							
+UK GB_PP_West Burton2 1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_West Burton2 1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_West Burton2 2			Capacity	1973-01-01	2100-01-01	470	UK Availability CCGT	Multiply					
+UK GB_PP_West Burton2 2			Marginal Heat Rate	1973-01-01	2100-01-01	6.976744186							
+UK GB_PP_West Burton2 2			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_West Burton2 2			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_West Burton2 2			Bid Up Heat Rate	1973-01-01	2100-01-01	2.5							
+UK GB_PP_West Burton2 2			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_West Burton2 2			Minimum Load	1973-01-01	2100-01-01	141							
+UK GB_PP_West Burton2 2			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_West Burton2 2			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_West Burton2 3			Capacity	1973-01-01	2100-01-01	470	UK Availability CCGT	Multiply					
+UK GB_PP_West Burton2 3			Marginal Heat Rate	1973-01-01	2100-01-01	6.923076923							
+UK GB_PP_West Burton2 3			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_West Burton2 3			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_West Burton2 3			Bid Up Heat Rate	1973-01-01	2100-01-01	2.428571429							
+UK GB_PP_West Burton2 3			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_West Burton2 3			Minimum Load	1973-01-01	2100-01-01	141							
+UK GB_PP_West Burton2 3			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_West Burton2 3			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Immingham 21			Capacity	1973-01-01	2100-01-01	475	UK Availability CCGT	Multiply					
+UK GB_PP_Immingham 21			Marginal Heat Rate	1973-01-01	2100-01-01	6.870229008							
+UK GB_PP_Immingham 21			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Immingham 21			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Immingham 21			Bid Up Heat Rate	1973-01-01	2100-01-01	2.357142857							
+UK GB_PP_Immingham 21			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Immingham 21			Minimum Load	1973-01-01	2100-01-01	142.5							
+UK GB_PP_Immingham 21			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Immingham 21			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Baglan Bay1			Capacity	1973-01-01	2100-01-01	495	UK Availability CCGT	Multiply					
+UK GB_PP_Baglan Bay1			Marginal Heat Rate	1973-01-01	2100-01-01	6.818181818							
+UK GB_PP_Baglan Bay1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Baglan Bay1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Baglan Bay1			Bid Up Heat Rate	1973-01-01	2100-01-01	2.285714286							
+UK GB_PP_Baglan Bay1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Baglan Bay1			Minimum Load	1973-01-01	2100-01-01	148.5							
+UK GB_PP_Baglan Bay1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Baglan Bay1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_South Humber Bank2			Capacity	1973-01-01	2100-01-01	525	UK Availability CCGT	Multiply					
+UK GB_PP_South Humber Bank2			Marginal Heat Rate	1973-01-01	2100-01-01	6.766917293							
+UK GB_PP_South Humber Bank2			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_South Humber Bank2			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_South Humber Bank2			Bid Up Heat Rate	1973-01-01	2100-01-01	2.214285714							
+UK GB_PP_South Humber Bank2			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_South Humber Bank2			Minimum Load	1973-01-01	2100-01-01	157.5							
+UK GB_PP_South Humber Bank2			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_South Humber Bank2			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Didcot B6			Capacity	1973-01-01	2100-01-01	680	UK Availability CCGT	Multiply					
+UK GB_PP_Didcot B6			Marginal Heat Rate	1973-01-01	2100-01-01	6.71641791							
+UK GB_PP_Didcot B6			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Didcot B6			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Didcot B6			Bid Up Heat Rate	1973-01-01	2100-01-01	2.142857143							
+UK GB_PP_Didcot B6			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Didcot B6			Minimum Load	1973-01-01	2100-01-01	204							
+UK GB_PP_Didcot B6			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Didcot B6			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Keadby 11			Capacity	1973-01-01	2100-01-01	688	UK Availability CCGT	Multiply					
+UK GB_PP_Keadby 11			Marginal Heat Rate	1973-01-01	2100-01-01	6.666666667							
+UK GB_PP_Keadby 11			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Keadby 11			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Keadby 11			Bid Up Heat Rate	1973-01-01	2100-01-01	2.071428571							
+UK GB_PP_Keadby 11			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Keadby 11			Minimum Load	1973-01-01	2100-01-01	206.4							
+UK GB_PP_Keadby 11			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Keadby 11			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Medway1			Capacity	1973-01-01	2100-01-01	700	UK Availability CCGT	Multiply					
+UK GB_PP_Medway1			Marginal Heat Rate	1973-01-01	2100-01-01	6.617647059							
+UK GB_PP_Medway1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Medway1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Medway1			Bid Up Heat Rate	1973-01-01	2100-01-01	2							
+UK GB_PP_Medway1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Medway1			Minimum Load	1973-01-01	2100-01-01	210							
+UK GB_PP_Medway1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Medway1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Rye House1			Capacity	1973-01-01	2100-01-01	715	UK Availability CCGT	Multiply					
+UK GB_PP_Rye House1			Marginal Heat Rate	1973-01-01	2100-01-01	6.569343066							
+UK GB_PP_Rye House1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Rye House1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Rye House1			Bid Up Heat Rate	1973-01-01	2100-01-01	1.928571429							
+UK GB_PP_Rye House1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Rye House1			Minimum Load	1973-01-01	2100-01-01	214.5							
+UK GB_PP_Rye House1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Rye House1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Immingham CHP1			Capacity	1973-01-01	2100-01-01	725	UK Availability CCGT	Multiply					
+UK GB_PP_Immingham CHP1			Marginal Heat Rate	1973-01-01	2100-01-01	6.52173913							
+UK GB_PP_Immingham CHP1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Immingham CHP1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Immingham CHP1			Bid Up Heat Rate	1973-01-01	2100-01-01	1.857142857							
+UK GB_PP_Immingham CHP1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Immingham CHP1			Minimum Load	1973-01-01	2100-01-01	217.5							
+UK GB_PP_Immingham CHP1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Immingham CHP1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Didcot B5			Capacity	1973-01-01	2100-01-01	750	UK Availability CCGT	Multiply					
+UK GB_PP_Didcot B5			Marginal Heat Rate	1973-01-01	2100-01-01	6.474820144							
+UK GB_PP_Didcot B5			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Didcot B5			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Didcot B5			Bid Up Heat Rate	1973-01-01	2100-01-01	1.785714286							
+UK GB_PP_Didcot B5			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Didcot B5			Minimum Load	1973-01-01	2100-01-01	225							
+UK GB_PP_Didcot B5			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Didcot B5			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Little Barford1			Capacity	1973-01-01	2100-01-01	750	UK Availability CCGT	Multiply					
+UK GB_PP_Little Barford1			Marginal Heat Rate	1973-01-01	2100-01-01	6.428571429							
+UK GB_PP_Little Barford1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Little Barford1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Little Barford1			Bid Up Heat Rate	1973-01-01	2100-01-01	1.714285714							
+UK GB_PP_Little Barford1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Little Barford1			Minimum Load	1973-01-01	2100-01-01	225							
+UK GB_PP_Little Barford1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Little Barford1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Coryton1			Capacity	1973-01-01	2100-01-01	758	UK Availability CCGT	Multiply					
+UK GB_PP_Coryton1			Marginal Heat Rate	1973-01-01	2100-01-01	6.382978723							
+UK GB_PP_Coryton1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Coryton1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Coryton1			Bid Up Heat Rate	1973-01-01	2100-01-01	1.642857143							
+UK GB_PP_Coryton1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Coryton1			Minimum Load	1973-01-01	2100-01-01	227.4							
+UK GB_PP_Coryton1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Coryton1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_South Humber Bank1			Capacity	1973-01-01	2100-01-01	765	UK Availability CCGT	Multiply					
+UK GB_PP_South Humber Bank1			Marginal Heat Rate	1973-01-01	2100-01-01	6.338028169							
+UK GB_PP_South Humber Bank1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_South Humber Bank1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_South Humber Bank1			Bid Up Heat Rate	1973-01-01	2100-01-01	1.571428571							
+UK GB_PP_South Humber Bank1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_South Humber Bank1			Minimum Load	1973-01-01	2100-01-01	229.5							
+UK GB_PP_South Humber Bank1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_South Humber Bank1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Damhead Creek1			Capacity	1973-01-01	2100-01-01	800	UK Availability CCGT	Multiply					
+UK GB_PP_Damhead Creek1			Marginal Heat Rate	1973-01-01	2100-01-01	6.293706294							
+UK GB_PP_Damhead Creek1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Damhead Creek1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Damhead Creek1			Bid Up Heat Rate	1973-01-01	2100-01-01	1.5							
+UK GB_PP_Damhead Creek1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Damhead Creek1			Minimum Load	1973-01-01	2100-01-01	240							
+UK GB_PP_Damhead Creek1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Damhead Creek1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Rocksavage1			Capacity	1973-01-01	2100-01-01	810	UK Availability CCGT	Multiply					
+UK GB_PP_Rocksavage1			Marginal Heat Rate	1973-01-01	2100-01-01	6.25							
+UK GB_PP_Rocksavage1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Rocksavage1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Rocksavage1			Bid Up Heat Rate	1973-01-01	2100-01-01	1.428571429							
+UK GB_PP_Rocksavage1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Rocksavage1			Minimum Load	1973-01-01	2100-01-01	243							
+UK GB_PP_Rocksavage1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Rocksavage1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Seabank1			Capacity	1973-01-01	2100-01-01	810	UK Availability CCGT	Multiply					
+UK GB_PP_Seabank1			Marginal Heat Rate	1973-01-01	2100-01-01	6.206896552							
+UK GB_PP_Seabank1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Seabank1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Seabank1			Bid Up Heat Rate	1973-01-01	2100-01-01	1.357142857							
+UK GB_PP_Seabank1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Seabank1			Minimum Load	1973-01-01	2100-01-01	243							
+UK GB_PP_Seabank1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Seabank1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Sutton Bridge1			Capacity	1973-01-01	2100-01-01	810	UK Availability CCGT	Multiply					
+UK GB_PP_Sutton Bridge1			Marginal Heat Rate	1973-01-01	2100-01-01	6.164383562							
+UK GB_PP_Sutton Bridge1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Sutton Bridge1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Sutton Bridge1			Bid Up Heat Rate	1973-01-01	2100-01-01	1.285714286							
+UK GB_PP_Sutton Bridge1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Sutton Bridge1			Minimum Load	1973-01-01	2100-01-01	243							
+UK GB_PP_Sutton Bridge1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Sutton Bridge1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Marchwood1			Capacity	1973-01-01	2100-01-01	840	UK Availability CCGT	Multiply					
+UK GB_PP_Marchwood1			Marginal Heat Rate	1973-01-01	2100-01-01	6.12244898							
+UK GB_PP_Marchwood1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Marchwood1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Marchwood1			Bid Up Heat Rate	1973-01-01	2100-01-01	1.214285714							
+UK GB_PP_Marchwood1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Marchwood1			Minimum Load	1973-01-01	2100-01-01	252							
+UK GB_PP_Marchwood1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Marchwood1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Spalding1			Capacity	1973-01-01	2100-01-01	850	UK Availability CCGT	Multiply					
+UK GB_PP_Spalding1			Marginal Heat Rate	1973-01-01	2100-01-01	6.081081081							
+UK GB_PP_Spalding1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Spalding1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Spalding1			Bid Up Heat Rate	1973-01-01	2100-01-01	1.142857143							
+UK GB_PP_Spalding1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Spalding1			Minimum Load	1973-01-01	2100-01-01	255							
+UK GB_PP_Spalding1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Spalding1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Langage 1			Capacity	1973-01-01	2100-01-01	900	UK Availability CCGT	Multiply					
+UK GB_PP_Langage 1			Marginal Heat Rate	1973-01-01	2100-01-01	6.040268456							
+UK GB_PP_Langage 1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Langage 1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Langage 1			Bid Up Heat Rate	1973-01-01	2100-01-01	1.071428571							
+UK GB_PP_Langage 1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Langage 1			Minimum Load	1973-01-01	2100-01-01	270							
+UK GB_PP_Langage 1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Langage 1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-1							
+UK GB_PP_Peterhead1			Capacity	1973-01-01	2100-01-01	1150	UK Availability CCGT	Multiply					
+UK GB_PP_Peterhead1			Marginal Heat Rate	1973-01-01	2100-01-01	6							
+UK GB_PP_Peterhead1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Peterhead1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Peterhead1			Bid Up Heat Rate	1973-01-01	2100-01-01	1							
+UK GB_PP_Peterhead1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Peterhead1			Minimum Load	1973-01-01	2100-01-01	345							
+UK GB_PP_Peterhead1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Peterhead1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-3							
+UK GB_PP_Drax5			Capacity	1973-01-01	2100-01-01	645	UK Availability Hard Coal	Multiply					
+UK GB_PP_Drax5			Marginal Heat Rate	1973-01-01	2100-01-01	12.85714286							
+UK GB_PP_Drax5			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Drax5			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Drax5			Bid Up Heat Rate	1973-01-01	2100-01-01	3							
+UK GB_PP_Drax5			Fuel	1973-01-01	2100-01-01	UK Station Coal							
+UK GB_PP_Drax5			Minimum Load	1973-01-01	2100-01-01	193.5							
+UK GB_PP_Drax5			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Drax5			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-6.428571429							
+UK GB_PP_Drax6			Capacity	1973-01-01	2100-01-01	645	UK Availability Hard Coal	Multiply					
+UK GB_PP_Drax6			Marginal Heat Rate	1973-01-01	2100-01-01	12							
+UK GB_PP_Drax6			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Drax6			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Drax6			Bid Up Heat Rate	1973-01-01	2100-01-01	2.75							
+UK GB_PP_Drax6			Fuel	1973-01-01	2100-01-01	UK Station Coal							
+UK GB_PP_Drax6			Minimum Load	1973-01-01	2100-01-01	193.5							
+UK GB_PP_Drax6			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Drax6			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-6							
+UK GB_PP_Ratcliffe On Soar1			Capacity	1973-01-01	2100-01-01	495	UK Availability Hard Coal	Multiply					
+UK GB_PP_Ratcliffe On Soar1			Marginal Heat Rate	1973-01-01	2100-01-01	11.25							
+UK GB_PP_Ratcliffe On Soar1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Ratcliffe On Soar1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Ratcliffe On Soar1			Bid Up Heat Rate	1973-01-01	2100-01-01	2.5							
+UK GB_PP_Ratcliffe On Soar1			Fuel	1973-01-01	2100-01-01	UK Station Coal							
+UK GB_PP_Ratcliffe On Soar1			Minimum Load	1973-01-01	2100-01-01	148.5							
+UK GB_PP_Ratcliffe On Soar1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Ratcliffe On Soar1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-5.625							
+UK GB_PP_Ratcliffe On Soar2			Capacity	1973-01-01	2100-01-01	495	UK Availability Hard Coal	Multiply					
+UK GB_PP_Ratcliffe On Soar2			Marginal Heat Rate	1973-01-01	2100-01-01	10.58823529							
+UK GB_PP_Ratcliffe On Soar2			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Ratcliffe On Soar2			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Ratcliffe On Soar2			Bid Up Heat Rate	1973-01-01	2100-01-01	2.25							
+UK GB_PP_Ratcliffe On Soar2			Fuel	1973-01-01	2100-01-01	UK Station Coal							
+UK GB_PP_Ratcliffe On Soar2			Minimum Load	1973-01-01	2100-01-01	148.5							
+UK GB_PP_Ratcliffe On Soar2			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Ratcliffe On Soar2			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-5.294117647							
+UK GB_PP_Ratcliffe On Soar3			Capacity	1973-01-01	2100-01-01	495	UK Availability Hard Coal	Multiply					
+UK GB_PP_Ratcliffe On Soar3			Marginal Heat Rate	1973-01-01	2100-01-01	10							
+UK GB_PP_Ratcliffe On Soar3			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Ratcliffe On Soar3			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Ratcliffe On Soar3			Bid Up Heat Rate	1973-01-01	2100-01-01	2							
+UK GB_PP_Ratcliffe On Soar3			Fuel	1973-01-01	2100-01-01	UK Station Coal							
+UK GB_PP_Ratcliffe On Soar3			Minimum Load	1973-01-01	2100-01-01	148.5							
+UK GB_PP_Ratcliffe On Soar3			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Ratcliffe On Soar3			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-5							
+UK GB_PP_Ratcliffe On Soar4			Capacity	1973-01-01	2100-01-01	495	UK Availability Hard Coal	Multiply					
+UK GB_PP_Ratcliffe On Soar4			Marginal Heat Rate	1973-01-01	2100-01-01	9.473684211							
+UK GB_PP_Ratcliffe On Soar4			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Ratcliffe On Soar4			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Ratcliffe On Soar4			Bid Up Heat Rate	1973-01-01	2100-01-01	1.75							
+UK GB_PP_Ratcliffe On Soar4			Fuel	1973-01-01	2100-01-01	UK Station Coal							
+UK GB_PP_Ratcliffe On Soar4			Minimum Load	1973-01-01	2100-01-01	148.5							
+UK GB_PP_Ratcliffe On Soar4			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Ratcliffe On Soar4			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-4.736842105							
+UK GB_PP_West Burton1			Capacity	1973-01-01	2100-01-01	475	UK Availability Hard Coal	Multiply					
+UK GB_PP_West Burton1			Marginal Heat Rate	1973-01-01	2100-01-01	9							
+UK GB_PP_West Burton1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_West Burton1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_West Burton1			Bid Up Heat Rate	1973-01-01	2100-01-01	1.5							
+UK GB_PP_West Burton1			Fuel	1973-01-01	2100-01-01	UK Station Coal							
+UK GB_PP_West Burton1			Minimum Load	1973-01-01	2100-01-01	142.5							
+UK GB_PP_West Burton1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_West Burton1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-4.5							
+UK GB_PP_West Burton2			Capacity	1973-01-01	2100-01-01	490	UK Availability Hard Coal	Multiply					
+UK GB_PP_West Burton2			Marginal Heat Rate	1973-01-01	2100-01-01	8.571428571							
+UK GB_PP_West Burton2			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_West Burton2			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_West Burton2			Bid Up Heat Rate	1973-01-01	2100-01-01	1.25							
+UK GB_PP_West Burton2			Fuel	1973-01-01	2100-01-01	UK Station Coal							
+UK GB_PP_West Burton2			Minimum Load	1973-01-01	2100-01-01	147							
+UK GB_PP_West Burton2			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_West Burton2			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-4.285714286							
+UK GB_PP_West Burton3			Capacity	1973-01-01	2100-01-01	490	UK Availability Hard Coal	Multiply					
+UK GB_PP_West Burton3			Marginal Heat Rate	1973-01-01	2100-01-01	8.181818182							
+UK GB_PP_West Burton3			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_West Burton3			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_West Burton3			Bid Up Heat Rate	1973-01-01	2100-01-01	1							
+UK GB_PP_West Burton3			Fuel	1973-01-01	2100-01-01	UK Station Coal							
+UK GB_PP_West Burton3			Minimum Load	1973-01-01	2100-01-01	147							
+UK GB_PP_West Burton3			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_West Burton3			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-4.090909091							
+UK GB_PP_West Burton4			Capacity	1973-01-01	2100-01-01	475	UK Availability Hard Coal	Multiply					
+UK GB_PP_West Burton4			Marginal Heat Rate	1973-01-01	2100-01-01	8							
+UK GB_PP_West Burton4			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_West Burton4			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_West Burton4			Bid Up Heat Rate	1973-01-01	2100-01-01	0.75							
+UK GB_PP_West Burton4			Fuel	1973-01-01	2100-01-01	UK Station Coal							
+UK GB_PP_West Burton4			Minimum Load	1973-01-01	2100-01-01	142.5							
+UK GB_PP_West Burton4			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_West Burton4			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	-4							
+UK GB_PP_Dungeness B21			Capacity	1973-01-01	2100-01-01	555	UK Availability Nuclear	Multiply					
+UK GB_PP_Dungeness B21			Marginal Heat Rate	1973-01-01	2100-01-01	8.181818182							
+UK GB_PP_Dungeness B21			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Dungeness B21			Bid Up Price	1973-01-01	2100-01-01	16							
+UK GB_PP_Dungeness B21			Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Dungeness B21			Fuel	1973-01-01	2100-01-01	UK Station Uranium							
+UK GB_PP_Dungeness B21			Minimum Load	1973-01-01	2100-01-01	222							
+UK GB_PP_Dungeness B21			Minimum Load Bid Up Price	1973-01-01	2100-01-01	-200							
+UK GB_PP_Dungeness B21			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Dungeness B22			Capacity	1973-01-01	2100-01-01	555	UK Availability Nuclear	Multiply					
+UK GB_PP_Dungeness B22			Marginal Heat Rate	1973-01-01	2100-01-01	8.181818182							
+UK GB_PP_Dungeness B22			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Dungeness B22			Bid Up Price	1973-01-01	2100-01-01	15							
+UK GB_PP_Dungeness B22			Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Dungeness B22			Fuel	1973-01-01	2100-01-01	UK Station Uranium							
+UK GB_PP_Dungeness B22			Minimum Load	1973-01-01	2100-01-01	222							
+UK GB_PP_Dungeness B22			Minimum Load Bid Up Price	1973-01-01	2100-01-01	-190							
+UK GB_PP_Dungeness B22			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Hartlepool1			Capacity	1973-01-01	2100-01-01	605	UK Availability Nuclear	Multiply					
+UK GB_PP_Hartlepool1			Marginal Heat Rate	1973-01-01	2100-01-01	8.181818182							
+UK GB_PP_Hartlepool1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Hartlepool1			Bid Up Price	1973-01-01	2100-01-01	14							
+UK GB_PP_Hartlepool1			Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Hartlepool1			Fuel	1973-01-01	2100-01-01	UK Station Uranium							
+UK GB_PP_Hartlepool1			Minimum Load	1973-01-01	2100-01-01	242							
+UK GB_PP_Hartlepool1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	-180							
+UK GB_PP_Hartlepool1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Hartlepool2			Capacity	1973-01-01	2100-01-01	605	UK Availability Nuclear	Multiply					
+UK GB_PP_Hartlepool2			Marginal Heat Rate	1973-01-01	2100-01-01	8.181818182							
+UK GB_PP_Hartlepool2			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Hartlepool2			Bid Up Price	1973-01-01	2100-01-01	13							
+UK GB_PP_Hartlepool2			Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Hartlepool2			Fuel	1973-01-01	2100-01-01	UK Station Uranium							
+UK GB_PP_Hartlepool2			Minimum Load	1973-01-01	2100-01-01	242							
+UK GB_PP_Hartlepool2			Minimum Load Bid Up Price	1973-01-01	2100-01-01	-170							
+UK GB_PP_Hartlepool2			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Heysham 11			Capacity	1973-01-01	2100-01-01	575	UK Availability Nuclear	Multiply					
+UK GB_PP_Heysham 11			Marginal Heat Rate	1973-01-01	2100-01-01	8.181818182							
+UK GB_PP_Heysham 11			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Heysham 11			Bid Up Price	1973-01-01	2100-01-01	12							
+UK GB_PP_Heysham 11			Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Heysham 11			Fuel	1973-01-01	2100-01-01	UK Station Uranium							
+UK GB_PP_Heysham 11			Minimum Load	1973-01-01	2100-01-01	230							
+UK GB_PP_Heysham 11			Minimum Load Bid Up Price	1973-01-01	2100-01-01	-160							
+UK GB_PP_Heysham 11			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Heysham 12			Capacity	1973-01-01	2100-01-01	575	UK Availability Nuclear	Multiply					
+UK GB_PP_Heysham 12			Marginal Heat Rate	1973-01-01	2100-01-01	8.181818182							
+UK GB_PP_Heysham 12			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Heysham 12			Bid Up Price	1973-01-01	2100-01-01	11							
+UK GB_PP_Heysham 12			Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Heysham 12			Fuel	1973-01-01	2100-01-01	UK Station Uranium							
+UK GB_PP_Heysham 12			Minimum Load	1973-01-01	2100-01-01	230							
+UK GB_PP_Heysham 12			Minimum Load Bid Up Price	1973-01-01	2100-01-01	-150							
+UK GB_PP_Heysham 12			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Heysham 27			Capacity	1973-01-01	2100-01-01	625	UK Availability Nuclear	Multiply					
+UK GB_PP_Heysham 27			Marginal Heat Rate	1973-01-01	2100-01-01	8.181818182							
+UK GB_PP_Heysham 27			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Heysham 27			Bid Up Price	1973-01-01	2100-01-01	10							
+UK GB_PP_Heysham 27			Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Heysham 27			Fuel	1973-01-01	2100-01-01	UK Station Uranium							
+UK GB_PP_Heysham 27			Minimum Load	1973-01-01	2100-01-01	250							
+UK GB_PP_Heysham 27			Minimum Load Bid Up Price	1973-01-01	2100-01-01	-140							
+UK GB_PP_Heysham 27			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Heysham 28			Capacity	1973-01-01	2100-01-01	625	UK Availability Nuclear	Multiply					
+UK GB_PP_Heysham 28			Marginal Heat Rate	1973-01-01	2100-01-01	8.181818182							
+UK GB_PP_Heysham 28			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Heysham 28			Bid Up Price	1973-01-01	2100-01-01	9							
+UK GB_PP_Heysham 28			Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Heysham 28			Fuel	1973-01-01	2100-01-01	UK Station Uranium							
+UK GB_PP_Heysham 28			Minimum Load	1973-01-01	2100-01-01	250							
+UK GB_PP_Heysham 28			Minimum Load Bid Up Price	1973-01-01	2100-01-01	-130							
+UK GB_PP_Heysham 28			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Hinkley Point B7			Capacity	1973-01-01	2100-01-01	440	UK Availability Nuclear	Multiply					
+UK GB_PP_Hinkley Point B7			Marginal Heat Rate	1973-01-01	2100-01-01	8.181818182							
+UK GB_PP_Hinkley Point B7			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Hinkley Point B7			Bid Up Price	1973-01-01	2100-01-01	8							
+UK GB_PP_Hinkley Point B7			Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Hinkley Point B7			Fuel	1973-01-01	2100-01-01	UK Station Uranium							
+UK GB_PP_Hinkley Point B7			Minimum Load	1973-01-01	2100-01-01	176							
+UK GB_PP_Hinkley Point B7			Minimum Load Bid Up Price	1973-01-01	2100-01-01	-120							
+UK GB_PP_Hinkley Point B7			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Hinkley Point B8			Capacity	1973-01-01	2100-01-01	440	UK Availability Nuclear	Multiply					
+UK GB_PP_Hinkley Point B8			Marginal Heat Rate	1973-01-01	2100-01-01	8.181818182							
+UK GB_PP_Hinkley Point B8			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Hinkley Point B8			Bid Up Price	1973-01-01	2100-01-01	7							
+UK GB_PP_Hinkley Point B8			Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Hinkley Point B8			Fuel	1973-01-01	2100-01-01	UK Station Uranium							
+UK GB_PP_Hinkley Point B8			Minimum Load	1973-01-01	2100-01-01	176							
+UK GB_PP_Hinkley Point B8			Minimum Load Bid Up Price	1973-01-01	2100-01-01	-110							
+UK GB_PP_Hinkley Point B8			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Hunterson B1			Capacity	1973-01-01	2100-01-01	445	UK Availability Nuclear	Multiply					
+UK GB_PP_Hunterson B1			Marginal Heat Rate	1973-01-01	2100-01-01	8.181818182							
+UK GB_PP_Hunterson B1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Hunterson B1			Bid Up Price	1973-01-01	2100-01-01	6							
+UK GB_PP_Hunterson B1			Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Hunterson B1			Fuel	1973-01-01	2100-01-01	UK Station Uranium							
+UK GB_PP_Hunterson B1			Minimum Load	1973-01-01	2100-01-01	178							
+UK GB_PP_Hunterson B1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	-100							
+UK GB_PP_Hunterson B1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Hunterson B2			Capacity	1973-01-01	2100-01-01	445	UK Availability Nuclear	Multiply					
+UK GB_PP_Hunterson B2			Marginal Heat Rate	1973-01-01	2100-01-01	8.181818182							
+UK GB_PP_Hunterson B2			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Hunterson B2			Bid Up Price	1973-01-01	2100-01-01	5							
+UK GB_PP_Hunterson B2			Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Hunterson B2			Fuel	1973-01-01	2100-01-01	UK Station Uranium							
+UK GB_PP_Hunterson B2			Minimum Load	1973-01-01	2100-01-01	178							
+UK GB_PP_Hunterson B2			Minimum Load Bid Up Price	1973-01-01	2100-01-01	-90							
+UK GB_PP_Hunterson B2			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Sizewell B3			Capacity	1973-01-01	2100-01-01	610	UK Availability Nuclear	Multiply					
+UK GB_PP_Sizewell B3			Marginal Heat Rate	1973-01-01	2100-01-01	8.181818182							
+UK GB_PP_Sizewell B3			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Sizewell B3			Bid Up Price	1973-01-01	2100-01-01	4							
+UK GB_PP_Sizewell B3			Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Sizewell B3			Fuel	1973-01-01	2100-01-01	UK Station Uranium							
+UK GB_PP_Sizewell B3			Minimum Load	1973-01-01	2100-01-01	244							
+UK GB_PP_Sizewell B3			Minimum Load Bid Up Price	1973-01-01	2100-01-01	-80							
+UK GB_PP_Sizewell B3			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Sizewell B4			Capacity	1973-01-01	2100-01-01	610	UK Availability Nuclear	Multiply					
+UK GB_PP_Sizewell B4			Marginal Heat Rate	1973-01-01	2100-01-01	8.181818182							
+UK GB_PP_Sizewell B4			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Sizewell B4			Bid Up Price	1973-01-01	2100-01-01	3							
+UK GB_PP_Sizewell B4			Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Sizewell B4			Fuel	1973-01-01	2100-01-01	UK Station Uranium							
+UK GB_PP_Sizewell B4			Minimum Load	1973-01-01	2100-01-01	244							
+UK GB_PP_Sizewell B4			Minimum Load Bid Up Price	1973-01-01	2100-01-01	-70							
+UK GB_PP_Sizewell B4			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Torness1			Capacity	1973-01-01	2100-01-01	625	UK Availability Nuclear	Multiply					
+UK GB_PP_Torness1			Marginal Heat Rate	1973-01-01	2100-01-01	8.181818182							
+UK GB_PP_Torness1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Torness1			Bid Up Price	1973-01-01	2100-01-01	2							
+UK GB_PP_Torness1			Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Torness1			Fuel	1973-01-01	2100-01-01	UK Station Uranium							
+UK GB_PP_Torness1			Minimum Load	1973-01-01	2100-01-01	250							
+UK GB_PP_Torness1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	-60							
+UK GB_PP_Torness1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Torness2			Capacity	1973-01-01	2100-01-01	625	UK Availability Nuclear	Multiply					
+UK GB_PP_Torness2			Marginal Heat Rate	1973-01-01	2100-01-01	8.181818182							
+UK GB_PP_Torness2			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Torness2			Bid Up Price	1973-01-01	2100-01-01	1							
+UK GB_PP_Torness2			Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Torness2			Fuel	1973-01-01	2100-01-01	UK Station Uranium							
+UK GB_PP_Torness2			Minimum Load	1973-01-01	2100-01-01	250							
+UK GB_PP_Torness2			Minimum Load Bid Up Price	1973-01-01	2100-01-01	-50							
+UK GB_PP_Torness2			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Barra			Capacity	1973-01-01	2100-01-01	2	UK Availability OCGT	Multiply					
+UK GB_PP_Barra			Marginal Heat Rate	1973-01-01	2100-01-01	14.4							
+UK GB_PP_Barra			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Barra			Bid Up Price	1973-01-01	2100-01-01	4							
+UK GB_PP_Barra			Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Barra			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Barra			Minimum Load	1973-01-01	2100-01-01	0.4							
+UK GB_PP_Barra			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Barra			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Arnish			Capacity	1973-01-01	2100-01-01	3	UK Availability OCGT	Multiply					
+UK GB_PP_Arnish			Marginal Heat Rate	1973-01-01	2100-01-01	14.08							
+UK GB_PP_Arnish			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Arnish			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Arnish			Bid Up Heat Rate	1973-01-01	2100-01-01	3.941176471							
+UK GB_PP_Arnish			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Arnish			Minimum Load	1973-01-01	2100-01-01	0.6							
+UK GB_PP_Arnish			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Arnish			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Bowmore			Capacity	1973-01-01	2100-01-01	6	UK Availability OCGT	Multiply					
+UK GB_PP_Bowmore			Marginal Heat Rate	1973-01-01	2100-01-01	13.77391304							
+UK GB_PP_Bowmore			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Bowmore			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Bowmore			Bid Up Heat Rate	1973-01-01	2100-01-01	3.882352941							
+UK GB_PP_Bowmore			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Bowmore			Minimum Load	1973-01-01	2100-01-01	1.2							
+UK GB_PP_Bowmore			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Bowmore			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Chippenham			Capacity	1973-01-01	2100-01-01	10	UK Availability OCGT	Multiply					
+UK GB_PP_Chippenham			Marginal Heat Rate	1973-01-01	2100-01-01	13.48085106							
+UK GB_PP_Chippenham			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Chippenham			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Chippenham			Bid Up Heat Rate	1973-01-01	2100-01-01	3.823529412							
+UK GB_PP_Chippenham			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Chippenham			Minimum Load	1973-01-01	2100-01-01	2							
+UK GB_PP_Chippenham			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Chippenham			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Loch Carnan			Capacity	1973-01-01	2100-01-01	12	UK Availability OCGT	Multiply					
+UK GB_PP_Loch Carnan			Marginal Heat Rate	1973-01-01	2100-01-01	13.2							
+UK GB_PP_Loch Carnan			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Loch Carnan			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Loch Carnan			Bid Up Heat Rate	1973-01-01	2100-01-01	3.764705882							
+UK GB_PP_Loch Carnan			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Loch Carnan			Minimum Load	1973-01-01	2100-01-01	2.4							
+UK GB_PP_Loch Carnan			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Loch Carnan			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Little Barford GT			Capacity	1973-01-01	2100-01-01	17	UK Availability OCGT	Multiply					
+UK GB_PP_Little Barford GT			Marginal Heat Rate	1973-01-01	2100-01-01	12.93061224							
+UK GB_PP_Little Barford GT			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Little Barford GT			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Little Barford GT			Bid Up Heat Rate	1973-01-01	2100-01-01	3.705882353							
+UK GB_PP_Little Barford GT			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Little Barford GT			Minimum Load	1973-01-01	2100-01-01	3.4							
+UK GB_PP_Little Barford GT			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Little Barford GT			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Fiddlers FerryG1			Capacity	1973-01-01	2100-01-01	17.5	UK Availability OCGT	Multiply					
+UK GB_PP_Fiddlers FerryG1			Marginal Heat Rate	1973-01-01	2100-01-01	12.672							
+UK GB_PP_Fiddlers FerryG1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Fiddlers FerryG1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Fiddlers FerryG1			Bid Up Heat Rate	1973-01-01	2100-01-01	3.647058824							
+UK GB_PP_Fiddlers FerryG1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Fiddlers FerryG1			Minimum Load	1973-01-01	2100-01-01	3.5							
+UK GB_PP_Fiddlers FerryG1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Fiddlers FerryG1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Fiddlers FerryG3			Capacity	1973-01-01	2100-01-01	17.5	UK Availability OCGT	Multiply					
+UK GB_PP_Fiddlers FerryG3			Marginal Heat Rate	1973-01-01	2100-01-01	12.42352941							
+UK GB_PP_Fiddlers FerryG3			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Fiddlers FerryG3			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Fiddlers FerryG3			Bid Up Heat Rate	1973-01-01	2100-01-01	3.588235294							
+UK GB_PP_Fiddlers FerryG3			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Fiddlers FerryG3			Minimum Load	1973-01-01	2100-01-01	3.5							
+UK GB_PP_Fiddlers FerryG3			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Fiddlers FerryG3			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Ratcliffe On SoarG2			Capacity	1973-01-01	2100-01-01	17.5	UK Availability OCGT	Multiply					
+UK GB_PP_Ratcliffe On SoarG2			Marginal Heat Rate	1973-01-01	2100-01-01	12.18461538							
+UK GB_PP_Ratcliffe On SoarG2			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Ratcliffe On SoarG2			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Ratcliffe On SoarG2			Bid Up Heat Rate	1973-01-01	2100-01-01	3.529411765							
+UK GB_PP_Ratcliffe On SoarG2			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Ratcliffe On SoarG2			Minimum Load	1973-01-01	2100-01-01	3.5							
+UK GB_PP_Ratcliffe On SoarG2			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Ratcliffe On SoarG2			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Ratcliffe On SoarG4			Capacity	1973-01-01	2100-01-01	17.5	UK Availability OCGT	Multiply					
+UK GB_PP_Ratcliffe On SoarG4			Marginal Heat Rate	1973-01-01	2100-01-01	11.95471698							
+UK GB_PP_Ratcliffe On SoarG4			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Ratcliffe On SoarG4			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Ratcliffe On SoarG4			Bid Up Heat Rate	1973-01-01	2100-01-01	3.470588235							
+UK GB_PP_Ratcliffe On SoarG4			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Ratcliffe On SoarG4			Minimum Load	1973-01-01	2100-01-01	3.5							
+UK GB_PP_Ratcliffe On SoarG4			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Ratcliffe On SoarG4			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_West BurtonG1			Capacity	1973-01-01	2100-01-01	17.5	UK Availability OCGT	Multiply					
+UK GB_PP_West BurtonG1			Marginal Heat Rate	1973-01-01	2100-01-01	11.73333333							
+UK GB_PP_West BurtonG1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_West BurtonG1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_West BurtonG1			Bid Up Heat Rate	1973-01-01	2100-01-01	3.411764706							
+UK GB_PP_West BurtonG1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_West BurtonG1			Minimum Load	1973-01-01	2100-01-01	3.5							
+UK GB_PP_West BurtonG1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_West BurtonG1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_West BurtonG4			Capacity	1973-01-01	2100-01-01	17.5	UK Availability OCGT	Multiply					
+UK GB_PP_West BurtonG4			Marginal Heat Rate	1973-01-01	2100-01-01	11.52							
+UK GB_PP_West BurtonG4			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_West BurtonG4			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_West BurtonG4			Bid Up Heat Rate	1973-01-01	2100-01-01	3.352941176							
+UK GB_PP_West BurtonG4			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_West BurtonG4			Minimum Load	1973-01-01	2100-01-01	3.5							
+UK GB_PP_West BurtonG4			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_West BurtonG4			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Battery Point			Capacity	1973-01-01	2100-01-01	22	UK Availability OCGT	Multiply					
+UK GB_PP_Battery Point			Marginal Heat Rate	1973-01-01	2100-01-01	11.31428571							
+UK GB_PP_Battery Point			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Battery Point			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Battery Point			Bid Up Heat Rate	1973-01-01	2100-01-01	3.294117647							
+UK GB_PP_Battery Point			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Battery Point			Minimum Load	1973-01-01	2100-01-01	4.4							
+UK GB_PP_Battery Point			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Battery Point			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_DraxG10			Capacity	1973-01-01	2100-01-01	23.33333333	UK Availability OCGT	Multiply					
+UK GB_PP_DraxG10			Marginal Heat Rate	1973-01-01	2100-01-01	11.11578947							
+UK GB_PP_DraxG10			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_DraxG10			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_DraxG10			Bid Up Heat Rate	1973-01-01	2100-01-01	3.235294118							
+UK GB_PP_DraxG10			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_DraxG10			Minimum Load	1973-01-01	2100-01-01	4.666666666							
+UK GB_PP_DraxG10			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_DraxG10			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_DraxG12			Capacity	1973-01-01	2100-01-01	23.33333333	UK Availability OCGT	Multiply					
+UK GB_PP_DraxG12			Marginal Heat Rate	1973-01-01	2100-01-01	10.92413793							
+UK GB_PP_DraxG12			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_DraxG12			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_DraxG12			Bid Up Heat Rate	1973-01-01	2100-01-01	3.176470588							
+UK GB_PP_DraxG12			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_DraxG12			Minimum Load	1973-01-01	2100-01-01	4.666666666							
+UK GB_PP_DraxG12			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_DraxG12			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_DraxG9			Capacity	1973-01-01	2100-01-01	23.33333333	UK Availability OCGT	Multiply					
+UK GB_PP_DraxG9			Marginal Heat Rate	1973-01-01	2100-01-01	10.73898305							
+UK GB_PP_DraxG9			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_DraxG9			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_DraxG9			Bid Up Heat Rate	1973-01-01	2100-01-01	3.117647059							
+UK GB_PP_DraxG9			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_DraxG9			Minimum Load	1973-01-01	2100-01-01	4.666666666							
+UK GB_PP_DraxG9			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_DraxG9			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_KeadbyG1			Capacity	1973-01-01	2100-01-01	24	UK Availability OCGT	Multiply					
+UK GB_PP_KeadbyG1			Marginal Heat Rate	1973-01-01	2100-01-01	10.56							
+UK GB_PP_KeadbyG1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_KeadbyG1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_KeadbyG1			Bid Up Heat Rate	1973-01-01	2100-01-01	3.058823529							
+UK GB_PP_KeadbyG1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_KeadbyG1			Minimum Load	1973-01-01	2100-01-01	4.8							
+UK GB_PP_KeadbyG1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_KeadbyG1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Stornoway			Capacity	1973-01-01	2100-01-01	24	UK Availability OCGT	Multiply					
+UK GB_PP_Stornoway			Marginal Heat Rate	1973-01-01	2100-01-01	10.38688525							
+UK GB_PP_Stornoway			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Stornoway			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Stornoway			Bid Up Heat Rate	1973-01-01	2100-01-01	3							
+UK GB_PP_Stornoway			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Stornoway			Minimum Load	1973-01-01	2100-01-01	4.8							
+UK GB_PP_Stornoway			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Stornoway			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Didcot AG1			Capacity	1973-01-01	2100-01-01	25	UK Availability OCGT	Multiply					
+UK GB_PP_Didcot AG1			Marginal Heat Rate	1973-01-01	2100-01-01	10.21935484							
+UK GB_PP_Didcot AG1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Didcot AG1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Didcot AG1			Bid Up Heat Rate	1973-01-01	2100-01-01	2.941176471							
+UK GB_PP_Didcot AG1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Didcot AG1			Minimum Load	1973-01-01	2100-01-01	5							
+UK GB_PP_Didcot AG1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Didcot AG1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Didcot AG2			Capacity	1973-01-01	2100-01-01	25	UK Availability OCGT	Multiply					
+UK GB_PP_Didcot AG2			Marginal Heat Rate	1973-01-01	2100-01-01	10.05714286							
+UK GB_PP_Didcot AG2			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Didcot AG2			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Didcot AG2			Bid Up Heat Rate	1973-01-01	2100-01-01	2.882352941							
+UK GB_PP_Didcot AG2			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Didcot AG2			Minimum Load	1973-01-01	2100-01-01	5							
+UK GB_PP_Didcot AG2			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Didcot AG2			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Didcot AG3			Capacity	1973-01-01	2100-01-01	25	UK Availability OCGT	Multiply					
+UK GB_PP_Didcot AG3			Marginal Heat Rate	1973-01-01	2100-01-01	9.9							
+UK GB_PP_Didcot AG3			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Didcot AG3			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Didcot AG3			Bid Up Heat Rate	1973-01-01	2100-01-01	2.823529412							
+UK GB_PP_Didcot AG3			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Didcot AG3			Minimum Load	1973-01-01	2100-01-01	5							
+UK GB_PP_Didcot AG3			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Didcot AG3			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Didcot AG4			Capacity	1973-01-01	2100-01-01	25	UK Availability OCGT	Multiply					
+UK GB_PP_Didcot AG4			Marginal Heat Rate	1973-01-01	2100-01-01	9.747692308							
+UK GB_PP_Didcot AG4			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Didcot AG4			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Didcot AG4			Bid Up Heat Rate	1973-01-01	2100-01-01	2.764705882							
+UK GB_PP_Didcot AG4			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Didcot AG4			Minimum Load	1973-01-01	2100-01-01	5							
+UK GB_PP_Didcot AG4			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Didcot AG4			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Five Oaks			Capacity	1973-01-01	2100-01-01	25	UK Availability OCGT	Multiply					
+UK GB_PP_Five Oaks			Marginal Heat Rate	1973-01-01	2100-01-01	9.6							
+UK GB_PP_Five Oaks			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Five Oaks			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Five Oaks			Bid Up Heat Rate	1973-01-01	2100-01-01	2.705882353							
+UK GB_PP_Five Oaks			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Five Oaks			Minimum Load	1973-01-01	2100-01-01	5							
+UK GB_PP_Five Oaks			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Five Oaks			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Kirkwall			Capacity	1973-01-01	2100-01-01	25	UK Availability OCGT	Multiply					
+UK GB_PP_Kirkwall			Marginal Heat Rate	1973-01-01	2100-01-01	9.456716418							
+UK GB_PP_Kirkwall			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Kirkwall			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Kirkwall			Bid Up Heat Rate	1973-01-01	2100-01-01	2.647058824							
+UK GB_PP_Kirkwall			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Kirkwall			Minimum Load	1973-01-01	2100-01-01	5							
+UK GB_PP_Kirkwall			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Kirkwall			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_South Cornelly			Capacity	1973-01-01	2100-01-01	25	UK Availability OCGT	Multiply					
+UK GB_PP_South Cornelly			Marginal Heat Rate	1973-01-01	2100-01-01	9.317647059							
+UK GB_PP_South Cornelly			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_South Cornelly			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_South Cornelly			Bid Up Heat Rate	1973-01-01	2100-01-01	2.588235294							
+UK GB_PP_South Cornelly			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_South Cornelly			Minimum Load	1973-01-01	2100-01-01	5							
+UK GB_PP_South Cornelly			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_South Cornelly			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Thatcham			Capacity	1973-01-01	2100-01-01	25	UK Availability OCGT	Multiply					
+UK GB_PP_Thatcham			Marginal Heat Rate	1973-01-01	2100-01-01	9.182608696							
+UK GB_PP_Thatcham			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Thatcham			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Thatcham			Bid Up Heat Rate	1973-01-01	2100-01-01	2.529411765							
+UK GB_PP_Thatcham			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Thatcham			Minimum Load	1973-01-01	2100-01-01	5							
+UK GB_PP_Thatcham			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Thatcham			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Tiree			Capacity	1973-01-01	2100-01-01	25	UK Availability OCGT	Multiply					
+UK GB_PP_Tiree			Marginal Heat Rate	1973-01-01	2100-01-01	9.051428571							
+UK GB_PP_Tiree			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Tiree			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Tiree			Bid Up Heat Rate	1973-01-01	2100-01-01	2.470588235							
+UK GB_PP_Tiree			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Tiree			Minimum Load	1973-01-01	2100-01-01	5							
+UK GB_PP_Tiree			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Tiree			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Wheldale			Capacity	1973-01-01	2100-01-01	25	UK Availability OCGT	Multiply					
+UK GB_PP_Wheldale			Marginal Heat Rate	1973-01-01	2100-01-01	8.923943662							
+UK GB_PP_Wheldale			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Wheldale			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Wheldale			Bid Up Heat Rate	1973-01-01	2100-01-01	2.411764706							
+UK GB_PP_Wheldale			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Wheldale			Minimum Load	1973-01-01	2100-01-01	5							
+UK GB_PP_Wheldale			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Wheldale			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_GrainG1			Capacity	1973-01-01	2100-01-01	26.25	UK Availability OCGT	Multiply					
+UK GB_PP_GrainG1			Marginal Heat Rate	1973-01-01	2100-01-01	8.8							
+UK GB_PP_GrainG1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_GrainG1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_GrainG1			Bid Up Heat Rate	1973-01-01	2100-01-01	2.352941176							
+UK GB_PP_GrainG1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_GrainG1			Minimum Load	1973-01-01	2100-01-01	5.25							
+UK GB_PP_GrainG1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_GrainG1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_GrainG4			Capacity	1973-01-01	2100-01-01	26.25	UK Availability OCGT	Multiply					
+UK GB_PP_GrainG4			Marginal Heat Rate	1973-01-01	2100-01-01	8.679452055							
+UK GB_PP_GrainG4			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_GrainG4			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_GrainG4			Bid Up Heat Rate	1973-01-01	2100-01-01	2.294117647							
+UK GB_PP_GrainG4			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_GrainG4			Minimum Load	1973-01-01	2100-01-01	5.25							
+UK GB_PP_GrainG4			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_GrainG4			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Redditch			Capacity	1973-01-01	2100-01-01	29	UK Availability OCGT	Multiply					
+UK GB_PP_Redditch			Marginal Heat Rate	1973-01-01	2100-01-01	8.562162162							
+UK GB_PP_Redditch			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Redditch			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Redditch			Bid Up Heat Rate	1973-01-01	2100-01-01	2.235294118							
+UK GB_PP_Redditch			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Redditch			Minimum Load	1973-01-01	2100-01-01	5.8							
+UK GB_PP_Redditch			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Redditch			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Seabank_OCGT1			Capacity	1973-01-01	2100-01-01	35	UK Availability OCGT	Multiply					
+UK GB_PP_Seabank_OCGT1			Marginal Heat Rate	1973-01-01	2100-01-01	8.448							
+UK GB_PP_Seabank_OCGT1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Seabank_OCGT1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Seabank_OCGT1			Bid Up Heat Rate	1973-01-01	2100-01-01	2.176470588							
+UK GB_PP_Seabank_OCGT1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Seabank_OCGT1			Minimum Load	1973-01-01	2100-01-01	7							
+UK GB_PP_Seabank_OCGT1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Seabank_OCGT1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Knapton			Capacity	1973-01-01	2100-01-01	42	UK Availability OCGT	Multiply					
+UK GB_PP_Knapton			Marginal Heat Rate	1973-01-01	2100-01-01	8.336842105							
+UK GB_PP_Knapton			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Knapton			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Knapton			Bid Up Heat Rate	1973-01-01	2100-01-01	2.117647059							
+UK GB_PP_Knapton			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Knapton			Minimum Load	1973-01-01	2100-01-01	8.4							
+UK GB_PP_Knapton			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Knapton			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Burghfield			Capacity	1973-01-01	2100-01-01	45	UK Availability OCGT	Multiply					
+UK GB_PP_Burghfield			Marginal Heat Rate	1973-01-01	2100-01-01	8.228571429							
+UK GB_PP_Burghfield			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Burghfield			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Burghfield			Bid Up Heat Rate	1973-01-01	2100-01-01	2.058823529							
+UK GB_PP_Burghfield			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Burghfield			Minimum Load	1973-01-01	2100-01-01	9							
+UK GB_PP_Burghfield			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Burghfield			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Chickerell			Capacity	1973-01-01	2100-01-01	45	UK Availability OCGT	Multiply					
+UK GB_PP_Chickerell			Marginal Heat Rate	1973-01-01	2100-01-01	8.123076923							
+UK GB_PP_Chickerell			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Chickerell			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Chickerell			Bid Up Heat Rate	1973-01-01	2100-01-01	2							
+UK GB_PP_Chickerell			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Chickerell			Minimum Load	1973-01-01	2100-01-01	9							
+UK GB_PP_Chickerell			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Chickerell			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Taylors Lane2			Capacity	1973-01-01	2100-01-01	66	UK Availability OCGT	Multiply					
+UK GB_PP_Taylors Lane2			Marginal Heat Rate	1973-01-01	2100-01-01	8.020253165							
+UK GB_PP_Taylors Lane2			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Taylors Lane2			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Taylors Lane2			Bid Up Heat Rate	1973-01-01	2100-01-01	1.941176471							
+UK GB_PP_Taylors Lane2			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Taylors Lane2			Minimum Load	1973-01-01	2100-01-01	13.2							
+UK GB_PP_Taylors Lane2			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Taylors Lane2			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Taylors Lane3			Capacity	1973-01-01	2100-01-01	66	UK Availability OCGT	Multiply					
+UK GB_PP_Taylors Lane3			Marginal Heat Rate	1973-01-01	2100-01-01	7.92							
+UK GB_PP_Taylors Lane3			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Taylors Lane3			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Taylors Lane3			Bid Up Heat Rate	1973-01-01	2100-01-01	1.882352941							
+UK GB_PP_Taylors Lane3			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Taylors Lane3			Minimum Load	1973-01-01	2100-01-01	13.2							
+UK GB_PP_Taylors Lane3			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Taylors Lane3			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Lerwick			Capacity	1973-01-01	2100-01-01	67	UK Availability OCGT	Multiply					
+UK GB_PP_Lerwick			Marginal Heat Rate	1973-01-01	2100-01-01	7.822222222							
+UK GB_PP_Lerwick			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Lerwick			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Lerwick			Bid Up Heat Rate	1973-01-01	2100-01-01	1.823529412							
+UK GB_PP_Lerwick			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Lerwick			Minimum Load	1973-01-01	2100-01-01	13.4							
+UK GB_PP_Lerwick			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Lerwick			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Cowes1			Capacity	1973-01-01	2100-01-01	70	UK Availability OCGT	Multiply					
+UK GB_PP_Cowes1			Marginal Heat Rate	1973-01-01	2100-01-01	7.726829268							
+UK GB_PP_Cowes1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Cowes1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Cowes1			Bid Up Heat Rate	1973-01-01	2100-01-01	1.764705882							
+UK GB_PP_Cowes1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Cowes1			Minimum Load	1973-01-01	2100-01-01	14							
+UK GB_PP_Cowes1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Cowes1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Cowes2			Capacity	1973-01-01	2100-01-01	70	UK Availability OCGT	Multiply					
+UK GB_PP_Cowes2			Marginal Heat Rate	1973-01-01	2100-01-01	7.63373494							
+UK GB_PP_Cowes2			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Cowes2			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Cowes2			Bid Up Heat Rate	1973-01-01	2100-01-01	1.705882353							
+UK GB_PP_Cowes2			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Cowes2			Minimum Load	1973-01-01	2100-01-01	14							
+UK GB_PP_Cowes2			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Cowes2			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Brigg_OCGT			Capacity	1973-01-01	2100-01-01	100	UK Availability OCGT	Multiply					
+UK GB_PP_Brigg_OCGT			Marginal Heat Rate	1973-01-01	2100-01-01	7.542857143							
+UK GB_PP_Brigg_OCGT			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Brigg_OCGT			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Brigg_OCGT			Bid Up Heat Rate	1973-01-01	2100-01-01	1.647058824							
+UK GB_PP_Brigg_OCGT			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Brigg_OCGT			Minimum Load	1973-01-01	2100-01-01	20							
+UK GB_PP_Brigg_OCGT			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Brigg_OCGT			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Peterborough1_OCGT			Capacity	1973-01-01	2100-01-01	240	UK Availability OCGT	Multiply					
+UK GB_PP_Peterborough1_OCGT			Marginal Heat Rate	1973-01-01	2100-01-01	7.454117647							
+UK GB_PP_Peterborough1_OCGT			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Peterborough1_OCGT			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Peterborough1_OCGT			Bid Up Heat Rate	1973-01-01	2100-01-01	1.588235294							
+UK GB_PP_Peterborough1_OCGT			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Peterborough1_OCGT			Minimum Load	1973-01-01	2100-01-01	48							
+UK GB_PP_Peterborough1_OCGT			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Peterborough1_OCGT			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Killingholme_OCGT1			Capacity	1973-01-01	2100-01-01	300	UK Availability OCGT	Multiply					
+UK GB_PP_Killingholme_OCGT1			Marginal Heat Rate	1973-01-01	2100-01-01	7.36744186							
+UK GB_PP_Killingholme_OCGT1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Killingholme_OCGT1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Killingholme_OCGT1			Bid Up Heat Rate	1973-01-01	2100-01-01	1.529411765							
+UK GB_PP_Killingholme_OCGT1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Killingholme_OCGT1			Minimum Load	1973-01-01	2100-01-01	60							
+UK GB_PP_Killingholme_OCGT1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Killingholme_OCGT1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Killingholme_OCGT2			Capacity	1973-01-01	2100-01-01	300	UK Availability OCGT	Multiply					
+UK GB_PP_Killingholme_OCGT2			Marginal Heat Rate	1973-01-01	2100-01-01	7.282758621							
+UK GB_PP_Killingholme_OCGT2			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Killingholme_OCGT2			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Killingholme_OCGT2			Bid Up Heat Rate	1973-01-01	2100-01-01	1.470588235							
+UK GB_PP_Killingholme_OCGT2			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Killingholme_OCGT2			Minimum Load	1973-01-01	2100-01-01	60							
+UK GB_PP_Killingholme_OCGT2			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Killingholme_OCGT2			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Spalding_OCGT			Capacity	1973-01-01	2100-01-01	300	UK Availability OCGT	Multiply					
+UK GB_PP_Spalding_OCGT			Marginal Heat Rate	1973-01-01	2100-01-01	7.2							
+UK GB_PP_Spalding_OCGT			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Spalding_OCGT			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Spalding_OCGT			Bid Up Heat Rate	1973-01-01	2100-01-01	1.411764706							
+UK GB_PP_Spalding_OCGT			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Spalding_OCGT			Minimum Load	1973-01-01	2100-01-01	60							
+UK GB_PP_Spalding_OCGT			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Spalding_OCGT			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Existing Embedded Peaker			Capacity	1973-01-01	2100-01-01	1000	UK Availability OCGT	Multiply					
+UK GB_PP_Existing Embedded Peaker			Marginal Heat Rate	1973-01-01	2100-01-01	8.181818182							
+UK GB_PP_Existing Embedded Peaker			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Existing Embedded Peaker			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Existing Embedded Peaker			Bid Up Heat Rate	1973-01-01	2100-01-01	1.352941176							
+UK GB_PP_Existing Embedded Peaker			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Existing Embedded Peaker			Minimum Load	1973-01-01	2100-01-01	200							
+UK GB_PP_Existing Embedded Peaker			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Existing Embedded Peaker			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Peaking_Band_1			Capacity	1973-01-01	2100-01-01	980	UK Availability OCGT	Multiply					
+UK GB_PP_Peaking_Band_1			Marginal Heat Rate	1973-01-01	2100-01-01	14.4							
+UK GB_PP_Peaking_Band_1			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Peaking_Band_1			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Peaking_Band_1			Bid Up Heat Rate	1973-01-01	2100-01-01	1.294117647							
+UK GB_PP_Peaking_Band_1			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Peaking_Band_1			Minimum Load	1973-01-01	2100-01-01	196							
+UK GB_PP_Peaking_Band_1			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Peaking_Band_1			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Peaking_Band_2			Capacity	1973-01-01	2100-01-01	980	UK Availability OCGT	Multiply					
+UK GB_PP_Peaking_Band_2			Marginal Heat Rate	1973-01-01	2100-01-01	12							
+UK GB_PP_Peaking_Band_2			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Peaking_Band_2			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Peaking_Band_2			Bid Up Heat Rate	1973-01-01	2100-01-01	1.235294118							
+UK GB_PP_Peaking_Band_2			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Peaking_Band_2			Minimum Load	1973-01-01	2100-01-01	196							
+UK GB_PP_Peaking_Band_2			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Peaking_Band_2			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Peaking_Band_3			Capacity	1973-01-01	2100-01-01	980	UK Availability OCGT	Multiply					
+UK GB_PP_Peaking_Band_3			Marginal Heat Rate	1973-01-01	2100-01-01	10.28571429							
+UK GB_PP_Peaking_Band_3			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Peaking_Band_3			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Peaking_Band_3			Bid Up Heat Rate	1973-01-01	2100-01-01	1.176470588							
+UK GB_PP_Peaking_Band_3			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Peaking_Band_3			Minimum Load	1973-01-01	2100-01-01	196							
+UK GB_PP_Peaking_Band_3			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Peaking_Band_3			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Peaking_Band_4			Capacity	1973-01-01	2100-01-01	980	UK Availability OCGT	Multiply					
+UK GB_PP_Peaking_Band_4			Marginal Heat Rate	1973-01-01	2100-01-01	9							
+UK GB_PP_Peaking_Band_4			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Peaking_Band_4			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Peaking_Band_4			Bid Up Heat Rate	1973-01-01	2100-01-01	1.117647059							
+UK GB_PP_Peaking_Band_4			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Peaking_Band_4			Minimum Load	1973-01-01	2100-01-01	196							
+UK GB_PP_Peaking_Band_4			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Peaking_Band_4			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							
+UK GB_PP_Peaking_Band_5			Capacity	1973-01-01	2100-01-01	900	UK Availability OCGT	Multiply					
+UK GB_PP_Peaking_Band_5			Marginal Heat Rate	1973-01-01	2100-01-01	11.25							
+UK GB_PP_Peaking_Band_5			Variable Cost	1973-01-01	2100-01-01	1							
+UK GB_PP_Peaking_Band_5			Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Peaking_Band_5			Bid Up Heat Rate	1973-01-01	2100-01-01	1.058823529							
+UK GB_PP_Peaking_Band_5			Fuel	1973-01-01	2100-01-01	UK Station Gas							
+UK GB_PP_Peaking_Band_5			Minimum Load	1973-01-01	2100-01-01	180							
+UK GB_PP_Peaking_Band_5			Minimum Load Bid Up Price	1973-01-01	2100-01-01	0							
+UK GB_PP_Peaking_Band_5			Minimum Load Bid Up Heat Rate	1973-01-01	2100-01-01	0							

@@ -1,0 +1,65 @@
+Object_Name	Object_Type
+UK Batteries 2020	Storage
+UK Batteries 2021	Storage
+UK Batteries 2022	Storage
+UK Batteries 2023	Storage
+UK Batteries 2024	Storage
+UK Batteries 2025	Storage
+UK Batteries 2026	Storage
+UK Batteries 2027	Storage
+UK Batteries 2028	Storage
+UK Batteries 2029	Storage
+UK Batteries 2030	Storage
+UK Batteries 2031	Storage
+UK Batteries 2032	Storage
+UK Batteries 2033	Storage
+UK Batteries 2034	Storage
+UK Batteries 2035	Storage
+UK Batteries 2036	Storage
+UK Batteries 2037	Storage
+UK Batteries 2038	Storage
+UK Batteries 2039	Storage
+UK Batteries 2040	Storage
+UK Pumped Storage	Storage
+UK Batteries 2h 2020	Storage
+UK Batteries 2h 2021	Storage
+UK Batteries 2h 2022	Storage
+UK Batteries 2h 2023	Storage
+UK Batteries 2h 2024	Storage
+UK Batteries 2h 2025	Storage
+UK Batteries 2h 2026	Storage
+UK Batteries 2h 2027	Storage
+UK Batteries 2h 2028	Storage
+UK Batteries 2h 2029	Storage
+UK Batteries 2h 2030	Storage
+UK Batteries 2h 2031	Storage
+UK Batteries 2h 2032	Storage
+UK Batteries 2h 2033	Storage
+UK Batteries 2h 2034	Storage
+UK Batteries 2h 2035	Storage
+UK Batteries 2h 2036	Storage
+UK Batteries 2h 2037	Storage
+UK Batteries 2h 2038	Storage
+UK Batteries 2h 2039	Storage
+UK Batteries 2h 2040	Storage
+UK Batteries 4h 2020	Storage
+UK Batteries 4h 2021	Storage
+UK Batteries 4h 2022	Storage
+UK Batteries 4h 2023	Storage
+UK Batteries 4h 2024	Storage
+UK Batteries 4h 2025	Storage
+UK Batteries 4h 2026	Storage
+UK Batteries 4h 2027	Storage
+UK Batteries 4h 2028	Storage
+UK Batteries 4h 2029	Storage
+UK Batteries 4h 2030	Storage
+UK Batteries 4h 2031	Storage
+UK Batteries 4h 2032	Storage
+UK Batteries 4h 2033	Storage
+UK Batteries 4h 2034	Storage
+UK Batteries 4h 2035	Storage
+UK Batteries 4h 2036	Storage
+UK Batteries 4h 2037	Storage
+UK Batteries 4h 2038	Storage
+UK Batteries 4h 2039	Storage
+UK Batteries 4h 2040	Storage

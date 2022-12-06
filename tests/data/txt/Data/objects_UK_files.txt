@@ -1,0 +1,4 @@
+Object_Name	Object_Type
+UK Fuel Price File	DataSource
+UK Historic Day Ahead File	DataSource
+UK Installed Capacity File	DataSource

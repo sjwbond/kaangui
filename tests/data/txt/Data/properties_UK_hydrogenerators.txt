@@ -1,0 +1,155 @@
+Object_Name	Parent_Object	Target_Object	Property	Date_From	Date_To	Value	Variable	Variable_Effect	Timeslice	Timeslice_Index	Group_id	Priority	Scenario
+UK UK_HPP			gross_capacity	2010-01-01	2100-01-01	150							
+UK UK_HPP			conversion_rate	2010-01-01	2100-01-01	1							
+UK UK_HPP			save_data	2010-01-01	2100-01-01	1							
+UK UK_HPP			save_blocks	2010-01-01	2100-01-01	1							
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					1		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l10 p1	 .2989431	Add			1		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	10					1		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					2		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l10 p2	 .2633691	Add			2		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	10					2		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					3		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l10 p3	 .2342879	Add			3		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	10					3		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					4		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l10 p4	 .6664411	Add			4		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	10					4		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					5		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l10 p5	 .5227526	Add			5		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	10					5		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					6		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l20 p1	 .9330051	Add			6		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	20					6		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					7		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l20 p2	 .4521865	Add			7		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	20					7		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					8		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l20 p3	 .5823253	Add			8		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	20					8		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					9		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l20 p4	 .3163596	Add			9		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	20					9		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					10		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l20 p5	 .1784048	Add			10		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	20					10		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					11		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l30 p1	 8.732527E-02	Add			11		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	30					11		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					12		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l30 p2	 .8128954	Add			12		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	30					12		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					13		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l30 p3	 .4666904	Add			13		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	30					13		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					14		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l30 p4	 .4512894	Add			14		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	30					14		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					15		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l30 p5	 .3470406	Add			15		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	30					15		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					16		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l40 p1	 4.864204E-02	Add			16		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	40					16		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					17		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l40 p2	 .9647728	Add			17		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	40					17		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					18		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l40 p3	 .5910754	Add			18		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	40					18		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					19		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l40 p4	 .275583	Add			19		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	40					19		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					20		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l40 p5	 .4693137	Add			20		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	40					20		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					21		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l50 p1	 .3338612	Add			21		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	50					21		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					22		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l50 p2	 .8404996	Add			22		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	50					22		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					23		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l50 p3	 .707242	Add			23		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	50					23		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					24		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l50 p4	 .8845419	Add			24		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	50					24		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					25		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l50 p5	 .2075616	Add			25		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	50					25		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					26		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l60 p1	 .1112442	Add			26		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	60					26		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					27		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l60 p2	 .4694712	Add			27		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	60					27		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					28		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l60 p3	 .1244656	Add			28		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	60					28		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					29		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l60 p4	 .1579564	Add			29		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	60					29		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					30		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l60 p5	 .4995615	Add			30		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	60					30		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					31		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l70 p1	 .8360133	Add			31		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	70					31		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					32		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l70 p2	 .6803569	Add			32		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	70					32		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					33		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l70 p3	 .7737299	Add			33		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	70					33		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					34		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l70 p4	 5.189943E-02	Add			34		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	70					34		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					35		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l70 p5	 .230025	Add			35		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	70					35		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					36		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l80 p1	 .5952455	Add			36		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	80					36		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					37		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l80 p2	 .9882925	Add			37		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	80					37		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					38		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l80 p3	 .7805259	Add			38		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	80					38		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					39		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l80 p4	 .1772022	Add			39		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	80					39		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					40		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l80 p5	 .604544	Add			40		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	80					40		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					41		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l90 p1	 .6579066	Add			41		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	90					41		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					42		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l90 p2	 .9291544	Add			42		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	90					42		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					43		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l90 p3	 .5089046	Add			43		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	90					43		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					44		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l90 p4	 .526673	Add			44		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	90					44		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					45		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l90 p5	 .3898109	Add			45		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	90					45		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					46		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l100 p1	 .4885685	Add			46		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	100					46		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					47		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l100 p2	 .8152813	Add			47		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	100					47		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					48		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l100 p3	 .9036855	Add			48		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	100					48		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					49		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l100 p4	 .6203457	Add			49		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	100					49		
+UK UK_HPP			offer_volume_percent	2010-01-01	2100-01-01	20					50		
+UK UK_HPP			offer_price	2010-01-01	2100-01-01	UK Hydro Price l100 p5	 .9622474	Add			50		
+UK UK_HPP			offer_volume_storage_level_percent	2010-01-01	2100-01-01	100					50		

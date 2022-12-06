@@ -1,0 +1,391 @@
+Object_Name	Parent_Object
+UK RWE Rhyd-Y-Groes	UK Onshore Generators
+UK RWE Rhyd-Y-Groes	UK RWE Onshore Generators
+UK RWE Rhyd-Y-Groes	UK RWE Generators
+UK RWE Rhyd-Y-Groes	UK
+UK RWE Royd Moor	UK Onshore Generators
+UK RWE Royd Moor	UK RWE Onshore Generators
+UK RWE Royd Moor	UK RWE Generators
+UK RWE Royd Moor	UK
+UK RWE Bowbeat Emly Bank	UK Onshore Generators
+UK RWE Bowbeat Emly Bank	UK RWE Onshore Generators
+UK RWE Bowbeat Emly Bank	UK RWE Generators
+UK RWE Bowbeat Emly Bank	UK
+UK RWE Deucheran Hill	UK Onshore Generators
+UK RWE Deucheran Hill	UK RWE Onshore Generators
+UK RWE Deucheran Hill	UK RWE Generators
+UK RWE Deucheran Hill	UK
+UK RWE Bowbeat Roughside	UK Onshore Generators
+UK RWE Bowbeat Roughside	UK RWE Onshore Generators
+UK RWE Bowbeat Roughside	UK RWE Generators
+UK RWE Bowbeat Roughside	UK
+UK RWE Out Newton	UK Onshore Generators
+UK RWE Out Newton	UK RWE Onshore Generators
+UK RWE Out Newton	UK RWE Generators
+UK RWE Out Newton	UK
+UK RWE Scroby Sands	UK Offshore Generators
+UK RWE Scroby Sands	UK RWE Offshore Generators
+UK RWE Scroby Sands	UK RWE Generators
+UK RWE Scroby Sands	UK
+UK RWE Harehill	UK Onshore Generators
+UK RWE Harehill	UK RWE Onshore Generators
+UK RWE Harehill	UK RWE Generators
+UK RWE Harehill	UK
+UK RWE Harehill II	UK Onshore Generators
+UK RWE Harehill II	UK RWE Onshore Generators
+UK RWE Harehill II	UK RWE Generators
+UK RWE Harehill II	UK
+UK RWE High Volts	UK Onshore Generators
+UK RWE High Volts	UK RWE Onshore Generators
+UK RWE High Volts	UK RWE Generators
+UK RWE High Volts	UK
+UK RWE High Volts II	UK Onshore Generators
+UK RWE High Volts II	UK RWE Onshore Generators
+UK RWE High Volts II	UK RWE Generators
+UK RWE High Volts II	UK
+UK RWE Holmside	UK Onshore Generators
+UK RWE Holmside	UK RWE Onshore Generators
+UK RWE Holmside	UK RWE Generators
+UK RWE Holmside	UK
+UK RWE Holmside	UK Onshore Generators
+UK RWE Holmside	UK RWE Onshore Generators
+UK RWE Holmside	UK RWE Generators
+UK RWE Holmside	UK
+UK RWE Holmside II	UK Onshore Generators
+UK RWE Holmside II	UK RWE Onshore Generators
+UK RWE Holmside II	UK RWE Generators
+UK RWE Holmside II	UK
+UK RWE Burgar Hill	UK Onshore Generators
+UK RWE Burgar Hill	UK RWE Onshore Generators
+UK RWE Burgar Hill	UK RWE Generators
+UK RWE Burgar Hill	UK
+UK RWE Hameldon Hill	UK Onshore Generators
+UK RWE Hameldon Hill	UK RWE Onshore Generators
+UK RWE Hameldon Hill	UK RWE Generators
+UK RWE Hameldon Hill	UK
+UK RWE Stags Holt	UK Onshore Generators
+UK RWE Stags Holt	UK RWE Onshore Generators
+UK RWE Stags Holt	UK RWE Generators
+UK RWE Stags Holt	UK
+UK RWE The Hollies	UK Onshore Generators
+UK RWE The Hollies	UK RWE Onshore Generators
+UK RWE The Hollies	UK RWE Generators
+UK RWE The Hollies	UK
+UK RWE Knabs Ridge	UK Onshore Generators
+UK RWE Knabs Ridge	UK RWE Onshore Generators
+UK RWE Knabs Ridge	UK RWE Generators
+UK RWE Knabs Ridge	UK
+UK RWE Bilbster	UK Onshore Generators
+UK RWE Bilbster	UK RWE Onshore Generators
+UK RWE Bilbster	UK RWE Generators
+UK RWE Bilbster	UK
+UK RWE Little Cheyne Court	UK Onshore Generators
+UK RWE Little Cheyne Court	UK RWE Onshore Generators
+UK RWE Little Cheyne Court	UK RWE Generators
+UK RWE Little Cheyne Court	UK
+UK RWE Rhyl Flats	UK Offshore Generators
+UK RWE Rhyl Flats	UK RWE Offshore Generators
+UK RWE Rhyl Flats	UK RWE Generators
+UK RWE Rhyl Flats	UK
+UK RWE Robin Rigg West	UK Offshore Generators
+UK RWE Robin Rigg West	UK RWE Offshore Generators
+UK RWE Robin Rigg West	UK RWE Generators
+UK RWE Robin Rigg West	UK
+UK RWE An Suidhe	UK Onshore Generators
+UK RWE An Suidhe	UK RWE Onshore Generators
+UK RWE An Suidhe	UK RWE Generators
+UK RWE An Suidhe	UK
+UK RWE Robin Rigg East	UK Offshore Generators
+UK RWE Robin Rigg East	UK RWE Offshore Generators
+UK RWE Robin Rigg East	UK RWE Generators
+UK RWE Robin Rigg East	UK
+UK RWE Haswell Moor	UK Onshore Generators
+UK RWE Haswell Moor	UK RWE Onshore Generators
+UK RWE Haswell Moor	UK RWE Generators
+UK RWE Haswell Moor	UK
+UK RWE Haswell Moor II	UK Onshore Generators
+UK RWE Haswell Moor II	UK RWE Onshore Generators
+UK RWE Haswell Moor II	UK RWE Generators
+UK RWE Haswell Moor II	UK
+UK RWE Lindhurst	UK Onshore Generators
+UK RWE Lindhurst	UK RWE Onshore Generators
+UK RWE Lindhurst	UK RWE Generators
+UK RWE Lindhurst	UK
+UK RWE Lochelbank	UK Onshore Generators
+UK RWE Lochelbank	UK RWE Onshore Generators
+UK RWE Lochelbank	UK RWE Generators
+UK RWE Lochelbank	UK
+UK RWE Greater Gabbard	UK Offshore Generators
+UK RWE Greater Gabbard	UK RWE Offshore Generators
+UK RWE Greater Gabbard	UK RWE Generators
+UK RWE Greater Gabbard	UK
+UK RWE Great Eppleton	UK Onshore Generators
+UK RWE Great Eppleton	UK RWE Onshore Generators
+UK RWE Great Eppleton	UK RWE Generators
+UK RWE Great Eppleton	UK
+UK RWE Great Eppleton II	UK Onshore Generators
+UK RWE Great Eppleton II	UK RWE Onshore Generators
+UK RWE Great Eppleton II	UK RWE Generators
+UK RWE Great Eppleton II	UK
+UK RWE Hellrigg	UK Onshore Generators
+UK RWE Hellrigg	UK RWE Onshore Generators
+UK RWE Hellrigg	UK RWE Generators
+UK RWE Hellrigg	UK
+UK RWE Butterwick Moor I	UK Onshore Generators
+UK RWE Butterwick Moor I	UK RWE Onshore Generators
+UK RWE Butterwick Moor I	UK RWE Generators
+UK RWE Butterwick Moor I	UK
+UK RWE Butterwick Moor II	UK Onshore Generators
+UK RWE Butterwick Moor II	UK RWE Onshore Generators
+UK RWE Butterwick Moor II	UK RWE Generators
+UK RWE Butterwick Moor II	UK
+UK RWE Butterwick Moor Wind Farm	UK Onshore Generators
+UK RWE Butterwick Moor Wind Farm	UK RWE Onshore Generators
+UK RWE Butterwick Moor Wind Farm	UK RWE Generators
+UK RWE Butterwick Moor Wind Farm	UK
+UK RWE Novar 2	UK Onshore Generators
+UK RWE Novar 2	UK RWE Onshore Generators
+UK RWE Novar 2	UK RWE Generators
+UK RWE Novar 2	UK
+UK RWE Tween Bridge	UK Onshore Generators
+UK RWE Tween Bridge	UK RWE Onshore Generators
+UK RWE Tween Bridge	UK RWE Generators
+UK RWE Tween Bridge	UK
+UK RWE Kiln Pit Hill	UK Onshore Generators
+UK RWE Kiln Pit Hill	UK RWE Onshore Generators
+UK RWE Kiln Pit Hill	UK RWE Generators
+UK RWE Kiln Pit Hill	UK
+UK RWE Camster	UK Onshore Generators
+UK RWE Camster	UK RWE Onshore Generators
+UK RWE Camster	UK RWE Generators
+UK RWE Camster	UK
+UK RWE Rosehall	UK Onshore Generators
+UK RWE Rosehall	UK RWE Onshore Generators
+UK RWE Rosehall	UK RWE Generators
+UK RWE Rosehall	UK
+UK RWE Bradwell	UK Onshore Generators
+UK RWE Bradwell	UK RWE Onshore Generators
+UK RWE Bradwell	UK RWE Generators
+UK RWE Bradwell	UK
+UK RWE London Array 1	UK Offshore Generators
+UK RWE London Array 1	UK RWE Offshore Generators
+UK RWE London Array 1	UK RWE Generators
+UK RWE London Array 1	UK
+UK RWE London Array 2	UK Offshore Generators
+UK RWE London Array 2	UK RWE Offshore Generators
+UK RWE London Array 2	UK RWE Generators
+UK RWE London Array 2	UK
+UK RWE London Array 3	UK Offshore Generators
+UK RWE London Array 3	UK RWE Offshore Generators
+UK RWE London Array 3	UK RWE Generators
+UK RWE London Array 3	UK
+UK RWE London Array 4	UK Offshore Generators
+UK RWE London Array 4	UK RWE Offshore Generators
+UK RWE London Array 4	UK RWE Generators
+UK RWE London Array 4	UK
+UK RWE Middlemoor	UK Onshore Generators
+UK RWE Middlemoor	UK RWE Onshore Generators
+UK RWE Middlemoor	UK RWE Generators
+UK RWE Middlemoor	UK
+UK RWE Gwynt y Mor	UK Offshore Generators
+UK RWE Gwynt y Mor	UK RWE Offshore Generators
+UK RWE Gwynt y Mor	UK RWE Generators
+UK RWE Gwynt y Mor	UK
+UK RWE Hameldon Hill Extension	UK Onshore Generators
+UK RWE Hameldon Hill Extension	UK RWE Onshore Generators
+UK RWE Hameldon Hill Extension	UK RWE Generators
+UK RWE Hameldon Hill Extension	UK
+UK RWE Goole Fields A	UK Onshore Generators
+UK RWE Goole Fields A	UK RWE Onshore Generators
+UK RWE Goole Fields A	UK RWE Generators
+UK RWE Goole Fields A	UK
+UK RWE Humber 1	UK Offshore Generators
+UK RWE Humber 1	UK RWE Offshore Generators
+UK RWE Humber 1	UK RWE Generators
+UK RWE Humber 1	UK
+UK RWE Humber 2	UK Offshore Generators
+UK RWE Humber 2	UK RWE Offshore Generators
+UK RWE Humber 2	UK RWE Generators
+UK RWE Humber 2	UK
+UK RWE Goole Fields B	UK Onshore Generators
+UK RWE Goole Fields B	UK RWE Onshore Generators
+UK RWE Goole Fields B	UK RWE Generators
+UK RWE Goole Fields B	UK
+UK RWE Rampion 1	UK Offshore Generators
+UK RWE Rampion 1	UK RWE Offshore Generators
+UK RWE Rampion 1	UK RWE Generators
+UK RWE Rampion 1	UK
+UK RWE Rampion 2	UK Offshore Generators
+UK RWE Rampion 2	UK RWE Offshore Generators
+UK RWE Rampion 2	UK RWE Generators
+UK RWE Rampion 2	UK
+UK RWE Brechfa Forest West	UK Onshore Generators
+UK RWE Brechfa Forest West	UK RWE Onshore Generators
+UK RWE Brechfa Forest West	UK RWE Generators
+UK RWE Brechfa Forest West	UK
+UK RWE Galloper	UK Offshore Generators
+UK RWE Galloper	UK RWE Offshore Generators
+UK RWE Galloper	UK RWE Generators
+UK RWE Galloper	UK
+UK RWE Clocaenog Forest	UK Onshore Generators
+UK RWE Clocaenog Forest	UK RWE Onshore Generators
+UK RWE Clocaenog Forest	UK RWE Generators
+UK RWE Clocaenog Forest	UK
+UK RWE Mynydd Y Gwair	UK Onshore Generators
+UK RWE Mynydd Y Gwair	UK RWE Onshore Generators
+UK RWE Mynydd Y Gwair	UK RWE Generators
+UK RWE Mynydd Y Gwair	UK
+UK RWE Bad a Cheo	UK Onshore Generators
+UK RWE Bad a Cheo	UK RWE Onshore Generators
+UK RWE Bad a Cheo	UK RWE Generators
+UK RWE Bad a Cheo	UK
+UK RWE Triton Knoll	UK Offshore Generators
+UK RWE Triton Knoll	UK RWE Offshore Generators
+UK RWE Triton Knoll	UK RWE Generators
+UK RWE Triton Knoll	UK
+UK RWE Benbrack	UK Onshore Generators
+UK RWE Benbrack	UK RWE Onshore Generators
+UK RWE Benbrack	UK RWE Generators
+UK RWE Benbrack	UK
+UK RWE Enoch Hill	UK Onshore Generators
+UK RWE Enoch Hill	UK RWE Onshore Generators
+UK RWE Enoch Hill	UK RWE Generators
+UK RWE Enoch Hill	UK
+UK RWE Golticlay	UK Onshore Generators
+UK RWE Golticlay	UK RWE Onshore Generators
+UK RWE Golticlay	UK RWE Generators
+UK RWE Golticlay	UK
+UK RWE Sofia	UK Offshore Generators
+UK RWE Sofia	UK RWE Offshore Generators
+UK RWE Sofia	UK RWE Generators
+UK RWE Sofia	UK
+UK RWE Clachaig Glen	UK Onshore Generators
+UK RWE Clachaig Glen	UK RWE Onshore Generators
+UK RWE Clachaig Glen	UK RWE Generators
+UK RWE Clachaig Glen	UK
+UK RWE Cyfyngedig	UK Onshore Generators
+UK RWE Cyfyngedig	UK RWE Onshore Generators
+UK RWE Cyfyngedig	UK RWE Generators
+UK RWE Cyfyngedig	UK
+UK RWE Strathy Wood	UK Onshore Generators
+UK RWE Strathy Wood	UK RWE Onshore Generators
+UK RWE Strathy Wood	UK RWE Generators
+UK RWE Strathy Wood	UK
+UK RWE Camster ll	UK Onshore Generators
+UK RWE Camster ll	UK RWE Onshore Generators
+UK RWE Camster ll	UK RWE Generators
+UK RWE Camster ll	UK
+UK RWE Enoch Hill II	UK Onshore Generators
+UK RWE Enoch Hill II	UK RWE Onshore Generators
+UK RWE Enoch Hill II	UK RWE Generators
+UK RWE Enoch Hill II	UK
+UK RWE Lorg	UK Onshore Generators
+UK RWE Lorg	UK RWE Onshore Generators
+UK RWE Lorg	UK RWE Generators
+UK RWE Lorg	UK
+UK RWE Pen March	UK Onshore Generators
+UK RWE Pen March	UK RWE Onshore Generators
+UK RWE Pen March	UK RWE Generators
+UK RWE Pen March	UK
+UK RWE Stemster	UK Onshore Generators
+UK RWE Stemster	UK RWE Onshore Generators
+UK RWE Stemster	UK RWE Generators
+UK RWE Stemster	UK
+UK RWE Abertillery	UK Onshore Generators
+UK RWE Abertillery	UK RWE Onshore Generators
+UK RWE Abertillery	UK RWE Generators
+UK RWE Abertillery	UK
+UK RWE Eredine	UK Onshore Generators
+UK RWE Eredine	UK RWE Onshore Generators
+UK RWE Eredine	UK RWE Generators
+UK RWE Eredine	UK
+UK RWE Daer	UK Onshore Generators
+UK RWE Daer	UK RWE Onshore Generators
+UK RWE Daer	UK RWE Generators
+UK RWE Daer	UK
+UK RWE Gaerwen	UK Onshore Generators
+UK RWE Gaerwen	UK RWE Onshore Generators
+UK RWE Gaerwen	UK RWE Generators
+UK RWE Gaerwen	UK
+UK RWE Lorne	UK Onshore Generators
+UK RWE Lorne	UK RWE Onshore Generators
+UK RWE Lorne	UK RWE Generators
+UK RWE Lorne	UK
+UK RWE Struie	UK Onshore Generators
+UK RWE Struie	UK RWE Onshore Generators
+UK RWE Struie	UK RWE Generators
+UK RWE Struie	UK
+UK Sofia	UK Offshore Generators
+UK Sofia	UK
+UK Galloper	UK Offshore Generators
+UK Galloper	UK
+UK Triton Knoll	UK Offshore Generators
+UK Triton Knoll	UK
+UK Kentish Flats	UK Offshore Generators
+UK Kentish Flats	UK
+UK Barrow	UK Offshore Generators
+UK Barrow	UK
+UK Little Cheyne Court	UK Onshore Generators
+UK Little Cheyne Court	UK
+UK Burbo	UK Offshore Generators
+UK Burbo	UK
+UK Lynn	UK Offshore Generators
+UK Lynn	UK
+UK Rhyl Flats	UK Offshore Generators
+UK Rhyl Flats	UK
+UK Gunfleet Sands 1-2	UK Offshore Generators
+UK Gunfleet Sands 1-2	UK
+UK Thanet	UK Offshore Generators
+UK Thanet	UK
+UK Greater Gabbard	UK Offshore Generators
+UK Greater Gabbard	UK
+UK Ormonde	UK Offshore Generators
+UK Ormonde	UK
+UK Walney 1-2	UK Offshore Generators
+UK Walney 1-2	UK
+UK Sheringham Shoal 1	UK Offshore Generators
+UK Sheringham Shoal 1	UK
+UK Sheringham Shoal 2	UK Offshore Generators
+UK Sheringham Shoal 2	UK
+UK London Array	UK Offshore Generators
+UK London Array	UK
+UK Lincs	UK Offshore Generators
+UK Lincs	UK
+UK Teesside	UK Offshore Generators
+UK Teesside	UK
+UK Gwynt y Mor	UK Offshore Generators
+UK Gwynt y Mor	UK
+UK West of Duddon Sands	UK Offshore Generators
+UK West of Duddon Sands	UK
+UK Kentish Flats Extension	UK Offshore Generators
+UK Kentish Flats Extension	UK
+UK Westermost Rough	UK Offshore Generators
+UK Westermost Rough	UK
+UK Burbo Extension	UK Offshore Generators
+UK Burbo Extension	UK
+UK Dudgeon 1	UK Offshore Generators
+UK Dudgeon 1	UK
+UK Dudgeon 2	UK Offshore Generators
+UK Dudgeon 2	UK
+UK Dudgeon 3	UK Offshore Generators
+UK Dudgeon 3	UK
+UK Dudgeon 4	UK Offshore Generators
+UK Dudgeon 4	UK
+UK Hywind 1	UK Offshore Generators
+UK Hywind 1	UK
+UK Walney 3	UK Offshore Generators
+UK Walney 3	UK
+UK Rampion	UK Offshore Generators
+UK Rampion	UK
+UK Aberdeen	UK Offshore Generators
+UK Aberdeen	UK
+UK Beatrice	UK Offshore Generators
+UK Beatrice	UK
+UK Blyth	UK Offshore Generators
+UK Blyth	UK
+UK Race Bank	UK Offshore Generators
+UK Race Bank	UK
+UK Walney 4	UK Offshore Generators
+UK Walney 4	UK
+UK Hornsea 1	UK Offshore Generators
+UK Hornsea 1	UK

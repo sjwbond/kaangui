@@ -1,0 +1,25 @@
+Object_Name	Object_Type
+UK PVSAT 2681 51.0 -3.75 Generator	Generator
+UK PVSAT 2681 51.0 -3.75 Capacity Factor	Variable
+UK PVSAT 2681 51.0 -3.75 File	DataSource
+UK PVSAT 2681 51.0 -3.75 TS	DBTimeSeries
+UK PVSAT 2684 51.0 -1.875 Generator	Generator
+UK PVSAT 2684 51.0 -1.875 Capacity Factor	Variable
+UK PVSAT 2684 51.0 -1.875 File	DataSource
+UK PVSAT 2684 51.0 -1.875 TS	DBTimeSeries
+UK PVSAT 2687 51.0 0.0 Generator	Generator
+UK PVSAT 2687 51.0 0.0 Capacity Factor	Variable
+UK PVSAT 2687 51.0 0.0 File	DataSource
+UK PVSAT 2687 51.0 0.0 TS	DBTimeSeries
+UK PVSAT 2860 52.0 -3.125 Generator	Generator
+UK PVSAT 2860 52.0 -3.125 Capacity Factor	Variable
+UK PVSAT 2860 52.0 -3.125 File	DataSource
+UK PVSAT 2860 52.0 -3.125 TS	DBTimeSeries
+UK PVSAT 2863 52.0 -1.25 Generator	Generator
+UK PVSAT 2863 52.0 -1.25 Capacity Factor	Variable
+UK PVSAT 2863 52.0 -1.25 File	DataSource
+UK PVSAT 2863 52.0 -1.25 TS	DBTimeSeries
+UK PVSAT 2866 52.0 0.625 Generator	Generator
+UK PVSAT 2866 52.0 0.625 Capacity Factor	Variable
+UK PVSAT 2866 52.0 0.625 File	DataSource
+UK PVSAT 2866 52.0 0.625 TS	DBTimeSeries

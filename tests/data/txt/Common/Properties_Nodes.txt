@@ -1,0 +1,195 @@
+Object_Name	Parent_Object	Target_Object	Property	Date_From	Date_To	Value	Variable	Variable_Effect	Timeslice	Timeslice_Index	Group_id	Priority	Scenario
+ES CCGT Generators			Save Blocks	2010-01-01	2100-01-01	1							
+ES Hard Coal Generators			Save Blocks	2010-01-01	2100-01-01	1							
+ES Nuclear Generators			Save Blocks	2010-01-01	2100-01-01	1							
+ES Gas Generators			Save Blocks	2010-01-01	2100-01-01	1							
+PT CCGT Generators			Save Blocks	2010-01-01	2100-01-01	1							
+PT Hard Coal Generators			Save Blocks	2010-01-01	2100-01-01	1							
+PT Nuclear Generators			Save Blocks	2010-01-01	2100-01-01	1							
+PT Gas Generators			Save Blocks	2010-01-01	2100-01-01	1							
+FR CCGT Generators			Save Blocks	2010-01-01	2100-01-01	1							
+FR Hard Coal Generators			Save Blocks	2010-01-01	2100-01-01	1							
+FR Nuclear Generators			Save Blocks	2010-01-01	2100-01-01	1							
+FR Gas Generators			Save Blocks	2010-01-01	2100-01-01	1							
+FR Onshore Generators			Save Blocks	2010-01-01	2100-01-01	1							
+ES Onshore Generators			Save Blocks	2010-01-01	2100-01-01	1							
+PT Onshore Generators			Save Blocks	2010-01-01	2100-01-01	1							
+FR Solar Generators			Save Blocks	2010-01-01	2100-01-01	1							
+ES Solar Generators			Save Blocks	2010-01-01	2100-01-01	1							
+PT Solar Generators			Save Blocks	2010-01-01	2100-01-01	1							
+DE CCGT Generators			Save Blocks	2010-01-01	2100-01-01	1							
+DE Hard Coal Generators			Save Blocks	2010-01-01	2100-01-01	1							
+DE Nuclear Generators			Save Blocks	2010-01-01	2100-01-01	1							
+DE Gas Generators			Save Blocks	2010-01-01	2100-01-01	1							
+DE Onshore Generators			Save Blocks	2010-01-01	2100-01-01	1							
+DE Solar Generators			Save Blocks	2010-01-01	2100-01-01	1							
+UK CCGT Generators			Save Blocks	2010-01-01	2100-01-01	1							
+UK Hard Coal Generators			Save Blocks	2010-01-01	2100-01-01	1							
+UK Nuclear Generators			Save Blocks	2010-01-01	2100-01-01	1							
+UK Gas Generators			Save Blocks	2010-01-01	2100-01-01	1							
+UK Onshore Generators			Save Blocks	2010-01-01	2100-01-01	1							
+UK Solar Generators			Save Blocks	2010-01-01	2100-01-01	1							
+DE North-Middle	DE North	DE Middle	Capacity	2000-01-01	2100-01-01	14000							
+DE Middle-North	DE Middle	DE North	Capacity	2000-01-01	2100-01-01	14000							
+DE Middle-South	DE Middle	DE South	Capacity	2000-01-01	2100-01-01	10000							
+DE South-Middle	DE South	DE Middle	Capacity	2000-01-01	2100-01-01	10000							
+NL-DE Middle	NL	DE Middle	Capacity	2000-01-01	2100-01-01	4000							
+DE Middle-NL	DE Middle	NL	Capacity	2000-01-01	2100-01-01	4000							
+DE North-NL	DE North	NL	Capacity	2000-01-01	2100-01-01	2000							
+NL-DE North	NL	DE North	Capacity	2000-01-01	2100-01-01	2000							
+DE North-Middle			Line_Loss	2000-01-01	2100-01-01	0.01							
+DE Middle-North			Line_Loss	2000-01-01	2100-01-01	0.01							
+DE Middle-South			Line_Loss	2000-01-01	2100-01-01	0.01							
+DE South-Middle			Line_Loss	2000-01-01	2100-01-01	0.01							
+NL-DE Middle			Line_Loss	2000-01-01	2100-01-01	0.02							
+DE Middle-NL			Line_Loss	2000-01-01	2100-01-01	0.02							
+DE North-NL			Line_Loss	2000-01-01	2100-01-01	0.02							
+NL-DE North			Line_Loss	2000-01-01	2100-01-01	0.02							
+FR-DE Middle			Line_Loss	2000-01-01	2100-01-01	0.02							
+DE Middle-FR			Line_Loss	2000-01-01	2100-01-01	0.02							
+PL-DE Middle			Line_Loss	2000-01-01	2100-01-01	0.02							
+DE Middle-PL			Line_Loss	2000-01-01	2100-01-01	0.02							
+PL-DE North			Line_Loss	2000-01-01	2100-01-01	0.02							
+DE North-PL			Line_Loss	2000-01-01	2100-01-01	0.02							
+FR-DE Middle	FR	DE South	Capacity	2000-01-01	2100-01-01	6000							
+DE Middle-FR	DE South	FR	Capacity	2000-01-01	2100-01-01	6000							
+PL-DE Middle	PL	DE Middle	Capacity	2000-01-01	2100-01-01	1500							
+DE Middle-PL	DE Middle	PL	Capacity	2000-01-01	2100-01-01	1500							
+PL-DE North	PL	DE North	Capacity	2000-01-01	2100-01-01	5000							
+DE North-PL	DE North	PL	Capacity	2000-01-01	2100-01-01	5000							
+SE4-SE3	SE4	SE3	Capacity	2000-01-01	2100-01-01	2000							
+SE3-SE2	SE3	SE2	Capacity	2000-01-01	2100-01-01	7300							
+SE2-SE1	SE2	SE1	Capacity	2000-01-01	2100-01-01	7300							
+SE1-SE2	SE1	SE2	Capacity	2000-01-01	2100-01-01	3300							
+SE3-SE4	SE3	SE4	Capacity	2000-01-01	2100-01-01	5300							
+SE2-SE3	SE2	SE3	Capacity	2000-01-01	2100-01-01	3300							
+NO1-SE3	NO1	SE3	Capacity	2000-01-01	2100-01-01	2145							
+SE3-NO1	SE3	NO1	Capacity	2000-01-01	2100-01-01	2095							
+NL-NO2	NL	NO2	Capacity	2000-01-01	2100-01-01	700							
+NO2-NL	NO2	NL	Capacity	2000-01-01	2100-01-01	700							
+DE-DK1	DE	DK1	Capacity	2000-01-01	2100-01-01	1500							
+DK1-DE	DK1	DE	Capacity	2000-01-01	2100-01-01	1700							
+DE-DK2	DE	DK2	Capacity	2000-01-01	2100-01-01	600							
+DK2-DE	DK2	DE	Capacity	2000-01-01	2100-01-01	600							
+DE-SE4	DE	SE4	Capacity	2000-01-01	2100-01-01	600							
+SE4-DE	SE4	DE	Capacity	2000-01-01	2100-01-01	600							
+PL-SE4	PL	SE4	Capacity	2000-01-01	2100-01-01	600							
+SE4-PL	SE4	PL	Capacity	2000-01-01	2100-01-01	600							
+DK1-NO2	DK1	NO2	Capacity	2000-01-01	2100-01-01	1600							
+NO2-DK1	NO2	DK1	Capacity	2000-01-01	2100-01-01	1600							
+DK1-DK2	DK1	DK2	Capacity	2000-01-01	2100-01-01	600							
+DK2-DK1	DK2	DK1	Capacity	2000-01-01	2100-01-01	600							
+SE4-DK2	SE4	DK2	Capacity	2000-01-01	2100-01-01	1300							
+DK2-SE4	DK2	SE4	Capacity	2000-01-01	2100-01-01	1700							
+SE3-DK1	SE3	DK1	Capacity	2000-01-01	2100-01-01	700							
+DK1-SE3	DK1	SE3	Capacity	2000-01-01	2100-01-01	700							
+NO5-NO2	NO5	NO2	Capacity	2000-01-01	2100-01-01	600							
+NO2-NO5	NO2	NO5	Capacity	2000-01-01	2100-01-01	500							
+NO1-NO2	NO1	NO2	Capacity	2000-01-01	2100-01-01	2200							
+NO2-NO1	NO2	NO1	Capacity	2000-01-01	2100-01-01	3500							
+NO1-NO5	NO1	NO5	Capacity	2000-01-01	2100-01-01	300							
+NO5-NO1	NO5	NO1	Capacity	2000-01-01	2100-01-01	3900							
+NO1-NO3	NO1	NO3	Capacity	2000-01-01	2100-01-01	500							
+NO3-NO1	NO3	NO1	Capacity	2000-01-01	2100-01-01	500							
+SE2-NO3	SE2	NO3	Capacity	2000-01-01	2100-01-01	1000							
+NO3-SE2	NO3	SE2	Capacity	2000-01-01	2100-01-01	600							
+NO4-NO3	NO4	NO3	Capacity	2000-01-01	2100-01-01	1000							
+NO3-NO4	NO3	NO4	Capacity	2000-01-01	2100-01-01	200							
+NO4-SE2	NO4	SE2	Capacity	2000-01-01	2100-01-01	300							
+SE2-NO4	SE2	NO4	Capacity	2000-01-01	2100-01-01	300							
+NO4-SE1	NO4	SE1	Capacity	2000-01-01	2100-01-01	600							
+SE1-NO4	SE1	NO4	Capacity	2000-01-01	2100-01-01	700							
+FI-SE1	FI	SE1	Capacity	2000-01-01	2100-01-01	1500							
+SE1-FI	SE1	FI	Capacity	2000-01-01	2100-01-01	1100							
+FI-SE3	FI	SE3	Capacity	2000-01-01	2100-01-01	1200							
+SE3-FI	SE3	FI	Capacity	2000-01-01	2100-01-01	1200							
+FI-ET	FI	ET	Capacity	2000-01-01	2100-01-01	1000							
+ET-FI	ET	FI	Capacity	2000-01-01	2100-01-01	1000							
+SE4-SE3			Line_Loss	2000-01-01	2100-01-01	0.01							
+SE3-SE2			Line_Loss	2000-01-01	2100-01-01	0.01							
+SE2-SE1			Line_Loss	2000-01-01	2100-01-01	0.01							
+SE1-SE2			Line_Loss	2000-01-01	2100-01-01	0.01							
+SE3-SE4			Line_Loss	2000-01-01	2100-01-01	0.01							
+SE2-SE3			Line_Loss	2000-01-01	2100-01-01	0.01							
+NO1-SE3			Line_Loss	2000-01-01	2100-01-01	0.01							
+SE3-NO1			Line_Loss	2000-01-01	2100-01-01	0.01							
+NL-NO2			Line_Loss	2000-01-01	2100-01-01	0.01							
+NO2-NL			Line_Loss	2000-01-01	2100-01-01	0.01							
+DE North-DK1			Line_Loss	2000-01-01	2100-01-01	0.01							
+DK1-DE North			Line_Loss	2000-01-01	2100-01-01	0.01							
+DE North-DK2			Line_Loss	2000-01-01	2100-01-01	0.01							
+DK2-DE North			Line_Loss	2000-01-01	2100-01-01	0.01							
+DE North-SE4			Line_Loss	2000-01-01	2100-01-01	0.01							
+SE4-DE North			Line_Loss	2000-01-01	2100-01-01	0.01							
+PL-SE4			Line_Loss	2000-01-01	2100-01-01	0.01							
+SE4-PL			Line_Loss	2000-01-01	2100-01-01	0.01							
+DK1-NO2			Line_Loss	2000-01-01	2100-01-01	0.01							
+NO2-DK1			Line_Loss	2000-01-01	2100-01-01	0.01							
+DK1-DK2			Line_Loss	2000-01-01	2100-01-01	0.01							
+DK2-DK1			Line_Loss	2000-01-01	2100-01-01	0.01							
+SE4-DK2			Line_Loss	2000-01-01	2100-01-01	0.01							
+DK2-SE4			Line_Loss	2000-01-01	2100-01-01	0.01							
+SE3-DK1			Line_Loss	2000-01-01	2100-01-01	0.01							
+DK1-SE3			Line_Loss	2000-01-01	2100-01-01	0.01							
+NO5-NO2			Line_Loss	2000-01-01	2100-01-01	0.01							
+NO2-NO5			Line_Loss	2000-01-01	2100-01-01	0.01							
+NO1-NO2			Line_Loss	2000-01-01	2100-01-01	0.01							
+NO2-NO1			Line_Loss	2000-01-01	2100-01-01	0.01							
+NO1-NO5			Line_Loss	2000-01-01	2100-01-01	0.01							
+NO5-NO1			Line_Loss	2000-01-01	2100-01-01	0.01							
+NO1-NO3			Line_Loss	2000-01-01	2100-01-01	0.01							
+NO3-NO1			Line_Loss	2000-01-01	2100-01-01	0.01							
+SE2-NO3			Line_Loss	2000-01-01	2100-01-01	0.01							
+NO3-SE2			Line_Loss	2000-01-01	2100-01-01	0.01							
+NO4-NO3			Line_Loss	2000-01-01	2100-01-01	0.01							
+NO3-NO4			Line_Loss	2000-01-01	2100-01-01	0.01							
+NO4-SE2			Line_Loss	2000-01-01	2100-01-01	0.01							
+SE2-NO4			Line_Loss	2000-01-01	2100-01-01	0.01							
+NO4-SE1			Line_Loss	2000-01-01	2100-01-01	0.01							
+SE1-NO4			Line_Loss	2000-01-01	2100-01-01	0.01							
+FI-SE1			Line_Loss	2000-01-01	2100-01-01	0.01							
+SE1-FI			Line_Loss	2000-01-01	2100-01-01	0.01							
+FI-SE3			Line_Loss	2000-01-01	2100-01-01	0.01							
+SE3-FI			Line_Loss	2000-01-01	2100-01-01	0.01							
+FI-ET			Line_Loss	2000-01-01	2100-01-01	0.01							
+ET-FI			Line_Loss	2000-01-01	2100-01-01	0.01							
+FR-ES	FR	ES	Capacity	2000-01-01	2100-01-01	4000							
+ES-FR	ES	FR	Capacity	2000-01-01	2100-01-01	3000							
+FR-ES			Line_Loss	2000-01-01	2100-01-01	0.01							
+ES-FR			Line_Loss	2000-01-01	2100-01-01	0.01							
+PT-ES	PT	ES	Capacity	2000-01-01	2100-01-01	4000							
+ES-PT	ES	PT	Capacity	2000-01-01	2100-01-01	4000							
+PT-ES			Line_Loss	2000-01-01	2100-01-01	0.01							
+ES-PT			Line_Loss	2000-01-01	2100-01-01	0.01							
+FR-UK	FR	UK	Capacity	2000-01-01	2100-01-01	4000							
+UK-FR	UK	FR	Capacity	2000-01-01	2100-01-01	3000							
+FR-UK			Line_Loss	2000-01-01	2100-01-01	0.01							
+UK-FR			Line_Loss	2000-01-01	2100-01-01	0.01							
+NL-DE	NL	DE	Capacity	2000-01-01	2100-01-01	6000							
+DE-NL	DE	NL	Capacity	2000-01-01	2100-01-01	6000							
+NL-DE			Line_Loss	2000-01-01	2100-01-01	0.02							
+DE-NL			Line_Loss	2000-01-01	2100-01-01	0.02							
+FR-DE			Line_Loss	2000-01-01	2100-01-01	0.02							
+DE-FR			Line_Loss	2000-01-01	2100-01-01	0.02							
+PL-DE			Line_Loss	2000-01-01	2100-01-01	0.02							
+DE-PL			Line_Loss	2000-01-01	2100-01-01	0.02							
+FR-DE	FR	DE	Capacity	2000-01-01	2030-01-01	6000							
+DE-FR	DE	FR	Capacity	2000-01-01	2030-01-01	6000							
+FR-DE	FR	DE	Capacity	2030-01-01	2035-01-01	10000							
+DE-FR	DE	FR	Capacity	2030-01-01	2035-01-01	10000							
+FR-DE	FR	DE	Capacity	2035-01-01	2100-01-01	14000							
+DE-FR	DE	FR	Capacity	2035-01-01	2100-01-01	14000							
+PL-DE	PL	DE	Capacity	2000-01-01	2100-01-01	6500							
+DE-PL	DE	PL	Capacity	2000-01-01	2100-01-01	6500							
+FR-BE			Line_Loss	2000-01-01	2100-01-01	0.02							
+BE-FR			Line_Loss	2000-01-01	2100-01-01	0.02							
+NL-BE			Line_Loss	2000-01-01	2100-01-01	0.02							
+BE-NL			Line_Loss	2000-01-01	2100-01-01	0.02							
+FR-BE	FR	BE	Capacity	2000-01-01	2100-01-01	3000							
+BE-FR	BE	FR	Capacity	2000-01-01	2100-01-01	3000							
+NL-BE	NL	BE	Capacity	2000-01-01	2100-01-01	3000							
+BE-NL	BE	NL	Capacity	2000-01-01	2100-01-01	3000							
+DE-BE			Line_Loss	2000-01-01	2100-01-01	0.02							
+BE-DE			Line_Loss	2000-01-01	2100-01-01	0.02							
+DE-BE	DE	BE	Capacity	2000-01-01	2100-01-01	3000							
+BE-DE	BE	DE	Capacity	2000-01-01	2100-01-01	3000							

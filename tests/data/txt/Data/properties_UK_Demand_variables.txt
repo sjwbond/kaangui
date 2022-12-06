@@ -1,0 +1,359 @@
+Object_Name	Parent_Object	Target_Object	Property	Date_From	Date_To	Value	Variable	Variable_Effect	Timeslice	Timeslice_Index	Group_id	Priority	Scenario
+UK Daily Demand Stochastic			Value	2010-01-01	2100-01-01	UK Daily Demand Stochastic File	UK Base Demand	Multiply					
+UK Demand DIY			Value	2010-01-01	2100-01-01	UK Demand DIY File	UK Daily Demand Stochastic	Multiply					
+UK Demand DOW			Value	2010-01-01	2100-01-01	UK Demand DOW File	UK Demand DIY	Multiply					
+UK Demand HOD			Value	2010-01-01	2100-01-01	UK Demand HOD File	UK Demand DOW	Multiply					
+UK Demand Historic Day Ahead			Value	2010-01-01	2100-01-01	UK Demand Historic Day Ahead File							
+UK Base Demand			Value	2010-01-01	2100-01-01	Base Demand File							
+UK Demand			Bid Volume	2010-01-01	2100-01-01	UK Demand HOD	UK DSR Adjustment	Add			1	1	
+UK Demand			Bid Price	2010-01-01	2100-01-01	100000					1	1	
+UK DSR Bid Volume 2017			Value	2017-01-01	2100-01-01	1600							
+UK Demand			Bid Volume	2017-01-01	2100-01-01	UK DSR Bid Volume 2017					2	2	
+UK DSR Bid Price 2017			Value	2017-01-01	2100-01-01	400							
+UK Demand			Bid Price	2017-01-01	2100-01-01	UK DSR Bid Price 2017					2	2	
+UK DSR Adjustment			Value	2017-01-01	2100-01-01	-1600							
+UK DSR Bid Volume 2018			Value	2018-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2018-01-01	2100-01-01	UK DSR Bid Volume 2018					3	3	
+UK DSR Bid Price 2018			Value	2018-01-01	2100-01-01	575.5							
+UK Demand			Bid Price	2018-01-01	2100-01-01	UK DSR Bid Price 2018					3	3	
+UK DSR Adjustment			Value	2018-01-01	2100-01-01	-1620							
+UK DSR Bid Volume 2019			Value	2019-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2019-01-01	2100-01-01	UK DSR Bid Volume 2019					4	4	
+UK DSR Bid Price 2019			Value	2019-01-01	2100-01-01	405							
+UK Demand			Bid Price	2019-01-01	2100-01-01	UK DSR Bid Price 2019					4	4	
+UK DSR Adjustment			Value	2019-01-01	2100-01-01	-1640							
+UK DSR Bid Volume 2020			Value	2020-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2020-01-01	2100-01-01	UK DSR Bid Volume 2020					5	5	
+UK DSR Bid Price 2020			Value	2020-01-01	2100-01-01	570.5							
+UK Demand			Bid Price	2020-01-01	2100-01-01	UK DSR Bid Price 2020					5	5	
+UK DSR Adjustment			Value	2020-01-01	2100-01-01	-1660							
+UK DSR Bid Volume 2021			Value	2021-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2021-01-01	2100-01-01	UK DSR Bid Volume 2021					6	6	
+UK DSR Bid Price 2021			Value	2021-01-01	2100-01-01	410							
+UK Demand			Bid Price	2021-01-01	2100-01-01	UK DSR Bid Price 2021					6	6	
+UK DSR Adjustment			Value	2021-01-01	2100-01-01	-1680							
+UK DSR Bid Volume 2022			Value	2022-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2022-01-01	2100-01-01	UK DSR Bid Volume 2022					7	7	
+UK DSR Bid Price 2022			Value	2022-01-01	2100-01-01	565.5							
+UK Demand			Bid Price	2022-01-01	2100-01-01	UK DSR Bid Price 2022					7	7	
+UK DSR Adjustment			Value	2022-01-01	2100-01-01	-1700							
+UK DSR Bid Volume 2023			Value	2023-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2023-01-01	2100-01-01	UK DSR Bid Volume 2023					8	8	
+UK DSR Bid Price 2023			Value	2023-01-01	2100-01-01	415							
+UK Demand			Bid Price	2023-01-01	2100-01-01	UK DSR Bid Price 2023					8	8	
+UK DSR Adjustment			Value	2023-01-01	2100-01-01	-1720							
+UK DSR Bid Volume 2024			Value	2024-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2024-01-01	2100-01-01	UK DSR Bid Volume 2024					9	9	
+UK DSR Bid Price 2024			Value	2024-01-01	2100-01-01	560.5							
+UK Demand			Bid Price	2024-01-01	2100-01-01	UK DSR Bid Price 2024					9	9	
+UK DSR Adjustment			Value	2024-01-01	2100-01-01	-1740							
+UK DSR Bid Volume 2025			Value	2025-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2025-01-01	2100-01-01	UK DSR Bid Volume 2025					10	10	
+UK DSR Bid Price 2025			Value	2025-01-01	2100-01-01	420							
+UK Demand			Bid Price	2025-01-01	2100-01-01	UK DSR Bid Price 2025					10	10	
+UK DSR Adjustment			Value	2025-01-01	2100-01-01	-1760							
+UK DSR Bid Volume 2026			Value	2026-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2026-01-01	2100-01-01	UK DSR Bid Volume 2026					11	11	
+UK DSR Bid Price 2026			Value	2026-01-01	2100-01-01	555.5							
+UK Demand			Bid Price	2026-01-01	2100-01-01	UK DSR Bid Price 2026					11	11	
+UK DSR Adjustment			Value	2026-01-01	2100-01-01	-1780							
+UK DSR Bid Volume 2027			Value	2027-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2027-01-01	2100-01-01	UK DSR Bid Volume 2027					12	12	
+UK DSR Bid Price 2027			Value	2027-01-01	2100-01-01	425							
+UK Demand			Bid Price	2027-01-01	2100-01-01	UK DSR Bid Price 2027					12	12	
+UK DSR Adjustment			Value	2027-01-01	2100-01-01	-1800							
+UK DSR Bid Volume 2028			Value	2028-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2028-01-01	2100-01-01	UK DSR Bid Volume 2028					13	13	
+UK DSR Bid Price 2028			Value	2028-01-01	2100-01-01	550.5							
+UK Demand			Bid Price	2028-01-01	2100-01-01	UK DSR Bid Price 2028					13	13	
+UK DSR Adjustment			Value	2028-01-01	2100-01-01	-1820							
+UK DSR Bid Volume 2029			Value	2029-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2029-01-01	2100-01-01	UK DSR Bid Volume 2029					14	14	
+UK DSR Bid Price 2029			Value	2029-01-01	2100-01-01	430							
+UK Demand			Bid Price	2029-01-01	2100-01-01	UK DSR Bid Price 2029					14	14	
+UK DSR Adjustment			Value	2029-01-01	2100-01-01	-1840							
+UK DSR Bid Volume 2030			Value	2030-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2030-01-01	2100-01-01	UK DSR Bid Volume 2030					15	15	
+UK DSR Bid Price 2030			Value	2030-01-01	2100-01-01	545.5							
+UK Demand			Bid Price	2030-01-01	2100-01-01	UK DSR Bid Price 2030					15	15	
+UK DSR Adjustment			Value	2030-01-01	2100-01-01	-1860							
+UK DSR Bid Volume 2031			Value	2031-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2031-01-01	2100-01-01	UK DSR Bid Volume 2031					16	16	
+UK DSR Bid Price 2031			Value	2031-01-01	2100-01-01	435							
+UK Demand			Bid Price	2031-01-01	2100-01-01	UK DSR Bid Price 2031					16	16	
+UK DSR Adjustment			Value	2031-01-01	2100-01-01	-1880							
+UK DSR Bid Volume 2032			Value	2032-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2032-01-01	2100-01-01	UK DSR Bid Volume 2032					17	17	
+UK DSR Bid Price 2032			Value	2032-01-01	2100-01-01	540.5							
+UK Demand			Bid Price	2032-01-01	2100-01-01	UK DSR Bid Price 2032					17	17	
+UK DSR Adjustment			Value	2032-01-01	2100-01-01	-1900							
+UK DSR Bid Volume 2033			Value	2033-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2033-01-01	2100-01-01	UK DSR Bid Volume 2033					18	18	
+UK DSR Bid Price 2033			Value	2033-01-01	2100-01-01	440							
+UK Demand			Bid Price	2033-01-01	2100-01-01	UK DSR Bid Price 2033					18	18	
+UK DSR Adjustment			Value	2033-01-01	2100-01-01	-1920							
+UK DSR Bid Volume 2034			Value	2034-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2034-01-01	2100-01-01	UK DSR Bid Volume 2034					19	19	
+UK DSR Bid Price 2034			Value	2034-01-01	2100-01-01	535.5							
+UK Demand			Bid Price	2034-01-01	2100-01-01	UK DSR Bid Price 2034					19	19	
+UK DSR Adjustment			Value	2034-01-01	2100-01-01	-1940							
+UK DSR Bid Volume 2035			Value	2035-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2035-01-01	2100-01-01	UK DSR Bid Volume 2035					20	20	
+UK DSR Bid Price 2035			Value	2035-01-01	2100-01-01	445							
+UK Demand			Bid Price	2035-01-01	2100-01-01	UK DSR Bid Price 2035					20	20	
+UK DSR Adjustment			Value	2035-01-01	2100-01-01	-1960							
+UK DSR Bid Volume 2036			Value	2036-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2036-01-01	2100-01-01	UK DSR Bid Volume 2036					21	21	
+UK DSR Bid Price 2036			Value	2036-01-01	2100-01-01	530.5							
+UK Demand			Bid Price	2036-01-01	2100-01-01	UK DSR Bid Price 2036					21	21	
+UK DSR Adjustment			Value	2036-01-01	2100-01-01	-1980							
+UK DSR Bid Volume 2037			Value	2037-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2037-01-01	2100-01-01	UK DSR Bid Volume 2037					22	22	
+UK DSR Bid Price 2037			Value	2037-01-01	2100-01-01	450							
+UK Demand			Bid Price	2037-01-01	2100-01-01	UK DSR Bid Price 2037					22	22	
+UK DSR Adjustment			Value	2037-01-01	2100-01-01	-2000							
+UK DSR Bid Volume 2038			Value	2038-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2038-01-01	2100-01-01	UK DSR Bid Volume 2038					23	23	
+UK DSR Bid Price 2038			Value	2038-01-01	2100-01-01	525.5							
+UK Demand			Bid Price	2038-01-01	2100-01-01	UK DSR Bid Price 2038					23	23	
+UK DSR Adjustment			Value	2038-01-01	2100-01-01	-2020							
+UK DSR Bid Volume 2039			Value	2039-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2039-01-01	2100-01-01	UK DSR Bid Volume 2039					24	24	
+UK DSR Bid Price 2039			Value	2039-01-01	2100-01-01	455							
+UK Demand			Bid Price	2039-01-01	2100-01-01	UK DSR Bid Price 2039					24	24	
+UK DSR Adjustment			Value	2039-01-01	2100-01-01	-2040							
+UK DSR Bid Volume 2040			Value	2040-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2040-01-01	2100-01-01	UK DSR Bid Volume 2040					25	25	
+UK DSR Bid Price 2040			Value	2040-01-01	2100-01-01	520.5							
+UK Demand			Bid Price	2040-01-01	2100-01-01	UK DSR Bid Price 2040					25	25	
+UK DSR Adjustment			Value	2040-01-01	2100-01-01	-2060							
+UK DSR Bid Volume 2041			Value	2041-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2041-01-01	2100-01-01	UK DSR Bid Volume 2041					26	26	
+UK DSR Bid Price 2041			Value	2041-01-01	2100-01-01	460							
+UK Demand			Bid Price	2041-01-01	2100-01-01	UK DSR Bid Price 2041					26	26	
+UK DSR Adjustment			Value	2041-01-01	2100-01-01	-2080							
+UK DSR Bid Volume 2042			Value	2042-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2042-01-01	2100-01-01	UK DSR Bid Volume 2042					27	27	
+UK DSR Bid Price 2042			Value	2042-01-01	2100-01-01	515.5							
+UK Demand			Bid Price	2042-01-01	2100-01-01	UK DSR Bid Price 2042					27	27	
+UK DSR Adjustment			Value	2042-01-01	2100-01-01	-2100							
+UK DSR Bid Volume 2043			Value	2043-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2043-01-01	2100-01-01	UK DSR Bid Volume 2043					28	28	
+UK DSR Bid Price 2043			Value	2043-01-01	2100-01-01	465							
+UK Demand			Bid Price	2043-01-01	2100-01-01	UK DSR Bid Price 2043					28	28	
+UK DSR Adjustment			Value	2043-01-01	2100-01-01	-2120							
+UK DSR Bid Volume 2044			Value	2044-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2044-01-01	2100-01-01	UK DSR Bid Volume 2044					29	29	
+UK DSR Bid Price 2044			Value	2044-01-01	2100-01-01	510.5							
+UK Demand			Bid Price	2044-01-01	2100-01-01	UK DSR Bid Price 2044					29	29	
+UK DSR Adjustment			Value	2044-01-01	2100-01-01	-2140							
+UK DSR Bid Volume 2045			Value	2045-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2045-01-01	2100-01-01	UK DSR Bid Volume 2045					30	30	
+UK DSR Bid Price 2045			Value	2045-01-01	2100-01-01	470							
+UK Demand			Bid Price	2045-01-01	2100-01-01	UK DSR Bid Price 2045					30	30	
+UK DSR Adjustment			Value	2045-01-01	2100-01-01	-2160							
+UK DSR Bid Volume 2046			Value	2046-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2046-01-01	2100-01-01	UK DSR Bid Volume 2046					31	31	
+UK DSR Bid Price 2046			Value	2046-01-01	2100-01-01	505.5							
+UK Demand			Bid Price	2046-01-01	2100-01-01	UK DSR Bid Price 2046					31	31	
+UK DSR Adjustment			Value	2046-01-01	2100-01-01	-2180							
+UK DSR Bid Volume 2047			Value	2047-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2047-01-01	2100-01-01	UK DSR Bid Volume 2047					32	32	
+UK DSR Bid Price 2047			Value	2047-01-01	2100-01-01	475							
+UK Demand			Bid Price	2047-01-01	2100-01-01	UK DSR Bid Price 2047					32	32	
+UK DSR Adjustment			Value	2047-01-01	2100-01-01	-2200							
+UK DSR Bid Volume 2048			Value	2048-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2048-01-01	2100-01-01	UK DSR Bid Volume 2048					33	33	
+UK DSR Bid Price 2048			Value	2048-01-01	2100-01-01	500.5							
+UK Demand			Bid Price	2048-01-01	2100-01-01	UK DSR Bid Price 2048					33	33	
+UK DSR Adjustment			Value	2048-01-01	2100-01-01	-2220							
+UK DSR Bid Volume 2049			Value	2049-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2049-01-01	2100-01-01	UK DSR Bid Volume 2049					34	34	
+UK DSR Bid Price 2049			Value	2049-01-01	2100-01-01	480							
+UK Demand			Bid Price	2049-01-01	2100-01-01	UK DSR Bid Price 2049					34	34	
+UK DSR Adjustment			Value	2049-01-01	2100-01-01	-2240							
+UK DSR Bid Volume 2050			Value	2050-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2050-01-01	2100-01-01	UK DSR Bid Volume 2050					35	35	
+UK DSR Bid Price 2050			Value	2050-01-01	2100-01-01	495.5							
+UK Demand			Bid Price	2050-01-01	2100-01-01	UK DSR Bid Price 2050					35	35	
+UK DSR Adjustment			Value	2050-01-01	2100-01-01	-2260							
+UK DSR Bid Volume 2051			Value	2051-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2051-01-01	2100-01-01	UK DSR Bid Volume 2051					36	36	
+UK DSR Bid Price 2051			Value	2051-01-01	2100-01-01	485							
+UK Demand			Bid Price	2051-01-01	2100-01-01	UK DSR Bid Price 2051					36	36	
+UK DSR Adjustment			Value	2051-01-01	2100-01-01	-2280							
+UK DSR Bid Volume 2052			Value	2052-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2052-01-01	2100-01-01	UK DSR Bid Volume 2052					37	37	
+UK DSR Bid Price 2052			Value	2052-01-01	2100-01-01	490.5							
+UK Demand			Bid Price	2052-01-01	2100-01-01	UK DSR Bid Price 2052					37	37	
+UK DSR Adjustment			Value	2052-01-01	2100-01-01	-2300							
+UK DSR Bid Volume 2053			Value	2053-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2053-01-01	2100-01-01	UK DSR Bid Volume 2053					38	38	
+UK DSR Bid Price 2053			Value	2053-01-01	2100-01-01	490							
+UK Demand			Bid Price	2053-01-01	2100-01-01	UK DSR Bid Price 2053					38	38	
+UK DSR Adjustment			Value	2053-01-01	2100-01-01	-2320							
+UK DSR Bid Volume 2054			Value	2054-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2054-01-01	2100-01-01	UK DSR Bid Volume 2054					39	39	
+UK DSR Bid Price 2054			Value	2054-01-01	2100-01-01	485.5							
+UK Demand			Bid Price	2054-01-01	2100-01-01	UK DSR Bid Price 2054					39	39	
+UK DSR Adjustment			Value	2054-01-01	2100-01-01	-2340							
+UK DSR Bid Volume 2055			Value	2055-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2055-01-01	2100-01-01	UK DSR Bid Volume 2055					40	40	
+UK DSR Bid Price 2055			Value	2055-01-01	2100-01-01	495							
+UK Demand			Bid Price	2055-01-01	2100-01-01	UK DSR Bid Price 2055					40	40	
+UK DSR Adjustment			Value	2055-01-01	2100-01-01	-2360							
+UK DSR Bid Volume 2056			Value	2056-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2056-01-01	2100-01-01	UK DSR Bid Volume 2056					41	41	
+UK DSR Bid Price 2056			Value	2056-01-01	2100-01-01	480.5							
+UK Demand			Bid Price	2056-01-01	2100-01-01	UK DSR Bid Price 2056					41	41	
+UK DSR Adjustment			Value	2056-01-01	2100-01-01	-2380							
+UK DSR Bid Volume 2057			Value	2057-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2057-01-01	2100-01-01	UK DSR Bid Volume 2057					42	42	
+UK DSR Bid Price 2057			Value	2057-01-01	2100-01-01	500							
+UK Demand			Bid Price	2057-01-01	2100-01-01	UK DSR Bid Price 2057					42	42	
+UK DSR Adjustment			Value	2057-01-01	2100-01-01	-2400							
+UK DSR Bid Volume 2058			Value	2058-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2058-01-01	2100-01-01	UK DSR Bid Volume 2058					43	43	
+UK DSR Bid Price 2058			Value	2058-01-01	2100-01-01	475.5							
+UK Demand			Bid Price	2058-01-01	2100-01-01	UK DSR Bid Price 2058					43	43	
+UK DSR Adjustment			Value	2058-01-01	2100-01-01	-2420							
+UK DSR Bid Volume 2059			Value	2059-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2059-01-01	2100-01-01	UK DSR Bid Volume 2059					44	44	
+UK DSR Bid Price 2059			Value	2059-01-01	2100-01-01	505							
+UK Demand			Bid Price	2059-01-01	2100-01-01	UK DSR Bid Price 2059					44	44	
+UK DSR Adjustment			Value	2059-01-01	2100-01-01	-2440							
+UK DSR Bid Volume 2060			Value	2060-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2060-01-01	2100-01-01	UK DSR Bid Volume 2060					45	45	
+UK DSR Bid Price 2060			Value	2060-01-01	2100-01-01	470.5							
+UK Demand			Bid Price	2060-01-01	2100-01-01	UK DSR Bid Price 2060					45	45	
+UK DSR Adjustment			Value	2060-01-01	2100-01-01	-2460							
+UK DSR Bid Volume 2061			Value	2061-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2061-01-01	2100-01-01	UK DSR Bid Volume 2061					46	46	
+UK DSR Bid Price 2061			Value	2061-01-01	2100-01-01	510							
+UK Demand			Bid Price	2061-01-01	2100-01-01	UK DSR Bid Price 2061					46	46	
+UK DSR Adjustment			Value	2061-01-01	2100-01-01	-2480							
+UK DSR Bid Volume 2062			Value	2062-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2062-01-01	2100-01-01	UK DSR Bid Volume 2062					47	47	
+UK DSR Bid Price 2062			Value	2062-01-01	2100-01-01	465.5							
+UK Demand			Bid Price	2062-01-01	2100-01-01	UK DSR Bid Price 2062					47	47	
+UK DSR Adjustment			Value	2062-01-01	2100-01-01	-2500							
+UK DSR Bid Volume 2063			Value	2063-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2063-01-01	2100-01-01	UK DSR Bid Volume 2063					48	48	
+UK DSR Bid Price 2063			Value	2063-01-01	2100-01-01	515							
+UK Demand			Bid Price	2063-01-01	2100-01-01	UK DSR Bid Price 2063					48	48	
+UK DSR Adjustment			Value	2063-01-01	2100-01-01	-2520							
+UK DSR Bid Volume 2064			Value	2064-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2064-01-01	2100-01-01	UK DSR Bid Volume 2064					49	49	
+UK DSR Bid Price 2064			Value	2064-01-01	2100-01-01	460.5							
+UK Demand			Bid Price	2064-01-01	2100-01-01	UK DSR Bid Price 2064					49	49	
+UK DSR Adjustment			Value	2064-01-01	2100-01-01	-2540							
+UK DSR Bid Volume 2065			Value	2065-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2065-01-01	2100-01-01	UK DSR Bid Volume 2065					50	50	
+UK DSR Bid Price 2065			Value	2065-01-01	2100-01-01	520							
+UK Demand			Bid Price	2065-01-01	2100-01-01	UK DSR Bid Price 2065					50	50	
+UK DSR Adjustment			Value	2065-01-01	2100-01-01	-2560							
+UK DSR Bid Volume 2066			Value	2066-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2066-01-01	2100-01-01	UK DSR Bid Volume 2066					51	51	
+UK DSR Bid Price 2066			Value	2066-01-01	2100-01-01	455.5							
+UK Demand			Bid Price	2066-01-01	2100-01-01	UK DSR Bid Price 2066					51	51	
+UK DSR Adjustment			Value	2066-01-01	2100-01-01	-2580							
+UK DSR Bid Volume 2067			Value	2067-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2067-01-01	2100-01-01	UK DSR Bid Volume 2067					52	52	
+UK DSR Bid Price 2067			Value	2067-01-01	2100-01-01	525							
+UK Demand			Bid Price	2067-01-01	2100-01-01	UK DSR Bid Price 2067					52	52	
+UK DSR Adjustment			Value	2067-01-01	2100-01-01	-2600							
+UK DSR Bid Volume 2068			Value	2068-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2068-01-01	2100-01-01	UK DSR Bid Volume 2068					53	53	
+UK DSR Bid Price 2068			Value	2068-01-01	2100-01-01	450.5							
+UK Demand			Bid Price	2068-01-01	2100-01-01	UK DSR Bid Price 2068					53	53	
+UK DSR Adjustment			Value	2068-01-01	2100-01-01	-2620							
+UK DSR Bid Volume 2069			Value	2069-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2069-01-01	2100-01-01	UK DSR Bid Volume 2069					54	54	
+UK DSR Bid Price 2069			Value	2069-01-01	2100-01-01	530							
+UK Demand			Bid Price	2069-01-01	2100-01-01	UK DSR Bid Price 2069					54	54	
+UK DSR Adjustment			Value	2069-01-01	2100-01-01	-2640							
+UK DSR Bid Volume 2070			Value	2070-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2070-01-01	2100-01-01	UK DSR Bid Volume 2070					55	55	
+UK DSR Bid Price 2070			Value	2070-01-01	2100-01-01	445.5							
+UK Demand			Bid Price	2070-01-01	2100-01-01	UK DSR Bid Price 2070					55	55	
+UK DSR Adjustment			Value	2070-01-01	2100-01-01	-2660							
+UK DSR Bid Volume 2071			Value	2071-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2071-01-01	2100-01-01	UK DSR Bid Volume 2071					56	56	
+UK DSR Bid Price 2071			Value	2071-01-01	2100-01-01	535							
+UK Demand			Bid Price	2071-01-01	2100-01-01	UK DSR Bid Price 2071					56	56	
+UK DSR Adjustment			Value	2071-01-01	2100-01-01	-2680							
+UK DSR Bid Volume 2072			Value	2072-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2072-01-01	2100-01-01	UK DSR Bid Volume 2072					57	57	
+UK DSR Bid Price 2072			Value	2072-01-01	2100-01-01	440.5							
+UK Demand			Bid Price	2072-01-01	2100-01-01	UK DSR Bid Price 2072					57	57	
+UK DSR Adjustment			Value	2072-01-01	2100-01-01	-2700							
+UK DSR Bid Volume 2073			Value	2073-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2073-01-01	2100-01-01	UK DSR Bid Volume 2073					58	58	
+UK DSR Bid Price 2073			Value	2073-01-01	2100-01-01	540							
+UK Demand			Bid Price	2073-01-01	2100-01-01	UK DSR Bid Price 2073					58	58	
+UK DSR Adjustment			Value	2073-01-01	2100-01-01	-2720							
+UK DSR Bid Volume 2074			Value	2074-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2074-01-01	2100-01-01	UK DSR Bid Volume 2074					59	59	
+UK DSR Bid Price 2074			Value	2074-01-01	2100-01-01	435.5							
+UK Demand			Bid Price	2074-01-01	2100-01-01	UK DSR Bid Price 2074					59	59	
+UK DSR Adjustment			Value	2074-01-01	2100-01-01	-2740							
+UK DSR Bid Volume 2075			Value	2075-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2075-01-01	2100-01-01	UK DSR Bid Volume 2075					60	60	
+UK DSR Bid Price 2075			Value	2075-01-01	2100-01-01	545							
+UK Demand			Bid Price	2075-01-01	2100-01-01	UK DSR Bid Price 2075					60	60	
+UK DSR Adjustment			Value	2075-01-01	2100-01-01	-2760							
+UK DSR Bid Volume 2076			Value	2076-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2076-01-01	2100-01-01	UK DSR Bid Volume 2076					61	61	
+UK DSR Bid Price 2076			Value	2076-01-01	2100-01-01	430.5							
+UK Demand			Bid Price	2076-01-01	2100-01-01	UK DSR Bid Price 2076					61	61	
+UK DSR Adjustment			Value	2076-01-01	2100-01-01	-2780							
+UK DSR Bid Volume 2077			Value	2077-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2077-01-01	2100-01-01	UK DSR Bid Volume 2077					62	62	
+UK DSR Bid Price 2077			Value	2077-01-01	2100-01-01	550							
+UK Demand			Bid Price	2077-01-01	2100-01-01	UK DSR Bid Price 2077					62	62	
+UK DSR Adjustment			Value	2077-01-01	2100-01-01	-2800							
+UK DSR Bid Volume 2078			Value	2078-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2078-01-01	2100-01-01	UK DSR Bid Volume 2078					63	63	
+UK DSR Bid Price 2078			Value	2078-01-01	2100-01-01	425.5							
+UK Demand			Bid Price	2078-01-01	2100-01-01	UK DSR Bid Price 2078					63	63	
+UK DSR Adjustment			Value	2078-01-01	2100-01-01	-2820							
+UK DSR Bid Volume 2079			Value	2079-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2079-01-01	2100-01-01	UK DSR Bid Volume 2079					64	64	
+UK DSR Bid Price 2079			Value	2079-01-01	2100-01-01	555							
+UK Demand			Bid Price	2079-01-01	2100-01-01	UK DSR Bid Price 2079					64	64	
+UK DSR Adjustment			Value	2079-01-01	2100-01-01	-2840							
+UK DSR Bid Volume 2080			Value	2080-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2080-01-01	2100-01-01	UK DSR Bid Volume 2080					65	65	
+UK DSR Bid Price 2080			Value	2080-01-01	2100-01-01	420.5							
+UK Demand			Bid Price	2080-01-01	2100-01-01	UK DSR Bid Price 2080					65	65	
+UK DSR Adjustment			Value	2080-01-01	2100-01-01	-2860							
+UK DSR Bid Volume 2081			Value	2081-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2081-01-01	2100-01-01	UK DSR Bid Volume 2081					66	66	
+UK DSR Bid Price 2081			Value	2081-01-01	2100-01-01	560							
+UK Demand			Bid Price	2081-01-01	2100-01-01	UK DSR Bid Price 2081					66	66	
+UK DSR Adjustment			Value	2081-01-01	2100-01-01	-2880							
+UK DSR Bid Volume 2082			Value	2082-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2082-01-01	2100-01-01	UK DSR Bid Volume 2082					67	67	
+UK DSR Bid Price 2082			Value	2082-01-01	2100-01-01	415.5							
+UK Demand			Bid Price	2082-01-01	2100-01-01	UK DSR Bid Price 2082					67	67	
+UK DSR Adjustment			Value	2082-01-01	2100-01-01	-2900							
+UK DSR Bid Volume 2083			Value	2083-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2083-01-01	2100-01-01	UK DSR Bid Volume 2083					68	68	
+UK DSR Bid Price 2083			Value	2083-01-01	2100-01-01	565							
+UK Demand			Bid Price	2083-01-01	2100-01-01	UK DSR Bid Price 2083					68	68	
+UK DSR Adjustment			Value	2083-01-01	2100-01-01	-2920							
+UK DSR Bid Volume 2084			Value	2084-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2084-01-01	2100-01-01	UK DSR Bid Volume 2084					69	69	
+UK DSR Bid Price 2084			Value	2084-01-01	2100-01-01	410.5							
+UK Demand			Bid Price	2084-01-01	2100-01-01	UK DSR Bid Price 2084					69	69	
+UK DSR Adjustment			Value	2084-01-01	2100-01-01	-2940							
+UK DSR Bid Volume 2085			Value	2085-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2085-01-01	2100-01-01	UK DSR Bid Volume 2085					70	70	
+UK DSR Bid Price 2085			Value	2085-01-01	2100-01-01	570							
+UK Demand			Bid Price	2085-01-01	2100-01-01	UK DSR Bid Price 2085					70	70	
+UK DSR Adjustment			Value	2085-01-01	2100-01-01	-2960							
+UK DSR Bid Volume 2086			Value	2086-01-01	2100-01-01	20							
+UK Demand			Bid Volume	2086-01-01	2100-01-01	UK DSR Bid Volume 2086					71	71	
+UK DSR Bid Price 2086			Value	2086-01-01	2100-01-01	405.5							
+UK Demand			Bid Price	2086-01-01	2100-01-01	UK DSR Bid Price 2086					71	71	
+UK DSR Adjustment			Value	2086-01-01	2100-01-01	-2980							

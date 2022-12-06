@@ -1,0 +1,14 @@
+Object_Name	Object_Type
+ARA API 2	Variable
+EU Diesel	Variable
+TTF Gas	Variable
+EU LSFO	Variable
+NBP GAS	Variable
+EU Lignite	Variable
+EU Coal	Variable
+EU Biomass	Variable
+EU Uranium	Variable
+TTF Gas Stochastic	Variable
+TTF Gas Stochastic File	DataSource
+CO2 Stochastic	Variable
+CO2 Stochastic File	DataSource

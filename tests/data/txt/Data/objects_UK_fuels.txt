@@ -1,0 +1,37 @@
+Object_Name	Object_Type
+UK Station Coal	Fuel
+Station Coal Base	Variable
+UK Station Coal Price	Variable
+UK Station Coal Delivery Adjustment	Variable
+UK Station Coal Stochastic	Variable
+UK Station Coal Stochastic File	DataSource
+UK Station Gas	Fuel
+Station Gas Base	Variable
+UK Station Gas Price	Variable
+UK Station Gas Delivery Adjustment	Variable
+UK Station Gas Stochastic	Variable
+UK Station Gas Stochastic File	DataSource
+UK Station Biomass	Fuel
+Station Biomass Base	Variable
+UK Station Biomass Price	Variable
+UK Station Biomass Delivery Adjustment	Variable
+UK Station Biomass Stochastic	Variable
+UK Station Biomass Stochastic File	DataSource
+UK Station Lignite	Fuel
+Station Lignite Base	Variable
+UK Station Lignite Price	Variable
+UK Station Lignite Delivery Adjustment	Variable
+UK Station Lignite Stochastic	Variable
+UK Station Lignite Stochastic File	DataSource
+UK Station Uranium	Fuel
+Station Uranium Base	Variable
+UK Station Uranium Price	Variable
+UK Station Uranium Delivery Adjustment	Variable
+UK Station Uranium Stochastic	Variable
+UK Station Uranium Stochastic File	DataSource
+UK Station LSFO	Fuel
+Station LSFO Base	Variable
+UK Station LSFO Price	Variable
+UK Station LSFO Delivery Adjustment	Variable
+UK Station LSFO Stochastic	Variable
+UK Station LSFO Stochastic File	DataSource

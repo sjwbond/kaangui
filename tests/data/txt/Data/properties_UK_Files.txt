@@ -1,0 +1,10 @@
+Object_Name	Parent_Object	Target_Object	Property	Date_From	Date_To	Value	Variable	Variable_Effect	Timeslice	Timeslice_Index	Group_id	Priority	Scenario
+UK Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+UK Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/UK/Fuel Prices.txt							
+UK Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+UK Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+UK Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/UK/Historic Day Ahead.txt							
+UK Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+UK Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+UK Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/UK/Installed Capacity.txt							
+UK Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							

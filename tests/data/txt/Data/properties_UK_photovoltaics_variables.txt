@@ -1,0 +1,37 @@
+Object_Name	Parent_Object	Target_Object	Property	Date_From	Date_To	Value	Variable	Variable_Effect	Timeslice	Timeslice_Index	Group_id	Priority	Scenario
+UK PVSAT 2681 51.0 -3.75 Capacity Factor			Value	2010-01-01	2100-01-01	UK PVSAT 2681 51.0 -3.75 File	0.1	Multiply					
+UK PVSAT 2681 51.0 -3.75 File			Location	2010-01-01	2100-01-01	/ProfilesMC/UK PVSAT 2681 51.0 -3.75/							
+UK PVSAT 2681 51.0 -3.75 File			Location_Type	2010-01-01	2100-01-01	Absolute							
+UK PVSAT 2681 51.0 -3.75 File			Data_Type	2010-01-01	2100-01-01	Folder							
+UK PVSAT 2681 51.0 -3.75 TS			Schema	2010-01-01	2100-01-01	time_series_pv							
+UK PVSAT 2681 51.0 -3.75 TS			tsn_name	2010-01-01	2100-01-01	ts_UK PVSAT 2681 51.0 -3.75							
+UK PVSAT 2684 51.0 -1.875 Capacity Factor			Value	2010-01-01	2100-01-01	UK PVSAT 2684 51.0 -1.875 File	0.1	Multiply					
+UK PVSAT 2684 51.0 -1.875 File			Location	2010-01-01	2100-01-01	/ProfilesMC/UK PVSAT 2684 51.0 -1.875/							
+UK PVSAT 2684 51.0 -1.875 File			Location_Type	2010-01-01	2100-01-01	Absolute							
+UK PVSAT 2684 51.0 -1.875 File			Data_Type	2010-01-01	2100-01-01	Folder							
+UK PVSAT 2684 51.0 -1.875 TS			Schema	2010-01-01	2100-01-01	time_series_pv							
+UK PVSAT 2684 51.0 -1.875 TS			tsn_name	2010-01-01	2100-01-01	ts_UK PVSAT 2684 51.0 -1.875							
+UK PVSAT 2687 51.0 0.0 Capacity Factor			Value	2010-01-01	2100-01-01	UK PVSAT 2687 51.0 0.0 File	0.1	Multiply					
+UK PVSAT 2687 51.0 0.0 File			Location	2010-01-01	2100-01-01	/ProfilesMC/UK PVSAT 2687 51.0 0.0/							
+UK PVSAT 2687 51.0 0.0 File			Location_Type	2010-01-01	2100-01-01	Absolute							
+UK PVSAT 2687 51.0 0.0 File			Data_Type	2010-01-01	2100-01-01	Folder							
+UK PVSAT 2687 51.0 0.0 TS			Schema	2010-01-01	2100-01-01	time_series_pv							
+UK PVSAT 2687 51.0 0.0 TS			tsn_name	2010-01-01	2100-01-01	ts_UK PVSAT 2687 51.0 0.0							
+UK PVSAT 2860 52.0 -3.125 Capacity Factor			Value	2010-01-01	2100-01-01	UK PVSAT 2860 52.0 -3.125 File	0.1	Multiply					
+UK PVSAT 2860 52.0 -3.125 File			Location	2010-01-01	2100-01-01	/ProfilesMC/UK PVSAT 2860 52.0 -3.125/							
+UK PVSAT 2860 52.0 -3.125 File			Location_Type	2010-01-01	2100-01-01	Absolute							
+UK PVSAT 2860 52.0 -3.125 File			Data_Type	2010-01-01	2100-01-01	Folder							
+UK PVSAT 2860 52.0 -3.125 TS			Schema	2010-01-01	2100-01-01	time_series_pv							
+UK PVSAT 2860 52.0 -3.125 TS			tsn_name	2010-01-01	2100-01-01	ts_UK PVSAT 2860 52.0 -3.125							
+UK PVSAT 2863 52.0 -1.25 Capacity Factor			Value	2010-01-01	2100-01-01	UK PVSAT 2863 52.0 -1.25 File	0.1	Multiply					
+UK PVSAT 2863 52.0 -1.25 File			Location	2010-01-01	2100-01-01	/ProfilesMC/UK PVSAT 2863 52.0 -1.25/							
+UK PVSAT 2863 52.0 -1.25 File			Location_Type	2010-01-01	2100-01-01	Absolute							
+UK PVSAT 2863 52.0 -1.25 File			Data_Type	2010-01-01	2100-01-01	Folder							
+UK PVSAT 2863 52.0 -1.25 TS			Schema	2010-01-01	2100-01-01	time_series_pv							
+UK PVSAT 2863 52.0 -1.25 TS			tsn_name	2010-01-01	2100-01-01	ts_UK PVSAT 2863 52.0 -1.25							
+UK PVSAT 2866 52.0 0.625 Capacity Factor			Value	2010-01-01	2100-01-01	UK PVSAT 2866 52.0 0.625 File	0.1	Multiply					
+UK PVSAT 2866 52.0 0.625 File			Location	2010-01-01	2100-01-01	/ProfilesMC/UK PVSAT 2866 52.0 0.625/							
+UK PVSAT 2866 52.0 0.625 File			Location_Type	2010-01-01	2100-01-01	Absolute							
+UK PVSAT 2866 52.0 0.625 File			Data_Type	2010-01-01	2100-01-01	Folder							
+UK PVSAT 2866 52.0 0.625 TS			Schema	2010-01-01	2100-01-01	time_series_pv							
+UK PVSAT 2866 52.0 0.625 TS			tsn_name	2010-01-01	2100-01-01	ts_UK PVSAT 2866 52.0 0.625							

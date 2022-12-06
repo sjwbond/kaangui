@@ -1,0 +1,28 @@
+Object_Name	Object_Type
+UK Onshore Generators	Group
+UK Offshore Generators	Group
+UK RWE Onshore Generators	Group
+UK RWE Offshore Generators	Group
+UK Wind Generators	Group
+UK RWE Wind Generators	Group
+UK Solar Generators	Group
+UK RWE Solar Generators	Group
+UK RWE Renewables Generators	Group
+UK RWE Conventional Generators	Group
+UK RWE Generators	Group
+UK Gas Generators	Group
+UK Coal Generators	Group
+UK Lignite Generators	Group
+UK Nuclear Generators	Group
+UK Hard Coal Generators	Group
+UK CCGT Generators	Group
+UK RWE CCGT Generators	Group
+UK OCGT Generators	Group
+UK Biomass Generators	Group
+UK CHP Generators	Group
+UK Liquid Generators	Group
+UK ROR Generators	Group
+UK Storage Generators	Group
+UK PumpedStorage Generators	Group
+UK Batteries	Group
+UK Hydro Storage Generators	Group

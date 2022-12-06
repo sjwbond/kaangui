@@ -1,0 +1,612 @@
+Object_Name	Object_Type
+UK RWE Rhyd-Y-Groes	Generator
+UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 31M Windspeed	Variable
+UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 31M HHxWS	Variable
+UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 31M HHxWSc	Variable
+UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 31M HHc	Variable
+UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 31M WSc	Variable
+UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 31M HHxWSc+HHc	Variable
+UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 31M HHxWSc+HHc+WSc	Variable
+UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 31M HHxWSc+HHc+WSc+C	Variable
+UK RWE Royd Moor	Generator
+UK Onshore Huddersfield 3129 53.5 -1.875 39M Windspeed	Variable
+UK Onshore Huddersfield 3129 53.5 -1.875 39M HHxWS	Variable
+UK Onshore Huddersfield 3129 53.5 -1.875 39M HHxWSc	Variable
+UK Onshore Huddersfield 3129 53.5 -1.875 39M HHc	Variable
+UK Onshore Huddersfield 3129 53.5 -1.875 39M WSc	Variable
+UK Onshore Huddersfield 3129 53.5 -1.875 39M HHxWSc+HHc	Variable
+UK Onshore Huddersfield 3129 53.5 -1.875 39M HHxWSc+HHc+WSc	Variable
+UK Onshore Huddersfield 3129 53.5 -1.875 39M HHxWSc+HHc+WSc+C	Variable
+UK RWE Bowbeat Emly Bank	Generator
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 50M Windspeed	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 50M HHxWS	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 50M HHxWSc	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 50M HHc	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 50M WSc	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 50M HHxWSc+HHc	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 50M HHxWSc+HHc+WSc	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 50M HHxWSc+HHc+WSc+C	Variable
+UK RWE Deucheran Hill	Generator
+AB Offshore Western_Scotland_Near 3568 56.0 -5.625 66M Windspeed	Variable
+AB Offshore Western_Scotland_Near 3568 56.0 -5.625 66M HHxWS	Variable
+AB Offshore Western_Scotland_Near 3568 56.0 -5.625 66M HHxWSc	Variable
+AB Offshore Western_Scotland_Near 3568 56.0 -5.625 66M HHc	Variable
+AB Offshore Western_Scotland_Near 3568 56.0 -5.625 66M WSc	Variable
+AB Offshore Western_Scotland_Near 3568 56.0 -5.625 66M HHxWSc+HHc	Variable
+AB Offshore Western_Scotland_Near 3568 56.0 -5.625 66M HHxWSc+HHc+WSc	Variable
+AB Offshore Western_Scotland_Near 3568 56.0 -5.625 66M HHxWSc+HHc+WSc+C	Variable
+UK RWE Bowbeat Roughside	Generator
+AB Onshore South_Scotland 3483 55.5 -3.125 50M Windspeed	Variable
+AB Onshore South_Scotland 3483 55.5 -3.125 50M HHxWS	Variable
+AB Onshore South_Scotland 3483 55.5 -3.125 50M HHxWSc	Variable
+AB Onshore South_Scotland 3483 55.5 -3.125 50M HHc	Variable
+AB Onshore South_Scotland 3483 55.5 -3.125 50M WSc	Variable
+AB Onshore South_Scotland 3483 55.5 -3.125 50M HHxWSc+HHc	Variable
+AB Onshore South_Scotland 3483 55.5 -3.125 50M HHxWSc+HHc+WSc	Variable
+AB Onshore South_Scotland 3483 55.5 -3.125 50M HHxWSc+HHc+WSc+C	Variable
+UK RWE Out Newton	Generator
+UK Onshore Grimsby 3132 53.5 0.0 50M Windspeed	Variable
+UK Onshore Grimsby 3132 53.5 0.0 50M HHxWS	Variable
+UK Onshore Grimsby 3132 53.5 0.0 50M HHxWSc	Variable
+UK Onshore Grimsby 3132 53.5 0.0 50M HHc	Variable
+UK Onshore Grimsby 3132 53.5 0.0 50M WSc	Variable
+UK Onshore Grimsby 3132 53.5 0.0 50M HHxWSc+HHc	Variable
+UK Onshore Grimsby 3132 53.5 0.0 50M HHxWSc+HHc+WSc	Variable
+UK Onshore Grimsby 3132 53.5 0.0 50M HHxWSc+HHc+WSc+C	Variable
+UK RWE Scroby Sands	Generator
+UK Offshore Suffolk_Near 2957 52.5 1.875 68M Windspeed	Variable
+UK Offshore Suffolk_Near 2957 52.5 1.875 68M HHxWS	Variable
+UK Offshore Suffolk_Near 2957 52.5 1.875 68M HHxWSc	Variable
+UK Offshore Suffolk_Near 2957 52.5 1.875 68M HHc	Variable
+UK Offshore Suffolk_Near 2957 52.5 1.875 68M WSc	Variable
+UK Offshore Suffolk_Near 2957 52.5 1.875 68M HHxWSc+HHc	Variable
+UK Offshore Suffolk_Near 2957 52.5 1.875 68M HHxWSc+HHc+WSc	Variable
+UK Offshore Suffolk_Near 2957 52.5 1.875 68M HHxWSc+HHc+WSc+C	Variable
+UK RWE Harehill	Generator
+UK Offshore Tyneside_Near 3397 55.0 -1.25 60M Windspeed	Variable
+UK Offshore Tyneside_Near 3397 55.0 -1.25 60M HHxWS	Variable
+UK Offshore Tyneside_Near 3397 55.0 -1.25 60M HHxWSc	Variable
+UK Offshore Tyneside_Near 3397 55.0 -1.25 60M HHc	Variable
+UK Offshore Tyneside_Near 3397 55.0 -1.25 60M WSc	Variable
+UK Offshore Tyneside_Near 3397 55.0 -1.25 60M HHxWSc+HHc	Variable
+UK Offshore Tyneside_Near 3397 55.0 -1.25 60M HHxWSc+HHc+WSc	Variable
+UK Offshore Tyneside_Near 3397 55.0 -1.25 60M HHxWSc+HHc+WSc+C	Variable
+UK RWE Harehill II	Generator
+UK RWE High Volts	Generator
+UK Onshore Middlesborough 3308 54.5 -1.25 60M Windspeed	Variable
+UK Onshore Middlesborough 3308 54.5 -1.25 60M HHxWS	Variable
+UK Onshore Middlesborough 3308 54.5 -1.25 60M HHxWSc	Variable
+UK Onshore Middlesborough 3308 54.5 -1.25 60M HHc	Variable
+UK Onshore Middlesborough 3308 54.5 -1.25 60M WSc	Variable
+UK Onshore Middlesborough 3308 54.5 -1.25 60M HHxWSc+HHc	Variable
+UK Onshore Middlesborough 3308 54.5 -1.25 60M HHxWSc+HHc+WSc	Variable
+UK Onshore Middlesborough 3308 54.5 -1.25 60M HHxWSc+HHc+WSc+C	Variable
+UK RWE High Volts II	Generator
+UK RWE Holmside	Generator
+UK Onshore Tyneside 3396 55.0 -1.875 60M Windspeed	Variable
+UK Onshore Tyneside 3396 55.0 -1.875 60M HHxWS	Variable
+UK Onshore Tyneside 3396 55.0 -1.875 60M HHxWSc	Variable
+UK Onshore Tyneside 3396 55.0 -1.875 60M HHc	Variable
+UK Onshore Tyneside 3396 55.0 -1.875 60M WSc	Variable
+UK Onshore Tyneside 3396 55.0 -1.875 60M HHxWSc+HHc	Variable
+UK Onshore Tyneside 3396 55.0 -1.875 60M HHxWSc+HHc+WSc	Variable
+UK Onshore Tyneside 3396 55.0 -1.875 60M HHxWSc+HHc+WSc+C	Variable
+UK RWE Holmside II	Generator
+UK RWE Burgar Hill	Generator
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 60M Windspeed	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 60M HHxWS	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 60M HHxWSc	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 60M HHc	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 60M WSc	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 60M HHxWSc+HHc	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 60M HHxWSc+HHc+WSc	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 60M HHxWSc+HHc+WSc+C	Variable
+UK RWE Hameldon Hill	Generator
+UK Onshore Chorley 3128 53.5 -2.5 55M Windspeed	Variable
+UK Onshore Chorley 3128 53.5 -2.5 55M HHxWS	Variable
+UK Onshore Chorley 3128 53.5 -2.5 55M HHxWSc	Variable
+UK Onshore Chorley 3128 53.5 -2.5 55M HHc	Variable
+UK Onshore Chorley 3128 53.5 -2.5 55M WSc	Variable
+UK Onshore Chorley 3128 53.5 -2.5 55M HHxWSc+HHc	Variable
+UK Onshore Chorley 3128 53.5 -2.5 55M HHxWSc+HHc+WSc	Variable
+UK Onshore Chorley 3128 53.5 -2.5 55M HHxWSc+HHc+WSc+C	Variable
+UK RWE Stags Holt	Generator
+AB Onshore South_Scotland 3483 55.5 -3.125 80M Windspeed	Variable
+AB Onshore South_Scotland 3483 55.5 -3.125 80M HHxWS	Variable
+AB Onshore South_Scotland 3483 55.5 -3.125 80M HHxWSc	Variable
+AB Onshore South_Scotland 3483 55.5 -3.125 80M HHc	Variable
+AB Onshore South_Scotland 3483 55.5 -3.125 80M WSc	Variable
+AB Onshore South_Scotland 3483 55.5 -3.125 80M HHxWSc+HHc	Variable
+AB Onshore South_Scotland 3483 55.5 -3.125 80M HHxWSc+HHc+WSc	Variable
+AB Onshore South_Scotland 3483 55.5 -3.125 80M HHxWSc+HHc+WSc+C	Variable
+UK RWE The Hollies	Generator
+UK Onshore Grimsby 3132 53.5 0.0 60M Windspeed	Variable
+UK Onshore Grimsby 3132 53.5 0.0 60M HHxWS	Variable
+UK Onshore Grimsby 3132 53.5 0.0 60M HHxWSc	Variable
+UK Onshore Grimsby 3132 53.5 0.0 60M HHc	Variable
+UK Onshore Grimsby 3132 53.5 0.0 60M WSc	Variable
+UK Onshore Grimsby 3132 53.5 0.0 60M HHxWSc+HHc	Variable
+UK Onshore Grimsby 3132 53.5 0.0 60M HHxWSc+HHc+WSc	Variable
+UK Onshore Grimsby 3132 53.5 0.0 60M HHxWSc+HHc+WSc+C	Variable
+UK RWE Knabs Ridge	Generator
+UK Onshore Huddersfield 3129 53.5 -1.875 55M Windspeed	Variable
+UK Onshore Huddersfield 3129 53.5 -1.875 55M HHxWS	Variable
+UK Onshore Huddersfield 3129 53.5 -1.875 55M HHxWSc	Variable
+UK Onshore Huddersfield 3129 53.5 -1.875 55M HHc	Variable
+UK Onshore Huddersfield 3129 53.5 -1.875 55M WSc	Variable
+UK Onshore Huddersfield 3129 53.5 -1.875 55M HHxWSc+HHc	Variable
+UK Onshore Huddersfield 3129 53.5 -1.875 55M HHxWSc+HHc+WSc	Variable
+UK Onshore Huddersfield 3129 53.5 -1.875 55M HHxWSc+HHc+WSc+C	Variable
+UK RWE Bilbster	Generator
+UK RWE Little Cheyne Court	Generator
+UK RWE Rhyl Flats	Generator
+UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 75M Windspeed	Variable
+UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 75M HHxWS	Variable
+UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 75M HHxWSc	Variable
+UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 75M HHc	Variable
+UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 75M WSc	Variable
+UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 75M HHxWSc+HHc	Variable
+UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 75M HHxWSc+HHc+WSc	Variable
+UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 75M HHxWSc+HHc+WSc+C	Variable
+UK RWE Robin Rigg West	Generator
+UK Offshore Irish_Sea_Lake_District 3304 54.5 -3.75 80M Windspeed	Variable
+UK Offshore Irish_Sea_Lake_District 3304 54.5 -3.75 80M HHxWS	Variable
+UK Offshore Irish_Sea_Lake_District 3304 54.5 -3.75 80M HHxWSc	Variable
+UK Offshore Irish_Sea_Lake_District 3304 54.5 -3.75 80M HHc	Variable
+UK Offshore Irish_Sea_Lake_District 3304 54.5 -3.75 80M WSc	Variable
+UK Offshore Irish_Sea_Lake_District 3304 54.5 -3.75 80M HHxWSc+HHc	Variable
+UK Offshore Irish_Sea_Lake_District 3304 54.5 -3.75 80M HHxWSc+HHc+WSc	Variable
+UK Offshore Irish_Sea_Lake_District 3304 54.5 -3.75 80M HHxWSc+HHc+WSc+C	Variable
+UK RWE An Suidhe	Generator
+AB Offshore Western_Scotland_Near 3568 56.0 -5.625 56M Windspeed	Variable
+AB Offshore Western_Scotland_Near 3568 56.0 -5.625 56M HHxWS	Variable
+AB Offshore Western_Scotland_Near 3568 56.0 -5.625 56M HHxWSc	Variable
+AB Offshore Western_Scotland_Near 3568 56.0 -5.625 56M HHc	Variable
+AB Offshore Western_Scotland_Near 3568 56.0 -5.625 56M WSc	Variable
+AB Offshore Western_Scotland_Near 3568 56.0 -5.625 56M HHxWSc+HHc	Variable
+AB Offshore Western_Scotland_Near 3568 56.0 -5.625 56M HHxWSc+HHc+WSc	Variable
+AB Offshore Western_Scotland_Near 3568 56.0 -5.625 56M HHxWSc+HHc+WSc+C	Variable
+UK RWE Robin Rigg East	Generator
+UK RWE Haswell Moor	Generator
+UK Offshore Tyneside_Near 3397 55.0 -1.25 69M Windspeed	Variable
+UK Offshore Tyneside_Near 3397 55.0 -1.25 69M HHxWS	Variable
+UK Offshore Tyneside_Near 3397 55.0 -1.25 69M HHxWSc	Variable
+UK Offshore Tyneside_Near 3397 55.0 -1.25 69M HHc	Variable
+UK Offshore Tyneside_Near 3397 55.0 -1.25 69M WSc	Variable
+UK Offshore Tyneside_Near 3397 55.0 -1.25 69M HHxWSc+HHc	Variable
+UK Offshore Tyneside_Near 3397 55.0 -1.25 69M HHxWSc+HHc+WSc	Variable
+UK Offshore Tyneside_Near 3397 55.0 -1.25 69M HHxWSc+HHc+WSc+C	Variable
+UK RWE Haswell Moor II	Generator
+UK RWE Lindhurst	Generator
+UK Onshore Nottingham 3041 53.0 -1.25 80M Windspeed	Variable
+UK Onshore Nottingham 3041 53.0 -1.25 80M HHxWS	Variable
+UK Onshore Nottingham 3041 53.0 -1.25 80M HHxWSc	Variable
+UK Onshore Nottingham 3041 53.0 -1.25 80M HHc	Variable
+UK Onshore Nottingham 3041 53.0 -1.25 80M WSc	Variable
+UK Onshore Nottingham 3041 53.0 -1.25 80M HHxWSc+HHc	Variable
+UK Onshore Nottingham 3041 53.0 -1.25 80M HHxWSc+HHc+WSc	Variable
+UK Onshore Nottingham 3041 53.0 -1.25 80M HHxWSc+HHc+WSc+C	Variable
+UK RWE Lochelbank	Generator
+AB Onshore Perth 3660 56.5 -3.75 60M Windspeed	Variable
+AB Onshore Perth 3660 56.5 -3.75 60M HHxWS	Variable
+AB Onshore Perth 3660 56.5 -3.75 60M HHxWSc	Variable
+AB Onshore Perth 3660 56.5 -3.75 60M HHc	Variable
+AB Onshore Perth 3660 56.5 -3.75 60M WSc	Variable
+AB Onshore Perth 3660 56.5 -3.75 60M HHxWSc+HHc	Variable
+AB Onshore Perth 3660 56.5 -3.75 60M HHxWSc+HHc+WSc	Variable
+AB Onshore Perth 3660 56.5 -3.75 60M HHxWSc+HHc+WSc+C	Variable
+UK RWE Greater Gabbard	Generator
+UK Offshore Harwick_Near 2868 52.0 1.875 78M Windspeed	Variable
+UK Offshore Harwick_Near 2868 52.0 1.875 78M HHxWS	Variable
+UK Offshore Harwick_Near 2868 52.0 1.875 78M HHxWSc	Variable
+UK Offshore Harwick_Near 2868 52.0 1.875 78M HHc	Variable
+UK Offshore Harwick_Near 2868 52.0 1.875 78M WSc	Variable
+UK Offshore Harwick_Near 2868 52.0 1.875 78M HHxWSc+HHc	Variable
+UK Offshore Harwick_Near 2868 52.0 1.875 78M HHxWSc+HHc+WSc	Variable
+UK Offshore Harwick_Near 2868 52.0 1.875 78M HHxWSc+HHc+WSc+C	Variable
+UK RWE Great Eppleton	Generator
+UK RWE Great Eppleton II	Generator
+UK RWE Hellrigg	Generator
+UK Onshore Lake_District 3305 54.5 -3.125 80M Windspeed	Variable
+UK Onshore Lake_District 3305 54.5 -3.125 80M HHxWS	Variable
+UK Onshore Lake_District 3305 54.5 -3.125 80M HHxWSc	Variable
+UK Onshore Lake_District 3305 54.5 -3.125 80M HHc	Variable
+UK Onshore Lake_District 3305 54.5 -3.125 80M WSc	Variable
+UK Onshore Lake_District 3305 54.5 -3.125 80M HHxWSc+HHc	Variable
+UK Onshore Lake_District 3305 54.5 -3.125 80M HHxWSc+HHc+WSc	Variable
+UK Onshore Lake_District 3305 54.5 -3.125 80M HHxWSc+HHc+WSc+C	Variable
+UK RWE Butterwick Moor I	Generator
+UK Onshore Middlesborough 3308 54.5 -1.25 69M Windspeed	Variable
+UK Onshore Middlesborough 3308 54.5 -1.25 69M HHxWS	Variable
+UK Onshore Middlesborough 3308 54.5 -1.25 69M HHxWSc	Variable
+UK Onshore Middlesborough 3308 54.5 -1.25 69M HHc	Variable
+UK Onshore Middlesborough 3308 54.5 -1.25 69M WSc	Variable
+UK Onshore Middlesborough 3308 54.5 -1.25 69M HHxWSc+HHc	Variable
+UK Onshore Middlesborough 3308 54.5 -1.25 69M HHxWSc+HHc+WSc	Variable
+UK Onshore Middlesborough 3308 54.5 -1.25 69M HHxWSc+HHc+WSc+C	Variable
+UK RWE Butterwick Moor II	Generator
+UK RWE Butterwick Moor Wind Farm	Generator
+UK RWE Novar 2	Generator
+AB Onshore Northern_Scotland 3926 58.0 -4.375 65M Windspeed	Variable
+AB Onshore Northern_Scotland 3926 58.0 -4.375 65M HHxWS	Variable
+AB Onshore Northern_Scotland 3926 58.0 -4.375 65M HHxWSc	Variable
+AB Onshore Northern_Scotland 3926 58.0 -4.375 65M HHc	Variable
+AB Onshore Northern_Scotland 3926 58.0 -4.375 65M WSc	Variable
+AB Onshore Northern_Scotland 3926 58.0 -4.375 65M HHxWSc+HHc	Variable
+AB Onshore Northern_Scotland 3926 58.0 -4.375 65M HHxWSc+HHc+WSc	Variable
+AB Onshore Northern_Scotland 3926 58.0 -4.375 65M HHxWSc+HHc+WSc+C	Variable
+UK RWE Tween Bridge	Generator
+UK Onshore Scunthorpe 3131 53.5 -0.625 80M Windspeed	Variable
+UK Onshore Scunthorpe 3131 53.5 -0.625 80M HHxWS	Variable
+UK Onshore Scunthorpe 3131 53.5 -0.625 80M HHxWSc	Variable
+UK Onshore Scunthorpe 3131 53.5 -0.625 80M HHc	Variable
+UK Onshore Scunthorpe 3131 53.5 -0.625 80M WSc	Variable
+UK Onshore Scunthorpe 3131 53.5 -0.625 80M HHxWSc+HHc	Variable
+UK Onshore Scunthorpe 3131 53.5 -0.625 80M HHxWSc+HHc+WSc	Variable
+UK Onshore Scunthorpe 3131 53.5 -0.625 80M HHxWSc+HHc+WSc+C	Variable
+UK RWE Kiln Pit Hill	Generator
+UK Onshore Tyneside 3396 55.0 -1.875 64M Windspeed	Variable
+UK Onshore Tyneside 3396 55.0 -1.875 64M HHxWS	Variable
+UK Onshore Tyneside 3396 55.0 -1.875 64M HHxWSc	Variable
+UK Onshore Tyneside 3396 55.0 -1.875 64M HHc	Variable
+UK Onshore Tyneside 3396 55.0 -1.875 64M WSc	Variable
+UK Onshore Tyneside 3396 55.0 -1.875 64M HHxWSc+HHc	Variable
+UK Onshore Tyneside 3396 55.0 -1.875 64M HHxWSc+HHc+WSc	Variable
+UK Onshore Tyneside 3396 55.0 -1.875 64M HHxWSc+HHc+WSc+C	Variable
+UK RWE Camster	Generator
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 80M Windspeed	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 80M HHxWS	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 80M HHxWSc	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 80M HHc	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 80M WSc	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 80M HHxWSc+HHc	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 80M HHxWSc+HHc+WSc	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 80M HHxWSc+HHc+WSc+C	Variable
+UK RWE Rosehall	Generator
+AB Onshore Northeast_Scotland 3839 57.5 -3.125 59M Windspeed	Variable
+AB Onshore Northeast_Scotland 3839 57.5 -3.125 59M HHxWS	Variable
+AB Onshore Northeast_Scotland 3839 57.5 -3.125 59M HHxWSc	Variable
+AB Onshore Northeast_Scotland 3839 57.5 -3.125 59M HHc	Variable
+AB Onshore Northeast_Scotland 3839 57.5 -3.125 59M WSc	Variable
+AB Onshore Northeast_Scotland 3839 57.5 -3.125 59M HHxWSc+HHc	Variable
+AB Onshore Northeast_Scotland 3839 57.5 -3.125 59M HHxWSc+HHc+WSc	Variable
+AB Onshore Northeast_Scotland 3839 57.5 -3.125 59M HHxWSc+HHc+WSc+C	Variable
+UK RWE Bradwell	Generator
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 80M Windspeed	Variable
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 80M HHxWS	Variable
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 80M HHxWSc	Variable
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 80M HHc	Variable
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 80M WSc	Variable
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 80M HHxWSc+HHc	Variable
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 80M HHxWSc+HHc+WSc	Variable
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 80M HHxWSc+HHc+WSc+C	Variable
+UK RWE London Array 1	Generator
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 87M Windspeed	Variable
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 87M HHxWS	Variable
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 87M HHxWSc	Variable
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 87M HHc	Variable
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 87M WSc	Variable
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 87M HHxWSc+HHc	Variable
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 87M HHxWSc+HHc+WSc	Variable
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 87M HHxWSc+HHc+WSc+C	Variable
+UK RWE London Array 2	Generator
+UK RWE London Array 3	Generator
+UK RWE London Array 4	Generator
+UK RWE Middlemoor	Generator
+UK Onshore Northumberland 3485 55.5 -1.875 80M Windspeed	Variable
+UK Onshore Northumberland 3485 55.5 -1.875 80M HHxWS	Variable
+UK Onshore Northumberland 3485 55.5 -1.875 80M HHxWSc	Variable
+UK Onshore Northumberland 3485 55.5 -1.875 80M HHc	Variable
+UK Onshore Northumberland 3485 55.5 -1.875 80M WSc	Variable
+UK Onshore Northumberland 3485 55.5 -1.875 80M HHxWSc+HHc	Variable
+UK Onshore Northumberland 3485 55.5 -1.875 80M HHxWSc+HHc+WSc	Variable
+UK Onshore Northumberland 3485 55.5 -1.875 80M HHxWSc+HHc+WSc+C	Variable
+UK RWE Gwynt y Mor	Generator
+UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 98M Windspeed	Variable
+UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 98M HHxWS	Variable
+UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 98M HHxWSc	Variable
+UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 98M HHc	Variable
+UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 98M WSc	Variable
+UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 98M HHxWSc+HHc	Variable
+UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 98M HHxWSc+HHc+WSc	Variable
+UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 98M HHxWSc+HHc+WSc+C	Variable
+UK RWE Hameldon Hill Extension	Generator
+UK Onshore Chorley 3128 53.5 -2.5 60M Windspeed	Variable
+UK Onshore Chorley 3128 53.5 -2.5 60M HHxWS	Variable
+UK Onshore Chorley 3128 53.5 -2.5 60M HHxWSc	Variable
+UK Onshore Chorley 3128 53.5 -2.5 60M HHc	Variable
+UK Onshore Chorley 3128 53.5 -2.5 60M WSc	Variable
+UK Onshore Chorley 3128 53.5 -2.5 60M HHxWSc+HHc	Variable
+UK Onshore Chorley 3128 53.5 -2.5 60M HHxWSc+HHc+WSc	Variable
+UK Onshore Chorley 3128 53.5 -2.5 60M HHxWSc+HHc+WSc+C	Variable
+UK RWE Goole Fields A	Generator
+UK RWE Humber 1	Generator
+UK Onshore Grimsby 3132 53.5 0.0 80M Windspeed	Variable
+UK Onshore Grimsby 3132 53.5 0.0 80M HHxWS	Variable
+UK Onshore Grimsby 3132 53.5 0.0 80M HHxWSc	Variable
+UK Onshore Grimsby 3132 53.5 0.0 80M HHc	Variable
+UK Onshore Grimsby 3132 53.5 0.0 80M WSc	Variable
+UK Onshore Grimsby 3132 53.5 0.0 80M HHxWSc+HHc	Variable
+UK Onshore Grimsby 3132 53.5 0.0 80M HHxWSc+HHc+WSc	Variable
+UK Onshore Grimsby 3132 53.5 0.0 80M HHxWSc+HHc+WSc+C	Variable
+UK RWE Humber 2	Generator
+UK RWE Goole Fields B	Generator
+UK RWE Rampion 1	Generator
+UK Offshore English_Channel_Near 2598 50.5 0.0 80M Windspeed	Variable
+UK Offshore English_Channel_Near 2598 50.5 0.0 80M HHxWS	Variable
+UK Offshore English_Channel_Near 2598 50.5 0.0 80M HHxWSc	Variable
+UK Offshore English_Channel_Near 2598 50.5 0.0 80M HHc	Variable
+UK Offshore English_Channel_Near 2598 50.5 0.0 80M WSc	Variable
+UK Offshore English_Channel_Near 2598 50.5 0.0 80M HHxWSc+HHc	Variable
+UK Offshore English_Channel_Near 2598 50.5 0.0 80M HHxWSc+HHc+WSc	Variable
+UK Offshore English_Channel_Near 2598 50.5 0.0 80M HHxWSc+HHc+WSc+C	Variable
+UK RWE Rampion 2	Generator
+UK RWE Brechfa Forest West	Generator
+UK RWE Galloper	Generator
+UK Offshore Harwick_Near 2868 52.0 1.875 116M Windspeed	Variable
+UK Offshore Harwick_Near 2868 52.0 1.875 116M HHxWS	Variable
+UK Offshore Harwick_Near 2868 52.0 1.875 116M HHxWSc	Variable
+UK Offshore Harwick_Near 2868 52.0 1.875 116M HHc	Variable
+UK Offshore Harwick_Near 2868 52.0 1.875 116M WSc	Variable
+UK Offshore Harwick_Near 2868 52.0 1.875 116M HHxWSc+HHc	Variable
+UK Offshore Harwick_Near 2868 52.0 1.875 116M HHxWSc+HHc+WSc	Variable
+UK Offshore Harwick_Near 2868 52.0 1.875 116M HHxWSc+HHc+WSc+C	Variable
+UK RWE Clocaenog Forest	Generator
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 98M Windspeed	Variable
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 98M HHxWS	Variable
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 98M HHxWSc	Variable
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 98M HHc	Variable
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 98M WSc	Variable
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 98M HHxWSc+HHc	Variable
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 98M HHxWSc+HHc+WSc	Variable
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 98M HHxWSc+HHc+WSc+C	Variable
+UK RWE Mynydd Y Gwair	Generator
+UK Onshore South_Wales 2770 51.5 -3.75 80M Windspeed	Variable
+UK Onshore South_Wales 2770 51.5 -3.75 80M HHxWS	Variable
+UK Onshore South_Wales 2770 51.5 -3.75 80M HHxWSc	Variable
+UK Onshore South_Wales 2770 51.5 -3.75 80M HHc	Variable
+UK Onshore South_Wales 2770 51.5 -3.75 80M WSc	Variable
+UK Onshore South_Wales 2770 51.5 -3.75 80M HHxWSc+HHc	Variable
+UK Onshore South_Wales 2770 51.5 -3.75 80M HHxWSc+HHc+WSc	Variable
+UK Onshore South_Wales 2770 51.5 -3.75 80M HHxWSc+HHc+WSc+C	Variable
+UK RWE Bad a Cheo	Generator
+UK RWE Triton Knoll	Generator
+UK Offshore Lincs_Far 3134 53.5 1.25 140M Windspeed	Variable
+UK Offshore Lincs_Far 3134 53.5 1.25 140M HHxWS	Variable
+UK Offshore Lincs_Far 3134 53.5 1.25 140M HHxWSc	Variable
+UK Offshore Lincs_Far 3134 53.5 1.25 140M HHc	Variable
+UK Offshore Lincs_Far 3134 53.5 1.25 140M WSc	Variable
+UK Offshore Lincs_Far 3134 53.5 1.25 140M HHxWSc+HHc	Variable
+UK Offshore Lincs_Far 3134 53.5 1.25 140M HHxWSc+HHc+WSc	Variable
+UK Offshore Lincs_Far 3134 53.5 1.25 140M HHxWSc+HHc+WSc+C	Variable
+UK RWE Benbrack	Generator
+AB Onshore Southwest_Scotland 3392 55.0 -4.375 80M Windspeed	Variable
+AB Onshore Southwest_Scotland 3392 55.0 -4.375 80M HHxWS	Variable
+AB Onshore Southwest_Scotland 3392 55.0 -4.375 80M HHxWSc	Variable
+AB Onshore Southwest_Scotland 3392 55.0 -4.375 80M HHc	Variable
+AB Onshore Southwest_Scotland 3392 55.0 -4.375 80M WSc	Variable
+AB Onshore Southwest_Scotland 3392 55.0 -4.375 80M HHxWSc+HHc	Variable
+AB Onshore Southwest_Scotland 3392 55.0 -4.375 80M HHxWSc+HHc+WSc	Variable
+AB Onshore Southwest_Scotland 3392 55.0 -4.375 80M HHxWSc+HHc+WSc+C	Variable
+UK RWE Enoch Hill	Generator
+AB Onshore Glasgow 3481 55.5 -4.375 80M Windspeed	Variable
+AB Onshore Glasgow 3481 55.5 -4.375 80M HHxWS	Variable
+AB Onshore Glasgow 3481 55.5 -4.375 80M HHxWSc	Variable
+AB Onshore Glasgow 3481 55.5 -4.375 80M HHc	Variable
+AB Onshore Glasgow 3481 55.5 -4.375 80M WSc	Variable
+AB Onshore Glasgow 3481 55.5 -4.375 80M HHxWSc+HHc	Variable
+AB Onshore Glasgow 3481 55.5 -4.375 80M HHxWSc+HHc+WSc	Variable
+AB Onshore Glasgow 3481 55.5 -4.375 80M HHxWSc+HHc+WSc+C	Variable
+UK RWE Golticlay	Generator
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 55M Windspeed	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 55M HHxWS	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 55M HHxWSc	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 55M HHc	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 55M WSc	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 55M HHxWSc+HHc	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 55M HHxWSc+HHc+WSc	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 55M HHxWSc+HHc+WSc+C	Variable
+UK RWE Sofia	Generator
+UK RWE Clachaig Glen	Generator
+AB Onshore Northern_Scotland 4016 58.5 -3.75 55M Windspeed	Variable
+AB Onshore Northern_Scotland 4016 58.5 -3.75 55M HHxWS	Variable
+AB Onshore Northern_Scotland 4016 58.5 -3.75 55M HHxWSc	Variable
+AB Onshore Northern_Scotland 4016 58.5 -3.75 55M HHc	Variable
+AB Onshore Northern_Scotland 4016 58.5 -3.75 55M WSc	Variable
+AB Onshore Northern_Scotland 4016 58.5 -3.75 55M HHxWSc+HHc	Variable
+AB Onshore Northern_Scotland 4016 58.5 -3.75 55M HHxWSc+HHc+WSc	Variable
+AB Onshore Northern_Scotland 4016 58.5 -3.75 55M HHxWSc+HHc+WSc+C	Variable
+UK RWE Cyfyngedig	Generator
+UK Onshore Brecon Beacons 2860 52.0 -3.125 60M Windspeed	Variable
+UK Onshore Brecon Beacons 2860 52.0 -3.125 60M HHxWS	Variable
+UK Onshore Brecon Beacons 2860 52.0 -3.125 60M HHxWSc	Variable
+UK Onshore Brecon Beacons 2860 52.0 -3.125 60M HHc	Variable
+UK Onshore Brecon Beacons 2860 52.0 -3.125 60M WSc	Variable
+UK Onshore Brecon Beacons 2860 52.0 -3.125 60M HHxWSc+HHc	Variable
+UK Onshore Brecon Beacons 2860 52.0 -3.125 60M HHxWSc+HHc+WSc	Variable
+UK Onshore Brecon Beacons 2860 52.0 -3.125 60M HHxWSc+HHc+WSc+C	Variable
+UK RWE Strathy Wood	Generator
+AB Onshore Northern_Scotland 4016 58.5 -3.75 83M Windspeed	Variable
+AB Onshore Northern_Scotland 4016 58.5 -3.75 83M HHxWS	Variable
+AB Onshore Northern_Scotland 4016 58.5 -3.75 83M HHxWSc	Variable
+AB Onshore Northern_Scotland 4016 58.5 -3.75 83M HHc	Variable
+AB Onshore Northern_Scotland 4016 58.5 -3.75 83M WSc	Variable
+AB Onshore Northern_Scotland 4016 58.5 -3.75 83M HHxWSc+HHc	Variable
+AB Onshore Northern_Scotland 4016 58.5 -3.75 83M HHxWSc+HHc+WSc	Variable
+AB Onshore Northern_Scotland 4016 58.5 -3.75 83M HHxWSc+HHc+WSc+C	Variable
+UK RWE Camster ll	Generator
+UK RWE Enoch Hill II	Generator
+UK RWE Lorg	Generator
+UK RWE Pen March	Generator
+UK Onshore Brecon Beacons 2860 52.0 -3.125 89M Windspeed	Variable
+UK Onshore Brecon Beacons 2860 52.0 -3.125 89M HHxWS	Variable
+UK Onshore Brecon Beacons 2860 52.0 -3.125 89M HHxWSc	Variable
+UK Onshore Brecon Beacons 2860 52.0 -3.125 89M HHc	Variable
+UK Onshore Brecon Beacons 2860 52.0 -3.125 89M WSc	Variable
+UK Onshore Brecon Beacons 2860 52.0 -3.125 89M HHxWSc+HHc	Variable
+UK Onshore Brecon Beacons 2860 52.0 -3.125 89M HHxWSc+HHc+WSc	Variable
+UK Onshore Brecon Beacons 2860 52.0 -3.125 89M HHxWSc+HHc+WSc+C	Variable
+UK RWE Stemster	Generator
+UK RWE Abertillery	Generator
+UK RWE Eredine	Generator
+UK RWE Daer	Generator
+AB Onshore Glasgow 3482 55.5 -3.75 65M Windspeed	Variable
+AB Onshore Glasgow 3482 55.5 -3.75 65M HHxWS	Variable
+AB Onshore Glasgow 3482 55.5 -3.75 65M HHxWSc	Variable
+AB Onshore Glasgow 3482 55.5 -3.75 65M HHc	Variable
+AB Onshore Glasgow 3482 55.5 -3.75 65M WSc	Variable
+AB Onshore Glasgow 3482 55.5 -3.75 65M HHxWSc+HHc	Variable
+AB Onshore Glasgow 3482 55.5 -3.75 65M HHxWSc+HHc+WSc	Variable
+AB Onshore Glasgow 3482 55.5 -3.75 65M HHxWSc+HHc+WSc+C	Variable
+UK RWE Gaerwen	Generator
+UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 55M Windspeed	Variable
+UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 55M HHxWS	Variable
+UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 55M HHxWSc	Variable
+UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 55M HHc	Variable
+UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 55M WSc	Variable
+UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 55M HHxWSc+HHc	Variable
+UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 55M HHxWSc+HHc+WSc	Variable
+UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 55M HHxWSc+HHc+WSc+C	Variable
+UK RWE Lorne	Generator
+AB Onshore Southwest_Scotland 3392 55.0 -4.375 98M Windspeed	Variable
+AB Onshore Southwest_Scotland 3392 55.0 -4.375 98M HHxWS	Variable
+AB Onshore Southwest_Scotland 3392 55.0 -4.375 98M HHxWSc	Variable
+AB Onshore Southwest_Scotland 3392 55.0 -4.375 98M HHc	Variable
+AB Onshore Southwest_Scotland 3392 55.0 -4.375 98M WSc	Variable
+AB Onshore Southwest_Scotland 3392 55.0 -4.375 98M HHxWSc+HHc	Variable
+AB Onshore Southwest_Scotland 3392 55.0 -4.375 98M HHxWSc+HHc+WSc	Variable
+AB Onshore Southwest_Scotland 3392 55.0 -4.375 98M HHxWSc+HHc+WSc+C	Variable
+UK RWE Struie	Generator
+UK Sofia	Generator
+UK Galloper	Generator
+UK Triton Knoll	Generator
+UK Kentish Flats	Generator
+UK Barrow	Generator
+UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 75M Windspeed	Variable
+UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 75M HHxWS	Variable
+UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 75M HHxWSc	Variable
+UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 75M HHc	Variable
+UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 75M WSc	Variable
+UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 75M HHxWSc+HHc	Variable
+UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 75M HHxWSc+HHc+WSc	Variable
+UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 75M HHxWSc+HHc+WSc+C	Variable
+UK Little Cheyne Court	Generator
+UK Burbo	Generator
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 80M Windspeed	Variable
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 80M HHxWS	Variable
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 80M HHxWSc	Variable
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 80M HHc	Variable
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 80M WSc	Variable
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 80M HHxWSc+HHc	Variable
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 80M HHxWSc+HHc+WSc	Variable
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 80M HHxWSc+HHc+WSc+C	Variable
+UK Lynn	Generator
+UK Rhyl Flats	Generator
+UK Gunfleet Sands 1-2	Generator
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 75M Windspeed	Variable
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 75M HHxWS	Variable
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 75M HHxWSc	Variable
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 75M HHc	Variable
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 75M WSc	Variable
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 75M HHxWSc+HHc	Variable
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 75M HHxWSc+HHc+WSc	Variable
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 75M HHxWSc+HHc+WSc+C	Variable
+UK Thanet	Generator
+UK Greater Gabbard	Generator
+UK Ormonde	Generator
+UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 90M Windspeed	Variable
+UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 90M HHxWS	Variable
+UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 90M HHxWSc	Variable
+UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 90M HHc	Variable
+UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 90M WSc	Variable
+UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 90M HHxWSc+HHc	Variable
+UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 90M HHxWSc+HHc+WSc	Variable
+UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 90M HHxWSc+HHc+WSc+C	Variable
+UK Walney 1-2	Generator
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 75M Windspeed	Variable
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 75M HHxWS	Variable
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 75M HHxWSc	Variable
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 75M HHc	Variable
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 75M WSc	Variable
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 75M HHxWSc+HHc	Variable
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 75M HHxWSc+HHc+WSc	Variable
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 75M HHxWSc+HHc+WSc+C	Variable
+UK Sheringham Shoal 1	Generator
+UK Offshore Norflok_Near 3045 53.0 1.25 82M Windspeed	Variable
+UK Offshore Norflok_Near 3045 53.0 1.25 82M HHxWS	Variable
+UK Offshore Norflok_Near 3045 53.0 1.25 82M HHxWSc	Variable
+UK Offshore Norflok_Near 3045 53.0 1.25 82M HHc	Variable
+UK Offshore Norflok_Near 3045 53.0 1.25 82M WSc	Variable
+UK Offshore Norflok_Near 3045 53.0 1.25 82M HHxWSc+HHc	Variable
+UK Offshore Norflok_Near 3045 53.0 1.25 82M HHxWSc+HHc+WSc	Variable
+UK Offshore Norflok_Near 3045 53.0 1.25 82M HHxWSc+HHc+WSc+C	Variable
+UK Sheringham Shoal 2	Generator
+UK London Array	Generator
+UK Lincs	Generator
+UK Teesside	Generator
+UK Onshore Middlesborough 3308 54.5 -1.25 80M Windspeed	Variable
+UK Onshore Middlesborough 3308 54.5 -1.25 80M HHxWS	Variable
+UK Onshore Middlesborough 3308 54.5 -1.25 80M HHxWSc	Variable
+UK Onshore Middlesborough 3308 54.5 -1.25 80M HHc	Variable
+UK Onshore Middlesborough 3308 54.5 -1.25 80M WSc	Variable
+UK Onshore Middlesborough 3308 54.5 -1.25 80M HHxWSc+HHc	Variable
+UK Onshore Middlesborough 3308 54.5 -1.25 80M HHxWSc+HHc+WSc	Variable
+UK Onshore Middlesborough 3308 54.5 -1.25 80M HHxWSc+HHc+WSc+C	Variable
+UK Gwynt y Mor	Generator
+UK West of Duddon Sands	Generator
+UK Kentish Flats Extension	Generator
+UK Westermost Rough	Generator
+UK Burbo Extension	Generator
+UK Dudgeon 1	Generator
+UK Offshore Lincs_Far 3134 53.5 1.25 110M Windspeed	Variable
+UK Offshore Lincs_Far 3134 53.5 1.25 110M HHxWS	Variable
+UK Offshore Lincs_Far 3134 53.5 1.25 110M HHxWSc	Variable
+UK Offshore Lincs_Far 3134 53.5 1.25 110M HHc	Variable
+UK Offshore Lincs_Far 3134 53.5 1.25 110M WSc	Variable
+UK Offshore Lincs_Far 3134 53.5 1.25 110M HHxWSc+HHc	Variable
+UK Offshore Lincs_Far 3134 53.5 1.25 110M HHxWSc+HHc+WSc	Variable
+UK Offshore Lincs_Far 3134 53.5 1.25 110M HHxWSc+HHc+WSc+C	Variable
+UK Dudgeon 2	Generator
+UK Dudgeon 3	Generator
+UK Dudgeon 4	Generator
+UK Hywind 1	Generator
+AB Offshore Aberdeen_Far 3753 57.0 -1.25 101M Windspeed	Variable
+AB Offshore Aberdeen_Far 3753 57.0 -1.25 101M HHxWS	Variable
+AB Offshore Aberdeen_Far 3753 57.0 -1.25 101M HHxWSc	Variable
+AB Offshore Aberdeen_Far 3753 57.0 -1.25 101M HHc	Variable
+AB Offshore Aberdeen_Far 3753 57.0 -1.25 101M WSc	Variable
+AB Offshore Aberdeen_Far 3753 57.0 -1.25 101M HHxWSc+HHc	Variable
+AB Offshore Aberdeen_Far 3753 57.0 -1.25 101M HHxWSc+HHc+WSc	Variable
+AB Offshore Aberdeen_Far 3753 57.0 -1.25 101M HHxWSc+HHc+WSc+C	Variable
+UK Walney 3	Generator
+UK Rampion	Generator
+UK Aberdeen	Generator
+AB Offshore Aberdeen_Far 3753 57.0 -1.25 120M Windspeed	Variable
+AB Offshore Aberdeen_Far 3753 57.0 -1.25 120M HHxWS	Variable
+AB Offshore Aberdeen_Far 3753 57.0 -1.25 120M HHxWSc	Variable
+AB Offshore Aberdeen_Far 3753 57.0 -1.25 120M HHc	Variable
+AB Offshore Aberdeen_Far 3753 57.0 -1.25 120M WSc	Variable
+AB Offshore Aberdeen_Far 3753 57.0 -1.25 120M HHxWSc+HHc	Variable
+AB Offshore Aberdeen_Far 3753 57.0 -1.25 120M HHxWSc+HHc+WSc	Variable
+AB Offshore Aberdeen_Far 3753 57.0 -1.25 120M HHxWSc+HHc+WSc+C	Variable
+UK Beatrice	Generator
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 105M Windspeed	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 105M HHxWS	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 105M HHxWSc	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 105M HHc	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 105M WSc	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 105M HHxWSc+HHc	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 105M HHxWSc+HHc+WSc	Variable
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 105M HHxWSc+HHc+WSc+C	Variable
+UK Blyth	Generator
+UK Offshore Tyneside_Near 3397 55.0 -1.25 76M Windspeed	Variable
+UK Offshore Tyneside_Near 3397 55.0 -1.25 76M HHxWS	Variable
+UK Offshore Tyneside_Near 3397 55.0 -1.25 76M HHxWSc	Variable
+UK Offshore Tyneside_Near 3397 55.0 -1.25 76M HHc	Variable
+UK Offshore Tyneside_Near 3397 55.0 -1.25 76M WSc	Variable
+UK Offshore Tyneside_Near 3397 55.0 -1.25 76M HHxWSc+HHc	Variable
+UK Offshore Tyneside_Near 3397 55.0 -1.25 76M HHxWSc+HHc+WSc	Variable
+UK Offshore Tyneside_Near 3397 55.0 -1.25 76M HHxWSc+HHc+WSc+C	Variable
+UK Race Bank	Generator
+UK Walney 4	Generator
+UK Hornsea 1	Generator

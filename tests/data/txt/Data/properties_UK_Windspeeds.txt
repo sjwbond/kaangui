@@ -1,0 +1,373 @@
+Object_Name	Parent_Object	Target_Object	Property	Date_From	Date_To	Value	Variable	Variable_Effect	Timeslice	Timeslice_Index	Group_id	Priority	Scenario
+UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 31M Windspeed			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 31M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 31M HHxWS			value	2010-01-01	2100-01-01	31	UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 Base Wind Speed	Multiply					
+UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 31M HHxWSc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 31M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 31M HHc			value	2010-01-01	2100-01-01	31	height_coefficient	Multiply					
+UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 31M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 31M HHxWSc	UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 31M HHc	Add					
+UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 31M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 31M HHxWSc+HHc	UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 WSc	Add					
+UK Onshore Huddersfield 3129 53.5 -1.875 39M Windspeed			value	2010-01-01	2100-01-01	UK Onshore Huddersfield 3129 53.5 -1.875 39M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Onshore Huddersfield 3129 53.5 -1.875 39M HHxWS			value	2010-01-01	2100-01-01	39	UK Onshore Huddersfield 3129 53.5 -1.875 Base Wind Speed	Multiply					
+UK Onshore Huddersfield 3129 53.5 -1.875 39M HHxWSc			value	2010-01-01	2100-01-01	UK Onshore Huddersfield 3129 53.5 -1.875 39M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Onshore Huddersfield 3129 53.5 -1.875 39M HHc			value	2010-01-01	2100-01-01	39	height_coefficient	Multiply					
+UK Onshore Huddersfield 3129 53.5 -1.875 39M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Onshore Huddersfield 3129 53.5 -1.875 39M HHxWSc	UK Onshore Huddersfield 3129 53.5 -1.875 39M HHc	Add					
+UK Onshore Huddersfield 3129 53.5 -1.875 39M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Onshore Huddersfield 3129 53.5 -1.875 39M HHxWSc+HHc	UK Onshore Huddersfield 3129 53.5 -1.875 WSc	Add					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 50M Windspeed			value	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 50M HHxWSc+HHc+WSc	windspeed_constant	Add					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 50M HHxWS			value	2010-01-01	2100-01-01	50	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 Base Wind Speed	Multiply					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 50M HHxWSc			value	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 50M HHxWS	height_x_windspeed_coefficient	Multiply					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 50M HHc			value	2010-01-01	2100-01-01	50	height_coefficient	Multiply					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 50M HHxWSc+HHc			value	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 50M HHxWSc	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 50M HHc	Add					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 50M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 50M HHxWSc+HHc	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 WSc	Add					
+AB Offshore Western_Scotland_Near 3568 56.0 -5.625 66M Windspeed			value	2010-01-01	2100-01-01	AB Offshore Western_Scotland_Near 3568 56.0 -5.625 66M HHxWSc+HHc+WSc	windspeed_constant	Add					
+AB Offshore Western_Scotland_Near 3568 56.0 -5.625 66M HHxWS			value	2010-01-01	2100-01-01	66	AB Offshore Western_Scotland_Near 3568 56.0 -5.625 Base Wind Speed	Multiply					
+AB Offshore Western_Scotland_Near 3568 56.0 -5.625 66M HHxWSc			value	2010-01-01	2100-01-01	AB Offshore Western_Scotland_Near 3568 56.0 -5.625 66M HHxWS	height_x_windspeed_coefficient	Multiply					
+AB Offshore Western_Scotland_Near 3568 56.0 -5.625 66M HHc			value	2010-01-01	2100-01-01	66	height_coefficient	Multiply					
+AB Offshore Western_Scotland_Near 3568 56.0 -5.625 66M HHxWSc+HHc			value	2010-01-01	2100-01-01	AB Offshore Western_Scotland_Near 3568 56.0 -5.625 66M HHxWSc	AB Offshore Western_Scotland_Near 3568 56.0 -5.625 66M HHc	Add					
+AB Offshore Western_Scotland_Near 3568 56.0 -5.625 66M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	AB Offshore Western_Scotland_Near 3568 56.0 -5.625 66M HHxWSc+HHc	AB Offshore Western_Scotland_Near 3568 56.0 -5.625 WSc	Add					
+AB Onshore South_Scotland 3483 55.5 -3.125 50M Windspeed			value	2010-01-01	2100-01-01	AB Onshore South_Scotland 3483 55.5 -3.125 50M HHxWSc+HHc+WSc	windspeed_constant	Add					
+AB Onshore South_Scotland 3483 55.5 -3.125 50M HHxWS			value	2010-01-01	2100-01-01	50	AB Onshore South_Scotland 3483 55.5 -3.125 Base Wind Speed	Multiply					
+AB Onshore South_Scotland 3483 55.5 -3.125 50M HHxWSc			value	2010-01-01	2100-01-01	AB Onshore South_Scotland 3483 55.5 -3.125 50M HHxWS	height_x_windspeed_coefficient	Multiply					
+AB Onshore South_Scotland 3483 55.5 -3.125 50M HHc			value	2010-01-01	2100-01-01	50	height_coefficient	Multiply					
+AB Onshore South_Scotland 3483 55.5 -3.125 50M HHxWSc+HHc			value	2010-01-01	2100-01-01	AB Onshore South_Scotland 3483 55.5 -3.125 50M HHxWSc	AB Onshore South_Scotland 3483 55.5 -3.125 50M HHc	Add					
+AB Onshore South_Scotland 3483 55.5 -3.125 50M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	AB Onshore South_Scotland 3483 55.5 -3.125 50M HHxWSc+HHc	AB Onshore South_Scotland 3483 55.5 -3.125 WSc	Add					
+UK Onshore Grimsby 3132 53.5 0.0 50M Windspeed			value	2010-01-01	2100-01-01	UK Onshore Grimsby 3132 53.5 0.0 50M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Onshore Grimsby 3132 53.5 0.0 50M HHxWS			value	2010-01-01	2100-01-01	50	UK Onshore Grimsby 3132 53.5 0.0 Base Wind Speed	Multiply					
+UK Onshore Grimsby 3132 53.5 0.0 50M HHxWSc			value	2010-01-01	2100-01-01	UK Onshore Grimsby 3132 53.5 0.0 50M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Onshore Grimsby 3132 53.5 0.0 50M HHc			value	2010-01-01	2100-01-01	50	height_coefficient	Multiply					
+UK Onshore Grimsby 3132 53.5 0.0 50M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Onshore Grimsby 3132 53.5 0.0 50M HHxWSc	UK Onshore Grimsby 3132 53.5 0.0 50M HHc	Add					
+UK Onshore Grimsby 3132 53.5 0.0 50M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Onshore Grimsby 3132 53.5 0.0 50M HHxWSc+HHc	UK Onshore Grimsby 3132 53.5 0.0 WSc	Add					
+UK Offshore Suffolk_Near 2957 52.5 1.875 68M Windspeed			value	2010-01-01	2100-01-01	UK Offshore Suffolk_Near 2957 52.5 1.875 68M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Offshore Suffolk_Near 2957 52.5 1.875 68M HHxWS			value	2010-01-01	2100-01-01	68	UK Offshore Suffolk_Near 2957 52.5 1.875 Base Wind Speed	Multiply					
+UK Offshore Suffolk_Near 2957 52.5 1.875 68M HHxWSc			value	2010-01-01	2100-01-01	UK Offshore Suffolk_Near 2957 52.5 1.875 68M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Offshore Suffolk_Near 2957 52.5 1.875 68M HHc			value	2010-01-01	2100-01-01	68	height_coefficient	Multiply					
+UK Offshore Suffolk_Near 2957 52.5 1.875 68M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Offshore Suffolk_Near 2957 52.5 1.875 68M HHxWSc	UK Offshore Suffolk_Near 2957 52.5 1.875 68M HHc	Add					
+UK Offshore Suffolk_Near 2957 52.5 1.875 68M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Offshore Suffolk_Near 2957 52.5 1.875 68M HHxWSc+HHc	UK Offshore Suffolk_Near 2957 52.5 1.875 WSc	Add					
+UK Offshore Tyneside_Near 3397 55.0 -1.25 60M Windspeed			value	2010-01-01	2100-01-01	UK Offshore Tyneside_Near 3397 55.0 -1.25 60M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Offshore Tyneside_Near 3397 55.0 -1.25 60M HHxWS			value	2010-01-01	2100-01-01	60	UK Offshore Tyneside_Near 3397 55.0 -1.25 Base Wind Speed	Multiply					
+UK Offshore Tyneside_Near 3397 55.0 -1.25 60M HHxWSc			value	2010-01-01	2100-01-01	UK Offshore Tyneside_Near 3397 55.0 -1.25 60M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Offshore Tyneside_Near 3397 55.0 -1.25 60M HHc			value	2010-01-01	2100-01-01	60	height_coefficient	Multiply					
+UK Offshore Tyneside_Near 3397 55.0 -1.25 60M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Offshore Tyneside_Near 3397 55.0 -1.25 60M HHxWSc	UK Offshore Tyneside_Near 3397 55.0 -1.25 60M HHc	Add					
+UK Offshore Tyneside_Near 3397 55.0 -1.25 60M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Offshore Tyneside_Near 3397 55.0 -1.25 60M HHxWSc+HHc	UK Offshore Tyneside_Near 3397 55.0 -1.25 WSc	Add					
+UK Onshore Middlesborough 3308 54.5 -1.25 60M Windspeed			value	2010-01-01	2100-01-01	UK Onshore Middlesborough 3308 54.5 -1.25 60M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Onshore Middlesborough 3308 54.5 -1.25 60M HHxWS			value	2010-01-01	2100-01-01	60	UK Onshore Middlesborough 3308 54.5 -1.25 Base Wind Speed	Multiply					
+UK Onshore Middlesborough 3308 54.5 -1.25 60M HHxWSc			value	2010-01-01	2100-01-01	UK Onshore Middlesborough 3308 54.5 -1.25 60M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Onshore Middlesborough 3308 54.5 -1.25 60M HHc			value	2010-01-01	2100-01-01	60	height_coefficient	Multiply					
+UK Onshore Middlesborough 3308 54.5 -1.25 60M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Onshore Middlesborough 3308 54.5 -1.25 60M HHxWSc	UK Onshore Middlesborough 3308 54.5 -1.25 60M HHc	Add					
+UK Onshore Middlesborough 3308 54.5 -1.25 60M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Onshore Middlesborough 3308 54.5 -1.25 60M HHxWSc+HHc	UK Onshore Middlesborough 3308 54.5 -1.25 WSc	Add					
+UK Onshore Tyneside 3396 55.0 -1.875 60M Windspeed			value	2010-01-01	2100-01-01	UK Onshore Tyneside 3396 55.0 -1.875 60M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Onshore Tyneside 3396 55.0 -1.875 60M HHxWS			value	2010-01-01	2100-01-01	60	UK Onshore Tyneside 3396 55.0 -1.875 Base Wind Speed	Multiply					
+UK Onshore Tyneside 3396 55.0 -1.875 60M HHxWSc			value	2010-01-01	2100-01-01	UK Onshore Tyneside 3396 55.0 -1.875 60M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Onshore Tyneside 3396 55.0 -1.875 60M HHc			value	2010-01-01	2100-01-01	60	height_coefficient	Multiply					
+UK Onshore Tyneside 3396 55.0 -1.875 60M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Onshore Tyneside 3396 55.0 -1.875 60M HHxWSc	UK Onshore Tyneside 3396 55.0 -1.875 60M HHc	Add					
+UK Onshore Tyneside 3396 55.0 -1.875 60M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Onshore Tyneside 3396 55.0 -1.875 60M HHxWSc+HHc	UK Onshore Tyneside 3396 55.0 -1.875 WSc	Add					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 60M Windspeed			value	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 60M HHxWSc+HHc+WSc	windspeed_constant	Add					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 60M HHxWS			value	2010-01-01	2100-01-01	60	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 Base Wind Speed	Multiply					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 60M HHxWSc			value	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 60M HHxWS	height_x_windspeed_coefficient	Multiply					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 60M HHc			value	2010-01-01	2100-01-01	60	height_coefficient	Multiply					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 60M HHxWSc+HHc			value	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 60M HHxWSc	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 60M HHc	Add					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 60M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 60M HHxWSc+HHc	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 WSc	Add					
+UK Onshore Chorley 3128 53.5 -2.5 55M Windspeed			value	2010-01-01	2100-01-01	UK Onshore Chorley 3128 53.5 -2.5 55M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Onshore Chorley 3128 53.5 -2.5 55M HHxWS			value	2010-01-01	2100-01-01	55	UK Onshore Chorley 3128 53.5 -2.5 Base Wind Speed	Multiply					
+UK Onshore Chorley 3128 53.5 -2.5 55M HHxWSc			value	2010-01-01	2100-01-01	UK Onshore Chorley 3128 53.5 -2.5 55M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Onshore Chorley 3128 53.5 -2.5 55M HHc			value	2010-01-01	2100-01-01	55	height_coefficient	Multiply					
+UK Onshore Chorley 3128 53.5 -2.5 55M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Onshore Chorley 3128 53.5 -2.5 55M HHxWSc	UK Onshore Chorley 3128 53.5 -2.5 55M HHc	Add					
+UK Onshore Chorley 3128 53.5 -2.5 55M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Onshore Chorley 3128 53.5 -2.5 55M HHxWSc+HHc	UK Onshore Chorley 3128 53.5 -2.5 WSc	Add					
+AB Onshore South_Scotland 3483 55.5 -3.125 80M Windspeed			value	2010-01-01	2100-01-01	AB Onshore South_Scotland 3483 55.5 -3.125 80M HHxWSc+HHc+WSc	windspeed_constant	Add					
+AB Onshore South_Scotland 3483 55.5 -3.125 80M HHxWS			value	2010-01-01	2100-01-01	80	AB Onshore South_Scotland 3483 55.5 -3.125 Base Wind Speed	Multiply					
+AB Onshore South_Scotland 3483 55.5 -3.125 80M HHxWSc			value	2010-01-01	2100-01-01	AB Onshore South_Scotland 3483 55.5 -3.125 80M HHxWS	height_x_windspeed_coefficient	Multiply					
+AB Onshore South_Scotland 3483 55.5 -3.125 80M HHc			value	2010-01-01	2100-01-01	80	height_coefficient	Multiply					
+AB Onshore South_Scotland 3483 55.5 -3.125 80M HHxWSc+HHc			value	2010-01-01	2100-01-01	AB Onshore South_Scotland 3483 55.5 -3.125 80M HHxWSc	AB Onshore South_Scotland 3483 55.5 -3.125 80M HHc	Add					
+AB Onshore South_Scotland 3483 55.5 -3.125 80M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	AB Onshore South_Scotland 3483 55.5 -3.125 80M HHxWSc+HHc	AB Onshore South_Scotland 3483 55.5 -3.125 WSc	Add					
+UK Onshore Grimsby 3132 53.5 0.0 60M Windspeed			value	2010-01-01	2100-01-01	UK Onshore Grimsby 3132 53.5 0.0 60M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Onshore Grimsby 3132 53.5 0.0 60M HHxWS			value	2010-01-01	2100-01-01	60	UK Onshore Grimsby 3132 53.5 0.0 Base Wind Speed	Multiply					
+UK Onshore Grimsby 3132 53.5 0.0 60M HHxWSc			value	2010-01-01	2100-01-01	UK Onshore Grimsby 3132 53.5 0.0 60M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Onshore Grimsby 3132 53.5 0.0 60M HHc			value	2010-01-01	2100-01-01	60	height_coefficient	Multiply					
+UK Onshore Grimsby 3132 53.5 0.0 60M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Onshore Grimsby 3132 53.5 0.0 60M HHxWSc	UK Onshore Grimsby 3132 53.5 0.0 60M HHc	Add					
+UK Onshore Grimsby 3132 53.5 0.0 60M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Onshore Grimsby 3132 53.5 0.0 60M HHxWSc+HHc	UK Onshore Grimsby 3132 53.5 0.0 WSc	Add					
+UK Onshore Huddersfield 3129 53.5 -1.875 55M Windspeed			value	2010-01-01	2100-01-01	UK Onshore Huddersfield 3129 53.5 -1.875 55M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Onshore Huddersfield 3129 53.5 -1.875 55M HHxWS			value	2010-01-01	2100-01-01	55	UK Onshore Huddersfield 3129 53.5 -1.875 Base Wind Speed	Multiply					
+UK Onshore Huddersfield 3129 53.5 -1.875 55M HHxWSc			value	2010-01-01	2100-01-01	UK Onshore Huddersfield 3129 53.5 -1.875 55M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Onshore Huddersfield 3129 53.5 -1.875 55M HHc			value	2010-01-01	2100-01-01	55	height_coefficient	Multiply					
+UK Onshore Huddersfield 3129 53.5 -1.875 55M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Onshore Huddersfield 3129 53.5 -1.875 55M HHxWSc	UK Onshore Huddersfield 3129 53.5 -1.875 55M HHc	Add					
+UK Onshore Huddersfield 3129 53.5 -1.875 55M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Onshore Huddersfield 3129 53.5 -1.875 55M HHxWSc+HHc	UK Onshore Huddersfield 3129 53.5 -1.875 WSc	Add					
+UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 75M Windspeed			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 75M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 75M HHxWS			value	2010-01-01	2100-01-01	75	UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 Base Wind Speed	Multiply					
+UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 75M HHxWSc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 75M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 75M HHc			value	2010-01-01	2100-01-01	75	height_coefficient	Multiply					
+UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 75M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 75M HHxWSc	UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 75M HHc	Add					
+UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 75M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 75M HHxWSc+HHc	UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 WSc	Add					
+UK Offshore Irish_Sea_Lake_District 3304 54.5 -3.75 80M Windspeed			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Lake_District 3304 54.5 -3.75 80M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Offshore Irish_Sea_Lake_District 3304 54.5 -3.75 80M HHxWS			value	2010-01-01	2100-01-01	80	UK Offshore Irish_Sea_Lake_District 3304 54.5 -3.75 Base Wind Speed	Multiply					
+UK Offshore Irish_Sea_Lake_District 3304 54.5 -3.75 80M HHxWSc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Lake_District 3304 54.5 -3.75 80M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Offshore Irish_Sea_Lake_District 3304 54.5 -3.75 80M HHc			value	2010-01-01	2100-01-01	80	height_coefficient	Multiply					
+UK Offshore Irish_Sea_Lake_District 3304 54.5 -3.75 80M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Lake_District 3304 54.5 -3.75 80M HHxWSc	UK Offshore Irish_Sea_Lake_District 3304 54.5 -3.75 80M HHc	Add					
+UK Offshore Irish_Sea_Lake_District 3304 54.5 -3.75 80M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Lake_District 3304 54.5 -3.75 80M HHxWSc+HHc	UK Offshore Irish_Sea_Lake_District 3304 54.5 -3.75 WSc	Add					
+AB Offshore Western_Scotland_Near 3568 56.0 -5.625 56M Windspeed			value	2010-01-01	2100-01-01	AB Offshore Western_Scotland_Near 3568 56.0 -5.625 56M HHxWSc+HHc+WSc	windspeed_constant	Add					
+AB Offshore Western_Scotland_Near 3568 56.0 -5.625 56M HHxWS			value	2010-01-01	2100-01-01	56	AB Offshore Western_Scotland_Near 3568 56.0 -5.625 Base Wind Speed	Multiply					
+AB Offshore Western_Scotland_Near 3568 56.0 -5.625 56M HHxWSc			value	2010-01-01	2100-01-01	AB Offshore Western_Scotland_Near 3568 56.0 -5.625 56M HHxWS	height_x_windspeed_coefficient	Multiply					
+AB Offshore Western_Scotland_Near 3568 56.0 -5.625 56M HHc			value	2010-01-01	2100-01-01	56	height_coefficient	Multiply					
+AB Offshore Western_Scotland_Near 3568 56.0 -5.625 56M HHxWSc+HHc			value	2010-01-01	2100-01-01	AB Offshore Western_Scotland_Near 3568 56.0 -5.625 56M HHxWSc	AB Offshore Western_Scotland_Near 3568 56.0 -5.625 56M HHc	Add					
+AB Offshore Western_Scotland_Near 3568 56.0 -5.625 56M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	AB Offshore Western_Scotland_Near 3568 56.0 -5.625 56M HHxWSc+HHc	AB Offshore Western_Scotland_Near 3568 56.0 -5.625 WSc	Add					
+UK Offshore Tyneside_Near 3397 55.0 -1.25 69M Windspeed			value	2010-01-01	2100-01-01	UK Offshore Tyneside_Near 3397 55.0 -1.25 69M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Offshore Tyneside_Near 3397 55.0 -1.25 69M HHxWS			value	2010-01-01	2100-01-01	69	UK Offshore Tyneside_Near 3397 55.0 -1.25 Base Wind Speed	Multiply					
+UK Offshore Tyneside_Near 3397 55.0 -1.25 69M HHxWSc			value	2010-01-01	2100-01-01	UK Offshore Tyneside_Near 3397 55.0 -1.25 69M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Offshore Tyneside_Near 3397 55.0 -1.25 69M HHc			value	2010-01-01	2100-01-01	69	height_coefficient	Multiply					
+UK Offshore Tyneside_Near 3397 55.0 -1.25 69M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Offshore Tyneside_Near 3397 55.0 -1.25 69M HHxWSc	UK Offshore Tyneside_Near 3397 55.0 -1.25 69M HHc	Add					
+UK Offshore Tyneside_Near 3397 55.0 -1.25 69M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Offshore Tyneside_Near 3397 55.0 -1.25 69M HHxWSc+HHc	UK Offshore Tyneside_Near 3397 55.0 -1.25 WSc	Add					
+UK Onshore Nottingham 3041 53.0 -1.25 80M Windspeed			value	2010-01-01	2100-01-01	UK Onshore Nottingham 3041 53.0 -1.25 80M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Onshore Nottingham 3041 53.0 -1.25 80M HHxWS			value	2010-01-01	2100-01-01	80	UK Onshore Nottingham 3041 53.0 -1.25 Base Wind Speed	Multiply					
+UK Onshore Nottingham 3041 53.0 -1.25 80M HHxWSc			value	2010-01-01	2100-01-01	UK Onshore Nottingham 3041 53.0 -1.25 80M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Onshore Nottingham 3041 53.0 -1.25 80M HHc			value	2010-01-01	2100-01-01	80	height_coefficient	Multiply					
+UK Onshore Nottingham 3041 53.0 -1.25 80M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Onshore Nottingham 3041 53.0 -1.25 80M HHxWSc	UK Onshore Nottingham 3041 53.0 -1.25 80M HHc	Add					
+UK Onshore Nottingham 3041 53.0 -1.25 80M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Onshore Nottingham 3041 53.0 -1.25 80M HHxWSc+HHc	UK Onshore Nottingham 3041 53.0 -1.25 WSc	Add					
+AB Onshore Perth 3660 56.5 -3.75 60M Windspeed			value	2010-01-01	2100-01-01	AB Onshore Perth 3660 56.5 -3.75 60M HHxWSc+HHc+WSc	windspeed_constant	Add					
+AB Onshore Perth 3660 56.5 -3.75 60M HHxWS			value	2010-01-01	2100-01-01	60	AB Onshore Perth 3660 56.5 -3.75 Base Wind Speed	Multiply					
+AB Onshore Perth 3660 56.5 -3.75 60M HHxWSc			value	2010-01-01	2100-01-01	AB Onshore Perth 3660 56.5 -3.75 60M HHxWS	height_x_windspeed_coefficient	Multiply					
+AB Onshore Perth 3660 56.5 -3.75 60M HHc			value	2010-01-01	2100-01-01	60	height_coefficient	Multiply					
+AB Onshore Perth 3660 56.5 -3.75 60M HHxWSc+HHc			value	2010-01-01	2100-01-01	AB Onshore Perth 3660 56.5 -3.75 60M HHxWSc	AB Onshore Perth 3660 56.5 -3.75 60M HHc	Add					
+AB Onshore Perth 3660 56.5 -3.75 60M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	AB Onshore Perth 3660 56.5 -3.75 60M HHxWSc+HHc	AB Onshore Perth 3660 56.5 -3.75 WSc	Add					
+UK Offshore Harwick_Near 2868 52.0 1.875 78M Windspeed			value	2010-01-01	2100-01-01	UK Offshore Harwick_Near 2868 52.0 1.875 78M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Offshore Harwick_Near 2868 52.0 1.875 78M HHxWS			value	2010-01-01	2100-01-01	78	UK Offshore Harwick_Near 2868 52.0 1.875 Base Wind Speed	Multiply					
+UK Offshore Harwick_Near 2868 52.0 1.875 78M HHxWSc			value	2010-01-01	2100-01-01	UK Offshore Harwick_Near 2868 52.0 1.875 78M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Offshore Harwick_Near 2868 52.0 1.875 78M HHc			value	2010-01-01	2100-01-01	78	height_coefficient	Multiply					
+UK Offshore Harwick_Near 2868 52.0 1.875 78M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Offshore Harwick_Near 2868 52.0 1.875 78M HHxWSc	UK Offshore Harwick_Near 2868 52.0 1.875 78M HHc	Add					
+UK Offshore Harwick_Near 2868 52.0 1.875 78M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Offshore Harwick_Near 2868 52.0 1.875 78M HHxWSc+HHc	UK Offshore Harwick_Near 2868 52.0 1.875 WSc	Add					
+UK Onshore Lake_District 3305 54.5 -3.125 80M Windspeed			value	2010-01-01	2100-01-01	UK Onshore Lake_District 3305 54.5 -3.125 80M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Onshore Lake_District 3305 54.5 -3.125 80M HHxWS			value	2010-01-01	2100-01-01	80	UK Onshore Lake_District 3305 54.5 -3.125 Base Wind Speed	Multiply					
+UK Onshore Lake_District 3305 54.5 -3.125 80M HHxWSc			value	2010-01-01	2100-01-01	UK Onshore Lake_District 3305 54.5 -3.125 80M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Onshore Lake_District 3305 54.5 -3.125 80M HHc			value	2010-01-01	2100-01-01	80	height_coefficient	Multiply					
+UK Onshore Lake_District 3305 54.5 -3.125 80M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Onshore Lake_District 3305 54.5 -3.125 80M HHxWSc	UK Onshore Lake_District 3305 54.5 -3.125 80M HHc	Add					
+UK Onshore Lake_District 3305 54.5 -3.125 80M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Onshore Lake_District 3305 54.5 -3.125 80M HHxWSc+HHc	UK Onshore Lake_District 3305 54.5 -3.125 WSc	Add					
+UK Onshore Middlesborough 3308 54.5 -1.25 69M Windspeed			value	2010-01-01	2100-01-01	UK Onshore Middlesborough 3308 54.5 -1.25 69M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Onshore Middlesborough 3308 54.5 -1.25 69M HHxWS			value	2010-01-01	2100-01-01	69	UK Onshore Middlesborough 3308 54.5 -1.25 Base Wind Speed	Multiply					
+UK Onshore Middlesborough 3308 54.5 -1.25 69M HHxWSc			value	2010-01-01	2100-01-01	UK Onshore Middlesborough 3308 54.5 -1.25 69M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Onshore Middlesborough 3308 54.5 -1.25 69M HHc			value	2010-01-01	2100-01-01	69	height_coefficient	Multiply					
+UK Onshore Middlesborough 3308 54.5 -1.25 69M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Onshore Middlesborough 3308 54.5 -1.25 69M HHxWSc	UK Onshore Middlesborough 3308 54.5 -1.25 69M HHc	Add					
+UK Onshore Middlesborough 3308 54.5 -1.25 69M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Onshore Middlesborough 3308 54.5 -1.25 69M HHxWSc+HHc	UK Onshore Middlesborough 3308 54.5 -1.25 WSc	Add					
+AB Onshore Northern_Scotland 3926 58.0 -4.375 65M Windspeed			value	2010-01-01	2100-01-01	AB Onshore Northern_Scotland 3926 58.0 -4.375 65M HHxWSc+HHc+WSc	windspeed_constant	Add					
+AB Onshore Northern_Scotland 3926 58.0 -4.375 65M HHxWS			value	2010-01-01	2100-01-01	65	AB Onshore Northern_Scotland 3926 58.0 -4.375 Base Wind Speed	Multiply					
+AB Onshore Northern_Scotland 3926 58.0 -4.375 65M HHxWSc			value	2010-01-01	2100-01-01	AB Onshore Northern_Scotland 3926 58.0 -4.375 65M HHxWS	height_x_windspeed_coefficient	Multiply					
+AB Onshore Northern_Scotland 3926 58.0 -4.375 65M HHc			value	2010-01-01	2100-01-01	65	height_coefficient	Multiply					
+AB Onshore Northern_Scotland 3926 58.0 -4.375 65M HHxWSc+HHc			value	2010-01-01	2100-01-01	AB Onshore Northern_Scotland 3926 58.0 -4.375 65M HHxWSc	AB Onshore Northern_Scotland 3926 58.0 -4.375 65M HHc	Add					
+AB Onshore Northern_Scotland 3926 58.0 -4.375 65M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	AB Onshore Northern_Scotland 3926 58.0 -4.375 65M HHxWSc+HHc	AB Onshore Northern_Scotland 3926 58.0 -4.375 WSc	Add					
+UK Onshore Scunthorpe 3131 53.5 -0.625 80M Windspeed			value	2010-01-01	2100-01-01	UK Onshore Scunthorpe 3131 53.5 -0.625 80M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Onshore Scunthorpe 3131 53.5 -0.625 80M HHxWS			value	2010-01-01	2100-01-01	80	UK Onshore Scunthorpe 3131 53.5 -0.625 Base Wind Speed	Multiply					
+UK Onshore Scunthorpe 3131 53.5 -0.625 80M HHxWSc			value	2010-01-01	2100-01-01	UK Onshore Scunthorpe 3131 53.5 -0.625 80M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Onshore Scunthorpe 3131 53.5 -0.625 80M HHc			value	2010-01-01	2100-01-01	80	height_coefficient	Multiply					
+UK Onshore Scunthorpe 3131 53.5 -0.625 80M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Onshore Scunthorpe 3131 53.5 -0.625 80M HHxWSc	UK Onshore Scunthorpe 3131 53.5 -0.625 80M HHc	Add					
+UK Onshore Scunthorpe 3131 53.5 -0.625 80M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Onshore Scunthorpe 3131 53.5 -0.625 80M HHxWSc+HHc	UK Onshore Scunthorpe 3131 53.5 -0.625 WSc	Add					
+UK Onshore Tyneside 3396 55.0 -1.875 64M Windspeed			value	2010-01-01	2100-01-01	UK Onshore Tyneside 3396 55.0 -1.875 64M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Onshore Tyneside 3396 55.0 -1.875 64M HHxWS			value	2010-01-01	2100-01-01	64	UK Onshore Tyneside 3396 55.0 -1.875 Base Wind Speed	Multiply					
+UK Onshore Tyneside 3396 55.0 -1.875 64M HHxWSc			value	2010-01-01	2100-01-01	UK Onshore Tyneside 3396 55.0 -1.875 64M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Onshore Tyneside 3396 55.0 -1.875 64M HHc			value	2010-01-01	2100-01-01	64	height_coefficient	Multiply					
+UK Onshore Tyneside 3396 55.0 -1.875 64M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Onshore Tyneside 3396 55.0 -1.875 64M HHxWSc	UK Onshore Tyneside 3396 55.0 -1.875 64M HHc	Add					
+UK Onshore Tyneside 3396 55.0 -1.875 64M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Onshore Tyneside 3396 55.0 -1.875 64M HHxWSc+HHc	UK Onshore Tyneside 3396 55.0 -1.875 WSc	Add					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 80M Windspeed			value	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 80M HHxWSc+HHc+WSc	windspeed_constant	Add					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 80M HHxWS			value	2010-01-01	2100-01-01	80	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 Base Wind Speed	Multiply					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 80M HHxWSc			value	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 80M HHxWS	height_x_windspeed_coefficient	Multiply					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 80M HHc			value	2010-01-01	2100-01-01	80	height_coefficient	Multiply					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 80M HHxWSc+HHc			value	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 80M HHxWSc	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 80M HHc	Add					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 80M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 80M HHxWSc+HHc	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 WSc	Add					
+AB Onshore Northeast_Scotland 3839 57.5 -3.125 59M Windspeed			value	2010-01-01	2100-01-01	AB Onshore Northeast_Scotland 3839 57.5 -3.125 59M HHxWSc+HHc+WSc	windspeed_constant	Add					
+AB Onshore Northeast_Scotland 3839 57.5 -3.125 59M HHxWS			value	2010-01-01	2100-01-01	59	AB Onshore Northeast_Scotland 3839 57.5 -3.125 Base Wind Speed	Multiply					
+AB Onshore Northeast_Scotland 3839 57.5 -3.125 59M HHxWSc			value	2010-01-01	2100-01-01	AB Onshore Northeast_Scotland 3839 57.5 -3.125 59M HHxWS	height_x_windspeed_coefficient	Multiply					
+AB Onshore Northeast_Scotland 3839 57.5 -3.125 59M HHc			value	2010-01-01	2100-01-01	59	height_coefficient	Multiply					
+AB Onshore Northeast_Scotland 3839 57.5 -3.125 59M HHxWSc+HHc			value	2010-01-01	2100-01-01	AB Onshore Northeast_Scotland 3839 57.5 -3.125 59M HHxWSc	AB Onshore Northeast_Scotland 3839 57.5 -3.125 59M HHc	Add					
+AB Onshore Northeast_Scotland 3839 57.5 -3.125 59M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	AB Onshore Northeast_Scotland 3839 57.5 -3.125 59M HHxWSc+HHc	AB Onshore Northeast_Scotland 3839 57.5 -3.125 WSc	Add					
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 80M Windspeed			value	2010-01-01	2100-01-01	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 80M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 80M HHxWS			value	2010-01-01	2100-01-01	80	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 Base Wind Speed	Multiply					
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 80M HHxWSc			value	2010-01-01	2100-01-01	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 80M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 80M HHc			value	2010-01-01	2100-01-01	80	height_coefficient	Multiply					
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 80M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 80M HHxWSc	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 80M HHc	Add					
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 80M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 80M HHxWSc+HHc	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 WSc	Add					
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 87M Windspeed			value	2010-01-01	2100-01-01	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 87M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 87M HHxWS			value	2010-01-01	2100-01-01	87	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 Base Wind Speed	Multiply					
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 87M HHxWSc			value	2010-01-01	2100-01-01	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 87M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 87M HHc			value	2010-01-01	2100-01-01	87	height_coefficient	Multiply					
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 87M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 87M HHxWSc	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 87M HHc	Add					
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 87M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 87M HHxWSc+HHc	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 WSc	Add					
+UK Onshore Northumberland 3485 55.5 -1.875 80M Windspeed			value	2010-01-01	2100-01-01	UK Onshore Northumberland 3485 55.5 -1.875 80M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Onshore Northumberland 3485 55.5 -1.875 80M HHxWS			value	2010-01-01	2100-01-01	80	UK Onshore Northumberland 3485 55.5 -1.875 Base Wind Speed	Multiply					
+UK Onshore Northumberland 3485 55.5 -1.875 80M HHxWSc			value	2010-01-01	2100-01-01	UK Onshore Northumberland 3485 55.5 -1.875 80M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Onshore Northumberland 3485 55.5 -1.875 80M HHc			value	2010-01-01	2100-01-01	80	height_coefficient	Multiply					
+UK Onshore Northumberland 3485 55.5 -1.875 80M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Onshore Northumberland 3485 55.5 -1.875 80M HHxWSc	UK Onshore Northumberland 3485 55.5 -1.875 80M HHc	Add					
+UK Onshore Northumberland 3485 55.5 -1.875 80M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Onshore Northumberland 3485 55.5 -1.875 80M HHxWSc+HHc	UK Onshore Northumberland 3485 55.5 -1.875 WSc	Add					
+UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 98M Windspeed			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 98M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 98M HHxWS			value	2010-01-01	2100-01-01	98	UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 Base Wind Speed	Multiply					
+UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 98M HHxWSc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 98M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 98M HHc			value	2010-01-01	2100-01-01	98	height_coefficient	Multiply					
+UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 98M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 98M HHxWSc	UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 98M HHc	Add					
+UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 98M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 98M HHxWSc+HHc	UK Offshore Irish_Sea_Rhyl 3126 53.5 -3.75 WSc	Add					
+UK Onshore Chorley 3128 53.5 -2.5 60M Windspeed			value	2010-01-01	2100-01-01	UK Onshore Chorley 3128 53.5 -2.5 60M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Onshore Chorley 3128 53.5 -2.5 60M HHxWS			value	2010-01-01	2100-01-01	60	UK Onshore Chorley 3128 53.5 -2.5 Base Wind Speed	Multiply					
+UK Onshore Chorley 3128 53.5 -2.5 60M HHxWSc			value	2010-01-01	2100-01-01	UK Onshore Chorley 3128 53.5 -2.5 60M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Onshore Chorley 3128 53.5 -2.5 60M HHc			value	2010-01-01	2100-01-01	60	height_coefficient	Multiply					
+UK Onshore Chorley 3128 53.5 -2.5 60M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Onshore Chorley 3128 53.5 -2.5 60M HHxWSc	UK Onshore Chorley 3128 53.5 -2.5 60M HHc	Add					
+UK Onshore Chorley 3128 53.5 -2.5 60M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Onshore Chorley 3128 53.5 -2.5 60M HHxWSc+HHc	UK Onshore Chorley 3128 53.5 -2.5 WSc	Add					
+UK Onshore Grimsby 3132 53.5 0.0 80M Windspeed			value	2010-01-01	2100-01-01	UK Onshore Grimsby 3132 53.5 0.0 80M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Onshore Grimsby 3132 53.5 0.0 80M HHxWS			value	2010-01-01	2100-01-01	80	UK Onshore Grimsby 3132 53.5 0.0 Base Wind Speed	Multiply					
+UK Onshore Grimsby 3132 53.5 0.0 80M HHxWSc			value	2010-01-01	2100-01-01	UK Onshore Grimsby 3132 53.5 0.0 80M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Onshore Grimsby 3132 53.5 0.0 80M HHc			value	2010-01-01	2100-01-01	80	height_coefficient	Multiply					
+UK Onshore Grimsby 3132 53.5 0.0 80M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Onshore Grimsby 3132 53.5 0.0 80M HHxWSc	UK Onshore Grimsby 3132 53.5 0.0 80M HHc	Add					
+UK Onshore Grimsby 3132 53.5 0.0 80M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Onshore Grimsby 3132 53.5 0.0 80M HHxWSc+HHc	UK Onshore Grimsby 3132 53.5 0.0 WSc	Add					
+UK Offshore English_Channel_Near 2598 50.5 0.0 80M Windspeed			value	2010-01-01	2100-01-01	UK Offshore English_Channel_Near 2598 50.5 0.0 80M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Offshore English_Channel_Near 2598 50.5 0.0 80M HHxWS			value	2010-01-01	2100-01-01	80	UK Offshore English_Channel_Near 2598 50.5 0.0 Base Wind Speed	Multiply					
+UK Offshore English_Channel_Near 2598 50.5 0.0 80M HHxWSc			value	2010-01-01	2100-01-01	UK Offshore English_Channel_Near 2598 50.5 0.0 80M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Offshore English_Channel_Near 2598 50.5 0.0 80M HHc			value	2010-01-01	2100-01-01	80	height_coefficient	Multiply					
+UK Offshore English_Channel_Near 2598 50.5 0.0 80M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Offshore English_Channel_Near 2598 50.5 0.0 80M HHxWSc	UK Offshore English_Channel_Near 2598 50.5 0.0 80M HHc	Add					
+UK Offshore English_Channel_Near 2598 50.5 0.0 80M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Offshore English_Channel_Near 2598 50.5 0.0 80M HHxWSc+HHc	UK Offshore English_Channel_Near 2598 50.5 0.0 WSc	Add					
+UK Offshore Harwick_Near 2868 52.0 1.875 116M Windspeed			value	2010-01-01	2100-01-01	UK Offshore Harwick_Near 2868 52.0 1.875 116M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Offshore Harwick_Near 2868 52.0 1.875 116M HHxWS			value	2010-01-01	2100-01-01	116	UK Offshore Harwick_Near 2868 52.0 1.875 Base Wind Speed	Multiply					
+UK Offshore Harwick_Near 2868 52.0 1.875 116M HHxWSc			value	2010-01-01	2100-01-01	UK Offshore Harwick_Near 2868 52.0 1.875 116M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Offshore Harwick_Near 2868 52.0 1.875 116M HHc			value	2010-01-01	2100-01-01	116	height_coefficient	Multiply					
+UK Offshore Harwick_Near 2868 52.0 1.875 116M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Offshore Harwick_Near 2868 52.0 1.875 116M HHxWSc	UK Offshore Harwick_Near 2868 52.0 1.875 116M HHc	Add					
+UK Offshore Harwick_Near 2868 52.0 1.875 116M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Offshore Harwick_Near 2868 52.0 1.875 116M HHxWSc+HHc	UK Offshore Harwick_Near 2868 52.0 1.875 WSc	Add					
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 98M Windspeed			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 98M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 98M HHxWS			value	2010-01-01	2100-01-01	98	UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 Base Wind Speed	Multiply					
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 98M HHxWSc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 98M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 98M HHc			value	2010-01-01	2100-01-01	98	height_coefficient	Multiply					
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 98M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 98M HHxWSc	UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 98M HHc	Add					
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 98M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 98M HHxWSc+HHc	UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 WSc	Add					
+UK Onshore South_Wales 2770 51.5 -3.75 80M Windspeed			value	2010-01-01	2100-01-01	UK Onshore South_Wales 2770 51.5 -3.75 80M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Onshore South_Wales 2770 51.5 -3.75 80M HHxWS			value	2010-01-01	2100-01-01	80	UK Onshore South_Wales 2770 51.5 -3.75 Base Wind Speed	Multiply					
+UK Onshore South_Wales 2770 51.5 -3.75 80M HHxWSc			value	2010-01-01	2100-01-01	UK Onshore South_Wales 2770 51.5 -3.75 80M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Onshore South_Wales 2770 51.5 -3.75 80M HHc			value	2010-01-01	2100-01-01	80	height_coefficient	Multiply					
+UK Onshore South_Wales 2770 51.5 -3.75 80M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Onshore South_Wales 2770 51.5 -3.75 80M HHxWSc	UK Onshore South_Wales 2770 51.5 -3.75 80M HHc	Add					
+UK Onshore South_Wales 2770 51.5 -3.75 80M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Onshore South_Wales 2770 51.5 -3.75 80M HHxWSc+HHc	UK Onshore South_Wales 2770 51.5 -3.75 WSc	Add					
+UK Offshore Lincs_Far 3134 53.5 1.25 140M Windspeed			value	2010-01-01	2100-01-01	UK Offshore Lincs_Far 3134 53.5 1.25 140M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Offshore Lincs_Far 3134 53.5 1.25 140M HHxWS			value	2010-01-01	2100-01-01	140	UK Offshore Lincs_Far 3134 53.5 1.25 Base Wind Speed	Multiply					
+UK Offshore Lincs_Far 3134 53.5 1.25 140M HHxWSc			value	2010-01-01	2100-01-01	UK Offshore Lincs_Far 3134 53.5 1.25 140M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Offshore Lincs_Far 3134 53.5 1.25 140M HHc			value	2010-01-01	2100-01-01	140	height_coefficient	Multiply					
+UK Offshore Lincs_Far 3134 53.5 1.25 140M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Offshore Lincs_Far 3134 53.5 1.25 140M HHxWSc	UK Offshore Lincs_Far 3134 53.5 1.25 140M HHc	Add					
+UK Offshore Lincs_Far 3134 53.5 1.25 140M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Offshore Lincs_Far 3134 53.5 1.25 140M HHxWSc+HHc	UK Offshore Lincs_Far 3134 53.5 1.25 WSc	Add					
+AB Onshore Southwest_Scotland 3392 55.0 -4.375 80M Windspeed			value	2010-01-01	2100-01-01	AB Onshore Southwest_Scotland 3392 55.0 -4.375 80M HHxWSc+HHc+WSc	windspeed_constant	Add					
+AB Onshore Southwest_Scotland 3392 55.0 -4.375 80M HHxWS			value	2010-01-01	2100-01-01	80	AB Onshore Southwest_Scotland 3392 55.0 -4.375 Base Wind Speed	Multiply					
+AB Onshore Southwest_Scotland 3392 55.0 -4.375 80M HHxWSc			value	2010-01-01	2100-01-01	AB Onshore Southwest_Scotland 3392 55.0 -4.375 80M HHxWS	height_x_windspeed_coefficient	Multiply					
+AB Onshore Southwest_Scotland 3392 55.0 -4.375 80M HHc			value	2010-01-01	2100-01-01	80	height_coefficient	Multiply					
+AB Onshore Southwest_Scotland 3392 55.0 -4.375 80M HHxWSc+HHc			value	2010-01-01	2100-01-01	AB Onshore Southwest_Scotland 3392 55.0 -4.375 80M HHxWSc	AB Onshore Southwest_Scotland 3392 55.0 -4.375 80M HHc	Add					
+AB Onshore Southwest_Scotland 3392 55.0 -4.375 80M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	AB Onshore Southwest_Scotland 3392 55.0 -4.375 80M HHxWSc+HHc	AB Onshore Southwest_Scotland 3392 55.0 -4.375 WSc	Add					
+AB Onshore Glasgow 3481 55.5 -4.375 80M Windspeed			value	2010-01-01	2100-01-01	AB Onshore Glasgow 3481 55.5 -4.375 80M HHxWSc+HHc+WSc	windspeed_constant	Add					
+AB Onshore Glasgow 3481 55.5 -4.375 80M HHxWS			value	2010-01-01	2100-01-01	80	AB Onshore Glasgow 3481 55.5 -4.375 Base Wind Speed	Multiply					
+AB Onshore Glasgow 3481 55.5 -4.375 80M HHxWSc			value	2010-01-01	2100-01-01	AB Onshore Glasgow 3481 55.5 -4.375 80M HHxWS	height_x_windspeed_coefficient	Multiply					
+AB Onshore Glasgow 3481 55.5 -4.375 80M HHc			value	2010-01-01	2100-01-01	80	height_coefficient	Multiply					
+AB Onshore Glasgow 3481 55.5 -4.375 80M HHxWSc+HHc			value	2010-01-01	2100-01-01	AB Onshore Glasgow 3481 55.5 -4.375 80M HHxWSc	AB Onshore Glasgow 3481 55.5 -4.375 80M HHc	Add					
+AB Onshore Glasgow 3481 55.5 -4.375 80M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	AB Onshore Glasgow 3481 55.5 -4.375 80M HHxWSc+HHc	AB Onshore Glasgow 3481 55.5 -4.375 WSc	Add					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 55M Windspeed			value	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 55M HHxWSc+HHc+WSc	windspeed_constant	Add					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 55M HHxWS			value	2010-01-01	2100-01-01	55	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 Base Wind Speed	Multiply					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 55M HHxWSc			value	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 55M HHxWS	height_x_windspeed_coefficient	Multiply					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 55M HHc			value	2010-01-01	2100-01-01	55	height_coefficient	Multiply					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 55M HHxWSc+HHc			value	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 55M HHxWSc	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 55M HHc	Add					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 55M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 55M HHxWSc+HHc	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 WSc	Add					
+AB Onshore Northern_Scotland 4016 58.5 -3.75 55M Windspeed			value	2010-01-01	2100-01-01	AB Onshore Northern_Scotland 4016 58.5 -3.75 55M HHxWSc+HHc+WSc	windspeed_constant	Add					
+AB Onshore Northern_Scotland 4016 58.5 -3.75 55M HHxWS			value	2010-01-01	2100-01-01	55	AB Onshore Northern_Scotland 4016 58.5 -3.75 Base Wind Speed	Multiply					
+AB Onshore Northern_Scotland 4016 58.5 -3.75 55M HHxWSc			value	2010-01-01	2100-01-01	AB Onshore Northern_Scotland 4016 58.5 -3.75 55M HHxWS	height_x_windspeed_coefficient	Multiply					
+AB Onshore Northern_Scotland 4016 58.5 -3.75 55M HHc			value	2010-01-01	2100-01-01	55	height_coefficient	Multiply					
+AB Onshore Northern_Scotland 4016 58.5 -3.75 55M HHxWSc+HHc			value	2010-01-01	2100-01-01	AB Onshore Northern_Scotland 4016 58.5 -3.75 55M HHxWSc	AB Onshore Northern_Scotland 4016 58.5 -3.75 55M HHc	Add					
+AB Onshore Northern_Scotland 4016 58.5 -3.75 55M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	AB Onshore Northern_Scotland 4016 58.5 -3.75 55M HHxWSc+HHc	AB Onshore Northern_Scotland 4016 58.5 -3.75 WSc	Add					
+UK Onshore Brecon Beacons 2860 52.0 -3.125 60M Windspeed			value	2010-01-01	2100-01-01	UK Onshore Brecon Beacons 2860 52.0 -3.125 60M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Onshore Brecon Beacons 2860 52.0 -3.125 60M HHxWS			value	2010-01-01	2100-01-01	60	UK Onshore Brecon Beacons 2860 52.0 -3.125 Base Wind Speed	Multiply					
+UK Onshore Brecon Beacons 2860 52.0 -3.125 60M HHxWSc			value	2010-01-01	2100-01-01	UK Onshore Brecon Beacons 2860 52.0 -3.125 60M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Onshore Brecon Beacons 2860 52.0 -3.125 60M HHc			value	2010-01-01	2100-01-01	60	height_coefficient	Multiply					
+UK Onshore Brecon Beacons 2860 52.0 -3.125 60M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Onshore Brecon Beacons 2860 52.0 -3.125 60M HHxWSc	UK Onshore Brecon Beacons 2860 52.0 -3.125 60M HHc	Add					
+UK Onshore Brecon Beacons 2860 52.0 -3.125 60M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Onshore Brecon Beacons 2860 52.0 -3.125 60M HHxWSc+HHc	UK Onshore Brecon Beacons 2860 52.0 -3.125 WSc	Add					
+AB Onshore Northern_Scotland 4016 58.5 -3.75 83M Windspeed			value	2010-01-01	2100-01-01	AB Onshore Northern_Scotland 4016 58.5 -3.75 83M HHxWSc+HHc+WSc	windspeed_constant	Add					
+AB Onshore Northern_Scotland 4016 58.5 -3.75 83M HHxWS			value	2010-01-01	2100-01-01	83	AB Onshore Northern_Scotland 4016 58.5 -3.75 Base Wind Speed	Multiply					
+AB Onshore Northern_Scotland 4016 58.5 -3.75 83M HHxWSc			value	2010-01-01	2100-01-01	AB Onshore Northern_Scotland 4016 58.5 -3.75 83M HHxWS	height_x_windspeed_coefficient	Multiply					
+AB Onshore Northern_Scotland 4016 58.5 -3.75 83M HHc			value	2010-01-01	2100-01-01	83	height_coefficient	Multiply					
+AB Onshore Northern_Scotland 4016 58.5 -3.75 83M HHxWSc+HHc			value	2010-01-01	2100-01-01	AB Onshore Northern_Scotland 4016 58.5 -3.75 83M HHxWSc	AB Onshore Northern_Scotland 4016 58.5 -3.75 83M HHc	Add					
+AB Onshore Northern_Scotland 4016 58.5 -3.75 83M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	AB Onshore Northern_Scotland 4016 58.5 -3.75 83M HHxWSc+HHc	AB Onshore Northern_Scotland 4016 58.5 -3.75 WSc	Add					
+UK Onshore Brecon Beacons 2860 52.0 -3.125 89M Windspeed			value	2010-01-01	2100-01-01	UK Onshore Brecon Beacons 2860 52.0 -3.125 89M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Onshore Brecon Beacons 2860 52.0 -3.125 89M HHxWS			value	2010-01-01	2100-01-01	89	UK Onshore Brecon Beacons 2860 52.0 -3.125 Base Wind Speed	Multiply					
+UK Onshore Brecon Beacons 2860 52.0 -3.125 89M HHxWSc			value	2010-01-01	2100-01-01	UK Onshore Brecon Beacons 2860 52.0 -3.125 89M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Onshore Brecon Beacons 2860 52.0 -3.125 89M HHc			value	2010-01-01	2100-01-01	89	height_coefficient	Multiply					
+UK Onshore Brecon Beacons 2860 52.0 -3.125 89M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Onshore Brecon Beacons 2860 52.0 -3.125 89M HHxWSc	UK Onshore Brecon Beacons 2860 52.0 -3.125 89M HHc	Add					
+UK Onshore Brecon Beacons 2860 52.0 -3.125 89M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Onshore Brecon Beacons 2860 52.0 -3.125 89M HHxWSc+HHc	UK Onshore Brecon Beacons 2860 52.0 -3.125 WSc	Add					
+AB Onshore Glasgow 3482 55.5 -3.75 65M Windspeed			value	2010-01-01	2100-01-01	AB Onshore Glasgow 3482 55.5 -3.75 65M HHxWSc+HHc+WSc	windspeed_constant	Add					
+AB Onshore Glasgow 3482 55.5 -3.75 65M HHxWS			value	2010-01-01	2100-01-01	65	AB Onshore Glasgow 3482 55.5 -3.75 Base Wind Speed	Multiply					
+AB Onshore Glasgow 3482 55.5 -3.75 65M HHxWSc			value	2010-01-01	2100-01-01	AB Onshore Glasgow 3482 55.5 -3.75 65M HHxWS	height_x_windspeed_coefficient	Multiply					
+AB Onshore Glasgow 3482 55.5 -3.75 65M HHc			value	2010-01-01	2100-01-01	65	height_coefficient	Multiply					
+AB Onshore Glasgow 3482 55.5 -3.75 65M HHxWSc+HHc			value	2010-01-01	2100-01-01	AB Onshore Glasgow 3482 55.5 -3.75 65M HHxWSc	AB Onshore Glasgow 3482 55.5 -3.75 65M HHc	Add					
+AB Onshore Glasgow 3482 55.5 -3.75 65M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	AB Onshore Glasgow 3482 55.5 -3.75 65M HHxWSc+HHc	AB Onshore Glasgow 3482 55.5 -3.75 WSc	Add					
+UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 55M Windspeed			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 55M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 55M HHxWS			value	2010-01-01	2100-01-01	55	UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 Base Wind Speed	Multiply					
+UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 55M HHxWSc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 55M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 55M HHc			value	2010-01-01	2100-01-01	55	height_coefficient	Multiply					
+UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 55M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 55M HHxWSc	UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 55M HHc	Add					
+UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 55M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 55M HHxWSc+HHc	UK Offshore Irish_Sea_Anglesey 3125 53.5 -4.375 WSc	Add					
+AB Onshore Southwest_Scotland 3392 55.0 -4.375 98M Windspeed			value	2010-01-01	2100-01-01	AB Onshore Southwest_Scotland 3392 55.0 -4.375 98M HHxWSc+HHc+WSc	windspeed_constant	Add					
+AB Onshore Southwest_Scotland 3392 55.0 -4.375 98M HHxWS			value	2010-01-01	2100-01-01	98	AB Onshore Southwest_Scotland 3392 55.0 -4.375 Base Wind Speed	Multiply					
+AB Onshore Southwest_Scotland 3392 55.0 -4.375 98M HHxWSc			value	2010-01-01	2100-01-01	AB Onshore Southwest_Scotland 3392 55.0 -4.375 98M HHxWS	height_x_windspeed_coefficient	Multiply					
+AB Onshore Southwest_Scotland 3392 55.0 -4.375 98M HHc			value	2010-01-01	2100-01-01	98	height_coefficient	Multiply					
+AB Onshore Southwest_Scotland 3392 55.0 -4.375 98M HHxWSc+HHc			value	2010-01-01	2100-01-01	AB Onshore Southwest_Scotland 3392 55.0 -4.375 98M HHxWSc	AB Onshore Southwest_Scotland 3392 55.0 -4.375 98M HHc	Add					
+AB Onshore Southwest_Scotland 3392 55.0 -4.375 98M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	AB Onshore Southwest_Scotland 3392 55.0 -4.375 98M HHxWSc+HHc	AB Onshore Southwest_Scotland 3392 55.0 -4.375 WSc	Add					
+UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 75M Windspeed			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 75M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 75M HHxWS			value	2010-01-01	2100-01-01	75	UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 Base Wind Speed	Multiply					
+UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 75M HHxWSc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 75M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 75M HHc			value	2010-01-01	2100-01-01	75	height_coefficient	Multiply					
+UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 75M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 75M HHxWSc	UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 75M HHc	Add					
+UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 75M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 75M HHxWSc+HHc	UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 WSc	Add					
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 80M Windspeed			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 80M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 80M HHxWS			value	2010-01-01	2100-01-01	80	UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 Base Wind Speed	Multiply					
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 80M HHxWSc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 80M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 80M HHc			value	2010-01-01	2100-01-01	80	height_coefficient	Multiply					
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 80M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 80M HHxWSc	UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 80M HHc	Add					
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 80M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 80M HHxWSc+HHc	UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 WSc	Add					
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 75M Windspeed			value	2010-01-01	2100-01-01	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 75M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 75M HHxWS			value	2010-01-01	2100-01-01	75	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 Base Wind Speed	Multiply					
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 75M HHxWSc			value	2010-01-01	2100-01-01	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 75M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 75M HHc			value	2010-01-01	2100-01-01	75	height_coefficient	Multiply					
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 75M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 75M HHxWSc	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 75M HHc	Add					
+UK Offshore Thames_Estuary_Near 2778 51.5 1.25 75M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 75M HHxWSc+HHc	UK Offshore Thames_Estuary_Near 2778 51.5 1.25 WSc	Add					
+UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 90M Windspeed			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 90M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 90M HHxWS			value	2010-01-01	2100-01-01	90	UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 Base Wind Speed	Multiply					
+UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 90M HHxWSc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 90M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 90M HHc			value	2010-01-01	2100-01-01	90	height_coefficient	Multiply					
+UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 90M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 90M HHxWSc	UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 90M HHc	Add					
+UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 90M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 90M HHxWSc+HHc	UK Offshore Irish_Sea_Lancaster 3215 54.0 -3.75 WSc	Add					
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 75M Windspeed			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 75M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 75M HHxWS			value	2010-01-01	2100-01-01	75	UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 Base Wind Speed	Multiply					
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 75M HHxWSc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 75M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 75M HHc			value	2010-01-01	2100-01-01	75	height_coefficient	Multiply					
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 75M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 75M HHxWSc	UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 75M HHc	Add					
+UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 75M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 75M HHxWSc+HHc	UK Offshore Irish_Sea_Liverpool 3127 53.5 -3.125 WSc	Add					
+UK Offshore Norflok_Near 3045 53.0 1.25 82M Windspeed			value	2010-01-01	2100-01-01	UK Offshore Norflok_Near 3045 53.0 1.25 82M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Offshore Norflok_Near 3045 53.0 1.25 82M HHxWS			value	2010-01-01	2100-01-01	82	UK Offshore Norflok_Near 3045 53.0 1.25 Base Wind Speed	Multiply					
+UK Offshore Norflok_Near 3045 53.0 1.25 82M HHxWSc			value	2010-01-01	2100-01-01	UK Offshore Norflok_Near 3045 53.0 1.25 82M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Offshore Norflok_Near 3045 53.0 1.25 82M HHc			value	2010-01-01	2100-01-01	82	height_coefficient	Multiply					
+UK Offshore Norflok_Near 3045 53.0 1.25 82M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Offshore Norflok_Near 3045 53.0 1.25 82M HHxWSc	UK Offshore Norflok_Near 3045 53.0 1.25 82M HHc	Add					
+UK Offshore Norflok_Near 3045 53.0 1.25 82M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Offshore Norflok_Near 3045 53.0 1.25 82M HHxWSc+HHc	UK Offshore Norflok_Near 3045 53.0 1.25 WSc	Add					
+UK Onshore Middlesborough 3308 54.5 -1.25 80M Windspeed			value	2010-01-01	2100-01-01	UK Onshore Middlesborough 3308 54.5 -1.25 80M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Onshore Middlesborough 3308 54.5 -1.25 80M HHxWS			value	2010-01-01	2100-01-01	80	UK Onshore Middlesborough 3308 54.5 -1.25 Base Wind Speed	Multiply					
+UK Onshore Middlesborough 3308 54.5 -1.25 80M HHxWSc			value	2010-01-01	2100-01-01	UK Onshore Middlesborough 3308 54.5 -1.25 80M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Onshore Middlesborough 3308 54.5 -1.25 80M HHc			value	2010-01-01	2100-01-01	80	height_coefficient	Multiply					
+UK Onshore Middlesborough 3308 54.5 -1.25 80M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Onshore Middlesborough 3308 54.5 -1.25 80M HHxWSc	UK Onshore Middlesborough 3308 54.5 -1.25 80M HHc	Add					
+UK Onshore Middlesborough 3308 54.5 -1.25 80M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Onshore Middlesborough 3308 54.5 -1.25 80M HHxWSc+HHc	UK Onshore Middlesborough 3308 54.5 -1.25 WSc	Add					
+UK Offshore Lincs_Far 3134 53.5 1.25 110M Windspeed			value	2010-01-01	2100-01-01	UK Offshore Lincs_Far 3134 53.5 1.25 110M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Offshore Lincs_Far 3134 53.5 1.25 110M HHxWS			value	2010-01-01	2100-01-01	110	UK Offshore Lincs_Far 3134 53.5 1.25 Base Wind Speed	Multiply					
+UK Offshore Lincs_Far 3134 53.5 1.25 110M HHxWSc			value	2010-01-01	2100-01-01	UK Offshore Lincs_Far 3134 53.5 1.25 110M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Offshore Lincs_Far 3134 53.5 1.25 110M HHc			value	2010-01-01	2100-01-01	110	height_coefficient	Multiply					
+UK Offshore Lincs_Far 3134 53.5 1.25 110M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Offshore Lincs_Far 3134 53.5 1.25 110M HHxWSc	UK Offshore Lincs_Far 3134 53.5 1.25 110M HHc	Add					
+UK Offshore Lincs_Far 3134 53.5 1.25 110M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Offshore Lincs_Far 3134 53.5 1.25 110M HHxWSc+HHc	UK Offshore Lincs_Far 3134 53.5 1.25 WSc	Add					
+AB Offshore Aberdeen_Far 3753 57.0 -1.25 101M Windspeed			value	2010-01-01	2100-01-01	AB Offshore Aberdeen_Far 3753 57.0 -1.25 101M HHxWSc+HHc+WSc	windspeed_constant	Add					
+AB Offshore Aberdeen_Far 3753 57.0 -1.25 101M HHxWS			value	2010-01-01	2100-01-01	101	AB Offshore Aberdeen_Far 3753 57.0 -1.25 Base Wind Speed	Multiply					
+AB Offshore Aberdeen_Far 3753 57.0 -1.25 101M HHxWSc			value	2010-01-01	2100-01-01	AB Offshore Aberdeen_Far 3753 57.0 -1.25 101M HHxWS	height_x_windspeed_coefficient	Multiply					
+AB Offshore Aberdeen_Far 3753 57.0 -1.25 101M HHc			value	2010-01-01	2100-01-01	101	height_coefficient	Multiply					
+AB Offshore Aberdeen_Far 3753 57.0 -1.25 101M HHxWSc+HHc			value	2010-01-01	2100-01-01	AB Offshore Aberdeen_Far 3753 57.0 -1.25 101M HHxWSc	AB Offshore Aberdeen_Far 3753 57.0 -1.25 101M HHc	Add					
+AB Offshore Aberdeen_Far 3753 57.0 -1.25 101M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	AB Offshore Aberdeen_Far 3753 57.0 -1.25 101M HHxWSc+HHc	AB Offshore Aberdeen_Far 3753 57.0 -1.25 WSc	Add					
+AB Offshore Aberdeen_Far 3753 57.0 -1.25 120M Windspeed			value	2010-01-01	2100-01-01	AB Offshore Aberdeen_Far 3753 57.0 -1.25 120M HHxWSc+HHc+WSc	windspeed_constant	Add					
+AB Offshore Aberdeen_Far 3753 57.0 -1.25 120M HHxWS			value	2010-01-01	2100-01-01	120	AB Offshore Aberdeen_Far 3753 57.0 -1.25 Base Wind Speed	Multiply					
+AB Offshore Aberdeen_Far 3753 57.0 -1.25 120M HHxWSc			value	2010-01-01	2100-01-01	AB Offshore Aberdeen_Far 3753 57.0 -1.25 120M HHxWS	height_x_windspeed_coefficient	Multiply					
+AB Offshore Aberdeen_Far 3753 57.0 -1.25 120M HHc			value	2010-01-01	2100-01-01	120	height_coefficient	Multiply					
+AB Offshore Aberdeen_Far 3753 57.0 -1.25 120M HHxWSc+HHc			value	2010-01-01	2100-01-01	AB Offshore Aberdeen_Far 3753 57.0 -1.25 120M HHxWSc	AB Offshore Aberdeen_Far 3753 57.0 -1.25 120M HHc	Add					
+AB Offshore Aberdeen_Far 3753 57.0 -1.25 120M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	AB Offshore Aberdeen_Far 3753 57.0 -1.25 120M HHxWSc+HHc	AB Offshore Aberdeen_Far 3753 57.0 -1.25 WSc	Add					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 105M Windspeed			value	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 105M HHxWSc+HHc+WSc	windspeed_constant	Add					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 105M HHxWS			value	2010-01-01	2100-01-01	105	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 Base Wind Speed	Multiply					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 105M HHxWSc			value	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 105M HHxWS	height_x_windspeed_coefficient	Multiply					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 105M HHc			value	2010-01-01	2100-01-01	105	height_coefficient	Multiply					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 105M HHxWSc+HHc			value	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 105M HHxWSc	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 105M HHc	Add					
+AB Offshore Moray_Firth_Near 4017 58.5 -3.125 105M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 105M HHxWSc+HHc	AB Offshore Moray_Firth_Near 4017 58.5 -3.125 WSc	Add					
+UK Offshore Tyneside_Near 3397 55.0 -1.25 76M Windspeed			value	2010-01-01	2100-01-01	UK Offshore Tyneside_Near 3397 55.0 -1.25 76M HHxWSc+HHc+WSc	windspeed_constant	Add					
+UK Offshore Tyneside_Near 3397 55.0 -1.25 76M HHxWS			value	2010-01-01	2100-01-01	76	UK Offshore Tyneside_Near 3397 55.0 -1.25 Base Wind Speed	Multiply					
+UK Offshore Tyneside_Near 3397 55.0 -1.25 76M HHxWSc			value	2010-01-01	2100-01-01	UK Offshore Tyneside_Near 3397 55.0 -1.25 76M HHxWS	height_x_windspeed_coefficient	Multiply					
+UK Offshore Tyneside_Near 3397 55.0 -1.25 76M HHc			value	2010-01-01	2100-01-01	76	height_coefficient	Multiply					
+UK Offshore Tyneside_Near 3397 55.0 -1.25 76M HHxWSc+HHc			value	2010-01-01	2100-01-01	UK Offshore Tyneside_Near 3397 55.0 -1.25 76M HHxWSc	UK Offshore Tyneside_Near 3397 55.0 -1.25 76M HHc	Add					
+UK Offshore Tyneside_Near 3397 55.0 -1.25 76M HHxWSc+HHc+WSc			value	2010-01-01	2100-01-01	UK Offshore Tyneside_Near 3397 55.0 -1.25 76M HHxWSc+HHc	UK Offshore Tyneside_Near 3397 55.0 -1.25 WSc	Add					

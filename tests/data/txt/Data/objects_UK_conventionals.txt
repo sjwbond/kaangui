@@ -1,0 +1,281 @@
+Object_Name	Object_Type
+UK Coal 1990	Generator
+UK Coal 1995	Generator
+UK Coal 2000	Generator
+UK Coal 2005	Generator
+UK Coal 2010	Generator
+UK Coal 2015	Generator
+UK Coal 2020	Generator
+UK Coal 2025	Generator
+UK Coal 2030	Generator
+UK Coal 2035	Generator
+UK Coal 2040	Generator
+UK Coal 2045	Generator
+UK Coal 2050	Generator
+UK Coal 2055	Generator
+UK Coal 2060	Generator
+UK Coal 2065	Generator
+UK CCGT 1990	Generator
+UK CCGT 1995	Generator
+UK CCGT 2000	Generator
+UK CCGT 2005	Generator
+UK CCGT 2010	Generator
+UK CCGT 2015	Generator
+UK CCGT 2020	Generator
+UK CCGT 2025	Generator
+UK CCGT 2030	Generator
+UK CCGT 2031	Generator
+UK CCGT 2032	Generator
+UK CCGT 2033	Generator
+UK CCGT 2034	Generator
+UK CCGT 2035	Generator
+UK CCGT 2036	Generator
+UK CCGT 2037	Generator
+UK CCGT 2038	Generator
+UK CCGT 2039	Generator
+UK CCGT 2040	Generator
+UK CCGT 2045	Generator
+UK CCGT 2050	Generator
+UK CCGT 2055	Generator
+UK CCGT 2060	Generator
+UK CCGT 2065	Generator
+UK OCGT 1990	Generator
+UK OCGT 1995	Generator
+UK OCGT 2000	Generator
+UK OCGT 2005	Generator
+UK OCGT 2010	Generator
+UK OCGT 2015	Generator
+UK OCGT 2025	Generator
+UK OCGT 2026	Generator
+UK OCGT 2027	Generator
+UK OCGT 2028	Generator
+UK OCGT 2029	Generator
+UK OCGT 2030	Generator
+UK OCGT 2031	Generator
+UK OCGT 2032	Generator
+UK OCGT 2033	Generator
+UK OCGT 2034	Generator
+UK OCGT 2035	Generator
+UK OCGT 2036	Generator
+UK OCGT 2037	Generator
+UK OCGT 2038	Generator
+UK OCGT 2039	Generator
+UK OCGT 2040	Generator
+UK Biomass 1990	Generator
+UK Biomass 1995	Generator
+UK Biomass 2000	Generator
+UK Biomass 2005	Generator
+UK Biomass 2010	Generator
+UK Biomass 2015	Generator
+UK Biomass 2020	Generator
+UK Biomass 2025	Generator
+UK Biomass 2030	Generator
+UK Biomass 2035	Generator
+UK Biomass 2040	Generator
+UK Biomass 2045	Generator
+UK Biomass 2050	Generator
+UK Biomass 2055	Generator
+UK Biomass 2060	Generator
+UK Biomass 2065	Generator
+UK Lignite 1990	Generator
+UK Lignite 1995	Generator
+UK Lignite 2000	Generator
+UK Lignite 2005	Generator
+UK Lignite 2010	Generator
+UK Lignite 2015	Generator
+UK Lignite 2020	Generator
+UK Lignite 2025	Generator
+UK Lignite 2030	Generator
+UK Lignite 2035	Generator
+UK Lignite 2040	Generator
+UK Lignite 2045	Generator
+UK Lignite 2050	Generator
+UK Lignite 2055	Generator
+UK Lignite 2060	Generator
+UK Lignite 2065	Generator
+UK Nuclear 1990	Generator
+UK Nuclear 1995	Generator
+UK Nuclear 2000	Generator
+UK Nuclear 2005	Generator
+UK Nuclear 2010	Generator
+UK Nuclear 2015	Generator
+UK Nuclear 2020	Generator
+UK Nuclear 2025	Generator
+UK Nuclear 2030	Generator
+UK Nuclear 2035	Generator
+UK Nuclear 2040	Generator
+UK CHP 1990	Generator
+UK CHP 1995	Generator
+UK CHP 2000	Generator
+UK CHP 2005	Generator
+UK CHP 2010	Generator
+UK CHP 2015	Generator
+UK CHP 2020	Generator
+UK CHP 2025	Generator
+UK CHP 2030	Generator
+UK CHP 2035	Generator
+UK CHP 2040	Generator
+UK CHP 2045	Generator
+UK CHP 2050	Generator
+UK CHP 2055	Generator
+UK CHP 2060	Generator
+UK CHP 2065	Generator
+UK Liquid 1990	Generator
+UK Liquid 1995	Generator
+UK Liquid 2000	Generator
+UK Liquid 2005	Generator
+UK Liquid 2010	Generator
+UK Liquid 2015	Generator
+UK Liquid 2020	Generator
+UK Liquid 2025	Generator
+UK Liquid 2030	Generator
+UK Liquid 2035	Generator
+UK Liquid 2040	Generator
+UK Liquid 2045	Generator
+UK Liquid 2050	Generator
+UK Liquid 2055	Generator
+UK Liquid 2060	Generator
+UK Liquid 2065	Generator
+UK GB_PP_Drax Bio1	Generator
+UK GB_PP_Drax Bio2	Generator
+UK GB_PP_Drax Bio3	Generator
+UK GB_PP_Drax Bio4	Generator
+UK GB_PP_Lynemouth Bio 1	Generator
+UK GB_PP_Lynemouth Bio 2	Generator
+UK GB_PP_Lynemouth Bio 3	Generator
+UK GB_PP_Markinch	Generator
+UK GB_PP_Teesside_Bio	Generator
+UK GB_PP_Baglan Bay2	Generator
+UK GB_PP_Fawley CoGen1	Generator
+UK GB_PP_Grangemouth CHP	Generator
+UK GB_PP_Fellside1	Generator
+UK GB_PP_Connahs Quay1	Generator
+UK GB_PP_Connahs Quay2	Generator
+UK GB_PP_Connahs Quay3	Generator
+UK GB_PP_Connahs Quay4	Generator
+UK GB_PP_Seabank2	Generator
+UK GB_PP_Kings Lynn A1	Generator
+UK GB_PP_Corby1	Generator
+UK GB_PP_Cottam DevCentre1	Generator
+UK GB_PP_Shoreham1	Generator
+UK GB_PP_Saltend1	Generator
+UK GB_PP_Saltend2	Generator
+UK GB_PP_Saltend3	Generator
+UK GB_PP_Enfield Energy1	Generator
+UK GB_PP_Great Yarmouth1	Generator
+UK GB_PP_Severn 1	Generator
+UK GB_PP_Severn 2	Generator
+UK GB_PP_Grain5	Generator
+UK GB_PP_Grain6	Generator
+UK GB_PP_Grain7	Generator
+UK GB_PP_Pembroke 11	Generator
+UK GB_PP_Pembroke 21	Generator
+UK GB_PP_Pembroke 31	Generator
+UK GB_PP_Pembroke 41	Generator
+UK GB_PP_Pembroke 51	Generator
+UK GB_PP_Staythorpe1	Generator
+UK GB_PP_Staythorpe2	Generator
+UK GB_PP_Staythorpe3	Generator
+UK GB_PP_Staythorpe4	Generator
+UK GB_PP_Carrington1	Generator
+UK GB_PP_Carrington2	Generator
+UK GB_PP_West Burton2 1	Generator
+UK GB_PP_West Burton2 2	Generator
+UK GB_PP_West Burton2 3	Generator
+UK GB_PP_Immingham 21	Generator
+UK GB_PP_Baglan Bay1	Generator
+UK GB_PP_South Humber Bank2	Generator
+UK GB_PP_Didcot B6	Generator
+UK GB_PP_Keadby 11	Generator
+UK GB_PP_Medway1	Generator
+UK GB_PP_Rye House1	Generator
+UK GB_PP_Immingham CHP1	Generator
+UK GB_PP_Didcot B5	Generator
+UK GB_PP_Little Barford1	Generator
+UK GB_PP_Coryton1	Generator
+UK GB_PP_South Humber Bank1	Generator
+UK GB_PP_Damhead Creek1	Generator
+UK GB_PP_Rocksavage1	Generator
+UK GB_PP_Seabank1	Generator
+UK GB_PP_Sutton Bridge1	Generator
+UK GB_PP_Marchwood1	Generator
+UK GB_PP_Spalding1	Generator
+UK GB_PP_Langage 1	Generator
+UK GB_PP_Peterhead1	Generator
+UK GB_PP_Drax5	Generator
+UK GB_PP_Drax6	Generator
+UK GB_PP_Ratcliffe On Soar1	Generator
+UK GB_PP_Ratcliffe On Soar2	Generator
+UK GB_PP_Ratcliffe On Soar3	Generator
+UK GB_PP_Ratcliffe On Soar4	Generator
+UK GB_PP_West Burton1	Generator
+UK GB_PP_West Burton2	Generator
+UK GB_PP_West Burton3	Generator
+UK GB_PP_West Burton4	Generator
+UK GB_PP_Dungeness B21	Generator
+UK GB_PP_Dungeness B22	Generator
+UK GB_PP_Hartlepool1	Generator
+UK GB_PP_Hartlepool2	Generator
+UK GB_PP_Heysham 11	Generator
+UK GB_PP_Heysham 12	Generator
+UK GB_PP_Heysham 27	Generator
+UK GB_PP_Heysham 28	Generator
+UK GB_PP_Hinkley Point B7	Generator
+UK GB_PP_Hinkley Point B8	Generator
+UK GB_PP_Hunterson B1	Generator
+UK GB_PP_Hunterson B2	Generator
+UK GB_PP_Sizewell B3	Generator
+UK GB_PP_Sizewell B4	Generator
+UK GB_PP_Torness1	Generator
+UK GB_PP_Torness2	Generator
+UK GB_PP_Barra	Generator
+UK GB_PP_Arnish	Generator
+UK GB_PP_Bowmore	Generator
+UK GB_PP_Chippenham	Generator
+UK GB_PP_Loch Carnan	Generator
+UK GB_PP_Little Barford GT	Generator
+UK GB_PP_Fiddlers FerryG1	Generator
+UK GB_PP_Fiddlers FerryG3	Generator
+UK GB_PP_Ratcliffe On SoarG2	Generator
+UK GB_PP_Ratcliffe On SoarG4	Generator
+UK GB_PP_West BurtonG1	Generator
+UK GB_PP_West BurtonG4	Generator
+UK GB_PP_Battery Point	Generator
+UK GB_PP_DraxG10	Generator
+UK GB_PP_DraxG12	Generator
+UK GB_PP_DraxG9	Generator
+UK GB_PP_KeadbyG1	Generator
+UK GB_PP_Stornoway	Generator
+UK GB_PP_Didcot AG1	Generator
+UK GB_PP_Didcot AG2	Generator
+UK GB_PP_Didcot AG3	Generator
+UK GB_PP_Didcot AG4	Generator
+UK GB_PP_Five Oaks	Generator
+UK GB_PP_Kirkwall	Generator
+UK GB_PP_South Cornelly	Generator
+UK GB_PP_Thatcham	Generator
+UK GB_PP_Tiree	Generator
+UK GB_PP_Wheldale	Generator
+UK GB_PP_GrainG1	Generator
+UK GB_PP_GrainG4	Generator
+UK GB_PP_Redditch	Generator
+UK GB_PP_Seabank_OCGT1	Generator
+UK GB_PP_Knapton	Generator
+UK GB_PP_Burghfield	Generator
+UK GB_PP_Chickerell	Generator
+UK GB_PP_Taylors Lane2	Generator
+UK GB_PP_Taylors Lane3	Generator
+UK GB_PP_Lerwick	Generator
+UK GB_PP_Cowes1	Generator
+UK GB_PP_Cowes2	Generator
+UK GB_PP_Brigg_OCGT	Generator
+UK GB_PP_Peterborough1_OCGT	Generator
+UK GB_PP_Killingholme_OCGT1	Generator
+UK GB_PP_Killingholme_OCGT2	Generator
+UK GB_PP_Spalding_OCGT	Generator
+UK GB_PP_Existing Embedded Peaker	Generator
+UK GB_PP_Peaking_Band_1	Generator
+UK GB_PP_Peaking_Band_2	Generator
+UK GB_PP_Peaking_Band_3	Generator
+UK GB_PP_Peaking_Band_4	Generator
+UK GB_PP_Peaking_Band_5	Generator

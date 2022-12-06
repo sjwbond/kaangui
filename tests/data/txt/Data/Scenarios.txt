@@ -1,0 +1,8 @@
+Scenario Name	Priority
+E&D 2020Q3	0
+NP 2020Q3	1
+NP 2020Q3 REMIT	0
+Elec 2020Q3	0
+lowerco2	0
+CO2 Stochastics	1
+Gas Stochastics	1

@@ -1,0 +1,4 @@
+Object_Name	Object_Type
+UK ROR Generator	Generator
+UK ROR Capacity Factor	Variable
+UK ROR File	DataSource

@@ -1,0 +1,55 @@
+Object_Name	Object_Type
+ca_db_wind	DBDataSource
+ca_db_pv	DBDataSource
+EUR	Currency
+GBP	Currency
+USD	Currency
+Fuel Price File	DataSource
+EnergyConversionsFile	DataSource
+Installed Capacity File	DataSource
+Power Curve File	DataSource
+Base Demand File	DataSource
+Demand Stochastics File	DataSource
+Generic Wind Power Curve	Variable
+ETS EUA	Emissions
+UK Carbon	Emissions
+NOCO2	Emissions
+US CO2	Emissions
+GJ	Variable
+mmbtu	Variable
+MWh	Variable
+Therm	Variable
+Tonne	Variable
+Nordsee One Power Curve	Variable
+NWST Wind Power Curve	Variable
+NWST Wind Power Curve PL	Variable
+NWST Offshore Wind Power Curve	Variable
+Siemes SWT 36 120	Variable
+Siemes SWT 60 154	Variable
+LWST Offshore Wind Power Curve	Variable
+HWST Offshore Wind Power Curve	Variable
+windspeed_coefficient	Variable
+windspeed_constant	Variable
+height_x_windspeed_coefficient	Variable
+height_coefficient	Variable
+LWST Wind Power Curve	Variable
+HWST Wind Power Curve	Variable
+CAPP Coal	Variable
+Henry Hub Gas	Variable
+US Biomass	Variable
+US Lignite	Variable
+US Uranium	Variable
+US LSFO	Variable
+DE Offshore North_Sea_Near_West 3233 54.0 7.5 Base Wind Speed 90p 	Variable
+DE Offshore North_Sea_Near_West 3233 54.0 7.5 Base Wind Speed 80p	Variable
+DE Offshore North_Sea_Near_West 3233 54.0 7.5 130M Windspeed 90p	Variable
+DE Offshore North_Sea_Near_West 3233 54.0 7.5 130M Windspeed 80p	Variable
+DE Offshore North_Sea_Near_West 3233 54.0 7.5 160M Windspeed 90p	Variable
+DE Offshore North_Sea_Near_West 3233 54.0 7.5 160M Windspeed 80p	Variable
+EU LSFO	Variable
+Generic Hydro Inflow	Variable
+TTF Gas	Variable
+EU Biomass	Variable
+EU Lignite	Variable
+EU Uranium	Variable
+ARA API 2	Variable

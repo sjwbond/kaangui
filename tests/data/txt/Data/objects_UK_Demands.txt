@@ -1,0 +1,160 @@
+Object_Name	Object_Type
+UK Base Demand File	DataSource
+UK Base Demand	Variable
+UK Daily Demand Growth File	DataSource
+UK Daily Demand Growth	Variable
+UK Daily Demand Stochastic File	DataSource
+UK Daily Demand Stochastic	Variable
+UK Demand DIY File	DataSource
+UK Demand DIY	Variable
+UK Demand DOW File	DataSource
+UK Demand DOW	Variable
+UK Demand HOD File	DataSource
+UK Demand HOD	Variable
+UK Demand Historic Day Ahead File	DataSource
+UK Demand Historic Day Ahead	Variable
+UK Demand	Demand
+UK DSR Bid Volume 2017	Variable
+UK DSR Bid Price 2017	Variable
+UK DSR Bid Volume 2018	Variable
+UK DSR Bid Price 2018	Variable
+UK DSR Bid Volume 2019	Variable
+UK DSR Bid Price 2019	Variable
+UK DSR Bid Volume 2020	Variable
+UK DSR Bid Price 2020	Variable
+UK DSR Bid Volume 2021	Variable
+UK DSR Bid Price 2021	Variable
+UK DSR Bid Volume 2022	Variable
+UK DSR Bid Price 2022	Variable
+UK DSR Bid Volume 2023	Variable
+UK DSR Bid Price 2023	Variable
+UK DSR Bid Volume 2024	Variable
+UK DSR Bid Price 2024	Variable
+UK DSR Bid Volume 2025	Variable
+UK DSR Bid Price 2025	Variable
+UK DSR Bid Volume 2026	Variable
+UK DSR Bid Price 2026	Variable
+UK DSR Bid Volume 2027	Variable
+UK DSR Bid Price 2027	Variable
+UK DSR Bid Volume 2028	Variable
+UK DSR Bid Price 2028	Variable
+UK DSR Bid Volume 2029	Variable
+UK DSR Bid Price 2029	Variable
+UK DSR Bid Volume 2030	Variable
+UK DSR Bid Price 2030	Variable
+UK DSR Bid Volume 2031	Variable
+UK DSR Bid Price 2031	Variable
+UK DSR Bid Volume 2032	Variable
+UK DSR Bid Price 2032	Variable
+UK DSR Bid Volume 2033	Variable
+UK DSR Bid Price 2033	Variable
+UK DSR Bid Volume 2034	Variable
+UK DSR Bid Price 2034	Variable
+UK DSR Bid Volume 2035	Variable
+UK DSR Bid Price 2035	Variable
+UK DSR Bid Volume 2036	Variable
+UK DSR Bid Price 2036	Variable
+UK DSR Bid Volume 2037	Variable
+UK DSR Bid Price 2037	Variable
+UK DSR Bid Volume 2038	Variable
+UK DSR Bid Price 2038	Variable
+UK DSR Bid Volume 2039	Variable
+UK DSR Bid Price 2039	Variable
+UK DSR Bid Volume 2040	Variable
+UK DSR Bid Price 2040	Variable
+UK DSR Bid Volume 2041	Variable
+UK DSR Bid Price 2041	Variable
+UK DSR Bid Volume 2042	Variable
+UK DSR Bid Price 2042	Variable
+UK DSR Bid Volume 2043	Variable
+UK DSR Bid Price 2043	Variable
+UK DSR Bid Volume 2044	Variable
+UK DSR Bid Price 2044	Variable
+UK DSR Bid Volume 2045	Variable
+UK DSR Bid Price 2045	Variable
+UK DSR Bid Volume 2046	Variable
+UK DSR Bid Price 2046	Variable
+UK DSR Bid Volume 2047	Variable
+UK DSR Bid Price 2047	Variable
+UK DSR Bid Volume 2048	Variable
+UK DSR Bid Price 2048	Variable
+UK DSR Bid Volume 2049	Variable
+UK DSR Bid Price 2049	Variable
+UK DSR Bid Volume 2050	Variable
+UK DSR Bid Price 2050	Variable
+UK DSR Bid Volume 2051	Variable
+UK DSR Bid Price 2051	Variable
+UK DSR Bid Volume 2052	Variable
+UK DSR Bid Price 2052	Variable
+UK DSR Bid Volume 2053	Variable
+UK DSR Bid Price 2053	Variable
+UK DSR Bid Volume 2054	Variable
+UK DSR Bid Price 2054	Variable
+UK DSR Bid Volume 2055	Variable
+UK DSR Bid Price 2055	Variable
+UK DSR Bid Volume 2056	Variable
+UK DSR Bid Price 2056	Variable
+UK DSR Bid Volume 2057	Variable
+UK DSR Bid Price 2057	Variable
+UK DSR Bid Volume 2058	Variable
+UK DSR Bid Price 2058	Variable
+UK DSR Bid Volume 2059	Variable
+UK DSR Bid Price 2059	Variable
+UK DSR Bid Volume 2060	Variable
+UK DSR Bid Price 2060	Variable
+UK DSR Bid Volume 2061	Variable
+UK DSR Bid Price 2061	Variable
+UK DSR Bid Volume 2062	Variable
+UK DSR Bid Price 2062	Variable
+UK DSR Bid Volume 2063	Variable
+UK DSR Bid Price 2063	Variable
+UK DSR Bid Volume 2064	Variable
+UK DSR Bid Price 2064	Variable
+UK DSR Bid Volume 2065	Variable
+UK DSR Bid Price 2065	Variable
+UK DSR Bid Volume 2066	Variable
+UK DSR Bid Price 2066	Variable
+UK DSR Bid Volume 2067	Variable
+UK DSR Bid Price 2067	Variable
+UK DSR Bid Volume 2068	Variable
+UK DSR Bid Price 2068	Variable
+UK DSR Bid Volume 2069	Variable
+UK DSR Bid Price 2069	Variable
+UK DSR Bid Volume 2070	Variable
+UK DSR Bid Price 2070	Variable
+UK DSR Bid Volume 2071	Variable
+UK DSR Bid Price 2071	Variable
+UK DSR Bid Volume 2072	Variable
+UK DSR Bid Price 2072	Variable
+UK DSR Bid Volume 2073	Variable
+UK DSR Bid Price 2073	Variable
+UK DSR Bid Volume 2074	Variable
+UK DSR Bid Price 2074	Variable
+UK DSR Bid Volume 2075	Variable
+UK DSR Bid Price 2075	Variable
+UK DSR Bid Volume 2076	Variable
+UK DSR Bid Price 2076	Variable
+UK DSR Bid Volume 2077	Variable
+UK DSR Bid Price 2077	Variable
+UK DSR Bid Volume 2078	Variable
+UK DSR Bid Price 2078	Variable
+UK DSR Bid Volume 2079	Variable
+UK DSR Bid Price 2079	Variable
+UK DSR Bid Volume 2080	Variable
+UK DSR Bid Price 2080	Variable
+UK DSR Bid Volume 2081	Variable
+UK DSR Bid Price 2081	Variable
+UK DSR Bid Volume 2082	Variable
+UK DSR Bid Price 2082	Variable
+UK DSR Bid Volume 2083	Variable
+UK DSR Bid Price 2083	Variable
+UK DSR Bid Volume 2084	Variable
+UK DSR Bid Price 2084	Variable
+UK DSR Bid Volume 2085	Variable
+UK DSR Bid Price 2085	Variable
+UK DSR Bid Volume 2086	Variable
+UK DSR Bid Price 2086	Variable
+UK DSR Bid Volume 	Variable
+UK DSR Bid Price 	Variable
+UK DSR Adjustment	Variable
+UK Demand HOD adj	Variable

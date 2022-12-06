@@ -1,0 +1,129 @@
+Object_Name	Parent_Object
+UK Batteries 2020	UK
+UK Batteries 2020	UK Batteries
+UK Batteries 2021	UK
+UK Batteries 2021	UK Batteries
+UK Batteries 2022	UK
+UK Batteries 2022	UK Batteries
+UK Batteries 2023	UK
+UK Batteries 2023	UK Batteries
+UK Batteries 2024	UK
+UK Batteries 2024	UK Batteries
+UK Batteries 2025	UK
+UK Batteries 2025	UK Batteries
+UK Batteries 2026	UK
+UK Batteries 2026	UK Batteries
+UK Batteries 2027	UK
+UK Batteries 2027	UK Batteries
+UK Batteries 2028	UK
+UK Batteries 2028	UK Batteries
+UK Batteries 2029	UK
+UK Batteries 2029	UK Batteries
+UK Batteries 2030	UK
+UK Batteries 2030	UK Batteries
+UK Batteries 2031	UK
+UK Batteries 2031	UK Batteries
+UK Batteries 2032	UK
+UK Batteries 2032	UK Batteries
+UK Batteries 2033	UK
+UK Batteries 2033	UK Batteries
+UK Batteries 2034	UK
+UK Batteries 2034	UK Batteries
+UK Batteries 2035	UK
+UK Batteries 2035	UK Batteries
+UK Batteries 2036	UK
+UK Batteries 2036	UK Batteries
+UK Batteries 2037	UK
+UK Batteries 2037	UK Batteries
+UK Batteries 2038	UK
+UK Batteries 2038	UK Batteries
+UK Batteries 2039	UK
+UK Batteries 2039	UK Batteries
+UK Batteries 2040	UK
+UK Batteries 2040	UK Batteries
+UK Pumped Storage	UK
+UK Pumped Storage	UK PumpedStorage Generators
+UK Batteries 2h 2020	UK
+UK Batteries 2h 2020	UK Batteries
+UK Batteries 2h 2021	UK
+UK Batteries 2h 2021	UK Batteries
+UK Batteries 2h 2022	UK
+UK Batteries 2h 2022	UK Batteries
+UK Batteries 2h 2023	UK
+UK Batteries 2h 2023	UK Batteries
+UK Batteries 2h 2024	UK
+UK Batteries 2h 2024	UK Batteries
+UK Batteries 2h 2025	UK
+UK Batteries 2h 2025	UK Batteries
+UK Batteries 2h 2026	UK
+UK Batteries 2h 2026	UK Batteries
+UK Batteries 2h 2027	UK
+UK Batteries 2h 2027	UK Batteries
+UK Batteries 2h 2028	UK
+UK Batteries 2h 2028	UK Batteries
+UK Batteries 2h 2029	UK
+UK Batteries 2h 2029	UK Batteries
+UK Batteries 2h 2030	UK
+UK Batteries 2h 2030	UK Batteries
+UK Batteries 2h 2031	UK
+UK Batteries 2h 2031	UK Batteries
+UK Batteries 2h 2032	UK
+UK Batteries 2h 2032	UK Batteries
+UK Batteries 2h 2033	UK
+UK Batteries 2h 2033	UK Batteries
+UK Batteries 2h 2034	UK
+UK Batteries 2h 2034	UK Batteries
+UK Batteries 2h 2035	UK
+UK Batteries 2h 2035	UK Batteries
+UK Batteries 2h 2036	UK
+UK Batteries 2h 2036	UK Batteries
+UK Batteries 2h 2037	UK
+UK Batteries 2h 2037	UK Batteries
+UK Batteries 2h 2038	UK
+UK Batteries 2h 2038	UK Batteries
+UK Batteries 2h 2039	UK
+UK Batteries 2h 2039	UK Batteries
+UK Batteries 2h 2040	UK
+UK Batteries 2h 2040	UK Batteries
+UK Batteries 4h 2020	UK
+UK Batteries 4h 2020	UK Batteries
+UK Batteries 4h 2021	UK
+UK Batteries 4h 2021	UK Batteries
+UK Batteries 4h 2022	UK
+UK Batteries 4h 2022	UK Batteries
+UK Batteries 4h 2023	UK
+UK Batteries 4h 2023	UK Batteries
+UK Batteries 4h 2024	UK
+UK Batteries 4h 2024	UK Batteries
+UK Batteries 4h 2025	UK
+UK Batteries 4h 2025	UK Batteries
+UK Batteries 4h 2026	UK
+UK Batteries 4h 2026	UK Batteries
+UK Batteries 4h 2027	UK
+UK Batteries 4h 2027	UK Batteries
+UK Batteries 4h 2028	UK
+UK Batteries 4h 2028	UK Batteries
+UK Batteries 4h 2029	UK
+UK Batteries 4h 2029	UK Batteries
+UK Batteries 4h 2030	UK
+UK Batteries 4h 2030	UK Batteries
+UK Batteries 4h 2031	UK
+UK Batteries 4h 2031	UK Batteries
+UK Batteries 4h 2032	UK
+UK Batteries 4h 2032	UK Batteries
+UK Batteries 4h 2033	UK
+UK Batteries 4h 2033	UK Batteries
+UK Batteries 4h 2034	UK
+UK Batteries 4h 2034	UK Batteries
+UK Batteries 4h 2035	UK
+UK Batteries 4h 2035	UK Batteries
+UK Batteries 4h 2036	UK
+UK Batteries 4h 2036	UK Batteries
+UK Batteries 4h 2037	UK
+UK Batteries 4h 2037	UK Batteries
+UK Batteries 4h 2038	UK
+UK Batteries 4h 2038	UK Batteries
+UK Batteries 4h 2039	UK
+UK Batteries 4h 2039	UK Batteries
+UK Batteries 4h 2040	UK
+UK Batteries 4h 2040	UK Batteries

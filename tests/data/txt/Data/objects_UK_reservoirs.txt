@@ -1,0 +1,9 @@
+Object_Name	Object_Type
+UK H2	Reservoir
+UK H2 Inflow	Variable
+UK H2 Inflow File	DataSource
+UK H2 Inflow TS	DBTimeSeries
+UK UK_RES	Reservoir
+UK UK_RES Inflow	Variable
+UK UK_RES Inflow File	DataSource
+UK UK_RES Inflow TS	DBTimeSeries

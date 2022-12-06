@@ -1,0 +1,61 @@
+Object_Name	Parent_Object	Target_Object	Property	Date_From	Date_To	Value	Variable	Variable_Effect	Timeslice	Timeslice_Index	Group_id	Priority	Scenario
+UK Station Coal			Currency	2010-01-01	2100-01-01	EUR							
+UK Station Coal			LHV	2010-01-01	2100-01-01	0.97							
+UK Station Coal			Price	2010-01-01	2100-01-01	UK Station Coal Price	UK Station Coal Stochastic	Multiply					
+UK Station Coal			ton/GJ	2010-01-01	2100-01-01	0.09							
+UK Station Coal			Unit	2010-01-01	2100-01-01	GJ							
+Station Coal Base			Value	2010-01-01	2100-01-01	ARA API 2							
+UK Station Coal Price			Value	2010-01-01	2100-01-01	Station Coal Base	UK Station Coal Delivery Adjustment	Multiply					
+UK Station Coal Delivery Adjustment			Value	2010-01-01	2100-01-01	1.1							
+UK Station Coal Stochastic			Value	2010-01-01	2100-01-01	1							
+UK Station Coal Stochastic			Value	2010-01-01	2100-01-01	UK Station Coal Stochastic File							UseFuelStochastics
+UK Station Gas			Currency	2010-01-01	2100-01-01	EUR							
+UK Station Gas			LHV	2010-01-01	2100-01-01	0.92							
+UK Station Gas			Price	2010-01-01	2100-01-01	UK Station Gas Price	UK Station Gas Stochastic	Multiply					
+UK Station Gas			ton/GJ	2010-01-01	2100-01-01	0.056							
+UK Station Gas			Unit	2010-01-01	2100-01-01	GJ							
+Station Gas Base			Value	2010-01-01	2100-01-01	TTF Gas	UK Station Gas Stochastic	Multiply					
+UK Station Gas Price			Value	2010-01-01	2100-01-01	Station Gas Base	UK Station Gas Delivery Adjustment	Multiply					
+UK Station Gas Delivery Adjustment			Value	2010-01-01	2100-01-01	1.1							
+UK Station Gas Stochastic			Value	2010-01-01	2100-01-01	TTF Gas Stochastic							
+UK Station Gas Stochastic			Value	2010-01-01	2100-01-01	TTF Gas Stochastic							Gas Stochastics
+UK Station Biomass			Currency	2010-01-01	2100-01-01	EUR							
+UK Station Biomass			LHV	2010-01-01	2100-01-01	1							
+UK Station Biomass			Price	2010-01-01	2100-01-01	UK Station Biomass Price	UK Station Biomass Stochastic	Multiply					
+UK Station Biomass			ton/GJ	2010-01-01	2100-01-01	0							
+UK Station Biomass			Unit	2010-01-01	2100-01-01	GJ							
+Station Biomass Base			Value	2010-01-01	2100-01-01	EU Biomass							
+UK Station Biomass Price			Value	2010-01-01	2100-01-01	Station Biomass Base	UK Station Biomass Delivery Adjustment	Multiply					
+UK Station Biomass Delivery Adjustment			Value	2010-01-01	2100-01-01	1.1							
+UK Station Biomass Stochastic			Value	2010-01-01	2100-01-01	1							
+UK Station Biomass Stochastic			Value	2010-01-01	2100-01-01	UK Station Biomass Stochastic File							UseFuelStochastics
+UK Station Lignite			Currency	2010-01-01	2100-01-01	EUR							
+UK Station Lignite			LHV	2010-01-01	2100-01-01	0.96							
+UK Station Lignite			Price	2010-01-01	2100-01-01	UK Station Lignite Price	UK Station Lignite Stochastic	Multiply					
+UK Station Lignite			ton/GJ	2010-01-01	2100-01-01	0.114							
+UK Station Lignite			Unit	2010-01-01	2100-01-01	GJ							
+Station Lignite Base			Value	2010-01-01	2100-01-01	EU Lignite							
+UK Station Lignite Price			Value	2010-01-01	2100-01-01	Station Lignite Base	UK Station Lignite Delivery Adjustment	Multiply					
+UK Station Lignite Delivery Adjustment			Value	2010-01-01	2100-01-01	1.1							
+UK Station Lignite Stochastic			Value	2010-01-01	2100-01-01	1							
+UK Station Lignite Stochastic			Value	2010-01-01	2100-01-01	UK Station Lignite Stochastic File							UseFuelStochastics
+UK Station Uranium			Currency	2010-01-01	2100-01-01	EUR							
+UK Station Uranium			LHV	2010-01-01	2100-01-01	1							
+UK Station Uranium			Price	2010-01-01	2100-01-01	UK Station Uranium Price	UK Station Uranium Stochastic	Multiply					
+UK Station Uranium			ton/GJ	2010-01-01	2100-01-01	0							
+UK Station Uranium			Unit	2010-01-01	2100-01-01	GJ							
+Station Uranium Base			Value	2010-01-01	2100-01-01	EU Uranium							
+UK Station Uranium Price			Value	2010-01-01	2100-01-01	Station Uranium Base	UK Station Uranium Delivery Adjustment	Multiply					
+UK Station Uranium Delivery Adjustment			Value	2010-01-01	2100-01-01	1.1							
+UK Station Uranium Stochastic			Value	2010-01-01	2100-01-01	1							
+UK Station Uranium Stochastic			Value	2010-01-01	2100-01-01	UK Station Uranium Stochastic File							UseFuelStochastics
+UK Station LSFO			Currency	2010-01-01	2100-01-01	EUR							
+UK Station LSFO			LHV	2010-01-01	2100-01-01	0.95							
+UK Station LSFO			Price	2010-01-01	2100-01-01	UK Station LSFO Price	UK Station LSFO Stochastic	Multiply					
+UK Station LSFO			ton/GJ	2010-01-01	2100-01-01	0.06							
+UK Station LSFO			Unit	2010-01-01	2100-01-01	GJ							
+Station LSFO Base			Value	2010-01-01	2100-01-01	EU LSFO							
+UK Station LSFO Price			Value	2010-01-01	2100-01-01	Station LSFO Base	UK Station LSFO Delivery Adjustment	Multiply					
+UK Station LSFO Delivery Adjustment			Value	2010-01-01	2100-01-01	1.1							
+UK Station LSFO Stochastic			Value	2010-01-01	2100-01-01	1							
+UK Station LSFO Stochastic			Value	2010-01-01	2100-01-01	UK Station LSFO Stochastic File							UseFuelStochastics

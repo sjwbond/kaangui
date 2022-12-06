@@ -1,0 +1,13 @@
+Object_Name	Parent_Object	Target_Object	Property	Date_From	Date_To	Value	Variable	Variable_Effect	Timeslice	Timeslice_Index	Group_id	Priority	Scenario
+UK H2			max_storage	2030-01-01	2100-01-01	4380000							
+UK H2			min_storage	2030-01-01	2100-01-01	438000							
+UK H2			natural_inflow_minute	2030-01-01	2100-01-01	UK Offshore Dogger_Bank_Near 3313 54.5 1.875 130M Generator HWST CRF	NWST Wind Power Curve	Lookup					
+UK H2			storage_start_level	2030-01-01	2100-01-01	__max_storage	0.41	Multiply					
+UK H2			save_data	2030-01-01	2100-01-01	1							
+UK H2			save_blocks	2030-01-01	2100-01-01	1							
+UK UK_RES			max_storage	2010-01-01	2100-01-01	223200							
+UK UK_RES			min_storage	2010-01-01	2100-01-01	22320							
+UK UK_RES			natural_inflow_minute	2010-01-01	2100-01-01	DE Normal Inflow Profile	0.025	Multiply					
+UK UK_RES			storage_start_level	2010-01-01	2100-01-01	__max_storage	0.41	Multiply					
+UK UK_RES			save_data	2010-01-01	2100-01-01	1							
+UK UK_RES			save_blocks	2010-01-01	2100-01-01	1							

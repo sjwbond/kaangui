@@ -1,0 +1,577 @@
+Object_Name	Parent_Object	Target_Object	Property	Date_From	Date_To	Value	Variable	Variable_Effect	Timeslice	Timeslice_Index	Group_id	Priority	Scenario
+UK Batteries 2020			Capacity	2020-01-01	2040-01-01	0							
+UK Batteries 2020			Capacity_In	2020-01-01	2040-01-01	0	1.2	Multiply					
+UK Batteries 2020			Efficiency	2020-01-01	2040-01-01	0.955							
+UK Batteries 2020			Max_Storage	2020-01-01	2040-01-01	1	0	Multiply					
+UK Batteries 2020			Optimisation Type	2020-01-01	2040-01-01	1							
+UK Batteries 2020			no units	2020-01-01	2040-01-01	1							
+UK Batteries 2020			bidup_rate	2020-01-01	2040-01-01	0							
+UK Batteries 2020			Save Data	2020-01-01	2040-01-01	1							
+UK Batteries 2020			Save Blocks	2020-01-01	2040-01-01	1							
+UK Batteries 2021			Capacity	2021-01-01	2041-01-01	500							
+UK Batteries 2021			Capacity_In	2021-01-01	2041-01-01	500	1.2	Multiply					
+UK Batteries 2021			Efficiency	2021-01-01	2041-01-01	0.96							
+UK Batteries 2021			Max_Storage	2021-01-01	2041-01-01	1	500	Multiply					
+UK Batteries 2021			Optimisation Type	2021-01-01	2041-01-01	1							
+UK Batteries 2021			no units	2021-01-01	2041-01-01	1							
+UK Batteries 2021			bidup_rate	2021-01-01	2041-01-01	0							
+UK Batteries 2021			Save Data	2021-01-01	2041-01-01	1							
+UK Batteries 2021			Save Blocks	2021-01-01	2041-01-01	1							
+UK Batteries 2022			Capacity	2022-01-01	2042-01-01	100							
+UK Batteries 2022			Capacity_In	2022-01-01	2042-01-01	100	1.2	Multiply					
+UK Batteries 2022			Efficiency	2022-01-01	2042-01-01	0.965							
+UK Batteries 2022			Max_Storage	2022-01-01	2042-01-01	1	100	Multiply					
+UK Batteries 2022			Optimisation Type	2022-01-01	2042-01-01	1							
+UK Batteries 2022			no units	2022-01-01	2042-01-01	1							
+UK Batteries 2022			bidup_rate	2022-01-01	2042-01-01	0							
+UK Batteries 2022			Save Data	2022-01-01	2042-01-01	1							
+UK Batteries 2022			Save Blocks	2022-01-01	2042-01-01	1							
+UK Batteries 2023			Capacity	2023-01-01	2043-01-01	100							
+UK Batteries 2023			Capacity_In	2023-01-01	2043-01-01	100	1.2	Multiply					
+UK Batteries 2023			Efficiency	2023-01-01	2043-01-01	0.97							
+UK Batteries 2023			Max_Storage	2023-01-01	2043-01-01	1	100	Multiply					
+UK Batteries 2023			Optimisation Type	2023-01-01	2043-01-01	1							
+UK Batteries 2023			no units	2023-01-01	2043-01-01	1							
+UK Batteries 2023			bidup_rate	2023-01-01	2043-01-01	0							
+UK Batteries 2023			Save Data	2023-01-01	2043-01-01	1							
+UK Batteries 2023			Save Blocks	2023-01-01	2043-01-01	1							
+UK Batteries 2024			Capacity	2024-01-01	2044-01-01	400							
+UK Batteries 2024			Capacity_In	2024-01-01	2044-01-01	400	1.2	Multiply					
+UK Batteries 2024			Efficiency	2024-01-01	2044-01-01	0.975							
+UK Batteries 2024			Max_Storage	2024-01-01	2044-01-01	1	400	Multiply					
+UK Batteries 2024			Optimisation Type	2024-01-01	2044-01-01	1							
+UK Batteries 2024			no units	2024-01-01	2044-01-01	1							
+UK Batteries 2024			bidup_rate	2024-01-01	2044-01-01	0							
+UK Batteries 2024			Save Data	2024-01-01	2044-01-01	1							
+UK Batteries 2024			Save Blocks	2024-01-01	2044-01-01	1							
+UK Batteries 2025			Capacity	2025-01-01	2045-01-01	0							
+UK Batteries 2025			Capacity_In	2025-01-01	2045-01-01	0	1.2	Multiply					
+UK Batteries 2025			Efficiency	2025-01-01	2045-01-01	0.98							
+UK Batteries 2025			Max_Storage	2025-01-01	2045-01-01	1	0	Multiply					
+UK Batteries 2025			Optimisation Type	2025-01-01	2045-01-01	1							
+UK Batteries 2025			no units	2025-01-01	2045-01-01	1							
+UK Batteries 2025			bidup_rate	2025-01-01	2045-01-01	0							
+UK Batteries 2025			Save Data	2025-01-01	2045-01-01	1							
+UK Batteries 2025			Save Blocks	2025-01-01	2045-01-01	1							
+UK Batteries 2026			Capacity	2026-01-01	2046-01-01	0							
+UK Batteries 2026			Capacity_In	2026-01-01	2046-01-01	0	1.2	Multiply					
+UK Batteries 2026			Efficiency	2026-01-01	2046-01-01	0.985							
+UK Batteries 2026			Max_Storage	2026-01-01	2046-01-01	1	0	Multiply					
+UK Batteries 2026			Optimisation Type	2026-01-01	2046-01-01	1							
+UK Batteries 2026			no units	2026-01-01	2046-01-01	1							
+UK Batteries 2026			bidup_rate	2026-01-01	2046-01-01	0							
+UK Batteries 2026			Save Data	2026-01-01	2046-01-01	1							
+UK Batteries 2026			Save Blocks	2026-01-01	2046-01-01	1							
+UK Batteries 2027			Capacity	2027-01-01	2047-01-01	0							
+UK Batteries 2027			Capacity_In	2027-01-01	2047-01-01	0	1.2	Multiply					
+UK Batteries 2027			Efficiency	2027-01-01	2047-01-01	0.99							
+UK Batteries 2027			Max_Storage	2027-01-01	2047-01-01	1	0	Multiply					
+UK Batteries 2027			Optimisation Type	2027-01-01	2047-01-01	1							
+UK Batteries 2027			no units	2027-01-01	2047-01-01	1							
+UK Batteries 2027			bidup_rate	2027-01-01	2047-01-01	0							
+UK Batteries 2027			Save Data	2027-01-01	2047-01-01	1							
+UK Batteries 2027			Save Blocks	2027-01-01	2047-01-01	1							
+UK Batteries 2028			Capacity	2028-01-01	2048-01-01	0							
+UK Batteries 2028			Capacity_In	2028-01-01	2048-01-01	0	1.2	Multiply					
+UK Batteries 2028			Efficiency	2028-01-01	2048-01-01	0.99							
+UK Batteries 2028			Max_Storage	2028-01-01	2048-01-01	1	0	Multiply					
+UK Batteries 2028			Optimisation Type	2028-01-01	2048-01-01	1							
+UK Batteries 2028			no units	2028-01-01	2048-01-01	1							
+UK Batteries 2028			bidup_rate	2028-01-01	2048-01-01	0							
+UK Batteries 2028			Save Data	2028-01-01	2048-01-01	1							
+UK Batteries 2028			Save Blocks	2028-01-01	2048-01-01	1							
+UK Batteries 2029			Capacity	2029-01-01	2049-01-01	0							
+UK Batteries 2029			Capacity_In	2029-01-01	2049-01-01	0	1.2	Multiply					
+UK Batteries 2029			Efficiency	2029-01-01	2049-01-01	0.99							
+UK Batteries 2029			Max_Storage	2029-01-01	2049-01-01	1	0	Multiply					
+UK Batteries 2029			Optimisation Type	2029-01-01	2049-01-01	1							
+UK Batteries 2029			no units	2029-01-01	2049-01-01	1							
+UK Batteries 2029			bidup_rate	2029-01-01	2049-01-01	0							
+UK Batteries 2029			Save Data	2029-01-01	2049-01-01	1							
+UK Batteries 2029			Save Blocks	2029-01-01	2049-01-01	1							
+UK Batteries 2030			Capacity	2030-01-01	2050-01-01	0							
+UK Batteries 2030			Capacity_In	2030-01-01	2050-01-01	0	1.2	Multiply					
+UK Batteries 2030			Efficiency	2030-01-01	2050-01-01	0.99							
+UK Batteries 2030			Max_Storage	2030-01-01	2050-01-01	1	0	Multiply					
+UK Batteries 2030			Optimisation Type	2030-01-01	2050-01-01	1							
+UK Batteries 2030			no units	2030-01-01	2050-01-01	1							
+UK Batteries 2030			bidup_rate	2030-01-01	2050-01-01	0							
+UK Batteries 2030			Save Data	2030-01-01	2050-01-01	1							
+UK Batteries 2030			Save Blocks	2030-01-01	2050-01-01	1							
+UK Batteries 2031			Capacity	2031-01-01	2051-01-01	0							
+UK Batteries 2031			Capacity_In	2031-01-01	2051-01-01	0	1.2	Multiply					
+UK Batteries 2031			Efficiency	2031-01-01	2051-01-01	0.99							
+UK Batteries 2031			Max_Storage	2031-01-01	2051-01-01	1	0	Multiply					
+UK Batteries 2031			Optimisation Type	2031-01-01	2051-01-01	1							
+UK Batteries 2031			no units	2031-01-01	2051-01-01	1							
+UK Batteries 2031			bidup_rate	2031-01-01	2051-01-01	0							
+UK Batteries 2031			Save Data	2031-01-01	2051-01-01	1							
+UK Batteries 2031			Save Blocks	2031-01-01	2051-01-01	1							
+UK Batteries 2032			Capacity	2032-01-01	2052-01-01	0							
+UK Batteries 2032			Capacity_In	2032-01-01	2052-01-01	0	1.2	Multiply					
+UK Batteries 2032			Efficiency	2032-01-01	2052-01-01	0.99							
+UK Batteries 2032			Max_Storage	2032-01-01	2052-01-01	1	0	Multiply					
+UK Batteries 2032			Optimisation Type	2032-01-01	2052-01-01	1							
+UK Batteries 2032			no units	2032-01-01	2052-01-01	1							
+UK Batteries 2032			bidup_rate	2032-01-01	2052-01-01	0							
+UK Batteries 2032			Save Data	2032-01-01	2052-01-01	1							
+UK Batteries 2032			Save Blocks	2032-01-01	2052-01-01	1							
+UK Batteries 2033			Capacity	2033-01-01	2053-01-01	0							
+UK Batteries 2033			Capacity_In	2033-01-01	2053-01-01	0	1.2	Multiply					
+UK Batteries 2033			Efficiency	2033-01-01	2053-01-01	0.99							
+UK Batteries 2033			Max_Storage	2033-01-01	2053-01-01	1	0	Multiply					
+UK Batteries 2033			Optimisation Type	2033-01-01	2053-01-01	1							
+UK Batteries 2033			no units	2033-01-01	2053-01-01	1							
+UK Batteries 2033			bidup_rate	2033-01-01	2053-01-01	0							
+UK Batteries 2033			Save Data	2033-01-01	2053-01-01	1							
+UK Batteries 2033			Save Blocks	2033-01-01	2053-01-01	1							
+UK Batteries 2034			Capacity	2034-01-01	2054-01-01	0							
+UK Batteries 2034			Capacity_In	2034-01-01	2054-01-01	0	1.2	Multiply					
+UK Batteries 2034			Efficiency	2034-01-01	2054-01-01	0.99							
+UK Batteries 2034			Max_Storage	2034-01-01	2054-01-01	1	0	Multiply					
+UK Batteries 2034			Optimisation Type	2034-01-01	2054-01-01	1							
+UK Batteries 2034			no units	2034-01-01	2054-01-01	1							
+UK Batteries 2034			bidup_rate	2034-01-01	2054-01-01	0							
+UK Batteries 2034			Save Data	2034-01-01	2054-01-01	1							
+UK Batteries 2034			Save Blocks	2034-01-01	2054-01-01	1							
+UK Batteries 2035			Capacity	2035-01-01	2055-01-01	0							
+UK Batteries 2035			Capacity_In	2035-01-01	2055-01-01	0	1.2	Multiply					
+UK Batteries 2035			Efficiency	2035-01-01	2055-01-01	0.99							
+UK Batteries 2035			Max_Storage	2035-01-01	2055-01-01	1	0	Multiply					
+UK Batteries 2035			Optimisation Type	2035-01-01	2055-01-01	1							
+UK Batteries 2035			no units	2035-01-01	2055-01-01	1							
+UK Batteries 2035			bidup_rate	2035-01-01	2055-01-01	0							
+UK Batteries 2035			Save Data	2035-01-01	2055-01-01	1							
+UK Batteries 2035			Save Blocks	2035-01-01	2055-01-01	1							
+UK Batteries 2036			Capacity	2036-01-01	2056-01-01	0							
+UK Batteries 2036			Capacity_In	2036-01-01	2056-01-01	0	1.2	Multiply					
+UK Batteries 2036			Efficiency	2036-01-01	2056-01-01	0.99							
+UK Batteries 2036			Max_Storage	2036-01-01	2056-01-01	1	0	Multiply					
+UK Batteries 2036			Optimisation Type	2036-01-01	2056-01-01	1							
+UK Batteries 2036			no units	2036-01-01	2056-01-01	1							
+UK Batteries 2036			bidup_rate	2036-01-01	2056-01-01	0							
+UK Batteries 2036			Save Data	2036-01-01	2056-01-01	1							
+UK Batteries 2036			Save Blocks	2036-01-01	2056-01-01	1							
+UK Batteries 2037			Capacity	2037-01-01	2057-01-01	0							
+UK Batteries 2037			Capacity_In	2037-01-01	2057-01-01	0	1.2	Multiply					
+UK Batteries 2037			Efficiency	2037-01-01	2057-01-01	0.99							
+UK Batteries 2037			Max_Storage	2037-01-01	2057-01-01	1	0	Multiply					
+UK Batteries 2037			Optimisation Type	2037-01-01	2057-01-01	1							
+UK Batteries 2037			no units	2037-01-01	2057-01-01	1							
+UK Batteries 2037			bidup_rate	2037-01-01	2057-01-01	0							
+UK Batteries 2037			Save Data	2037-01-01	2057-01-01	1							
+UK Batteries 2037			Save Blocks	2037-01-01	2057-01-01	1							
+UK Batteries 2038			Capacity	2038-01-01	2058-01-01	0							
+UK Batteries 2038			Capacity_In	2038-01-01	2058-01-01	0	1.2	Multiply					
+UK Batteries 2038			Efficiency	2038-01-01	2058-01-01	0.99							
+UK Batteries 2038			Max_Storage	2038-01-01	2058-01-01	1	0	Multiply					
+UK Batteries 2038			Optimisation Type	2038-01-01	2058-01-01	1							
+UK Batteries 2038			no units	2038-01-01	2058-01-01	1							
+UK Batteries 2038			bidup_rate	2038-01-01	2058-01-01	0							
+UK Batteries 2038			Save Data	2038-01-01	2058-01-01	1							
+UK Batteries 2038			Save Blocks	2038-01-01	2058-01-01	1							
+UK Batteries 2039			Capacity	2039-01-01	2059-01-01	0							
+UK Batteries 2039			Capacity_In	2039-01-01	2059-01-01	0	1.2	Multiply					
+UK Batteries 2039			Efficiency	2039-01-01	2059-01-01	0.99							
+UK Batteries 2039			Max_Storage	2039-01-01	2059-01-01	1	0	Multiply					
+UK Batteries 2039			Optimisation Type	2039-01-01	2059-01-01	1							
+UK Batteries 2039			no units	2039-01-01	2059-01-01	1							
+UK Batteries 2039			bidup_rate	2039-01-01	2059-01-01	0							
+UK Batteries 2039			Save Data	2039-01-01	2059-01-01	1							
+UK Batteries 2039			Save Blocks	2039-01-01	2059-01-01	1							
+UK Batteries 2040			Capacity	2040-01-01	2060-01-01	0							
+UK Batteries 2040			Capacity_In	2040-01-01	2060-01-01	0	1.2	Multiply					
+UK Batteries 2040			Efficiency	2040-01-01	2060-01-01	0.99							
+UK Batteries 2040			Max_Storage	2040-01-01	2060-01-01	1	0	Multiply					
+UK Batteries 2040			Optimisation Type	2040-01-01	2060-01-01	1							
+UK Batteries 2040			no units	2040-01-01	2060-01-01	1							
+UK Batteries 2040			bidup_rate	2040-01-01	2060-01-01	0							
+UK Batteries 2040			Save Data	2040-01-01	2060-01-01	1							
+UK Batteries 2040			Save Blocks	2040-01-01	2060-01-01	1							
+UK Pumped Storage			Capacity	2000-01-01	2100-01-01	2828							
+UK Pumped Storage			Capacity_In	2000-01-01	2100-01-01	1500	0.8	Multiply					
+UK Pumped Storage			Efficiency	2000-01-01	2100-01-01	0.9							
+UK Pumped Storage			Max_Storage	2000-01-01	2100-01-01	40	113120	Multiply					
+UK Pumped Storage			Optimisation Type	2000-01-01	2100-01-01	3							
+UK Pumped Storage			no units	2000-01-01	2100-01-01	10							
+UK Pumped Storage			bidup_rate	2000-01-01	2100-01-01	0							
+UK Pumped Storage			Save Data	2000-01-01	2100-01-01	1							
+UK Pumped Storage			Save Blocks	2000-01-01	2100-01-01	1							
+UK Batteries 2h 2020			Capacity	2020-01-01	2027-01-01	0							
+UK Batteries 2h 2020			Capacity_In	2020-01-01	2027-01-01	0	1.2	Multiply					
+UK Batteries 2h 2020			Efficiency	2020-01-01	2027-01-01	0.955							
+UK Batteries 2h 2020			Max_Storage	2020-01-01	2027-01-01	2	0	Multiply					
+UK Batteries 2h 2020			Optimisation Type	2020-01-01	2027-01-01	1							
+UK Batteries 2h 2020			no units	2020-01-01	2027-01-01	1							
+UK Batteries 2h 2020			bidup_rate	2020-01-01	2027-01-01	0							
+UK Batteries 2h 2020			Save Data	2020-01-01	2027-01-01	1							
+UK Batteries 2h 2020			Save Blocks	2020-01-01	2027-01-01	1							
+UK Batteries 2h 2021			Capacity	2021-01-01	2028-01-01	0							
+UK Batteries 2h 2021			Capacity_In	2021-01-01	2028-01-01	0	1.2	Multiply					
+UK Batteries 2h 2021			Efficiency	2021-01-01	2028-01-01	0.96							
+UK Batteries 2h 2021			Max_Storage	2021-01-01	2028-01-01	2	0	Multiply					
+UK Batteries 2h 2021			Optimisation Type	2021-01-01	2028-01-01	1							
+UK Batteries 2h 2021			no units	2021-01-01	2028-01-01	1							
+UK Batteries 2h 2021			bidup_rate	2021-01-01	2028-01-01	0							
+UK Batteries 2h 2021			Save Data	2021-01-01	2028-01-01	1							
+UK Batteries 2h 2021			Save Blocks	2021-01-01	2028-01-01	1							
+UK Batteries 2h 2022			Capacity	2022-01-01	2029-01-01	0							
+UK Batteries 2h 2022			Capacity_In	2022-01-01	2029-01-01	0	1.2	Multiply					
+UK Batteries 2h 2022			Efficiency	2022-01-01	2029-01-01	0.965							
+UK Batteries 2h 2022			Max_Storage	2022-01-01	2029-01-01	2	0	Multiply					
+UK Batteries 2h 2022			Optimisation Type	2022-01-01	2029-01-01	1							
+UK Batteries 2h 2022			no units	2022-01-01	2029-01-01	1							
+UK Batteries 2h 2022			bidup_rate	2022-01-01	2029-01-01	0							
+UK Batteries 2h 2022			Save Data	2022-01-01	2029-01-01	1							
+UK Batteries 2h 2022			Save Blocks	2022-01-01	2029-01-01	1							
+UK Batteries 2h 2023			Capacity	2023-01-01	2030-01-01	0							
+UK Batteries 2h 2023			Capacity_In	2023-01-01	2030-01-01	0	1.2	Multiply					
+UK Batteries 2h 2023			Efficiency	2023-01-01	2030-01-01	0.97							
+UK Batteries 2h 2023			Max_Storage	2023-01-01	2030-01-01	2	0	Multiply					
+UK Batteries 2h 2023			Optimisation Type	2023-01-01	2030-01-01	1							
+UK Batteries 2h 2023			no units	2023-01-01	2030-01-01	1							
+UK Batteries 2h 2023			bidup_rate	2023-01-01	2030-01-01	0							
+UK Batteries 2h 2023			Save Data	2023-01-01	2030-01-01	1							
+UK Batteries 2h 2023			Save Blocks	2023-01-01	2030-01-01	1							
+UK Batteries 2h 2024			Capacity	2024-01-01	2032-01-01	0							
+UK Batteries 2h 2024			Capacity_In	2024-01-01	2032-01-01	0	1.2	Multiply					
+UK Batteries 2h 2024			Efficiency	2024-01-01	2032-01-01	0.975							
+UK Batteries 2h 2024			Max_Storage	2024-01-01	2032-01-01	2	0	Multiply					
+UK Batteries 2h 2024			Optimisation Type	2024-01-01	2032-01-01	1							
+UK Batteries 2h 2024			no units	2024-01-01	2032-01-01	1							
+UK Batteries 2h 2024			bidup_rate	2024-01-01	2032-01-01	0							
+UK Batteries 2h 2024			Save Data	2024-01-01	2032-01-01	1							
+UK Batteries 2h 2024			Save Blocks	2024-01-01	2032-01-01	1							
+UK Batteries 2h 2025			Capacity	2025-01-01	2033-01-01	0							
+UK Batteries 2h 2025			Capacity_In	2025-01-01	2033-01-01	0	1.2	Multiply					
+UK Batteries 2h 2025			Efficiency	2025-01-01	2033-01-01	0.98							
+UK Batteries 2h 2025			Max_Storage	2025-01-01	2033-01-01	2	0	Multiply					
+UK Batteries 2h 2025			Optimisation Type	2025-01-01	2033-01-01	1							
+UK Batteries 2h 2025			no units	2025-01-01	2033-01-01	1							
+UK Batteries 2h 2025			bidup_rate	2025-01-01	2033-01-01	0							
+UK Batteries 2h 2025			Save Data	2025-01-01	2033-01-01	1							
+UK Batteries 2h 2025			Save Blocks	2025-01-01	2033-01-01	1							
+UK Batteries 2h 2026			Capacity	2026-01-01	2034-01-01	0							
+UK Batteries 2h 2026			Capacity_In	2026-01-01	2034-01-01	0	1.2	Multiply					
+UK Batteries 2h 2026			Efficiency	2026-01-01	2034-01-01	0.985							
+UK Batteries 2h 2026			Max_Storage	2026-01-01	2034-01-01	2	0	Multiply					
+UK Batteries 2h 2026			Optimisation Type	2026-01-01	2034-01-01	1							
+UK Batteries 2h 2026			no units	2026-01-01	2034-01-01	1							
+UK Batteries 2h 2026			bidup_rate	2026-01-01	2034-01-01	0							
+UK Batteries 2h 2026			Save Data	2026-01-01	2034-01-01	1							
+UK Batteries 2h 2026			Save Blocks	2026-01-01	2034-01-01	1							
+UK Batteries 2h 2027			Capacity	2027-01-01	2035-01-01	0							
+UK Batteries 2h 2027			Capacity_In	2027-01-01	2035-01-01	0	1.2	Multiply					
+UK Batteries 2h 2027			Efficiency	2027-01-01	2035-01-01	0.99							
+UK Batteries 2h 2027			Max_Storage	2027-01-01	2035-01-01	2	0	Multiply					
+UK Batteries 2h 2027			Optimisation Type	2027-01-01	2035-01-01	1							
+UK Batteries 2h 2027			no units	2027-01-01	2035-01-01	1							
+UK Batteries 2h 2027			bidup_rate	2027-01-01	2035-01-01	0							
+UK Batteries 2h 2027			Save Data	2027-01-01	2035-01-01	1							
+UK Batteries 2h 2027			Save Blocks	2027-01-01	2035-01-01	1							
+UK Batteries 2h 2028			Capacity	2028-01-01	2036-01-01	0							
+UK Batteries 2h 2028			Capacity_In	2028-01-01	2036-01-01	0	1.2	Multiply					
+UK Batteries 2h 2028			Efficiency	2028-01-01	2036-01-01	0.99							
+UK Batteries 2h 2028			Max_Storage	2028-01-01	2036-01-01	2	0	Multiply					
+UK Batteries 2h 2028			Optimisation Type	2028-01-01	2036-01-01	1							
+UK Batteries 2h 2028			no units	2028-01-01	2036-01-01	1							
+UK Batteries 2h 2028			bidup_rate	2028-01-01	2036-01-01	0							
+UK Batteries 2h 2028			Save Data	2028-01-01	2036-01-01	1							
+UK Batteries 2h 2028			Save Blocks	2028-01-01	2036-01-01	1							
+UK Batteries 2h 2029			Capacity	2029-01-01	2038-01-01	0							
+UK Batteries 2h 2029			Capacity_In	2029-01-01	2038-01-01	0	1.2	Multiply					
+UK Batteries 2h 2029			Efficiency	2029-01-01	2038-01-01	0.99							
+UK Batteries 2h 2029			Max_Storage	2029-01-01	2038-01-01	2	0	Multiply					
+UK Batteries 2h 2029			Optimisation Type	2029-01-01	2038-01-01	1							
+UK Batteries 2h 2029			no units	2029-01-01	2038-01-01	1							
+UK Batteries 2h 2029			bidup_rate	2029-01-01	2038-01-01	0							
+UK Batteries 2h 2029			Save Data	2029-01-01	2038-01-01	1							
+UK Batteries 2h 2029			Save Blocks	2029-01-01	2038-01-01	1							
+UK Batteries 2h 2030			Capacity	2030-01-01	2039-01-01	0							
+UK Batteries 2h 2030			Capacity_In	2030-01-01	2039-01-01	0	1.2	Multiply					
+UK Batteries 2h 2030			Efficiency	2030-01-01	2039-01-01	0.99							
+UK Batteries 2h 2030			Max_Storage	2030-01-01	2039-01-01	2	0	Multiply					
+UK Batteries 2h 2030			Optimisation Type	2030-01-01	2039-01-01	1							
+UK Batteries 2h 2030			no units	2030-01-01	2039-01-01	1							
+UK Batteries 2h 2030			bidup_rate	2030-01-01	2039-01-01	0							
+UK Batteries 2h 2030			Save Data	2030-01-01	2039-01-01	1							
+UK Batteries 2h 2030			Save Blocks	2030-01-01	2039-01-01	1							
+UK Batteries 2h 2031			Capacity	2031-01-01	2040-01-01	0							
+UK Batteries 2h 2031			Capacity_In	2031-01-01	2040-01-01	0	1.2	Multiply					
+UK Batteries 2h 2031			Efficiency	2031-01-01	2040-01-01	0.99							
+UK Batteries 2h 2031			Max_Storage	2031-01-01	2040-01-01	2	0	Multiply					
+UK Batteries 2h 2031			Optimisation Type	2031-01-01	2040-01-01	1							
+UK Batteries 2h 2031			no units	2031-01-01	2040-01-01	1							
+UK Batteries 2h 2031			bidup_rate	2031-01-01	2040-01-01	0							
+UK Batteries 2h 2031			Save Data	2031-01-01	2040-01-01	1							
+UK Batteries 2h 2031			Save Blocks	2031-01-01	2040-01-01	1							
+UK Batteries 2h 2032			Capacity	2032-01-01	2041-01-01	0							
+UK Batteries 2h 2032			Capacity_In	2032-01-01	2041-01-01	0	1.2	Multiply					
+UK Batteries 2h 2032			Efficiency	2032-01-01	2041-01-01	0.99							
+UK Batteries 2h 2032			Max_Storage	2032-01-01	2041-01-01	2	0	Multiply					
+UK Batteries 2h 2032			Optimisation Type	2032-01-01	2041-01-01	1							
+UK Batteries 2h 2032			no units	2032-01-01	2041-01-01	1							
+UK Batteries 2h 2032			bidup_rate	2032-01-01	2041-01-01	0							
+UK Batteries 2h 2032			Save Data	2032-01-01	2041-01-01	1							
+UK Batteries 2h 2032			Save Blocks	2032-01-01	2041-01-01	1							
+UK Batteries 2h 2033			Capacity	2033-01-01	2042-01-01	0							
+UK Batteries 2h 2033			Capacity_In	2033-01-01	2042-01-01	0	1.2	Multiply					
+UK Batteries 2h 2033			Efficiency	2033-01-01	2042-01-01	0.99							
+UK Batteries 2h 2033			Max_Storage	2033-01-01	2042-01-01	2	0	Multiply					
+UK Batteries 2h 2033			Optimisation Type	2033-01-01	2042-01-01	1							
+UK Batteries 2h 2033			no units	2033-01-01	2042-01-01	1							
+UK Batteries 2h 2033			bidup_rate	2033-01-01	2042-01-01	0							
+UK Batteries 2h 2033			Save Data	2033-01-01	2042-01-01	1							
+UK Batteries 2h 2033			Save Blocks	2033-01-01	2042-01-01	1							
+UK Batteries 2h 2034			Capacity	2034-01-01	2043-01-01	0							
+UK Batteries 2h 2034			Capacity_In	2034-01-01	2043-01-01	0	1.2	Multiply					
+UK Batteries 2h 2034			Efficiency	2034-01-01	2043-01-01	0.99							
+UK Batteries 2h 2034			Max_Storage	2034-01-01	2043-01-01	2	0	Multiply					
+UK Batteries 2h 2034			Optimisation Type	2034-01-01	2043-01-01	1							
+UK Batteries 2h 2034			no units	2034-01-01	2043-01-01	1							
+UK Batteries 2h 2034			bidup_rate	2034-01-01	2043-01-01	0							
+UK Batteries 2h 2034			Save Data	2034-01-01	2043-01-01	1							
+UK Batteries 2h 2034			Save Blocks	2034-01-01	2043-01-01	1							
+UK Batteries 2h 2035			Capacity	2035-01-01	2045-01-01	0							
+UK Batteries 2h 2035			Capacity_In	2035-01-01	2045-01-01	0	1.2	Multiply					
+UK Batteries 2h 2035			Efficiency	2035-01-01	2045-01-01	0.99							
+UK Batteries 2h 2035			Max_Storage	2035-01-01	2045-01-01	2	0	Multiply					
+UK Batteries 2h 2035			Optimisation Type	2035-01-01	2045-01-01	1							
+UK Batteries 2h 2035			no units	2035-01-01	2045-01-01	1							
+UK Batteries 2h 2035			bidup_rate	2035-01-01	2045-01-01	0							
+UK Batteries 2h 2035			Save Data	2035-01-01	2045-01-01	1							
+UK Batteries 2h 2035			Save Blocks	2035-01-01	2045-01-01	1							
+UK Batteries 2h 2036			Capacity	2036-01-01	2046-01-01	0							
+UK Batteries 2h 2036			Capacity_In	2036-01-01	2046-01-01	0	1.2	Multiply					
+UK Batteries 2h 2036			Efficiency	2036-01-01	2046-01-01	0.99							
+UK Batteries 2h 2036			Max_Storage	2036-01-01	2046-01-01	2	0	Multiply					
+UK Batteries 2h 2036			Optimisation Type	2036-01-01	2046-01-01	1							
+UK Batteries 2h 2036			no units	2036-01-01	2046-01-01	1							
+UK Batteries 2h 2036			bidup_rate	2036-01-01	2046-01-01	0							
+UK Batteries 2h 2036			Save Data	2036-01-01	2046-01-01	1							
+UK Batteries 2h 2036			Save Blocks	2036-01-01	2046-01-01	1							
+UK Batteries 2h 2037			Capacity	2037-01-01	2047-01-01	0							
+UK Batteries 2h 2037			Capacity_In	2037-01-01	2047-01-01	0	1.2	Multiply					
+UK Batteries 2h 2037			Efficiency	2037-01-01	2047-01-01	0.99							
+UK Batteries 2h 2037			Max_Storage	2037-01-01	2047-01-01	2	0	Multiply					
+UK Batteries 2h 2037			Optimisation Type	2037-01-01	2047-01-01	1							
+UK Batteries 2h 2037			no units	2037-01-01	2047-01-01	1							
+UK Batteries 2h 2037			bidup_rate	2037-01-01	2047-01-01	0							
+UK Batteries 2h 2037			Save Data	2037-01-01	2047-01-01	1							
+UK Batteries 2h 2037			Save Blocks	2037-01-01	2047-01-01	1							
+UK Batteries 2h 2038			Capacity	2038-01-01	2048-01-01	0							
+UK Batteries 2h 2038			Capacity_In	2038-01-01	2048-01-01	0	1.2	Multiply					
+UK Batteries 2h 2038			Efficiency	2038-01-01	2048-01-01	0.99							
+UK Batteries 2h 2038			Max_Storage	2038-01-01	2048-01-01	2	0	Multiply					
+UK Batteries 2h 2038			Optimisation Type	2038-01-01	2048-01-01	1							
+UK Batteries 2h 2038			no units	2038-01-01	2048-01-01	1							
+UK Batteries 2h 2038			bidup_rate	2038-01-01	2048-01-01	0							
+UK Batteries 2h 2038			Save Data	2038-01-01	2048-01-01	1							
+UK Batteries 2h 2038			Save Blocks	2038-01-01	2048-01-01	1							
+UK Batteries 2h 2039			Capacity	2039-01-01	2049-01-01	0							
+UK Batteries 2h 2039			Capacity_In	2039-01-01	2049-01-01	0	1.2	Multiply					
+UK Batteries 2h 2039			Efficiency	2039-01-01	2049-01-01	0.99							
+UK Batteries 2h 2039			Max_Storage	2039-01-01	2049-01-01	2	0	Multiply					
+UK Batteries 2h 2039			Optimisation Type	2039-01-01	2049-01-01	1							
+UK Batteries 2h 2039			no units	2039-01-01	2049-01-01	1							
+UK Batteries 2h 2039			bidup_rate	2039-01-01	2049-01-01	0							
+UK Batteries 2h 2039			Save Data	2039-01-01	2049-01-01	1							
+UK Batteries 2h 2039			Save Blocks	2039-01-01	2049-01-01	1							
+UK Batteries 2h 2040			Capacity	2040-01-01	2050-01-01	0							
+UK Batteries 2h 2040			Capacity_In	2040-01-01	2050-01-01	0	1.2	Multiply					
+UK Batteries 2h 2040			Efficiency	2040-01-01	2050-01-01	0.99							
+UK Batteries 2h 2040			Max_Storage	2040-01-01	2050-01-01	2	0	Multiply					
+UK Batteries 2h 2040			Optimisation Type	2040-01-01	2050-01-01	1							
+UK Batteries 2h 2040			no units	2040-01-01	2050-01-01	1							
+UK Batteries 2h 2040			bidup_rate	2040-01-01	2050-01-01	0							
+UK Batteries 2h 2040			Save Data	2040-01-01	2050-01-01	1							
+UK Batteries 2h 2040			Save Blocks	2040-01-01	2050-01-01	1							
+UK Batteries 4h 2020			Capacity	2020-01-01	2027-01-01	0							
+UK Batteries 4h 2020			Capacity_In	2020-01-01	2027-01-01	0	1.2	Multiply					
+UK Batteries 4h 2020			Efficiency	2020-01-01	2027-01-01	0.955							
+UK Batteries 4h 2020			Max_Storage	2020-01-01	2027-01-01	4	0	Multiply					
+UK Batteries 4h 2020			Optimisation Type	2020-01-01	2027-01-01	1							
+UK Batteries 4h 2020			no units	2020-01-01	2027-01-01	1							
+UK Batteries 4h 2020			bidup_rate	2020-01-01	2027-01-01	0							
+UK Batteries 4h 2020			Save Data	2020-01-01	2027-01-01	1							
+UK Batteries 4h 2020			Save Blocks	2020-01-01	2027-01-01	1							
+UK Batteries 4h 2021			Capacity	2021-01-01	2028-01-01	0							
+UK Batteries 4h 2021			Capacity_In	2021-01-01	2028-01-01	0	1.2	Multiply					
+UK Batteries 4h 2021			Efficiency	2021-01-01	2028-01-01	0.96							
+UK Batteries 4h 2021			Max_Storage	2021-01-01	2028-01-01	4	0	Multiply					
+UK Batteries 4h 2021			Optimisation Type	2021-01-01	2028-01-01	1							
+UK Batteries 4h 2021			no units	2021-01-01	2028-01-01	1							
+UK Batteries 4h 2021			bidup_rate	2021-01-01	2028-01-01	0							
+UK Batteries 4h 2021			Save Data	2021-01-01	2028-01-01	1							
+UK Batteries 4h 2021			Save Blocks	2021-01-01	2028-01-01	1							
+UK Batteries 4h 2022			Capacity	2022-01-01	2029-01-01	0							
+UK Batteries 4h 2022			Capacity_In	2022-01-01	2029-01-01	0	1.2	Multiply					
+UK Batteries 4h 2022			Efficiency	2022-01-01	2029-01-01	0.965							
+UK Batteries 4h 2022			Max_Storage	2022-01-01	2029-01-01	4	0	Multiply					
+UK Batteries 4h 2022			Optimisation Type	2022-01-01	2029-01-01	1							
+UK Batteries 4h 2022			no units	2022-01-01	2029-01-01	1							
+UK Batteries 4h 2022			bidup_rate	2022-01-01	2029-01-01	0							
+UK Batteries 4h 2022			Save Data	2022-01-01	2029-01-01	1							
+UK Batteries 4h 2022			Save Blocks	2022-01-01	2029-01-01	1							
+UK Batteries 4h 2023			Capacity	2023-01-01	2030-01-01	0							
+UK Batteries 4h 2023			Capacity_In	2023-01-01	2030-01-01	0	1.2	Multiply					
+UK Batteries 4h 2023			Efficiency	2023-01-01	2030-01-01	0.97							
+UK Batteries 4h 2023			Max_Storage	2023-01-01	2030-01-01	4	0	Multiply					
+UK Batteries 4h 2023			Optimisation Type	2023-01-01	2030-01-01	1							
+UK Batteries 4h 2023			no units	2023-01-01	2030-01-01	1							
+UK Batteries 4h 2023			bidup_rate	2023-01-01	2030-01-01	0							
+UK Batteries 4h 2023			Save Data	2023-01-01	2030-01-01	1							
+UK Batteries 4h 2023			Save Blocks	2023-01-01	2030-01-01	1							
+UK Batteries 4h 2024			Capacity	2024-01-01	2032-01-01	0							
+UK Batteries 4h 2024			Capacity_In	2024-01-01	2032-01-01	0	1.2	Multiply					
+UK Batteries 4h 2024			Efficiency	2024-01-01	2032-01-01	0.975							
+UK Batteries 4h 2024			Max_Storage	2024-01-01	2032-01-01	4	0	Multiply					
+UK Batteries 4h 2024			Optimisation Type	2024-01-01	2032-01-01	1							
+UK Batteries 4h 2024			no units	2024-01-01	2032-01-01	1							
+UK Batteries 4h 2024			bidup_rate	2024-01-01	2032-01-01	0							
+UK Batteries 4h 2024			Save Data	2024-01-01	2032-01-01	1							
+UK Batteries 4h 2024			Save Blocks	2024-01-01	2032-01-01	1							
+UK Batteries 4h 2025			Capacity	2025-01-01	2033-01-01	100							
+UK Batteries 4h 2025			Capacity_In	2025-01-01	2033-01-01	100	1.2	Multiply					
+UK Batteries 4h 2025			Efficiency	2025-01-01	2033-01-01	0.98							
+UK Batteries 4h 2025			Max_Storage	2025-01-01	2033-01-01	4	100	Multiply					
+UK Batteries 4h 2025			Optimisation Type	2025-01-01	2033-01-01	1							
+UK Batteries 4h 2025			no units	2025-01-01	2033-01-01	1							
+UK Batteries 4h 2025			bidup_rate	2025-01-01	2033-01-01	0							
+UK Batteries 4h 2025			Save Data	2025-01-01	2033-01-01	1							
+UK Batteries 4h 2025			Save Blocks	2025-01-01	2033-01-01	1							
+UK Batteries 4h 2026			Capacity	2026-01-01	2034-01-01	0							
+UK Batteries 4h 2026			Capacity_In	2026-01-01	2034-01-01	0	1.2	Multiply					
+UK Batteries 4h 2026			Efficiency	2026-01-01	2034-01-01	0.985							
+UK Batteries 4h 2026			Max_Storage	2026-01-01	2034-01-01	4	0	Multiply					
+UK Batteries 4h 2026			Optimisation Type	2026-01-01	2034-01-01	1							
+UK Batteries 4h 2026			no units	2026-01-01	2034-01-01	1							
+UK Batteries 4h 2026			bidup_rate	2026-01-01	2034-01-01	0							
+UK Batteries 4h 2026			Save Data	2026-01-01	2034-01-01	1							
+UK Batteries 4h 2026			Save Blocks	2026-01-01	2034-01-01	1							
+UK Batteries 4h 2027			Capacity	2027-01-01	2035-01-01	0							
+UK Batteries 4h 2027			Capacity_In	2027-01-01	2035-01-01	0	1.2	Multiply					
+UK Batteries 4h 2027			Efficiency	2027-01-01	2035-01-01	0.99							
+UK Batteries 4h 2027			Max_Storage	2027-01-01	2035-01-01	4	0	Multiply					
+UK Batteries 4h 2027			Optimisation Type	2027-01-01	2035-01-01	1							
+UK Batteries 4h 2027			no units	2027-01-01	2035-01-01	1							
+UK Batteries 4h 2027			bidup_rate	2027-01-01	2035-01-01	0							
+UK Batteries 4h 2027			Save Data	2027-01-01	2035-01-01	1							
+UK Batteries 4h 2027			Save Blocks	2027-01-01	2035-01-01	1							
+UK Batteries 4h 2028			Capacity	2028-01-01	2036-01-01	100							
+UK Batteries 4h 2028			Capacity_In	2028-01-01	2036-01-01	100	1.2	Multiply					
+UK Batteries 4h 2028			Efficiency	2028-01-01	2036-01-01	0.99							
+UK Batteries 4h 2028			Max_Storage	2028-01-01	2036-01-01	4	100	Multiply					
+UK Batteries 4h 2028			Optimisation Type	2028-01-01	2036-01-01	1							
+UK Batteries 4h 2028			no units	2028-01-01	2036-01-01	1							
+UK Batteries 4h 2028			bidup_rate	2028-01-01	2036-01-01	0							
+UK Batteries 4h 2028			Save Data	2028-01-01	2036-01-01	1							
+UK Batteries 4h 2028			Save Blocks	2028-01-01	2036-01-01	1							
+UK Batteries 4h 2029			Capacity	2029-01-01	2038-01-01	300							
+UK Batteries 4h 2029			Capacity_In	2029-01-01	2038-01-01	300	1.2	Multiply					
+UK Batteries 4h 2029			Efficiency	2029-01-01	2038-01-01	0.99							
+UK Batteries 4h 2029			Max_Storage	2029-01-01	2038-01-01	4	300	Multiply					
+UK Batteries 4h 2029			Optimisation Type	2029-01-01	2038-01-01	1							
+UK Batteries 4h 2029			no units	2029-01-01	2038-01-01	1							
+UK Batteries 4h 2029			bidup_rate	2029-01-01	2038-01-01	0							
+UK Batteries 4h 2029			Save Data	2029-01-01	2038-01-01	1							
+UK Batteries 4h 2029			Save Blocks	2029-01-01	2038-01-01	1							
+UK Batteries 4h 2030			Capacity	2030-01-01	2039-01-01	300							
+UK Batteries 4h 2030			Capacity_In	2030-01-01	2039-01-01	300	1.2	Multiply					
+UK Batteries 4h 2030			Efficiency	2030-01-01	2039-01-01	0.99							
+UK Batteries 4h 2030			Max_Storage	2030-01-01	2039-01-01	4	300	Multiply					
+UK Batteries 4h 2030			Optimisation Type	2030-01-01	2039-01-01	1							
+UK Batteries 4h 2030			no units	2030-01-01	2039-01-01	1							
+UK Batteries 4h 2030			bidup_rate	2030-01-01	2039-01-01	0							
+UK Batteries 4h 2030			Save Data	2030-01-01	2039-01-01	1							
+UK Batteries 4h 2030			Save Blocks	2030-01-01	2039-01-01	1							
+UK Batteries 4h 2031			Capacity	2031-01-01	2040-01-01	500							
+UK Batteries 4h 2031			Capacity_In	2031-01-01	2040-01-01	500	1.2	Multiply					
+UK Batteries 4h 2031			Efficiency	2031-01-01	2040-01-01	0.99							
+UK Batteries 4h 2031			Max_Storage	2031-01-01	2040-01-01	4	500	Multiply					
+UK Batteries 4h 2031			Optimisation Type	2031-01-01	2040-01-01	1							
+UK Batteries 4h 2031			no units	2031-01-01	2040-01-01	1							
+UK Batteries 4h 2031			bidup_rate	2031-01-01	2040-01-01	0							
+UK Batteries 4h 2031			Save Data	2031-01-01	2040-01-01	1							
+UK Batteries 4h 2031			Save Blocks	2031-01-01	2040-01-01	1							
+UK Batteries 4h 2032			Capacity	2032-01-01	2041-01-01	500							
+UK Batteries 4h 2032			Capacity_In	2032-01-01	2041-01-01	500	1.2	Multiply					
+UK Batteries 4h 2032			Efficiency	2032-01-01	2041-01-01	0.99							
+UK Batteries 4h 2032			Max_Storage	2032-01-01	2041-01-01	4	500	Multiply					
+UK Batteries 4h 2032			Optimisation Type	2032-01-01	2041-01-01	1							
+UK Batteries 4h 2032			no units	2032-01-01	2041-01-01	1							
+UK Batteries 4h 2032			bidup_rate	2032-01-01	2041-01-01	0							
+UK Batteries 4h 2032			Save Data	2032-01-01	2041-01-01	1							
+UK Batteries 4h 2032			Save Blocks	2032-01-01	2041-01-01	1							
+UK Batteries 4h 2033			Capacity	2033-01-01	2042-01-01	500							
+UK Batteries 4h 2033			Capacity_In	2033-01-01	2042-01-01	500	1.2	Multiply					
+UK Batteries 4h 2033			Efficiency	2033-01-01	2042-01-01	0.99							
+UK Batteries 4h 2033			Max_Storage	2033-01-01	2042-01-01	4	500	Multiply					
+UK Batteries 4h 2033			Optimisation Type	2033-01-01	2042-01-01	1							
+UK Batteries 4h 2033			no units	2033-01-01	2042-01-01	1							
+UK Batteries 4h 2033			bidup_rate	2033-01-01	2042-01-01	0							
+UK Batteries 4h 2033			Save Data	2033-01-01	2042-01-01	1							
+UK Batteries 4h 2033			Save Blocks	2033-01-01	2042-01-01	1							
+UK Batteries 4h 2034			Capacity	2034-01-01	2043-01-01	500							
+UK Batteries 4h 2034			Capacity_In	2034-01-01	2043-01-01	500	1.2	Multiply					
+UK Batteries 4h 2034			Efficiency	2034-01-01	2043-01-01	0.99							
+UK Batteries 4h 2034			Max_Storage	2034-01-01	2043-01-01	4	500	Multiply					
+UK Batteries 4h 2034			Optimisation Type	2034-01-01	2043-01-01	1							
+UK Batteries 4h 2034			no units	2034-01-01	2043-01-01	1							
+UK Batteries 4h 2034			bidup_rate	2034-01-01	2043-01-01	0							
+UK Batteries 4h 2034			Save Data	2034-01-01	2043-01-01	1							
+UK Batteries 4h 2034			Save Blocks	2034-01-01	2043-01-01	1							
+UK Batteries 4h 2035			Capacity	2035-01-01	2045-01-01	300							
+UK Batteries 4h 2035			Capacity_In	2035-01-01	2045-01-01	300	1.2	Multiply					
+UK Batteries 4h 2035			Efficiency	2035-01-01	2045-01-01	0.99							
+UK Batteries 4h 2035			Max_Storage	2035-01-01	2045-01-01	4	300	Multiply					
+UK Batteries 4h 2035			Optimisation Type	2035-01-01	2045-01-01	1							
+UK Batteries 4h 2035			no units	2035-01-01	2045-01-01	1							
+UK Batteries 4h 2035			bidup_rate	2035-01-01	2045-01-01	0							
+UK Batteries 4h 2035			Save Data	2035-01-01	2045-01-01	1							
+UK Batteries 4h 2035			Save Blocks	2035-01-01	2045-01-01	1							
+UK Batteries 4h 2036			Capacity	2036-01-01	2046-01-01	500							
+UK Batteries 4h 2036			Capacity_In	2036-01-01	2046-01-01	500	1.2	Multiply					
+UK Batteries 4h 2036			Efficiency	2036-01-01	2046-01-01	0.99							
+UK Batteries 4h 2036			Max_Storage	2036-01-01	2046-01-01	4	500	Multiply					
+UK Batteries 4h 2036			Optimisation Type	2036-01-01	2046-01-01	1							
+UK Batteries 4h 2036			no units	2036-01-01	2046-01-01	1							
+UK Batteries 4h 2036			bidup_rate	2036-01-01	2046-01-01	0							
+UK Batteries 4h 2036			Save Data	2036-01-01	2046-01-01	1							
+UK Batteries 4h 2036			Save Blocks	2036-01-01	2046-01-01	1							
+UK Batteries 4h 2037			Capacity	2037-01-01	2047-01-01	400							
+UK Batteries 4h 2037			Capacity_In	2037-01-01	2047-01-01	400	1.2	Multiply					
+UK Batteries 4h 2037			Efficiency	2037-01-01	2047-01-01	0.99							
+UK Batteries 4h 2037			Max_Storage	2037-01-01	2047-01-01	4	400	Multiply					
+UK Batteries 4h 2037			Optimisation Type	2037-01-01	2047-01-01	1							
+UK Batteries 4h 2037			no units	2037-01-01	2047-01-01	1							
+UK Batteries 4h 2037			bidup_rate	2037-01-01	2047-01-01	0							
+UK Batteries 4h 2037			Save Data	2037-01-01	2047-01-01	1							
+UK Batteries 4h 2037			Save Blocks	2037-01-01	2047-01-01	1							
+UK Batteries 4h 2038			Capacity	2038-01-01	2048-01-01	200							
+UK Batteries 4h 2038			Capacity_In	2038-01-01	2048-01-01	200	1.2	Multiply					
+UK Batteries 4h 2038			Efficiency	2038-01-01	2048-01-01	0.99							
+UK Batteries 4h 2038			Max_Storage	2038-01-01	2048-01-01	4	200	Multiply					
+UK Batteries 4h 2038			Optimisation Type	2038-01-01	2048-01-01	1							
+UK Batteries 4h 2038			no units	2038-01-01	2048-01-01	1							
+UK Batteries 4h 2038			bidup_rate	2038-01-01	2048-01-01	0							
+UK Batteries 4h 2038			Save Data	2038-01-01	2048-01-01	1							
+UK Batteries 4h 2038			Save Blocks	2038-01-01	2048-01-01	1							
+UK Batteries 4h 2039			Capacity	2039-01-01	2049-01-01	0							
+UK Batteries 4h 2039			Capacity_In	2039-01-01	2049-01-01	0	1.2	Multiply					
+UK Batteries 4h 2039			Efficiency	2039-01-01	2049-01-01	0.99							
+UK Batteries 4h 2039			Max_Storage	2039-01-01	2049-01-01	4	0	Multiply					
+UK Batteries 4h 2039			Optimisation Type	2039-01-01	2049-01-01	1							
+UK Batteries 4h 2039			no units	2039-01-01	2049-01-01	1							
+UK Batteries 4h 2039			bidup_rate	2039-01-01	2049-01-01	0							
+UK Batteries 4h 2039			Save Data	2039-01-01	2049-01-01	1							
+UK Batteries 4h 2039			Save Blocks	2039-01-01	2049-01-01	1							
+UK Batteries 4h 2040			Capacity	2040-01-01	2050-01-01	0							
+UK Batteries 4h 2040			Capacity_In	2040-01-01	2050-01-01	0	1.2	Multiply					
+UK Batteries 4h 2040			Efficiency	2040-01-01	2050-01-01	0.99							
+UK Batteries 4h 2040			Max_Storage	2040-01-01	2050-01-01	4	0	Multiply					
+UK Batteries 4h 2040			Optimisation Type	2040-01-01	2050-01-01	1							
+UK Batteries 4h 2040			no units	2040-01-01	2050-01-01	1							
+UK Batteries 4h 2040			bidup_rate	2040-01-01	2050-01-01	0							
+UK Batteries 4h 2040			Save Data	2040-01-01	2050-01-01	1							
+UK Batteries 4h 2040			Save Blocks	2040-01-01	2050-01-01	1							

@@ -1,0 +1,37 @@
+Object_Name	Parent_Object	Target_Object	Property	Date_From	Date_To	Value	Variable	Variable_Effect	Timeslice	Timeslice_Index	Group_id	Priority	Scenario
+UK PVSAT 2681 51.0 -3.75 Generator			Capacity	2010-01-01	2100-01-01	UK Installed Capacity File	0.66	Multiply					
+UK PVSAT 2681 51.0 -3.75 Generator			Capacity Rating Factor	2010-01-01	2100-01-01	UK PVSAT 2681 51.0 -3.75 Capacity Factor							
+UK PVSAT 2681 51.0 -3.75 Generator			Save Data	2010-01-01	2100-01-01	1							
+UK PVSAT 2681 51.0 -3.75 Generator			Save Blocks	2010-01-01	2100-01-01	0							
+UK PVSAT 2681 51.0 -3.75 Generator			Variable Cost	2010-01-01	2100-01-01	1							
+UK PVSAT 2681 51.0 -3.75 Generator			Bid Up Price	2010-01-01	2100-01-01	0							
+UK PVSAT 2684 51.0 -1.875 Generator			Capacity	2010-01-01	2100-01-01	UK Installed Capacity File	0.66	Multiply					
+UK PVSAT 2684 51.0 -1.875 Generator			Capacity Rating Factor	2010-01-01	2100-01-01	UK PVSAT 2684 51.0 -1.875 Capacity Factor							
+UK PVSAT 2684 51.0 -1.875 Generator			Save Data	2010-01-01	2100-01-01	1							
+UK PVSAT 2684 51.0 -1.875 Generator			Save Blocks	2010-01-01	2100-01-01	0							
+UK PVSAT 2684 51.0 -1.875 Generator			Variable Cost	2010-01-01	2100-01-01	1							
+UK PVSAT 2684 51.0 -1.875 Generator			Bid Up Price	2010-01-01	2100-01-01	0							
+UK PVSAT 2687 51.0 0.0 Generator			Capacity	2010-01-01	2100-01-01	UK Installed Capacity File	0.66	Multiply					
+UK PVSAT 2687 51.0 0.0 Generator			Capacity Rating Factor	2010-01-01	2100-01-01	UK PVSAT 2687 51.0 0.0 Capacity Factor							
+UK PVSAT 2687 51.0 0.0 Generator			Save Data	2010-01-01	2100-01-01	1							
+UK PVSAT 2687 51.0 0.0 Generator			Save Blocks	2010-01-01	2100-01-01	0							
+UK PVSAT 2687 51.0 0.0 Generator			Variable Cost	2010-01-01	2100-01-01	1							
+UK PVSAT 2687 51.0 0.0 Generator			Bid Up Price	2010-01-01	2100-01-01	0							
+UK PVSAT 2860 52.0 -3.125 Generator			Capacity	2010-01-01	2100-01-01	UK Installed Capacity File	0.66	Multiply					
+UK PVSAT 2860 52.0 -3.125 Generator			Capacity Rating Factor	2010-01-01	2100-01-01	UK PVSAT 2860 52.0 -3.125 Capacity Factor							
+UK PVSAT 2860 52.0 -3.125 Generator			Save Data	2010-01-01	2100-01-01	1							
+UK PVSAT 2860 52.0 -3.125 Generator			Save Blocks	2010-01-01	2100-01-01	0							
+UK PVSAT 2860 52.0 -3.125 Generator			Variable Cost	2010-01-01	2100-01-01	1							
+UK PVSAT 2860 52.0 -3.125 Generator			Bid Up Price	2010-01-01	2100-01-01	0							
+UK PVSAT 2863 52.0 -1.25 Generator			Capacity	2010-01-01	2100-01-01	UK Installed Capacity File	0.66	Multiply					
+UK PVSAT 2863 52.0 -1.25 Generator			Capacity Rating Factor	2010-01-01	2100-01-01	UK PVSAT 2863 52.0 -1.25 Capacity Factor							
+UK PVSAT 2863 52.0 -1.25 Generator			Save Data	2010-01-01	2100-01-01	1							
+UK PVSAT 2863 52.0 -1.25 Generator			Save Blocks	2010-01-01	2100-01-01	0							
+UK PVSAT 2863 52.0 -1.25 Generator			Variable Cost	2010-01-01	2100-01-01	1							
+UK PVSAT 2863 52.0 -1.25 Generator			Bid Up Price	2010-01-01	2100-01-01	0							
+UK PVSAT 2866 52.0 0.625 Generator			Capacity	2010-01-01	2100-01-01	UK Installed Capacity File	0.66	Multiply					
+UK PVSAT 2866 52.0 0.625 Generator			Capacity Rating Factor	2010-01-01	2100-01-01	UK PVSAT 2866 52.0 0.625 Capacity Factor							
+UK PVSAT 2866 52.0 0.625 Generator			Save Data	2010-01-01	2100-01-01	1							
+UK PVSAT 2866 52.0 0.625 Generator			Save Blocks	2010-01-01	2100-01-01	0							
+UK PVSAT 2866 52.0 0.625 Generator			Variable Cost	2010-01-01	2100-01-01	1							
+UK PVSAT 2866 52.0 0.625 Generator			Bid Up Price	2010-01-01	2100-01-01	0							

@@ -1,0 +1,6 @@
+Object_Name	Parent_Object	Target_Object	Property	Date_From	Date_To	Value	Variable	Variable_Effect	Timeslice	Timeslice_Index	Group_id	Priority	Scenario
+
+DE Normal Inflow Profile			Value	2010-01-01	2100-01-01	DE Normal Inflow Profile File							
+DE Normal Inflow Profile File			Location	2010-01-01	2100-01-01	/variables/Profiles ROR/DE Normal Inflow Profile.txt							
+DE Normal Inflow Profile File			Location_Type	2010-01-01	2100-01-01	Relative							
+DE Normal Inflow Profile File			Data_Type	2010-01-01	2100-01-01	File							

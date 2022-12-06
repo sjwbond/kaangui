@@ -1,0 +1,15 @@
+Start Date	2022-01-01
+End Date	2023-01-01
+Simulations	5
+Capacity Step Size	100
+Demand	28217.77932
+CO2	ETS EUA
+Market	ES
+MaxMCP	15000
+Currency	EUR
+Hours2UTC	1
+Settlement Length	60
+Blocks Per Period	24
+Debug	TRUE
+MultiProcessing	FALSE
+MaxProcessors	8

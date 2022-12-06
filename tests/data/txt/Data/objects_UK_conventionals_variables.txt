@@ -1,0 +1,10 @@
+Object_Name	Object_Type
+UK Availability Coal	Variable
+UK Availability CCGT	Variable
+UK Availability OCGT	Variable
+UK Availability Biomass	Variable
+UK Availability Lignite	Variable
+UK Availability Nuclear	Variable
+UK Availability CHP	Variable
+UK Availability Liquid	Variable
+UK Availability Hard Coal	Variable

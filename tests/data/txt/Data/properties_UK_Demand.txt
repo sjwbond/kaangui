@@ -1,0 +1,16 @@
+Object_Name	Parent_Object	Target_Object	Property	Date_From	Date_To	Value	Variable	Variable_Effect	Timeslice	Timeslice_Index	Group_id	Priority	Scenario
+UK Daily Demand Stochastic File			Location	2010-01-01	2100-01-01	/Variables/Demand/UK/Daily Demand Stochastic.txt							
+UK Daily Demand Stochastic File			Location_Type	2010-01-01	2100-01-01	Relative							
+UK Daily Demand Stochastic File			Data_Type	2010-01-01	2100-01-01	File							
+UK Demand DIY File			Location	2010-01-01	2100-01-01	/Variables/Demand/UK/Demand DIY.txt							
+UK Demand DIY File			Location_Type	2010-01-01	2100-01-01	Relative							
+UK Demand DIY File			Data_Type	2010-01-01	2100-01-01	File							
+UK Demand DOW File			Location	2010-01-01	2100-01-01	/Variables/Demand/UK/Demand DOW.txt							
+UK Demand DOW File			Location_Type	2010-01-01	2100-01-01	Relative							
+UK Demand DOW File			Data_Type	2010-01-01	2100-01-01	File							
+UK Demand HOD File			Location	2010-01-01	2100-01-01	/Variables/Demand/UK/Demand HOD.txt							
+UK Demand HOD File			Location_Type	2010-01-01	2100-01-01	Relative							
+UK Demand HOD File			Data_Type	2010-01-01	2100-01-01	File							
+UK Demand Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/UK/Demand Historic Day Ahead.txt							
+UK Demand Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+UK Demand Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							

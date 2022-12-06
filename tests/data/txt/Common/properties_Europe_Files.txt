@@ -1,0 +1,452 @@
+Object_Name	Parent_Object	Target_Object	Property	Date_From	Date_To	Value	Variable	Variable_Effect	Timeslice	Timeslice_Index	Group_id	Priority	Scenario
+DE Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+DE Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+DE Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+DE Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/DE/Fuel Prices.txt							
+DE Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/DE/Fuel Prices.txt							NP 2020Q3
+DE Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/DE/Fuel Prices.txt							E&D 2020Q3
+DE Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/DE/Fuel Prices.txt							ELEC 2020Q3
+DE Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/DE/Historic Day Ahead.txt							
+DE Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/DE/Installed Capacity.txt							
+DE Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/DE/Installed Capacity.txt							NP 2020Q3
+DE Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/DE/Installed Capacity.txt							E&D 2020Q3
+DE Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/DE/Installed Capacity.txt							ELEC 2020Q3
+DE Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+DE Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+DE Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+DE North Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+DE North Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+DE North Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+DE North Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/DE North/Fuel Prices.txt							
+DE North Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/DE North/Fuel Prices.txt							NP 2020Q3
+DE North Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/DE North/Fuel Prices.txt							E&D 2020Q3
+DE North Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/DE North/Fuel Prices.txt							ELEC 2020Q3
+DE North Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/DE North/Historic Day Ahead.txt							
+DE North Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/DE North/Installed Capacity.txt							
+DE North Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/DE North/Installed Capacity.txt							NP 2020Q3
+DE North Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3 Remit/DE North/Installed Capacity.txt							NP 2020Q3 REMIT
+DE North Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/DE North/Installed Capacity.txt							E&D 2020Q3
+DE North Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/DE North/Installed Capacity.txt							ELEC 2020Q3
+DE North Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+DE North Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+DE North Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+DE South Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+DE South Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+DE South Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+DE South Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/DE South/Fuel Prices.txt							
+DE South Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/DE South/Fuel Prices.txt							NP 2020Q3
+DE South Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/DE South/Fuel Prices.txt							E&D 2020Q3
+DE South Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/DE South/Fuel Prices.txt							ELEC 2020Q3
+DE South Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/DE South/Historic Day Ahead.txt							
+DE South Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/DE South/Installed Capacity.txt							
+DE South Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/DE South/Installed Capacity.txt							NP 2020Q3
+DE South Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/DE South/Installed Capacity.txt							E&D 2020Q3
+DE South Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/DE South/Installed Capacity.txt							ELEC 2020Q3
+DE South Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+DE South Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+DE South Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+PT Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+PT Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+PT Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+PT Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/PT/Fuel Prices.txt							
+PT Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/PT/Fuel Prices.txt							NP 2020Q3
+PT Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/PT/Fuel Prices.txt							E&D 2020Q3
+PT Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/PT/Fuel Prices.txt							ELEC 2020Q3
+PT Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/PT/Historic Day Ahead.txt							
+PT Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/PT/Installed Capacity.txt							
+PT Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/PT/Installed Capacity.txt							NP 2020Q3
+PT Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/PT/Installed Capacity.txt							E&D 2020Q3
+PT Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/PT/Installed Capacity.txt							ELEC 2020Q3
+PT Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+PT Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+PT Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+ES Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+ES Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+ES Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+ES Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ES/Fuel Prices.txt							
+ES Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/ES/Fuel Prices.txt							NP 2020Q3
+ES Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/ES/Fuel Prices.txt							E&D 2020Q3
+ES Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/ES/Fuel Prices.txt							ELEC 2020Q3
+ES Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/ES/Historic Day Ahead.txt							
+ES Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ES/Installed Capacity.txt							
+ES Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/ES/Installed Capacity.txt							NP 2020Q3
+ES Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/ES/Installed Capacity.txt							E&D 2020Q3
+ES Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/ES/Installed Capacity.txt							ELEC 2020Q3
+ES Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+ES Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+ES Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+FR Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+FR Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+FR Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+FR Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/FR/Fuel Prices.txt							
+FR Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/FR/Fuel Prices.txt							NP 2020Q3
+FR Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/FR/Fuel Prices.txt							E&D 2020Q3
+FR Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/FR/Fuel Prices.txt							ELEC 2020Q3
+FR Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/FR/Historic Day Ahead.txt							
+FR Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/FR/Installed Capacity.txt							
+FR Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/FR/Installed Capacity.txt							NP 2020Q3
+FR Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/FR/Installed Capacity.txt							E&D 2020Q3
+FR Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/FR/Installed Capacity.txt							ELEC 2020Q3
+FR Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+FR Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+FR Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+BE Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+BE Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+BE Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+BE Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/BE/Fuel Prices.txt							
+BE Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/BE/Fuel Prices.txt							NP 2020Q3
+BE Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/BE/Fuel Prices.txt							E&D 2020Q3
+BE Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/BE/Fuel Prices.txt							ELEC 2020Q3
+BE Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/BE/Historic Day Ahead.txt							
+BE Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/BE/Installed Capacity.txt							
+BE Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/BE/Installed Capacity.txt							NP 2020Q3
+BE Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/BE/Installed Capacity.txt							E&D 2020Q3
+BE Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/BE/Installed Capacity.txt							ELEC 2020Q3
+BE Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+BE Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+BE Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+NL Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+NL Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+NL Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+NL Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NL/Fuel Prices.txt							
+NL Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/NL/Fuel Prices.txt							NP 2020Q3
+NL Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/NL/Fuel Prices.txt							E&D 2020Q3
+NL Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/NL/Fuel Prices.txt							ELEC 2020Q3
+NL Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/NL/Historic Day Ahead.txt							
+NL Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NL/Installed Capacity.txt							
+NL Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/NL/Installed Capacity.txt							NP 2020Q3
+NL Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/NL/Installed Capacity.txt							E&D 2020Q3
+NL Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/NL/Installed Capacity.txt							ELEC 2020Q3
+NL Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+NL Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+NL Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+PT Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+PL Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+PL Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+PL Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/PL/Fuel Prices.txt							
+PL Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/PL/Fuel Prices.txt							NP 2020Q3
+PL Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/PL/Fuel Prices.txt							E&D 2020Q3
+PL Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/PL/Fuel Prices.txt							ELEC 2020Q3
+PL Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/PL/Historic Day Ahead.txt							
+PL Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/PL/Installed Capacity.txt							
+PL Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/PL/Installed Capacity.txt							NP 2020Q3
+PL Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/PL/Installed Capacity.txt							E&D 2020Q3
+PL Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/PL/Installed Capacity.txt							ELEC 2020Q3
+PL Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+PL Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+PL Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+UK Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+UK Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+UK Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+UK Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/UK/Fuel Prices.txt							
+UK Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/UK/Fuel Prices.txt							NP 2020Q3
+UK Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/UK/Fuel Prices.txt							E&D 2020Q3
+UK Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/UK/Fuel Prices.txt							ELEC 2020Q3
+UK Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/UK/Historic Day Ahead.txt							
+UK Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/UK/Installed Capacity.txt							
+UK Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/UK/Installed Capacity.txt							NP 2020Q3
+UK Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/UK/Installed Capacity.txt							E&D 2020Q3
+UK Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/UK/Installed Capacity.txt							ELEC 2020Q3
+UK Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+UK Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+UK Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+IE Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+IE Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+IE Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+IE Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/IE/Fuel Prices.txt							
+IE Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/IE/Fuel Prices.txt							NP 2020Q3
+IE Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/IE/Fuel Prices.txt							E&D 2020Q3
+IE Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/IE/Fuel Prices.txt							ELEC 2020Q3
+IE Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/IE/Historic Day Ahead.txt							
+IE Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/IE/Installed Capacity.txt							
+IE Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/IE/Installed Capacity.txt							NP 2020Q3
+IE Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/IE/Installed Capacity.txt							E&D 2020Q3
+IE Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/IE/Installed Capacity.txt							ELEC 2020Q3
+IE Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+IE Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+IE Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+DK1 Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+DK1 Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+DK1 Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+DK1 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/DK1/Fuel Prices.txt							
+DK1 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/DK1/Fuel Prices.txt							NP 2020Q3
+DK1 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/DK1/Fuel Prices.txt							E&D 2020Q3
+DK1 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/DK1/Fuel Prices.txt							ELEC 2020Q3
+DK1 Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/DK1/Historic Day Ahead.txt							
+DK1 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/DK1/Installed Capacity.txt							
+DK1 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/DK1/Installed Capacity.txt							NP 2020Q3
+DK1 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/DK1/Installed Capacity.txt							E&D 2020Q3
+DK1 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/DK1/Installed Capacity.txt							ELEC 2020Q3
+DK1 Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+DK1 Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+DK1 Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+DK2 Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+DK2 Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+DK2 Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+DK2 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/DK2/Fuel Prices.txt							
+DK2 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/DK2/Fuel Prices.txt							NP 2020Q3
+DK2 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/DK2/Fuel Prices.txt							E&D 2020Q3
+DK2 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/DK2/Fuel Prices.txt							ELEC 2020Q3
+DK2 Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/DK2/Historic Day Ahead.txt							
+DK2 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/DK2/Installed Capacity.txt							
+DK2 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/DK2/Installed Capacity.txt							NP 2020Q3
+DK2 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/DK2/Installed Capacity.txt							E&D 2020Q3
+DK2 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/DK2/Installed Capacity.txt							ELEC 2020Q3
+DK2 Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+DK2 Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+DK2 Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+SE1 Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+SE1 Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+SE1 Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+SE1 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/SE1/Fuel Prices.txt							
+SE1 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/SE1/Fuel Prices.txt							NP 2020Q3
+SE1 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/SE1/Fuel Prices.txt							E&D 2020Q3
+SE1 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/SE1/Fuel Prices.txt							ELEC 2020Q3
+SE1 Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/SE1/Historic Day Ahead.txt							
+SE1 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/SE1/Installed Capacity.txt							
+SE1 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/SE1/Installed Capacity.txt							NP 2020Q3
+SE1 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/SE1/Installed Capacity.txt							E&D 2020Q3
+SE1 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/SE1/Installed Capacity.txt							ELEC 2020Q3
+SE1 Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+SE1 Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+SE1 Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+SE2 Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+SE2 Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+SE2 Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+SE2 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/SE2/Fuel Prices.txt							
+SE2 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/SE2/Fuel Prices.txt							NP 2020Q3
+SE2 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/SE2/Fuel Prices.txt							E&D 2020Q3
+SE2 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/SE2/Fuel Prices.txt							ELEC 2020Q3
+SE2 Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/SE2/Historic Day Ahead.txt							
+SE2 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/SE2/Installed Capacity.txt							
+SE2 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/SE2/Installed Capacity.txt							NP 2020Q3
+SE2 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/SE2/Installed Capacity.txt							E&D 2020Q3
+SE2 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/SE2/Installed Capacity.txt							ELEC 2020Q3
+SE2 Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+SE2 Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+SE2 Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+SE3 Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+SE3 Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+SE3 Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+SE3 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/SE3/Fuel Prices.txt							
+SE3 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/SE3/Fuel Prices.txt							NP 2020Q3
+SE3 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/SE3/Fuel Prices.txt							E&D 2020Q3
+SE3 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/SE3/Fuel Prices.txt							ELEC 2020Q3
+SE3 Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/SE3/Historic Day Ahead.txt							
+SE3 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/SE3/Installed Capacity.txt							
+SE3 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/SE3/Installed Capacity.txt							NP 2020Q3
+SE3 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/SE3/Installed Capacity.txt							E&D 2020Q3
+SE3 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/SE3/Installed Capacity.txt							ELEC 2020Q3
+SE3 Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+SE3 Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+SE3 Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+SE4 Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+SE4 Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+SE4 Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+SE4 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/SE4/Fuel Prices.txt							
+SE4 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/SE4/Fuel Prices.txt							NP 2020Q3
+SE4 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/SE4/Fuel Prices.txt							E&D 2020Q3
+SE4 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/SE4/Fuel Prices.txt							ELEC 2020Q3
+SE4 Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/SE4/Historic Day Ahead.txt							
+SE4 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/SE4/Installed Capacity.txt							
+SE4 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/SE4/Installed Capacity.txt							NP 2020Q3
+SE4 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/SE4/Installed Capacity.txt							E&D 2020Q3
+SE4 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/SE4/Installed Capacity.txt							ELEC 2020Q3
+SE4 Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+SE4 Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+SE4 Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+FI Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+FI Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+FI Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+FI Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/FI/Fuel Prices.txt							
+FI Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/FI/Fuel Prices.txt							NP 2020Q3
+FI Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/FI/Fuel Prices.txt							E&D 2020Q3
+FI Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/FI/Fuel Prices.txt							ELEC 2020Q3
+FI Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/FI/Historic Day Ahead.txt							
+FI Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/FI/Installed Capacity.txt							
+FI Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/FI/Installed Capacity.txt							NP 2020Q3
+FI Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/FI/Installed Capacity.txt							E&D 2020Q3
+FI Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/FI/Installed Capacity.txt							ELEC 2020Q3
+FI Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+FI Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+FI Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+NO1 Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+NO1 Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+NO1 Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+NO1 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NO1/Fuel Prices.txt							
+NO1 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/NO1/Fuel Prices.txt							NP 2020Q3
+NO1 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/NO1/Fuel Prices.txt							E&D 2020Q3
+NO1 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/NO1/Fuel Prices.txt							ELEC 2020Q3
+NO1 Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/NO1/Historic Day Ahead.txt							
+NO1 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NO1/Installed Capacity.txt							
+NO1 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/NO1/Installed Capacity.txt							NP 2020Q3
+NO1 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/NO1/Installed Capacity.txt							E&D 2020Q3
+NO1 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/NO1/Installed Capacity.txt							ELEC 2020Q3
+NO1 Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+NO1 Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+NO1 Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+NO2 Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+NO2 Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+NO2 Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+NO2 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NO2/Fuel Prices.txt							
+NO2 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/NO2/Fuel Prices.txt							NP 2020Q3
+NO2 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/NO2/Fuel Prices.txt							E&D 2020Q3
+NO2 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/NO2/Fuel Prices.txt							ELEC 2020Q3
+NO2 Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/NO2/Historic Day Ahead.txt							
+NO2 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NO2/Installed Capacity.txt							
+NO2 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/NO2/Installed Capacity.txt							NP 2020Q3
+NO2 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/NO2/Installed Capacity.txt							E&D 2020Q3
+NO2 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/NO2/Installed Capacity.txt							ELEC 2020Q3
+NO2 Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+NO2 Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+NO2 Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+NO3 Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+NO3 Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+NO3 Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+NO3 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NO3/Fuel Prices.txt							
+NO3 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/NO3/Fuel Prices.txt							NP 2020Q3
+NO3 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/NO3/Fuel Prices.txt							E&D 2020Q3
+NO3 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/NO3/Fuel Prices.txt							ELEC 2020Q3
+NO3 Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/NO3/Historic Day Ahead.txt							
+NO3 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NO3/Installed Capacity.txt							
+NO3 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/NO3/Installed Capacity.txt							NP 2020Q3
+NO3 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/NO3/Installed Capacity.txt							E&D 2020Q3
+NO3 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/NO3/Installed Capacity.txt							ELEC 2020Q3
+NO3 Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+NO3 Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+NO3 Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+NO4 Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+NO4 Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+NO4 Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+NO4 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NO4/Fuel Prices.txt							
+NO4 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/NO4/Fuel Prices.txt							NP 2020Q3
+NO4 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/NO4/Fuel Prices.txt							E&D 2020Q3
+NO4 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/NO4/Fuel Prices.txt							ELEC 2020Q3
+NO4 Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/NO4/Historic Day Ahead.txt							
+NO4 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NO4/Installed Capacity.txt							
+NO4 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/NO4/Installed Capacity.txt							NP 2020Q3
+NO4 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/NO4/Installed Capacity.txt							E&D 2020Q3
+NO4 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/NO4/Installed Capacity.txt							ELEC 2020Q3
+NO4 Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+NO4 Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+NO4 Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+NO5 Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+NO5 Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+NO5 Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+NO5 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NO5/Fuel Prices.txt							
+NO5 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/NO5/Fuel Prices.txt							NP 2020Q3
+NO5 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/NO5/Fuel Prices.txt							E&D 2020Q3
+NO5 Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/NO5/Fuel Prices.txt							ELEC 2020Q3
+NO5 Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/NO5/Historic Day Ahead.txt							
+NO5 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NO5/Installed Capacity.txt							
+NO5 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/NO5/Installed Capacity.txt							NP 2020Q3
+NO5 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/NO5/Installed Capacity.txt							E&D 2020Q3
+NO5 Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/NO5/Installed Capacity.txt							ELEC 2020Q3
+NO5 Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+NO5 Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+NO5 Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+ITNO Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+ITNO Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+ITNO Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+ITNO Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ITNO/Fuel Prices.txt							
+ITNO Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/ITNO/Fuel Prices.txt							NP 2020Q3
+ITNO Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/ITNO/Fuel Prices.txt							E&D 2020Q3
+ITNO Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/ITNO/Fuel Prices.txt							ELEC 2020Q3
+ITNO Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/ITNO/Historic Day Ahead.txt							
+ITNO Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ITNO/Installed Capacity.txt							
+ITNO Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/ITNO/Installed Capacity.txt							NP 2020Q3
+ITNO Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/ITNO/Installed Capacity.txt							E&D 2020Q3
+ITNO Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/ITNO/Installed Capacity.txt							ELEC 2020Q3
+ITNO Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+ITNO Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+ITNO Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+ITCN Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+ITCN Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+ITCN Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+ITCN Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ITCN/Fuel Prices.txt							
+ITCN Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/ITCN/Fuel Prices.txt							NP 2020Q3
+ITCN Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/ITCN/Fuel Prices.txt							E&D 2020Q3
+ITCN Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/ITCN/Fuel Prices.txt							ELEC 2020Q3
+ITCN Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/ITCN/Historic Day Ahead.txt							
+ITCN Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ITCN/Installed Capacity.txt							
+ITCN Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/ITCN/Installed Capacity.txt							NP 2020Q3
+ITCN Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/ITCN/Installed Capacity.txt							E&D 2020Q3
+ITCN Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/ITCN/Installed Capacity.txt							ELEC 2020Q3
+ITCN Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+ITCN Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+ITCN Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+ITCS Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+ITCS Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+ITCS Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+ITCS Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ITCS/Fuel Prices.txt							
+ITCS Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/ITCS/Fuel Prices.txt							NP 2020Q3
+ITCS Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/ITCS/Fuel Prices.txt							E&D 2020Q3
+ITCS Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/ITCS/Fuel Prices.txt							ELEC 2020Q3
+ITCS Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/ITCS/Historic Day Ahead.txt							
+ITCS Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ITCS/Installed Capacity.txt							
+ITCS Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/ITCS/Installed Capacity.txt							NP 2020Q3
+ITCS Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/ITCS/Installed Capacity.txt							E&D 2020Q3
+ITCS Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/ITCS/Installed Capacity.txt							ELEC 2020Q3
+ITCS Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+ITCS Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+ITCS Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+ITSO Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+ITSO Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+ITSO Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+ITSO Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ITSO/Fuel Prices.txt							
+ITSO Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/ITSO/Fuel Prices.txt							NP 2020Q3
+ITSO Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/ITSO/Fuel Prices.txt							E&D 2020Q3
+ITSO Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/ITSO/Fuel Prices.txt							ELEC 2020Q3
+ITSO Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/ITSO/Historic Day Ahead.txt							
+ITSO Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ITSO/Installed Capacity.txt							
+ITSO Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/ITSO/Installed Capacity.txt							NP 2020Q3
+ITSO Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/ITSO/Installed Capacity.txt							E&D 2020Q3
+ITSO Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/ITSO/Installed Capacity.txt							ELEC 2020Q3
+ITSO Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+ITSO Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+ITSO Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+ITSA Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+ITSA Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+ITSA Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+ITSA Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ITSA/Fuel Prices.txt							
+ITSA Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/ITSA/Fuel Prices.txt							NP 2020Q3
+ITSA Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/ITSA/Fuel Prices.txt							E&D 2020Q3
+ITSA Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/ITSA/Fuel Prices.txt							ELEC 2020Q3
+ITSA Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/ITSA/Historic Day Ahead.txt							
+ITSA Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ITSA/Installed Capacity.txt							
+ITSA Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/ITSA/Installed Capacity.txt							NP 2020Q3
+ITSA Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/ITSA/Installed Capacity.txt							E&D 2020Q3
+ITSA Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/ITSA/Installed Capacity.txt							ELEC 2020Q3
+ITSA Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+ITSA Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+ITSA Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+ITSI Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+ITSI Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+ITSI Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+ITSI Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ITSI/Fuel Prices.txt							
+ITSI Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/ITSI/Fuel Prices.txt							NP 2020Q3
+ITSI Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/ITSI/Fuel Prices.txt							E&D 2020Q3
+ITSI Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/ITSI/Fuel Prices.txt							ELEC 2020Q3
+ITSI Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/ITSI/Historic Day Ahead.txt							
+ITSI Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ITSI/Installed Capacity.txt							
+ITSI Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/ITSI/Installed Capacity.txt							NP 2020Q3
+ITSI Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/ITSI/Installed Capacity.txt							E&D 2020Q3
+ITSI Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/ITSI/Installed Capacity.txt							ELEC 2020Q3
+ITSI Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+ITSI Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+ITSI Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							
+CH Fuel Price File			Data_Type	2010-01-01	2100-01-01	File							
+CH Historic Day Ahead File			Data_Type	2010-01-01	2100-01-01	File							
+CH Installed Capacity File			Data_Type	2010-01-01	2100-01-01	File							
+CH Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/CH/Fuel Prices.txt							
+CH Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/NP_2020Q3/CH/Fuel Prices.txt							NP 2020Q3
+CH Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/E&D 2020Q3/CH/Fuel Prices.txt							E&D 2020Q3
+CH Fuel Price File			Location	2010-01-01	2100-01-01	/Variables/Fuels/ELEC 2020Q3/CH/Fuel Prices.txt							ELEC 2020Q3
+CH Historic Day Ahead File			Location	2010-01-01	2100-01-01	/Variables/Demand/CH/Historic Day Ahead.txt							
+CH Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/CH/Installed Capacity.txt							
+CH Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/NP_2020Q3/CH/Installed Capacity.txt							NP 2020Q3
+CH Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/E&D 2020Q3/CH/Installed Capacity.txt							E&D 2020Q3
+CH Installed Capacity File			Location	2010-01-01	2100-01-01	/Variables/Capacity/ELEC 2020Q3/CH/Installed Capacity.txt							ELEC 2020Q3
+CH Fuel Price File			Location_Type	2010-01-01	2100-01-01	Relative							
+CH Historic Day Ahead File			Location_Type	2010-01-01	2100-01-01	Relative							
+CH Installed Capacity File			Location_Type	2010-01-01	2100-01-01	Relative							

@@ -1,0 +1,109 @@
+Object_Name	Parent_Object	Target_Object	Property	Date_From	Date_To	Value	Variable	Variable_Effect	Timeslice	Timeslice_Index	Group_id	Priority	Scenario
+UK Availability Coal			Value	2010-01-01	2100-01-01	0.95			M	 1			
+UK Availability Coal			Value	2010-01-01	2100-01-01	0.95			M	 2			
+UK Availability Coal			Value	2010-01-01	2100-01-01	0.95			M	 3			
+UK Availability Coal			Value	2010-01-01	2100-01-01	0.95			M	 4			
+UK Availability Coal			Value	2010-01-01	2100-01-01	0.95			M	 5			
+UK Availability Coal			Value	2010-01-01	2100-01-01	0.95			M	 6			
+UK Availability Coal			Value	2010-01-01	2100-01-01	0.95			M	 7			
+UK Availability Coal			Value	2010-01-01	2100-01-01	0.95			M	 8			
+UK Availability Coal			Value	2010-01-01	2100-01-01	0.95			M	 9			
+UK Availability Coal			Value	2010-01-01	2100-01-01	0.95			M	 10			
+UK Availability Coal			Value	2010-01-01	2100-01-01	0.95			M	 11			
+UK Availability Coal			Value	2010-01-01	2100-01-01	0.95			M	 12			
+UK Availability CCGT			Value	2010-01-01	2100-01-01	0.95			M	 1			
+UK Availability CCGT			Value	2010-01-01	2100-01-01	0.95			M	 2			
+UK Availability CCGT			Value	2010-01-01	2100-01-01	0.95			M	 3			
+UK Availability CCGT			Value	2010-01-01	2100-01-01	0.95			M	 4			
+UK Availability CCGT			Value	2010-01-01	2100-01-01	0.95			M	 5			
+UK Availability CCGT			Value	2010-01-01	2100-01-01	0.95			M	 6			
+UK Availability CCGT			Value	2010-01-01	2100-01-01	0.95			M	 7			
+UK Availability CCGT			Value	2010-01-01	2100-01-01	0.95			M	 8			
+UK Availability CCGT			Value	2010-01-01	2100-01-01	0.95			M	 9			
+UK Availability CCGT			Value	2010-01-01	2100-01-01	0.95			M	 10			
+UK Availability CCGT			Value	2010-01-01	2100-01-01	0.95			M	 11			
+UK Availability CCGT			Value	2010-01-01	2100-01-01	0.95			M	 12			
+UK Availability OCGT			Value	2010-01-01	2100-01-01	0.95			M	 1			
+UK Availability OCGT			Value	2010-01-01	2100-01-01	0.95			M	 2			
+UK Availability OCGT			Value	2010-01-01	2100-01-01	0.95			M	 3			
+UK Availability OCGT			Value	2010-01-01	2100-01-01	0.95			M	 4			
+UK Availability OCGT			Value	2010-01-01	2100-01-01	0.95			M	 5			
+UK Availability OCGT			Value	2010-01-01	2100-01-01	0.95			M	 6			
+UK Availability OCGT			Value	2010-01-01	2100-01-01	0.95			M	 7			
+UK Availability OCGT			Value	2010-01-01	2100-01-01	0.95			M	 8			
+UK Availability OCGT			Value	2010-01-01	2100-01-01	0.95			M	 9			
+UK Availability OCGT			Value	2010-01-01	2100-01-01	0.95			M	 10			
+UK Availability OCGT			Value	2010-01-01	2100-01-01	0.95			M	 11			
+UK Availability OCGT			Value	2010-01-01	2100-01-01	0.95			M	 12			
+UK Availability Biomass			Value	2010-01-01	2100-01-01	0.95			M	 1			
+UK Availability Biomass			Value	2010-01-01	2100-01-01	0.95			M	 2			
+UK Availability Biomass			Value	2010-01-01	2100-01-01	0.95			M	 3			
+UK Availability Biomass			Value	2010-01-01	2100-01-01	0.95			M	 4			
+UK Availability Biomass			Value	2010-01-01	2100-01-01	0.95			M	 5			
+UK Availability Biomass			Value	2010-01-01	2100-01-01	0.95			M	 6			
+UK Availability Biomass			Value	2010-01-01	2100-01-01	0.95			M	 7			
+UK Availability Biomass			Value	2010-01-01	2100-01-01	0.95			M	 8			
+UK Availability Biomass			Value	2010-01-01	2100-01-01	0.95			M	 9			
+UK Availability Biomass			Value	2010-01-01	2100-01-01	0.95			M	 10			
+UK Availability Biomass			Value	2010-01-01	2100-01-01	0.95			M	 11			
+UK Availability Biomass			Value	2010-01-01	2100-01-01	0.95			M	 12			
+UK Availability Lignite			Value	2010-01-01	2100-01-01	0.95			M	 1			
+UK Availability Lignite			Value	2010-01-01	2100-01-01	0.95			M	 2			
+UK Availability Lignite			Value	2010-01-01	2100-01-01	0.95			M	 3			
+UK Availability Lignite			Value	2010-01-01	2100-01-01	0.95			M	 4			
+UK Availability Lignite			Value	2010-01-01	2100-01-01	0.95			M	 5			
+UK Availability Lignite			Value	2010-01-01	2100-01-01	0.95			M	 6			
+UK Availability Lignite			Value	2010-01-01	2100-01-01	0.95			M	 7			
+UK Availability Lignite			Value	2010-01-01	2100-01-01	0.95			M	 8			
+UK Availability Lignite			Value	2010-01-01	2100-01-01	0.95			M	 9			
+UK Availability Lignite			Value	2010-01-01	2100-01-01	0.95			M	 10			
+UK Availability Lignite			Value	2010-01-01	2100-01-01	0.95			M	 11			
+UK Availability Lignite			Value	2010-01-01	2100-01-01	0.95			M	 12			
+UK Availability Nuclear			Value	2010-01-01	2100-01-01	0.95			M	 1			
+UK Availability Nuclear			Value	2010-01-01	2100-01-01	0.95			M	 2			
+UK Availability Nuclear			Value	2010-01-01	2100-01-01	0.95			M	 3			
+UK Availability Nuclear			Value	2010-01-01	2100-01-01	0.95			M	 4			
+UK Availability Nuclear			Value	2010-01-01	2100-01-01	0.95			M	 5			
+UK Availability Nuclear			Value	2010-01-01	2100-01-01	0.95			M	 6			
+UK Availability Nuclear			Value	2010-01-01	2100-01-01	0.95			M	 7			
+UK Availability Nuclear			Value	2010-01-01	2100-01-01	0.95			M	 8			
+UK Availability Nuclear			Value	2010-01-01	2100-01-01	0.95			M	 9			
+UK Availability Nuclear			Value	2010-01-01	2100-01-01	0.95			M	 10			
+UK Availability Nuclear			Value	2010-01-01	2100-01-01	0.95			M	 11			
+UK Availability Nuclear			Value	2010-01-01	2100-01-01	0.95			M	 12			
+UK Availability CHP			Value	2010-01-01	2100-01-01	0.95			M	 1			
+UK Availability CHP			Value	2010-01-01	2100-01-01	0.95			M	 2			
+UK Availability CHP			Value	2010-01-01	2100-01-01	0.95			M	 3			
+UK Availability CHP			Value	2010-01-01	2100-01-01	0.95			M	 4			
+UK Availability CHP			Value	2010-01-01	2100-01-01	0.95			M	 5			
+UK Availability CHP			Value	2010-01-01	2100-01-01	0.95			M	 6			
+UK Availability CHP			Value	2010-01-01	2100-01-01	0.95			M	 7			
+UK Availability CHP			Value	2010-01-01	2100-01-01	0.95			M	 8			
+UK Availability CHP			Value	2010-01-01	2100-01-01	0.95			M	 9			
+UK Availability CHP			Value	2010-01-01	2100-01-01	0.95			M	 10			
+UK Availability CHP			Value	2010-01-01	2100-01-01	0.95			M	 11			
+UK Availability CHP			Value	2010-01-01	2100-01-01	0.95			M	 12			
+UK Availability Liquid			Value	2010-01-01	2100-01-01	0.95			M	 1			
+UK Availability Liquid			Value	2010-01-01	2100-01-01	0.95			M	 2			
+UK Availability Liquid			Value	2010-01-01	2100-01-01	0.95			M	 3			
+UK Availability Liquid			Value	2010-01-01	2100-01-01	0.95			M	 4			
+UK Availability Liquid			Value	2010-01-01	2100-01-01	0.95			M	 5			
+UK Availability Liquid			Value	2010-01-01	2100-01-01	0.95			M	 6			
+UK Availability Liquid			Value	2010-01-01	2100-01-01	0.95			M	 7			
+UK Availability Liquid			Value	2010-01-01	2100-01-01	0.95			M	 8			
+UK Availability Liquid			Value	2010-01-01	2100-01-01	0.95			M	 9			
+UK Availability Liquid			Value	2010-01-01	2100-01-01	0.95			M	 10			
+UK Availability Liquid			Value	2010-01-01	2100-01-01	0.95			M	 11			
+UK Availability Liquid			Value	2010-01-01	2100-01-01	0.95			M	 12			
+UK Availability Hard Coal			Value	2010-01-01	2100-01-01	0.95			M	 1			
+UK Availability Hard Coal			Value	2010-01-01	2100-01-01	0.95			M	 2			
+UK Availability Hard Coal			Value	2010-01-01	2100-01-01	0.95			M	 3			
+UK Availability Hard Coal			Value	2010-01-01	2100-01-01	0.95			M	 4			
+UK Availability Hard Coal			Value	2010-01-01	2100-01-01	0.95			M	 5			
+UK Availability Hard Coal			Value	2010-01-01	2100-01-01	0.95			M	 6			
+UK Availability Hard Coal			Value	2010-01-01	2100-01-01	0.95			M	 7			
+UK Availability Hard Coal			Value	2010-01-01	2100-01-01	0.95			M	 8			
+UK Availability Hard Coal			Value	2010-01-01	2100-01-01	0.95			M	 9			
+UK Availability Hard Coal			Value	2010-01-01	2100-01-01	0.95			M	 10			
+UK Availability Hard Coal			Value	2010-01-01	2100-01-01	0.95			M	 11			
+UK Availability Hard Coal			Value	2010-01-01	2100-01-01	0.95			M	 12			
