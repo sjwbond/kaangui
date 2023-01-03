@@ -421,7 +421,7 @@ class ModelController:
             return
 
         cb = QApplication.clipboard().text()
-        items = [line.split() for line in cb.split("\n")]
+        items = [line.split("\t") for line in cb.split("\n")]
 
         row0 = indexes[0].row()
         col0 = indexes[0].column()
