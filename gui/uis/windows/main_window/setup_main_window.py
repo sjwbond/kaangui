@@ -194,6 +194,7 @@ class SetupMainWindow:
         self.redo_button = StyledButton(text="Redo", themes=self.themes, icon_name="icon_redo.svg")
         self.create_new_model_button = StyledButton(text="Create New Model", icon_name="icon_file.svg", themes=self.themes)
         self.create_json_database_from_txt_files_button = StyledButton(text="Create Model Json file From Txt Folder", icon_name="icon_attachment.svg", themes=self.themes)
+        self.import_objects_from_text_file_button = StyledButton(text="Import Objects From Text File", icon_name="icon_attachment.svg", themes=self.themes)
         self.open_api_model_button = StyledButton(text="Open Model", icon_name="icon_restore.svg", themes=self.themes)
         self.save_api_model_button = StyledButton(text="Save Model", icon_name="icon_save.svg", themes=self.themes)
         self.open_json_model_button = StyledButton(text="Open JSON", icon_name="icon_restore.svg", themes=self.themes)
@@ -279,6 +280,7 @@ class SetupMainWindow:
         self.save_json_model_button.clicked.connect(self.save_model_to_json)
         self.open_json_model_button.clicked.connect(self.open_model_from_json)
         self.create_json_database_from_txt_files_button.clicked.connect(self.create_json_from_txt)
+        self.import_objects_from_text_file_button.clicked.connect(self.import_objects_from_text_file)
 
         self.tree.viewport().installEventFilter(self)
 
@@ -354,6 +356,7 @@ class SetupMainWindow:
         self.ui.load_pages.row_3_layout.addWidget(self.open_json_model_button)
         self.ui.load_pages.row_3_layout.addWidget(self.save_json_model_button)
         self.ui.load_pages.row_3_layout.addWidget(self.create_json_database_from_txt_files_button)
+        self.ui.load_pages.row_3_layout.addWidget(self.import_objects_from_text_file_button)
         self.ui.load_pages.tree_layout.addWidget(self.filterEdit)
         self.ui.load_pages.tree_layout.addWidget(self.tree)
         self.ui.load_pages.table_layout.addWidget(self.table_widget)
@@ -509,6 +512,33 @@ class SetupMainWindow:
                 data = readTxt(name)
                 with open(outname, "w", encoding="utf8") as file:
                     json.dump(data, file, sort_keys=True, indent=4)
+
+    def import_objects_from_text_file(self):
+        (name, _) = QFileDialog.getOpenFileName(None, "Select Text File")
+        if name != '':
+            with open(name, "r", encoding="utf8") as file_in:
+                objects = {}
+                next(file_in)
+                for line in file_in:
+                    parts = line.split('\t')
+                    if parts[0] not in objects:
+                        objects[parts[0]] = []
+                    objects[parts[0]].append({
+                        "Parent Object": parts[1],
+                        "Target Object": parts[2],
+                        "Property": parts[3],
+                        "Date_From": parts[4],
+                        "Date_To": parts[5],
+                        "Value": parts[6],
+                        "Variable": parts[7],
+                        "Variable_Effect": parts[8],
+                        "Timeslice": parts[9],
+                        "Timeslice_Index": parts[10],
+                        "Group_id": parts[11],
+                        "Priority": parts[12],
+                        "Scenario": parts[13]
+                    })
+                self.controller.import_object_properties(objects)
 
     def send_model_to_queue(self, name, priority):
         self.save_model_to_api()

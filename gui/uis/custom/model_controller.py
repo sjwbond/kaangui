@@ -1,5 +1,6 @@
 import copy
 from functools import partial
+from queue import Queue
 from gui.uis.custom.model_helpers import findFreeName, get_all_object_names, model_to_dict, model_to_dict_1
 from gui.uis.custom.properties_table_model import PropertiesTableModel
 from gui.uis.windows.assign_group.assign_group_dialog_box import Ui_Dialog_Assign_Group
@@ -661,7 +662,7 @@ class ModelController:
                 return
 
             it.setData(text, Qt.DisplayRole)
-            if it.data(Qt.UserRole) not in ["folder", "mode", None]:
+            if it.data(Qt.UserRole) not in ["folder", "model", None]:
                 self.object_names.remove(oldName)
                 self.object_names.add(text)
             self.create_undo_snapshot()
@@ -808,4 +809,100 @@ class ModelController:
         idx = self.tree.rootModel.index(0, 0)
         idx_proxy = self.tree.proxyModel.mapFromSource(idx)
         self.tree.setCurrentIndex(idx_proxy)
+        self.update_properties_table()
+
+    def flatten_tree(self) -> dict[str, QStandardItem]:
+        flat_tree = {}
+        queue = Queue()
+        for i in range(self.tree.rootModel.rowCount(self.tree.rootModel.index(0, 0))):
+            queue.put(self.tree.rootModel.index(i, 0, self.tree.rootModel.index(0, 0)))
+        while not queue.empty():
+            idx: QModelIndex = queue.get()
+            for i in range(self.tree.rootModel.rowCount(idx)):
+                queue.put(self.tree.rootModel.index(i, 0, idx))
+            if idx.data(Qt.UserRole) not in ["folder", "model", None]:
+                flat_tree[idx.data(Qt.DisplayRole)] = self.tree.rootModel.itemFromIndex(idx)
+        return flat_tree
+
+    def import_object_properties(self, object_properties: dict[str, list[dict]]):
+        flat_tree = self.flatten_tree()
+
+        changes: dict[str, list[tuple[str, dict]]] = {}
+        def add_change(object: str, change: tuple[str, dict]):
+            if object not in changes:
+                changes[object] = []
+            changes[object].append(change)
+
+        def remove_non_unique_fields(property: dict) -> dict:
+            del property["Value"]
+            del property["Variable"]
+            del property["Variable_Effect"]
+            return property
+
+        def properties_roughly_equal(a: dict, b: dict) -> bool:
+            a_copy = remove_non_unique_fields(a.copy())
+            b_copy = remove_non_unique_fields(b.copy())
+            return a_copy == b_copy
+
+        def print_property(property: dict):
+            return "\n".join(sorted([f"{key}: '{value}'" for key, value in property.items()]))
+        
+        def resolve_conflict(old: dict, new: dict) -> list[tuple[str, dict]]:
+            msgBox = QMessageBox()
+            msgBox.setText(f"Conflict found.\n\nOld property:\n{print_property(old)}\n\nNew property:\n{print_property(new)}")
+            keepold_button = msgBox.addButton("Keep Old", QMessageBox.YesRole)
+            replace_button = msgBox.addButton("Replace With New", QMessageBox.NoRole)
+            keepboth_button = msgBox.addButton("Keep Both", QMessageBox.RejectRole)
+            msgBox.exec()
+
+            if msgBox.clickedButton() == keepold_button:
+                return []
+            if msgBox.clickedButton() == replace_button:
+                return [("del", old), ("add", new)]
+            if msgBox.clickedButton() == keepboth_button:
+                return [("add", new)]
+            return []
+
+        def remove_property(properties: list[dict], property: dict):
+            to_remove = []
+            for old_property in properties:
+                if properties_roughly_equal(old_property, property):
+                    to_remove.append(old_property)
+            for item in to_remove:
+                properties.remove(item)
+
+        def add_property(properties: list[dict], property: dict):
+            properties.append(property)
+            return properties
+        
+        def apply_change(object: str, change: tuple[str, dict]):
+            if object not in flat_tree:
+                return
+            item = flat_tree[object]
+            data = copy.deepcopy(item.data(Qt.UserRole))
+            action, property = change
+            if action == "del":
+                remove_property(data["Properties"], property)
+            elif action == "add":
+                add_property(data["Properties"], property)
+            item.setData(data, Qt.UserRole)
+
+        for object, properties in object_properties.items():
+            if object in flat_tree:
+                for new_property in properties:
+                    found = None
+                    for old_property in flat_tree[object].data(Qt.UserRole)["Properties"]:
+                        if properties_roughly_equal(old_property, new_property):
+                            found = old_property
+                            break
+                    if found:
+                        changed = resolve_conflict(found, new_property)
+                        for change in changed:
+                            add_change(object, change)
+                    else:
+                        add_change(object, ("add", new_property))
+        
+        for object, object_changes in changes.items():
+            for change in object_changes:
+                apply_change(object, change)
         self.update_properties_table()

@@ -9,7 +9,7 @@ def load_directory(path, objects):
         with open(objectsFilePath) as file_in:
             next(file_in)
             for line in file_in:
-                line = line.rstrip()
+                line = line.rstrip('\n')
                 parts = line.split('\t')
                 objects[parts[0]] = {
                 "Object_Name": parts[0],
@@ -22,7 +22,7 @@ def load_directory(path, objects):
         with open(relationshipsFilePath) as file_in:
             next(file_in)
             for line in file_in:
-                line = line.rstrip()
+                line = line.rstrip('\n')
                 parts = line.split('\t')
                 if parts[0] in objects:
                     objects[parts[0]]["Parent Objects"].append({
@@ -34,7 +34,7 @@ def load_directory(path, objects):
         with open(propertiesFilePath) as file_in:
             next(file_in)
             for line in file_in:
-                parts = line.split('\t')
+                parts = line.rstrip('\n').split('\t')
                 if parts[0] in objects:
                     objects[parts[0]]["Properties"].append({
                         "Parent Object": parts[1],
