@@ -5,6 +5,7 @@ from gui.uis.custom.result_tree_view import ResultTreeView
 from gui.uis.custom.results_controller import ResultsController
 
 from gui.uis.windows.open_model.open_model import Ui_OpenModelDialog
+from gui.uis.windows.import_objects.import_objects import Ui_ImportObjectsDialog
 from gui.uis.custom.api import WebAPI
 from gui.uis.custom.execution_controller import ExecutionController
 from gui.uis.custom.model_controller import ModelController
@@ -53,6 +54,14 @@ class OpenModelDialog(QDialog, Ui_OpenModelDialog):
     def __init__(self, parent=None):
         QDialog.__init__(self, parent)
         self.setupUi(self)
+
+
+class ImportObjectsDialog(QDialog, Ui_ImportObjectsDialog):
+    def __init__(self, object_types, model_controller, parent=None):
+        QDialog.__init__(self, parent)
+        self.setupUi(self)
+        self.set_object_types(object_types)
+        self.set_model_controller(model_controller)
 
 
 # PY WINDOW
@@ -514,31 +523,12 @@ class SetupMainWindow:
                     json.dump(data, file, sort_keys=True, indent=4)
 
     def import_objects_from_text_file(self):
-        (name, _) = QFileDialog.getOpenFileName(None, "Select Text File")
-        if name != '':
-            with open(name, "r", encoding="utf8") as file_in:
-                objects = {}
-                next(file_in)
-                for line in file_in:
-                    parts = line.split('\t')
-                    if parts[0] not in objects:
-                        objects[parts[0]] = []
-                    objects[parts[0]].append({
-                        "Parent Object": parts[1],
-                        "Target Object": parts[2],
-                        "Property": parts[3],
-                        "Date_From": parts[4],
-                        "Date_To": parts[5],
-                        "Value": parts[6],
-                        "Variable": parts[7],
-                        "Variable_Effect": parts[8],
-                        "Timeslice": parts[9],
-                        "Timeslice_Index": parts[10],
-                        "Group_id": parts[11],
-                        "Priority": parts[12],
-                        "Scenario": parts[13]
-                    })
-                self.controller.import_object_properties(objects)
+        dialog = ImportObjectsDialog(list(self.settings["object_properties"].keys()), self.controller)
+
+        dialog.show()
+        if dialog.exec():
+        #         self.controller.import_object_properties(objects)
+            pass
 
     def send_model_to_queue(self, name, priority):
         self.save_model_to_api()

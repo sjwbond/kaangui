@@ -811,7 +811,7 @@ class ModelController:
         self.tree.setCurrentIndex(idx_proxy)
         self.update_properties_table()
 
-    def flatten_tree(self) -> dict[str, QStandardItem]:
+    def get_flat_tree(self) -> dict[str, QStandardItem]:
         flat_tree = {}
         queue = Queue()
         for i in range(self.tree.rootModel.rowCount(self.tree.rootModel.index(0, 0))):
@@ -825,7 +825,7 @@ class ModelController:
         return flat_tree
 
     def import_object_properties(self, object_properties: dict[str, list[dict]]):
-        flat_tree = self.flatten_tree()
+        flat_tree = self.get_flat_tree()
 
         changes: dict[str, list[tuple[str, dict]]] = {}
         def add_change(object: str, change: tuple[str, dict]):

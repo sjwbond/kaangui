@@ -38,7 +38,7 @@ class PropertiesTableModel(QAbstractTableModel):
                 return "Variable"
             elif section == 8:
                 return "Variable Effect"
-            elif section == 0:
+            elif section == 9:
                 return "Timeslice"
             elif section == 10:
                 return "Timeslice Index"

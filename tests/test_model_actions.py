@@ -1,4 +1,6 @@
 from qt_core import *
+from pathlib import Path
+from json import loads
 from . fixtures import create_test_widget, test_model_1
 
 def test_create_new_model(qtbot, monkeypatch):
@@ -295,3 +297,19 @@ def test_dump_model(qtbot):
 
     # Make sure model equals test_model
     assert model_dump == test_model_1
+
+def test_open_model(qtbot, monkeypatch):
+    widget = create_test_widget(qtbot)
+    path = "./tests/data/json.json"
+
+    # Open file
+    monkeypatch.setattr(QMessageBox, "question", lambda *args: QMessageBox.Yes)
+    monkeypatch.setattr(widget.api, "question", lambda *args: QMessageBox.Yes)
+    qtbot.mouseClick(widget.open_json_model_button, Qt.MouseButton.LeftButton)
+
+    # Get model as dict
+    model_dump = widget.dump_model()
+
+    # Make sure model equals test_model
+    expected = loads(Path(path).read_text())
+    assert model_dump == expected
