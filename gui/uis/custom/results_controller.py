@@ -1,3 +1,4 @@
+import csv
 from gui.uis.custom.api import WebAPI
 from gui.uis.custom.node_sort_filter_proxy_model import NodeSortFilterProxyModel
 from gui.uis.custom.result_tree_view import ResultTreeView
@@ -77,7 +78,7 @@ class ResultsController:
         selected_rows = self.time_series_table_view.selectionModel().selectedRows()
         self.time_series_table_model.removeRows(selected_rows)
     
-    def draw_chart(self):
+    def get_time_series_data(self):
         queries = []
         rows = self.time_series_table_model.getData()
         for row in rows:
@@ -88,6 +89,10 @@ class ResultsController:
                 "sample_to": int(row[3])
             })
         data = self.api.get_time_series_data(queries)
+        return queries, data
+    
+    def draw_chart(self):
+        queries, data = self.get_time_series_data()
         self.plot_widget.clear()
         for i in range(len(data)):
             result = data[i]
@@ -100,7 +105,17 @@ class ResultsController:
             self.plot_widget.plot(ys, xs, pen=mkPen(color=color))
     
     def export_csv(self):
-        pass
+        queries, data = self.get_time_series_data()
+        (name, _) = QFileDialog.getSaveFileName(None, "Select CSV File", dir=f"results.csv")
+        if name != '':
+            with open(name, "w", encoding="utf8", newline='') as file:
+                writer = csv.writer(file)
+                writer.writerow(["result", "time_series_id", "tsd_tim_id_start", "tsd_value"])
+                for i in range(len(data)):
+                    query = queries[i]
+                    result = data[i]
+                    for item in result:
+                        writer.writerow([query["result"], int(query["time_series_id"]), int(item["tsd_tim_id_start"]), item["tsd_value"]])
 
     def setup_layout(self, layout: QBoxLayout, themes: dict):
         self.results_filter_edit = PyLineEdit(
