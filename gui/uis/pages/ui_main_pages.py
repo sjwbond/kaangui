@@ -29,9 +29,9 @@ class Ui_MainPages(object):
         self.page_1_layout.setObjectName(u"page_1_layout")
         self.page_1_layout.setContentsMargins(5, 5, 5, 5)
         
-        self.results_list_layout = QVBoxLayout()
-        self.results_list_layout.setObjectName(u"results_list_layout")
-        self.page_1_layout.addLayout(self.results_list_layout)
+        self.results_page_layout = QHBoxLayout()
+        self.results_page_layout.setObjectName(u"results_page_layout")
+        self.page_1_layout.addLayout(self.results_page_layout)
 
         self.pages.addWidget(self.page_1)
         self.page_2 = QWidget()

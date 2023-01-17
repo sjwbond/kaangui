@@ -1,7 +1,6 @@
 # ///////////////////////////////////////////////////////////////
 from datetime import datetime
 import re
-from gui.uis.custom.result_tree_view import ResultTreeView
 from gui.uis.custom.results_controller import ResultsController
 
 from gui.uis.windows.open_model.open_model import Ui_OpenModelDialog
@@ -323,34 +322,7 @@ class SetupMainWindow:
         self.execution_save_button.clicked.connect(self.save_execution)
 
         # RESULTS
-        self.results_filter_edit = PyLineEdit(
-            text = "",
-            place_holder_text = "Type to search",
-            radius = 8,
-            border_size = 2,
-            color = self.themes["app_color"]["text_foreground"],
-            selection_color = self.themes["app_color"]["white"],
-            bg_color = self.themes["app_color"]["dark_one"],
-            bg_color_active = self.themes["app_color"]["dark_three"],
-            context_color = self.themes["app_color"]["context_color"]
-        )
-
-        self.results_tree = ResultTreeView(
-            radius = 8,
-            color = self.themes["app_color"]["text_foreground"],
-            selection_color = self.themes["app_color"]["bg_one"],
-            bg_color = self.themes["app_color"]["bg_two"],
-            scroll_bar_bg_color = self.themes["app_color"]["bg_one"],
-            scroll_bar_btn_color = self.themes["app_color"]["dark_four"],
-            context_color = self.themes["app_color"]["context_color"]
-        )
-
-        @Slot(str)
-        def onTextChanged(text: str):
-            self.results_tree.proxyModel.setFilterRegularExpression(text)
-        self.results_filter_edit.textChanged.connect(onTextChanged)
-
-        self.results_controller = ResultsController(self.api, self.results_tree)
+        self.results_controller = ResultsController(self.api, self.ui.load_pages.results_page_layout, self.themes)
 
         # ADD WIDGETS
         self.ui.load_pages.table_button_layout.addWidget(self.add_table_row_button)
@@ -378,9 +350,6 @@ class SetupMainWindow:
         self.ui.load_pages.row_9_layout.addWidget(self.execution_undo_button)
         self.ui.load_pages.row_9_layout.addWidget(self.execution_redo_button)
         self.ui.load_pages.row_9_layout.addWidget(self.execution_save_button)
-        
-        self.ui.load_pages.results_list_layout.addWidget(self.results_filter_edit)
-        self.ui.load_pages.results_list_layout.addWidget(self.results_tree)
 
     # Model Functions
     def create_new_model(self):

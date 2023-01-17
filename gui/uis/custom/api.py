@@ -100,3 +100,11 @@ class WebAPI:
   def list_results(self) -> list[dict]:
     req = requests.get(f"{self.api_path}/results")
     return req.json()
+
+  def list_tsn_for_result(self, name: str) -> list[dict]:
+    req = requests.get(f"{self.api_path}/results/{name}")
+    return req.json()
+
+  def get_time_series_data(self, queries: list[dict]) -> list[dict]:
+    req = requests.post(f"{self.api_path}/results/time_series_data", json=queries)
+    return req.json()
