@@ -1,4 +1,6 @@
 import csv
+import datetime
+import time
 from gui.uis.custom.api import WebAPI
 from gui.uis.custom.node_sort_filter_proxy_model import NodeSortFilterProxyModel
 from gui.uis.custom.result_tree_view import ResultTreeView
@@ -8,10 +10,8 @@ from gui.uis.custom.time_series_table_view import TimeSeriesTableView
 from gui.uis.custom.time_series_tree_view import TimeSeriesTreeView
 from gui.uis.custom.constants import plot_colors
 from gui.widgets.py_line_edit.py_line_edit import PyLineEdit
-from pyqtgraph import PlotWidget, mkPen
+from pyqtgraph import DateAxisItem, PlotWidget, mkPen
 from qt_core import *
-
-# GB Onshore 4287 60.0 -1.25 100M Generator HWST RevenueMW
 
 class ResultsController:
     def __init__(self, api: WebAPI, layout: QBoxLayout, themes: dict) -> None:
@@ -97,12 +97,14 @@ class ResultsController:
         for i in range(len(data)):
             result = data[i]
             color = plot_colors[i % len(plot_colors)]
-            ys = []
             xs = []
+            ys = []
             for item in result:
-                ys.append(int(item["tsd_tim_id_start"]))
-                xs.append(item["tsd_value"])
-            self.plot_widget.plot(ys, xs, pen=mkPen(color=color))
+                days = int(item["tsd_tim_id_start"])
+                date = datetime.date(2000, 1, 1) + datetime.timedelta(days=days)
+                xs.append(time.mktime(date.timetuple()))
+                ys.append(item["tsd_value"])
+            self.plot_widget.plot(xs, ys, pen=mkPen(color=color))
     
     def export_csv(self):
         queries, data = self.get_time_series_data()
@@ -207,7 +209,8 @@ class ResultsController:
         self.export_csv_button = StyledButton(text="Export CSV", themes=themes)
         self.export_csv_button.clicked.connect(self.export_csv)
 
-        self.plot_widget = PlotWidget()
+        self.axis = DateAxisItem()
+        self.plot_widget = PlotWidget(axisItems={'bottom': self.axis})
 
         self.results_left_layout = QVBoxLayout()
         self.results_left_layout.setObjectName(u"results_left_layout")
