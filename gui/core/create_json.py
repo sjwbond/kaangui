@@ -12,11 +12,11 @@ def load_directory(path, objects):
                 line = line.rstrip('\n')
                 parts = line.split('\t')
                 objects[parts[0]] = {
-                "Object_Name": parts[0],
-                "Object_Type": parts[1],
-                "Parent Objects": [],
-                "Properties": []
-            }
+                    "Object_Name": parts[0],
+                    "Object_Type": parts[1],
+                    "Parent Objects": [],
+                    "Properties": []
+                }
 
     for relationshipsFilePath in relationshipsFilenamesList:
         with open(relationshipsFilePath) as file_in:
