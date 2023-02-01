@@ -18,7 +18,7 @@ from gui.uis.custom.text_delegate import TextDelegate
 from qt_core import *
 
 
-def remove_non_unique_fields(property: dict) -> dict:
+def remove_non_unique_fields_from_property(property: dict) -> dict:
     del property["Value"]
     del property["Variable"]
     del property["Variable_Effect"]
@@ -27,8 +27,8 @@ def remove_non_unique_fields(property: dict) -> dict:
     return property
 
 def properties_roughly_equal(a: dict, b: dict) -> bool:
-    a_copy = remove_non_unique_fields(a.copy())
-    b_copy = remove_non_unique_fields(b.copy())
+    a_copy = remove_non_unique_fields_from_property(a.copy())
+    b_copy = remove_non_unique_fields_from_property(b.copy())
     return a_copy == b_copy
 
 def remove_similar_properties(properties: list[dict], property: dict):
@@ -38,6 +38,26 @@ def remove_similar_properties(properties: list[dict], property: dict):
             to_remove.append(old_property)
     for item in to_remove:
         properties.remove(item)
+
+
+def remove_non_unique_fields_from_relationship(relationship: dict) -> dict:
+    del relationship["Parent Property"]
+    if "Object Name" in relationship:
+        del relationship["Object Name"]
+    return relationship
+
+def relationships_roughly_equal(a: dict, b: dict) -> bool:
+    a_copy = remove_non_unique_fields_from_relationship(a.copy())
+    b_copy = remove_non_unique_fields_from_relationship(b.copy())
+    return a_copy == b_copy
+
+def remove_similar_relationships(relationships: list[dict], relationship: dict):
+    to_remove = []
+    for old_relationship in relationships:
+        if relationships_roughly_equal(old_relationship, relationship):
+            to_remove.append(old_relationship)
+    for item in to_remove:
+        relationships.remove(item)
 
 
 class Ui_ImportObjectsDialog(object):
@@ -66,6 +86,12 @@ class Ui_ImportObjectsDialog(object):
         self.addPropertiesFilePushButton = QPushButton(Dialog)
         self.addPropertiesFilePushButton.setObjectName("addPropertiesFilePushButton")
         self.verticalLayout_3.addWidget(self.addPropertiesFilePushButton)
+        self.relationshipsTableView = RelationshipsTableView(Dialog)
+        self.relationshipsTableView.setObjectName("relationshipsTableView")
+        self.verticalLayout_3.addWidget(self.relationshipsTableView)
+        self.addRelationshipsFilePushButton = QPushButton(Dialog)
+        self.addRelationshipsFilePushButton.setObjectName("addRelationshipsFilePushButton")
+        self.verticalLayout_3.addWidget(self.addRelationshipsFilePushButton)
         self.horizontalLayout.addLayout(self.verticalLayout_3)
         self.horizontalLayout.setStretch(1, 3)
         self.verticalLayout_2.addLayout(self.horizontalLayout)
@@ -82,17 +108,21 @@ class Ui_ImportObjectsDialog(object):
 
         self.addObjectsFilePushButton.clicked.connect(self.add_objects_file)
         self.addPropertiesFilePushButton.clicked.connect(self.add_properties_file)
+        self.addRelationshipsFilePushButton.clicked.connect(self.add_relationships_file)
         self.imported_objects: list[dict] = []
         self.imported_properties: list[dict] = []
+        self.imported_relationships: list[dict] = []
         self.existing_objects = {}
         self.object_items = []
         self.property_items = []
+        self.relationship_items = []
 
     def retranslateUi(self, Dialog):
         _translate = QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Import Objects", "Import Objects"))
         self.addObjectsFilePushButton.setText(_translate("Dialog", "Select Objects File"))
         self.addPropertiesFilePushButton.setText(_translate("Dialog", "Select Properties File"))
+        self.addRelationshipsFilePushButton.setText(_translate("Dialog", "Select Relationships File"))
 
     def set_object_types(self, object_types: list[str]):
         self.objectsTableView.set_object_types(object_types)
@@ -143,11 +173,34 @@ class Ui_ImportObjectsDialog(object):
                 self.imported_properties = properties
                 self.update_tables()
 
+    def add_relationships_file(self):
+        (name, _) = QFileDialog.getOpenFileName(None, "Select Relationships Text File")
+        if name != '':
+            with open(name, "r", encoding="utf8") as file_in:
+                relationships = []
+                next(file_in)
+                for line in file_in:
+                    parts = line.rstrip('\n').split('\t')
+                    relationships.append({
+                        "Object Name": parts[0],
+                        "Parent Object": parts[1],
+                        "Parent Property": parts[2] if len(parts) > 2 else ""
+                    })
+                self.imported_relationships = relationships
+                self.update_tables()
+
     def find_existing_property(self, property: dict) -> Optional[dict]:
         if property["Object Name"] in self.existing_objects:
             for old_property in self.existing_objects[property["Object Name"]].data(Qt.UserRole)["Properties"]:
                 if properties_roughly_equal(old_property, property):
                     return old_property
+        return None
+
+    def find_existing_relationship(self, relationship: dict) -> Optional[dict]:
+        if relationship["Parent Object"] in self.existing_objects:
+            for old_relationship in self.existing_objects[relationship["Object Name"]].data(Qt.UserRole)["Parent Objects"]:
+                if relationships_roughly_equal(old_relationship, relationship):
+                    return old_relationship
         return None
 
     def update_tables(self):
@@ -161,6 +214,8 @@ class Ui_ImportObjectsDialog(object):
         objects_required: set[str] = set()
         for property in self.imported_properties:
             objects_required.add(property["Object Name"])
+        for relationship in self.imported_relationships:
+            objects_required.add(relationship["Object Name"])
         # objects that exist in properties text file but neither in node_tree nor in objects text file are marked
         self.object_items = []
         for object in objects_required:
@@ -257,6 +312,41 @@ class Ui_ImportObjectsDialog(object):
         self.properties_model = PropertiesTableModel(self.property_items)
         self.propertiesTableView.setModel(self.properties_model)
 
+        # get relationships of existing objects from node_tree
+        # get list of relationships from relationships text file
+        # mark relationships that conflict between node_tree and relationships text file
+        self.relationship_items = []
+        for relationship in self.imported_relationships:
+            existing_relationship = self.find_existing_relationship(relationship)
+            if existing_relationship is not None:
+                if existing_relationship["Parent Object"] == relationship["Parent Object"] and existing_relationship["Parent Property"] == relationship["Parent Property"]: # no conflict
+                    self.relationship_items.append({
+                        "Status": "Existing",
+                        "Resolution": "Keep Old",
+                        "Object Name": relationship["Object Name"],
+                        "Parent Object": relationship["Parent Object"],
+                        "Parent Property": relationship["Parent Property"],
+                    })
+                else:
+                    self.relationship_items.append({
+                        "Status": "Conflict",
+                        "Resolution": "",
+                        "Object Name": relationship["Object Name"],
+                        "Parent Object": relationship["Parent Object"],
+                        "Parent Property": relationship["Parent Property"],
+                    })
+            else:
+                self.relationship_items.append({
+                    "Status": "New",
+                    "Resolution": "Keep New",
+                    "Object Name": relationship["Object Name"],
+                    "Parent Object": relationship["Parent Object"],
+                    "Parent Property": relationship["Parent Property"],
+                })
+        # add option to keep old, replace, keep both to relationships with conflicts
+        self.relationships_model = RelationshipsTableModel(self.relationship_items)
+        self.relationshipsTableView.setModel(self.relationships_model)
+
     def apply_changes(self) -> bool:
         for object in self.object_items:
             if object["Object_Type"] == "":
@@ -268,6 +358,11 @@ class Ui_ImportObjectsDialog(object):
                 QMessageBox.critical(self, "Error", 'One or more properties that conflict with existing properties are missing the "Resolution" property. Please select a resolution for each property and try again.')
                 return False
 
+        for relationship in self.relationship_items:
+            if relationship["Resolution"] == "":
+                QMessageBox.critical(self, "Error", 'One or more relationships that conflict with existing relationships are missing the "Resolution" property. Please select a resolution for each relationship and try again.')
+                return False
+
         self.model_controller.pause_history = True
         self.model_controller.create_undo_snapshot()
         
@@ -275,11 +370,15 @@ class Ui_ImportObjectsDialog(object):
         for object in self.object_items:
             new_data[object["Object_Name"]] = {
                 "object": object,
-                "properties": []
+                "properties": [],
+                "relationships": []
             }
         for property in self.property_items:
             if property["Resolution"] == "Keep New":
                 new_data[property["Object Name"]]["properties"].append(property)
+        for relationship in self.relationship_items:
+            if relationship["Resolution"] == "Keep New":
+                new_data[relationship["Object Name"]]["relationships"].append(relationship)
         for object_name, new_object in new_data.items():
             if new_object["object"]["Status"] == "New":
                 self.existing_objects[object_name] = self.model_controller.createNewObjectWithSubfolder(
@@ -294,6 +393,12 @@ class Ui_ImportObjectsDialog(object):
                 del new_property["Resolution"]
                 remove_similar_properties(data["Properties"], new_property)
                 data["Properties"].append(new_property)
+            for new_relationship in new_object["relationships"]:
+                del new_relationship["Status"]
+                del new_relationship["Resolution"]
+                del new_relationship["Object Name"]
+                remove_similar_relationships(data["Parent Objects"], new_relationship)
+                data["Parent Objects"].append(new_relationship)
             existing_object.setData(data, Qt.UserRole)
             
         self.model_controller.create_undo_snapshot()
@@ -407,6 +512,57 @@ class PropertiesTableModel(QAbstractTableModel):
 
     def columnCount(self, index: Union[QModelIndex, QPersistentModelIndex]):
         return 14
+
+    def flags(self, index: Union[QModelIndex, QPersistentModelIndex]):
+        if self.keys[index.column()] == "Resolution" and self._data[index.row()]["Status"] == "Conflict":
+            return Qt.ItemIsSelectable|Qt.ItemIsEnabled|Qt.ItemIsEditable
+        else:
+            return Qt.ItemIsSelectable|Qt.ItemIsEnabled
+
+class RelationshipsTableView(QTableView):
+    def __init__(self, parent: Optional[QWidget]):
+        super().__init__(parent)
+        self.horizontalHeader().setSectionResizeMode(QHeaderView.Interactive)
+        self.setSelectionMode(QAbstractItemView.SingleSelection)
+        self.setSelectionBehavior(QAbstractItemView.SelectRows)
+
+        self.comboDelegate = ComboDelegate(["Keep Old", "Keep New"])
+        self.setItemDelegateForColumn(1, self.comboDelegate)
+
+class RelationshipsTableModel(QAbstractTableModel):
+    def __init__(self, data: List[dict]):
+        super(RelationshipsTableModel, self).__init__()
+        self._data = data
+        self.keys = ["Status", "Resolution", "Object Name", "Parent Object", "Parent Property"]
+        self.headers = ["Status", "Resolution", "Object Name", "Parent Object", "Parent Property"]
+
+    def data(self, index: Union[QModelIndex, QPersistentModelIndex], role: Qt.ItemDataRole):
+        return self.dataAt(index.row(), index.column(), role)
+
+    def dataAt(self, row: int, column: int, role: Qt.ItemDataRole):
+        if role == Qt.DisplayRole:
+            return self._data[row][self.keys[column]]
+
+    def headerData(self, section: int, orientation: Qt.Orientation, role: int):
+        if orientation == Qt.Horizontal and role == Qt.DisplayRole:
+            return self.headers[section]
+        return super().headerData(section, orientation, role)
+    
+    def setData(self, index: Union[QModelIndex, QPersistentModelIndex], text: str, role: Qt.ItemDataRole):
+        return self.setDataAt(index.row(), index.column(), text, role)
+    
+    def setDataAt(self, row: int, column: int, text: str, role: Qt.ItemDataRole):
+        if role == Qt.DisplayRole:
+            if self.keys[column] == "Resolution":
+                self._data[row]["Resolution"] = text
+            return True
+        return False
+
+    def rowCount(self, index: Union[QModelIndex, QPersistentModelIndex]):
+        return len(self._data)
+
+    def columnCount(self, index: Union[QModelIndex, QPersistentModelIndex]):
+        return 5
 
     def flags(self, index: Union[QModelIndex, QPersistentModelIndex]):
         if self.keys[index.column()] == "Resolution" and self._data[index.row()]["Status"] == "Conflict":
