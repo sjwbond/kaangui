@@ -201,8 +201,7 @@ class SetupMainWindow:
         self.undo_button = StyledButton(text="Undo", themes=self.themes, icon_name="icon_undo.svg")
         self.redo_button = StyledButton(text="Redo", themes=self.themes, icon_name="icon_redo.svg")
         self.create_new_model_button = StyledButton(text="Create New Model", icon_name="icon_file.svg", themes=self.themes)
-        self.create_json_database_from_txt_files_button = StyledButton(text="Create Model Json file From Txt Folder", icon_name="icon_attachment.svg", themes=self.themes)
-        self.import_objects_from_text_file_button = StyledButton(text="Import Objects From Text File", icon_name="icon_attachment.svg", themes=self.themes)
+        self.import_from_text_button = StyledButton(text="Import From Text", icon_name="icon_attachment.svg", themes=self.themes)
         self.open_api_model_button = StyledButton(text="Open Model", icon_name="icon_restore.svg", themes=self.themes)
         self.save_api_model_button = StyledButton(text="Save Model", icon_name="icon_save.svg", themes=self.themes)
         self.open_json_model_button = StyledButton(text="Open JSON", icon_name="icon_restore.svg", themes=self.themes)
@@ -287,8 +286,7 @@ class SetupMainWindow:
         self.open_api_model_button.clicked.connect(self.open_model_from_api)
         self.save_json_model_button.clicked.connect(self.save_model_to_json)
         self.open_json_model_button.clicked.connect(self.open_model_from_json)
-        self.create_json_database_from_txt_files_button.clicked.connect(self.create_json_from_txt)
-        self.import_objects_from_text_file_button.clicked.connect(self.import_objects_from_text_file)
+        self.import_from_text_button.clicked.connect(self.show_import_from_text_menu)
 
         self.tree.viewport().installEventFilter(self)
 
@@ -336,8 +334,7 @@ class SetupMainWindow:
         self.ui.load_pages.row_3_layout.addWidget(self.save_api_model_button)
         self.ui.load_pages.row_3_layout.addWidget(self.open_json_model_button)
         self.ui.load_pages.row_3_layout.addWidget(self.save_json_model_button)
-        self.ui.load_pages.row_3_layout.addWidget(self.create_json_database_from_txt_files_button)
-        self.ui.load_pages.row_3_layout.addWidget(self.import_objects_from_text_file_button)
+        self.ui.load_pages.row_3_layout.addWidget(self.import_from_text_button)
         self.ui.load_pages.tree_layout.addWidget(self.filterEdit)
         self.ui.load_pages.tree_layout.addWidget(self.tree)
         self.ui.load_pages.table_layout.addWidget(self.table_widget)
@@ -493,11 +490,23 @@ class SetupMainWindow:
 
     def import_objects_from_text_file(self):
         dialog = ImportObjectsDialog(list(self.settings["object_properties"].keys()), self.controller)
-
         dialog.show()
-        if dialog.exec():
-        #         self.controller.import_object_properties(objects)
-            pass
+        dialog.exec()
+    
+    def show_import_from_text_menu(self):
+        menu = QMenu()
+
+        create_json_database_menuitem = QAction(f"Create Model JSON File")
+        create_json_database_menuitem.triggered.connect(self.create_json_from_txt)
+        menu.addAction(create_json_database_menuitem)
+
+        import_objects_menuitem = QAction(f"Import Objects")
+        import_objects_menuitem.triggered.connect(self.import_objects_from_text_file)
+        menu.addAction(import_objects_menuitem)
+
+        cursor = QCursor()
+        menu.exec_(cursor.pos())
+
 
     def send_model_to_queue(self, name, priority):
         self.save_model_to_api()
