@@ -129,26 +129,51 @@ class ResultsController:
         return queries, data_points
     
     def draw_chart(self):
-        # averages_only, from_date, to_date
+        def date_to_unix_time(date):
+            date = datetime.date(date.year(), date.month(), date.day())
+            date = time.mktime(date.timetuple())
+            return date
+
         queries, data = self.get_time_series_data()
         self.plot_widget.clear()
         counter = 0
         for i in range(len(data)):
-            for j in range(len(data[i])):
+            if self.averages_only:
                 xs = []
                 ys = []
-                for item in data[i][j]:
-                    if item["start"] < self.from_date or item["start"] > self.to_date:
-                        continue
-                    
-                    date = datetime.date(item["start"].year(), item["start"].month(), item["start"].day())
-                    date = time.mktime(date.timetuple())
-                    xs.append(date)
-                    ys.append(item["value"])
+                for j in range(len(data[i])):
+                    for k in range(len(data[i][j])):
+                        item = data[i][j][k]
+                        if item["start"] < self.from_date or item["start"] > self.to_date:
+                            continue
+
+                        while len(xs) <= k:
+                            xs.append(0)
+                            ys.append(0)
+
+                        xs[k] = date_to_unix_time(item["start"])
+                        ys[k] += item["value"]
+
+                for j in range(len(ys)):
+                    ys[j] /= len(data[i])
 
                 color = plot_colors[counter % len(plot_colors)]
                 counter += 1
                 self.plot_widget.plot(xs, ys, pen=mkPen(color=color))
+            else:
+                for j in range(len(data[i])):
+                    xs = []
+                    ys = []
+                    for item in data[i][j]:
+                        if item["start"] < self.from_date or item["start"] > self.to_date:
+                            continue
+                        
+                        xs.append(date_to_unix_time(item["start"]))
+                        ys.append(item["value"])
+
+                    color = plot_colors[counter % len(plot_colors)]
+                    counter += 1
+                    self.plot_widget.plot(xs, ys, pen=mkPen(color=color))
     
     def export_csv(self):
         queries, data = self.get_time_series_data()
