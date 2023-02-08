@@ -9,17 +9,21 @@ from gui.uis.custom.time_series_table_model import TimeSeriesTableModel
 from gui.uis.custom.time_series_table_view import TimeSeriesTableView
 from gui.uis.custom.time_series_tree_view import TimeSeriesTreeView
 from gui.uis.custom.constants import plot_colors
+from gui.widgets.py_date_edit import PyDateEdit
 from gui.widgets.py_line_edit.py_line_edit import PyLineEdit
 from pyqtgraph import DateAxisItem, PlotWidget, mkPen
 from qt_core import *
 
 class ResultsController:
     def __init__(self, api: WebAPI, layout: QBoxLayout, themes: dict) -> None:
-        self.setup_layout(layout, themes)
-
         self.api = api
         self.current_sample_from = ""
         self.current_sample_to = ""
+        self.averages_only = False
+        self.from_date = QDate(1900, 1, 1)
+        self.to_date = QDate(3000, 1, 1)
+
+        self.setup_layout(layout, themes)
 
         self.load_results()
 
@@ -58,6 +62,18 @@ class ResultsController:
     def set_sample_to(self, text: str):
         self.current_sample_to = text
 
+    def set_averages_only_checked(self, state: int):
+        self.averages_only = state == 2
+        self.draw_chart()
+
+    def set_date_from(self, date_from: QDate):
+        self.from_date = date_from
+        self.draw_chart()
+
+    def set_date_to(self, date_to: QDate):
+        self.to_date = date_to
+        self.draw_chart()
+
     def add_time_series(self):
         selected_results_index = self.results_tree.currentIndex()
         selected_time_series_index = self.time_series_tree.currentIndex()
@@ -85,26 +101,54 @@ class ResultsController:
             queries.append({
                 "result": row[0],
                 "time_series_id": int(row[4]),
+                "time_series_name": row[1],
                 "sample_from": int(row[2]),
                 "sample_to": int(row[3])
             })
         data = self.api.get_time_series_data(queries)
-        return queries, data
+        # 3-dimensional array
+        # 1st dimension is series
+        # 2nd dimension is sample (starting at sampleFrom, ending at sampleTo)
+        # 3rd dimension is data point
+        data_points = []
+        for series_idx, series in enumerate(data):
+            series_points = []
+            for point in series:
+                sample_idx: int = point["tss_sample_number"] - queries[series_idx]["sample_from"]
+                while sample_idx >= len(series_points):
+                    series_points.append([])
+                
+                start = QDate(2000, 1, 1).addDays(int(point["tsd_tim_id_start"]) - 1)
+                series_points[sample_idx].append({
+                    "id": int(point["tsd_id"]),
+                    "sample": point["tss_sample_number"],
+                    "start": start,
+                    "value": point["tsd_value"],
+                })
+            data_points.append(series_points)
+        return queries, data_points
     
     def draw_chart(self):
+        # averages_only, from_date, to_date
         queries, data = self.get_time_series_data()
         self.plot_widget.clear()
+        counter = 0
         for i in range(len(data)):
-            result = data[i]
-            color = plot_colors[i % len(plot_colors)]
-            xs = []
-            ys = []
-            for item in result:
-                days = int(item["tsd_tim_id_start"])
-                date = datetime.date(2000, 1, 1) + datetime.timedelta(days=days)
-                xs.append(time.mktime(date.timetuple()))
-                ys.append(item["tsd_value"])
-            self.plot_widget.plot(xs, ys, pen=mkPen(color=color))
+            for j in range(len(data[i])):
+                xs = []
+                ys = []
+                for item in data[i][j]:
+                    if item["start"] < self.from_date or item["start"] > self.to_date:
+                        continue
+                    
+                    date = datetime.date(item["start"].year(), item["start"].month(), item["start"].day())
+                    date = time.mktime(date.timetuple())
+                    xs.append(date)
+                    ys.append(item["value"])
+
+                color = plot_colors[counter % len(plot_colors)]
+                counter += 1
+                self.plot_widget.plot(xs, ys, pen=mkPen(color=color))
     
     def export_csv(self):
         queries, data = self.get_time_series_data()
@@ -112,12 +156,20 @@ class ResultsController:
         if name != '':
             with open(name, "w", encoding="utf8", newline='') as file:
                 writer = csv.writer(file)
-                writer.writerow(["result", "time_series_id", "tsd_tim_id_start", "tsd_value"])
+                writer.writerow(["result", "tss_id", "tss_sample_number", "tsd_id", "tsd_start_date", "tsd_value"])
                 for i in range(len(data)):
                     query = queries[i]
-                    result = data[i]
-                    for item in result:
-                        writer.writerow([query["result"], int(query["time_series_id"]), int(item["tsd_tim_id_start"]), item["tsd_value"]])
+                    for j in range(len(data[i])):
+                        for k in range(len(data[i][j])):
+                            point = data[i][j][k]
+                            writer.writerow([
+                                query["result"],
+                                int(query["time_series_id"]),
+                                int(point["sample"]),
+                                int(point["id"]),
+                                point["start"].toString("yyyy-MM-dd"),
+                                point["value"],
+                            ])
 
     def setup_layout(self, layout: QBoxLayout, themes: dict):
         self.results_filter_edit = PyLineEdit(
@@ -209,6 +261,35 @@ class ResultsController:
         self.export_csv_button = StyledButton(text="Export CSV", themes=themes)
         self.export_csv_button.clicked.connect(self.export_csv)
 
+        self.averages_only_checkbox = QCheckBox("Show series averages only")
+        self.averages_only_checkbox.stateChanged.connect(self.set_averages_only_checked)
+
+        self.date_from_label = QLabel("Date from")
+        self.date_from_edit = PyDateEdit(
+            radius = 8,
+            border_size = 2,
+            color = themes["app_color"]["text_foreground"],
+            selection_color = themes["app_color"]["white"],
+            bg_color = themes["app_color"]["dark_one"],
+            bg_color_active = themes["app_color"]["dark_three"],
+            context_color = themes["app_color"]["context_color"]
+        )
+        self.date_from_edit.setDate(self.from_date)
+        self.date_from_edit.dateChanged.connect(self.set_date_from)
+
+        self.date_to_label = QLabel("Date to")
+        self.date_to_edit = PyDateEdit(
+            radius = 8,
+            border_size = 2,
+            color = themes["app_color"]["text_foreground"],
+            selection_color = themes["app_color"]["white"],
+            bg_color = themes["app_color"]["dark_one"],
+            bg_color_active = themes["app_color"]["dark_three"],
+            context_color = themes["app_color"]["context_color"]
+        )
+        self.date_to_edit.setDate(self.to_date)
+        self.date_to_edit.dateChanged.connect(self.set_date_to)
+
         self.axis = DateAxisItem()
         self.plot_widget = PlotWidget(axisItems={'bottom': self.axis})
 
@@ -240,5 +321,13 @@ class ResultsController:
         self.time_series_controls_layout.addWidget(self.draw_chart_button)
         self.time_series_controls_layout.addWidget(self.export_csv_button)
         self.results_right_layout.addLayout(self.time_series_controls_layout)
+        
+        self.chart_controls_layout = QHBoxLayout()
+        self.chart_controls_layout.addWidget(self.averages_only_checkbox)
+        self.chart_controls_layout.addWidget(self.date_from_label)
+        self.chart_controls_layout.addWidget(self.date_from_edit, 1)
+        self.chart_controls_layout.addWidget(self.date_to_label)
+        self.chart_controls_layout.addWidget(self.date_to_edit, 1)
+        self.results_right_layout.addLayout(self.chart_controls_layout)
 
         self.results_right_layout.addWidget(self.plot_widget)
