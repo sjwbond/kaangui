@@ -1,6 +1,5 @@
 from typing import List, Union
 from qt_core import *
-from gui.uis.custom.constants import plot_colors
 
 class TimeSeriesTableModel(QAbstractTableModel):
     itemChanged = Signal()
@@ -16,27 +15,18 @@ class TimeSeriesTableModel(QAbstractTableModel):
         return self.dataAt(index.row(), index.column(), role)
 
     def dataAt(self, row: int, column: int, role: Qt.ItemDataRole):
-        if column == 0:
-            if role == Qt.ForegroundRole:
-                r, g, b = plot_colors[row % len(plot_colors)]
-                return QColor(r, g, b)
-            if role == Qt.DisplayRole:
-                return "▇▇"
-
         if role == Qt.DisplayRole:
             return self._data[row][column-1]
 
     def headerData(self, section: int, orientation: Qt.Orientation, role: int):
         if orientation == Qt.Horizontal and role == Qt.DisplayRole:
             if section == 0:
-                return "Color"
-            if section == 1:
                 return "Result"
-            if section == 2:
+            if section == 1:
                 return "Time Series Name"
-            elif section == 3:
+            elif section == 2:
                 return "Sample From"
-            elif section == 4:
+            elif section == 3:
                 return "Sample To"
             else:
                 return section
@@ -56,7 +46,7 @@ class TimeSeriesTableModel(QAbstractTableModel):
         return len(self._data)
 
     def columnCount(self, index: Union[QModelIndex, QPersistentModelIndex]):
-        return 5
+        return 4
 
     def flags(self, index: Union[QModelIndex, QPersistentModelIndex]):
         if index.column() in [3, 4]:

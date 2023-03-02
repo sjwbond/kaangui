@@ -159,7 +159,7 @@ class ResultsController:
 
                 color = plot_colors[counter % len(plot_colors)]
                 counter += 1
-                self.plot_widget.plot(xs, ys, pen=mkPen(color=color))
+                self.plot_widget.plot(xs, ys, pen=mkPen(color=color), name=f"{queries[i]['time_series_name']} Sample Averages {queries[i]['sample_from']}-{queries[i]['sample_to']}")
             else:
                 for j in range(len(data[i])):
                     xs = []
@@ -173,7 +173,7 @@ class ResultsController:
 
                     color = plot_colors[counter % len(plot_colors)]
                     counter += 1
-                    self.plot_widget.plot(xs, ys, pen=mkPen(color=color))
+                    self.plot_widget.plot(xs, ys, pen=mkPen(color=color), name=f"{queries[i]['time_series_name']} Sample {queries[i]['sample_from'] + j}")
     
     def export_csv(self):
         queries, data = self.get_time_series_data()
@@ -317,6 +317,7 @@ class ResultsController:
 
         self.axis = DateAxisItem()
         self.plot_widget = PlotWidget(axisItems={'bottom': self.axis})
+        self.plot_widget.addLegend()
 
         self.results_left_layout = QVBoxLayout()
         self.results_left_layout.setObjectName(u"results_left_layout")
