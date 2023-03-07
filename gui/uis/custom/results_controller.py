@@ -25,11 +25,9 @@ class ResultsController:
 
         self.setup_layout(layout, themes)
 
-        self.load_results()
-
     def load_results(self):
-        self.results = self.api.list_results()
         self.results_tree.rootModel.clear()
+        self.results = self.api.list_results()
         for result in self.results:
             self.results_tree.rootModel.invisibleRootItem().appendRow(QStandardItem(result))
 

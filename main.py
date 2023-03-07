@@ -99,6 +99,7 @@ class MainWindow(QMainWindow, SetupMainWindow):
 
         if btn.objectName() == "btn_results":
             MainFunctions.set_page(self, self.ui.load_pages.page_1)
+            self.results_controller.load_results()
 
     # LEFT MENU BTN IS RELEASED
     # Run function when btn is released
