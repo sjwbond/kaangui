@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "kaangui"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.13"
+pyqt5-tools = "^5.15.9.3.3"
+pyqtgraph = "^0.13.3"
+pandas = "^2.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
