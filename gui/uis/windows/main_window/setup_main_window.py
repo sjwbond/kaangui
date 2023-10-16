@@ -71,8 +71,9 @@ class SetupMainWindow:
         # SETUP MAIN WINDOw
         # Load widgets from "gui\uis\main_window\ui_main.py"
         # ///////////////////////////////////////////////////////////////
-        self.ui = UI_MainWindow()
-        self.ui.setup_ui(self)
+        #from . ui_main import UI_MainWindow
+        #self.ui = UI_MainWindow()
+        #self.ui.setup_ui(self)
     
     # ADD LEFT MENUS
     # ///////////////////////////////////////////////////////////////
