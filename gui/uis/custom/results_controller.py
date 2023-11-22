@@ -9,6 +9,7 @@ from gui.uis.custom.time_series_table_model import TimeSeriesTableModel
 from gui.uis.custom.time_series_table_view import TimeSeriesTableView
 from gui.uis.custom.time_series_tree_view import TimeSeriesTreeView
 from gui.uis.custom.constants import plot_colors
+from gui.widgets.comboBoxSearchable.comboBoxSearchable import style as comboBox_style
 from gui.widgets.py_date_edit import PyDateEdit
 from gui.widgets.py_line_edit.py_line_edit import PyLineEdit
 from pyqtgraph import DateAxisItem, PlotWidget, mkPen
@@ -59,6 +60,9 @@ class ResultsController:
 
     def set_sample_to(self, text: str):
         self.current_sample_to = text
+    
+    def set_granularity(self):
+        self.draw_chart()
 
     def set_averages_only_checked(self, state: int):
         self.averages_only = state == 2
@@ -101,7 +105,8 @@ class ResultsController:
                 "time_series_id": int(row[4]),
                 "time_series_name": row[1],
                 "sample_from": int(row[2]),
-                "sample_to": int(row[3])
+                "sample_to": int(row[3]),
+                "granularity": self.granularity_comboBox.currentText()
             })
         data = self.api.get_time_series_data(queries)
         # 3-dimensional array
@@ -116,7 +121,17 @@ class ResultsController:
                 while sample_idx >= len(series_points):
                     series_points.append([])
                 
-                start = QDate(2000, 1, 1).addDays(int(point["tsd_tim_id_start"]) - 1)
+                start = datetime.datetime(2000, 1, 1) + datetime.timedelta(days=int(point["tsd_tim_id_start"])-1)
+                if self.granularity_comboBox.currentText() == "5 min":
+                    offset = point["tsd_time_number"]
+                    start = start + datetime.timedelta(minutes=offset*5)
+                elif self.granularity_comboBox.currentText() == "Quarter hourly":
+                    offset = point["tsd_time_number"]
+                    start = start + datetime.timedelta(minutes=offset*15)
+                elif self.granularity_comboBox.currentText() == "Hourly":
+                    offset = point["tsd_time_number"]
+                    start = start + datetime.timedelta(minutes=offset*60)
+
                 series_points[sample_idx].append({
                     "id": int(point["tsd_id"]),
                     "sample": point["tss_sample_number"],
@@ -128,10 +143,9 @@ class ResultsController:
     
     def draw_chart(self):
         def date_to_unix_time(date):
-            date = datetime.date(date.year(), date.month(), date.day())
-            date = time.mktime(date.timetuple())
-            return date
+            return time.mktime(date.timetuple())
 
+        # self.granularity_comboBox.currentText()
         queries, data = self.get_time_series_data()
         self.plot_widget.clear()
         counter = 0
@@ -187,10 +201,10 @@ class ResultsController:
                             point = data[i][j][k]
                             writer.writerow([
                                 query["result"],
-                                int(query["time_series_id"]),
+                                query["time_series_name"],
                                 int(point["sample"]),
                                 int(point["id"]),
-                                point["start"].toString("yyyy-MM-dd"),
+                                point["start"].strftime("yyyy-MM-dd"),
                                 point["value"],
                             ])
 
@@ -284,6 +298,17 @@ class ResultsController:
         self.export_csv_button = StyledButton(text="Export CSV", themes=themes)
         self.export_csv_button.clicked.connect(self.export_csv)
 
+        self.granularity_label = QLabel("Granularity")
+        self.granularity_comboBox = QComboBox()
+        self.granularity_comboBox.setObjectName("granularity_comboBox")
+        self.granularity_comboBox.setStyleSheet(comboBox_style)
+        self.granularity_comboBox.addItem("Normal")
+        self.granularity_comboBox.addItem("5 min")
+        self.granularity_comboBox.addItem("Quarter hourly")
+        self.granularity_comboBox.addItem("Hourly")
+        self.granularity_comboBox.setCurrentText("Normal")
+        self.granularity_comboBox.currentIndexChanged.connect(self.set_granularity)
+
         self.averages_only_checkbox = QCheckBox("Show series averages only")
         self.averages_only_checkbox.stateChanged.connect(self.set_averages_only_checked)
 
@@ -347,6 +372,8 @@ class ResultsController:
         self.results_right_layout.addLayout(self.time_series_controls_layout)
         
         self.chart_controls_layout = QHBoxLayout()
+        self.chart_controls_layout.addWidget(self.granularity_label)
+        self.chart_controls_layout.addWidget(self.granularity_comboBox, 1)
         self.chart_controls_layout.addWidget(self.averages_only_checkbox)
         self.chart_controls_layout.addWidget(self.date_from_label)
         self.chart_controls_layout.addWidget(self.date_from_edit, 1)
