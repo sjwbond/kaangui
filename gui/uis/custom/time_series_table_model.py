@@ -16,7 +16,7 @@ class TimeSeriesTableModel(QAbstractTableModel):
 
     def dataAt(self, row: int, column: int, role: Qt.ItemDataRole):
         if role == Qt.DisplayRole:
-            return self._data[row][column-1]
+            return self._data[row][column]
 
     def headerData(self, section: int, orientation: Qt.Orientation, role: int):
         if orientation == Qt.Horizontal and role == Qt.DisplayRole:

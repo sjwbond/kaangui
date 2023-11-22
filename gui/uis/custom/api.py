@@ -3,6 +3,9 @@ import requests
 import json
 import zlib
 import hashlib
+import os
+
+os.environ["NO_PROXY"] = "localhost"
 
 class WebAPI:
   def __init__(self, api_path: str, user_id: str):

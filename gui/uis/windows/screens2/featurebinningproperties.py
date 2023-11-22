@@ -204,13 +204,18 @@ class Ui_FeatureBinningProperties(QObject):
         if self.currentSelection is None:
             return
 
-        self.input[self.currentSelection] = {}
+        if self.currentSelection in self.input:
+            del self.input[self.currentSelection]
+
+        new_features = {}
         for i in range(self.tableWidget.rowCount()):
             enabled = self.tableWidget.cellWidget(i, 0).isChecked()
             name = self.tableWidget.item(i, 1).text()
             group = self.tableWidget.cellWidget(i, 2).text()
 
-            self.input[self.currentSelection][name] = {
+            new_features[name] = {
                 "enabled": enabled,
                 "group": group
             }
+        if new_features != {}:
+            self.input[self.currentSelection] = new_features

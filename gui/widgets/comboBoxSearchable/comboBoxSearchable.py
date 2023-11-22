@@ -2,17 +2,23 @@ from qt_core import *
 
 style = '''
 QComboBox {
+    border-radius: 8px;
 	background-color: #333;
-	border: 0px solid transparent;
-	padding-left: 1px;
-    padding-right: 1px;
+	border: 2px solid transparent;
+	padding-left: 10px;
+    padding-right: 10px;
 	selection-color: #FFF;
 	selection-background-color: #00ABE8;
     color: #FFF;
+    min-height: 25px;
 }
 QComboBox:focus {
-	border: 0px solid transparent;
+	border: 2px solid #FFF;
     background-color: #4D5066;
+}
+
+QListView {
+	background-color: #4D5066;
 }
 '''
 

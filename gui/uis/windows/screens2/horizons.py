@@ -50,7 +50,7 @@ class Ui_Horizons(QObject):
         self.formLayout_3.setWidget(2, QFormLayout.LabelRole, self.granularityLabel)
         self.granularitySpinBox = QSpinBox(Dialog)
         self.granularitySpinBox.setObjectName("granularitySpinBox")
-        self.granularitySpinBox.setMaximum(10000)
+        self.granularitySpinBox.setMaximum(1000000)
         self.formLayout_3.setWidget(2, QFormLayout.FieldRole, self.granularitySpinBox)
         self.verticalLayout.addLayout(self.formLayout_3)
         self.periodicityGroupBox = QGroupBox(Dialog)
